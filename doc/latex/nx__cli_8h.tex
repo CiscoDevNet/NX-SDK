@@ -1,0 +1,33 @@
+\hypertarget{nx__cli_8h}{
+\section{/nobackup/sathsrin/nxsdk1/nxsdk/include/nx\_\-cli.h File Reference}
+\label{nx__cli_8h}\index{/nobackup/sathsrin/nxsdk1/nxsdk/include/nx\_\-cli.h@{/nobackup/sathsrin/nxsdk1/nxsdk/include/nx\_\-cli.h}}
+}
+
+
+Abstract CLI interface to generate custom CLI configis in Nexus Switches.  
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include \char`\"{}types/nx\_\-cli.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnxos_1_1NxCliCmd}{nxos::NxCliCmd}
+\begin{DoxyCompactList}\small\item\em Abstract custom CLI command Interface used to construct a custom CLI config. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxCmdHandler}{nxos::NxCmdHandler}
+\begin{DoxyCompactList}\small\item\em Custom Cli Command Callback Handler Class. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxCliParser}{nxos::NxCliParser}
+\begin{DoxyCompactList}\small\item\em Abstract Interface to access Nexus CLI Parser tools. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract CLI interface to generate custom CLI configis in Nexus Switches. Provides necessary Abstraction/Plugin for NXOS CLI Parser functionalities. It provides the Ability to construct custom CLIs and callback handlers when a specific CLI is exectuted.
+
+Steps to construct a custom CLI: 1) Instantiate NxSDK CLI Parser Object using getCliParser(). 2) Create a CMD object using newCliCmd(). 3) Fill in the appropriate fields for the command like cmdName, type, syntax etc. 4) Update the Keywords, param if needed with custom values using updateKeyword(), updateParam() etc. 5) Repeat steps 2)-\/4) for new commands. 6) After creating all the cmds then set the callback handler to be called 7) Add them to NX CLI Parser List using addToParseTree(). If it succeeds then try your commands in NX VSH. NOTE: addToParseTree() should be called even if there are no custom CLIs to be added in order to access auto-\/generated show commands for the application.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[\hyperlink{bug__bug000001}{Bug}]No known bugs. \end{Desc}

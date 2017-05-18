@@ -1,0 +1,122 @@
+\hypertarget{classnxos_1_1NxSdk}{
+\section{nxos::NxSdk Class Reference}
+\label{classnxos_1_1NxSdk}\index{nxos::NxSdk@{nxos::NxSdk}}
+}
+
+
+Abstract SDK interface to NXOS infra.  
+
+
+{\ttfamily \#include $<$nx\_\-sdk.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classnxos_1_1NxSdk_a6b5028045019af4be6c8356ec0fdaff9}{$\sim$NxSdk} ()
+\item 
+virtual void \hyperlink{classnxos_1_1NxSdk_a2c6007a383114285951b2d2a062dacec}{setAppDesc} (std::string desc)=0
+\item 
+virtual const char $\ast$ \hyperlink{classnxos_1_1NxSdk_a9ba7da2cd8cb4f82438135ee651efdb0}{getAppName} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{classnxos_1_1NxSdk_ad6964fa8ee52a8b0a22c27abdcf871e3}{getAppDesc} ()=0
+\item 
+virtual int \hyperlink{classnxos_1_1NxSdk_ac82af6d262439275f27c745082bf3fd7}{getAppId} ()=0
+\item 
+virtual \hyperlink{classnxos_1_1NxCliParser}{NxCliParser} $\ast$ \hyperlink{classnxos_1_1NxSdk_a98bcb70d1bf60e38b41eacdf0a72dc89}{getCliParser} ()=0
+\item 
+virtual \hyperlink{classnxos_1_1NxTrace}{NxTrace} $\ast$ \hyperlink{classnxos_1_1NxSdk_ad2c729bd12d1b9f4bf06f4b70fe28347}{getTracer} ()=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxSdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{startEventLoop} ()=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxSdk_adc80e6f244a7cbc050f9dacbc8018315}{stopEventLoop} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classnxos_1_1NxSdk}{NxSdk} $\ast$ \hyperlink{classnxos_1_1NxSdk_a5050e2d26c40744b4fc7862068a83f39}{getSdkInst} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract SDK interface to NXOS infra. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classnxos_1_1NxSdk_a6b5028045019af4be6c8356ec0fdaff9}{
+\index{nxos::NxSdk@{nxos::NxSdk}!$\sim$NxSdk@{$\sim$NxSdk}}
+\index{$\sim$NxSdk@{$\sim$NxSdk}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{$\sim$NxSdk}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos::NxSdk::$\sim$NxSdk ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a6b5028045019af4be6c8356ec0fdaff9}
+\mbox{[}Required\mbox{]} Destructor
+
+To Delete the SDK instance and its associated objects gracefully on App exit. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxSdk_ad6964fa8ee52a8b0a22c27abdcf871e3}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppDesc@{getAppDesc}}
+\index{getAppDesc@{getAppDesc}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getAppDesc}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ nxos::NxSdk::getAppDesc ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_ad6964fa8ee52a8b0a22c27abdcf871e3}
+Get App Description. If not set the default description is \char`\"{}NxSDK Application\char`\"{} \hypertarget{classnxos_1_1NxSdk_ac82af6d262439275f27c745082bf3fd7}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppId@{getAppId}}
+\index{getAppId@{getAppId}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getAppId}]{\setlength{\rightskip}{0pt plus 5cm}virtual int nxos::NxSdk::getAppId ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_ac82af6d262439275f27c745082bf3fd7}
+Get App ID. App ID is automatically set by the sysmgr if the service is started from VSH \mbox{[}recommended\mbox{]}. \hypertarget{classnxos_1_1NxSdk_a9ba7da2cd8cb4f82438135ee651efdb0}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppName@{getAppName}}
+\index{getAppName@{getAppName}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getAppName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ nxos::NxSdk::getAppName ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a9ba7da2cd8cb4f82438135ee651efdb0}
+Get the App Name which is the name of App binary. \hypertarget{classnxos_1_1NxSdk_a98bcb70d1bf60e38b41eacdf0a72dc89}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getCliParser@{getCliParser}}
+\index{getCliParser@{getCliParser}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getCliParser}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NxCliParser}$\ast$ nxos::NxSdk::getCliParser ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a98bcb70d1bf60e38b41eacdf0a72dc89}
+Get Nx Cli Parser object to create custom CLIs. This automatically generates internal show commands for the App. Use \char`\"{}show $<$AppName$>$ ?\char`\"{} in VSH to navigate to the pre-\/generated commands for the App. \hypertarget{classnxos_1_1NxSdk_a5050e2d26c40744b4fc7862068a83f39}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkInst@{getSdkInst}}
+\index{getSdkInst@{getSdkInst}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getSdkInst}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf NxSdk}$\ast$ nxos::NxSdk::getSdkInst (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a5050e2d26c40744b4fc7862068a83f39}
+\mbox{[}Required\mbox{]} To get Nx SDK Instance which enables the thrid party applications to gain access to Nexus functionalities. \begin{DoxyNote}{Note}
+Do all SDK specific initializations in the same thread. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em pass}]in the command line arguments as its needed when the App is started from VSH.\end{DoxyParams}
+
+\begin{DoxyCode}
+  C++:
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+-\/ SDK instance to operate on (registered with NXOS Infra successfully).
+\begin{DoxyItemize}
+\item NULL in case of any errors and there will be a Error syslog on the failure. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxSdk_ad2c729bd12d1b9f4bf06f4b70fe28347}{
+\index{nxos::NxSdk@{nxos::NxSdk}!getTracer@{getTracer}}
+\index{getTracer@{getTracer}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{getTracer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NxTrace}$\ast$ nxos::NxSdk::getTracer ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_ad2c729bd12d1b9f4bf06f4b70fe28347}
+Get Nx Tracer syslog object to generate custom syslogs, custom App Event history logs. \hypertarget{classnxos_1_1NxSdk_a2c6007a383114285951b2d2a062dacec}{
+\index{nxos::NxSdk@{nxos::NxSdk}!setAppDesc@{setAppDesc}}
+\index{setAppDesc@{setAppDesc}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{setAppDesc}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxSdk::setAppDesc (std::string {\em desc})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a2c6007a383114285951b2d2a062dacec}
+\mbox{[}Optional\mbox{]} Set the description for the Application. This description will be used as the helpstring when generating custom CLIs for the AppName keyword in the config. \hypertarget{classnxos_1_1NxSdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{
+\index{nxos::NxSdk@{nxos::NxSdk}!startEventLoop@{startEventLoop}}
+\index{startEventLoop@{startEventLoop}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{startEventLoop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxSdk::startEventLoop ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_a75ca70643fe325ddf0eea62c1f8c4cc8}
+\mbox{[}Required\mbox{]} Start Event loop. This keeps the Application running. \hypertarget{classnxos_1_1NxSdk_adc80e6f244a7cbc050f9dacbc8018315}{
+\index{nxos::NxSdk@{nxos::NxSdk}!stopEventLoop@{stopEventLoop}}
+\index{stopEventLoop@{stopEventLoop}!nxos::NxSdk@{nxos::NxSdk}}
+\subsubsection[{stopEventLoop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxSdk::stopEventLoop ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxSdk_adc80e6f244a7cbc050f9dacbc8018315}
+Stop Event loop to quit the Application. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk/include/\hyperlink{nx__sdk_8h}{nx\_\-sdk.h}\end{DoxyCompactItemize}

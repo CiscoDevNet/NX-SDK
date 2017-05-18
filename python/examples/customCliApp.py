@@ -1,0 +1,229 @@
+#!/isan/bin/nxpython
+
+################################################################
+# File:   customCliApp.py
+#
+# Description:
+#    A Sample Python App to generate custom CLI of users choice
+#    along with respective callbacks showcasing the usage of
+#    NX-OS Infra SDK.
+#
+# Copyright (c) 2016-2017 by cisco Systems, Inc.
+# All rights reserved.
+#
+#
+# $Id: $
+# $Source: $
+# $Author: $
+##################################################################
+
+import signal
+import time
+import threading
+import sys
+
+### Imports NX-OS Infra SDK package
+import nx_sdk_py
+
+###
+# Timer thread to showcase that native python threads can also
+# run along with sdkThread which is also listening for NX-OS 
+# specific events.
+###
+def timerThread(name,val):
+
+    ### Access the global Tracer Obj 
+    global tmsg
+    count = 0
+    while True:
+        count += 1
+        if tmsg:
+           ### Logs a event log everytime timer is kicked once tmsg 
+           ### is initialized.
+           tmsg.event("Timer ticked - %d" % count)
+        else:
+           print "Timer ticked - no tmsg %d" % count
+        time.sleep(5)
+
+### 
+# Inherit from the NxCmdHandler class, define the application
+# callback in 'postCliCb'. Handler Callback for Custom Cli execution.
+# Returns True if the action was successful. False incase of failure.
+###
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+        port = ""
+        port_threshold = 0; #default value
+
+        def postCliCb(self,clicmd):
+           
+            ### To access the global Cli Parser Obj
+            global cliP
+
+            if "show_port_bw_util_cmd" in clicmd.getCmdName():
+               ### Action to be done when "show_port_bw_util_cmd" gets executed.
+
+               ### Use void_to_string to get the value of input parameter 
+               ### of type string
+               port = nx_sdk_py.void_to_string(clicmd.getParamValue("<port>"))
+               if port:
+                  ### To print the output in VSH console. Should be called only in
+                  ### postCliCb
+                  clicmd.printConsole("Executed show_port_bw_util_cmd for port: %s" % port)
+               else:
+                  clicmd.printConsole("Executed show_port_bw_util_cmd for all ports")
+            elif "port_bw_threshold_cmd" in clicmd.getCmdName():
+               ### Action to be done when "port_bw_threshold_cmd" gets executed.
+
+               if "no" in clicmd.getCmdLineStr():
+                  ### Check if the command is deleted then reset to default.
+                  port_threshold = 0;
+               else:
+                   ### Use void_to_int to convert void * to python int pointer object
+                   ### to get the value of input parameter of type Integer
+                   int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<threshold>"))
+
+                  ### use intp_value to get value of python int pointer object.
+                  port_threshold = int(nx_sdk_py.intp_value(int_p))
+
+               clicmd.printConsole("Executed port_bw_threshold_cmd set threshold=%d" % port_threshold)
+            return True
+
+### Perform all SDK related initializations in one thread.  
+### All SDK related activities happen here, while the main thread
+### may continue to do other work.  The call to startEventLoop will
+### block until we break out of it by calling stopEventLoop. 
+def sdkThread(name,val):
+    global cliP, sdk, event_hdlr, tmsg
+
+    ###
+    # getSdkInst is the first step for any custom Application
+    # wanting to gain access to NXOS Infra. Without this 
+    # NXOS infra cannot be used.
+    #
+    # NOTE: 
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. The call to startEventLoop will block the thread until we 
+    #   break out of it by calling stopEventLoop.  
+    #
+    #   Perform other actions in a different thread.   
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+    if not sdk:
+       return
+
+    ### Set a short Application description.
+    sdk.setAppDesc('Sample Custom CLI Python App')
+
+    ###
+    # To Create & Manage Custom syslogs one must do
+    # getTracer() which loads the plugin to NXOS Syslog
+    # Infra Functionalities. 
+    ###
+    tmsg = sdk.getTracer()
+
+    ### To log some Trace events
+    tmsg.event("[%s] Started service" % sdk.getAppName())
+
+    ###
+    # To Create & Manage Custom CLI commands one must do
+    # getCliParser() which loads the plugin to NXOS CLI
+    # Infra Functionalities. 
+    ###
+    cliP = sdk.getCliParser()
+
+    ### Construct Custom show Port Bandwidth Utilization commands
+    nxcmd = cliP.newShowCmd("show_port_bw_util_cmd", "port bw utilization [<port>]")
+    nxcmd.updateKeyword("port", "Port Information")
+    nxcmd.updateKeyword("bw", "Port Bandwidth Information")
+    nxcmd.updateKeyword("utilization", "Port BW utilization in (%)")
+    nxcmd.updateParam("<port>", "Optional Filter Port Ex) Ethernet1/1", nx_sdk_py.P_INTERFACE)
+
+    ###
+    # Construct custom set Port Bandwidth Threshold config command.
+    #
+    # NOTE:
+    # Since we have already updated the Keyword information for
+    # "port" and "bw" we dont have to update for each and every cmd
+    # as its information will be automatically picked up for
+    # other commands.
+    ###
+    nxcmd1 = cliP.newConfigCmd("port_bw_threshold_cmd", "port bw threshold <threshold>")
+    nxcmd1.updateKeyword("threshold", "Port BW Threshold in (%)")
+
+    ###
+    # Setting additional attributes for input parameter.
+    # In this ex) input parameter <threshold> can take only
+    # input within the range 1-100. Any input outside the range
+    # will be rejected by the NX CLI parser itself thereby
+    # simplifying the CLI validation for App developers.
+    #
+    # NOTE: Refer to include/types/nx_cli.h for additional 
+    #       attributes available for other input types.
+    ###
+    int_attr = nx_sdk_py.cli_param_type_integer_attr()
+    int_attr.min_val = 1;
+    int_attr.max_val = 100;
+    nxcmd1.updateParam("<threshold>", "Threshold Limit. Default 50%", nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+
+    ###
+    # Add the command callback Handler.
+    # When the respective CLI commands gets configured 
+    # the overloaded postCliCb callback will be instantiated.
+    ###
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ###
+    # This is important as it Adds the constructed custom configs 
+    # to NXOS CLI Parse tree. If it succeeds then for config command
+    # use <app-name> ? and for show commands use show <app-name> ?
+    # to check if your commands have been added to NXOS CLI tree
+    # successfully. Refer to API documentation for the exceptions
+    # thrown. Use "show <appname> nxsdk state".
+    ###
+    cliP.addToParseTree()
+
+    ###
+    # startEventLoop will block the thread until we break out
+    # of it by calling stopEventLoop. This is required to
+    # receive any NX-OS specific events. Without this, none of 
+    # the NXSDK functionalities will work. 
+    ###
+    sdk.startEventLoop()
+
+    ### Got here either by calling stopEventLoop() or when App 
+    ### is removed from VSH.
+    tmsg.event("Service Quitting...!")
+
+    ### [Required] Needed for graceful exit.
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+### main thread
+### Global Variables
+cliP = 0
+sdk  = 0
+tmsg = 0
+
+### create a new sdkThread to setup SDK service and handle events.
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread",0))
+sdk_thread.start()
+
+###
+# Creating another thread to showcase that both sdkThread (doing NXSDK
+# functionalities) and native python thread can run concurrently. 
+# timer_thread is a polling thread which sleeps for 5 secs and wakes up 
+# to perform certain action every 5 secs.
+###
+timer_thread = threading.Thread(target=timerThread, args=("timerThread",0))
+timer_thread.daemon = True
+
+### 
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.  
+###
+timer_thread.start()
+
+### Main thread is blocked until sdkThread exits. This keeps the
+### App running and listening to NX-OS events. 
+sdk_thread.join()
+

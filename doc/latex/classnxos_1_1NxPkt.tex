@@ -1,0 +1,226 @@
+\hypertarget{classnxos_1_1NxPkt}{\section{nxos\-:\-:Nx\-Pkt Class Reference}
+\label{classnxos_1_1NxPkt}\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual unsigned short \hyperlink{classnxos_1_1NxPkt_af3c01a1791efb72c3aa57878d55e9522}{get\-Pkt} (unsigned char $\ast$$\ast$pkt)=0
+\item 
+\hypertarget{classnxos_1_1NxPkt_a9b75d1f03831f10efcb48848e238e36f}{virtual bool \hyperlink{classnxos_1_1NxPkt_a9b75d1f03831f10efcb48848e238e36f}{is\-Ip\-Pkt} ()=0}\label{classnxos_1_1NxPkt_a9b75d1f03831f10efcb48848e238e36f}
+
+\begin{DoxyCompactList}\small\item\em If the pkt being constructed is I\-P Packet. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a793cd5142b6b8a9575eb479620b9d692}{set\-Ip\-T\-T\-L} (unsigned char ttl)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a5293a3be5b2e69a870943655aeb18020}{set\-Tcp\-Flags} (unsigned char flag)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a0e369855057ccdcb446828bcf248a61a}{set\-Tcp\-Port} (unsigned short src\-\_\-port, unsigned short dest\-\_\-port)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a338ac8f262e1db93eaa7369665078ca8}{set\-Tcp\-Seq\-Num} (uint32\-\_\-t seq\-\_\-num)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a6439b4b7ac0081742023868a8ae5f7e4}{set\-Tcp\-Ack\-Num} (uint32\-\_\-t ack\-\_\-num)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_adfe3a4097fb3f58a35d7e2d18193336c}{set\-Udp\-Port} (unsigned short src\-\_\-port, unsigned short dest\-\_\-port)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a64cd637e58844f46f7cba71653223592}{set\-Icmp\-Type} (unsigned char type)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a6c332d450a92a85f0cce606d9fa08597}{set\-Icmp\-Code} (unsigned char code)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxPkt_a747af6a0da66e78ca275cd2fe8799853}{send\-Ip\-Pkt} (char $\ast$eggress\-\_\-interface=N\-U\-L\-L, char $\ast$context\-\_\-name=\char`\"{}default\char`\"{})=0
+\item 
+virtual string \hyperlink{classnxos_1_1NxPkt_a16aa05cd6de229fc883e23a48797a639}{get\-Status} ()=0
+\item 
+\hypertarget{classnxos_1_1NxPkt_a6b7d8d892eb84cc03bb352b275574ab2}{virtual bool \hyperlink{classnxos_1_1NxPkt_a6b7d8d892eb84cc03bb352b275574ab2}{drop\-Packet} ()=0}\label{classnxos_1_1NxPkt_a6b7d8d892eb84cc03bb352b275574ab2}
+
+\begin{DoxyCompactList}\small\item\em Datapath methods. \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPkt_a5f7305a5d496c42a2ca38412f7dfb051}{virtual bool {\bfseries drop\-Flow} ()=0}\label{classnxos_1_1NxPkt_a5f7305a5d496c42a2ca38412f7dfb051}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a3b59c6a1e347587605251f58dbc05d86}{virtual bool {\bfseries purge\-Flow} ()=0}\label{classnxos_1_1NxPkt_a3b59c6a1e347587605251f58dbc05d86}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_ae30b30a559da5fffcc3f043daeaaa65f}{virtual bool {\bfseries redirect\-Flow} (const char $\ast$addr)=0}\label{classnxos_1_1NxPkt_ae30b30a559da5fffcc3f043daeaaa65f}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a712e3395ec3905bcb3542db5010eb694}{virtual bool {\bfseries bypass\-Flow} ()=0}\label{classnxos_1_1NxPkt_a712e3395ec3905bcb3542db5010eb694}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a4df1b6cf8b746cc530e74c129b555764}{virtual bool {\bfseries unbypass\-Flow} ()=0}\label{classnxos_1_1NxPkt_a4df1b6cf8b746cc530e74c129b555764}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a938cc9c38270d3b8ff57c6a687f58515}{virtual bool {\bfseries set\-Out\-Interface} (\hyperlink{classnxos_1_1NxIntf}{Nx\-Intf} $\ast$intf)=0}\label{classnxos_1_1NxPkt_a938cc9c38270d3b8ff57c6a687f58515}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a0bacbfa3d16b2edb5e3068debec213e1}{virtual bool {\bfseries set\-Next\-Hop} (const char $\ast$addr)=0}\label{classnxos_1_1NxPkt_a0bacbfa3d16b2edb5e3068debec213e1}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a446a76afcd2509f3d9786683c2229014}{virtual bool {\bfseries set\-Next\-Hop\-Fwd\-Class} (uint32\-\_\-t class\-\_\-id)=0}\label{classnxos_1_1NxPkt_a446a76afcd2509f3d9786683c2229014}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_ae0fe0da25030e02f30014cfc26534b1c}{virtual bool {\bfseries set\-Qos} (uint32\-\_\-t committed\-\_\-info\-\_\-rate, uint32\-\_\-t committed\-\_\-burst\-\_\-rate)=0}\label{classnxos_1_1NxPkt_ae0fe0da25030e02f30014cfc26534b1c}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a2fe795e5a8955c1376d9e8ea413d60be}{virtual bool {\bfseries mark\-D\-S\-C\-P} (uint8\-\_\-t dscp\-\_\-bit)=0}\label{classnxos_1_1NxPkt_a2fe795e5a8955c1376d9e8ea413d60be}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_ae63b5bef1b19816d0ac6cb9fb32fc0c5}{virtual bool {\bfseries unmark} ()=0}\label{classnxos_1_1NxPkt_ae63b5bef1b19816d0ac6cb9fb32fc0c5}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a2e0734226a565629e9671de9b70ebf7b}{virtual bool {\bfseries mark\-Precedence\-And\-To\-S} (uint8\-\_\-t prec, uint8\-\_\-t tos)=0}\label{classnxos_1_1NxPkt_a2e0734226a565629e9671de9b70ebf7b}
+
+\item 
+\hypertarget{classnxos_1_1NxPkt_a949f8385785586edf5f578c1dccaa32b}{virtual uint64\-\_\-t {\bfseries get\-Flow\-Id} ()=0}\label{classnxos_1_1NxPkt_a949f8385785586edf5f578c1dccaa32b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxPkt_af3c01a1791efb72c3aa57878d55e9522}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!get\-Pkt@{get\-Pkt}}
+\index{get\-Pkt@{get\-Pkt}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{get\-Pkt}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned short nxos\-::\-Nx\-Pkt\-::get\-Pkt (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{pkt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_af3c01a1791efb72c3aa57878d55e9522}
+Gets a pointer to the Packet being constructed to be sent or received by the switch. For I\-P Packets, to be sent (or) received by this switch, ignore the ethernet header as it contains Source M\-A\-C and Dest M\-A\-C as 0. As the lower network Layer strips the Ethernet header on receive and on send it attaches the right Ethernet header automatically based on the provided next-\/hop or eggress interfaece. \hypertarget{classnxos_1_1NxPkt_a16aa05cd6de229fc883e23a48797a639}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual string nxos\-::\-Nx\-Pkt\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a16aa05cd6de229fc883e23a48797a639}
+Get Status \hypertarget{classnxos_1_1NxPkt_a747af6a0da66e78ca275cd2fe8799853}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!send\-Ip\-Pkt@{send\-Ip\-Pkt}}
+\index{send\-Ip\-Pkt@{send\-Ip\-Pkt}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{send\-Ip\-Pkt}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::send\-Ip\-Pkt (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{eggress\-\_\-interface = {\ttfamily NULL}, }
+\item[{char $\ast$}]{context\-\_\-name = {\ttfamily \char`\"{}default\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a747af6a0da66e78ca275cd2fe8799853}
+Send the I\-P\mbox{[}v6\mbox{]} packet. Ethernet header is automatically added by the underlying network stack based on the eggress\-\_\-interface if provided. If not its resolved based on the dest\-\_\-ip\mbox{[}v6\mbox{]}. 
+\begin{DoxyParams}{Parameters}
+{\em pkt} & Object to the constructed/built Ip packet to send. \\
+\hline
+{\em eggress\-\_\-interface} & Optional. Interface on which the packet needs to be sent out. Default is N\-U\-L\-L hence the switch resolves the outgoing interface. \\
+\hline
+{\em context\-\_\-name} & Optional. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a bool. True if the packet was accepted by the underlying Network stack layer to send it out. It does not gaurantee that the packet is sent on the wire. Write your own tx/rx procotol to ensure packet delivery.. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See Also}
+All Sent Packets are stored in a pcap file located at /nxos/$<$appname$>$\-\_\-pkt\-\_\-sent.\-pcap 
+\end{DoxySeeAlso}
+\hypertarget{classnxos_1_1NxPkt_a6c332d450a92a85f0cce606d9fa08597}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Icmp\-Code@{set\-Icmp\-Code}}
+\index{set\-Icmp\-Code@{set\-Icmp\-Code}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Icmp\-Code}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Icmp\-Code (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a6c332d450a92a85f0cce606d9fa08597}
+Optional. Set I\-C\-M\-P code for I\-P Packet with Protocol\-: I\-C\-M\-P(1) If not set default is 0. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a64cd637e58844f46f7cba71653223592}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Icmp\-Type@{set\-Icmp\-Type}}
+\index{set\-Icmp\-Type@{set\-Icmp\-Type}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Icmp\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Icmp\-Type (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a64cd637e58844f46f7cba71653223592}
+Required. Set I\-C\-M\-P type for I\-P Packet with Protocol\-: I\-C\-M\-P(1) If not set an exception will be thrown when the packet is sent using send A\-P\-I. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a793cd5142b6b8a9575eb479620b9d692}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Ip\-T\-T\-L@{set\-Ip\-T\-T\-L}}
+\index{set\-Ip\-T\-T\-L@{set\-Ip\-T\-T\-L}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Ip\-T\-T\-L}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Ip\-T\-T\-L (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ttl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a793cd5142b6b8a9575eb479620b9d692}
+Optional. Set T\-T\-L for I\-P Packet. Throws an exception if the packet being formed is not I\-P Packet. If not set deafult is 255. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a6439b4b7ac0081742023868a8ae5f7e4}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Tcp\-Ack\-Num@{set\-Tcp\-Ack\-Num}}
+\index{set\-Tcp\-Ack\-Num@{set\-Tcp\-Ack\-Num}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Tcp\-Ack\-Num}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Tcp\-Ack\-Num (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{ack\-\_\-num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a6439b4b7ac0081742023868a8ae5f7e4}
+Optional. Set T\-C\-P Ack number for I\-P Packet with Protocol\-: T\-C\-P(6) If not set default is 0. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a5293a3be5b2e69a870943655aeb18020}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Tcp\-Flags@{set\-Tcp\-Flags}}
+\index{set\-Tcp\-Flags@{set\-Tcp\-Flags}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Tcp\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Tcp\-Flags (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a5293a3be5b2e69a870943655aeb18020}
+Optional. Set T\-C\-P flags for I\-P Packet with Protocol set\-: T\-C\-P(6) If not set default is No flags set (0). 
+\begin{DoxyParams}{Parameters}
+{\em flags} & refer to types/nx\-\_\-pkt\-\_\-types.\-h \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a0e369855057ccdcb446828bcf248a61a}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Tcp\-Port@{set\-Tcp\-Port}}
+\index{set\-Tcp\-Port@{set\-Tcp\-Port}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Tcp\-Port}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Tcp\-Port (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{src\-\_\-port, }
+\item[{unsigned short}]{dest\-\_\-port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a0e369855057ccdcb446828bcf248a61a}
+Required. Set T\-C\-P source, Dest Port for I\-P Packet with Protocol\-: T\-C\-P(6) If not set an exception will be thrown when the packet is sent using send A\-P\-I. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_a338ac8f262e1db93eaa7369665078ca8}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Tcp\-Seq\-Num@{set\-Tcp\-Seq\-Num}}
+\index{set\-Tcp\-Seq\-Num@{set\-Tcp\-Seq\-Num}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Tcp\-Seq\-Num}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Tcp\-Seq\-Num (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{seq\-\_\-num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_a338ac8f262e1db93eaa7369665078ca8}
+Optional. Set T\-C\-P Sequence number for I\-P Packet with Protocol\-: T\-C\-P(6) If not set default is 0. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classnxos_1_1NxPkt_adfe3a4097fb3f58a35d7e2d18193336c}{\index{nxos\-::\-Nx\-Pkt@{nxos\-::\-Nx\-Pkt}!set\-Udp\-Port@{set\-Udp\-Port}}
+\index{set\-Udp\-Port@{set\-Udp\-Port}!nxos::NxPkt@{nxos\-::\-Nx\-Pkt}}
+\subsubsection[{set\-Udp\-Port}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Pkt\-::set\-Udp\-Port (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{src\-\_\-port, }
+\item[{unsigned short}]{dest\-\_\-port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPkt_adfe3a4097fb3f58a35d7e2d18193336c}
+Required. Set U\-D\-P source, Dest Port for I\-P Packet with Protocol\-: U\-D\-P(17) If not set an exception will be thrown when the packet is sent using send A\-P\-I. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a string exception on error. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk\-\_\-commit/infra/nxsdk/public/include/nx\-\_\-pkt\-\_\-mgr.\-h\end{DoxyCompactItemize}

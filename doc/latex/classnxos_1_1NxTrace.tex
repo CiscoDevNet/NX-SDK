@@ -1,0 +1,70 @@
+\hypertarget{classnxos_1_1NxTrace}{
+\section{nxos::NxTrace Class Reference}
+\label{classnxos_1_1NxTrace}\index{nxos::NxTrace@{nxos::NxTrace}}
+}
+
+
+Tracer interface to generate custom Syslogs, Events \& Errors history.  
+
+
+{\ttfamily \#include $<$nx\_\-trace.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classnxos_1_1NxTrace_a582f6e5a22e788c61807657f8bca088f}{Priority} \{ \par
+{\bfseries EMERG}, 
+{\bfseries ALERT}, 
+{\bfseries CTRI}, 
+{\bfseries ERR}, 
+\par
+{\bfseries WARNING}, 
+{\bfseries NOTICE}, 
+{\bfseries INFO}, 
+{\bfseries DEBUG}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classnxos_1_1NxTrace_a4b8ef9990a168effbca47f29d9b6ea9d}{
+virtual \hyperlink{classnxos_1_1NxTrace_a4b8ef9990a168effbca47f29d9b6ea9d}{$\sim$NxTrace} ()}
+\label{classnxos_1_1NxTrace_a4b8ef9990a168effbca47f29d9b6ea9d}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxTrace_a825db76787da234b99e81adb2def8d3d}{
+virtual void \hyperlink{classnxos_1_1NxTrace_a825db76787da234b99e81adb2def8d3d}{syslog} (\hyperlink{classnxos_1_1NxTrace_a582f6e5a22e788c61807657f8bca088f}{Priority} prio, const char $\ast$fmt,...)=0}
+\label{classnxos_1_1NxTrace_a825db76787da234b99e81adb2def8d3d}
+
+\begin{DoxyCompactList}\small\item\em Generate Custom Syslog with Priority. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classnxos_1_1NxTrace_a22e5e2fff39fae68fba3051dc2720621}{event} (const char $\ast$fmt,...)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxTrace_afc0240b6b9a291729836ffb2fbeef8a4}{error} (const char $\ast$fmt,...)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tracer interface to generate custom Syslogs, Events \& Errors history. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classnxos_1_1NxTrace_a582f6e5a22e788c61807657f8bca088f}{
+\index{nxos::NxTrace@{nxos::NxTrace}!Priority@{Priority}}
+\index{Priority@{Priority}!nxos::NxTrace@{nxos::NxTrace}}
+\subsubsection[{Priority}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf nxos::NxTrace::Priority}}}
+\label{classnxos_1_1NxTrace_a582f6e5a22e788c61807657f8bca088f}
+Priority level for the custom syslog. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxTrace_afc0240b6b9a291729836ffb2fbeef8a4}{
+\index{nxos::NxTrace@{nxos::NxTrace}!error@{error}}
+\index{error@{error}!nxos::NxTrace@{nxos::NxTrace}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxTrace::error (const char $\ast$ {\em fmt}, \/   {\em ...})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxTrace_afc0240b6b9a291729836ffb2fbeef8a4}
+Generate custom App Error in its event history. Use \char`\"{}show $<$AppName$>$ internal event-\/history errors\char`\"{}. \hypertarget{classnxos_1_1NxTrace_a22e5e2fff39fae68fba3051dc2720621}{
+\index{nxos::NxTrace@{nxos::NxTrace}!event@{event}}
+\index{event@{event}!nxos::NxTrace@{nxos::NxTrace}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxTrace::event (const char $\ast$ {\em fmt}, \/   {\em ...})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxTrace_a22e5e2fff39fae68fba3051dc2720621}
+Generate custom App Event in its event history. Use \char`\"{}show $<$AppName$>$ internal event-\/history events\char`\"{}. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk/include/\hyperlink{nx__trace_8h}{nx\_\-trace.h}\end{DoxyCompactItemize}

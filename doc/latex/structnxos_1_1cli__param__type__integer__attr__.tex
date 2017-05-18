@@ -1,0 +1,69 @@
+\hypertarget{structnxos_1_1cli__param__type__integer__attr__}{
+\section{nxos::cli\_\-param\_\-type\_\-integer\_\-attr\_\- Struct Reference}
+\label{structnxos_1_1cli__param__type__integer__attr__}\index{nxos::cli\_\-param\_\-type\_\-integer\_\-attr\_\-@{nxos::cli\_\-param\_\-type\_\-integer\_\-attr\_\-}}
+}
+
+
+Specifies that the type of the CLI input parameter is an integer.  
+
+
+{\ttfamily \#include $<$nx\_\-cli.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{
+int {\bfseries min\_\-val}}
+\label{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}
+
+\item 
+\hypertarget{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{
+int \hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_\-val}}
+\label{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}
+
+\begin{DoxyCompactList}\small\item\em Default is 0. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specifies that the type of the CLI input parameter is an integer. Matching param type is P\_\-INTEGER. When used in updateParam context: 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em min\_\-val}]minimum allowed value for the input interger parameter. \item[\mbox{$\leftarrow$} {\em max\_\-val}]Maximum allowed value for the input interger parameter.\end{DoxyParams}
+{\bfseries  Usage: } If you need to create a CLI which will take an integer between $<$1-\/100$>$ \par
+
+
+CLI: \$appname port-\/bw threshold ? $<$1-\/100$>$ Threshold Limit. Default 50\%
+
+
+\begin{DoxyCode}
+ {.cpp}
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       cliP = sdk->getCliParser();
+       nxos::cli_param_type_integer_attr int_attr = {0};
+       int_attr.min_val = 1;
+       int_attr.max_val = 100;
+       cmd = cliP->newConfigCmd("set_port_bw_threshold_cmd",
+                                "port-bw threshold <threshold>");
+       cmd->updateParam("<threshold>", "Threshold Limit. Default 50%", nxos::P_IN
+      TEGER,
+                        (void *)&int_attr, sizeof(int_attr));
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+ {.py}
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       cliP = sdk.getCliParser()
+       int_attr = nx_sdk_py.cli_param_type_integer_attr()
+       int_attr.min_val = 1;
+       int_attr.max_val = 100;
+       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd", 
+                               "port-bw threshold <threshold>")
+       cmd.updateParam("<threshold>", "Threshold Limit. Default 50%", nxos::P_INT
+      EGER,
+                       int_attr, len(int_attr))
+\end{DoxyCode}
+ 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk/include/types/nx\_\-cli.h\end{DoxyCompactItemize}

@@ -1,0 +1,268 @@
+#!/isan/bin/nxpython
+
+##########################################################################
+#Copyright (c) 2016-2017
+#All rights reserved.
+##########################################################################
+
+##########################################################################
+### pbwMonitor - Port Bandwidth Utilization Monitor
+###
+### This example Python application shows the usage of the NXSDK.
+### It creates a custom show command to show port bandwidth utilization 
+### percentage. It also polls and calculates port BW utilizations
+### percentage at regular interval and logs a syslog when it exceeds
+### the threshold. When the App gets started in the switch, following 
+### commands gets created on the fly,
+###     CMD   :  show <appname> port bw utilization [<port> | hit-threshold]
+###     Action:  Displays port bandwidth utilization percentage for 
+###              all ports (or) ports that hit thresholds if <port> is not 
+###              specficied (or) just for a given port.
+###     CMD   :  <appname> port bw threshold <threshold>
+###
+### Sample output:
+###
+### switch(config)# sh pbwApp port bw utilization 
+### Interface       Bw (Rx/Tx sec Rate) Tx_BW percentage  RX_BW percentage          
+### --------------- ------------------- ----------------  ----------------
+### 
+### Ethernet1/1     10 Gbps (30/30)                30.00             40.00
+### Ethernet1/2     10 Gbps (30/30)                35.00              5.00
+### 
+##########################################################################
+import signal
+import time
+import threading
+import sys
+import os
+import ctypes
+import json
+import re
+import urllib2
+from pprint import pprint
+import random
+import cisco
+from cli import *
+import nx_sdk_py
+
+### 
+# Function to get the "show int" output and compute the percentage
+# TX & RX Bandwidth utilization data.
+###
+def print_port_bw (result, print_syslog, hit_threshold):
+    global tmsg, port_threshold
+
+    ### Get all the necessary data to compute port BW utilization percentage
+    for key in result:
+        key_ascii = str(key.encode('ascii','ignore'))
+        value_ascii = str(result[key].encode('ascii','ignore'))
+        if "interface" in key_ascii:
+           interface = value_ascii
+           if "mgmt" in interface or "nve" in interface or "vlan" in interface or "po" in interface:
+              return ""
+        if "eth_bw" in key_ascii:
+           eth_bw = int(value_ascii)
+        if "eth_load_interval1_tx" in key_ascii:
+           tx_rate = int(value_ascii)
+        if "eth_load_interval1_rx" in key_ascii:
+           rx_rate = int(value_ascii)
+        if "eth_outrate1_bits" in key_ascii:
+           tx_bits = int(value_ascii)
+           tx_bits = random.randint(eth_bw, eth_bw * 1000)
+        if "eth_inrate1_bits" in key_ascii:
+           rx_bits = int(value_ascii)
+
+    bw_str = "%d Gbps (%d/%d)" % (eth_bw/1000000, rx_rate, tx_rate)
+
+    ### Compute the TX & RX port BW utilization.
+    tx_percentage = float((tx_bits * 100)/(eth_bw * 1000)) 
+    rx_percentage = float((rx_bits * 100)/(eth_bw * 1000))
+
+    display_op = False
+    if not hit_threshold:
+       display_op = True
+
+    ### If the port has exceeded the threshold then log a syslog.
+    if port_threshold <= tx_percentage or port_threshold <= rx_percentage:
+       if hit_threshold:
+          display_op = True
+       if tmsg and print_syslog:
+          tmsg.event("Port: %s (tx: %.2f, rx: %.2f) higher than threshold %d" % (interface, tx_percentage, rx_percentage, port_threshold))
+       
+    print_str = ""
+    if display_op:        
+        ### Return the print string for show output.
+        print_str = '{0:15} {1:20} {2:18.2f} {3:18.2f}'.format(interface, bw_str, tx_percentage, rx_percentage)      
+    return print_str
+
+###
+# timerThread to poll and calculate port bandwidth utilization percentage
+# at regular intervals and log a syslog event if a port has exceeded the
+# set threshold
+###
+def timerThread(name,val):
+    global cliP
+
+    while True:
+        ### Get show int output in JSON format and get the required fields
+        result = cliP.execShowCmd("show int", nx_sdk_py.R_JSON)
+        if result:
+           json_res = json.loads(result)["TABLE_interface"]["ROW_interface"]
+           for key in json_res:
+               if type(key) == dict:
+                  print_port_bw(key, True, False)
+        time.sleep(60) 
+
+### inherit from the NxCmdHandler class, define the application
+### callback in 'postCliCb'.  The callback handler gets a pointer
+### to this NxCmdHandler object and also the NxCliCmd object.
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+      def postCliCb(self,clicmd):
+          global cliP, port_threshold
+
+          if "show_port_bw_util_cmd" in clicmd.getCmdName():
+           
+             ### Action for show_port_bw_util_cmd
+
+             ### Get the port value if set
+             port = nx_sdk_py.void_to_string(clicmd.getParamValue("<port>"))
+             if port:
+                result = cliP.execShowCmd("show int %s" % str(port), nx_sdk_py.R_JSON)           
+             else:
+                result = cliP.execShowCmd("show int", nx_sdk_py.R_JSON)
+
+             ### Print header string for the show output
+             print_str = 'Port BW Threshold limit: %d\n\n' % port_threshold
+             print_str += '{0:15} {1:20} {2:18} {3:18}'.format("Interface", "Bw (Rx/Tx Sec Rate)", "Tx_BW percentage", "RX_BW percentage")
+             clicmd.printConsole("%s\n" % print_str)
+             clicmd.printConsole("--------------- -------------------- ------------------ ------------------\n") 
+
+             ### Nothing to display
+             if not result:
+                return True
+
+             ### Parse the JSON output
+             json_res = json.loads(result)["TABLE_interface"]["ROW_interface"]
+             for key in json_res:
+                 
+                 ### Handle nested JSON output for all ports
+                 if type(key) == dict:
+                    display_op = print_port_bw(key, False, clicmd.isKeywordSet("hit-threshold"))
+                    if display_op:
+                       clicmd.printConsole("%s\n" % display_op)
+                 else:
+                    ### Handle JSON output for one port.
+                    display_op = print_port_bw(json_res, False, False)
+                    if display_op:
+                       clicmd.printConsole("%s\n" % display_op)
+                    break
+
+          elif "port_bw_threshold_cmd" in clicmd.getCmdName():
+             ### Action for port_bw_threshold_cmd
+
+             ### Handle no command. Reset to default 
+             if "no" in clicmd.getCmdLineStr():
+                port_threhosld = 50;
+             else:
+                ### Get the threshold value.
+                int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<threshold>"))
+                port_threshold = int(nx_sdk_py.intp_value(int_p))
+          return True 
+
+### Perform all SDK related initializations in one thread.  
+### All SDK related activities happen here, while the main thread
+### may continue to do other work.  The call to startEventLoop will
+### block until we break out of it by calling stopEventLoop. 
+def sdkThread(name,val):
+    global cliP, sdk, tmsg
+
+    ### 
+    #    To gain access to NXOS Infra
+    # NOTE: 
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. 
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+    if not sdk:
+       return
+
+    ### Set a short Application description.
+    sdk.setAppDesc('Sample Custom CLI Python App')
+
+    ### To Create & Manage Custom syslogs 
+    tmsg = sdk.getTracer()
+
+    ### To log some Trace events
+    tmsg.event("[%s] Started service" % sdk.getAppName())
+
+    ### To Create & Manage Custom CLI commands 
+    cliP = sdk.getCliParser()
+
+    ### Construct Custom show Port Bandwidth Utilization commands
+    nxcmd = cliP.newShowCmd("show_port_bw_util_cmd", "port bw utilization [<port> | hit-threshold]")
+    nxcmd.updateKeyword("port", "Port Information")
+    nxcmd.updateKeyword("bw", "Port Bandwidth Information")
+    nxcmd.updateKeyword("utilization", "Port BW utilization in (%)")
+    nxcmd.updateParam("<port>", "Optional Filter Port Ex) Ethernet1/1", nx_sdk_py.P_INTERFACE)
+    nxcmd.updateKeyword("hit-threshold", "Display all ports exceeded the threshold")
+
+    ###
+    # Construct custom set Port Bandwidth Threshold config command.
+    #
+    # NOTE:
+    # Since we have already updated the Keyword information for
+    # "port" and "bw" we dont have to update for each and every cmd
+    # as its information will be automatically picked up for
+    # other commands.
+    ###
+    nxcmd1 = cliP.newConfigCmd("port_bw_threshold_cmd", "port bw threshold <threshold>")
+    nxcmd1.updateKeyword("threshold", "Port BW Threshold in (%)")
+
+    ### Setting additional attributes for input parameter <threshold>
+    ### <threshold> should take a value only between 1-100.  
+    int_attr = nx_sdk_py.cli_param_type_integer_attr()
+    int_attr.min_val = 1;
+    int_attr.max_val = 100;
+    nxcmd1.updateParam("<threshold>", "Threshold Limit. Default 50%", nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+
+    ### Add the command callback Handler.
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ### Add custom commands to NX CLI Parse Tree
+    cliP.addToParseTree()
+
+    ### blocking call to receive NX specific events
+    sdk.startEventLoop()
+
+    tmsg.event("Service Quitting...!")
+
+    ### [Required] Needed for graceful exit.
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+### main thread
+### Global Variables
+cliP = 0
+sdk  = 0
+tmsg = 0
+port_threshold = 50
+
+### create a new sdkThread to setup SDK service and handle events.
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread",0))
+sdk_thread.start()
+
+### creating a timer thread to poll and calculate port bandwidth utilization
+### percentage at regular intervals and log a syslog if a port goes
+### beyond the set threshold
+timer_thread = threading.Thread(target=timerThread, args=("timerThread",0))
+timer_thread.daemon = True
+
+### 
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.  
+###
+timer_thread.start()
+
+### Main thread is blocked until sdkThread exits. This keeps the
+### App running and listening to NX-OS events. 
+sdk_thread.join()

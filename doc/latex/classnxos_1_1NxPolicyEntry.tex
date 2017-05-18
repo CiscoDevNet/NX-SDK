@@ -1,0 +1,86 @@
+\hypertarget{classnxos_1_1NxPolicyEntry}{\section{nxos\-:\-:Nx\-Policy\-Entry Class Reference}
+\label{classnxos_1_1NxPolicyEntry}\index{nxos\-::\-Nx\-Policy\-Entry@{nxos\-::\-Nx\-Policy\-Entry}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_aa83d2eedce90e574cbdbbc8a2f00fc73}{virtual uint32\-\_\-t \hyperlink{classnxos_1_1NxPolicyEntry_aa83d2eedce90e574cbdbbc8a2f00fc73}{get\-Seq\-Id} ()=0}\label{classnxos_1_1NxPolicyEntry_aa83d2eedce90e574cbdbbc8a2f00fc73}
+
+\begin{DoxyCompactList}\small\item\em Get Policy Name. \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_abfe7c09520bbd436bf9f289597cb170e}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_abfe7c09520bbd436bf9f289597cb170e}{match\-Ip\-Src\-Filter} (bool add, const char $\ast$ip, const char $\ast$ipmask=\char`\"{}255.\-255.\-255.\-255\char`\"{})=0}\label{classnxos_1_1NxPolicyEntry_abfe7c09520bbd436bf9f289597cb170e}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match I\-P source Filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a664fe6dcebce6ece27b9ce4b860ffcb9}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_a664fe6dcebce6ece27b9ce4b860ffcb9}{match\-Ip\-Dest\-Filter} (bool add, char $\ast$ip, char $\ast$ip\-\_\-mask=\char`\"{}255.\-255.\-255.\-255\char`\"{})=0}\label{classnxos_1_1NxPolicyEntry_a664fe6dcebce6ece27b9ce4b860ffcb9}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match Ip dest Filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_ab1af9afebbd7a1a949d10cd95b33a237}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_ab1af9afebbd7a1a949d10cd95b33a237}{match\-Ip\-Prot\-Filter} (bool add, int min\-\_\-val, int max\-\_\-val=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_ab1af9afebbd7a1a949d10cd95b33a237}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match I\-P Protocol number filter. add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_acf14616a0b57bff227f5a3c57277c48a}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_acf14616a0b57bff227f5a3c57277c48a}{match\-Ttl\-Filter} (bool add, int min\-\_\-val, int max\-\_\-val=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_acf14616a0b57bff227f5a3c57277c48a}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match T\-T\-L filter. add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_aaa043aa913b28f4b1576ae5e1add81ab}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_aaa043aa913b28f4b1576ae5e1add81ab}{match\-Src\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_aaa043aa913b28f4b1576ae5e1add81ab}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match Source port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a6a1ae9efd3ffbaab1946ce742cdb2f20}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_a6a1ae9efd3ffbaab1946ce742cdb2f20}{match\-Dest\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_a6a1ae9efd3ffbaab1946ce742cdb2f20}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete match Destinatio port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_aa3ef0522441cb6395b3543afd086faf3}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_aa3ef0522441cb6395b3543afd086faf3}{match\-Tcp\-Flags\-Filter} (bool add, unsigned char flags, bool match\-\_\-all=true)=0}\label{classnxos_1_1NxPolicyEntry_aa3ef0522441cb6395b3543afd086faf3}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match T\-C\-P Flags filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_ab26e1b78924fb2c42823f2da5c6d85ae}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_ab26e1b78924fb2c42823f2da5c6d85ae}{match\-Tcp\-Src\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_ab26e1b78924fb2c42823f2da5c6d85ae}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match T\-C\-P Source port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_ad965b8081658f9f91373072aec22ecee}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_ad965b8081658f9f91373072aec22ecee}{match\-Tcp\-Dest\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_ad965b8081658f9f91373072aec22ecee}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match T\-C\-P Dest port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_ac201450e77bee830f56329360972a68c}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_ac201450e77bee830f56329360972a68c}{match\-Udp\-Src\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_ac201450e77bee830f56329360972a68c}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match U\-D\-P Source port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a7b9fbbc91e6050bae982a6271b2f2d34}{virtual bool \hyperlink{classnxos_1_1NxPolicyEntry_a7b9fbbc91e6050bae982a6271b2f2d34}{match\-Udp\-Dest\-Port\-Filter} (bool add, int min\-\_\-port, int max\-\_\-port=-\/1)=0}\label{classnxos_1_1NxPolicyEntry_a7b9fbbc91e6050bae982a6271b2f2d34}
+
+\begin{DoxyCompactList}\small\item\em Create/\-Delete Match U\-D\-P Dest port filter, add \-: T\-R\-U\-E (Create Filter), F\-A\-L\-S\-E (Delete Filter) \end{DoxyCompactList}\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a716f92ce413586e91c5f04539748ace9}{virtual bool {\bfseries has\-Class\-Map} ()=0}\label{classnxos_1_1NxPolicyEntry_a716f92ce413586e91c5f04539748ace9}
+
+\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_add42fa1d4e45ac4b05430e18af6665f1}{virtual bool {\bfseries has\-Actions} ()=0}\label{classnxos_1_1NxPolicyEntry_add42fa1d4e45ac4b05430e18af6665f1}
+
+\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a448986f34431e548f78a210ac64e6f9e}{virtual bool {\bfseries has\-Matches} ()=0}\label{classnxos_1_1NxPolicyEntry_a448986f34431e548f78a210ac64e6f9e}
+
+\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_a5825b0d18d1e7bda41e9c9da99457ea3}{virtual \hyperlink{classnxos_1_1NxClassMap}{Nx\-Class\-Map} $\ast$ {\bfseries get\-Class\-Map} ()=0}\label{classnxos_1_1NxPolicyEntry_a5825b0d18d1e7bda41e9c9da99457ea3}
+
+\item 
+virtual \hyperlink{classnxos_1_1NxPolicyAction}{Nx\-Policy\-Action} $\ast$ \hyperlink{classnxos_1_1NxPolicyEntry_a11f35f3e7d9ee30b5aa87c03417e0e22}{create\-Action} ()=0
+\item 
+\hypertarget{classnxos_1_1NxPolicyEntry_af5eafa3aaeed9c1c08395e38494a8ec3}{virtual \hyperlink{classnxos_1_1NxPolicyMap}{Nx\-Policy\-Map} $\ast$ \hyperlink{classnxos_1_1NxPolicyEntry_af5eafa3aaeed9c1c08395e38494a8ec3}{get\-Policy\-Handle} ()=0}\label{classnxos_1_1NxPolicyEntry_af5eafa3aaeed9c1c08395e38494a8ec3}
+
+\begin{DoxyCompactList}\small\item\em Get the policy handle. \end{DoxyCompactList}\item 
+virtual string \hyperlink{classnxos_1_1NxPolicyEntry_a5ed9b0a7ce040d757a69d5db25e7fc70}{get\-Status} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxPolicyEntry_a11f35f3e7d9ee30b5aa87c03417e0e22}{\index{nxos\-::\-Nx\-Policy\-Entry@{nxos\-::\-Nx\-Policy\-Entry}!create\-Action@{create\-Action}}
+\index{create\-Action@{create\-Action}!nxos::NxPolicyEntry@{nxos\-::\-Nx\-Policy\-Entry}}
+\subsubsection[{create\-Action}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Nx\-Policy\-Action}$\ast$ nxos\-::\-Nx\-Policy\-Entry\-::create\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyEntry_a11f35f3e7d9ee30b5aa87c03417e0e22}
+Creates/\-Gets a Match Inst/object to add a set of match criteria and respective values to match. \hypertarget{classnxos_1_1NxPolicyEntry_a5ed9b0a7ce040d757a69d5db25e7fc70}{\index{nxos\-::\-Nx\-Policy\-Entry@{nxos\-::\-Nx\-Policy\-Entry}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!nxos::NxPolicyEntry@{nxos\-::\-Nx\-Policy\-Entry}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual string nxos\-::\-Nx\-Policy\-Entry\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyEntry_a5ed9b0a7ce040d757a69d5db25e7fc70}
+Get the status of the Match. \begin{DoxyReturn}{Returns}
+returns a string with Success or Error string for failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk\-\_\-commit/infra/nxsdk/public/include/nx\-\_\-plc.\-h\end{DoxyCompactItemize}

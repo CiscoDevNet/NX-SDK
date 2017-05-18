@@ -1,0 +1,73 @@
+\hypertarget{classnxos_1_1NxPolicyAction}{\section{nxos\-:\-:Nx\-Policy\-Action Class Reference}
+\label{classnxos_1_1NxPolicyAction}\index{nxos\-::\-Nx\-Policy\-Action@{nxos\-::\-Nx\-Policy\-Action}}
+}
+
+
+{\ttfamily \#include $<$nx\-\_\-plc.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classnxos_1_1NxPolicyAction_a23e5f4e5257ac41a99de35d299ba73a6}{$\sim$\-Nx\-Policy\-Action} ()
+\item 
+virtual void \hyperlink{classnxos_1_1NxPolicyAction_aaa53c4ff9ea907be4af86e27b9cd0895}{set\-Value} (void $\ast$val, int len)=0
+\item 
+\hypertarget{classnxos_1_1NxPolicyAction_a46e025d5e284e55d7131210a53623512}{virtual void {\bfseries set\-Datapath\-Divert} (bool stateless)=0}\label{classnxos_1_1NxPolicyAction_a46e025d5e284e55d7131210a53623512}
+
+\item 
+\hypertarget{classnxos_1_1NxPolicyAction_a6a673e1c4cad646c769175372df38f54}{virtual void {\bfseries set\-Datapath\-Copy} (uint32\-\_\-t sample\-\_\-rate, uint32\-\_\-t sample\-\_\-size, bool random)=0}\label{classnxos_1_1NxPolicyAction_a6a673e1c4cad646c769175372df38f54}
+
+\item 
+\hypertarget{classnxos_1_1NxPolicyAction_a953d11dabc5f79443dbb8c64e6366192}{virtual void {\bfseries set\-Datapath\-Drop} ()=0}\label{classnxos_1_1NxPolicyAction_a953d11dabc5f79443dbb8c64e6366192}
+
+\item 
+virtual void \hyperlink{classnxos_1_1NxPolicyAction_a76cafea458f282b9d63c7d92f0b00059}{set\-Oper} (nx\-\_\-plc\-\_\-action\-\_\-oper\-\_\-e oper)=0
+\item 
+virtual string \hyperlink{classnxos_1_1NxPolicyAction_abbe57090a2f35b741274c96a075405ae}{get\-Status} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Attributes common to all actions. Attributes common to all action. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classnxos_1_1NxPolicyAction_a23e5f4e5257ac41a99de35d299ba73a6}{\index{nxos\-::\-Nx\-Policy\-Action@{nxos\-::\-Nx\-Policy\-Action}!$\sim$\-Nx\-Policy\-Action@{$\sim$\-Nx\-Policy\-Action}}
+\index{$\sim$\-Nx\-Policy\-Action@{$\sim$\-Nx\-Policy\-Action}!nxos::NxPolicyAction@{nxos\-::\-Nx\-Policy\-Action}}
+\subsubsection[{$\sim$\-Nx\-Policy\-Action}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos\-::\-Nx\-Policy\-Action\-::$\sim$\-Nx\-Policy\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classnxos_1_1NxPolicyAction_a23e5f4e5257ac41a99de35d299ba73a6}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxPolicyAction_abbe57090a2f35b741274c96a075405ae}{\index{nxos\-::\-Nx\-Policy\-Action@{nxos\-::\-Nx\-Policy\-Action}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!nxos::NxPolicyAction@{nxos\-::\-Nx\-Policy\-Action}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual string nxos\-::\-Nx\-Policy\-Action\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyAction_abbe57090a2f35b741274c96a075405ae}
+Get the status of the Match. \begin{DoxyReturn}{Returns}
+returns a string with Success or Error string for failure. 
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxPolicyAction_a76cafea458f282b9d63c7d92f0b00059}{\index{nxos\-::\-Nx\-Policy\-Action@{nxos\-::\-Nx\-Policy\-Action}!set\-Oper@{set\-Oper}}
+\index{set\-Oper@{set\-Oper}!nxos::NxPolicyAction@{nxos\-::\-Nx\-Policy\-Action}}
+\subsubsection[{set\-Oper}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Policy\-Action\-::set\-Oper (
+\begin{DoxyParamCaption}
+\item[{nx\-\_\-plc\-\_\-action\-\_\-oper\-\_\-e}]{oper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyAction_a76cafea458f282b9d63c7d92f0b00059}
+Match operator for comparing a single value of a match with that in the packet. Default\-: \#\-N\-X\-\_\-\-P\-L\-C\-\_\-\-M\-A\-T\-C\-H\-\_\-\-O\-P\-E\-R\-\_\-\-E\-Q \hypertarget{classnxos_1_1NxPolicyAction_aaa53c4ff9ea907be4af86e27b9cd0895}{\index{nxos\-::\-Nx\-Policy\-Action@{nxos\-::\-Nx\-Policy\-Action}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!nxos::NxPolicyAction@{nxos\-::\-Nx\-Policy\-Action}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos\-::\-Nx\-Policy\-Action\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyAction_aaa53c4ff9ea907be4af86e27b9cd0895}
+Value of the match; refer to \#xos\-\_\-plc\-\_\-match\-\_\-type\-\_\-e for the possible C types of values. Set by X\-O\-S and immutable. N\-U\-L\-L with xos\-\_\-plc\-\_\-match\-\_\-remove\-\_\-all\-\_\-of\-\_\-type(). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk\-\_\-commit/infra/nxsdk/public/include/nx\-\_\-plc.\-h\end{DoxyCompactItemize}

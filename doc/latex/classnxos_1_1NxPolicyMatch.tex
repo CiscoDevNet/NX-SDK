@@ -1,0 +1,54 @@
+\hypertarget{classnxos_1_1NxPolicyMatch}{\section{nxos\-:\-:Nx\-Policy\-Match Class Reference}
+\label{classnxos_1_1NxPolicyMatch}\index{nxos\-::\-Nx\-Policy\-Match@{nxos\-::\-Nx\-Policy\-Match}}
+}
+
+
+{\ttfamily \#include $<$nx\-\_\-plc.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classnxos_1_1NxPolicyMatch_ae4556f75ee7c403fdf6ff44c7579c295}{$\sim$\-Nx\-Policy\-Match} ()
+\item 
+virtual bool \hyperlink{classnxos_1_1NxPolicyMatch_a8b8384494246c5303029985ec3fb6bdb}{get\-Matched} ()=0
+\item 
+virtual string \hyperlink{classnxos_1_1NxPolicyMatch_acf71b7c0e00a9e13ad5bde10b5450aaa}{get\-Status} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A policy Entry can contain a list of match and action filters. Policy sequence class to hold information about a set of match and action filters identified by a sequence. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classnxos_1_1NxPolicyMatch_ae4556f75ee7c403fdf6ff44c7579c295}{\index{nxos\-::\-Nx\-Policy\-Match@{nxos\-::\-Nx\-Policy\-Match}!$\sim$\-Nx\-Policy\-Match@{$\sim$\-Nx\-Policy\-Match}}
+\index{$\sim$\-Nx\-Policy\-Match@{$\sim$\-Nx\-Policy\-Match}!nxos::NxPolicyMatch@{nxos\-::\-Nx\-Policy\-Match}}
+\subsubsection[{$\sim$\-Nx\-Policy\-Match}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos\-::\-Nx\-Policy\-Match\-::$\sim$\-Nx\-Policy\-Match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classnxos_1_1NxPolicyMatch_ae4556f75ee7c403fdf6ff44c7579c295}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxPolicyMatch_a8b8384494246c5303029985ec3fb6bdb}{\index{nxos\-::\-Nx\-Policy\-Match@{nxos\-::\-Nx\-Policy\-Match}!get\-Matched@{get\-Matched}}
+\index{get\-Matched@{get\-Matched}!nxos::NxPolicyMatch@{nxos\-::\-Nx\-Policy\-Match}}
+\subsubsection[{get\-Matched}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool nxos\-::\-Nx\-Policy\-Match\-::get\-Matched (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyMatch_a8b8384494246c5303029985ec3fb6bdb}
+Relevant only when M\-A\-T\-C\-H\-\_\-\-A\-N\-Y opetion is set. When Set to T\-R\-U\-E it indicates which match filter is hit in a multi-\/match filters within a given sequence. \hypertarget{classnxos_1_1NxPolicyMatch_acf71b7c0e00a9e13ad5bde10b5450aaa}{\index{nxos\-::\-Nx\-Policy\-Match@{nxos\-::\-Nx\-Policy\-Match}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!nxos::NxPolicyMatch@{nxos\-::\-Nx\-Policy\-Match}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual string nxos\-::\-Nx\-Policy\-Match\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classnxos_1_1NxPolicyMatch_acf71b7c0e00a9e13ad5bde10b5450aaa}
+Get the status of the Match. \begin{DoxyReturn}{Returns}
+returns a string with Success or Error string for failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk\-\_\-commit/infra/nxsdk/public/include/nx\-\_\-plc.\-h\end{DoxyCompactItemize}

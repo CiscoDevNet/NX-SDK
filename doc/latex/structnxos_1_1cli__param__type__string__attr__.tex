@@ -1,0 +1,66 @@
+\hypertarget{structnxos_1_1cli__param__type__string__attr__}{
+\section{nxos::cli\_\-param\_\-type\_\-string\_\-attr\_\- Struct Reference}
+\label{structnxos_1_1cli__param__type__string__attr__}\index{nxos::cli\_\-param\_\-type\_\-string\_\-attr\_\-@{nxos::cli\_\-param\_\-type\_\-string\_\-attr\_\-}}
+}
+
+
+Specifies that the type of the CLI input parameter is string.  
+
+
+{\ttfamily \#include $<$nx\_\-cli.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}{
+int {\bfseries length}}
+\label{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}
+
+\item 
+\hypertarget{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}{
+char \hyperlink{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}{regex\_\-pattern} \mbox{[}256\mbox{]}}
+\label{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}
+
+\begin{DoxyCompactList}\small\item\em Default is 256. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specifies that the type of the CLI input parameter is string. Matching param type is P\_\-STRING. When used in updateParam context: 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em length}]Length of the imput parameter string. \item[\mbox{$\leftarrow$} {\em regex\_\-pattern}]Regular expression for the input parameter\end{DoxyParams}
+Usage: If you need to create a CLI which will take a string with max length 25 and matches a regex pattern \char`\"{}$^\wedge$\mbox{[}a-\/zA-\/Z\mbox{]}+\$\char`\"{}
+
+CLI: \$appname encryption-\/text ? WORD Enter Encrypted text (Max Size 25)
+
+
+\begin{DoxyCode}
+ {.cpp}
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       cliP = sdk->getCliParser();
+       nxos::cli_param_type_string_attr str_attr = {0};
+       str_attr.length = 25;
+       strcpy(str_attr.regex_pattern, pattern);
+       cmd = cliP->newConfigCmd("set_encryption_text_cmd",
+                                "encryption-text <text>");
+       cmd->updateParam("<text>", "Enter Encrypted text", nxos::P_STRING,
+                        (void *)&str_attr, sizeof(str_attr));
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+ {.py}
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       cliP = sdk.getCliParser()
+       str_attr = nx_sdk_py.cli_param_type_string_attr()
+       str_attr.length = 25;
+       str_attr.regex_pattern = "^[a-zA-Z]+$";
+       cmd = cliP.newConfigCmd("set_encryption_text_cmd", 
+                               "encryption-text <text>")
+       cmd.updateParam("<text>", "Encrypted text", nxos::P_STRING,
+                       str_attr, len(str_attr))
+\end{DoxyCode}
+ 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/nxsdk/include/types/nx\_\-cli.h\end{DoxyCompactItemize}
