@@ -46,17 +46,17 @@ This github provides NX-OS SDK toolkit for custom application development in you
 
 # Documentation
 
-For detailed description and directory structure of Cisco NX-OS Infra SDK toolkit, refer to description.md
+For detailed description and directory structure of Cisco NX-OS SDK toolkit, refer to description.md
 
 # Usage
 
 Detailed usage of NX-OS SDK:
-  - For C++ custom Application development, public Classes and APIs to be used are available in <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/include">include/</a>. Its description and usage are available 
-    in <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/doc/html/annotated.html">doc/html/annotated.html</a> (doxygen generated). Please do a git pull and open
-    the doxygen generated html page. Refer to <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/examples">examples/</a> for sample C++ Apps.
+  - For C++ custom Application development, public Classes and APIs to be used are available in <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>. Its description and usage are available 
+    in <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doc/html/annotated.html</a> (doxygen generated). Please do a git pull and open
+    the doxygen generated html page. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a> for sample C++ Apps.
   - Python and other language bindings will be auto-generated from the above classes and APIs using SWIG. 
     Only Python language bindings for NX-OS SDK will be supported in Version 1.0
-    Refer to <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/python/examples">python/examples</a> for python Apps leveraging the NX-OS SDK functionalities for Python custom App development.
+    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples</a> for python Apps leveraging the NX-OS SDK functionalities for Python custom App development.
 
 # Release 
 
@@ -103,12 +103,16 @@ Detailed usage of NX-OS SDK:
 
 ### a) ENXOS SDK Build Environment [Optional]
 
-  - NOTE: Mandatory for Custom Apps to be started in VSH.
+  - NOTE: Mandatory for Custom Applications to be started in VSH.
   - ENXOS SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
     Pull the Container version of your choice using.
 
     ```
       docker pull dockercisco/nxsdk
+    ```
+  - ENXOS SDK build environment is already installed in 
+    ```
+      $PWD/enxos-sdk
     ```
     
   - Source 32-bit environment for your application 
@@ -119,15 +123,18 @@ Detailed usage of NX-OS SDK:
       source environment-setup-x86-wrsmllib32-linux 
     ```   
 
-### b) Get NX-OS SDK toolkit
-  - git clone NX-OS SDK.
-
+### b) Get NX-SDK toolkit
+  - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK.
     ```
-      git clone https://github.com/CiscoDevNet/NX-SDK.git
-      
-      This will create,
-         $PWD/NX-SDK
-         ls (Makefile  README.md  doc  examples  include  python  rpm  src  stubs)
+      export NXSDK_ROOT=/NX-SDK
+      cd $NXSDK_ROOT
+      ls (Makefile  README.md  doc  examples  include  python  rpm  src  stubs)
+    ```
+     
+  - NOTE: To get latest version of NX-SDK do git pull of NX-SDK.
+    ```
+      cd /NX-SDK
+      git pull
     ```
   - Refer to API usage and sample applications and develop your application based on your needs.
 
@@ -166,7 +173,7 @@ Detailed usage of NX-OS SDK:
     ```
       rpm -ba $RPM_ROOT/SPECS/<app>.spec
     ```
-  - If RPM build was successful then RPM file will be generated in 
+  - If RPM build was successful then RPM package will be generated in 
     
     ```
       ls $RPM_ROOT/RPMS/x86_64/
