@@ -1,5 +1,5 @@
 
-### To build an RPM package for a custom App using NXSDK Infra 
+### To build an RPM package for a custom App using NX-SDK 
 ### Just update the following information.
 
 ### Name of the binary built for the Application
