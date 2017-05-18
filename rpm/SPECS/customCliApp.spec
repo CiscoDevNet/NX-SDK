@@ -9,7 +9,7 @@
 %define APP_DESC      "Create Custom Cli C++ Application RPM package"
 
 ### Path where nxsdk is git cloned to. (path/nxsdk)
-%define NXSDK_ROOT    /nxsdk
+%define NXSDK_ROOT    /NX-SDK
 
 ### Source of the Application
 %define APP_SOURCE    %{NXSDK_ROOT}/examples
