@@ -4,17 +4,17 @@
 
 # Table of Contents
 
-  - [Cisco NX-OS Infra SDK](#cisco-nxos-infra-sdk)
+  - [Cisco NX-OS SDK](#cisco-nxos-sdk)
   - [Documentation](#documentation)
   - [Usage](#usage)
   - [Release](#release)
     * [Version V1.0](#version-v10)
     * [Future Versions](#future-versions)
-  - [Custom Application Development using NXOS Infra SDK Requirements](#custom-application-development-using-nxos-infra-sdk-requirements)
-  - [Custom Application Development Flow using NXOS Infra SDK](#custom-application-development-flow-using-nxos-infra-sdk)
-    * [1. Install NxOS Infra SDK](#1-install-nxos-infra-sdk)
+  - [Custom Application Development using NX-OS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
+  - [Custom Application Development Flow using NX-OS SDK](#custom-application-development-flow-using-nxos-sdk)
+    * [1. Install NX-OS SDK](#1-install-nxos-sdk)
       + [a) ENXOS SDK Build Environment [Optional]](#a-enxos-sdk-build-environment-optional)
-      + [b) Get NXOS Infra SDK toolkit](#b-get-nxos-infra-sdk-toolkit)
+      + [b) Get NX-OS SDK toolkit](#b-get-nxos-sdk-toolkit)
     * [2. Building Custom Applications](#2-building-custom-applications)
     * [3. Unit Testing Custom Application](#3-unit-testing-custom-application)
     * [4. Packaging Custom Application](#4-packaging-custom-application)
@@ -24,24 +24,24 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Python Application created using NxSDK:](#11-sample-python-application-created-using-nxsdk-)
+    * [11. Sample Python Application created using NX-SDK:](#11-sample-python-application-created-using-nxsdk-)
 
 
-# Cisco NX-OS Infra SDK
+# Cisco NX-OS SDK
 
-Cisco NX-OS Infra SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infra 
+Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infra 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
-It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs. NX-OS infra SDK offers various functionalities like ability to 
+It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs. NX-OS SDK offers various functionalities like ability to 
 generate custom CLIs, Syslogs, Event manager, Inter-Application communication, HA, Route Manager and much more.
 
-NX-OS infra SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infra being used.
-Hence, its easy and simple to change infra without affecting the applications. Hence, NX-OS Infra SDK can be used for
+NX-OS SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infra being used.
+Hence, its easy and simple to change infra without affecting the applications. Hence, NX-OS SDK can be used for
 developing native Cisco Applications as well. 
 
 It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS infra SDK hence custom applications 
 can be developed and built in any language of users choice.
 
-This github provides NX-OS infra SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infra.
+This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infra.
 
 # Documentation
 
@@ -49,19 +49,19 @@ For detailed description and directory structure of Cisco NX-OS Infra SDK toolki
 
 # Usage
 
-Detailed usage of NX-OS Infra SDK:
+Detailed usage of NX-OS SDK:
   - For C++ custom Application development, public Classes and APIs to be used are available in <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/include">include/</a>. Its description and usage are available 
     in <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/doc/html/annotated.html">doc/html/annotated.html</a> (doxygen generated). Please do a git pull and open
     the doxygen generated html page. Refer to <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/examples">examples/</a> for sample C++ Apps.
   - Python and other language bindings will be auto-generated from the above classes and APIs using SWIG. 
-    Only Python language bindings for NX-OS Infra SDK will be supported in Version 1.
-    Refer to <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/python/examples">python/examples</a> for python Apps leveraging the NX-OS Infra SDK functionalities for Python custom App development.
+    Only Python language bindings for NX-OS SDK will be supported in Version 1.0
+    Refer to <a href="http://gitlab.cisco.com/sathsrin/nxsdk/tree/master/python/examples">python/examples</a> for python Apps leveraging the NX-OS SDK functionalities for Python custom App development.
 
 # Release 
 
 ## Version V1.0
   - NX-OS Infra SDK will be first available on N9K switches as part of F release.
-  - Ability to develop C++ and Python custom application using NX-OS Infra SDK.
+  - Ability to develop C++ and Python custom application using NX-OS SDK.
   - Ability for custom applications to generate custom CLIs (config and show commands).
   - Ability to generate custom Syslogs, Events & Error history messages.
   - Ability to start/stop C++ and Python custom Applications from VSH just like any other native Nexus applications (like feature bgp)
@@ -77,9 +77,9 @@ Detailed usage of NX-OS Infra SDK:
   - High Availability
   - Security
 
-# Custom Application Development using NXOS Infra SDK Requirements
+# Custom Application Development using NX-OS SDK Requirements
   - Linux (Currently supported platforms)
-  - ENXOS SDK (For best results, build the App using NXOS Infra SDK as RPM package in ENXOS SDK. 
+  - ENXOS SDK (For best results, build the App using NX-OS SDK as RPM package in ENXOS SDK. 
     Docker container with ENXOS SDK will be provided).
     ```
       For Apps started in BASH,
@@ -96,9 +96,9 @@ Detailed usage of NX-OS Infra SDK:
             Hence, EXOS SDK build environment is mandatory for Apps to be started in VSH.
     ```        
 
-#  Custom Application Development Flow using NX-OS Infra SDK
+#  Custom Application Development Flow using NX-OS SDK
 
-## 1. Install NX-OS Infra SDK
+## 1. Install NX-OS SDK
 
 ### a) ENXOS SDK Build Environment [Optional]
 
@@ -110,20 +110,6 @@ Detailed usage of NX-OS Infra SDK:
       docker pull dockercisco/nxsdk
     ```
     
-  - [For internal use only] Get Docker image internally from
-
-    ```
-      Docker image based off of Ubuntu14.04 with ENXOS SDK installed - /ws/sathsrin-sjc/enxos_sdk_ubuntu14.04.tar
-      Docker image based off of Centos6.7 with ENXOS SDK installed - /ws/vsparaci-sjc/enxos_sdk_centos6.7.tar
-    ```
-    
-  - [For internal use only] Import using
-
-    ```
-      docker import <docker-image.tar>
-      docker run -it <docker-image> /bin/bash
-    ```
-    
   - Source 32-bit environment for your application 
  
     ```
@@ -132,12 +118,11 @@ Detailed usage of NX-OS Infra SDK:
       source environment-setup-x86-wrsmllib32-linux 
     ```   
 
-### b) Get NX-OS Infra SDK toolkit
-  - git clone NX-OS infra SDK.
+### b) Get NX-OS SDK toolkit
+  - git clone NX-OS SDK.
 
     ```
       git clone https://github.com/CiscoDevNet/NX-SDK.git
-      [Internal Use Only] git clone http://gitlab.cisco.com/sathsrin/nxsdk.git
       
       This will create,
          $PWD/NX-SDK
@@ -147,7 +132,7 @@ Detailed usage of NX-OS Infra SDK:
 
 ## 2. Building Custom Applications
   - C++ Application 
-    - To build C++ custom application, add your application to the <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/Makefile">Makefile</a> just like example apps <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/examples/customCliApp.cpp">(example/customCliApp.cpp)</a>
+    - To build C++ custom application, add your application to the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/Makefile">Makefile</a> just like example apps <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">(example/customCliApp.cpp)</a>
       and follow the instructions in the Makefile.
     - Make sure the App builds without any errors using
 
@@ -172,9 +157,9 @@ Detailed usage of NX-OS Infra SDK:
       ls $RPM_ROOT (BUILD  RPMS  SOURCES  SPECS  SRPMS)
       vi $RPM_ROOT/SPECS/<app>.spec
     ``` 
-    Refer to the <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> file for the sample App <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/examples/customCliApp.cpp">examples/customCliApp.cpp</a>
+    Refer to the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> file for the sample App <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">examples/customCliApp.cpp</a>
     
-  - Follow the instructions mentioned in the <a href="http://gitlab.cisco.com/sathsrin/nxsdk/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> to build a spec file for your Application.
+  - Follow the instructions mentioned in the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> to build a spec file for your Application.
   - To build an RPM package use
  
     ```
@@ -262,7 +247,7 @@ Detailed usage of NX-OS Infra SDK:
         
         bash# /isan/bin/python <app-full-path> &
         
-        NOTE: To run the python App using NXOS Infra SDk in BASH, use /isan/bin/python to run the app as it sets the 
+        NOTE: To run the python App using NX-OS SDk in BASH, use /isan/bin/python to run the app as it sets the 
               necessary environment needed to run python Apps in BASH.
       ```
 
