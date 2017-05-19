@@ -25,8 +25,8 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Python Application created using NX-SDK:](#11-sample-python-application-created-using-nxsdk-)
-
+    * [11. Sample Python Application created using NXSDK](#11-sample-python-application-created-using-nxsdk)
+    * [12. Notes](#12-notes)
 
 # Cisco NX-OS SDK
 
@@ -95,6 +95,8 @@ Detailed usage of NX-OS SDK:
           - To start Custom Apps from VSH, it requires the Apps to be installed through RPM package. Hence its mandatory for the Apps 
             to be built as an RPM package in ENXOS SDK for VSH apps to persist across reloads and System switchover. 
             Hence, EXOS SDK build environment is mandatory for Apps to be started in VSH.
+      
+      NOTE: Please ensure that the name of the custom application does not collide with any existing Native Nexus applications.
     ```        
 
 #  Custom Application Development Flow using NXOS SDK
@@ -331,8 +333,8 @@ Detailed usage of NX-OS SDK:
   - Best practice is to verify your Application by running it in BASH first and then integrate your App in VSH
     for seamless integration into NXOS along with other Nexus native applications.
 
-## 11. Sample Python Application created using NxSDK:
-  - pbwApp: To Monitor Port Tx & Rx Bandwidth Utilization %
+## 11. Sample Python Application created using NXSDK
+  - pbwMonitor: To Monitor Port Tx & Rx Bandwidth Utilization %
     ```
       switch(config)# sh run nxsdk 
 
@@ -342,7 +344,7 @@ Detailed usage of NX-OS SDK:
       version 7.0(3)I6(1)
       feature nxsdk
 
-      nxsdk service-name /isan/bin/pbwApp
+      nxsdk service-name /isan/bin/pbwMonitor
 
 
       switch(config)# sh nxsdk internal service 
@@ -353,13 +355,13 @@ Detailed usage of NX-OS SDK:
 
       Service-name              Base App        Started(PID)    Version    RPM Package
       ------------------------- --------------- --------------- ---------- --------------------
-      /isan/bin/pbwApp          nxsdk_app1      VSH(3459)       1.0        pbwApp-1.0-7.0.3.I6.1.x86_64
+      /isan/bin/pbwMonitor      nxsdk_app1      VSH(3459)       1.0        pbwApp-1.0-7.0.3.I6.1.x86_64
       
-      switch(config)# sh pbwApp nxsdk state 
+      switch(config)# sh pbwMonitor nxsdk state 
 
       Custom App State infomration
       --------------------------------
-      App Name                       : pbwApp(NXOS Port BW Percentage Utilzation Python App)
+      App Name                       : pbwMonitor(NXOS Port BW Percentage Utilzation Python App)
       Nexus Mapped App Name          : nxsdk_app1
       Uuid                           : 1379 (VSH)
       Sup State                      : Active
@@ -369,8 +371,8 @@ Detailed usage of NX-OS SDK:
       Custom CLI Cmd State infomration
       --------------------------------
 
-      Name                           : pbwApp_show_port_bw_util_cmd
-      Syntax                         : show pbwApp port bw utilization [<port>]
+      Name                           : pbwMonitor_show_port_bw_util_cmd
+      Syntax                         : show pbwMonitor port bw utilization [<port>]
       Mode                           : Show
       State                          : ADDED_TO_PARSER
 
@@ -389,7 +391,7 @@ Detailed usage of NX-OS SDK:
         runtime_config                 | In-Use     | 0
         startup_config                 | In-Use     | 0
 
-      switch(config)# sh pbwApp port bw utilization ?
+      switch(config)# sh pbwMonitor port bw utilization ?
       *** No matching command found in current mode, matching in (exec) mode ***
       <CR>          
       >             Redirect it to a file
@@ -399,7 +401,7 @@ Detailed usage of NX-OS SDK:
       port-channel  Port Channel interface
       |             Pipe command output to filter
 
-      switch(config)# sh pbwApp port bw utilization 
+      switch(config)# sh pbwMonitor port bw utilization 
       Interface       Bw (Rx/Tx Sec Rate)  Tx_BW percentage   RX_BW percentage  
       --------------- -------------------- ------------------ ------------------
       Ethernet1/1     10 Gbps (30/30)                   10.00               17.23
@@ -408,11 +410,25 @@ Detailed usage of NX-OS SDK:
       Ethernet1/51    40 Gbps (30/30)                    5.00               1.00
       Ethernet1/52    40 Gbps (30/30)                    2.00               0.00
 
-      switch(config)# sh pbwApp port bw utilization e1/1
+      switch(config)# sh pbwMonitor port bw utilization e1/1
       Interface       Bw (Rx/Tx Sec Rate)  Tx_BW percentage   RX_BW percentage  
       --------------- -------------------- ------------------ ------------------
       Ethernet1/1     10 Gbps (30/30)                   9.00               15.23
     ```
+
+## 12. Notes
+   - Ensure that the name of the custom application does not collide with any existing Native Nexus applications.
+   - For custom applications to be started in VSH, please name the application as one word containing alphabets. 
+   - ENXOS Built Environment is Mandatory for Custom Applications to be started in VSH.
+   - ENXOS SDK docker image already has NX-SDK V1.0 installed in (/NX-SDK). To get latest versions do a git pull.
+   - Soon a script will be provided to auto-generate RPM package for custom applications to be started in VSH.
+   - On Dual-Sup make sure that RPM package is installed on both Active and Standby Supervisors. If not installed on standby, then on 
+     system switchover, custom Applications may not be started.
+   - An NX-SDK csutom Application can be started from VSH only if it is installed through RPM Package.
+   - For NX-SDK Python application to be started in VSH, place ```#!/isan/bin/nxpython``` in the first line of python application.
+   - For NX-SDK Python application to be started in BASH, use ```/isan/bin/python``` to run the application as it sets the 
+     necessary environment needed to run python Apps in BASH.     
+     
 
 </content>
   <tabTrigger>readme</tabTrigger>
