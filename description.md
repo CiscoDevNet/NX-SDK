@@ -32,7 +32,7 @@
         custom Applications showcasing the usage of NX-SDK. </p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm">rpm/</a>: <p align="justify"> To start/stop custom applications from VSH, it needs to be built/packaged
      as an RPM package by using the provided ENXOS SDK docker container. It contains the SPEC file for sample example applications and its associated RPMS.
-     Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#4-packaging-custom-application">RPM packaging instructions</a> for more details.</p>
+     Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#4-packaging-custom-application">RPM packaging instructions</a> for more details on how to package your custom application as an RPM package.</p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/Makefile">Makefile</a>: <p align="justify"> To build your C++ custom Applications using NX-SDK and
       to dynamically link to the right NX-SDK library so that when the C++ App is run inside the Nexus switch it can gain access to NXOS Infrastructure.
       Add your C++ custom Application to the Makefile just like Sample example C++ applications.
