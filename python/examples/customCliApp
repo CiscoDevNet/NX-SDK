@@ -1,7 +1,7 @@
 #!/isan/bin/nxpython
 
 ################################################################
-# File:   customCliApp.py
+# File:   customCliApp
 #
 # Description:
 #    A Sample Python App to generate custom CLI of users choice
