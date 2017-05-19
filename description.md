@@ -1,4 +1,4 @@
-# NXSDK Custom Application Development ToolKit
+# NX-SDK Custom Application Development ToolKit
 
  - NXSDK toolkit contains:
    ```
@@ -7,10 +7,10 @@
      ls (Makefile doc  examples  include  python  rpm  src  stubs)
    ```
 
-## Custom Application Development Flow
+## NX-SDK Custom Application Development Flow
 ![myimage-alt-tag](https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/NXSDK_App_Dev_Flow.jpg)
 
-## Directory Structure
+## NX-SDK toolkit Directory Structure
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>: <p align="justify"> Header files to be included and the abstract interfaces 
          to be used to develop custom applications in order to gain access to the supported NX-OS infrastructure. </p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/doc">doc/</a>:       <p align="justify"> Doxygen generated html document for public APIs and its usage
