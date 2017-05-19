@@ -1,7 +1,7 @@
 <snippet>
   <content>
   
-# NX-SDK
+# NX-SDK V1.0
 
 # Table of Contents
 
@@ -30,19 +30,19 @@
 
 # Cisco NX-OS SDK
 
-Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infra 
+Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
-It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs. NX-OS SDK offers various functionalities like ability to 
+It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NX-OS SDK offers various functionalities like ability to 
 generate custom CLIs, Syslogs, Event manager, Inter-Application communication, HA, Route Manager and much more.
 
-NX-OS SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infra being used.
+NX-OS SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
 Hence, its easy and simple to change infra without affecting the applications. Hence, NX-OS SDK can be used for
 developing native Cisco Applications as well. 
 
 It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS SDK hence custom applications 
 can be developed and built in any language of users choice.
 
-This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infra.
+This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
 
 # Documentation
 
