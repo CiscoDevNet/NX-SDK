@@ -8,7 +8,7 @@
 ### Description of the Applicaiton
 %define APP_DESC      "Create Custom Cli C++ Application RPM package"
 
-### Path where nxsdk is git cloned to. (path/nxsdk)
+### Path where nxsdk is git cloned to. (path/NX-SDK). Default location is /Nx-SDK
 %define NXSDK_ROOT    /NX-SDK
 
 ### Source of the Application
@@ -27,9 +27,6 @@
 %define TARGET_DIR    /isan/bin
 %define CURR_DIR      %(pwd)
 
-NXOSRPMTYPE: feature
-NXOSRPMPOSTACTION: restart
-NXOSRPMOPERSTAGE: bootup-post-sysmgr
 Summary: Custom Application
 Name: %{APP_NAME}
 Version: 1.0
