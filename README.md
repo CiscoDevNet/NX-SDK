@@ -11,9 +11,9 @@
   - [Release](#release)
     * [Version V1.0](#version-v10)
     * [Future Versions](#future-versions)
-  - [Custom Application Development using NX-OS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
-  - [Custom Application Development Flow using NX-OS SDK](#custom-application-development-flow-using-nxos-sdk)
-    * [1. Install NX-OS SDK](#1-install-nxos-sdk)
+  - [Custom Application Development using NXOS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
+  - [Custom Application Development Flow using NXOS SDK](#custom-application-development-flow-using-nxos-sdk)
+    * [1. Install NXOS SDK](#1-install-nxos-sdk)
       + [a) ENXOS SDK Build Environment [Optional]](#a-enxos-sdk-build-environment-optional)
       + [b) Get NX-OS SDK toolkit](#b-get-nxos-sdk-toolkit)
     * [2. Building Custom Applications](#2-building-custom-applications)
@@ -78,7 +78,7 @@ Detailed usage of NX-OS SDK:
   - High Availability
   - Security
 
-# Custom Application Development using NX-OS SDK Requirements
+# Custom Application Development using NXOS SDK Requirements
   - Linux (Currently supported platforms)
   - ENXOS SDK (For best results, build the App using NX-OS SDK as RPM package in ENXOS SDK. 
     Docker container with ENXOS SDK will be provided).
@@ -97,9 +97,9 @@ Detailed usage of NX-OS SDK:
             Hence, EXOS SDK build environment is mandatory for Apps to be started in VSH.
     ```        
 
-#  Custom Application Development Flow using NX-OS SDK
+#  Custom Application Development Flow using NXOS SDK
 
-## 1. Install NX-OS SDK
+## 1. Install NXOS SDK
 
 ### a) ENXOS SDK Build Environment [Optional]
 
