@@ -429,7 +429,7 @@ Detailed usage of NX-OS SDK:
    - For NX-SDK Python application to be started in BASH, use ```/isan/bin/python``` to run the application as it sets the 
      necessary environment needed to run python Apps in BASH.     
      
-
 </content>
+
   <tabTrigger>readme</tabTrigger>
 </snippet>
