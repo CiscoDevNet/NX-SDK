@@ -13,10 +13,10 @@
 ## Directory Structure
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>: <p align="justify"> Header files to be included and the abstract interfaces 
          to be used to develop custom applications in order to gain access to the supported NX-OS infrastructure. </p>
- - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/doc">doc/</a>:       <p align="justify"> Doxygen generated html document for APIs and its usage
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/doc">doc/</a>:       <p align="justify"> Doxygen generated html document for public APIs and its usage
          are located at <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doxygen-html</a>. Do a git clone 
          of NX-SDK and open <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doxygen-html</a> locally to get the list 
-         of APIs and its usage.</p>
+         of exported public APIs and its usage.</p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/src">src/</a>: <p align="justify"> Add your new custom applications here.</p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/stubs">stubs/</a>: <p align="justify"> C++ Stub implementation for the interfaces defined in include/.
          When the C++ custom application is built in the development environment, the stubs are then compiled and are then dynamically linked to
