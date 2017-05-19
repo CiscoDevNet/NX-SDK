@@ -30,6 +30,7 @@
 
 # Cisco NXOS SDK
 
+<p align="justify">
 Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
 It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NX-OS SDK offers various functionalities like ability to 
@@ -43,6 +44,7 @@ It is built using C++ language. Other language (python, go, ruby etc) bindings w
 can be developed and built in any language of users choice.
 
 This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
+</p>
 
 # Documentation
 
