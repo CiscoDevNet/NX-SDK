@@ -63,7 +63,7 @@ Detailed usage of NX-OS SDK:
 ## Version V1.0
   - NX-OS SDK will be first available on N9K switches as part of F release.
   - Ability to develop C++ and Python custom application using NX-OS SDK.
-  - Ability for custom applications to generate custom CLIs (config and show commands).
+  - Ability for custom applications to generate custom CLIs (config and show commands) and get callbacks.
   - Ability to generate custom Syslogs, Events & Error history messages.
   - Ability to start/stop C++ and Python custom Applications from VSH just like any other native Nexus applications (like feature bgp)
     thereby providing HA capability for custom applications. 
