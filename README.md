@@ -39,7 +39,7 @@ NX-OS SDK provides Abstraction/plugin Library Layer thereby decoupling the Appli
 Hence, its easy and simple to change infra without affecting the applications. Hence, NX-OS SDK can be used for
 developing native Cisco Applications as well. 
 
-It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS infra SDK hence custom applications 
+It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS SDK hence custom applications 
 can be developed and built in any language of users choice.
 
 This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infra.
