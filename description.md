@@ -6,7 +6,10 @@
      cd $PWD/NX-SDK
      ls (Makefile doc  examples  include  python  rpm  src  stubs)
    ```
-   
+
+## Custom Application Development Flow
+![myimage-alt-tag](https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/NXSDK_App_Dev_Flow.jpg)
+
 ## Directory Structure
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>: <p align="justify"> Header files to be included and the abstract interfaces 
          to be used to develop custom applications in order to gain access to the supported NX-OS infrastructure. </p>
@@ -39,5 +42,3 @@
       Refer to Makefile for further instructions. Nothing needs to be done for Python custom Apps using NX-SDK.
       Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#2-building-custom-applications">Building Custom applications</a> section         for more details.</p>
  
-## Custom Application Development Flow
-![myimage-alt-tag]()
