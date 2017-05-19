@@ -17,7 +17,6 @@
          are located at <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doxygen-html</a>. Do a git clone 
          of NX-SDK and open <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doxygen-html</a> locally to get the list 
          of exported public APIs and its usage.</p>
- - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/src">src/</a>: <p align="justify"> Add your new custom applications here.</p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/stubs">stubs/</a>: <p align="justify"> C++ Stub implementation for the interfaces defined in include/.
          When the C++ custom application is built in the development environment, the stubs are then compiled and are then dynamically linked to
          custom Application. Thereby allowing the custom application to be developed, built and tested in your own development environment even before running the Apps 
