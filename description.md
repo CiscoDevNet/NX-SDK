@@ -36,7 +36,8 @@
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/Makefile">Makefile</a>: <p align="justify"> To build your C++ custom Applications using NX-SDK and
       to dynamically link to the right NX-SDK library so that when the C++ App is run inside the Nexus switch it can gain access to NXOS Infrastructure.
       Add your C++ custom Application to the Makefile just like Sample example C++ applications.
-      Refer to Makefile for further instructions. Nothing needs to be done for Python custom Apps using NX-SDK.</p>
+      Refer to Makefile for further instructions. Nothing needs to be done for Python custom Apps using NX-SDK.
+      Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#2-building-custom-applications">Building Custom applications</a> section         for more details.</p>
  
 ## Custom Application Development Flow
 ![myimage-alt-tag]()
