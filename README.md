@@ -25,7 +25,7 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Python Application created using NXSDK](#11-sample-python-application-created-using-nxsdk)
+    * [11. Sample Custom Applications created using NXSDK](#11-sample-custom-applications-created-using-nxsdk)
     * [12. Notes](#12-notes)
 
 # Cisco NX-OS SDK
@@ -333,9 +333,21 @@ Detailed usage of NX-OS SDK:
   - Best practice is to verify your Application by running it in BASH first and then integrate your App in VSH
     for seamless integration into NXOS along with other Nexus native applications.
 
-## 11. Sample Python Application created using NXSDK
-  - pbwMonitor: To Monitor Port Tx & Rx Bandwidth Utilization %
+## 11. Sample Custom Applications created using NXSDK
+
+### C++ NXSDK Custom Applications:
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliApp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
+                       showcasing the usage of gaining access to NX-OS CLI infrastructure.  
+
+### Python NXSDK Custom Applications:
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliApp">customCliApp</a> - A Sample template/Usage App to generate custom CLI of users choice along with respective callbacks 
+                       showcasing the usage of gaining access to NX-OS CLI infrastructure. 
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
+  
+### Sample Python Application created using NXSDK:
     ```
+      pbwMonitor: To Monitor Port Tx & Rx Bandwidth Utilization %
+
       switch(config)# sh run nxsdk 
 
       !Command: show running-config nxsdk
