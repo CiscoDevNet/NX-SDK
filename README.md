@@ -61,19 +61,19 @@ Detailed usage of NX-OS SDK:
 # Release 
 
 ## Version V1.0
-  - NX-OS Infra SDK will be first available on N9K switches as part of F release.
+  - NX-OS SDK will be first available on N9K switches as part of F release.
   - Ability to develop C++ and Python custom application using NX-OS SDK.
   - Ability for custom applications to generate custom CLIs (config and show commands).
   - Ability to generate custom Syslogs, Events & Error history messages.
   - Ability to start/stop C++ and Python custom Applications from VSH just like any other native Nexus applications (like feature bgp)
     thereby providing HA capability for custom applications. 
-  - C++ and Python NX-OS infra SDK custom Application development toolkit.
+  - C++ and Python NX-OS SDK custom Application development toolkit.
 
 ## Future Versions
   - Go and Ruby custom Application development toolkit.
   - Event manager (state change like Next-hop change, interface up/down, Rib route manager, DME events & more to custom application to take action based 
     on registered events)
-  - Abstract Inter-process communication Infra.
+  - Stream custom events through Telemetry.
   - Program and process Control and Data Plane Policies (ex Apps: DPI apps, TCP analytics and some other analytics App)
   - High Availability
   - Security
