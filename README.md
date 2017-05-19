@@ -26,7 +26,7 @@
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
     * [11. Sample Custom Applications created using NX-SDK](#11-sample-custom-applications-created-using-nxsdk)
-    * [12. Notes](#12-notes)
+    * [12. Helpful Notes](#12-helpful-notes)
 
 # Cisco NXOS SDK
 
@@ -427,7 +427,7 @@ Detailed usage of NX-OS SDK:
       Ethernet1/1     10 Gbps (30/30)                   9.00               15.23
     ```
 
-## 12. Notes
+## 12. Helpful Notes
    - Ensure that the name of the custom application does not collide with any existing Native Nexus applications.
    - For custom applications to be started in VSH, please name the application as one word containing alphabets. 
    - ENXOS Built Environment is Mandatory for Custom Applications to be started in VSH.
@@ -438,7 +438,8 @@ Detailed usage of NX-OS SDK:
    - An NX-SDK csutom Application can be started from VSH only if it is installed through RPM Package.
    - For NX-SDK Python application to be started in VSH, place ```#!/isan/bin/nxpython``` in the first line of python application.
    - For NX-SDK Python application to be started in BASH, use ```/isan/bin/python``` to run the application as it sets the 
-     necessary environment needed to run python Apps in BASH.     
+     necessary environment needed to run python Apps in BASH.    
+   - Perform all NXSDK related initializations in one thread. Refer to sample example custom applications for sample template and usage.
      
 </content>
 
