@@ -46,7 +46,7 @@ This github provides NX-OS SDK toolkit for custom application development in you
 
 # Documentation
 
-For detailed description and directory structure of Cisco NX-OS SDK toolkit, refer to description.md
+For detailed description and directory structure of Cisco NX-OS SDK toolkit, refer to <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/description.md">description.md</a>
 
 # Usage
 
