@@ -11,9 +11,9 @@
   - [Release](#release)
     * [Version V1.0](#version-v10)
     * [Future Versions](#future-versions)
-  - [Custom Application Development using NXOS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
-  - [Custom Application Development Flow using NXOS SDK](#custom-application-development-flow-using-nxos-sdk)
-    * [1. Install NXOS SDK](#1-install-nxos-sdk)
+  - [Custom Application Development using NX-OS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
+  - [Custom Application Development Flow using NX-OS SDK](#custom-application-development-flow-using-nxos-sdk)
+    * [1. Install NX-OS SDK](#1-install-nxos-sdk)
       + [a) ENXOS SDK Build Environment [Optional]](#a-enxos-sdk-build-environment-optional)
       + [b) Get NX-OS SDK toolkit](#b-get-nxos-sdk-toolkit)
     * [2. Building Custom Applications](#2-building-custom-applications)
@@ -25,10 +25,10 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Custom Applications created using NXSDK](#11-sample-custom-applications-created-using-nxsdk)
+    * [11. Sample Custom Applications created using NX-SDK](#11-sample-custom-applications-created-using-nxsdk)
     * [12. Notes](#12-notes)
 
-# Cisco NX-OS SDK
+# Cisco NXOS SDK
 
 Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
@@ -125,7 +125,7 @@ Detailed usage of NX-OS SDK:
       source environment-setup-x86-wrsmllib32-linux 
     ```   
 
-### b) Get NX-SDK toolkit
+### b) Get NXSDK toolkit
   - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK.
     ```
       export NXSDK_ROOT=/NX-SDK
