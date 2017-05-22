@@ -1,21 +1,21 @@
-
+ 
 ### To build an RPM package for a custom App using NX-SDK 
 ### Just update the following information.
 
 ### Name of the binary built for the Application
-%define APP_NAME      customCliApp
+%define APP_NAME      customCliPyApp
 
 ### Description of the Applicaiton
-%define APP_DESC      "Create Custom/Sample template Cli C++ Application RPM package"
+%define APP_DESC      "Create Custom/Sample template Cli Python Application RPM package"
 
 ### Path where nxsdk is git cloned to. (path/NX-SDK). Default location is /Nx-SDK
 %define NXSDK_ROOT    /NX-SDK
 
 ### Source of the Application
-%define APP_SOURCE    %{NXSDK_ROOT}/examples
+%define APP_SOURCE    %{NXSDK_ROOT}/python/examples
 
 ### Set the path where Applciation target will be built or present.
-%define APP_TARGET    %{NXSDK_ROOT}/bin/%{APP_NAME}
+%define APP_TARGET    %{APP_SOURCE}/%{APP_NAME}
 
 ### Update the RELEASE_VER to the release of nxos you are using.
 ### Current release is to Freeport (7.0.3.I6.1)
@@ -45,11 +45,6 @@ BuildRoot: %{NXSDK_ROOT}
 %prep
  
 %build
-### If needed you can make the application here as well.
-#cd $NXSDK_ROOT
-#%make clean
-#%make all
-#cd $CURR_DIR
  
 %install
 rm -rf "$RPM_BUILD_ROOT/%{TARGET_DIR}"

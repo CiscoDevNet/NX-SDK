@@ -5,7 +5,7 @@
  * Description:
  *    A Sample C++ App to generate custom CLI of users choice
  *    along with respective callbacks showcasing the usage of
- *    NX-OS Infra SDK.
+ *    CLI infrastructure of NX-OS SDK.
  *
  * Copyright (c) 2016-2017 by cisco Systems, Inc.
  * All rights reserved.

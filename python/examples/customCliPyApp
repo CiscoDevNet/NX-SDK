@@ -1,12 +1,12 @@
 #!/isan/bin/nxpython
 
 ################################################################
-# File:   customCliApp
+# File:   customCliPyApp
 #
 # Description:
 #    A Sample Python App to generate custom CLI of users choice
 #    along with respective callbacks showcasing the usage of
-#    NX-OS Infra SDK.
+#    CLI infrastructure of NX-OS SDK.
 #
 # Copyright (c) 2016-2017 by cisco Systems, Inc.
 # All rights reserved.
@@ -22,7 +22,7 @@ import time
 import threading
 import sys
 
-### Imports NX-OS Infra SDK package
+### Imports NX-OS SDK package
 import nx_sdk_py
 
 ###
@@ -82,8 +82,8 @@ class pyCmdHandler(nx_sdk_py.NxCmdHandler):
                    ### to get the value of input parameter of type Integer
                    int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<threshold>"))
 
-                  ### use intp_value to get value of python int pointer object.
-                  port_threshold = int(nx_sdk_py.intp_value(int_p))
+                   ### use intp_value to get value of python int pointer object.
+                   port_threshold = int(nx_sdk_py.intp_value(int_p))
 
                clicmd.printConsole("Executed port_bw_threshold_cmd set threshold=%d" % port_threshold)
             return True
