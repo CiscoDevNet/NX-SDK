@@ -35,7 +35,6 @@ Group: Development/Tools
 License: Propreitary
 URL: None
 
-
 ##Source: %{APP_SOURCE}
 BuildRoot: %{NXSDK_ROOT}
  
