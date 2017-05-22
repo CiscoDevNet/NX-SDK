@@ -35,7 +35,6 @@ Group: Development/Tools
 License: Propreitary
 URL: None
 
-
 ##Source: %{APP_SOURCE}
 BuildRoot: %{NXSDK_ROOT}
  
@@ -45,11 +44,6 @@ BuildRoot: %{NXSDK_ROOT}
 %prep
  
 %build
-### If needed you can make the application here as well.
-#cd $NXSDK_ROOT
-#%make clean
-#%make all
-#cd $CURR_DIR
  
 %install
 rm -rf "$RPM_BUILD_ROOT/%{TARGET_DIR}"
