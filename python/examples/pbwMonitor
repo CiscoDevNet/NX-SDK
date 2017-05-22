@@ -52,14 +52,14 @@ import nx_sdk_py
 def print_port_bw (result, print_syslog, hit_threshold):
     global tmsg, port_threshold
 
+    (interface, eth_bw, tx_rate, rx_rate, tx_bits, rx_bits) = ("", 0, 0, 0, 0, 0)
+
     ### Get all the necessary data to compute port BW utilization percentage
     for key in result:
         key_ascii = str(key.encode('ascii','ignore'))
         value_ascii = str(result[key].encode('ascii','ignore'))
         if "interface" in key_ascii:
            interface = value_ascii
-           if "mgmt" in interface or "nve" in interface or "vlan" in interface or "po" in interface:
-              return ""
         if "eth_bw" in key_ascii:
            eth_bw = int(value_ascii)
         if "eth_load_interval1_tx" in key_ascii:
@@ -68,16 +68,22 @@ def print_port_bw (result, print_syslog, hit_threshold):
            rx_rate = int(value_ascii)
         if "eth_outrate1_bits" in key_ascii:
            tx_bits = int(value_ascii)
-           tx_bits = random.randint(eth_bw, eth_bw * 1000)
         if "eth_inrate1_bits" in key_ascii:
            rx_bits = int(value_ascii)
 
     bw_str = "%d Gbps (%d/%d)" % (eth_bw/1000000, rx_rate, tx_rate)
 
     ### Compute the TX & RX port BW utilization.
-    tx_percentage = float((tx_bits * 100)/(eth_bw * 1000)) 
-    rx_percentage = float((rx_bits * 100)/(eth_bw * 1000))
+    tx_percentage = float(-1) # N/A
+    rx_percentage = float(-1) # N/A
 
+    if eth_bw: 
+       ### For Test purposes
+       ### tx_bits = random.randint(eth_bw, eth_bw * 1000) 
+
+       tx_percentage = float((tx_bits * 100)/(eth_bw * 1000)) 
+       rx_percentage = float((rx_bits * 100)/(eth_bw * 1000))
+      
     display_op = False
     if not hit_threshold:
        display_op = True
