@@ -95,7 +95,6 @@ LIBNXSDK_OBJS := $(addprefix $(BUILDDIR)/,$(notdir $(LIBNXSDK_CPP:.cpp=.o)))
 
 $(BUILDDIR)/%.o: ${LIBSRCDIR}/%.cpp
 	@echo -e "\n### Building Shared NXSDK Library Objects - ($<)!!!"
-	@echo "...flag $(SDK_CXXFLAGS)"
 	$(SDK_CXX) $(SDK_CXXFLAGS) -c -fPIC $< -o $@
 
 ${LIBTARGET}: ${LIBNXSDK_OBJS} 
