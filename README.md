@@ -342,7 +342,7 @@ Detailed usage of NX-OS SDK:
                        showcasing the usage of gaining access to NX-OS CLI infrastructure.  
 
 ### Python NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliApp">customCliApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliPyApp">customCliPyApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
   - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
   
 ### Sample Python Application created using NXSDK:
