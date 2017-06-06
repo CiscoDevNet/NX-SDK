@@ -111,7 +111,10 @@ Detailed usage of NX-OS SDK:
     Pull the Container version of your choice using.
 
     ```
-      docker pull dockercisco/nxsdk
+      docker pull dockercisco/nxsdk:<tag>
+      Ex) docker pull dockercisco/nxsdk:v1
+      
+      NOTE: Tag latest needs to be updated. 
     ```
   - ENXOS SDK build environment is already installed in 
     ```
@@ -239,6 +242,10 @@ Detailed usage of NX-OS SDK:
         switch(config)# run bash sudo su
         
         bash# <app-full-path> &
+        
+        NOTE: Applications residing in bootflash cannot be given execute permissions. Hence, cannot run 
+              an Application from boottflash. Move the application to /isan/bin to give execute permission
+              and to run the application.
       ```
   - To run Python Custom Application
     - VSH
