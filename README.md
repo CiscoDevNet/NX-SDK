@@ -108,7 +108,7 @@ Detailed usage of NX-OS SDK:
 
   - NOTE: Mandatory for Custom Applications to be started in VSH.
   - ENXOS SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
-    Pull the Container version of your choice using.
+    Pull the Image version of your choice using.
 
     ```
       docker pull dockercisco/nxsdk:<tag>
@@ -116,6 +116,12 @@ Detailed usage of NX-OS SDK:
       
       NOTE: Tag latest needs to be updated. 
     ```
+  - To start a container running the pulled image, use
+     
+    ```
+       docker run -it <docker-image-id> /bin/bash
+    ```
+    
   - ENXOS SDK build environment is already installed in 
     ```
       $PWD/enxos-sdk
