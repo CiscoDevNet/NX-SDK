@@ -119,6 +119,12 @@ Detailed usage of NX-OS SDK:
   - To start a container running the pulled image, use
      
     ```
+       docker images ! to get the <tag>
+       docker run -it dockercisco/nxsdk:<tag> /bin/bash
+       
+       or
+       
+       docker images ! to get the <docker-image-id>
        docker run -it <docker-image-id> /bin/bash
     ```
     
