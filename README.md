@@ -19,6 +19,8 @@
     * [2. Building Custom Applications](#2-building-custom-applications)
     * [3. Unit Testing Custom Application](#3-unit-testing-custom-application)
     * [4. Packaging Custom Application](#4-packaging-custom-application)
+      + [a) Auto-generate RPM package using Script](#a-auto-generate-rpm-package-using-script)
+      + [b) Manually-generate RPM Package](#b-manually-generate-rpm-package)
     * [5. Installing Custom Application in Switch](#5-installing-custom-application-in-switch)
     * [6. Running Custom Application in Switch](#6-running-custom-application-in-switch)
     * [7. Verify if Custom Application is running](#7-verify-if-custom-application-is-running)
@@ -178,7 +180,7 @@ Detailed usage of NX-OS SDK:
   - Needed for custom application to be started from VSH inorder to persist on switch reloads or system switchover.
   - NOTE: RPM packaging needs to be done within the provided ENXOS Docker image. 
 
-### Auto-generate RPM package using Script:
+### a) Auto-generate RPM package using Script
  - Use <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/scripts">rpm_gen.py</a> script to auto-generate RPM package 
    for a custom application. For usage and more information, please run the script with -h option.
    ```
@@ -193,7 +195,7 @@ Detailed usage of NX-OS SDK:
   <img title="Auto-generate RPM Package for Python App" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_for_python_app.png" width="400" height="250"/>
 </p>
 
-### Manually-generate RPM Package:
+### b) Manually-generate RPM Package
   - Write the respective <app>.spec to build an RPM package for your App. This is to address building RPM packaging 
     for complex applications that cannot be generated using the above script.
     ```
