@@ -29,6 +29,8 @@
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python">python/</a>: <p align="justify"> NX-SDK also supports other language bindings. In V1.0, it supports
         python language binding for custom application development using NX-SDK. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples/</a> for sample python 
         custom Applications showcasing the usage of NX-SDK. </p>
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/scripts">scripts/</a>: <p align="justify"> Contains Handy scripts. 
+  <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/scripts/rpm_gen.py">rpm_gen.py</a> - To auto-generate RPM package for custom Application. 
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm">rpm/</a>: <p align="justify"> To start/stop custom applications from VSH, it needs to be built/packaged
      as an RPM package by using the provided ENXOS SDK docker container. It contains the SPEC file for sample example applications and its associated RPMS.
      Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#4-packaging-custom-application">RPM packaging instructions</a> for more details on how to package your custom application as an RPM package.</p>
