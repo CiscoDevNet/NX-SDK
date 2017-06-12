@@ -175,9 +175,27 @@ Detailed usage of NX-OS SDK:
  
 ## 4. Packaging Custom Application
 
-  - Needed for custom application to be started from VSH inorder to persist on switch reloads or system switchover,
-    Write the respective <app>.spec to build an RPM package for your App.
+  - Needed for custom application to be started from VSH inorder to persist on switch reloads or system switchover.
+  - NOTE: RPM packaging needs to be done within the provided ENXOS Docker image. 
 
+### Auto-generate RPM package using Script:
+ - Use <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/scripts">rpm_gen.py</a> script to auto-generate RPM package 
+   for a custom application. For usage and more information, please run the script with -h option.
+   ```
+     /NX-SDK# python scripts/rpm_gen.py -h 
+   ```
+  - Refer to the following screenshots (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
+    Auto-generate RPM package for python App python/examples/customCliPyApp)
+
+<p align="center">
+  <img title="Script usage & Help" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_help.png" width="450" height="250"/>
+  <img title="Auto-generate RPM Package for C++ App" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_for_c%2B%2B_app.png" width="400" height="250"/>
+  <img title="Auto-generate RPM Package for Python App" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_for_python_app.png" width="400" height="250"/>
+</p>
+
+### Manually-generate RPM Package:
+  - Write the respective <app>.spec to build an RPM package for your App. This is to address building RPM packaging 
+    for complex applications that cannot be generated using the above script.
     ```
       export RPM_ROOT=$ENXOS_SDK_ROOT/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm
       ls $RPM_ROOT (BUILD  RPMS  SOURCES  SPECS  SRPMS)
@@ -196,8 +214,6 @@ Detailed usage of NX-OS SDK:
     ```
       ls $RPM_ROOT/RPMS/x86_64/
     ```
-  - NOTE: Soon a script will be provided to auto-generate RPM package for custom applications.
-
 ## 5. Installing Custom Application in Switch 
   - Copy the Application [binary] (or) RPM package to the switch (/bootflash). 
   - To install RPM package in the switch use,
@@ -275,7 +291,7 @@ Detailed usage of NX-OS SDK:
       ```
         switch(config)# run bash sudo su
         
-        bash# /isan/bin/python <app-full-path> &
+        bash# nohup /isan/bin/python <app-full-path> &
         
         NOTE: To run the python App using NX-OS SDk in BASH, use /isan/bin/python to run the app as it sets the 
               necessary environment needed to run python Apps in BASH.
