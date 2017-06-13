@@ -392,6 +392,7 @@ Detailed usage of NX-OS SDK:
     instance of the blocked application cannot be started.
     
     ```
+      switch(config)# nxsdk service-name /isan/bin/pkgMgmt
       switch(config)# sh nxsdk internal service 
 
       NXSDK Started/Temp unavailabe/Max services : 2/0/32
