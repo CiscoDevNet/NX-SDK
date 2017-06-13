@@ -153,7 +153,7 @@ Detailed usage of NX-OS SDK:
   - If NX-SDK is installed in any other location other than default /NX-SDK then
     its mandatory to set NXSDK_ROOT to the right location.
     ```
-      export NXSDK_ROOT= <absolute-path-to-NX-SDK> (if not default /NX-SDK)
+      export NXSDK_ROOT=<absolute-path-to-NX-SDK> (if not default /NX-SDK)
     ```  
     
   - To get latest version of NX-SDK do git pull of NX-SDK.
@@ -201,7 +201,7 @@ Detailed usage of NX-OS SDK:
  - NOTE: By default, NXSDK_ROOT is set to /NX-SDK. If NX-SDK is installed in any other location other than the
          default location then its mandatory to set NXSDK_ROOT to the right location for the script to work.
    ```
-      export NXSDK_ROOT= <absolute-path-to-NX-SDK> (if not default /NX-SDK)
+      export NXSDK_ROOT=<absolute-path-to-NX-SDK> (if not default /NX-SDK)
    ```
   - Refer to the following screenshots (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
     Auto-generate RPM package for python App python/examples/customCliPyApp)
