@@ -147,10 +147,12 @@ Detailed usage of NX-OS SDK:
 ### b) Get NXSDK toolkit
   - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
     ```
-      export NXSDK_ROOT=/NX-SDK 
+      export NXSDK_ROOT=/NX-SDK (by default)
+
       !NOTE: If NX-SDK is installed in any other location other than default /NX-SDK then
              its mandatory to set NXSDK_ROOT to the right location.
-             
+      export NXSDK_ROOT= <absolute-path-to-NX-SDK> (if not default /NX-SDK)
+      
       cd $NXSDK_ROOT
       ls (Makefile  README.md  doc  examples  include  python  rpm  src  stubs)
     ```
