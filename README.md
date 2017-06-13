@@ -231,6 +231,7 @@ Detailed usage of NX-OS SDK:
       
       ! When you are ready, activate the RPM package using,
       switch(config)# install activate <app-rpm-package>
+      ! NOTE: .rpm should not be given to install activate/deactivate and should be given only install add/remove.
       
       ! On successful activation, check if the RPM package is part of the active list using,
       switch(config)# show install active
