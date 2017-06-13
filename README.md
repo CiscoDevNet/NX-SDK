@@ -82,6 +82,7 @@ Detailed usage of NX-OS SDK:
   - Security
 
 # Custom Application Development using NXOS SDK Requirements
+  - Docker
   - Linux (Currently supported platforms)
   - ENXOS SDK (For best results, build the App using NX-OS SDK as RPM package in ENXOS SDK. 
     Docker container with ENXOS SDK will be provided).
