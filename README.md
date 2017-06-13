@@ -145,24 +145,24 @@ Detailed usage of NX-OS SDK:
     ```   
 
 ### b) Get NXSDK toolkit
-  - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
+  - ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
     ```
       export NXSDK_ROOT=/NX-SDK (by default)
+    ```  
 
-      !NOTE: If NX-SDK is installed in any other location other than default /NX-SDK then
-             its mandatory to set NXSDK_ROOT to the right location.
+  - If NX-SDK is installed in any other location other than default /NX-SDK then
+    its mandatory to set NXSDK_ROOT to the right location.
+    ```
       export NXSDK_ROOT= <absolute-path-to-NX-SDK> (if not default /NX-SDK)
-      
+    ```  
+    
+  - To get latest version of NX-SDK do git pull of NX-SDK.
+    ```
       cd $NXSDK_ROOT
-      ls (Makefile  README.md  doc  examples  include  python  rpm  src  stubs)
-    ```
-     
-  - NOTE: To get latest version of NX-SDK do git pull of NX-SDK.
-    ```
-      cd /NX-SDK
+      ls (Makefile  README.md  doc  examples  include  python  rpm  src  scripts stubs)
       git pull
     ```
-  - Refer to API usage and sample applications and develop your application based on your needs.
+  - Refer to API usage and sample applications to develop your application based on your needs.
 
 ## 2. Building Custom Applications
   - C++ Application 
@@ -173,6 +173,12 @@ Detailed usage of NX-OS SDK:
       ```
         $PWD/NX-SDK# make clean
         $PWD/NX-SDK# make all
+      ```
+    - If run into make errors then check to Source 32-bit environment for your application 
+      ```    
+         export ENXOS_SDK_ROOT=/enxos-sdk
+         cd $ENXOS_SDK_ROOT
+         source environment-setup-x86-wrsmllib32-linux 
       ```
   - Nothing to build for Python Applications.      
 
