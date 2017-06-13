@@ -145,9 +145,12 @@ Detailed usage of NX-OS SDK:
     ```   
 
 ### b) Get NXSDK toolkit
-  - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK.
+  - NOTE: ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
     ```
-      export NXSDK_ROOT=/NX-SDK
+      export NXSDK_ROOT=/NX-SDK 
+      !NOTE: If NX-SDK is installed in any other location other than default /NX-SDK then
+             its mandatory to set NXSDK_ROOT to the right location.
+             
       cd $NXSDK_ROOT
       ls (Makefile  README.md  doc  examples  include  python  rpm  src  stubs)
     ```
@@ -186,6 +189,11 @@ Detailed usage of NX-OS SDK:
    for a custom application. For usage and more information, please run the script with -h option.
    ```
      /NX-SDK# python scripts/rpm_gen.py -h 
+    ``` 
+ - NOTE: By default, NXSDK_ROOT is set to /NX-SDK. If NX-SDK is installed in any other location other than the
+         default location then its mandatory to set NXSDK_ROOT to the right location for the script to work.
+   ```
+      export NXSDK_ROOT= <absolute-path-to-NX-SDK> (if not default /NX-SDK)
    ```
   - Refer to the following screenshots (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
     Auto-generate RPM package for python App python/examples/customCliPyApp)
@@ -325,7 +333,11 @@ Detailed usage of NX-OS SDK:
     ```
        show <appname> nxsdk state
        show <appname> nxsdk ?
-       Note: Run the state command to verify if the App is started successfully.
+       Note: Run the state command to verify if the App is started successfully. Custom configs created using NX-SDK 
+             by an Application always automatically start/prefix with <appname> followed by the config syntax. 
+             Similarly, custom show commands created always start as "show <appname>" followed by the syntax. 
+             Automatic addition of <appname> is done in order to create unique custom commands for applications
+             and not to overwrite existing commands in the box.
     ```
     
 ## 8. Stop Custom Application in Switch
@@ -372,6 +384,27 @@ Detailed usage of NX-OS SDK:
   - Refer to the generated doxygen and usage for each API and the different exceptions they throw. 
   - Best practice is to verify your Application by running it in BASH first and then integrate your App in VSH
     for seamless integration into NXOS along with other Nexus native applications.
+  - If an errorneous application (ex syntactical errors, crashes at startup etc) is started from VSH then that
+    application will be blocked for sometime (aprox 15mins). Until the application is unblocked, no operation
+    can be performed on the blocked application. Hence, a blocked application cannot be removed (or) another 
+    instance of the blocked application cannot be started.
+    
+    ```
+      switch(config)# sh nxsdk internal service 
+
+      NXSDK Started/Temp unavailabe/Max services : 2/0/32
+      NXSDK Default App Path         : /isan/bin/nxsdk
+      NXSDK Supported Versions       :  1.0 
+
+      Service-name              Base App        Started(PID)      Version    RPM Package
+      ------------------------- --------------- ----------------- ---------- ------------------------
+      /isan/bin/pbwMonitor      nxsdk_app1      VSH(28161)        1.0        pbwMonitor-1.0-7.0.3.I6.1.x86_64
+      /isan/bin/pkgMgmt         nxsdk_app2      VSH(not running)  1.0        pkgMgmt-1.0-7.0.3.I7.1.x86_64 (Blocked)
+      
+      switch(config)# no nxsdk service-name /isan/bin/pkgMgmt
+      % Err: /isan/bin/pkgMgmt has failed to start (or) register with NxSDK, hence any operation w.r.t App is
+             blocked(15mins from start attempt). Test the App in BASH before starting in VSH
+    ```
 
 ## 11. Sample Custom Applications created using NXSDK
 
