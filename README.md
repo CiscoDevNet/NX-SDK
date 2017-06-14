@@ -199,7 +199,7 @@ Detailed usage of NX-OS SDK:
      /NX-SDK# python scripts/rpm_gen.py -h 
     ``` 
  - NOTE: By default, NXSDK_ROOT is set to /NX-SDK. If NX-SDK is installed in any other location other than the
-         default location then its mandatory to set NXSDK_ROOT to the right location for the script to work.
+         default location then its mandatory to set NXSDK_ROOT env to the right location for the script to work.
    ```
       export NXSDK_ROOT=<absolute-path-to-NX-SDK> (if not default /NX-SDK)
    ```
@@ -277,22 +277,26 @@ Detailed usage of NX-OS SDK:
     ```   
   - To run C++ Custom Application from 
     - VSH
+      - rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
+        NOTE: To start an Application from the default location just use the App Name and 
+        full path is not required.
   
-       ```
-         ! rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
-         ! NOTE: To start an Application in the default location just use the App Name and 
-         ! full path is not required.
-         switch(config)# nxsdk service-name <app-name>
-         Ex) switch(config)# nxsdk service-name customCliApp
+        ```
+          switch(config)# nxsdk service-name <app-name>
          
-         ! If the application is installed in any other location then full path to the Application 
-         ! needs to be specified.
-         switch(config)# nxsdk service-name <app-full-path/app-name>
-         Ex) switch(config)# nxsdk service-name /isan/bin/testApp
+          ! To start an Application in the default application /isan/bin/nxsdk/customCliApp, use the App Name.
+          Ex) switch(config)# nxsdk service-name customCliApp
+        ```
+      - If the application is installed in any other location then full path to the Application 
+        needs to be specified.
+        ```
+          switch(conf ig)# nxsdk service-name <app-full-path/app-name>
          
-         NOTE: An Application can be started from VSH only if it is installed through RPM Package. 
-       ```
-       
+          ! To Start an Application /isan/bin/testApp, use the full path of the App.
+          Ex) switch(config)# nxsdk service-name /isan/bin/testApp        
+        ```
+      - NOTE: An Application can be started from VSH only if it is installed through RPM Package.  
+      
     - BASH
       ```
         switch(config)# run bash sudo su
@@ -305,24 +309,11 @@ Detailed usage of NX-OS SDK:
       ```
   - To run Python Custom Application
     - VSH
-    
-      ```
-         ! rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
-         ! NOTE: To start an Application in the default location just use the App Name and 
-         ! full path is not required.
-         switch(config)# nxsdk service-name <app-name> 
-         Ex) switch(config)# nxsdk service-name pbwMonitor
-
-         ! If the application is installed in any other location then full path to the Application 
-         ! needs to be specified.
-         switch(config)# nxsdk service-name <app-full-path/app-name>
-         Ex) switch(config)# nxsdk service-name /isan/bin/testApp.py
-         
+      - Same as running C++ application from VSH. 
         NOTE: Python app should be made as executable to be started from VSH.
               chmod +x <app-full-path> 
               Place, #!/isan/bin/nxpython in the first line of python application.
               /isan/bin/nxpython should be used to run NXOS Infra SDK Python Apps.
-      ``` 
       
     - BASH
     
@@ -348,9 +339,9 @@ Detailed usage of NX-OS SDK:
       NXSDK Supported Versions       :  1.0 
 
       Service-name              Base App        Started(PID)    Version    RPM Package
-      ------------------------- --------------- ------------    ---------- --------------------
-      pbwMonitor                nxsdk_app2      VSH(25270)      1.0        pbwMonitor-1.0-1.0.0.x86_64
+      ------------------------- --------------- ------------    ---------- -------------------
       /isan/bin/TestApp.py      nxsdk_app3      BASH(27823)     -          -    
+      pbwMonitor                nxsdk_app1      VSH(28161)      1.0        pbwMonitor-1.0-7.0.3.I6.1.x86_64
       
       NOTE: App is running if the above command shows a valid PID.
     ```   
