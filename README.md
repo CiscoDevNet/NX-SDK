@@ -284,7 +284,7 @@ Detailed usage of NX-OS SDK:
         ```
           switch(config)# nxsdk service-name <app-name>
          
-          ! To start an Application in the default application /isan/bin/nxsdk/customCliApp, use the App Name.
+          ! To start an Application in the default location /isan/bin/nxsdk/customCliApp, use the App Name.
           Ex) switch(config)# nxsdk service-name customCliApp
         ```
       - If the application is installed in any other location then full path to the Application 
@@ -303,14 +303,14 @@ Detailed usage of NX-OS SDK:
         
         bash# <app-full-path> &
         
-        NOTE: Applications residing in bootflash cannot be given execute permissions. Hence, cannot run 
-              an Application from boottflash. Move the application to /isan/bin to give execute permission
-              and to run the application.
+        NOTE: Applications residing in bootflash cannot be given execute permissions. Hence, 
+              cannot run an Application from boottflash. Move the application to /isan/bin 
+              to give execute permission and to run the application.
       ```
   - To run Python Custom Application
     - VSH
       - Same as running C++ application from VSH. 
-        NOTE: Python app should be made as executable to be started from VSH.
+        NOTE: Python app should be made as executable to be started from VSH. 
               chmod +x <app-full-path> 
               Place, #!/isan/bin/nxpython in the first line of python application.
               /isan/bin/nxpython should be used to run NXOS Infra SDK Python Apps.
