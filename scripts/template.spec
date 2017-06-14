@@ -1,13 +1,13 @@
 #####################################################################
 ########### Do not update beyond this point.#########################
 #####################################################################
-%define TARGET_DIR    /isan/bin
+%define TARGET_DIR    /isan/bin/nxsdk
 %define CURR_DIR      %(pwd)
 
 Summary: Custom Application
 Name: %{APP_NAME}
-Version: 1.0
-Release: %{RELEASE_VER}
+Version: %{APP_VERSION}
+Release: %{RELEASE_VERSION}
 Group: Development/Tools
 License: Propreitary
 URL: None
