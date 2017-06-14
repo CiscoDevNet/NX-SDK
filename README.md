@@ -246,8 +246,8 @@ Detailed usage of NX-OS SDK:
       switch(config)# show install inactive 
       
       ! When you are ready, activate the RPM package using,
+      ! NOTE: .rpm should not be given to install activate/deactivate and should be given only to install add/remove.
       switch(config)# install activate <app-rpm-package>
-      ! NOTE: .rpm should not be given to install activate/deactivate and should be given only install add/remove.
       
       ! On successful activation, check if the RPM package is part of the active list using,
       switch(config)# show install active
@@ -437,6 +437,7 @@ Detailed usage of NX-OS SDK:
 ### Python NXSDK Custom Applications:
   - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliPyApp">customCliPyApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
   - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
+  - <a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a> - PTP Monitor Application
   
 ### Sample Python Application created using NXSDK:
     ```
