@@ -27,7 +27,7 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Custom Applications created using NX-SDK](#11-sample-custom-applications-created-using-nxsdk)
+    * [11. Sample Custom Applications created using NXSDK](#11-sample-custom-applications-created-using-nxsdk)
     * [12. Helpful Notes](#12-helpful-notes)
 
 # Cisco NXOS SDK
