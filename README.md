@@ -288,6 +288,7 @@ Detailed usage of NX-OS SDK:
          ! If the application is installed in any other location then full path to the Application 
          ! needs to be specified.
          switch(config)# nxsdk service-name <app-full-path/app-name>
+         Ex) switch(config)# nxsdk service-name /isan/bin/testApp
          
          NOTE: An Application can be started from VSH only if it is installed through RPM Package. 
        ```
@@ -315,6 +316,7 @@ Detailed usage of NX-OS SDK:
          ! If the application is installed in any other location then full path to the Application 
          ! needs to be specified.
          switch(config)# nxsdk service-name <app-full-path/app-name>
+         Ex) switch(config)# nxsdk service-name /isan/bin/testApp.py
          
         NOTE: Python app should be made as executable to be started from VSH.
               chmod +x <app-full-path> 
@@ -347,7 +349,7 @@ Detailed usage of NX-OS SDK:
 
       Service-name              Base App        Started(PID)    Version    RPM Package
       ------------------------- --------------- ------------    ---------- --------------------
-      pbwMonitor .              nxsdk_app2      VSH(25270)      1.0        pbwMonitor-1.0-1.0.0.x86_64
+      pbwMonitor                nxsdk_app2      VSH(25270)      1.0        pbwMonitor-1.0-1.0.0.x86_64
       /isan/bin/TestApp.py      nxsdk_app3      BASH(27823)     -          -    
       
       NOTE: App is running if the above command shows a valid PID.
