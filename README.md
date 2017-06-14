@@ -260,7 +260,7 @@ Detailed usage of NX-OS SDK:
       bash# yum install /bootflash/<app-rpm-package>.rpm
     ```
   - On successful RPM install, App will be installed in the location specified in the spec file.
-    (Recommended to place the app in /isan/bin. Follow the example spec file)
+    (Recommended to place the app in /isan/bin/nxsdk. Follow the example spec file)
 
     ```
       ls <app-full-path>
@@ -279,8 +279,15 @@ Detailed usage of NX-OS SDK:
     - VSH
   
        ```
-         switch(config)# nxsdk service-name <app-full-path> 
-         (by default this will be /isan/bin/<app>)
+         ! rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
+         ! NOTE: To start an Application in the default location just use the App Name and 
+         ! full path is not required.
+         switch(config)# nxsdk service-name <app-name>
+         Ex) switch(config)# nxsdk service-name customCliApp
+         
+         ! If the application is installed in any other location then full path to the Application 
+         ! needs to be specified.
+         switch(config)# nxsdk service-name <app-full-path/app-name>
          
          NOTE: An Application can be started from VSH only if it is installed through RPM Package. 
        ```
@@ -299,7 +306,16 @@ Detailed usage of NX-OS SDK:
     - VSH
     
       ```
-        switch(config)# nxsdk service-name <app-full-path> 
+         ! rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
+         ! NOTE: To start an Application in the default location just use the App Name and 
+         ! full path is not required.
+         switch(config)# nxsdk service-name <app-name> 
+         Ex) switch(config)# nxsdk service-name pbwMonitor
+
+         ! If the application is installed in any other location then full path to the Application 
+         ! needs to be specified.
+         switch(config)# nxsdk service-name <app-full-path/app-name>
+         
         NOTE: Python app should be made as executable to be started from VSH.
               chmod +x <app-full-path> 
               Place, #!/isan/bin/nxpython in the first line of python application.
@@ -331,7 +347,7 @@ Detailed usage of NX-OS SDK:
 
       Service-name              Base App        Started(PID)    Version    RPM Package
       ------------------------- --------------- ------------    ---------- --------------------
-      /isan/bin/capp1           nxsdk_app2      VSH(25270)      1.0        capp1-1.0-7.0.3.I6.1.x86_64
+      pbwMonitor .              nxsdk_app2      VSH(25270)      1.0        pbwMonitor-1.0-1.0.0.x86_64
       /isan/bin/TestApp.py      nxsdk_app3      BASH(27823)     -          -    
       
       NOTE: App is running if the above command shows a valid PID.
@@ -352,7 +368,11 @@ Detailed usage of NX-OS SDK:
   - VSH
   
     ```
-      switch(config)# no nxsdk service-name <app-full-path> 
+      ! IF the application is installed in the default location /isan/bin/nxsdk
+      switch(config)# no nxsdk service-name <app-name>
+      
+      ! If the application is installed in any other location 
+      switch(config)# no nxsdk service-name <app-full-path/app-name>
     ```
       
   - BASH
@@ -379,7 +399,7 @@ Detailed usage of NX-OS SDK:
       switch# show install inactive
       
       ! To remove the RPM package use,
-      switch# install remove <app-rpm-package>
+      switch# install remove <app-rpm-package>.rpm
     ```
     
   - <b> BASH </b>    
