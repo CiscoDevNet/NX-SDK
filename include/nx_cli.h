@@ -591,6 +591,7 @@ public:
      **/
     virtual char* execShowCmd(std::string show_syntax,
                               nxos::record_type_e type=nxos::R_TEXT,
+                              bool *oper_result=NULL)=0;
      
     /**
      * Execute other config commands in a file.
@@ -621,7 +622,6 @@ public:
      * @endcode
      **/
     virtual char* execConfigCmd(const char *filename)=0;
-                                bool *oper_result=NULL)=0;
 };
 
 }

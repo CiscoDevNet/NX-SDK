@@ -69,7 +69,8 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af058955d7c6dae444a5dab084342d03c"></a><!-- doxytag: member="nxos::NxCliParser::getCmdHandler" ref="af058955d7c6dae444a5dab084342d03c" args="()=0" -->
 virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#af058955d7c6dae444a5dab084342d03c">getCmdHandler</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get Cli callback handler object. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#a074e9c2b831c49885b7d324689442d97">execShowCmd</a> (std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, virtual char *execConfigCmd(const char *filename)=0;bool *oper_result=NULL)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#a44b08502fa02c0f83b9dc26ef02e2be8">execShowCmd</a> (std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, bool *oper_result=NULL)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#aa22ee0395ceadc46a3e28b93c5a5b75e">execConfigCmd</a> (const char *filename)=0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Abstract Interface to access Nexus CLI Parser tools. </p>
@@ -139,49 +140,24 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 
 </div>
 </div>
-<a class="anchor" id="a074e9c2b831c49885b7d324689442d97"></a><!-- doxytag: member="nxos::NxCliParser::execShowCmd" ref="a074e9c2b831c49885b7d324689442d97" args="(std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, virtual char *execConfigCmd(const char *filename)=0;bool *oper_result=NULL)=0" -->
+<a class="anchor" id="aa22ee0395ceadc46a3e28b93c5a5b75e"></a><!-- doxytag: member="nxos::NxCliParser::execConfigCmd" ref="aa22ee0395ceadc46a3e28b93c5a5b75e" args="(const char *filename)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual char* nxos::NxCliParser::execShowCmd </td>
+          <td class="memname">virtual char* nxos::NxCliParser::execConfigCmd </td>
           <td>(</td>
-          <td class="paramtype">std::string&nbsp;</td>
-          <td class="paramname"> <em>show_syntax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">nxos::record_type_e&nbsp;</td>
-          <td class="paramname"> <em>type</em> = <code>nxos::R_TEXT</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">virtual char *&nbsp;</td>
-          <td class="paramname"> <em>execConfigCmd</em>const char *filename = <code>0;bool&nbsp;*oper_result=NULL</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [pure virtual]</code></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>filename</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Execute other show commands. </p>
+<p>Execute other config commands in a file. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>show_syntax</em>&nbsp;</td><td>syntax of show command to be executed. </td></tr>
-    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>Type(TEXT, XML, JSON) of the record to be returned. </td></tr>
-    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oper_result</em>&nbsp;</td><td>if show output was successful. Returns true if show was successful (or) false if its a invalid show command. </td></tr>
-    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>Char*</em>&nbsp;</td><td>containing show output in the type format specified. It is not thread safe and any subsequent call to execShowCmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>execConfigCmd</em>&nbsp;</td><td>Execute other config commands in a file. </td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>filename</em>&nbsp;</td><td>File that contains all the config commands to be executed. </td></tr>
     <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>char*</em>&nbsp;</td><td>SUCCESS - if config commands were executed successfully if not contains the reason for failure </p>
 <div class="fragment"><pre class="fragment">  C++:
@@ -203,7 +179,50 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 <span class="preprocessor">           #Configs applied successfully.</span>
 <span class="preprocessor"></span>       <span class="keywordflow">else</span>:
 <span class="preprocessor">           #Configs failed. Check the Error.</span>
-</pre></div><p> * </td></tr>
+</pre></div> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a44b08502fa02c0f83b9dc26ef02e2be8"></a><!-- doxytag: member="nxos::NxCliParser::execShowCmd" ref="a44b08502fa02c0f83b9dc26ef02e2be8" args="(std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, bool *oper_result=NULL)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char* nxos::NxCliParser::execShowCmd </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>show_syntax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nxos::record_type_e&nbsp;</td>
+          <td class="paramname"> <em>type</em> = <code>nxos::R_TEXT</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>oper_result</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Execute other show commands. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>show_syntax</em>&nbsp;</td><td>syntax of show command to be executed. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>Type(TEXT, XML, JSON) of the record to be returned. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oper_result</em>&nbsp;</td><td>if show output was successful. Returns true if show was successful (or) false if its a invalid show command. </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>Char*</em>&nbsp;</td><td>containing show output in the type format specified. It is not thread safe and any subsequent call to execShowCmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output. </td></tr>
   </table>
   </dd>
 </dl>
