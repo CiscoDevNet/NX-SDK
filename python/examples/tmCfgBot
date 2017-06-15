@@ -1,0 +1,652 @@
+#!/isan/bin/nxpython
+
+################################################################
+#Copyright (c) 2016-2017
+#All rights reserved.
+################################################################
+
+##################################################################
+### tmCfgBot
+###
+### This example Python application shows the usage of the NX-SDK.
+###
+### Its a telemetry Config Helper Bot for the users. It has a default
+### list of telemetry instance objects and the path patterns associated
+### with those objects. On configuring/enabling a specific instance, 
+### the app automatically translates it to necessary telemetry sensor 
+### path configs in the specified sensor-group in the switch that 
+### then streams necessary information related to that instance. 
+### Hence Users doesnt have to manaully type each and every sensor
+### path(as paths come and go dynamically) everytime to get the 
+### needed information as opposed to enabling just one instance.
+### 
+###  Creates the following config and show command.
+###     CMD   :  [no] tmCfgBot apply-inst <tm-inst> [tm-sensor-grp <sensor-grp-id> path <path-pattern>]
+###     Action:  Takes a telemetry instance and applies all the default paths needed for this
+###              instance as telemetry configs if available. User can also add more path patterns 
+###              to the hard-coded default template (or) config takes additional parameters to add 
+###              a pattern to an instance on the fly.
+###
+###     CMD   :  show tmCfgBot applied-paths 
+###     Action:  Displays all the configured instances telemetry paths configs for
+###              for the entered path pattern config.
+### Sample output:
+### Switch# show tmCfgBot applied-paths 
+### Sensor_grp 1:
+###   Dn Pattern: sys/epId-1/nws/vni-(.*)
+###     Dn : sys/epId-1/nws/vni-1000
+###     Dn : sys/epId-1/nws/vni-9000
+###     Dn : sys/epId-1/nws/vni-600
+###
+### Sensor_grp 2:
+###     Dn Pattern: sys/epId-1/nws/vni-1(.*)
+###     Dn : sys/epId-1/nws/vni-1000
+### 
+##################################################################
+import signal
+import datetime
+import time
+import threading
+import sys
+import os
+import json
+import re
+import urllib2
+from pprint import pprint
+
+### To gain access to Cisco NX-SDK
+import nx_sdk_py
+
+### Global Variables
+cliP                = 0
+sdk                 = 0
+tmp_filename        = "/nxos/tmp/tm-bot-dn"
+tm_cfg_tmp_filename = "/nxos/tmp/tm-bot-cfg"
+tm_cfg_applied_paths_dict_lock = threading.Lock()
+delete_path_pattern_key = "delete_path_pattern"
+
+### Dictionary to keep track of the paths matching a 
+### pattern that are applied currently.
+tm_cfg_applied_paths_dict   = {}
+
+### Dictionary to keep track of path changes w.r.t to what
+### is applied and apply necessary telemetry configs.
+tm_cfg_diff_dict    = {}
+
+#####
+# Contains the default telemetry path pattern template for specific instances.
+# For ex) By enabling EVPN Inst, this bot knows the default path pattern template
+#         for EVPN and automatically configures the necessary telemetry sensor-groups
+#         configuration to stream EVPN specific info using telemetry.
+#         NOTE: You can add more such default template to different instances like
+#               below.
+# Json input is { "<tm-inst-name>": 
+#                  { "<sensor_grp-id-1>":
+#                     {
+#                        "<path-pattern1>" : 0,
+#                        "<path-pattern2>" : 0,
+#                        ......
+#                        "<path-patternn>" : 0
+#                     }
+#                  }
+#               }
+###
+tm_inst_default_template_json = '''{ "evpn" :  
+                                      {
+                                        "sys/epId-1/nws/vni-(.*)": 0,
+                                        "sys/eps/epId-1/nws/vni-(.*)": 0,
+                                        "sys/bgp/inst/dom-default/af-l2vpn-evpn": 0,
+                                        "sys/epId-1/peers/dy_peer-(.*)": 0,
+                                        "sys/bgp/inst/dom-default/peer-(.*)/ent-(.*)": 0,
+                                        "sys/bgp/inst/dom-default/peer-(.*)/af-l2vpn-evpn" : 0
+                                      },
+                                     "interface" :
+                                      { 
+                                        "sys/intf/phys-(.*)/dbgIf(In|Out)": 0
+                                      } 
+                                   }'''
+
+
+### 
+# Get the default patterns belonging to a tm instance.
+# New paterns can be added or existing patterns can be
+# deleted using the custom config command.
+###
+tm_inst_default_template_dict = json.loads(tm_inst_default_template_json)
+
+
+class DictDiffer(object):
+    """
+    Calculate the difference between two dictionaries as:
+    (1) items added
+    (2) items removed
+    (3) keys same in both but changed values
+    (4) keys same in both and unchanged values
+    """
+    def __init__(self, current_dict, past_dict):
+        self.current_dict, self.past_dict = current_dict, past_dict
+        self.set_current, self.set_past = set(current_dict.keys()), set(past_dict.keys())
+        self.intersect = self.set_current.intersection(self.set_past)
+    def added(self):
+        return dict.fromkeys((self.set_current - self.intersect), 0) 
+    def removed(self):
+        return dict.fromkeys((self.set_past - self.intersect), 1) 
+
+def getDmeDnFromPattern (path_pattern):
+    dns = path_pattern.split('/')
+    dn_str=""
+    for item in dns:
+        if "(.*)" in item:
+           break
+        if dn_str:
+           if '[' in item:
+              if ']' not in item:
+                 break
+           dn_str += "/" + str(item)
+        else:
+           if '[' in item:
+              if ']' not in item:
+                 break
+           dn_str +=str(item)
+    if not dn_str:
+       dn_str = "sys"
+    return dn_str
+
+###
+# Callback when the timer gets fired. Its fired every 1 sec. 
+# Based on your needs adjust the timeout. When the timer gets
+# fired, it evaluates for any changes in the paths matching 
+# configured path patterns and automcatically configures
+# telemetry configs for the users matching the patterns.
+###
+def timerThread(name,val):
+    global cliP, tm_cfg_applied_paths_dict
+    global tm_cfg_diff_dict, tmp_filename, delete_path_pattern_key 
+
+    sleep_time = 5
+    tmp_dict = {}
+    next_call = time.time()
+    while True:
+        tm_cfg_applied_paths_dict_lock.acquire()
+        next_call = next_call+1
+ 
+        ### Evaluate each ahd every instance, sensor_group and its path patterns for 
+        ### any adds, deletes and updates.
+        for tm_inst in tm_cfg_applied_paths_dict.keys():
+            for sensor_grp_id in tm_cfg_applied_paths_dict[tm_inst].keys():
+                for path_pattern in tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id].keys():
+
+                    ### Dict that contains all the applied DN paths for a give pattern
+                    ### during this run.
+                    tmp_dict.clear()
+                    delete_path_pattern = delete_path_pattern_key in tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern]
+                    ### Check if Path pattern is deleted due to no form of the CLI command.                   
+                    if not delete_path_pattern:
+                        dn_str=getDmeDnFromPattern(path_pattern)
+                        
+                        ### Get all the matching paths for the given pattern
+                        result = cliP.execShowCmd("show system internal dme applied-config " \
+                                                  "all dn %s | grep \"dn\"" % dn_str)
+                        if not result:
+                           result = cliP.execShowCmd("show system internal dme hidden-config " \
+                                                     "all dn %s | grep \"dn\"" % dn_str)
+                           if not result:
+                              continue
+  
+                        ### Dump the result to a file and get all the applied paths in this 
+                        ### run matching the pattern.
+                        with open(tmp_filename, 'w') as the_file:
+                             the_file.write(result)
+                        fd = open(tmp_filename, 'r')
+                        for line in fd:
+                            dn = line.split(":")[1]
+                            dn = dn.replace('"', '')
+                            dn = dn.replace(',','')
+                            dn = dn.replace(' ', '')
+                            dn = dn.replace('\n', '')
+                            re_pattern = re.compile(path_pattern)
+                            if re_pattern.search(dn):
+                               tmp_dict[dn] = 0
+                        fd.close()
+
+                    ### Check what has changed between previous and current run.
+                    diff_dict = DictDiffer(tmp_dict, tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern])
+  
+                    ### contains added elements
+                    diff_add = diff_dict.added()
+                    if diff_add:
+                       if sensor_grp_id not in tm_cfg_diff_dict:
+                           tm_cfg_diff_dict[sensor_grp_id] = {}
+                       tm_cfg_diff_dict[sensor_grp_id].update(diff_add)
+               
+                    ### contains the deleted elements
+                    diff_remove = diff_dict.removed()
+                    if diff_remove:
+                       if sensor_grp_id not in tm_cfg_diff_dict:
+                           tm_cfg_diff_dict[sensor_grp_id] = {}
+                       tm_cfg_diff_dict[sensor_grp_id].update(diff_remove)
+
+                    
+                    tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern].clear()
+                    tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern].update(tmp_dict)
+
+                    ### Delete the path pattern if its marked for delete               
+                    if delete_path_pattern:
+                       if (len(tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern]) == 0):
+                           print "Telemetry instance: %s sensor_grp_id: %d, deleted path pattern %s" % \
+                                 (str(tm_inst), sensor_grp_id, path_pattern)
+                           tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id].pop(path_pattern, None)
+                       else:
+                           ### Re-insert Delete key as paths get refreshed.
+                           tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern][delete_path_pattern_key] = 1  
+
+                ### Delete the sensor-grp-id if there no members
+                if (len(tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id]) == 0):
+                    print "Telemetry instance: %s deleted sensor_grp_id: %d, no pattern" % \
+                             (str(tm_inst), int(sensor_grp_id))
+                    tm_cfg_applied_paths_dict[tm_inst].pop(sensor_grp_id, None)
+
+            ### Delete the instance if there are no members
+            if len(tm_cfg_applied_paths_dict[tm_inst]) == 0:
+               print "Deleted Telemetry instance: %s no sensor group" % str(tm_inst)
+               tm_cfg_applied_paths_dict.pop(tm_inst, None)
+
+        ### Translate the diffs as telemetry configs.
+        if tm_cfg_diff_dict: 
+            config_str = "feature telemetry\n\ntelemetry\n"
+            for sensor_grp_id in tm_cfg_diff_dict:
+                config_str += "  sensor-group %d\n" % sensor_grp_id
+                for dn in tm_cfg_diff_dict[sensor_grp_id]:
+                    if int(tm_cfg_diff_dict[sensor_grp_id][dn]):
+                       config_str += "    no path %s depth 0\n" % dn
+                    else:
+                       config_str += "    path %s depth 0\n" % dn 
+
+            ### Apply the configs in the switch
+            fd = open(tm_cfg_tmp_filename, 'w+')
+            fd.write(config_str)
+            fd.close()
+
+            result = cliP.execConfigCmd(tm_cfg_tmp_filename);
+            if "SUCCESS" in result:
+               print "Configs Applied Successfully"
+               tm_cfg_diff_dict.clear()
+            else:
+               print "Err: Configs failed %s" % result
+
+        tm_cfg_applied_paths_dict_lock.release()
+        time.sleep(sleep_time)
+
+def tm_get_sensor_grp_cnt(sensor_grp_id):
+    sensor_grp_id_cnt = 0
+    for tm_inst in tm_cfg_applied_paths_dict:
+        for tmp_sensor_grp_id in tm_cfg_applied_paths_dict[tm_inst]: 
+            if tmp_sensor_grp_id == sensor_grp_id:
+               sensor_grp_id_cnt += 1
+    return sensor_grp_id_cnt
+
+###
+# Delete a path pattern from a telemetry instance on the fly to automatically
+# stop watching/unconfigure on paths matching the pattern no longer to be 
+# streamed by telemetry.
+###
+def delete_path_list(clicmd, tm_inst, sensor_grp_id, path_pattern_list):
+    global tm_cfg_applied_paths_dict, tm_cfg_diff_dict, tm_cfg_tmp_filename, delete_path_pattern_key
+    ret = True
+
+    if tm_inst not in tm_cfg_applied_paths_dict:
+       clicmd.printConsole("Telemetry Instance %s does not exist, no-op" % tm_inst)
+       return True
+    
+    if sensor_grp_id not in tm_cfg_applied_paths_dict[tm_inst]:
+       clicmd.printConsole("%s Sensor Group ID: %d does not exist, no-op" % (tm_inst, sensor_grp_id))
+       return True
+
+    tm_cfg_applied_paths_dict_lock.acquire()
+
+    print "Telemetry instance: %s\n  sensor_group: %d\n" % (tm_inst, sensor_grp_id)
+    for path_pattern in path_pattern_list:
+        if path_pattern not in tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id]:
+           clicmd.printConsole("%s (sensor-group: %d) Path: %s does not exist, no-op\n" \
+                               % (tm_inst, sensor_grp_ip, path_pattern))
+           continue
+        tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern][delete_path_pattern_key] = 1
+
+    tm_cfg_applied_paths_dict_lock.release()
+    clicmd.printConsole("%% Telemetry Configs queued for Deletion...!")
+    return True
+
+###
+# Add a path pattern to a telemetry instance on the fly to automatically
+# watch/configure on paths matching the pattern to be streamed through
+# telemetry.
+###
+def add_to_path_list(clicmd, tm_inst, sensor_grp_id, path_pattern_list):
+    global tm_cfg_applied_paths_dict, delete_path_pattern_key
+
+    tm_cfg_applied_paths_dict_lock.acquire()
+
+    for path_pattern in path_pattern_list:
+        if tm_inst not in tm_cfg_applied_paths_dict:
+           tm_cfg_applied_paths_dict[tm_inst] = {}
+
+        if sensor_grp_id not in tm_cfg_applied_paths_dict[tm_inst]:
+           tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id] = {}
+   
+        if sensor_grp_id not in tm_cfg_diff_dict: 
+           tm_cfg_diff_dict[sensor_grp_id] = {}
+   
+        if path_pattern not in tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id]:
+           tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern] = {}
+
+        if delete_path_pattern_key in  tm_cfg_applied_paths_dict[tm_inst][sensor_grp_id][path_pattern]:
+           clicmd.printConsole("%% Err Cannot Add instance: %s, sensor_grp: %d, path_pattern: %s " \
+                               "as deletion in progress" % (tm_inst, sensor_grp_id, path_pattern))
+           return False
+
+        print "Adding telemetry Instance: %s, sensor_grp_id: %d, path_pattern: %s" \
+              % (str(tm_inst), int(sensor_grp_id), str(path_pattern))
+
+    tm_cfg_applied_paths_dict_lock.release()
+    clicmd.printConsole("%% Telemetry Configs queued for Addition..!")
+    return True
+
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+    
+      ### Callback handler when your custom CLI is executed in VSH. 
+      def postCliCb(self,clicmd):
+
+          ### Variables
+          global cliP, tm_cfg_applied_paths_dict, delete_path_pattern_key
+          default_sensor_key = "default-sensor-grp" 
+          sensor_grp_id = 0
+          path_pattern = ""
+          path_pattern_list = []
+          no_cmd = False
+
+          ### Check if its a no command
+          if "no" in clicmd.getCmdLineStr():
+             no_cmd = True
+
+          ### Get the value of input parameters from the CLI entered.
+          if not clicmd.isKeywordSet("default-instance"):
+             tm_inst = nx_sdk_py.void_to_string(clicmd.getParamValue("<tm-inst>"))                
+     
+          ### Get the Sensor group id to which paths need to be added in 
+          ### telemetry if its set.
+          if clicmd.isKeywordSet("tm-sensor-grp"): 
+             ### Create Int Pointer to get the integer Value
+             int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<sensor-grp-id>"))
+
+             ### Get the value of int * in python
+             if int_p:
+                sensor_grp_id = int(nx_sdk_py.intp_value(int_p))
+
+          ### Get path-pattern input value if its set.
+          if clicmd.isKeywordSet("path"):                 
+             path_pattern = nx_sdk_py.void_to_string(clicmd.getParamValue("<path-pattern>"))
+
+          ### Action for set_tm_instance_cmd
+          if "set_tm_instance_cmd" in clicmd.getCmdName():
+
+             ### If Sensor-grp-id is not set then set it to default value 1.
+             if not sensor_grp_id:
+                sensor_grp_id = 1
+
+             if no_cmd:
+                ### Check if the tm-inst exist. If it does not exist then nothing to do.
+                if tm_inst not in tm_cfg_applied_paths_dict:
+                   return True
+            
+                if clicmd.isKeywordSet("default"):
+                   ### Deleting default template for an instance.
+                   ### If default key does not exist in the default_template_dict then
+                   ### default template is not instantied for this instance. Hence 
+                   ### nothing to do.
+                   if default_sensor_key not in tm_inst_default_template_dict[tm_inst]:
+                      return True
+                   
+                   ### Check if the default template is deleted for an instance in a sensor 
+                   ### group other than the configured sensor group. 
+                   if tm_inst_default_template_dict[tm_inst][default_sensor_key] != sensor_grp_id:
+                      clicmd.printConsole("Err: Default template for Instance %s is applied " \
+                                          "on sensor grp: %d, not on %d" \
+                                          % (tm_inst, int(tm_inst_default_template_dict[tm_inst][default_sensor_key], \
+                                             sensor_grp_id)))
+                      return False
+ 
+                   ### Delete the default template applied for an instance. 
+                   for path_pattern in tm_inst_default_template_dict[tm_inst]:
+                       if default_sensor_key not in path_pattern:
+                          path_pattern_list.append(path_pattern)
+                else:
+                   ### Delete extended path pattern in a given sensor id for the given instance.
+                   path_pattern_list.append(path_pattern)
+
+                ret = delete_path_list(clicmd, tm_inst, sensor_grp_id, path_pattern_list)
+                if ret != True:
+                    clicmd.printConsole("%% Configs failed to delete for inst: %s" % tm_inst)
+                    return False
+                clicmd.printConsole("%% Configs Deleted successfully for inst: %s" % tm_inst)
+                if clicmd.isKeywordSet("default"):
+                    tm_inst_default_template_dict[tm_inst].pop(default_sensor_key, None)
+                return True 
+
+             ### Now handle the config command.
+             if clicmd.isKeywordSet("default"):
+                if tm_inst not in tm_inst_default_template_dict:
+                   clicmd.printConsole("Err: Default template does not exist for inst %s" % tm_inst)
+                   return False
+     
+                if default_sensor_key in tm_inst_default_template_dict[tm_inst]:
+                   if tm_inst_default_template_dict[tm_inst][default_sensor_key] != sensor_grp_id:
+                      clicmd.printConsole("Err: Default template for Instance %s is already applied " \
+                                          "on sensor grp: %d, remove to apply on new sensor grp" \
+                                          % (tm_inst, int(tm_inst_default_template_dict[tm_inst][default_sensor_key])))
+                      return False
+                   else:
+                      clicmd.printConsole("Default template for Instance %s is already applied" % tm_inst)
+                      return True
+ 
+                for path_pattern in tm_inst_default_template_dict[tm_inst]:
+                    if default_sensor_key not in path_pattern:
+                        path_pattern_list.append(path_pattern)
+               
+                add_to_path_list(clicmd, tm_inst, sensor_grp_id, path_pattern_list)
+                tm_inst_default_template_dict[tm_inst][default_sensor_key] = sensor_grp_id
+             else:
+                ### Check if the pattern already exists in default template.
+                if (tm_inst in tm_inst_default_template_dict and 
+                    path_pattern in tm_inst_default_template_dict[tm_inst] and 
+                    default_sensor_key in tm_inst_default_template_dict[tm_inst] and 
+                    tm_inst_default_template_dict[tm_inst][default_sensor_key] == sensor_grp_id):
+                    clicmd.printConsole("Err: Path Pattern already applied as part of default template")
+                    return False
+                path_pattern_list.append(path_pattern)
+                add_to_path_list(clicmd, tm_inst, sensor_grp_id, path_pattern_list)
+             return True
+
+          ### Action for show applied paths command
+          elif "show_default_inst_cmd" in clicmd.getCmdName():
+             print_str = '{0:20} | {1:15}'.format("Default Instance", "Path Pattern")
+             clicmd.printConsole("%s\n" % print_str)
+             clicmd.printConsole("---------------------|--------------------------------------------\n")
+             for tm_inst in tm_inst_default_template_dict.keys():
+                 print_tm_inst = False
+                 for path_pattern in tm_inst_default_template_dict[tm_inst]:
+                     if default_sensor_key in path_pattern:
+                        continue
+                     if not print_tm_inst:
+                        print_str = '{0:20} | '.format(str(tm_inst))
+                        print_tm_inst = True
+                     else:
+                        print_str = '{0:20} | '.format("")
+                     print_str += '{0:15}'.format(str(path_pattern))
+                     clicmd.printConsole("%s\n" % print_str)
+                 clicmd.printConsole("---------------------|--------------------------------------------\n")
+             return True
+          ### Action for show applied paths command
+          elif "show_applied_paths_cmd" in clicmd.getCmdName():
+             first_time = False
+             if tm_inst and tm_inst not in tm_cfg_applied_paths_dict:
+                return True
+    
+             clicmd.printConsole("\nActive Instances: %d\n" % (len(tm_cfg_applied_paths_dict)))
+             print_str = '{0:10} | {1:12} | {2:15}'.format("Instance", "Sensor-Id", "Url/Path")
+             clicmd.printConsole("%s\n" % print_str)
+             clicmd.printConsole("-----------|--------------|--------------------------------------------\n")
+
+             for tm_inst_k in tm_cfg_applied_paths_dict.keys():
+                 if tm_inst != None and tm_inst_k != tm_inst:
+                    continue
+                 print_tm_inst = False
+                 if sensor_grp_id != 0 and sensor_grp_id not in tm_cfg_applied_paths_dict[tm_inst_k]:
+                    return True
+
+                 for sensor_grp_id_k in tm_cfg_applied_paths_dict[tm_inst_k].keys():
+                     if sensor_grp_id != 0 and sensor_grp_id_k != sensor_grp_id:
+                        continue
+                     print_sensor_grp = False
+
+                     for pattern in tm_cfg_applied_paths_dict[tm_inst_k][sensor_grp_id_k].keys():
+                         if path_pattern and path_pattern not in pattern:
+                            continue
+                         if not print_tm_inst:
+                            print_str = '{0:10} | '.format(tm_inst_k)
+                            print_tm_inst = True
+                         else:
+                            print_str = '{0:10} | '.format("")
+
+                         if not print_sensor_grp:
+                            print_str += '{0:12} | '.format(sensor_grp_id_k)
+                            print_sensor_grp = True
+                         else:
+                            print_str += '{0:12} | '.format("")
+                         
+                         print_str += 'Pattern: {0:15}'.format(str(pattern))
+                         delete_str = ""
+                         if delete_path_pattern_key in tm_cfg_applied_paths_dict[tm_inst_k][sensor_grp_id_k][pattern]:
+                            delete_str = " (Deleting)"
+                         clicmd.printConsole("%s (%d paths)%s\n" % (print_str, \
+                                             len(tm_cfg_applied_paths_dict[tm_inst_k][sensor_grp_id_k][pattern]), delete_str))
+                         for dn in tm_cfg_applied_paths_dict[tm_inst_k][sensor_grp_id_k][pattern]:
+                             status = ""
+                             if dn in delete_path_pattern_key:
+                                continue
+                             if sensor_grp_id_k in tm_cfg_diff_dict and dn in tm_cfg_diff_dict[sensor_grp_id_k]:
+                                if tm_cfg_diff_dict[sensor_grp_id_k][dn]:
+                                   status = " (Deleted)"
+                                else:
+                                   status = " (Adding)"
+                             print_str = '{0:10} | {1:12} | '.format(" ", " ")
+                             clicmd.printConsole("%s    - %s%s\n" % (print_str, dn , status))
+                         print_str = '{0:10} | {1:12} | {2:15}'.format(" ", " ", " ")
+                         clicmd.printConsole("%s\n" % print_str) 
+                 clicmd.printConsole("-----------|--------------|--------------------------------------------\n")
+             return True 
+
+### 
+# Perform all SDK related initializations in one thread.  
+# All SDK related activities happen here, while the main thread
+# may continue to do other work.  The call to startEventLoop will
+# block until we break out of it by calling stopEventLoop. 
+###
+def sdkThread(name,val):
+    global cliP, sdk
+
+    ### 
+    #    To gain access to NXOS Infra
+    # NOTE: 
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. 
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+    if not sdk:
+       return    
+
+    ### Set a short Application description.
+    sdk.setAppDesc('NXOS Telemetry Config Helper Bot based on matching DN Pattern Python App')
+
+    ### To Create & Manage Custom syslogs 
+    t = sdk.getTracer()
+    t.event("[%s] Started service" % sdk.getAppName())
+
+    ### To Create & Manage Custom CLI commands 
+    cliP = sdk.getCliParser()
+
+    ###
+    # Config to apply a telemetry instance. 
+    # For Ex) tmCfgBot apply-inst evpn
+    #          Checks for default path pattern template for EVPN. It it is then it automatically
+    #          translates the instance EVPN into evpn specific telemetry configs to stream EVPN
+    #          specific data.
+    #
+    # If you need to add/delete more path pattern to an instance on the fly use
+    # For Ex) tmCfgBot apply-inst evpn tm-sensor-grp 1 path sys/epId-1/nws/vni-(.*)
+    #         This adds the new path pattern to EVPN instance. To delete any use no form of the command.
+    #         NOTE: Cannot delete path patterns from the default list. 
+    ###
+    nxcmd = cliP.newConfigCmd("set_tm_instance_cmd", "apply-inst <tm-inst> [tm-sensor-grp <sensor-grp-id>] {default | path <path-pattern>}")
+    nxcmd.updateKeyword("apply-inst", "Apply Telemetry configs associated with an instance")
+    nxcmd.updateParam("<tm-inst>", "Instance and its paths to be streamed through telemetry Ex) evpn",
+                      nx_sdk_py.P_STRING, None, 0, True)
+    nxcmd.updateKeyword("tm-sensor-grp", "Telemetry Sensor Group Information")
+    nxcmd.updateParam("<sensor-grp-id>", "Telemetry Sensor Group Id to which the path belongs. Default is 1",
+                      nx_sdk_py.P_INTEGER, None, 0, True)
+    nxcmd.updateKeyword("default", "Apply default template path patterns for the given instance")
+    nxcmd.updateKeyword("path", "Sensor Path Pattern")
+    nxcmd.updateParam("<path-pattern>", "Path Pattern use (.*) for wildcard Ex) sys/lacp/inst/if-(.*)/test",
+                      nx_sdk_py.P_STRING, None, 0, True)
+
+    nxcmd1 = cliP.newShowCmd("show_applied_paths_cmd", "applied-paths [<tm-inst>] [tm-sensor-grp <sensor-grp-id>] [path <path-pattern>]")
+    nxcmd1.updateKeyword("applied-paths", "Telemetry Applied Paths")
+    nxcmd1.addTimeout(120)
+    ### No need to update for other keywords & param as its already created
+ 
+    nxcmd2 = cliP.newShowCmd("show_default_inst_cmd", "default-instance")
+    nxcmd2.updateKeyword("default-instance", "Display Default Telemetry instances and patterns")
+   
+    ### define our application callback for this new command
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ### install the new commands to the NXOS parse tree
+    t.event("Adding commands to CLIS parse tree")
+    cliP.addToParseTree()
+    
+    ### block in the event loop to service NXOS messages
+    print("Starting event loop, CTRL-C to interrupt")
+    sdk.startEventLoop()
+
+    ### got here by calling stopEventLoop from signal handler
+    t.event("Service Quitting...!")
+  
+    ### [Required] Needed for graceful exit.  
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+### main thread
+
+### 
+# create a new sdkThread to setup SDK service and handle events.
+# Perform all SDK related inits in this thread.
+###
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread",0))
+sdk_thread.start()
+
+###
+# creating a timer thread to poll and check for any changes in the
+# interested DN Paths at regular intervals and update telemetry
+# configs based on the changes.
+###
+timer_thread = threading.Thread(target=timerThread, args=("timerThread",0))
+timer_thread.daemon = True
+
+### 
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.  
+###
+timer_thread.start()
+
+### Main thread is blocked until sdkThread exits. This keeps the
+### App running and listening to NX-OS events. 
+sdk_thread.join()
