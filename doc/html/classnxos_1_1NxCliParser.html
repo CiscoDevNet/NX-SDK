@@ -69,7 +69,7 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af058955d7c6dae444a5dab084342d03c"></a><!-- doxytag: member="nxos::NxCliParser::getCmdHandler" ref="af058955d7c6dae444a5dab084342d03c" args="()=0" -->
 virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#af058955d7c6dae444a5dab084342d03c">getCmdHandler</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get Cli callback handler object. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#a44b08502fa02c0f83b9dc26ef02e2be8">execShowCmd</a> (std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, bool *oper_result=NULL)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliParser.html#a074e9c2b831c49885b7d324689442d97">execShowCmd</a> (std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, virtual char *execConfigCmd(const char *filename)=0;bool *oper_result=NULL)=0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Abstract Interface to access Nexus CLI Parser tools. </p>
@@ -139,7 +139,7 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 
 </div>
 </div>
-<a class="anchor" id="a44b08502fa02c0f83b9dc26ef02e2be8"></a><!-- doxytag: member="nxos::NxCliParser::execShowCmd" ref="a44b08502fa02c0f83b9dc26ef02e2be8" args="(std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, bool *oper_result=NULL)=0" -->
+<a class="anchor" id="a074e9c2b831c49885b7d324689442d97"></a><!-- doxytag: member="nxos::NxCliParser::execShowCmd" ref="a074e9c2b831c49885b7d324689442d97" args="(std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, virtual char *execConfigCmd(const char *filename)=0;bool *oper_result=NULL)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -158,8 +158,8 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool *&nbsp;</td>
-          <td class="paramname"> <em>oper_result</em> = <code>NULL</code></td><td>&nbsp;</td>
+          <td class="paramtype">virtual char *&nbsp;</td>
+          <td class="paramname"> <em>execConfigCmd</em>const char *filename = <code>0;bool&nbsp;*oper_result=NULL</code></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -176,6 +176,34 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>Type(TEXT, XML, JSON) of the record to be returned. </td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oper_result</em>&nbsp;</td><td>if show output was successful. Returns true if show was successful (or) false if its a invalid show command. </td></tr>
     <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>Char*</em>&nbsp;</td><td>containing show output in the type format specified. It is not thread safe and any subsequent call to execShowCmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>execConfigCmd</em>&nbsp;</td><td>Execute other config commands in a file. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>filename</em>&nbsp;</td><td>File that contains all the config commands to be executed. </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>char*</em>&nbsp;</td><td>SUCCESS - if config commands were executed successfully if not contains the reason for failure </p>
+<div class="fragment"><pre class="fragment">  C++:
+       sdk = <a class="code" href="classnxos_1_1NxSdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);
+       cliP = sdk-&gt;getCliParser();
+       <span class="keywordtype">char</span> *result = cliP-&gt;execConfigCmd(filename);
+       <span class="keywordflow">if</span> (strcmp(result, <span class="stringliteral">&quot;SUCCESS&quot;</span>)== 0) {
+           <span class="comment">// Configs applied successfully.</span>
+       } <span class="keywordflow">else</span> {
+           <span class="comment">// Configs failed. Check the Error.</span>
+       }
+
+  Python:
+       <span class="keyword">import</span> nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       cliP = sdk.getCliParser()
+       result = cliP.execConfigCmd(filename)
+       <span class="keywordflow">if</span> <span class="stringliteral">&quot;SUCCESS&quot;</span> in result:
+<span class="preprocessor">           #Configs applied successfully.</span>
+<span class="preprocessor"></span>       <span class="keywordflow">else</span>:
+<span class="preprocessor">           #Configs failed. Check the Error.</span>
+</pre></div><p> * </td></tr>
   </table>
   </dd>
 </dl>
@@ -351,7 +379,7 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nobackup/sathsrin/nxsdk/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
+<li>/nobackup/sathsrin/NX-SDK/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -368,7 +396,7 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 9 May 2017 for Nexus Infra SDK by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Jun 2017 for Nexus Infra SDK by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
