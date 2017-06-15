@@ -159,7 +159,10 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>filename</em>&nbsp;</td><td>File that contains all the config commands to be executed. </td></tr>
-    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>char*</em>&nbsp;</td><td>SUCCESS if config commands were executed successfully if not contains the reason for failure </p>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>char*</em>&nbsp;</td><td>SUCCESS if config commands were executed successfully if not contains the reason for failure.</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="fragment"><pre class="fragment">  C++:
        sdk = <a class="code" href="classnxos_1_1NxSdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);
        cliP = sdk-&gt;getCliParser();
@@ -179,11 +182,7 @@ virtual <a class="el" href="classnxos_1_1NxCmdHandler.html">NxCmdHandler</a> *&n
 <span class="preprocessor">           #Configs applied successfully.</span>
 <span class="preprocessor"></span>       <span class="keywordflow">else</span>:
 <span class="preprocessor">           #Configs failed. Check the Error.</span>
-</pre></div> </td></tr>
-  </table>
-  </dd>
-</dl>
-
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="a44b08502fa02c0f83b9dc26ef02e2be8"></a><!-- doxytag: member="nxos::NxCliParser::execShowCmd" ref="a44b08502fa02c0f83b9dc26ef02e2be8" args="(std::string show_syntax, nxos::record_type_e type=nxos::R_TEXT, bool *oper_result=NULL)=0" -->

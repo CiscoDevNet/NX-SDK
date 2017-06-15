@@ -597,7 +597,8 @@ public:
      * Execute other config commands in a file.
      * @param[in] filename File that contains all the config commands to be  executed.
      * @param[out] char* SUCCESS if config commands were executed successfully
-     *                   if not contains the reason for failure
+     *                   if not contains the reason for failure.
+     *
      * @code
      *  C++:
      *       sdk = nxos::NxSdk::getSdkInst(argc, argv);

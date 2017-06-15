@@ -78,7 +78,8 @@ Check \char`\"{}show AppName internal state\char`\"{} if the custom commands are
 \label{classnxos_1_1NxCliParser_aa22ee0395ceadc46a3e28b93c5a5b75e}
 Execute other config commands in a file. 
 \begin{DoxyParams}{Parameters}
-\item[\mbox{$\leftarrow$} {\em filename}]File that contains all the config commands to be executed. \item[\mbox{$\rightarrow$} {\em char$\ast$}]SUCCESS if config commands were executed successfully if not contains the reason for failure 
+\item[\mbox{$\leftarrow$} {\em filename}]File that contains all the config commands to be executed. \item[\mbox{$\rightarrow$} {\em char$\ast$}]SUCCESS if config commands were executed successfully if not contains the reason for failure.\end{DoxyParams}
+
 \begin{DoxyCode}
   C++:
        sdk = nxos::NxSdk::getSdkInst(argc, argv);
@@ -100,8 +101,7 @@ Execute other config commands in a file.
        else:
            #Configs failed. Check the Error.
 \end{DoxyCode}
- \end{DoxyParams}
-\hypertarget{classnxos_1_1NxCliParser_a44b08502fa02c0f83b9dc26ef02e2be8}{
+ \hypertarget{classnxos_1_1NxCliParser_a44b08502fa02c0f83b9dc26ef02e2be8}{
 \index{nxos::NxCliParser@{nxos::NxCliParser}!execShowCmd@{execShowCmd}}
 \index{execShowCmd@{execShowCmd}!nxos::NxCliParser@{nxos::NxCliParser}}
 \subsubsection[{execShowCmd}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ nxos::NxCliParser::execShowCmd (std::string {\em show\_\-syntax}, \/  nxos::record\_\-type\_\-e {\em type} = {\ttfamily nxos::R\_\-TEXT}, \/  bool $\ast$ {\em oper\_\-result} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
