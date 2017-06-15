@@ -415,14 +415,14 @@ public:
      **/
     virtual int getParamCount(const char *param_name)=0;
 
-	/**
-	 * Print custom output on the switch console only
+    /**
+     * Print custom output on the switch console only
      * when called inside command handler postCliCb.
      * Does nothing if called in anyother place.
      *
      * @note Refer to example Apps. 
-	 **/
-	virtual void printConsole(const char *fmt, ...)=0;
+     **/
+    virtual void printConsole(const char *fmt, ...)=0;
 };
 
 /**
@@ -591,7 +591,37 @@ public:
      **/
     virtual char* execShowCmd(std::string show_syntax,
                               nxos::record_type_e type=nxos::R_TEXT,
-                              bool *oper_result=NULL)=0;
+     
+    /**
+     * Execute other config commands in a file.
+     * @param[in] filename File that contains all the config commands to be  executed.
+     * @param[out] char* SUCCESS - if config commands were executed successfully
+     *                             if not contains the reason for failure
+     * @code
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       char *result = cliP->execConfigCmd(filename);
+     *       if (strcmp(result, "SUCCESS")== 0) {
+     *           // Configs applied successfully.
+     *       } else {
+     *           // Configs failed. Check the Error.
+     *       }
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       result = cliP.execConfigCmd(filename)
+     *       if "SUCCESS" in result:
+     *           #Configs applied successfully.
+     *       else:
+     *           #Configs failed. Check the Error.
+     *
+     * @endcode
+     **/
+    virtual char* execConfigCmd(const char *filename)=0;
+                                bool *oper_result=NULL)=0;
 };
 
 }
