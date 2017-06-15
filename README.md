@@ -440,6 +440,8 @@ Detailed usage of NX-OS SDK:
   - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/tmCfgBot">tmCfgBot</a> - Telemetry Config Helper Bot to automatically [de]configure/monitor the necessaary paths for a given instance type. 
   - <a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a> - PTP Monitor Application
   
+  - NOTE: All sample application RPMs are located at <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm/RPMS">RPMS</a>.
+  
 ### Sample Python Application created using NXSDK:
     ```
       pbwMonitor: To Monitor Port Tx & Rx Bandwidth Utilization %
