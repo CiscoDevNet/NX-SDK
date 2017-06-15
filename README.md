@@ -431,7 +431,7 @@ Detailed usage of NX-OS SDK:
 ## 11. Sample Custom Applications created using NXSDK
 
 ### C++ NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliApp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
                        showcasing the usage of gaining access to NX-OS CLI infrastructure.  
 
 ### Python NXSDK Custom Applications:
