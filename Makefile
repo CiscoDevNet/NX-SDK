@@ -105,7 +105,7 @@ ${LIBTARGET}: ${LIBNXSDK_OBJS}
 # Create Objs needed for src programs
 ${SRCNXSDK_BIN}:
 	@echo -e "\n### Building Source Apps  - ($@)!!!"
-	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(TARGETDIR)/$@  $(SRCDIR)/$@.cpp
+	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(TARGETDIR)/$@  $(SRCDIR)/$@.cpp -lnxsdk
 
 ### Build Example binaries
 # Create Objs needed for Example programs
