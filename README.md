@@ -5,17 +5,17 @@
 
 # Table of Contents
 
-  - [Cisco NX-OS SDK](#cisco-nxos-sdk)
+  - [Cisco NXSDK](#cisco-nxsdk)
   - [Documentation](#documentation)
   - [Usage](#usage)
   - [Release](#release)
     * [Version V1.0](#version-v10)
     * [Future Versions](#future-versions)
-  - [Custom Application Development using NX-OS SDK Requirements](#custom-application-development-using-nxos-sdk-requirements)
-  - [Custom Application Development Flow using NX-OS SDK](#custom-application-development-flow-using-nxos-sdk)
-    * [1. Install NX-OS SDK](#1-install-nxos-sdk)
+  - [Custom Application Development using NXSDK Requirements](#custom-application-development-using-nxsdk-requirements)
+  - [Custom Application Development Flow using NXSDK](#custom-application-development-flow-using-nxsdk)
+    * [1. Install NXSDK](#1-install-nxsdk)
       + [a) ENXOS SDK Build Environment [Optional]](#a-enxos-sdk-build-environment-optional)
-      + [b) Get NX-OS SDK toolkit](#b-get-nxos-sdk-toolkit)
+      + [b) Get NXSDK toolkit](#b-get-nxsdk-toolkit)
     * [2. Building Custom Applications](#2-building-custom-applications)
     * [3. Unit Testing Custom Application](#3-unit-testing-custom-application)
     * [4. Packaging Custom Application](#4-packaging-custom-application)
@@ -30,22 +30,22 @@
     * [11. Sample Custom Applications created using NXSDK](#11-sample-custom-applications-created-using-nxsdk)
     * [12. Helpful Notes](#12-helpful-notes)
 
-# Cisco NXOS SDK
+# Cisco NXSDK
 
 <p align="justify">
-Cisco NX-OS SDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
+Cisco NXSDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
-It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NX-OS SDK offers various functionalities like ability to 
+It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NXSDK offers various functionalities like ability to 
 generate custom CLIs, Syslogs, Event manager, Inter-Application communication, HA, Route Manager and much more.
 
-NX-OS SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
-Hence, its easy and simple to change infra without affecting the applications. Hence, NX-OS SDK can be used for
+NXSDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
+Hence, its easy and simple to change infra without affecting the applications. Hence, NXSDK can be used for
 developing native Cisco Applications as well. 
 
 It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS SDK hence custom applications 
 can be developed and built in any language of users choice.
 
-This github provides NX-OS SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
+This github provides NXSDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
 </p>
 
 # Documentation
@@ -56,21 +56,21 @@ For detailed description and directory structure of Cisco NX-OS SDK toolkit, ref
 
 Detailed usage of NX-OS SDK:
   - For C++ custom Application development, public Classes and APIs to be used are available in <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>. Its description and usage are available 
-    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">doc</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a> for sample C++ Apps.
+    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a> for sample C++ Apps.
   - Python and other language bindings will be auto-generated from the above classes and APIs using SWIG. 
-    Only Python language bindings for NX-OS SDK will be supported in Version 1.0
-    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples</a> for python Apps leveraging the NX-OS SDK functionalities for Python custom App development.
+    Only Python language bindings for NXSDK will be supported in Version 1.0
+    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples</a> for python Apps leveraging the NXSDK functionalities for Python custom App development.
 
 # Release 
 
 ## Version V1.0
-  - NX-OS SDK will be first available on N9K switches as part of F release.
-  - Ability to develop C++ and Python custom application using NX-OS SDK.
+  - NXSDK will be first available on N9K switches as part of F release.
+  - Ability to develop C++ and Python custom application using NXSDK.
   - Ability for custom applications to generate custom CLIs (config and show commands) and get callbacks.
   - Ability to generate custom Syslogs, Events & Error history messages.
   - Ability to start/stop C++ and Python custom Applications from VSH just like any other native Nexus applications (like feature bgp)
     thereby providing HA capability for custom applications. 
-  - C++ and Python NX-OS SDK custom Application development toolkit.
+  - C++ and Python NXSDK custom Application development toolkit.
 
 ## Future Versions
   - Go and Ruby custom Application development toolkit.
@@ -81,11 +81,10 @@ Detailed usage of NX-OS SDK:
   - High Availability
   - Security
 
-# Custom Application Development using NXOS SDK Requirements
-  - Docker
-  - Linux (Currently supported platforms)
-  - ENXOS SDK (For best results, build the App using NX-OS SDK as RPM package in ENXOS SDK. 
-    Docker container with ENXOS SDK will be provided).
+# Custom Application Development using NXSDK Requirements
+  - Linux (Currently supported platforms) <br>
+               (Or) <br>
+  - Docker (Docker container with ENXOS SDK will be provided. For best results, build the App using NXSDK as RPM package in ENXOS SDK).
     ```
       For Apps started in BASH,
           - Python Apps: 
@@ -103,7 +102,7 @@ Detailed usage of NX-OS SDK:
       NOTE: Please ensure that the name of the custom application does not collide with any existing Native Nexus applications.
     ```        
 
-#  Custom Application Development Flow using NXOS SDK
+#  Custom Application Development Flow using NXSDK
 
 ## 1. Install NXOS SDK
 
