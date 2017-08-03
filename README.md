@@ -84,8 +84,8 @@ Detailed usage of NXSDK:
 # Custom Application Development using NXSDK Requirements
   - Linux (Currently supported platforms) <br>
                (Or) <br>
-  - Docker (Docker container with ENXOS SDK containing all tools to build an application to be run in NXOS switches  
-            successfully will be provided. For best results, build the App using NXSDK as RPM package in ENXOS SDK).
+  - Docker [Recommended] (Docker container with ENXOS SDK containing all tools to build an application to be run 
+    in NXOS switches successfully. For best results, build the App using NXSDK as RPM package in ENXOS SDK).
     ```
       For Apps started in BASH,
           - Python Apps: 
