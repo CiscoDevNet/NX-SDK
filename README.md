@@ -57,7 +57,7 @@ For detailed description and directory structure of Cisco NXSDK toolkit, refer t
 Detailed usage of NXSDK:
   - For C++ custom Application development, public Classes and APIs to be used are available in <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>. Its description and usage are available 
     in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a> for sample C++ Apps.
-  - Python and other language bindings will be auto-generated from the above classes and APIs using SWIG. 
+  - Python and other language bindings will be auto-generated from the above classes and APIs using <a href="http://www.swig.org/">SWIG</a>. 
     Only Python language bindings for NXSDK will be supported in Version 1.0
     Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples</a> for python Apps leveraging the NXSDK functionalities for Python custom App development.
 
