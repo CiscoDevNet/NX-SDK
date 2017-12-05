@@ -25,10 +25,12 @@
           </ul>  
          When the Application is then run in the Nexus switches it then links to the real NX-SDK library packaged in the Nexus
          images. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#release">Nexus releases</a> in which NX-SDK is available. NOTE: For python custom applications, stubs will soon be published.</p>
- - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a>: <p align="justify"> Sample C++ example custom Applications showcasing the usage of NX-SDK.</p>
- - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python">python/</a>: <p align="justify"> NX-SDK also supports other language bindings. In V1.0, it supports
-        python language binding for custom application development using NX-SDK. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples/</a> for sample python 
-        custom Applications showcasing the usage of NX-SDK. </p>
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a>: <p align="justify"> Sample custom Applications showcasing the usage of NX-SDK.</p>
+   - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/c++">c++/</a>: <p align="justify"> Sample C++ 
+        custom Applications using NX-SDK. </p>
+   - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/python">python/</a>: <p align="justify"> NX-SDK also supports other language bindings. In V1.0, it supports
+        python language binding for custom application development using NX-SDK. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/python">examples/python/</a> for sample python 
+        custom Applications using NX-SDK. </p>
   - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/scripts">scripts/</a>: <p align="justify"> Contains Handy scripts. 
   <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/scripts/rpm_gen.py">rpm_gen.py</a> - To auto-generate RPM package for custom Application. 
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm">rpm/</a>: <p align="justify"> To start/stop custom applications from VSH, it needs to be built/packaged
