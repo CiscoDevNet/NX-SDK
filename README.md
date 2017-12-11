@@ -56,10 +56,10 @@ For detailed description and directory structure of Cisco NXSDK toolkit, refer t
 
 Detailed usage of NXSDK:
   - For C++ custom Application development, public Classes and APIs to be used are available in <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>. Its description and usage are available 
-    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a> for sample C++ Apps.
+    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/c++">examples/c++</a> for sample C++ Apps.
   - Python and other language bindings will be auto-generated from the above classes and APIs using <a href="http://www.swig.org/">SWIG</a>. 
     Only Python language bindings for NXSDK will be supported in Version 1.0
-    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python/examples">python/examples</a> for python Apps leveraging the NXSDK functionalities for Python custom App development.
+    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/python">examples/python</a> for python Apps leveraging the NXSDK functionalities for Python custom App development.
 
 # Release 
 
@@ -82,10 +82,15 @@ Detailed usage of NXSDK:
   - Security
 
 # Custom Application Development using NXSDK Requirements
+ The user has two options in development environments when using the NXSDK for application development:
   - Linux (Currently supported platforms) <br>
+    Any recent version of the major distributions that have access to the GNU C/C++ toolchains and standard 
+    libraries.  This also includes running Linux as a virtual machine. <br>
                (Or) <br>
   - Docker [Recommended] (Docker container with ENXOS SDK containing all tools to build an application to be run 
-    in NXOS switches successfully. For best results, build the App using NXSDK as RPM package in ENXOS SDK).
+    in NXOS switches successfully. For best results, build the App using NXSDK as RPM package in ENXOS SDK).<br>
+    NOTE: It is required to have at least 8GB of free space available for the installation of the Docker environment.
+          The Docker image and associated build tools are built to run in  64-bit host systems only.
     ```
       For Apps started in BASH,
           - Python Apps: 
@@ -180,6 +185,9 @@ Detailed usage of NXSDK:
          cd $ENXOS_SDK_ROOT
          source environment-setup-x86-wrsmllib32-linux 
       ```
+    -  NOTE: <p>If building applications in the native Linux environment (outside the NXSDK build environment), 
+             use the proper options for the build tools to generate 32-bit binaries, e.g. "-m32".  This is 
+             taken care of for you if using the NXSDK build environment. </p>
   - Nothing to build for Python Applications.      
 
 ## 3. Unit Testing Custom Application
