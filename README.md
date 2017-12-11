@@ -431,13 +431,13 @@ Detailed usage of NXSDK:
 ## 11. Sample Custom Applications created using NXSDK
 
 ### C++ NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/c++/customCliApp.cpp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
                        showcasing the usage of gaining access to NX-OS CLI infrastructure.  
 
 ### Python NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/customCliPyApp">customCliPyApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/python/examples/tmCfgBot">tmCfgBot</a> - Telemetry Config Helper Bot to automatically [de]configure/monitor the necessaary paths for a given instance type. 
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/customCliPyApp">customCliPyApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
+  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/tmCfgBot">tmCfgBot</a> - Telemetry Config Helper Bot to automatically [de]configure/monitor the necessaary paths for a given instance type. 
   - <a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a> - PTP Monitor Application
   
   - NOTE: All sample application RPMs are located at <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm/RPMS">RPMS</a>.
