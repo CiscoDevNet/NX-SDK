@@ -46,7 +46,7 @@ VERSION    := ${MAJOR_VERSION}.${MINOR_VERSION}
 ### Directory Structure
 HEADERDIR  := include
 BUILDDIR   := build
-EXSRCDIR   := examples
+EXSRCDIR   := examples/c++
 TARGETDIR  := bin
 LIBDIR     := libs
 NXLIBDIR   := /isan/lib
