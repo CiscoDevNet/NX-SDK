@@ -49,14 +49,14 @@ This github provides NX-SDK toolkit for custom application development in your f
 # Release 
 
 - Refer to [NX-SDK versions](versions.md) for more details on different versions and its supported features.
-- Refer to [NX-SDK releases](releases) to get older NX-SDK versions. 
+- Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/releases">NX-SDK releases</a> to get older NX-SDK versions. 
 
 # Documentation and Usage
 
   - For C++ custom Application development, public APIs are available in [include/](include/). Its description and usage are available 
     in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). 
   - Python and other language bindings will be auto-generated from the above C++ APIs using <a href="http://www.swig.org/">SWIG</a>. Refer to [version](versions.md) for more details on supported language bindings in each NX-SDK version.
-  - Refer to [example NX-SDK applications](examples/README.md) for details.
+  - Refer to [example NX-SDK applications](examples/README.md) for more details.
 
 # Description
 
