@@ -1,0 +1,812 @@
+#!/isan/bin/nxpython
+
+################################################################
+# File:   routeTracker
+#
+# Supported since NX-SDK v1.5.0
+#
+# Description:
+#    A Python App using NX-SDK RibMgr Module to register with
+#    NXOS RIB for route update events thereby keeping a
+#    history of the interested route events (add, update, 
+#    delete etc) in the switch. It also provides custom 
+#    config and show commands to filter events based on the 
+#    user input and also provides more detailed information 
+#    on what and when it got changed.
+#
+#    Refer to 
+#     - "show routeTracker nxsdk state" for custom config & show 
+#       commands.
+#     - To watch on static routes in default vrf use,
+#       "routeTracker watch owner static vrf default"
+#     - To watch on BGP routes in all VRFs use,
+#       "routeTracker watch owner bgp 1000 vrf all"
+#        where 1000 is the ASN (or) tag associated with the owner.
+#     - "show routeTracker [vrf <vrf-name> | all]" shows all the
+#       interested route event history as text by this application.
+#       For ex) 
+#        switch(config)# routeTracker watch owner direct vrf default
+#
+#        !!! Check routing table
+#        switch(config-if)# sh ip route 
+#        IP Route Table for VRF "default"
+#        '*' denotes best ucast next-hop
+#        '**' denotes best mcast next-hop
+#        '[x/y]' denotes [preference/metric]
+#        '%<string>' in via output denotes VRF <string>
+#
+#        10.1.1.0/24, ubest/mbest: 1/0, attached
+#            *via 10.1.1.1, Lo1, [0/0], 00:00:01, direct
+#
+#        !!! Check the routeTracker state
+#        switch(config)# sh routeTracker vrf all 
+#
+#        Total Entries    : 1
+#        Telemetry Index  : 0
+#        Displaying VRF   : all
+#        Current Time     : 2018-02-21 06:13:43.391354
+#        Purge entries <  : 2018-02-21 05:43:43.391387 (purge period 0:30:00)
+#---------------------|----------------------|------------|---------|------------|-----------
+#Time                 | Prefix               | Vrf        | Event   | Owner      | NH Count  
+#---------------------|----------------------|------------|---------|------------|-----------
+#2018-02-21 06:13:34  | 10.1.1.0/24          | default    | Add     | direct     | 1         
+#2018-02-21 06:18:29  | 20.1.1.0/24          | default    | Delete  | direct     | 0         
+#---------------------|----------------------|------------|---------|------------|-----------
+#        Total Entries in this run: 1
+#
+#     - "show routeTracker detail [vrf <vrf-name> | all]" shows all the
+#       interested "detailed" route event history as text by this application.
+#       Refer to the show command for more filterting options based on IP address,
+#       VRF, Owner, updates in last X mins).
+#       For ex) 
+#       switch(config-if)# sh routeTracker detail vrf all 
+#
+#       Total Entries    : 1
+#       Telemetry Index  : 0
+#       Displaying VRF   : all
+#       Current Time     : 2018-02-21 06:19:15.351316
+#       Purge entries <  : 2018-02-21 05:49:15.351348 (purge period 0:30:00)
+#---------------------|----------------------|------------|---------|------------|-----------
+#Time                 | Prefix               | Vrf        | Event   | Owner      | NH Count  
+#---------------------|----------------------|------------|---------|------------|-----------
+#2018-02-21 06:13:34  | 10.1.1.0/24          | default    | Add     | direct     | 1         
+#                     |                      |            |         |            |  [NH-1]:
+#                     |                      |            |         |            |  Address   : 10.1.1.1
+#                     |                      |            |         |            |  VrfName   : default
+#                     |                      |            |         |            |  OutIntf   : loopback1
+#---------------------|----------------------|------------|---------|------------|-----------
+#
+#     - "show routeTracker json [vrf <vrf-name> | all]" shows all the
+#       interested route event history as "JSON" which can be used in
+#       streaming telemetry as follows.
+#
+#       switch(config)# feature telemetry
+#                       telemetry
+#                       destination-group 1
+#                       ip address 172.27.254.159 port 50001 protocol gRPC encoding GPB
+#                       sensor-group 1
+#                          data-source NX-API
+#                          path "show routeTracker json tm-use-only vrf all" depth 0 query-condition show-output-format=json
+# 
+#      NOTE:
+#      1) "query-condition show-output-format=json" tells telemetry infra that
+#         the show command output format is JSON.
+#      2) tm-use-only is a special option when set the application knows that
+#         the command was executed in telemetry context hence the application
+#         does special optimization of not streaming redundant information &
+#         only changed information.
+#
+# Copyright (c) 2018 by cisco Systems, Inc.
+# All rights reserved.
+#
+# Since NX-SDK v1.5.0
+#
+# $Id: $
+# $Source: $
+# $Author: $
+##################################################################
+
+import signal
+import time
+import threading
+import sys
+import json
+from time import gmtime, strftime
+from datetime import datetime, date, timedelta
+from pprint import pprint
+
+### Imports NX-OS SDK package
+import nx_sdk_py
+
+###############################################
+############# Global variables#################
+###############################################
+### List of dicts. To maintain a history of all 
+### registered route update events.
+rteHistory = []
+
+### To lock/unlock while making changes to rteHistory
+rteHistoryLock = threading.Lock()
+
+### rteHistory cleanup old entries time period
+rteHistoryPurgeTime = timedelta(minutes=30)
+
+### Route prefix tracking per vrf table Dict
+### To keep track of route Add event for
+### for the first by the App and the owner of
+### the routes as when the route gets deleted, 
+### the delete  event does not specify the owner 
+### of the route.
+routeTable = {}
+
+### Index from which data needs to be streamed.
+### Strictly used with telemetry. As this route
+### event history can be streamed through telemetry
+### as a JSON object. So when then command gets
+### executed in telemetry space, it keeps track from
+### which point the data needs to be streamed using 
+### telemetry. ie, it means all the previous entries 
+### are already streamed through telemetry hence 
+### optimized not to send redundant data and faster 
+### streaming as well through telemetry.
+telemetryIndex = 0
+
+### Set when we are walking during show command.
+showWalkList = False
+
+### Helper function to convert Event type to string
+def getEventStr(event):
+    if event == nx_sdk_py.ADD:
+       return "Add"
+    elif event == nx_sdk_py.DELETE:
+       return "Delete"
+    elif event == nx_sdk_py.UPDATE:
+       return "Update"
+    else:
+       return "Unknown"
+
+### Helper function to convert State type to string
+def getStateStr(state):
+    if state == nx_sdk_py.UP:
+       return "Up"
+    elif state == nx_sdk_py.DOWN:
+       return "Down"
+    else:
+       return "Unknown"
+
+### Overloaded NxRibMgrHandler class.
+class pyRibHandler(nx_sdk_py.NxRibMgrHandler):
+        ### Overloaded Callback to get VRF events
+        global rteHistory, routeTable
+
+        ###
+        # - Overload postVrfCb to handle VRF specific updates.
+        #   To get VRF specific updates, refer to watchVrf()
+        ###
+        def postVrfCb(self,nxvrf):
+            rtelem = {}
+            rtelem["time"]    = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            rtelem["prefix"]  = "-"
+            rtelem["vrfname"] = nxvrf.getName()
+            rtelem["event"]   = getEventStr(nxvrf.getEvent())
+            rtelem["path"]    = "VRF-" + rtelem["vrfname"] 
+            rtelem["owner"]   = "-" 
+            rtelem["nh-count"] = 0
+
+            ### Add to the end of the list 
+            #rteHistory.insert(len(rteHistory), rtelem)
+            return True
+
+        ###
+        # - Overlaod postL3RouteCb to handle route specific updates.
+        #   To get Route updates, refer to watchL3Route()
+        ###
+        def postL3RouteCb(self,nxroute):
+            vrfName  = nxroute.getVrfName()
+            prefix   = nxroute.getAddress() + str("/") + str(nxroute.getMaskLen())
+            af       = "ipv4"
+            currTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            event    = nxroute.getEvent() 
+            owner    = "-"
+
+            if ":" in prefix:
+               af = "ipv6"
+
+            ### Add/Update entry to route Table
+            if vrfName not in routeTable:
+               routeTable[vrfName] = {}
+            if event == nx_sdk_py.DELETE:
+               if prefix in routeTable[vrfName]:
+                  owner = routeTable[vrfName][prefix]
+                  routeTable[vrfName].pop(prefix, None)
+               if len(routeTable) <= 0:
+                  routeTable.pop(vrfName, None)
+            else:
+               if prefix not in routeTable[vrfName]:
+                  ### If the prefix doesnt exist in our table then
+                  ### its an ADD event
+                  event = nx_sdk_py.ADD
+                  routeTable[vrfName][prefix] = owner
+ 
+            ### Add entry to route history
+            rtelem = {}
+            rtelem["time"]     = currTime
+            rtelem["prefix"]   = prefix
+            rtelem["af"]       = af
+            rtelem["vrfname"]  = vrfName
+            rtelem["event"]    = getEventStr(event)
+            rtelem["nh-count"] = nxroute.getL3NextHopCount()
+            rtelem["path"]     = "L3Route-" + rtelem["prefix"]
+            rtelem["owner"]    = owner
+            nexthop = nxroute.getL3NextHop()
+            index = 1
+            while nexthop:
+                  key = "NH-" + str(index)
+                  rtelem[key] = {}
+                  rtelem["owner"] = nexthop.getOwner()
+                  routeTable[vrfName][prefix] = nexthop.getOwner()
+                  rtelem[key]["nh-address"] = nexthop.getAddress()
+                  rtelem[key]["nh-vrfname"] = nexthop.getVrfName()
+                  rtelem[key]["nh-outintf"] = nexthop.getOutInterface()
+                  rtelem[key]["nh-preference"] = nexthop.getPreference()
+                  rtelem[key]["nh-tag"]     = nexthop.getTag()
+                  rtelem[key]["nh-metric"]  = nexthop.getMetric()
+                  rtelem[key]["nh-segmentid"] = nexthop.getSegmentId() 
+                  rtelem[key]["nh-tunnelid"] = nexthop.getTunnelId()
+                  rtelem[key]["nh-path"]    = rtelem["path"] + "-NH-" + rtelem[key]["nh-address"]
+                  index += 1
+                  nexthop = nxroute.getL3NextHop()
+
+            ### Add to the end of the list 
+            #rteHistoryLock.acquire()
+            rteHistory.insert(len(rteHistory), rtelem)
+            #rteHistoryLock.release()
+            return True
+
+###
+# Function on timer expiry to cleanup old route event
+# entries from the rteHistory list.
+# route event time < (current_time - set_purge_period)
+# Default is 30mins. When the timer wakes up, it cleans 
+# all the events that are older than (now - 30mins)
+###
+###
+# timerThread to poll and calculate port bandwidth utilization percentage
+# at regular intervals and log a syslog event if a port has exceeded the
+# set threshold
+###
+def timerThread(name,val):
+    global rteHistory, rteHistoryPurgeTime, tmsg, telemetryIndex, showWalkList
+
+    while True:
+        last = datetime.now() - rteHistoryPurgeTime
+
+        ### Nothing to be done
+        if rteHistory:
+           #rteHistoryLock.acquire()
+           if showWalkList:
+              time.sleep(60)
+              continue
+           rtelem = rteHistory[0]
+           while True:
+               ### Delete empty dict. It should not happen but handle it.
+               if not rtelem:
+                  del rteHistory[0]
+
+                  ### Maintain telemetry index if its being used. 
+                  if telemetryIndex > 0:
+                     telemetryIndex -= 1
+                  if not rteHistory:
+                     break
+                  rtelem = rteHistory[0]
+                  continue
+
+               t1 = datetime.strptime(rtelem['time'], "%Y-%m-%d %H:%M:%S")
+
+               # rteHistory is a time based event list. Hence check if the 
+               # entry is old. If it is do the cleanup if not then break the
+               # loop as there is nothing to cleanup in this cycle. 
+               if t1 > last:
+                  break
+
+               ### Cleanup this entry as its old.
+               del rteHistory[0]
+
+               ### Maintain telemetry index if its being used. 
+               if telemetryIndex > 0:
+                  telemetryIndex -= 1
+               if not rteHistory:
+                  break
+               rtelem = rteHistory[0]
+           #rteHistoryLock.release()
+        time.sleep(60)
+
+### 
+# Inherit from the NxCmdHandler class, define the application
+# callback in 'postCliCb'. Handler Callback for Custom Cli execution.
+# Returns True if the action was successful. False incase of failure.
+###
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+        ### To access the global Cli Parser Obj
+        global cliP, ribMgr, tmsg
+
+        def postCliCb(self,clicmd):
+            global telemetryIndex, rteHistoryPurgeTime
+
+            ### Some local variable to store the value of input parameters
+            vrf_name = ""
+            prefix   = ""
+            protocol = ""
+            no_cmd   = False
+            dayp     = 0
+            hourp    = 0
+            minp     = 30
+            last     = None
+            print_time_str  = ""
+
+            ### Check if its a no command
+            if "no" in clicmd.getCmdLineStr():
+               no_cmd = True
+
+            ### To Stream all data from the start
+            if "clear_tm_index_cmd" in clicmd.getCmdName():
+               int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<start-index>"))
+               telemetryIndex = 0
+               if int_p:
+                  telemetryIndex = int(nx_sdk_py.intp_value(int_p))               
+               return True
+
+            ### Get the protocol/owner info
+            if clicmd.isKeywordSet("owner"):
+               protocol = nx_sdk_py.void_to_string(clicmd.getParamValue("<protocol>"))
+
+            ### Check if VRF parameter is set. If it is get the name
+            if not clicmd.isKeywordSet("period"):
+               vrf_name = nx_sdk_py.void_to_string(clicmd.getParamValue("<vrf-name>"))
+               if not vrf_name:
+                  vrf_name = "all"
+               if "all" in vrf_name:
+                  vrf_name = "all"
+
+            ### Get Last & period input if set in the CLI 
+            if clicmd.isKeywordSet("last") or clicmd.isKeywordSet("period"):
+               if clicmd.isKeywordSet("days"):
+                  int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<dayp>"))
+                  if int_p:
+                     dayp = int(nx_sdk_py.intp_value(int_p))
+                     print_time_str += str(dayp) + " days "
+               if clicmd.isKeywordSet("hours"):
+                  int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<hourp>"))
+                  if int_p:
+                     hourp = int(nx_sdk_py.intp_value(int_p))
+                     print_time_str += str(hourp) + " hours "
+               if clicmd.isKeywordSet("mins"):
+                  int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<minp>"))
+                  if int_p:
+                     minp = int(nx_sdk_py.intp_value(int_p))
+               print_time_str += str(minp) + " minutes "
+
+               ###
+               # Get the current time - last time. This is to display/filter all
+               # route updates happened > (current time - last time)
+               ###    
+               last = datetime.now() - timedelta(minutes=minp,hours=hourp,days=dayp)
+
+            if "show_route_tracker_cmd" in clicmd.getCmdName():
+               ### Show route history buffer command
+               global rteHistory, showWalkList
+               curr_index   = 0
+               run_cnt      = 0
+               out_json     = False
+               first_time   = False
+
+               ###
+               # Making a copy of the list as the list could be
+               # modified while copying. Can lock the list too 
+               # while walking. But for now going with a copy.
+               # TODO: Go with the locks.
+               ###
+               #rteHistoryLock.acquire()
+               showWalkList = True
+               #rteHistory_tmp = list(rteHistory)
+               rteHistory_json = {}
+  
+               ### Get the prefix input
+               prefix = nx_sdk_py.void_to_string(clicmd.getParamValue("<prefix>"))
+               print_str = vrf_name
+               if "all" in vrf_name:
+                  print_str = "all"
+
+               ### Check if the output type is ascii (or) json
+               if clicmd.isKeywordSet("json"):
+                  out_json = True
+
+               ### Print in ascii format
+               if not out_json:
+                  clicmd.printConsole("\nTotal Entries    : %d\n" % len(rteHistory))
+                  clicmd.printConsole("Telemetry Index  : %d\n" % telemetryIndex)
+                  clicmd.printConsole("Displaying VRF   : %s\n" % print_str)
+                  clicmd.printConsole("Current Time     : %s\n" % datetime.now())
+                  clicmd.printConsole("Purge entries <  : %s (purge period %s)\n" \
+                                      % ((datetime.now() - rteHistoryPurgeTime), \
+                                      rteHistoryPurgeTime))
+                  if clicmd.isKeywordSet("last"):               
+                     clicmd.printConsole("Displaying last  : %s\n" % print_time_str)     
+                  clicmd.printConsole("---------------------|----------------------|------------|---------|------------|-----------\n")
+                  print_str = '{0:20} | {1:20} | {2:10} | {3:7} | {4:10} | {5:10}'.format(\
+                                "Time", "Prefix", "Vrf", "Event", "Owner", "NH Count")
+                  clicmd.printConsole("%s\n" % print_str)
+                  clicmd.printConsole("---------------------|----------------------|------------|---------|------------|-----------\n")
+               else:
+                  clicmd.printConsole("{")
+
+               ### Optimization for streaming data through telemetry
+               if clicmd.isKeywordSet("tm-use-only"):
+                  ### somethins is wrong. telemtryIndex can never be
+                  ### > than length of rteHistory. Handle it.
+                  if telemetryIndex >= len(rteHistory):
+                     telemetryIndex = len(rteHistory)
+                  curr_index = telemetryIndex
+               else:
+                  curr_index = 0  
+
+               ###
+               # Walk through the buffer and based on the filter specified
+               # disaply the events matching the filter.
+               #  Filter route events based on:
+               #         Vrf Name - print all events in that VRF
+               #         Prefix   - print all events for that prefix 
+               #         Owner    - print all events for a given owner
+               #         Time     - print all events in the last 5 mins etc.
+               ###    
+               #for rtelem in rteHistory:
+               while True:
+                   ### Doing it inside the loop as new items could have 
+                   ### been added.
+                   if curr_index >= len(rteHistory):
+                      break
+
+                   rtelem = rteHistory[curr_index]
+                   curr_index += 1
+                   if not rtelem:
+                      continue
+
+                   ### Filter events based on time if set
+                   if clicmd.isKeywordSet("last"):
+                      t1 = datetime.strptime(rtelem['time'], "%Y-%m-%d %H:%M:%S")
+                      if last > t1: 
+                         continue
+           
+                   ### Filter events based on vrf_name if set
+                   if vrf_name and "all" not in vrf_name:
+                      if vrf_name != rtelem['vrfname']:
+                         continue
+
+                   ### Filter events based on prefix if set
+                   if prefix and prefix != rtelem['prefix']:
+                      continue         
+
+                   ### Filter events based on protocol
+                   if protocol and protocol != rtelem['owner']:
+                      continue
+
+                   ### If the data is streamed through telemetry
+                   ### ie when telemetry calls the show cli
+                   ### it makes sure it only sends the data once
+                   ### and no redundant copies are sent.
+                   if clicmd.isKeywordSet("tm-use-only"):
+                      telemetryIndex += 1
+                   #   if "streamed" in rtelem:
+                   #      continue
+                   #   rtelem['streamed'] = 0
+
+                   run_cnt += 1
+
+                   if not out_json:
+                      print_str = '{0:20} | {1:20} | {2:10} | {3:7} | {4:10} | {5:10}'.format(\
+                                  rtelem['time'], rtelem['prefix'], rtelem['vrfname'], \
+                                  rtelem['event'], rtelem['owner'], str(rtelem['nh-count']))
+                      clicmd.printConsole("%s\n" % print_str)
+                   else:
+                      rteHistory_json_hdr = {}
+                      for nh in rtelem:
+                          if type(rtelem[nh]) != dict:
+                             rteHistory_json_hdr[nh] = rtelem[nh]
+
+                      ### If there is no next-hop then just add the header
+                      if int(rtelem['nh-count']) == 0:
+                         rteHistory_json[rtelem['path']] = {}
+                         rteHistory_json[rtelem['path']].update(rteHistory_json_hdr)
+                         rteHistory_json[rtelem['path']]["nh-index"] = ""
+                         rteHistory_json[rtelem['path']]["nh-address"] = ""
+                         rteHistory_json[rtelem['path']]["nh-vrfname"] = ""
+                         rteHistory_json[rtelem['path']]["nh-outintf"] = ""
+                         rteHistory_json[rtelem['path']]["nh-preference"] = 0
+                         rteHistory_json[rtelem['path']]["nh-tag"]     = 0
+                         rteHistory_json[rtelem['path']]["nh-metric"]  = 0
+                         rteHistory_json[rtelem['path']]["nh-segmentid"] = 0
+                         rteHistory_json[rtelem['path']]["nh-tunnelid"] = 0
+                         if not first_time:
+                            clicmd.printConsole("\"%s\":%s" % (rtelem['path'], \
+                                       json.dumps(rteHistory_json[rtelem['path']])))
+                            first_time = True
+                         else:
+                            clicmd.printConsole(",\"%s\":%s" % (rtelem['path'], \
+                                       json.dumps(rteHistory_json[rtelem['path']])))
+                      else:
+                          for nh in rtelem:
+                              if type(rtelem[nh]) == dict:
+                                 nh_path = rtelem[nh]['nh-path']
+                                 rteHistory_json[nh_path] = {}
+                                 rteHistory_json[nh_path].update(rteHistory_json_hdr)
+                                 rteHistory_json[nh_path]['nh-index'] = nh
+                                 for key in rtelem[nh]:
+                                     if key in "nh-path":
+                                        rteHistory_json[nh_path]['path'] = rtelem[nh][key]
+                                        continue
+                                     rteHistory_json[nh_path][key] = rtelem[nh][key] 
+                                 if not first_time:
+                                    clicmd.printConsole("\"%s\":%s" % (nh_path, \
+                                       json.dumps(rteHistory_json[nh_path])))
+                                    first_time = True
+                                 else:
+                                    clicmd.printConsole(",\"%s\":%s" % (nh_path, \
+                                       json.dumps(rteHistory_json[nh_path])))
+                      ### Reached maximum telemetry streaming limit. 
+                      if clicmd.isKeywordSet("tm-use-only") and run_cnt >= 100000:
+                         break
+                      rteHistory_json[rtelem['path']] = rtelem
+ 
+                   if clicmd.isKeywordSet("detail") and not out_json:
+                      if int(rtelem['nh-count']) > 0:
+                         print_str = '{0:20} | {1:20} | {2:10} | {3:7} | {4:10} | '.format(\
+                                      " ", " ", " ", " ", " ")
+                         for nh in rtelem:
+                             if type(rtelem[nh]) != dict:
+                                continue
+                             clicmd.printConsole("%s [%s]:\n" % (print_str, nh))
+                             if rtelem[nh]['nh-address']:
+                                clicmd.printConsole("%s Address   : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-address']))
+                             if rtelem[nh]['nh-vrfname']:
+                                clicmd.printConsole("%s VrfName   : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-vrfname']))
+                             if rtelem[nh]['nh-outintf']:
+                                clicmd.printConsole("%s OutIntf   : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-outintf']))
+                             if rtelem[nh]['nh-preference']:
+                                clicmd.printConsole("%s Preference: %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-preference']))
+                             if rtelem[nh]['nh-tag']:
+                                clicmd.printConsole("%s Tag       : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-tag']))
+                             if rtelem[nh]['nh-metric']:
+                                clicmd.printConsole("%s Metric    : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-metric']))
+                             if rtelem[nh]['nh-segmentid']:
+                                clicmd.printConsole("%s SegmentId : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-segmentid']))
+                             if rtelem[nh]['nh-tunnelid']:
+                                clicmd.printConsole("%s TunnelId  : %s\n" % (print_str, \
+                                                    rtelem[nh]['nh-tunnelid']))
+                      clicmd.printConsole("---------------------|----------------------|------------|---------|------------|-----------\n")
+               if not out_json:
+                  clicmd.printConsole("---------------------|----------------------|------------|---------|------------|-----------\n")
+                  clicmd.printConsole("Total Entries in this run: %d\n\n" % int(run_cnt))
+               ##rteHistoryLock.release()
+               showWalkList = False
+               if out_json:
+                  clicmd.printConsole("}")
+                  #clicmd.printConsole("%s\n" % json.dumps(rteHistory_json))
+            elif "set_route_history_period_cmd" in clicmd.getCmdName():
+               ### Set the time period to clean up the old entries.
+               ### Ex) set to 30mins. Every entry time < (now - 30mins)
+               ### are old and will be purged when cleanup timer wakes up.
+               if no_cmd:
+                  rteHistoryPurgeTime = timedelta(minutes=30)
+               else:
+                  rteHistoryPurgeTime = timedelta(minutes=minp,hours=hourp,days=dayp)                 
+               clicmd.printConsole("Route History purge old entries period reset to %s" \
+                                   % rteHistoryPurgeTime)
+               return True  
+
+            elif "watch_vrf_cmd" in clicmd.getCmdName():
+               ### CLI to [Un]Watch a VRF or all VRFs.
+               if vrf_name:
+                   if no_cmd:
+                      ribMgr.unwatchVrf(vrf_name)
+                      clicmd.printConsole("UnWatching Vrf %s" % vrf_name)
+                   else:
+                      ribMgr.watchVrf(vrf_name);
+                      clicmd.printConsole("Watching Vrf %s" % vrf_name)
+
+            elif "watch_route_cmd" in clicmd.getCmdName():
+               ### CLI [Un]Watch a L3 route by its owner in a VRF or all VRFs.
+            
+               ### Get the tag associated with the owner for BGP ex) asn is the tag
+               tag = nx_sdk_py.void_to_string(clicmd.getParamValue("<tag>"))
+               if not tag:
+                  tag=""
+
+               ### Get the interested Address Family to get the route events from.
+               af = nx_sdk_py.MAX_AF
+               if clicmd.isKeywordSet("ipv4"):
+                  af = nx_sdk_py.AF_IPV4
+               elif clicmd.isKeywordSet("ipv6"):
+                  af = nx_sdk_py.AF_IPV6
+               clicmd.printConsole("Redistributing %d Routes from %s tag %s in VRF %s" % \
+                                   (int(af), protocol, tag, vrf_name))
+               if no_cmd:
+                  ribMgr.unwatchL3Route(protocol, tag, vrf_name, af)
+               else:
+                  ribMgr.watchL3Route(protocol, tag, vrf_name, af)
+            return True
+###
+# Perform all SDK related initializations in one thread.  
+# All SDK related activities happen here, while the main thread
+# may continue to do other work.  The call to startEventLoop will
+# block until we break out of it by calling stopEventLoop. 
+###
+def sdkThread(name,val):
+    global cliP, sdk, event_hdlr, tmsg, ribMgr
+
+    ###
+    # getSdkInst is the first step for any custom Application
+    # wanting to gain access to NXOS Infra. Without this 
+    # NXOS infra cannot be used.
+    #
+    # NOTE: 
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. The call to startEventLoop will block the thread until we 
+    #   break out of it by calling stopEventLoop.  
+    #
+    #   Perform other actions in a different thread.   
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+    if not sdk:
+       print "sdk failed"
+       return
+
+    ### Set a short Application description.
+    sdk.setAppDesc('Route Event Monitor Python App')
+
+    ###
+    # To Create & Manage Custom syslogs one must do
+    # getTracer() which loads the plugin to NXOS Syslog
+    # Infra Functionalities. 
+    ###
+    tmsg = sdk.getTracer()
+
+    ### To log some Trace events
+    tmsg.event("[%s] Started service" % sdk.getAppName())
+
+    ###
+    # To Create & Manage Custom CLI commands one must do
+    # getCliParser() which loads the plugin to NXOS CLI
+    # Infra Functionalities. 
+    ###
+    cliP = sdk.getCliParser()
+
+    ### Construct Custom show Port Bandwidth Utilization commands
+    nxcmd = cliP.newConfigCmd("watch_route_cmd", "watch owner <protocol> [<tag>] [ipv4 | ipv6] [vrf <vrf-name>] ")
+    nxcmd.updateKeyword("watch", "Watch on a object")
+    nxcmd.updateKeyword("owner", "Owner of the route")
+    nxcmd.updateParam("<protocol>", "Owner of the Routes ex) bgp, isis, ospf", nx_sdk_py.P_STRING, None, 0, True)
+    nxcmd.updateParam("<tag>", "Optional tag for a owner. Ex) for BGP ASN is the tag, for ISIS the instance number", nx_sdk_py.P_STRING, None, 0, True)
+    nxcmd.updateKeyword("ipv4", "Redistribute IP Routes from  protocol. Default is Both")
+    nxcmd.updateKeyword("ipv6", "Redistribute IPv6 Routes from the protocol. Default is Both")
+    nxcmd.updateKeyword("vrf", "VRF Information")
+    nxcmd.updateParam("<vrf-name>", "VRF Name. By default vrf name is default", nx_sdk_py.P_VRF)
+
+    ### Construct Custom show Port Bandwidth Utilization commands
+    #nxcmd = cliP.newConfigCmd("watch_vrf_cmd", "watch vrf <vrf-name>")
+    nxcmd = cliP.newConfigCmd("clear_tm_index_cmd", "clear-tm-index [<start-index>]")
+    nxcmd.updateKeyword("clear-tm-index", "To stream all records from a certain index. Default is 0")
+    nxcmd.updateParam("<start-index>", "Index from which records need to be streamed. Default 0", nx_sdk_py.P_INTEGER)
+    nxcmd.addMode(nx_sdk_py.NxCliCmd.EXEC_MODE)
+    
+
+    ### Construct Custom show Port Bandwidth Utilization commands
+    nxcmd = cliP.newConfigCmd("set_route_history_period_cmd", "route-history period \
+                              [<dayp> days] [<hourp> hours] {<minp> mins}")
+    nxcmd.updateKeyword("route-history", "History of route updates")
+    nxcmd.updateKeyword("period", "History of route updates till period. Default 30mins")
+    int_attr = nx_sdk_py.cli_param_type_integer_attr()
+    int_attr.min_val = 1;
+    int_attr.max_val = 5;
+    nxcmd.updateParam("<dayp>", "Number of days. Default 0", \
+                      nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+    nxcmd.updateKeyword("days", "In Days. Max 5 days")
+
+    int_attr.min_val = 1;
+    int_attr.max_val = 23;
+    nxcmd.updateParam("<hourp>", "Number of hours. Default 0", \
+                       nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+    nxcmd.updateKeyword("hours", "In Hours")
+
+    int_attr.min_val = 1;
+    int_attr.max_val = 59;
+    nxcmd.updateParam("<minp>", "Number of minutes. Default 30mins", \
+                       nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+    nxcmd.updateKeyword("mins", "In minutes")
+
+    # Create show <appName> route-history command  
+    nxcmd = cliP.newShowCmd("show_route_tracker_cmd", "[json [tm-use-only] | detail] [last [<dayp> days] [<hourp> hours] [<minp> mins]] [owner <protocol>] [vrf <vrf-name>] [<prefix>]")
+    nxcmd.updateKeyword("json", "Display the output in JSON format")
+    nxcmd.updateKeyword("tm-use-only", "To be used strictly in telemetry configs only")
+    nxcmd.updateKeyword("detail", "Detailed route information with NextHop details")
+    nxcmd.updateKeyword("last", "Route updates till the time. Default 30mins")
+    ip_addr_attr = nx_sdk_py.cli_param_type_ip_addr_attr()
+    ip_addr_attr.is_ipv6 = False
+    ip_addr_attr.is_prefix = True
+    nxcmd.updateParam("<prefix>", "Route pfx", nx_sdk_py.P_IP_ADDR,
+                      ip_addr_attr, len(ip_addr_attr))
+    
+    ###
+    # Add the command callback Handler.
+    # When the respective CLI commands gets configured 
+    # the overloaded postCliCb callback will be instantiated.
+    ###
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ###
+    # This is important as it Adds the constructed custom configs 
+    # to NXOS CLI Parse tree. If it succeeds then for config command
+    # use <app-name> ? and for show commands use show <app-name> ?
+    # to check if your commands have been added to NXOS CLI tree
+    # successfully. Refer to API documentation for the exceptions
+    # thrown. Use "show <appname> nxsdk state".
+    ###
+    cliP.addToParseTree()
+
+    ###
+    # Add the command callback Handler.
+    # When the respective CLI commands gets configured 
+    # the overloaded postCliCb callback will be instantiated.
+    ###
+    ribMgr = sdk.getRibMgr()
+    myribcb = pyRibHandler()
+    ribMgr.setRibMgrHandler(myribcb)
+
+    ###
+    # startEventLoop will block the thread until we break out
+    # of it by calling stopEventLoop. This is required to
+    # receive any NX-OS specific events. Without this, none of 
+    # the NXSDK functionalities will work. 
+    ###
+    sdk.startEventLoop()
+
+    ### Got here either by calling stopEventLoop() or when App 
+    ### is removed from VSH.
+    tmsg.event("Service Quitting...!")
+
+    ### [Required] Needed for graceful exit.
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+### main thread
+### Global Variables
+cliP = 0
+sdk  = 0
+tmsg = 0
+
+### create a new sdkThread to setup SDK service and handle events.
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread",0))
+sdk_thread.start()
+
+### Timer variable
+### creating a timer thread to poll and calculate port bandwidth utilization
+### percentage at regular intervals and log a syslog if a port goes
+### beyond the set threshold
+timer_thread = threading.Thread(target=timerThread, args=("timerThread",0))
+timer_thread.daemon = True
+
+### 
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.  
+###
+timer_thread.start()
+
+### Main thread is blocked until sdkThread exits. This keeps the
+### App running and listening to NX-OS events. 
+sdk_thread.join()

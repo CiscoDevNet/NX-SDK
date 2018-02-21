@@ -26,6 +26,12 @@ NxSdk* nxos::NxSdk::getSdkInst(int argc, char **argv)
    return NULL;
 }
 
+
+NxSdk* nxos::NxSdk::getSdkInst(int argc, char **argv, bool advException)
+{
+   return NULL;
+}
+
 /// Destructor
 NxSdkImpl::~NxSdkImpl() 
 {
@@ -77,6 +83,19 @@ void NxSdkImpl::startEventLoop()
 void NxSdkImpl::stopEventLoop()
 {
    return;
+}
+
+
+NxRibMgr *
+NxSdkImpl::getRibMgr()
+{
+    return NULL;
+}
+
+void 
+NxSdkImpl::setAppPriority(nxos::prio_e prio)
+{
+    return;
 }
 
 extern "C" NxSdk* create() {

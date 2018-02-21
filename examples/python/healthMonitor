@@ -1,0 +1,1634 @@
+#!/isan/bin/nxpython
+
+##########################################################################
+#Copyright (c) 2018
+#All rights reserved.
+##########################################################################
+
+##########################################################################
+### File:   healthMonitor
+###
+### Supported since NX-SDK v1.5.0
+###
+### Description:
+###   Health Monitor Python Application. It computes and monitors the Health 
+###   Score for a given Switch. 
+###
+###   Refer to 
+###    - "show healthMonitor nxsdk state" for custom config & show
+###      supported by the application
+###    - "show healthMonitor report" to display all the health per
+###      factor.
+###    - "show healthMonitor report syslog detail" to display detailed
+###      report per factor.
+###
+### Sample Output:
+###
+### switch# sh healthMonitor report 
+###
+### (A) : Auto-weight
+###
+### Switch Time         : 2018 Feb 15 11:07:29
+### Switch Health Score : 78.22%
+### -----------------|------------|-----------------|-------------
+### Factors          | Weight     | Health          | Status    
+### -----------------|------------|-----------------|-------------
+### syslog           | 6.0%(A)    | 81.2%           | Major     
+### port-usage       | 5.0%(A)    | 1.0%            | Major     
+### flash-sup        | 6.0%(A)    | 36.0%           | Minor     
+### port-drops-tx    | 6.0%(A)    | 100.0%          | Ok        
+### temperature      | 6.0%(A)    | 100.0%          | Ok        
+### power            | 6.0%(A)    | 58.87%          | Ok        
+### port-bw-rx       | 6.0%(A)    | 100.0%          | Ok        
+### cpu-sup          | 6.0%(A)    | 92.0%           | Ok        
+### dram-sup         | 6.0%(A)    | 41.73%          | Ok        
+### memory-all       | 6.0%(A)    | 61.44%          | Ok        
+### copp             | 6.0%(A)    | 100.0%          | Ok        
+### fan              | 5.0%(A)    | 49.83%          | Ok        
+### port-drops-rx    | 5.0%(A)    | 100.0%          | Ok        
+### gold-diag        | 5.0%(A)    | 88.63%          | Ok        
+### port-bw-tx       | 5.0%(A)    | 100.0%          | Ok        
+### rib              | 5.0%(A)    | 99.6%           | Ok        
+### acl-util         | 5.0%(A)    | 99.91%          | Ok        
+### rate-limiter     | 5.0%(A)    | 100.0%          | Ok        
+### -----------------|------------|-----------------|-------------
+###
+##########################################################################
+import signal
+import time
+import threading
+import sys
+import os
+import ctypes
+import json
+import re
+import urllib2
+from time import gmtime, strftime
+from datetime import datetime, date, timedelta
+from pprint import pprint
+from random import *
+import nx_sdk_py
+import multiprocessing
+import copy
+
+### To lock/unlock while making changes to healthReport
+healthLock = threading.Lock()
+
+### Dictionary to store health Report of individual factors
+### HealthReport contains Health % and its status (Ok, Minor or Major)
+healthReport    = {}
+healthReportNew = {}
+
+### Dictionary to store health Detailed Report of individual factors
+### Detailed Health Report contains which modules within the factors
+### are responsible for the status change.
+healthReportDetail    = {}
+healthReportDetailNew = {}
+
+### Overall switch health score
+switchHealth    = float(0)
+switchTime      = strftime("%Y %b %d %H:%M:%S", gmtime())
+
+### Overall Switch health Status
+### Ok    - Everything is good and needs no attention
+### Minor - Some factor has hit the minor threshold limit.
+###         By default, any factor percentage > 10% but < 25%, then Minor
+### Major - Some factor has hit the major threshold limit & needs attention
+###         By default, any factor percentage < 10%, then Major
+switchStatus    = 0
+
+### Default Status Threshold percentage for all factors.
+minorThreshPercent = 25
+majorThreshPercent = 10
+
+### To lock/unlock while making changes to healthReport
+healthLock = threading.Lock()
+
+### Sleep time period (in secs) to collect the health
+healthSleepPeriod  = 30
+
+### Syslog start time
+syslog_start_time = ""
+
+### Get Health Percentage threshold status
+def getStatus(percent):
+    global minorThreshPercent, majorThreshPercent
+
+    status = 0
+    if percent <= minorThreshPercent:
+       status = 1
+    if percent <= majorThreshPercent:
+       status = 2
+    return status
+  
+### Get Health Percentage threshold status as String
+def getStatusStr(status):
+    if status == 0:
+       return "Ok"
+    elif status == 1:
+       return "Minor"
+    elif status == 2:
+       return "Major"
+
+### Add to the detailed health Report for a factor
+def addHealthReport(health_report, percent, json_res, status = -1):
+    global  switchTime
+
+    if type(percent) == float:
+       percent = float("{0:.2f}".format(percent))
+    report_dict = {}
+    report_dict["health"] = percent
+    if status == -1:
+       status = getStatus(percent)
+    report_dict["status"] = getStatusStr(status)
+    #report_dict["Time"]   = switchTime
+    #if type(json_res) == dict:
+    #   json_data = dict([(str(k), str(v)) for k, v in json_res.items()])
+    #   report_dict.update(json_data)
+    report_dict.update(json_res)
+    ### Put Major alerts in front, followed by Minor & then Ok ones
+    if len(health_report) > 0:
+       if status == 2:
+          health_report.insert(0, report_dict)
+       elif status == 0:
+          health_report.insert(len(health_report), report_dict)
+       else:
+          index = 0
+          for item in health_report:
+              if item["status"] == "Minor" or \
+                 item["status"] == "Ok":
+                 break
+              index += 1
+          health_report.insert(index, report_dict)
+    else:
+       health_report.insert(len(health_report), report_dict)
+       
+
+### Update the global Factor dictionary with all the details
+def updateFactors(factor, health, detail_list):
+    global  switchTime
+
+    health = float("{0:.2f}".format(health))
+
+    ### Get the lock here if you are modifying the keys.
+    ### Modifying the values are fine.
+    factor["health"] = health
+    if len(detail_list) > 0:
+       factor["status"] = detail_list[0]["status"]
+    else:
+       factor["status"] = getStatusStr(0)
+    factor["time"]   = switchTime 
+    if factor["detail"]:
+       del factor["detail"]
+    factor["detail"] = detail_list
+
+### Get Factor Formula
+def getFactorFormula(factor_name):
+    total_formula      = ""
+    per_factor_formula = ""
+    if factor_name == "fan":
+       per_factor_formula = "(100 - fanperc)"
+       total_formula      = "Avg of all Fan Module Percentages"
+    elif factor_name == "power":
+       per_factor_formula = "((tot_capa - (actual_out + actual_input)) * 100)/tot_capa"
+       total_formula      = "Avg of all Power Module Percentages"
+    elif factor_name == "memory-all":
+       per_factor_formula = "(Free * 100)/Total"
+       total_formula      = "Avg of all Module Memory Percentages"
+    elif factor_name == "flash-sup":
+       per_factor_formula = "(100 - percent_used)"
+       total_formula      = "Avg of all Flash Module  Percentages"
+    elif factor_name == "temperature":
+       per_factor_formula = "((majthres - curtemp) * 100)/majthres"
+       total_formula      = "Avg of all Temperature Module  Percentages"
+    elif factor_name == "copp":
+       per_factor_formula = "(conform-bytes * 100)/(conform-bytes + violate-bytes)"
+       total_formula      = "Avg of all Copp Class Percentages"
+    elif factor_name == "rib":
+       per_factor_formula = ""
+       total_formula      = "((current_max_mb - used_mb) * 100)/current_max_mb"       
+    elif factor_name == "rate-limiter":
+       per_factor_formula = "100 - ((rate-limit-dropped * 100)/rate-limit-configured)"
+       total_formula      = "Avg of all Rate-Limiter Class Percentages"       
+    elif factor_name == "rate-limiter":
+       per_factor_formula = "100 - ((rate-limit-dropped * 100)/rate-limit-configured)"
+       total_formula      = "Avg of all Rate-Limiter Class Percentages" 
+    elif factor_name == "port-usage":
+       per_factor_formula = ""
+       total_formula      = "(total_ports_up * 100)/total_ports"          
+    elif factor_name == "cpu-sup":
+       per_factor_formula = "idle or onesec"
+       total_formula      = "Avg of all CPU(idle) Percentages"
+    elif factor_name == "dram-sup":
+       per_factor_formula = "((mem_limit - mem_used) * 100)/mem_limit"
+       total_formula      = "(memory_usage_free * 100)/memory_usage_total"
+    elif factor_name == "syslog":
+       per_factor_formula = "(non_err_total * 100)/total"
+       total_formula      = "Avg of all Syslog(1, 2, 3) type Percentages * weight"
+    elif factor_name == "acl-util":
+       per_factor_formula = "Avg of all ACL resource percentages per module"
+       total_formula      = "Avg of all ACL health Percentages in all modules"
+    elif factor_name == "port-bw-tx":
+       per_factor_formula = "(tx_bits_sec * 100)/bandwidth(in  bps)"
+       total_formula      = "Avg of all Port TX BW health Percentages"
+    elif factor_name == "port-bw-rx":
+       per_factor_formula = "(rx_bits_sec * 100)/bandwidth(in  bps)"
+       total_formula      = "Avg of all Port RX BW health Percentages"
+    elif factor_name == "port-drops-rx":
+       per_factor_formula = "(eth_inpkts * 100)/(eth_inpkts + eth_inerr + eth_crc + eth_nobuf + eth_nobuf)"
+       total_formula      = "Avg of all Port RX Drops health Percentages"
+    elif factor_name == "port-drops-tx":
+       per_factor_formula = "(eth_outpkts * 100)/(eth_outpkts + eth_outdiscard + eth_coll + eth_nocarrier "\
+                            "+ eth_outerr)"
+       total_formula      = "Avg of all Port TX Drops health Percentages"
+    elif factor_name == "gold-diag":
+       per_factor_formula = "(total_result_pass * 100)/total_test_details"
+       total_formula      = "Avg of all Module health Percentages"
+    return (per_factor_formula, total_formula)
+
+###
+# Get the Fan Health Percentage using,
+#
+#   per_fan_health_percent = (100 - speed%)
+#
+#   fan_health_percent = SUM(All per_fan_health_percent)/total_num_entries
+###
+def getFanHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+       
+    ### Get Fan Health Percentage
+    total_num_entries       = int(0)
+    fan_health_percent      = float(0)
+    healthReportDetail      = []
+
+    result = cliP.execShowCmd("show environment fan detail", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["fandetails"]["TABLE_fantray"]["ROW_fantray"]
+       for key in json_res:
+           if type(key) != dict: 
+              continue
+           if "fanperc" in key:
+              total_num_entries += 1
+              percent = (100 - float(key["fanperc"]))
+              addHealthReport(healthReportDetail, percent, key)
+              fan_health_percent += percent
+    
+       ### Get the Fan health Percentage
+       if total_num_entries:
+          fan_health_percent = float(fan_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], fan_health_percent, healthReportDetail)
+
+###
+# Get the Power Health Percentage using,
+# 
+#   per_module_power_health_percent = (Power Allocated - Actual Power draw)   * 100
+#                                     ------------------------------------
+#                                            Power Allocated
+#    If Actual Power draw > Power Allocated, then per_module_power_health_percent = 0
+#
+#   power_health_percent = SUM(All per_module_power_health_percent)/total_num_entries
+###
+def getPowerHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Power Health Percentage
+    power_draw            = float(0)
+    power_allocated       = float(0)
+    power_health_percent  = float(0)
+    total_num_entries     = int(0)
+    healthReportDetail    = []
+
+    result = cliP.execShowCmd("show environment power", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["powersup"]["TABLE_psinfo"]["ROW_psinfo"]
+       for key in json_res:
+           if type(key) != dict:           
+              continue
+           if "actual_input" in key:
+              try:
+                 power_draw += float(key["actual_input"].split(" ")[0])
+              except ValueError:
+                 power_draw += 0.0
+           if "actual_out" in key:
+              try:
+                 power_draw += float(key["actual_out"].split(" ")[0])
+              except ValueError:
+                 power_draw += 0.0
+           if "tot_capa" in key:
+              try:
+                 power_allocated = float(key["tot_capa"].split(" ")[0])
+              except ValueError:
+                 power_allocated = 0.0
+           if power_allocated and power_draw <= power_allocated:
+              percent = ((power_allocated - power_draw) * 100)/power_allocated
+              addHealthReport(healthReportDetail, percent, key)
+              power_health_percent += percent
+              total_num_entries += 1
+       if total_num_entries:
+          power_health_percent = float(power_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], power_health_percent, healthReportDetail)
+
+def getMemoryHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Memory Health Percentage
+    total_num_entries       = int(0)
+    memory_health_percent   = float(0)
+    healthReportDetail      = []
+
+    result = cliP.execShowCmd("show system internal memory-usage-per-module")
+    if result:
+       ### Parse the Ascii output
+       result = result.split("Slot")
+       percent = float(0)
+       for line in result:
+           memory_d = {}
+           if not line:
+              continue
+
+           dict_list = line.split(",")
+           for dict_item in dict_list:
+               items = dict_item.split(':')
+               if len(items) == 3:
+                  memory_d['Slot'] = items[0].lstrip()
+                  memory_d[items[1].lstrip()] = items[2].lstrip()
+               elif len(items) == 2:
+                  memory_d[items[0].lstrip()] = items[1].lstrip()
+           memory_total = int(memory_d["Total"].split(' ')[0])
+           memory_free  = int(memory_d["Free"].split(' ')[0])
+           memory_used  = int(memory_d["Used"].split(' ')[0])
+           percent      = (memory_free * 100/memory_total)            
+
+           ### Add the factor to the detailed report that caused the
+           ### status change.
+           addHealthReport(healthReportDetail, percent, memory_d)
+           memory_health_percent += percent
+           total_num_entries += 1
+
+       if total_num_entries:
+          memory_health_percent = float(memory_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], memory_health_percent, healthReportDetail)
+
+
+### Get Flash Memory Health
+def getFlashMemoryHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    flash_health_percent  = float(0)
+    total_num_entries     = int(0)
+    healthReportDetail    = []
+    flash_d               = {}
+
+    result = cliP.execShowCmd("show hardware capacity module", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_flash_nvram_info"]["ROW_flash_nvram_info"]
+       for key in json_res:
+           if type(key) != dict:
+              continue
+           percent = 100.0 - float(key["percent_used"])
+           addHealthReport(healthReportDetail, percent, key)
+           flash_health_percent += percent
+           total_num_entries += 1
+       if total_num_entries:
+          flash_health_percent = float(flash_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], flash_health_percent, healthReportDetail)
+
+### Get the GOLD health % per module
+def getGoldDiagModHealth(healthReportDetail, gold_mod_d):
+    gold_d     = {}
+    total_num  = 0
+    total_pass = 0
+   
+    for key in gold_mod_d:
+        if type(gold_mod_d[key]) != dict:
+           gold_d[key] = str(gold_mod_d[key])
+           continue
+        if "TABLE_Test" in str(key):
+           test_list = gold_mod_d[key]["ROW_Test"]
+           if type(test_list) != list:
+              test_list = [test_list]
+           gold_d["test-details"] = {}
+           for test_json in test_list:
+               if "testname" in test_json:
+                  if "testresult" in test_json:
+                     test_result = str(test_json["testresult"].lower())
+                     gold_d["test-details"][str(test_json["testname"])] = test_result
+                     if "pass" in test_result:
+                        total_pass += 1
+                     total_num += 1
+                  elif "passed_ports" in test_json:
+                      gold_d["test-details"][str(test_json["testname"])] = {}
+                      if "none" not in str(test_json["passed_ports"]).lower():
+                         gold_d["test-details"][str(test_json["testname"])]["passed_ports"] = \
+                                                                  str(test_json["passed_ports"])
+                      fail = False
+                      fail_list = ["failed_ports", "incomplete_ports", "untested_ports", "aborted_ports", \
+                                   "err_disabled_ports"]
+                      for fail_key in fail_list:
+                          if fail_key in test_json:
+                             fail_ports = str(test_json[fail_key]).lower()
+                          if "none" not in fail_ports:
+                             fail = True
+                             gold_d["test-details"][str(test_json["testname"])][fail_key] = \
+                                                                       fail_ports
+                      total_num += 1
+                      if not fail:
+                         total_pass += 1
+    if total_num:
+       percent = (float)(total_pass * 100)/total_num
+       addHealthReport(healthReportDetail, percent, gold_d)
+       return (percent, True)
+    return (0, False)    
+
+### Get GOLD Diagnostics test Health%
+def getGoldDiagHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Power Health Percentage
+    gold_health_percent  = float(0)
+    total_num_entries     = int(0)
+    healthReportDetail    = []
+
+    result = cliP.execShowCmd("show diagnostic result module all", nx_sdk_py.R_JSON)
+    if result:
+       json_list = json.loads(result)["TABLE_Module"]["ROW_Module"]
+       if type(json_list) == dict:
+          json_list = [json_list]
+       for mod_d in json_list:
+           (percent, in_use) = getGoldDiagModHealth(healthReportDetail, mod_d)
+           if in_use:
+              gold_health_percent += percent
+              total_num_entries += 1
+       if total_num_entries:
+          gold_health_percent = float(gold_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], gold_health_percent, healthReportDetail)
+
+### Get Top Processes hogging the CPU
+def getCpuTopProcesses(cpuReportDetail, cpu_health_percent):
+    global cliP
+
+    cpu_d = {}
+    if not cliP:
+       return    
+
+    result = cliP.execShowCmd("show processes cpu sort", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_process_cpu"]["ROW_process_cpu"]
+       total_num_process = 5
+       cpu_d["top_cpu_process_health_percent"] = {}
+       for key in json_res:
+           if total_num_process <= 0:
+              break
+           if type(key) == dict:
+              percent = 100 - float(key["onesec"])
+              #addHealthReport(cpuReportDetail, percent, key)
+              cpu_d["top_cpu_process_health_percent"][key["process"]] = str(percent) + " (pid %s)" % key["pid"] 
+              total_num_process -= 1
+       addHealthReport(cpuReportDetail, "-", cpu_d) 
+
+### Get Top 5 Processes taking up memory
+def getMemoryTopProcess(memoryReportDetail, memory_health_percent, memory_d):
+    global cliP
+
+    if not cliP:
+       return
+
+    result = cliP.execShowCmd("show processes memory", nx_sdk_py.R_JSON)
+    if result:
+       json_list = json.loads(result)["TABLE_process_memory"]["ROW_process_memory"]
+       json_list = sorted(json_list, key=lambda k: k['mem_used'], reverse=True)
+       total_num_process = 5
+       memory_d["top_memory_process_health_percent"] = {}
+       for key in json_list:
+           if total_num_process <= 0:
+              break
+           if type(key) == dict:
+              if float(key["mem_limit"]):
+                 percent = (float)((float(key["mem_limit"]) - float(key["mem_used"])) * 100)/float(key["mem_limit"])
+                 percent = float("{0:.2f}".format(percent))
+                 memory_d["top_memory_process_health_percent"][key["process"]] = str(percent) + \
+                                                      " (pid %s) " % key["mem_pid"]
+                 #addHealthReport(memoryReportDetail, percent, key)
+                 total_num_process -= 1
+    addHealthReport(memoryReportDetail, memory_health_percent, memory_d)   
+
+###
+# Get the Memory Health Percentage using,
+# 
+#   memory_health_percent = (Total num of free memory)   * 100
+#                           --------------------------
+#                                  Total Memory
+#
+#   per_cpu_health_percent = Idle %
+#   Total_cpu_health_percent =  Avg(per_cpu_health_percent)
+#
+#   Note: Get both Memory & CPU health in one shot
+###
+def getMemoryCpuHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Memory Health Percentage
+    total_memory          = float(0)
+    total_memory_free     = float(0)
+    total_memory_used     = float(0)
+    memory_health_percent = float(0)
+    memoryReportDetail    = []
+
+    ### Get CPU Health Percentage
+    cpu_health_percent    = float(0)
+    cpuReportDetail       = []
+
+    result = cliP.execShowCmd("show system resources", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)
+       if factors_d["dram-sup"]["monitor"]:
+          if "memory_usage_total" in json_res:
+             total_memory = float(json_res["memory_usage_total"])
+          if "memory_usage_free" in json_res:
+             total_memory_free = float(json_res["memory_usage_free"])
+          if "memory_usage_used" in json_res:
+             total_memory_used = float(json_res["memory_usage_used"])
+
+          ### Get Memory Health Percentage
+          memory_health_percent = float((total_memory_free * 100)/total_memory)
+
+          ### Add the factor to the detailed report that caused the
+          ### status change.
+          memory_d = {}
+          memory_d["memory_usage_total"]    = total_memory
+          memory_d["memory_usage_used"]     = total_memory_used
+          memory_d["memory_usage_free"]     = total_memory_free
+          memory_d["current_memory_status"] = json_res["current_memory_status"]
+          getMemoryTopProcess(memoryReportDetail, memory_health_percent, memory_d)
+          updateFactors(factors_d["dram-sup"], memory_health_percent, memoryReportDetail)
+
+       ### Check if Memory Monitor is turned on if it is calculate
+       ### both memory & cpu at one go.
+       if factors_d["cpu-sup"]["monitor"]:
+          if "cpu_state_idle" in json_res:
+             cpu_res = json_res["TABLE_cpu_usage"]["ROW_cpu_usage"]
+             total_cpu_entries = 0
+             for key in cpu_res:
+                 if type(key) != dict:
+                    continue
+                 total_cpu_entries += 1
+                 percent = float(key["idle"])
+                 addHealthReport(cpuReportDetail, percent, key)
+                 cpu_health_percent += percent
+
+             if total_cpu_entries:
+                cpu_health_percent = float(cpu_health_percent/total_cpu_entries)
+                getCpuTopProcesses(cpuReportDetail, cpu_health_percent)
+                updateFactors(factors_d["cpu-sup"], cpu_health_percent, cpuReportDetail)
+
+
+###
+# Get the Temperature Health Percentage using,
+# 
+#   temp_health_percent =  (Total number of sensors - Total Sensor State) * 100
+#                          ----------------------------------------------
+#                                  Total number of sensors
+###
+def getTemperatureHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get CPU Health Percentage
+    temp_health_percent = float(0)
+    num_sensors         = int(0)
+    sensor_state        = float(0)
+    healthReportDetail  = []
+
+    result = cliP.execShowCmd("show environment temperature", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_tempinfo"]["ROW_tempinfo"]
+       for key in json_res:
+           if type(key) != dict:
+              continue
+           if "tempmod" in key:
+              num_sensors += 1
+              curr_temp = int(key["curtemp"])
+              min_threshold = int(key["minthres"])
+              maj_threshold = int(key["majthres"])
+              status = 0
+              percent = float((maj_threshold - curr_temp)*100/maj_threshold)
+
+              if curr_temp > min_threshold and curr_temp < maj_threshold:
+                 ### Temperature Sensor reached Minor state
+                 sensor_state += 0.5
+                 status = 1
+              elif curr_temp > maj_threshold:
+                 ### Temperature Sensor reached Major state
+                 sensor_state += 1
+                 status = 2
+
+              addHealthReport(healthReportDetail, percent, key, status)
+                    
+       ### Get average temperature percentage for all the modules.   
+       if num_sensors:
+          temp_health_percent = float(((num_sensors - sensor_state) * 100)/num_sensors)
+          updateFactors(factors_d[factor_name], temp_health_percent, healthReportDetail)
+
+###
+# Get the Rib Health Percentage using,
+# 
+#   rib_health_percent =   (Total RIB Memory - Total RIB Memory used)   * 100
+#                          ------------------------------------------
+#                                     Total RIB Memory
+###
+def getRibHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get RIB Health Percentage
+    curr_max_mb         = float(0)
+    curr_use_mb         = float(0)
+    rib_health_percent  = float(0)
+    healthReportDetail  = []
+
+    result = cliP.execShowCmd("show routing memory estimate", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)
+       if "current_max_mb" in json_res:
+          curr_max_mb = float(json_res["current_max_mb"])
+       if "used_mb" in json_res:
+          curr_use_mb = float(json_res["used_mb"])
+ 
+       rib_health_percent = float(((curr_max_mb - curr_use_mb) * 100)/curr_max_mb)
+       addHealthReport(healthReportDetail, rib_health_percent, json_res)
+       updateFactors(factors_d[factor_name], rib_health_percent, healthReportDetail)
+
+### Get Port BW utilization, Usage(Up), Drops Health
+def getPortHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Port Up Usage Health Percentage
+    total_num_up_intf            = int(0)
+    total_num_intf               = int(0)
+    port_usage_health_percent    = float(0)
+    portUsageReportDetail        = []
+
+    ### Get Port BW utilization TX Health Percentage
+    port_tx_bw_health_percent    = float(0)
+    total_num_tx_port_bw_health  = int(0)
+    portTxReportDetail           = []
+
+    ### Get Port BW utilization RX Health Percentage
+    port_rx_bw_health_percent    = float(0)
+    total_num_rx_port_bw_health  = int(0)
+    portRxReportDetail           = []
+
+    ### Get Port RX Errors/Drops Health Percentage
+    port_rx_drops_health_percent    = float(0)
+    total_num_rx_port_drops_health  = int(0)
+    portRxDropsReportDetail         = []
+
+    ### Get Port TX Errors/Drops Health Percentage
+    port_tx_drops_health_percent    = float(0)
+    total_num_tx_port_drops_health  = int(0)
+    portTxDropsReportDetail         = []
+
+    result = cliP.execShowCmd("show int", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_interface"]["ROW_interface"]
+       for key in json_res:
+           if type(key) == dict:
+              eth_bw    = int(0)
+              tx_bits   = int(0)
+              tx_rate   = int(0)
+              rx_bits   = int(0)
+              rx_rate   = int(0)
+              intf_name = ""
+              state     = ""
+
+              if "interface" in key:
+                 intf_name = key["interface"]
+                 if "vlan" in intf_name or \
+                    "port-channel" in intf_name or \
+                    "loopback" in intf_name:
+                    continue
+              if "state" in key:
+                 state = key["state"]
+                 if "up" in state:
+                    total_num_up_intf += 1
+                 total_num_intf += 1   
+                
+              if "eth_bw" in key:
+                 eth_bw = int(key["eth_bw"])
+              if "eth_load_interval1_tx" in key:
+                 tx_rate = int(key["eth_load_interval1_tx"])              
+              if "eth_load_interval1_rx" in key:
+                 rx_rate = int(key["eth_load_interval1_rx"])
+              if "eth_outrate1_bits" in key:
+                 tx_bits = int(key["eth_outrate1_bits"])
+              if "vdc_lvl_out_avg_bits" in key:
+                 tx_bits = int(key["vdc_lvl_out_avg_bits"])
+              if "eth_inrate1_bits" in key:
+                 rx_bits = int(key["eth_inrate1_bits"])
+              if "vdc_lvl_in_avg_bits" in key:
+                 rx_bits = int(key["vdc_lvl_in_avg_bits"])
+
+              if not eth_bw or "up" not in state:
+                 continue
+
+              ### Compute RX Drops/Erros health % per port.
+              if factors_d["port-drops-rx"]["monitor"]:
+                 if "eth_inpkts" in key and int(key["eth_inpkts"]):
+                    eth_inpkts = int(key["eth_inpkts"])
+                    in_err_list = ["eth_indiscard", "eth_inerr", "eth_crc", \
+                                   "eth_nobuf", "eth_in_ifdown_drops"]
+                    eth_inerr_total = 0
+                    for item in in_err_list:
+                        if item in key:
+                           eth_inerr_total += int(key[item])
+                    total = eth_inpkts + eth_inerr_total
+                    rx_percent = float((eth_inpkts * 100)/total)
+                    total_num_rx_port_drops_health += 1   
+                    port_rx_drops_health_percent += rx_percent
+
+                    port_rx_err_d = {}
+                    port_rx_err_d["interface"] = intf_name
+                    port_rx_err_d["eth_inpkts"] = eth_inpkts
+                    type_list = ["eth_inucast", "eth_inmcast", "eth_inbcast"]
+                    for type_key in type_list:
+                        if type_key in key and int(key[type_key]):
+                           val = float((int(key[type_key]) * 100)/eth_inpkts)
+                           if float(val) > 0:
+                              if "eth_inpkts_percent" not in port_rx_err_d:
+                                 port_rx_err_d["eth_inpkts_percent"] = {}
+                              port_rx_err_d["eth_inpkts_percent"][type_key] = "{0:.2f}".format(val)
+                    for item in in_err_list:
+                        if item in key:
+                           port_rx_err_d[item] = key[item]
+                    addHealthReport(portRxDropsReportDetail, rx_percent, port_rx_err_d)
+
+              ### Compute TX Drops/Erros health % per port.
+              if factors_d["port-drops-tx"]["monitor"]:
+                 if "eth_outpkts" in key and int(key["eth_outpkts"]):
+                    eth_outpkts = int(key["eth_outpkts"])
+                    out_err_list = ["eth_outdiscard", "eth_outerr", "eth_coll", \
+                                    "eth_nocarrier"]
+                    eth_outerr_total = 0
+                    for item in out_err_list:
+                        if item in key:
+                           eth_outerr_total += int(key[item])
+                    total = eth_outpkts + eth_outerr_total
+                    tx_percent = float((eth_outpkts * 100)/total)
+                    total_num_tx_port_drops_health += 1
+                    port_tx_drops_health_percent += tx_percent
+                    port_tx_err_d = {}
+                    port_tx_err_d["interface"] = intf_name
+                    port_tx_err_d["eth_outpkts"] = eth_outpkts
+                    type_list = ["eth_outucast", "eth_outmcast", "eth_outbcast"]
+                    for type_key in type_list:
+                        if type_key in key and int(key[type_key]):
+                           val = float((int(key[type_key]) * 100)/eth_outpkts)
+                           if float(val) > 0:
+                              if "eth_outpkts_percent" not in port_tx_err_d:
+                                 port_tx_err_d["eth_outpkts_percent"] = {}
+                              port_tx_err_d["eth_outpkts_percent"][type_key] = "{0:.2f}".format(val)
+                    for item in out_err_list:
+                        if item in key:
+                           port_tx_err_d[item] = key[item]
+                    addHealthReport(portTxDropsReportDetail, tx_percent, port_tx_err_d) 
+            
+              ### Compute Tx BW Utilization health % per port 
+              if factors_d["port-bw-tx"]["monitor"]:
+                 total_num_tx_port_bw_health += 1
+                 tx_percent = 100 - float((tx_bits * 100)/(eth_bw * 1000))
+                 port_bw_d = {}
+                 port_bw_d["interface"] = intf_name
+                 port_bw_d["bandwidth"] = str((eth_bw/1000000)) + str(" Gbps")
+                 port_bw_d["tx_bits_sec"]   = str(tx_bits) + " bps"
+                 port_bw_d["tx_rate_sec"]   = str(tx_rate) + " secs"
+                 addHealthReport(portTxReportDetail, tx_percent, port_bw_d)
+                 port_tx_bw_health_percent += tx_percent 
+ 
+              ### Compute Rx BW Utilization health % per port 
+              if factors_d["port-bw-rx"]["monitor"]:
+                 total_num_rx_port_bw_health += 1
+                 rx_percent = 100 - float((rx_bits * 100)/(eth_bw * 1000))
+                 port_bw_d = {}
+                 port_bw_d["interface"] = intf_name
+                 port_bw_d["bandwidth"] = str((eth_bw/1000000)) + str(" Gbps")
+                 port_bw_d["rx_bits_sec"]   = str(rx_bits) + " bps"
+                 port_bw_d["rx_rate_sec"]   = str(rx_rate) + " secs"
+                 addHealthReport(portRxReportDetail, rx_percent, port_bw_d)
+                 port_rx_bw_health_percent += rx_percent
+
+       ### Compute the overall RX errors/discards health % for all the ports.
+       if total_num_rx_port_drops_health:
+          total_percent = port_rx_drops_health_percent/total_num_rx_port_drops_health
+          updateFactors(factors_d["port-drops-rx"], total_percent, portRxDropsReportDetail)
+
+       ### Compute the overall TX errors/discards health % for all the ports.
+       if total_num_tx_port_drops_health:
+          total_percent = port_tx_drops_health_percent/total_num_tx_port_drops_health
+          updateFactors(factors_d["port-drops-tx"], total_percent, portTxDropsReportDetail)
+           
+       ### Compute the overall RX BW Utilization health % for all the ports.
+       if total_num_rx_port_bw_health:
+          total_percent = port_rx_bw_health_percent/total_num_rx_port_bw_health
+          updateFactors(factors_d["port-bw-rx"], total_percent, portRxReportDetail)
+
+       ### Compute the overall TX BW Utilization health % for all the ports.
+       if total_num_tx_port_bw_health:
+          total_percent = port_tx_bw_health_percent/total_num_tx_port_bw_health
+          updateFactors(factors_d["port-bw-tx"], total_percent, portTxReportDetail)
+
+       ### Compute overall port usage(Up) health %
+       if factors_d["port-usage"]["monitor"] and total_num_intf:
+          port_usage_d = {}
+          port_usage_d["total_ports"]    = total_num_intf 
+          port_usage_d["total_ports_up"] = total_num_up_intf
+          total_percent = float((total_num_up_intf * 100)/total_num_intf)
+          addHealthReport(portUsageReportDetail, total_percent, port_usage_d)
+          updateFactors(factors_d["port-usage"], total_percent, portUsageReportDetail)
+
+###
+# Get the PKT Drop rate limiter using,
+#
+#   per_fan_health_percent = (100 - speed%)
+#
+#   fan_health_percent = SUM(All per_fan_health_percent)/total_num_entries
+###
+def getPktDropRateLimiterHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Fan Health Percentage
+    total_num_entries        = int(0)
+    pkt_drop_health_percent  = float(0)
+    healthReportDetail       = []
+
+    result = cliP.execShowCmd("show hardware rate-limiter", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_hardware_rate_limiter"]["ROW_hardware_rate_limiter"]
+       for key in json_res:
+           if type(key) == dict:
+              pkts_allowed = 0
+              pkts_total   = 0
+              pkts_dropped = 0  
+              if "rate-limit-allowed" in key:
+                 pkts_allowed = int(key["rate-limit-allowed"])
+              if "rate-limit-configured" in key:
+                 pkts_total = int(key["rate-limit-configured"])
+              if "rate-limit-dropped" in key:
+                 pkts_dropped = int(key["rate-limit-dropped"])
+
+              if pkts_total:
+                 total_num_entries += 1
+                 percent =  100 - float((pkts_dropped * 100)/pkts_total)
+                 addHealthReport(healthReportDetail, percent, key)
+                 pkt_drop_health_percent += percent
+       if total_num_entries:
+          pkt_drop_health_percent = float(pkt_drop_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
+
+### Get QOS Mod information 
+def getPktDropModQosHealth(healthReportDetail, cmap_name, slot):
+
+    pkts_allowed = 0
+    pkts_total   = 0
+    pkts_dropped = 0
+    to_use       = False
+    percent      = float(0)
+
+    if "conform-bytes" in slot:
+       pkts_allowed = int(slot["conform-bytes"])
+    if "violate-bytes" in slot:
+       pkts_dropped = int(slot["violate-bytes"])
+    pkts_total = pkts_allowed + pkts_dropped
+    if pkts_total:
+       to_use = True       
+       percent =  float((pkts_allowed * 100)/pkts_total)
+       slot["class-map-name"] = cmap_name
+       addHealthReport(healthReportDetail, percent, slot)
+    return (to_use, percent)
+    
+def getPktDropQosHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Fan Health Percentage
+    total_num_entries        = int(0)
+    pkt_drop_health_percent  = float(0)
+    healthReportDetail       = []
+
+    result = cliP.execShowCmd("show policy-map interface control-plane", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_cmap"]["ROW_cmap"]
+       for key in json_res:
+           if type(key) == dict:
+              cmap_name = key["cmap-key"]
+              if "TABLE_slot" in key and "ROW_slot" in key["TABLE_slot"]:
+                 total_num_mod_entries = 0
+                 total_mod_pkt_drop_percent = 0
+                 if type(key["TABLE_slot"]["ROW_slot"]) == list:
+                    for slot in key["TABLE_slot"]["ROW_slot"]:
+                        (to_use, percent) = getPktDropModQosHealth(healthReportDetail,\
+                                                                   cmap_name, slot)
+                        if to_use:
+                           total_num_mod_entries += 1
+                           total_mod_pkt_drop_percent += percent
+                 else:
+                    slot = key["TABLE_slot"]["ROW_slot"]
+                    (to_use, percent) = getPktDropModQosHealth(healthReportDetail, \
+                                                               cmap_name, slot)
+                    if to_use:
+                       total_num_mod_entries += 1
+                       total_mod_pkt_drop_percent += percent
+                 if total_num_mod_entries:
+                    total_num_entries += 1
+                    pkt_drop_health_percent += float(total_mod_pkt_drop_percent/total_num_mod_entries)
+
+       ### Get the Fan health Percentage
+       if total_num_entries:
+          pkt_drop_health_percent = float(pkt_drop_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
+
+def getSyslogHealth(factor_name):
+    global cliP, factors_d, syslog_start_time 
+
+    total_all          = 0
+    health_percent     = 0
+    syslogReportDetail = []
+    syslog_stats_d     = {}
+    syslog_top_err_d   = {}
+
+    if not cliP:
+       return 0.0
+
+    #if syslog_start_time:
+    #   cmd = "show logging logfile | begin \"%s\"" % syslog_start_time
+    #else:
+    cmd =  "show logging logfile" 
+    result = cliP.execShowCmd(cmd)
+    if result:
+       one_logs_re = re.compile(".*%.*-1-")
+       two_logs_re = re.compile(".*%.*-2-")
+       three_logs_re = re.compile(".*%.*-3-")
+       err_re   = re.compile(".*(fail|error|err|absent|crit|missing|force|exit|crash|core).*")
+       for line in result.splitlines():
+           key = ""
+           weight = 1
+           if one_logs_re.match(line):
+              key = "1"
+              weight = 0.6
+           elif two_logs_re.match(line):
+              key = "2"
+              weight = 0.3
+           elif three_logs_re.match(line):
+              key = "3"
+              weight = 0.1
+           if not key:
+              continue
+           err_key = line.split("%")[1].split(":")[0]
+           if key not in syslog_stats_d:
+              syslog_stats_d[key] = {}
+              syslog_stats_d[key]["log_type"]      = key
+              syslog_stats_d[key]["weight"]        = weight
+              syslog_stats_d[key]["total"]         = 0
+              syslog_stats_d[key]["non_err_total"] = 0
+              syslog_stats_d[key]["err_total"]     = 0
+              syslog_stats_d[key]["top_err_count"] = {}
+           if key not in syslog_top_err_d:
+              syslog_top_err_d[key] = {}
+           if err_key not in syslog_top_err_d[key]:  
+              syslog_top_err_d[key][err_key] = 0
+           syslog_top_err_d[key][err_key] += 1
+
+           total_all += 1
+           syslog_stats_d[key]["total"] += 1
+           if err_re.match(line.lower()):
+              syslog_stats_d[key]["err_total"] += 1
+           else:
+              syslog_stats_d[key]["non_err_total"] += 1          
+           syslog_stats_d[key]["err_cmd"] = "show logging logfile | grep \"%%.*-"\
+                                    + key + "-\" | grep -i \"(fail\|error\|err\|absent\|crit\|missing\|force\|exit\|crash\|core)\""     
+           syslog_stats_d[key]["non_err_cmd"] = "show logging logfile | grep \"%%.*-"\
+                                   + key + "-\" | grep -v -i \"(fail\|error\|err\|absent\|crit\|missing\|force\|exit\|crash\|core)\""
+    syslog_start_time = switchTime
+
+    ## Update the top err list
+    for log_key in syslog_top_err_d:
+        syslog_errs = syslog_top_err_d[log_key]
+        index = 1
+        for key, value in sorted(syslog_errs.iteritems(), key=lambda (k,v): (v,k), reverse=True):
+            if index >= 5:
+               break
+            syslog_stats_d[log_key]["top_err_count"][key] = value
+            index += 1
+    for key in syslog_stats_d:
+        percent = float((syslog_stats_d[key]["non_err_total"] * 100)/syslog_stats_d[key]["total"])
+        health_percent += percent * syslog_stats_d[key]["weight"]
+        addHealthReport(syslogReportDetail, percent, syslog_stats_d[key])
+    if health_percent:
+       updateFactors(factors_d[factor_name], health_percent, syslogReportDetail)
+
+def getAclUtilHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Fan Health Percentage
+    total_num_entries       = int(0)
+    acl_health_percent      = float(0)
+    healthReportDetail      = []
+    module_d                = {}  
+    module_acl_d            = {}
+
+    result = cliP.execShowCmd("show module", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_modinfo"]["ROW_modinfo"]
+       if type(json_res) != list:
+          json_res = [json_res]
+       for key in json_res:
+           if str(key["modinf"]) not in module_d and \
+              str(key["ports"]) != "0":
+              module_d[str(key["modinf"])] = str(key["ports"])
+    result = cliP.execShowCmd("show hardware access-list resource utilization", nx_sdk_py.R_JSON)
+    if result:
+       module_res = json.loads(result)["TABLE_module"]["ROW_module"]
+       if type(module_res) != list:
+          module_res = [module_res]
+       for module in module_res:
+           mod_health_percent = float(0)
+           mod_resource_num   = 0
+           module_num = str(module["module_number"])
+           if module_num not in module_d:
+              continue
+
+           for table in module["TABLE_resource_util_info"]["ROW_resource_util_info"]:
+               if "ents_pctage" in table:
+                  if module_num not in module_acl_d:
+                     module_acl_d[module_num] = {}
+                  module_acl_d[module_num]["module_num"] = module_num
+                  if "resource_health" not in module_acl_d[module_num]:
+                     module_acl_d[module_num]["resource_health"] = {}
+                  percent = 100 - float(table["ents_pctage"].encode('ascii', 'ignore'))
+                  module_acl_d[module_num]["resource_health"]\
+                    [str(table["resource_hdr"])] = percent
+                  mod_health_percent += percent
+                  mod_resource_num   += 1
+           if mod_resource_num:
+              mod_health_percent = float(mod_health_percent/mod_resource_num)
+              acl_health_percent += mod_health_percent
+              total_num_entries += 1
+              addHealthReport(healthReportDetail, mod_health_percent, module_acl_d[module_num])
+       if total_num_entries:
+          acl_health_percent = float(acl_health_percent/total_num_entries)
+          updateFactors(factors_d[factor_name], acl_health_percent, healthReportDetail)
+
+### FActors to be considered for health
+factors_d = {
+            "fan" : {
+               "desc"    : "Fan Health %% and its details",
+               "func"    : getFanHealth,
+               "cmd"     : "show environment fan detail",
+            },
+            "power" : {
+               "desc"    : "Power Health %% and its details",
+               "func"    : getPowerHealth,
+               "cmd"     : "show environment power",
+            }, 
+            "memory-all" : {
+               "desc"    : "Memory(LC + SUP) Health %% and its details",
+               "func"    : getMemoryHealth,
+               "cmd"     : "show system internal memory-usage-per-module",
+            }, 
+            "temperature" : {
+               "desc"    : "Temperature Health %% and its details",
+               "func"    : getTemperatureHealth,
+               "cmd"     : "show environment temperature",
+            },
+            "rib" : {
+               "desc"    : "Rib Health %% and its details",
+               "func"    : getRibHealth,
+               "cmd"     : "show routing memory estimate",
+            },
+            "rate-limiter" : {
+               "desc"    : "Packets forwarded by Rate Limiter health %% and its details",
+               "func"    : getPktDropRateLimiterHealth,
+               "cmd"     : "show hardware rate-limiter",
+            },
+            "copp" : {
+               "desc"    : "Packets forwarded by COPP health %% and its details",
+               "func"    : getPktDropQosHealth,
+               "cmd"     : "show policy-map interface control-plane",
+            },
+            "syslog" : {
+               "desc"    : "Syslog{1,2, 3} Health %% and its details",
+               "func"    : getSyslogHealth,
+               "cmd"     : "show logging logfile",
+            },
+            "acl-util" : {
+               "desc"    : "ACL Utilization Health %% and its details",
+               "func"    : getAclUtilHealth,
+               "cmd"     : "show hardware access-list resource utilization module <modnum>",
+            },
+            "flash-sup" : {
+               "desc"    : "Flash Memory(SUP) Health %% and its details",
+               "func"    : getFlashMemoryHealth,
+               "cmd"     : "show hardware capacity module",
+            },
+            "gold-diag" : {
+               "desc"    : "GOLD Diagnostic Health %% and its details",
+               "func"    : getGoldDiagHealth,
+               "cmd"     : "show diagnostic result module all",
+            },
+            "dram-sup" : {
+               "desc"    : "DRAM Memory(SUP) Health %% and its details",
+               "func"    : getMemoryCpuHealth,
+               "cmd"     : "show system resources",
+            },
+            "cpu-sup" : {
+               "desc"    : "CPU(SUP) Health %% and its details",
+               "func"    : getMemoryCpuHealth,
+               "cmd"     : "show system resources",
+            },
+            "port-usage" : {
+               "desc"    : "Ports usage (that are up) health %% and its details",
+               "func"    : getPortHealth,
+               "cmd"     : "show int br",
+            },
+            "port-bw-tx" : {
+               "desc"    : "Ports TX Bandwidth Utilization health %% and its details",
+               "func"    : getPortHealth,
+               "cmd"     : "show int <intf>",
+            },
+            "port-bw-rx" : {
+               "desc"    : "Ports RX Bandwidth Utilization health %% and its details",
+               "func"    : getPortHealth,
+               "cmd"     : "show int <intf>",
+            },
+            "port-drops-rx" : {
+               "desc"    : "Rx Port Packets drops & errors health %% and its details",
+               "func"    : getPortHealth,
+               "cmd"     : "show int <intf>",
+            },
+            "port-drops-tx" : {
+               "desc"    : "Tx Port Packets drops & errors health %% and its details",
+               "func"    : getPortHealth,
+               "cmd"     : "show int <intf>",
+            }
+         }
+
+### Fill default fields in the factors_d
+for factor in factors_d:
+    factors_d[factor]["monitor"] =  True
+    factors_d[factor]["weight"]  = 0
+    factors_d[factor]["auto-weight"]  = True
+    factors_d[factor]["health"]  = float(100)
+    factors_d[factor]["detail"]  = []
+    factors_d[factor]["time"]    = ""
+    factors_d[factor]["status"]  = "Ok"
+
+factor_dup_d = {}
+
+### Worker threads to make use of the multicore CPU 
+### to get the workdone.
+def workerThread(name, thread_num, start, end):
+    index = 0
+    print "[%d] Worker Thread processing %d to %d" % (thread_num, start, end)
+    #for factor in factors_d:
+    for factor in sorted(factors_d.keys(), key=lambda x: factors_d[x]['index']): 
+        if index >= start and index < end:
+           print "[%d] Processing factor %s at index %d" % (thread_num, factor, index)
+           factors_d[factor]["func"](factor)
+        index += 1
+        if index >= end:
+           break
+
+###
+# timerThread to poll and calculate port bandwidth utilization percentage
+# at regular intervals and log a syslog event if a port has exceeded the
+# set threshold
+###
+def compute_system_health():
+    global sdk, tmsg, factors_d, switchHealth, switchTime, factor_dup_d 
+
+
+    healthLock.acquire()
+    if True:
+        ### Inits
+        switchTime      = strftime("%Y %b %d %H:%M:%S", gmtime())
+        total_health    = float(0)
+        total_factor    = 0
+        auto_weight     = 0
+        total_auto_weight = 0
+        worker_thread   = [0]
+        num_records_to_process = 0
+        cpu_count       = multiprocessing.cpu_count()
+        if not cpu_count:
+           cpu_count = 1
+
+        num_threads_d = {}
+        index = 1
+        for factor in factors_d:
+            if factors_d[factor]["monitor"]:
+               if factors_d[factor]["func"] not in num_threads_d:
+                  num_threads_d[factors_d[factor]["func"]] = 1
+                  factors_d[factor]["index"] = index
+                  print "Factor: %s index : %d" % (factor, index)
+                  index += 1
+               else:
+                  factors_d[factor]["index"] = 10000    
+               #num_records_to_process += 1
+            else:
+               factors_d[factor]["index"] = 10000
+        num_records_to_process = len(num_threads_d)
+ 
+        remaining = num_records_to_process%cpu_count
+        end = 0
+        index = 1
+        while index <= cpu_count: 
+            start = end
+            end = start + (num_records_to_process/cpu_count)
+            if remaining:
+               end += 1
+               remaining -= 1 
+
+            if start != end: 
+               worker_thread.insert(index, threading.Thread(target=workerThread, \
+                                    args=("workerThread", index, start, end)))
+               worker_thread[int(index)].start()          
+            index += 1 
+
+        index = 1
+        while index <= cpu_count: 
+            worker_thread[int(index)].join()
+            index += 1
+
+        print "All worker threada are done"
+        
+        switchHealth_tmp = float(0)
+        for factor in factors_d:
+            if factors_d[factor]["monitor"]: 
+               #if factors_d[factor]["health"] == -1:
+               #   continue
+               total_health += float(factors_d[factor]["health"])
+               total_factor += 1
+               switchHealth_tmp += float((factors_d[factor]["health"] * \
+                                      factors_d[factor]["weight"])/100)              
+        switchHealth = switchHealth_tmp
+    healthLock.release()
+
+def funcThread(name, func):
+    func()
+
+def adjust_factor_weight():
+    global factors_d
+
+    total_auto_weight = 0
+    auto_weight       = 100
+
+    ### 
+    for factor in factors_d:
+        if factors_d[factor]["monitor"]:
+           if factors_d[factor]["auto-weight"]:
+              total_auto_weight += 1
+           else:
+              auto_weight -= factors_d[factor]["weight"]
+
+    if total_auto_weight:
+       auto_weight_percent = float(auto_weight/total_auto_weight)
+       auto_weight_rem     = auto_weight%total_auto_weight
+       for factor in factors_d:
+           if factors_d[factor]["monitor"]:
+              if factors_d[factor]["auto-weight"]:
+                 factors_d[factor]["weight"] = auto_weight_percent
+                 if auto_weight_rem:
+                    factors_d[factor]["weight"] += 1
+                    auto_weight_rem -= 1
+       func_thread = threading.Thread(target=funcThread, args=("funcThread", \
+                     compute_system_health))
+       func_thread.start()
+
+###
+# timerThread to poll and calculate port bandwidth utilization percentage
+# at regular intervals and log a syslog event if a port has exceeded the
+# set threshold
+###
+def timerThread(name,val):
+    global cliP, healthSleepPeriod
+
+    first_time = True
+    while True:
+        if cliP:
+           if first_time:
+              first_time = False
+              adjust_factor_weight()
+           else:
+              compute_system_health()
+        time.sleep(healthSleepPeriod)
+
+def validate_weight(cmd_factor, weight_percent):
+    weight = 0
+    for factor in factors_d:
+        if factors_d[factor]["monitor"] and  \
+           cmd_factor != factor:
+           if factors_d[factor]["auto-weight"]:
+              weight += 1
+           else:
+              weight += factors_d[factor]["weight"]
+    if (weight + weight_percent) > 100:
+       return (False, (100 - weight))        
+    return (True, (100 - weight))
+
+### Print dict with proper indentation
+def print_indent_dict(clicmd, dict_d, level):
+    index       = 0
+    space       = "  " * level
+    key_max_len = 0
+    if type(dict_d) != dict:
+       return
+    for key in dict_d:
+        if key_max_len < len(key):
+           key_max_len = len(key)
+    for key in dict_d:
+        key_space = " " * (key_max_len - len(key))
+        value = "%s%s : " % (space, key + key_space)
+        if type(dict_d[key]) != dict:
+           value += str(dict_d[key])
+        print_str = '{0:16} | {1:10} | {2:10} | {3:30}'.format("", "", "", value)
+        clicmd.printConsole("%s\n" % print_str)
+        if type(dict_d[key]) == dict:
+           print_indent_dict(clicmd, dict_d[key], level + 1)
+
+### inherit from the NxCmdHandler class, define the application
+### callback in 'postCliCb'.  The callback handler gets a pointer
+### to this NxCmdHandler object and also the NxCliCmd object.
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+      def postCliCb(self,clicmd):
+          global cliP, factors_d, switchHealth, switchTime, factor_dup_d
+
+          if "watch_factor_weight_cmd" in clicmd.getCmdName():
+             factor         = ""
+             no_cmd         = False
+             weight_percent = 0
+             change         = True
+
+            ### Check if its a no command
+             if "no" in clicmd.getCmdLineStr():
+                no_cmd = True
+
+             for factor in factors_d:
+                 if clicmd.isKeywordSet(str(factor)):
+                    break;
+             
+             if clicmd.isKeywordSet("on"):
+                factors_d[factor]["monitor"] = True
+                if not no_cmd and clicmd.isKeywordSet("weight"):
+                   int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<weight-val>"))
+                   if int_p:
+                      weight_percent = int(nx_sdk_py.intp_value(int_p))
+                      (validate, allowed_val) = validate_weight(factor, weight_percent)
+                      if not validate:
+                         clicmd.printConsole("%% Maximum allowed weightage percentage is %d" \
+                                             % allowed_val) 
+                         return False
+                      factors_d[factor]["auto-weight"] = False
+                      factors_d[factor]["weight"] = weight_percent
+                else:
+                   factors_d[factor]["auto-weight"] = True       
+                factor_dup_d = copy.deepcopy(factors_d)
+             else:
+                if no_cmd:
+                   if not factors_d[factor]["monitor"]:
+                      factors_d[factor]["monitor"] = True
+                      factors_d[factor]["auto-weight"] = True
+                   else:
+                      change = False
+                else:
+                   factors_d[factor]["monitor"] = False 
+             if change:
+                adjust_factor_weight()
+          elif "show_switch_health_report_cmd" in clicmd.getCmdName():
+             clicmd.printConsole("\n(A) : Auto-weight\n")
+             clicmd.printConsole("\nSwitch Time         : %s\n" % switchTime) 
+             clicmd.printConsole("Switch Health Score : %0.2f%s\n" % (switchHealth, "%"))
+             detail = clicmd.isKeywordSet("detail")
+             clicmd.printConsole("-----------------|------------|-----------------|-------------\n")
+             print_str = '{0:16} | {1:10} | {2:15} | {3:10}'.format("Factors", "Weight", "Health", "Status")
+             clicmd.printConsole("%s\n" % print_str)
+             clicmd.printConsole("-----------------|------------|-----------------|-------------\n")
+
+             #for factor in factors_d:
+             for factor in sorted(factors_d.keys(), key=lambda x: factors_d[x]['status']):
+                 if detail and not clicmd.isKeywordSet(str(factor)):
+                    continue
+                 status_str = factors_d[factor]["status"]
+                 if not factors_d[factor]["monitor"]:
+                    health_str = "Off"
+                    status_str = "Off"
+                    weight_str = "-"
+                 elif factors_d[factor]["health"] == -1:
+                    health_str = "N/A"
+                    status_str = "N/A"
+                 else:
+                    health_str = str(factors_d[factor]["health"]) + "%%"
+                    weight_str = str(factors_d[factor]["weight"]) + "%%"
+                    if factors_d[factor]["auto-weight"]:
+                       weight_str += "(A)"
+                 print_str = '{0:16} | {1:10}  | {2:16} | {3:10}'.format(str(factor), \
+                             weight_str, health_str, status_str)
+                 clicmd.printConsole("%s\n" % print_str)
+             clicmd.printConsole("-----------------|------------|-----------------|-------------\n")
+                
+             if clicmd.isKeywordSet("alerts") or detail:
+                alerts = False
+                #for factor in factors_d:
+                for factor in sorted(factors_d.keys(), key=lambda x: factors_d[x]['health']):
+                    if detail and not clicmd.isKeywordSet(str(factor)):
+                       continue
+
+                    if factors_d[factor]["status"] != "Ok" or detail:
+                       #for item in factors_d[factor]["detail"]: 
+                       for item in sorted(factors_d[factor]["detail"], \
+                                          key=lambda x: x['health']):
+
+                           if item["status"] == "Ok" and not detail:
+                              break
+                           if not alerts:
+                              tmp_str = "Alerts"
+                              if detail:
+                                 tmp_str = "Detailed Info"
+                                 clicmd.printConsole("\n%-30s: \"%s\"" % ("Factor Description", \
+                                                     factors_d[factor]["desc"]))
+                                 clicmd.printConsole("\n%-30s: \"%s\"" % ("For More details", \
+                                                     factors_d[factor]["cmd"]))
+                                 (per_formula, total_formula) = getFactorFormula(factor)
+                                 if per_formula:
+                                    clicmd.printConsole("\n%-30s : %s" % ("Per Module Health%% Formula", per_formula))
+                                 if total_formula:
+                                    clicmd.printConsole("\n%-30s : %s" % ("Total Health%% Formula", total_formula)) 
+                              clicmd.printConsole("\n\n%s:  Health Status: Minor < %d%s, Major < %d%s\n" % \
+                                                  (tmp_str, minorThreshPercent, "%", majorThreshPercent, "%"))
+                              clicmd.printConsole("-----------------|------------|------------|---------------------------\n")
+                              print_str = '{0:16} | {1:10} | {2:10} | {3:30}'.format("Factors", "Alert", "Health", "Data")
+                              clicmd.printConsole("%s\n" % print_str)
+                              clicmd.printConsole("-----------------|------------|------------|---------------------------\n")
+                           alerts = True 
+                           custom_list = ["health", "status", "time"]
+                           print_str = '{0:16} | {1:10} | {2:11} | {3:30}'.format(factor, \
+                                    item["status"], str(item["health"]) + "%%", "Details:")
+                           clicmd.printConsole("%s\n" % print_str)
+                           for key in item:
+                               if key not in custom_list: 
+                                  if type(item[key]) != dict:
+                                     value = '{0:16} : '.format(key) + str(item[key])
+                                  else:
+                                     value = '{0:16} : '.format(key)
+                                  print_str = '{0:16} | {1:10} | {2:10} | {3:30}'.format("", "", "", value)
+                                  clicmd.printConsole("%s\n" % print_str)
+                                  if type(item[key]) == dict:
+                                     print_indent_dict(clicmd, item[key], 1)
+                                     #value = '{0:16} : '.format(key)
+                                  #print_str = '{0:16} | {1:10} | {2:10} | {3:30}'.format("", "", "", value)
+                                  #clicmd.printConsole("%s\n" % print_str)
+                                  #if type(item[key]) == dict:
+                                  #   for inner_key in item[key]:
+                                  #       value = '  {0:25} : '.format(inner_key) + str(item[key][inner_key])
+                                  #       print_str = '{0:16} | {1:10} | {2:10} | {3:30}'.format("", "", "", value)
+                                  #       clicmd.printConsole("%s\n" % print_str)
+                           clicmd.printConsole("-----------------|------------|------------|---------------------------\n")
+                    #clicmd.printConsole("-----------------|------------|------------|---------------------------\n")
+             
+                if not alerts:
+                   clicmd.printConsole("\nNo ALerts!!! All Systems OK!!!\n")
+                   clicmd.printConsole("-----------------|------------|------------|---------------------------\n")
+          return True 
+
+### Perform all SDK related initializations in one thread.  
+### All SDK related activities happen here, while the main thread
+### may continue to do other work.  The call to startEventLoop will
+### block until we break out of it by calling stopEventLoop. 
+def sdkThread(name,val):
+    global cliP, sdk, tmsg, factors_d
+
+    ### 
+    #    To gain access to NXOS Infra
+    # NOTE: 
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. 
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+    if not sdk:
+       return
+
+    ### Set a short Application description.
+    sdk.setAppDesc('Health Score Monitor Python App')
+
+    ### To Create & Manage Custom syslogs 
+    tmsg = sdk.getTracer()
+
+    ### To log some Trace events
+    tmsg.event("[%s] Started service" % sdk.getAppName())
+
+    ### To Create & Manage Custom CLI commands 
+    cliP = sdk.getCliParser()
+
+    ### Watch on a health factor
+    nxcmd = None
+    factor_keywords = "{ "
+    first_time = True
+    for factor in factors_d:
+        if first_time:
+           factor_keywords += factor 
+           first_time = False
+        else:
+           factor_keywords += " | " + factor 
+    factor_keywords += "}"
+
+    syntax = "{{" + factor_keywords + "} {on [weight <weight-val>] | off}}"
+    nxcmd = cliP.newConfigCmd("watch_factor_weight_cmd", syntax)
+    for factor in factors_d:
+        nxcmd.updateKeyword(str(factor), str(factors_d[factor]["desc"]), True)
+    nxcmd.updateKeyword("on",  "Enable health monitoring for the selected factor")
+    nxcmd.updateKeyword("weight",  "Weightage percentage for the selected factor")    
+    int_attr = nx_sdk_py.cli_param_type_integer_attr()
+    int_attr.min_val = 1;
+    int_attr.max_val = 100;
+    nxcmd.updateParam("<weight-val>", "Weightage percantage. Default is auto (equal weightage)", \
+                      nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+    nxcmd.updateKeyword("off", "Disable health monitoring for the selected factor")
+
+    syntax = "report [alerts | {" + factor_keywords + " detail}]"     
+    nxcmd = cliP.newShowCmd("show_switch_health_report_cmd", syntax)
+    nxcmd.updateKeyword("report", "Health Report for the Switch") 
+    nxcmd.updateKeyword("alerts", "Health Report Alerts for the Switch")
+    #for factor in factors_d:
+    #    nxcmd.updateKeyword(str(factor), str(factors_d[factor]["desc"]))
+    nxcmd.updateKeyword("detail", "Health Report Details for an health Factor")
+
+    ### Add the command callback Handler.
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ### Add custom commands to NX CLI Parse Tree
+    cliP.addToParseTree()
+
+    ### blocking call to receive NX specific events
+    sdk.startEventLoop()
+
+    tmsg.event("Service Quitting...!")
+
+    ### [Required] Needed for graceful exit.
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+### main thread
+### Global Variables
+cliP = 0
+sdk  = 0
+tmsg = 0
+
+### create a new sdkThread to setup SDK service and handle events.
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread",0))
+sdk_thread.start()
+
+### creating a timer thread to poll and calculate port bandwidth utilization
+### percentage at regular intervals and log a syslog if a port goes
+### beyond the set threshold
+timer_thread = threading.Thread(target=timerThread, args=("timerThread", 0))
+timer_thread.daemon = True
+
+### 
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.  
+###
+timer_thread.start()
+
+### Main thread is blocked until sdkThread exits. This keeps the
+### App running and listening to NX-OS events. 
+sdk_thread.join()

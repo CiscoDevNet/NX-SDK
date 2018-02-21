@@ -6,11 +6,12 @@
 ################################################################
 
 ##################################################################
-### tmCfgBot
+### File:   tmCfgBot
 ###
-### This example Python application shows the usage of the NX-SDK.
+### Supported since NX-SDK v1.0.0
 ###
-### Its a telemetry Config Helper Bot for the users. It has a default
+### Description:
+###    Its a telemetry Config Helper Bot for the users. It has a default
 ### list of telemetry instance objects and the path patterns associated
 ### with those objects. On configuring/enabling a specific instance, 
 ### the app automatically translates it to necessary telemetry sensor 
@@ -19,6 +20,71 @@
 ### Hence Users doesnt have to manaully type each and every sensor
 ### path(as paths come and go dynamically) everytime to get the 
 ### needed information as opposed to enabling just one instance.
+### tmCfgBot also has the necessary config CLIs for users to add
+### any new patterns on the fly.
+###
+### Ex)
+###  switch# show tmCfgBot default-instance
+###  Default Instance     | Paths          
+###  ---------------------|--------------------------------------------
+###  interface            | Pattern: sys/intf/phys-(.*)/dbgIf(In|Out)
+###  ---------------------|--------------------------------------------
+###  environment          | Pattern: sys/ch/ftslot-(.*)/ft
+###                       | Pattern: sys/ch/supslot-(.*)/sup/sensor-(.*)
+###                       | Pattern: sys/ch/psuslot-(.*)/psu
+###  ---------------------|--------------------------------------------
+###  evpn                 | Pattern: sys/eps/epId-1/nws/vni-(.*)
+###                       | Pattern: sys/epId-1/peers/dy_peer-(.*)
+###                       | Pattern: sys/epId-1/nws/vni-(.*)
+###                       | Pattern: sys/bgp/inst/dom-default/peer-(.*)/af-l2vpn-evpn
+###                       | Absolute: sys/bgp/inst/dom-default/af-l2vpn-evpn
+###                       | Pattern: sys/bgp/inst/dom-default/peer-(.*)/ent-(.*)
+###  ---------------------|--------------------------------------------
+###  system               | Absolute: sys            
+###                       | Absolute: sys/pltfm      
+###                       | Absolute: sys/ch         
+###                       | Absolute: sys/boot/image 
+###                       | Pattern: sys/ipv(4|6)/inst/dom-management/if-\[mgmt0\]/addr-(.*)
+###  ---------------------|--------------------------------------------
+###
+###  switch(config) show run telemetry 
+###  !!! No Telemetry config
+###
+###  switch(config)# feature nv overlay 
+###  switch(config)# int nve 1
+###  switch(config-if-nve)# member vni 100
+###
+###  !!! Apply EVPN instance telemetry template using tmCfgBot
+###  switch(config)# tmCfgBot apply-inst evpn default-template
+###  
+###  !!! tmCfgBot has sensed vni 100 config & has 
+###  !!! automatically configured the respective telemetry 
+###  !!! config as follows.
+###  switch(config)# sh run telemetry 
+###    feature telemetry
+###
+###    telemetry
+###      sensor-group 1
+###        path sys/eps/epId-1/nws/vni-100 depth 0
+###
+###  switch(config)# int nve 1
+###  switch(config-if-nve)# no member vni 100
+###  switch(config-if-nve)# member vni 200
+###  switch(config-if-nve)# member vni 300
+###
+###  !!! tmCfgBot has automatically identified the changes
+###  !!! (add vni 200, 300 & delete vni 100) and has updated
+###  !!! the telemetry configs accordingly.  
+###  switch(config)# sh run telemetry 
+###    feature telemetry
+###
+###    telemetry
+###      sensor-group 1
+###        path sys/eps/epId-1/nws/vni-200 depth 0
+###        path sys/eps/epId-1/nws/vni-300 depth 0
+###  
+###  Also use, "show tmCfgBot applied-paths" for the current
+###  state maintained by the application.
 ###
 ###     NOTE: Do "show <appname> nxsdk state" to get the list
 ###           of configs introduced by this application.     

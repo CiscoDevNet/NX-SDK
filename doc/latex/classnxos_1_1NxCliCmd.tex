@@ -67,11 +67,13 @@ virtual bool \hyperlink{classnxos_1_1NxCliCmd_af100c6495c0e383c8e3d11d5cdb68cd2}
 \item 
 virtual nxos::param\_\-type\_\-e \hyperlink{classnxos_1_1NxCliCmd_ab3722b567439f8ebd6422a5727bb7af6}{getParamType} (const char $\ast$param\_\-name)=0
 \item 
-virtual void $\ast$ \hyperlink{classnxos_1_1NxCliCmd_a4d15b397304c3499c5dbae8ef9210ad1}{getParamValue} (const char $\ast$param\_\-name)=0
+virtual void $\ast$ \hyperlink{classnxos_1_1NxCliCmd_a827bd696ec228767cb1f6dbfdbbd271c}{getParamValue} (const char $\ast$param\_\-name, bool fromFirst=false)=0
 \item 
 virtual int \hyperlink{classnxos_1_1NxCliCmd_a12e56ced4646ba1a27417030c0d20e7b}{getParamCount} (const char $\ast$param\_\-name)=0
 \item 
 virtual void \hyperlink{classnxos_1_1NxCliCmd_a10c723c79d75ac2c85821b5ca6540c62}{printConsole} (const char $\ast$fmt,...)=0
+\item 
+virtual void \hyperlink{classnxos_1_1NxCliCmd_ae1669d9fbeaa164494a503379ca52b86}{updateKeyword} (const char $\ast$keyword\_\-name, const char $\ast$help\_\-str, bool make\_\-key)=0
 \end{DoxyCompactItemize}
 
 
@@ -233,14 +235,14 @@ Gets the type of parameter in the CLI. Should be called only in command handler 
 \begin{DoxyNote}{Note}
 Refer to example Apps. 
 \end{DoxyNote}
-\hypertarget{classnxos_1_1NxCliCmd_a4d15b397304c3499c5dbae8ef9210ad1}{
+\hypertarget{classnxos_1_1NxCliCmd_a827bd696ec228767cb1f6dbfdbbd271c}{
 \index{nxos::NxCliCmd@{nxos::NxCliCmd}!getParamValue@{getParamValue}}
 \index{getParamValue@{getParamValue}!nxos::NxCliCmd@{nxos::NxCliCmd}}
-\subsubsection[{getParamValue}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ nxos::NxCliCmd::getParamValue (const char $\ast$ {\em param\_\-name})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{classnxos_1_1NxCliCmd_a4d15b397304c3499c5dbae8ef9210ad1}
+\subsubsection[{getParamValue}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ nxos::NxCliCmd::getParamValue (const char $\ast$ {\em param\_\-name}, \/  bool {\em fromFirst} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxCliCmd_a827bd696ec228767cb1f6dbfdbbd271c}
 Gets the values of the given input parameter in $<$$>$. Should be called only in command handler postCliCb. 
 \begin{DoxyParams}{Parameters}
-\item[\mbox{$\leftarrow$} {\em param\_\-name}]Name of the input parameter\end{DoxyParams}
+\item[\mbox{$\leftarrow$} {\em param\_\-name}]Name of the input parameter \item[\mbox{$\leftarrow$} {\em fromFirst}]At anytime, to get or start from first input parameter value, set fromFirst to True and then call it in a while loop with fromFirst to False to loop through the list if the input parameter is an array. Refer to usage.\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 single value of the input parameter if called once. To get an array of values associated with a additive parameter, call the API in a while loop. If cannot be found it returns NULL. NOTE: Its not thread-\/safe. \par
  param\_\-type $|$ Return type \par
@@ -250,6 +252,7 @@ single value of the input parameter if called once. To get an array of values as
  P\_\-INTERFACE $|$ char $\ast$ \par
  P\_\-IP\_\-ADDR $|$ char $\ast$ \par
  P\_\-MAC\_\-ADDR $|$ char $\ast$ \par
+ P\_\-VRF $|$ char $\ast$ \par
 \par
 
 \end{DoxyReturn}
@@ -257,18 +260,25 @@ single value of the input parameter if called once. To get an array of values as
 \begin{DoxyCode}
   Usage for return type int *:
    Ex) Syntax: port-bw threshold <threshold>
-       CLI: $appname port-bw threshold 10 
-   In postCliCb, to get <threshold> parameter value (=10)
+       CLI: $appname port-bw threshold 10 20 
+   In postCliCb, to get <threshold> parameter value (=10, 20)
 
   C++:
-       int val = *((int *)cmd->getParamValue("<threshold>"));     
+       // To get Multiple values
+       int val = *((int *)cmd->getParamValue("<threshold>"), true);     
+       while (val) {
+           //print val
+           val = *((int *)cmd->getParamValue("<threshold>"));
+       }
 
   Python:
        ### Use nx_sdk_py.void_to_int to convert from C void * 
        ### of type int to python int Object.
-       int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"))
-       if int_p:
+       int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
+       while int_p:
           threshold = int(nx_sdk_py.intp_value(int_p))
+          #print threshold
+          int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
 \end{DoxyCode}
 
 
@@ -344,6 +354,29 @@ Print custom output on the switch console only when called inside command handle
 \begin{DoxyNote}{Note}
 Refer to example Apps. 
 \end{DoxyNote}
+\hypertarget{classnxos_1_1NxCliCmd_ae1669d9fbeaa164494a503379ca52b86}{
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!updateKeyword@{updateKeyword}}
+\index{updateKeyword@{updateKeyword}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\subsubsection[{updateKeyword}]{\setlength{\rightskip}{0pt plus 5cm}virtual void nxos::NxCliCmd::updateKeyword (const char $\ast$ {\em keyword\_\-name}, \/  const char $\ast$ {\em help\_\-str}, \/  bool {\em make\_\-key})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxCliCmd_ae1669d9fbeaa164494a503379ca52b86}
+\begin{DoxyNote}{Note}
+Following APIs are supported from NX-\/SDK v1.5.0 Same as v1.0.0 except the addition of new parameter make\_\-key.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em make\_\-key}]If set to TRUE then this keyword will be added to the unique key for this config. Used only for config commands. For Ex) Lets say CLI syntax is \char`\"{}action \mbox{[}A$|$ B\mbox{]}\char`\"{},
+\begin{DoxyItemize}
+\item If A keyword is not set as key (make\_\-key=false) then Lets say we configure \char`\"{}action A\char`\"{} then we config \char`\"{}action B\char`\"{} then config \char`\"{}action B\char`\"{} would replace/update \char`\"{}action A\char`\"{}. Hence \char`\"{}show run\char`\"{} will have \char`\"{}action B\char`\"{}.
+\item If A \& B keywords are set as key (make\_\-key=true) then Lets say we configure action A\char`\"{} then we config \char`\"{}action B\char`\"{}, we will
+                     have two entries \char`\"{}action A\char`\"{} and \char`\"{}action B\char`\"{}. Hence \char`\"{}show run\char`\"{}
+                     will have both \char`\"{}action A\char`\"{} and \char`\"{}action B.
+\end{DoxyItemize}\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Refer to v1.0.0 API section to get more details about other parameters.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+v1.5.0 
+\end{DoxySince}
 \hypertarget{classnxos_1_1NxCliCmd_aa698fdd1026739307e0710e2948f19f5}{
 \index{nxos::NxCliCmd@{nxos::NxCliCmd}!updateKeyword@{updateKeyword}}
 \index{updateKeyword@{updateKeyword}!nxos::NxCliCmd@{nxos::NxCliCmd}}
@@ -405,6 +438,7 @@ Refer to example Apps.
  P\_\-INTERFACE $|$ NULL \par
  P\_\-IP\_\-ADDR $|$ cli\_\-param\_\-type\_\-ip\_\-addr\_\-attr \par
  P\_\-MAC\_\-ADDR $|$ NULL \par
+ P\_\-VRF $|$ NULL \par
 \par
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
@@ -464,4 +498,4 @@ For usage and code refer to respective types in \hyperlink{types_2nx__cli_8h_sou
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-/nobackup/sathsrin/NX-\/SDK/include/nx\_\-cli.h\end{DoxyCompactItemize}
+/nobackup/sathsrin/trial/nxsdk/include/nx\_\-cli.h\end{DoxyCompactItemize}

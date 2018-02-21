@@ -22,3 +22,9 @@ void
 NxTraceImpl::error (const char *fmt, ...)
 {
 }
+
+const char*
+nxos::NxTrace::getPrioStr(Priority prio)
+{
+   return("");
+}

@@ -6,14 +6,18 @@
 ##########################################################################
 
 ##########################################################################
-### pbwMonitor - Port Bandwidth Utilization Monitor
+### File:   pbwMonitor
 ###
-### This example Python application shows the usage of the NXSDK.
-### It creates a custom show command to show port bandwidth utilization 
-### percentage. It also polls and calculates port BW utilizations
-### percentage at regular interval and logs a syslog when it exceeds
-### the threshold. When the App gets started in the switch, following 
-### commands gets created on the fly,
+### Supported since NX-SDK v1.0.0
+###
+### Description:
+###    Port Bandwidth Utilization Monitor. This example Python 
+###    application shows the usage of the NX-SDK. It creates a 
+###    custom show command to show port bandwidth utilization 
+###    percentage. It also polls and calculates port BW utilizations
+###    percentage at regular interval and logs a custom syslog when 
+###    it exceeds the threshold. When the App gets started in the 
+###    switch, following commands gets created on the fly,
 ###     CMD   :  show <appname> port bw utilization [<port> | hit-threshold]
 ###     Action:  Displays port bandwidth utilization percentage for 
 ###              all ports (or) ports that hit thresholds if <port> is not 
@@ -22,7 +26,7 @@
 ###
 ### Sample output:
 ###
-### switch(config)# sh pbwApp port bw utilization 
+### switch(config)# sh pbwMonitor port bw utilization 
 ### Interface       Bw (Rx/Tx sec Rate) Tx_BW percentage  RX_BW percentage          
 ### --------------- ------------------- ----------------  ----------------
 ### 

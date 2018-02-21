@@ -51,6 +51,12 @@ public:
 
     /// Stop Event loop
     void stopEventLoop();
+
+    /// Get Rib Mgr Module
+    NxRibMgr *getRibMgr();
+    
+    /// Set App priority
+    void setAppPriority(nxos::prio_e prio);
 };
 
 }

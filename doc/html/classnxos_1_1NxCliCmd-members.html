@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nexus Infra SDK: Member List</title>
+<title>NX-SDK: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a5b7df5363b48d84b7f272339facfacac">getCmdType</a>()=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a12e56ced4646ba1a27417030c0d20e7b">getParamCount</a>(const char *param_name)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#ab3722b567439f8ebd6422a5727bb7af6">getParamType</a>(const char *param_name)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a4d15b397304c3499c5dbae8ef9210ad1">getParamValue</a>(const char *param_name)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a827bd696ec228767cb1f6dbfdbbd271c">getParamValue</a>(const char *param_name, bool fromFirst=false)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#af100c6495c0e383c8e3d11d5cdb68cd2">isKeywordSet</a>(const char *keyword_name)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d">MAX_CMD</a> enum value</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a72999b2e8f2995bbb19be346d875e3ceaedb25d06f68762ba3a8c8bc831a14c6f">MAX_MODE</a> enum value</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td></td></tr>
@@ -68,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a10c723c79d75ac2c85821b5ca6540c62">printConsole</a>(const char *fmt,...)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe">SHOW_CMD</a> enum value</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#aa698fdd1026739307e0710e2948f19f5">updateKeyword</a>(const char *keyword_name, const char *help_str)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#ae1669d9fbeaa164494a503379ca52b86">updateKeyword</a>(const char *keyword_name, const char *help_str, bool make_key)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#abc9244b0bcf22142b5d784c06a6aa91b">updateParam</a>(const char *param_name, const char *help_str, nxos::param_type_e param_type=nxos::P_STRING, void *param_type_attributes=NULL, int param_type_attr_len=0, bool is_key=false, bool additive=false, uint8_t repeat_count=0)=0</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [pure virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classnxos_1_1NxCliCmd.html#a3678e859df1bd42824f5b9f9f1de3b08">~NxCliCmd</a>()</td><td><a class="el" href="classnxos_1_1NxCliCmd.html">nxos::NxCliCmd</a></td><td><code> [inline, virtual]</code></td></tr>
 </table></div>
@@ -85,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Jun 2017 for Nexus Infra SDK by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 21 Feb 2018 for NX-SDK by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -1,0 +1,55 @@
+\hypertarget{nx__rib__mgr_8h}{
+\section{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-rib\_\-mgr.h File Reference}
+\label{nx__rib__mgr_8h}\index{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-rib\_\-mgr.h@{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-rib\_\-mgr.h}}
+}
+
+
+Abstract SDK interface to Nexus(NXOS) Layer 3 Unicast RIB.  
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$cstring$>$}\par
+{\ttfamily \#include $<$stdexcept$>$}\par
+{\ttfamily \#include \char`\"{}types/nx\_\-common.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnxos_1_1NxVrf}{nxos::NxVrf}
+\begin{DoxyCompactList}\small\item\em Abstract VRF Interface used to get details about a VRF. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxL3NextHop}{nxos::NxL3NextHop}
+\begin{DoxyCompactList}\small\item\em Abstract NextHoP Interface for a given L3 Route. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxL3Route}{nxos::NxL3Route}
+\begin{DoxyCompactList}\small\item\em Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxRibMgrHandler}{nxos::NxRibMgrHandler}
+\begin{DoxyCompactList}\small\item\em Abstract RibMgr callback Interface to receive VRF, Route updates etc from NXOS RIB. \item\end{DoxyCompactList}\item 
+class \hyperlink{classnxos_1_1NxRibMgr}{nxos::NxRibMgr}
+\begin{DoxyCompactList}\small\item\em Abstract Rib Manager interface to gain access to NXOS RIB. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract SDK interface to Nexus(NXOS) Layer 3 Unicast RIB. Provides necessary Abstraction/Plugin for NXOS RIB functionalities. It provides the Ability to register for Route and VRF updates and more.
+
+Steps to register for route event from RIB: \par
+ 1) Instantiate NX-\/SDK Rib Manager Object using getRibMgr(). \par
+ 2) To watch for VRF updates, use watchVrf() (or) watchAllVrf() for all VRF updates. \par
+ 3) To watch for L3 route updates, use watchL3Route() \par
+ 4) Register for callback handler with NxRibMgr to get the regsitered RIB updates. \par
+ 5) Overload NxRibMgrHandler class and its member functions like \par
+ (postVrfCb() -\/ To get watched VRF updates, \par
+ postL3RouteCb() -\/ To get watched L3 route update, \par
+ etc) with your own implementation to handle various events.\par
+ 6) NOTE: Adding/Deleting Routes in Rib will be supported soon. \par
+
+
+\begin{DoxyNote}{Note}
+By default, ribMgr CLI is auto-\/generated for the NX-\/SDK Apps. Try \char`\"{}show \$appname nxsdk ribmgr\char`\"{} in the box to access them.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+NX-\/SDK v1.5.0
+\end{DoxySince}
+Refer to template and sample Applications.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[\hyperlink{bug__bug000003}{Bug}]No known bugs. \end{Desc}

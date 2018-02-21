@@ -141,7 +141,8 @@ public:
      *            P_STRING    | cli_param_type_string_attr             <br>
      *            P_INTERFACE | NULL                                   <br>
      *            P_IP_ADDR   | cli_param_type_ip_addr_attr            <br>
-     *            P_MAC_ADDR  | NULL                                   <br><br>
+     *            P_MAC_ADDR  | NULL                                   <br>
+     *            P_VRF       | NULL                                   <br><br>
      *
      * @note For usage and code refer to respective types in types/nx_cli.h
      * @param[in] param_type_attr_len Length of the void *param_type_attributes
@@ -318,6 +319,12 @@ public:
      * Gets the values of the given input parameter in <>.
      * Should be called only in command handler postCliCb.
      * @param[in] param_name Name of the input parameter
+     * @param[in] fromFirst At anytime, to get or start from first 
+     *                      input parameter value, set fromFirst to 
+     *                      True and then call it in a while loop 
+     *                      with fromFirst to False to loop through 
+     *                      the list if the input parameter is an 
+     *                      array. Refer to usage.
      *
      * @returns single value of the input parameter if called once. 
      *          To get an array of values associated with a additive
@@ -330,23 +337,32 @@ public:
      *            P_STRING    |  char *                              <br>
      *            P_INTERFACE |  char *                              <br>
      *            P_IP_ADDR   |  char *                              <br>
-     *            P_MAC_ADDR  |  char *                              <br><br>
+     *            P_MAC_ADDR  |  char *                              <br>
+     *            P_VRF       |  char *                              <br><br>
      *
      *  @code
      *  Usage for return type int *:
      *   Ex) Syntax: port-bw threshold <threshold>
-     *       CLI: $appname port-bw threshold 10 
-     *   In postCliCb, to get <threshold> parameter value (=10)
+     *       CLI: $appname port-bw threshold 10 20 
+     *   In postCliCb, to get <threshold> parameter value (=10, 20)
      *
      *  C++:
-     *       int val = *((int *)cmd->getParamValue("<threshold>"));     
+     *       // To get Multiple values
+     *       int val = *((int *)cmd->getParamValue("<threshold>"), true);     
+     *       while (val) {
+     *           //print val
+     *           val = *((int *)cmd->getParamValue("<threshold>"));
+     *       }
      *
      *  Python:
      *       ### Use nx_sdk_py.void_to_int to convert from C void * 
      *       ### of type int to python int Object.
-     *       int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"))
-     *       if int_p:
+     *       int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
+     *       while int_p:
      *          threshold = int(nx_sdk_py.intp_value(int_p))
+     *          #print threshold
+     *          int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
+     *
      *  @endcode
      * 
      *  @code
@@ -372,7 +388,7 @@ public:
      * @throws if the param_name does not exist in the entered config. 
      * @note Refer to example Apps. 
      **/
-    virtual void *getParamValue(const char *param_name)=0;
+    virtual void *getParamValue(const char *param_name, bool fromFirst=false)=0;
 
     /**
      * Given the input parameter, getParamCount returns the number(count) 
@@ -423,6 +439,36 @@ public:
      * @note Refer to example Apps. 
      **/
     virtual void printConsole(const char *fmt, ...)=0;
+
+    /**
+     * @note Following APIs are supported from NX-SDK v1.5.0 
+     **/
+
+    /** 
+     *  Same as v1.0.0 except the addition of new parameter
+     *  make_key.
+     *
+     * @param[in] make_key If set to TRUE then this keyword will be added to the 
+     *                   unique key for this config. Used only for config commands.
+     *                   For Ex) Lets say CLI syntax is "action [A| B]",
+     *                   - If A keyword is not set as key (make_key=false) then
+     *                     Lets say we configure "action A" then we config 
+     *                     "action B" then config "action B" would replace/update 
+     *                     "action A". Hence "show run" will have "action B".
+     *                   - If A & B keywords are set as key (make_key=true) then Lets say
+     *                     we configure action A" then we config "action B", we will
+     *                     have two entries "action A" and "action B". Hence "show run"
+     *                     will have both "action A" and "action B".
+     * 
+     *  @note Refer to v1.0.0 API section to get more details
+     *        about other parameters.
+     *
+     * @since v1.5.0
+     **/
+    virtual void updateKeyword(const char *keyword_name,
+                               const char *help_str,
+                               bool make_key)=0;
+
 };
 
 /**

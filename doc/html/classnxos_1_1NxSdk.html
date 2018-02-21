@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nexus Infra SDK: nxos::NxSdk Class Reference</title>
+<title>NX-SDK: nxos::NxSdk Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -65,8 +65,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1NxTrace.html">NxTrace</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#ad2c729bd12d1b9f4bf06f4b70fe28347">getTracer</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#a75ca70643fe325ddf0eea62c1f8c4cc8">startEventLoop</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#adc80e6f244a7cbc050f9dacbc8018315">stopEventLoop</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1NxRibMgr.html">NxRibMgr</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#a3cdb42126b1132cf9aa00426a8d5d428">getRibMgr</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority</a> (nxos::prio_e prio)=0</td></tr>
 <tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classnxos_1_1NxSdk.html">NxSdk</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#a5050e2d26c40744b4fc7862068a83f39">getSdkInst</a> (int argc, char **argv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classnxos_1_1NxSdk.html">NxSdk</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxSdk.html#acdeb12edbd291b5421ddb3260547bf8a">getSdkInst</a> (int argc, char **argv, bool advException)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Abstract SDK interface to NXOS infra. </p>
@@ -163,6 +166,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a3cdb42126b1132cf9aa00426a8d5d428"></a><!-- doxytag: member="nxos::NxSdk::getRibMgr" ref="a3cdb42126b1132cf9aa00426a8d5d428" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classnxos_1_1NxRibMgr.html">NxRibMgr</a>* nxos::NxSdk::getRibMgr </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get Nx Rib Manager object to update and register for route events.</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>NX-SDK v1.5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer of type <a class="el" href="classnxos_1_1NxRibMgr.html" title="Abstract Rib Manager interface to gain access to NXOS RIB.">NxRibMgr</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acdeb12edbd291b5421ddb3260547bf8a"></a><!-- doxytag: member="nxos::NxSdk::getSdkInst" ref="acdeb12edbd291b5421ddb3260547bf8a" args="(int argc, char **argv, bool advException)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classnxos_1_1NxSdk.html">NxSdk</a>* nxos::NxSdk::getSdkInst </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&nbsp;</td>
+          <td class="paramname"> <em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>advException</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="note"><dt><b>Note:</b></dt><dd>Following APIs are supported from NX-SDK v1.5.0 [Required] To get Nx SDK Instance which enables the third party applications to gain access to NXOS Infra functionalities. </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>NX-SDK v1.5.0</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>- Supported from NxSDK v1.5.0. Similar to getSdkInst except the addition of new parameter advException.<ul>
+<li>Do all SDK specific initializations in the same thread.</li>
+</ul>
+</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pass</em>&nbsp;</td><td>in the command line arguments as its needed when the App is started from VSH. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>advException,:</em>&nbsp;</td><td>TRUE - If the App can handle Advanced Exceptions then Exception will be thrown of the type <a class="el" href="classnxos_1_1NxException.html" title="Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception...">NxException</a>. FALSE - Default Mode. Exception will be thrown of the type C++ - std::logic_err, Python - String Note: Supported from v1.5.0</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><pre class="fragment">  C++:
+       sdk = <a class="code" href="classnxos_1_1NxSdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argvi, <span class="keyword">true</span>);
+
+  Python:
+       <span class="keyword">import</span> nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+</pre></div><dl class="return"><dt><b>Returns:</b></dt><dd>- SDK instance to operate on (registered with NXOS Infra successfully).<ul>
+<li>NULL in case of any errors and there will be a Error syslog on the failure.</li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>From v1.5.0, by default an NX-SDK App will be started as Low Priority App. To change the priority, refer to <a class="el" href="classnxos_1_1NxSdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority()</a>. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a5050e2d26c40744b4fc7862068a83f39"></a><!-- doxytag: member="nxos::NxSdk::getSdkInst" ref="a5050e2d26c40744b4fc7862068a83f39" args="(int argc, char **argv)" -->
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>[Required] To get Nx SDK Instance which enables the thrid party applications to gain access to Nexus functionalities. </p>
+<p>[Required] To get Nx SDK Instance which enables the third party applications to gain access to Nexus functionalities. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Do all SDK specific initializations in the same thread. </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -202,9 +282,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
        <span class="keyword">import</span> nx_sdk_py
        sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
 </pre></div> <dl class="return"><dt><b>Returns:</b></dt><dd>- SDK instance to operate on (registered with NXOS Infra successfully).<ul>
-<li>NULL in case of any errors and there will be a Error syslog on the failure. </li>
+<li>NULL in case of any errors and there will be a Error syslog on the failure.</li>
 </ul>
 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>From v1.5.0, by default an NX-SDK App will be started as Low Priority App. To change the priority, refer to <a class="el" href="classnxos_1_1NxSdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority()</a>. </dd></dl>
 
 </div>
 </div>
@@ -245,6 +326,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a46d9487216506aa19e5499759f5eaef7"></a><!-- doxytag: member="nxos::NxSdk::setAppPriority" ref="a46d9487216506aa19e5499759f5eaef7" args="(nxos::prio_e prio)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxSdk::setAppPriority </td>
+          <td>(</td>
+          <td class="paramtype">nxos::prio_e&nbsp;</td>
+          <td class="paramname"> <em>prio</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>[Optional] To Set the Priority of the application to limit the use of CPU for the application. By default, the App is set as low priotiy Application(only 25% of CPU). LOW_PRIO - 25% of CPU MED_PRIO - 50% of CPU HIGH_PRIO - 75% of CPU NO_PRIO - No limit</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>NX-SDK v1.5.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a75ca70643fe325ddf0eea62c1f8c4cc8"></a><!-- doxytag: member="nxos::NxSdk::startEventLoop" ref="a75ca70643fe325ddf0eea62c1f8c4cc8" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +383,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nobackup/sathsrin/NX-SDK/include/<a class="el" href="nx__sdk_8h_source.html">nx_sdk.h</a></li>
+<li>/nobackup/sathsrin/trial/nxsdk/include/<a class="el" href="nx__sdk_8h_source.html">nx_sdk.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -299,7 +400,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Jun 2017 for Nexus Infra SDK by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 21 Feb 2018 for NX-SDK by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

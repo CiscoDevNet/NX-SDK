@@ -1,0 +1,309 @@
+\hypertarget{classnxos_1_1NxL3Route}{
+\section{nxos::NxL3Route Class Reference}
+\label{classnxos_1_1NxL3Route}\index{nxos::NxL3Route@{nxos::NxL3Route}}
+}
+
+
+Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB.  
+
+
+{\ttfamily \#include $<$nx\_\-rib\_\-mgr.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classnxos_1_1NxL3Route_abb3762fb6629ba1900e877555cbb69dc}{$\sim$NxL3Route} ()
+\item 
+virtual std::string \hyperlink{classnxos_1_1NxL3Route_a06ed660337e8b919dd801267957497d7}{getVrfName} ()=0
+\item 
+virtual std::string \hyperlink{classnxos_1_1NxL3Route_a3176245539589bf745ce1d196975b3c9}{getAddress} ()=0
+\item 
+virtual unsigned int \hyperlink{classnxos_1_1NxL3Route_aaafa1d34e62297bbed574995ff48dba9}{getMaskLen} ()=0
+\item 
+virtual unsigned int \hyperlink{classnxos_1_1NxL3Route_a5e402096d7ff280b6f4d334b3bd954d4}{getL3NextHopCount} ()=0
+\item 
+virtual \hyperlink{classnxos_1_1NxL3NextHop}{NxL3NextHop} $\ast$ \hyperlink{classnxos_1_1NxL3Route_a960a2e429fd7514f0d40e64743e04872}{getL3NextHop} (std::string address)=0
+\item 
+virtual \hyperlink{classnxos_1_1NxL3NextHop}{NxL3NextHop} $\ast$ \hyperlink{classnxos_1_1NxL3Route_a7877c5328b1706acbbe5d8dbc6c94f4e}{getL3NextHop} (bool fromFirst=false)=0
+\item 
+virtual nxos::event\_\-type\_\-e \hyperlink{classnxos_1_1NxL3Route_a9ca0b236a35cc616753e09e620b6b02f}{getEvent} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. \begin{DoxySince}{Since}
+NX-\/SDK v1.5.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classnxos_1_1NxL3Route_abb3762fb6629ba1900e877555cbb69dc}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!$\sim$NxL3Route@{$\sim$NxL3Route}}
+\index{$\sim$NxL3Route@{$\sim$NxL3Route}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{$\sim$NxL3Route}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos::NxL3Route::$\sim$NxL3Route ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_abb3762fb6629ba1900e877555cbb69dc}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxL3Route_a3176245539589bf745ce1d196975b3c9}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getAddress}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string nxos::NxL3Route::getAddress ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a3176245539589bf745ce1d196975b3c9}
+To get the Address of the L3 Route.
+
+\begin{DoxyReturn}{Returns}
+Address of the Route(string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           cout << "Route Address: " << route->getAddress();
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          print "Route Address: %s" % route.getAddress()
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_a9ca0b236a35cc616753e09e620b6b02f}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getEvent}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos::event\_\-type\_\-e nxos::NxL3Route::getEvent ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a9ca0b236a35cc616753e09e620b6b02f}
+To get the type of Event(Add, Update, Delete etc) when there is a change to a tracked L3 Route. Should be used only in Rib Handler Callbacks like postL3RouteCb(). If used outside of RIB Handler Callbacks its set to NO\_\-EVENT.
+
+\begin{DoxyReturn}{Returns}
+Route Event Type(event\_\-type\_\-e)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+     class myRibMgrMgrHandler : public NxRibMgrHandler {
+        public:
+           bool postL3RouteCb(NxL3Route *route) {
+                cout << "Route Event: " << route->getEvent();
+           }
+     };
+
+  Python:
+     class pyRibHandler(nx_sdk_py.NxRibMgrHandler):
+     ### Overloaded Callback to get Route events
+           def postL3RouteCb(self, nxroute):
+               print "Route Event: %d" % nxroute.getEvent()
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_a7877c5328b1706acbbe5d8dbc6c94f4e}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getL3NextHop@{getL3NextHop}}
+\index{getL3NextHop@{getL3NextHop}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getL3NextHop}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NxL3NextHop}$\ast$ nxos::NxL3Route::getL3NextHop (bool {\em fromFirst} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a7877c5328b1706acbbe5d8dbc6c94f4e}
+To get the first NextHop for this L3 Route. To get all the NextHops call this API in a while loop. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em fromFirst}]At anytime, to get or start from first NextHop, set fromFrist to True and then call it in a while loop with fromFirst to False to loop through the list if there are more than one Nexthop. Refer to usage. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classnxos_1_1NxL3NextHop}{NxL3NextHop} if it exists NULL if not.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+       NxL3NextHop  *nh;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           nh = route->getL3NextHop(true);
+           while (nh) {
+               cout << "NextHop " << nh->getAddress(); 
+               nh = route->getL3NextHop();
+           }
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          nh = route.getL3NextHop(True)
+          while nh:
+              print "NextHop %s" % nh.getAddress()
+              nh = route.getL3NextHop()
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_a960a2e429fd7514f0d40e64743e04872}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getL3NextHop@{getL3NextHop}}
+\index{getL3NextHop@{getL3NextHop}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getL3NextHop}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NxL3NextHop}$\ast$ nxos::NxL3Route::getL3NextHop (std::string {\em address})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a960a2e429fd7514f0d40e64743e04872}
+To get the NextHop for this L3 Route if it exists by the specified address.
+
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classnxos_1_1NxL3NextHop}{NxL3NextHop} if it exists. NULL if not.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+       NxL3NextHop  *nh;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           nh = route->getL3NextHop("20.1.1.1");
+           if (nh) {
+               cout << "NextHop " << nh->getAddress() << " exists for route " 
+                    << route->getAddress();
+           } else {
+               cout << "NextHop " << nh->getAddress() << " does not exist "
+                    "for route " << route->getAddress();
+           }
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          nh = route.getL3NextHop("20.1.1.1")
+          if nh:
+             print "NextHop %s exists for route %s" % \
+                   (nh.getAddress(), route.getAddress())
+          else:
+             print "NextHop %s does not exist for route %s" % \
+                   (nh.getAddress(), route.getAddress())
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_a5e402096d7ff280b6f4d334b3bd954d4}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getL3NextHopCount@{getL3NextHopCount}}
+\index{getL3NextHopCount@{getL3NextHopCount}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getL3NextHopCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int nxos::NxL3Route::getL3NextHopCount ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a5e402096d7ff280b6f4d334b3bd954d4}
+To get the count of NextHops for this L3 Route. Returns 0 if there are no nexthops for the route which happens in the case of route Delete.
+
+\begin{DoxyReturn}{Returns}
+Count of NextHops in a Route(unsigned int)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           cout << "Route NextHop count: " << route->getL3NextHopCount();
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          print "Route NextHop Count: %d" % route.getL3NextHopCount()
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_aaafa1d34e62297bbed574995ff48dba9}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getMaskLen@{getMaskLen}}
+\index{getMaskLen@{getMaskLen}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getMaskLen}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int nxos::NxL3Route::getMaskLen ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_aaafa1d34e62297bbed574995ff48dba9}
+To get the masklen of the L3 Route.
+
+\begin{DoxyReturn}{Returns}
+MaskLen of the Route(unsigned int)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           cout << "Route MaskLen: " << route->getMaskLen();
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          print "Route MaskLen: %d" % route.getMaskLen()
+\end{DoxyCode}
+ \hypertarget{classnxos_1_1NxL3Route_a06ed660337e8b919dd801267957497d7}{
+\index{nxos::NxL3Route@{nxos::NxL3Route}!getVrfName@{getVrfName}}
+\index{getVrfName@{getVrfName}!nxos::NxL3Route@{nxos::NxL3Route}}
+\subsubsection[{getVrfName}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string nxos::NxL3Route::getVrfName ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxL3Route_a06ed660337e8b919dd801267957497d7}
+To get the VRF Name of the L3 Route.
+
+\begin{DoxyReturn}{Returns}
+VRF Name(string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  C++:
+       #include <nx_sdk.h>
+       #include <nx_rib_mgr.h>
+
+       NxL3Route    *route;
+
+       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+       ribMgr = sdk->getRibMgr();
+
+       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+       if (route) {
+           cout << "Route VRfName: " << route->getVrfName();
+       }
+
+  Python:
+       import nx_sdk_py
+       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+
+       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+       if route:
+          print "Route VrfName: %s" % route.getVrfName()
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/trial/nxsdk/include/\hyperlink{nx__rib__mgr_8h}{nx\_\-rib\_\-mgr.h}\end{DoxyCompactItemize}

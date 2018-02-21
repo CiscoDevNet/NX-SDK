@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nexus Infra SDK: nxos::NxTrace Class Reference</title>
+<title>NX-SDK: nxos::NxTrace Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -57,15 +57,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088f">Priority</a> { <br/>
-&nbsp;&nbsp;<b>EMERG</b>, 
-<b>ALERT</b>, 
-<b>CTRI</b>, 
-<b>ERR</b>, 
+&nbsp;&nbsp;<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2">EMERG</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4">ALERT</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da">CTRI</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08">ERR</a>, 
 <br/>
-&nbsp;&nbsp;<b>WARNING</b>, 
-<b>NOTICE</b>, 
-<b>INFO</b>, 
-<b>DEBUG</b>
+&nbsp;&nbsp;<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003">WARNING</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936">NOTICE</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e">INFO</a>, 
+<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e">DEBUG</a>
 <br/>
  }</td></tr>
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
@@ -74,9 +74,11 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a825db76787da234b99e81adb2def8d3d"></a><!-- doxytag: member="nxos::NxTrace::syslog" ref="a825db76787da234b99e81adb2def8d3d" args="(Priority prio, const char *fmt,...)=0" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxTrace.html#a825db76787da234b99e81adb2def8d3d">syslog</a> (<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088f">Priority</a> prio, const char *fmt,...)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generate Custom Syslog with Priority. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generate Custom Syslog with the specified Priority. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxTrace.html#a22e5e2fff39fae68fba3051dc2720621">event</a> (const char *fmt,...)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxTrace.html#afc0240b6b9a291729836ffb2fbeef8a4">error</a> (const char *fmt,...)=0</td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxTrace.html#a583b8a49a2111e4e4b8ef2f2eeaa4620">getPrioStr</a> (<a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088f">Priority</a> prio)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Tracer interface to generate custom Syslogs, Events &amp; Errors history. </p>
@@ -92,6 +94,34 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 <div class="memdoc">
 <p>Priority level for the custom syslog. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2"></a><!-- doxytag: member="EMERG" ref="a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2" args="" -->EMERG</em>&nbsp;</td><td>
+<p>Emergency - Highest Priority. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4"></a><!-- doxytag: member="ALERT" ref="a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4" args="" -->ALERT</em>&nbsp;</td><td>
+<p>Its a severe Alert. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da"></a><!-- doxytag: member="CTRI" ref="a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da" args="" -->CTRI</em>&nbsp;</td><td>
+<p>Critical. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08"></a><!-- doxytag: member="ERR" ref="a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08" args="" -->ERR</em>&nbsp;</td><td>
+<p>Error Scenario. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003"></a><!-- doxytag: member="WARNING" ref="a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003" args="" -->WARNING</em>&nbsp;</td><td>
+<p>Warning but not critical. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936"></a><!-- doxytag: member="NOTICE" ref="a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936" args="" -->NOTICE</em>&nbsp;</td><td>
+<p>Notice Alert but not severe. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e"></a><!-- doxytag: member="INFO" ref="a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e" args="" -->INFO</em>&nbsp;</td><td>
+<p>For Information. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e"></a><!-- doxytag: member="DEBUG" ref="a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e" args="" -->DEBUG</em>&nbsp;</td><td>
+<p>For internal Debugging purposes. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
 
 </div>
 </div>
@@ -152,8 +182,29 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a class="anchor" id="a583b8a49a2111e4e4b8ef2f2eeaa4620"></a><!-- doxytag: member="nxos::NxTrace::getPrioStr" ref="a583b8a49a2111e4e4b8ef2f2eeaa4620" args="(Priority prio)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* nxos::NxTrace::getPrioStr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnxos_1_1NxTrace.html#a582f6e5a22e788c61807657f8bca088f">Priority</a>&nbsp;</td>
+          <td class="paramname"> <em>prio</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="note"><dt><b>Note:</b></dt><dd>Following APIs are supported from NX-SDK v1.5.0 Get the specified priority as String</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>NX-SDK v1.5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Priotiry as a string </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nobackup/sathsrin/NX-SDK/include/<a class="el" href="nx__trace_8h_source.html">nx_trace.h</a></li>
+<li>/nobackup/sathsrin/trial/nxsdk/include/<a class="el" href="nx__trace_8h_source.html">nx_trace.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -170,7 +221,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Jun 2017 for Nexus Infra SDK by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 21 Feb 2018 for NX-SDK by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

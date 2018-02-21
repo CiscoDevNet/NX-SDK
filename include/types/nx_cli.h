@@ -1,5 +1,5 @@
 /** @file nx_cli.h
- *  @brief Provides necessary types needed for managing Custom CLIs using NXSDK
+ *  @brief Provides necessary types needed for managing Custom CLIs using NX-SDK
  *
  *  @author nxos-sdk@cisco.com
  *  @bug No known bugs.
@@ -8,9 +8,11 @@
 #ifndef __NX_CLI_TYPES_H__
 #define __NX_CLI_TYPES_H__
 
+#include "nx_common.h"
+
 namespace nxos {
 
-/*!
+/**
  * @brief Supported Input Parameter Types in a CLI.
  *
  * Types help/guide the user to input the right information for a CLI
@@ -27,6 +29,7 @@ namespace nxos {
  *   P_INTERFACE | NULL
  *   P_IP_ADDR   | cli_param_type_ip_addr_attr
  *   P_MAC_ADDR  | NULL
+ *   P_VRF       | NULL
  **/
 typedef enum {
    /// CLI Param Start Type 
@@ -47,24 +50,12 @@ typedef enum {
    /// CLI Param Type is MAC address
    P_MAC_ADDR,
 
+   /// CLI Param type is VRF. since v1.5.0
+   P_VRF,
+
    /// CLI Param Type MAX_TYPE
    P_MAX_TYPE
 } param_type_e;
-
-// Supported Record types
-typedef enum {
-   /// Record Type is TEXT
-   R_TEXT = 0,
- 
-   /// Record Type is JSON   
-   R_JSON,
-
-   /// Record Type is XML
-   R_XML,
-
-   /// Record Type is MAX_TYPE
-   R_MAX_TYPE
-} record_type_e;
 
 /**
  * @brief Specifies that the type of the CLI input parameter is an integer.
@@ -215,5 +206,5 @@ typedef struct cli_param_type_ip_addr_attr_ {
 
 }
 
-#endif //__NX_TYPES__
+#endif //__NX_CLI_TYPES__
 

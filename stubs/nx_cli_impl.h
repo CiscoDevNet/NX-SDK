@@ -103,6 +103,10 @@ public:
 	 * Print on the console
 	 **/
 	void printConsole(const char *fmt, ...);
+
+    void updateKeyword(const char *keyword_name,
+                       const char *help_str,
+                       bool make_key);
 };
 
 class NxCliParserImpl: public NxCliParser {

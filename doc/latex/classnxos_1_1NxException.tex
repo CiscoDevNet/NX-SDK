@@ -1,0 +1,142 @@
+\hypertarget{classnxos_1_1NxException}{
+\section{nxos::NxException Class Reference}
+\label{classnxos_1_1NxException}\index{nxos::NxException@{nxos::NxException}}
+}
+
+
+Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type \hyperlink{classnxos_1_1NxException}{NxException} when advException is enabled for an App to handle the failures gracefully. Refer to nxsdk applications for the usage of \hyperlink{classnxos_1_1NxException}{NxException}.  
+
+
+{\ttfamily \#include $<$nx\_\-exception.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classnxos_1_1NxException_a2063f2937b4fdfe7a2e58f0ce727d70c}{$\sim$NxException} ()
+\item 
+virtual const char $\ast$ \hyperlink{classnxos_1_1NxException_ad475b90fb193848245b9537524439943}{what} ()=0
+\item 
+virtual unsigned long \hyperlink{classnxos_1_1NxException_ace42c480c5b1efc0779028339a09f067}{getErrCode} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{classnxos_1_1NxException_ad428a765217581f320af95386350ef30}{getErrModule} ()=0
+\item 
+virtual unsigned short \hyperlink{classnxos_1_1NxException_a7b5ffd11c04e3955d874ea7a6b18063f}{getErrSeverity} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{classnxos_1_1NxException_a82ce0a75c61b55ca191c86e5abfeaa20}{getErrApi} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type \hyperlink{classnxos_1_1NxException}{NxException} when advException is enabled for an App to handle the failures gracefully. Refer to nxsdk applications for the usage of \hyperlink{classnxos_1_1NxException}{NxException}. \begin{DoxySince}{Since}
+NX-\/SDK v1.5.0
+\end{DoxySince}
+1) To Enable advanced exception, 
+\begin{DoxyCode}
+  Usage:
+
+  C++:
+     sdk = nxos::NxSdk::getSdkInst(argc, argv, true);
+
+  Python:
+     import nx_sdk_py
+     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+\end{DoxyCode}
+
+
+2) To catch the exceptions, 
+\begin{DoxyCode}
+  Usage:
+
+  C++:
+     try {
+         ribMgr->watchL3Route(protocol, tag, vrf_name, af);
+     } catch (std::logic_error const& err) {
+         clicmd.printConsole("Failed with Err (%s)", err.what());    
+     } catch (const NxException *e) {
+         clicmd.printConsole("Module: %s, API: %s, Severity: %s, 
+                             ErrCode %d(%s)", e->getErrModule(), 
+                             e->getErrApi(), 
+                             NxTrace::getPrioStr(e->getErrSeverity()), 
+                             e->getErrCode(), e->what()));
+     }
+
+  Python:
+     try:           
+        ribMgr.watchL3Route(protocol, tag, vrf_name, af)       
+     except RuntimeError,e:                     
+        # If Simple Exception is set (since v1.0.0
+        clicmd.printConsole("Error %s" % str(e))
+     except nx_sdk_py.NxException as e:           
+        #If Advanced Exception is set(since v1.5.0))
+        clicmd.printConsole("Module: %s, API: %s, Severity: %s, \
+                            ErrCode %d(%s)" % (e.getErrModule(), \
+                            e.getErrApi(), \
+                            nx_sdk_py.NxTrace.getPrioStr(e.getErrSeverity()), \
+                            e.getErrCode(), e.what()))  
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classnxos_1_1NxException_a2063f2937b4fdfe7a2e58f0ce727d70c}{
+\index{nxos::NxException@{nxos::NxException}!$\sim$NxException@{$\sim$NxException}}
+\index{$\sim$NxException@{$\sim$NxException}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{$\sim$NxException}]{\setlength{\rightskip}{0pt plus 5cm}virtual nxos::NxException::$\sim$NxException ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_a2063f2937b4fdfe7a2e58f0ce727d70c}
+\mbox{[}Optional\mbox{]} Destructor
+
+To Delete the Exception instance gracefully. Automatically called when the App Exits. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classnxos_1_1NxException_a82ce0a75c61b55ca191c86e5abfeaa20}{
+\index{nxos::NxException@{nxos::NxException}!getErrApi@{getErrApi}}
+\index{getErrApi@{getErrApi}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{getErrApi}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ nxos::NxException::getErrApi ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_a82ce0a75c61b55ca191c86e5abfeaa20}
+To get the API name in the Module/Class that threw the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Api Name as string 
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxException_ace42c480c5b1efc0779028339a09f067}{
+\index{nxos::NxException@{nxos::NxException}!getErrCode@{getErrCode}}
+\index{getErrCode@{getErrCode}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{getErrCode}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned long nxos::NxException::getErrCode ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_ace42c480c5b1efc0779028339a09f067}
+To get the Error code ID for the thrown exception.
+
+\begin{DoxyReturn}{Returns}
+Error Code of type err\_\-type\_\-e 
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxException_ad428a765217581f320af95386350ef30}{
+\index{nxos::NxException@{nxos::NxException}!getErrModule@{getErrModule}}
+\index{getErrModule@{getErrModule}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{getErrModule}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ nxos::NxException::getErrModule ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_ad428a765217581f320af95386350ef30}
+To get the Module/Class Name that threw the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Module Name as string 
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxException_a7b5ffd11c04e3955d874ea7a6b18063f}{
+\index{nxos::NxException@{nxos::NxException}!getErrSeverity@{getErrSeverity}}
+\index{getErrSeverity@{getErrSeverity}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{getErrSeverity}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned short nxos::NxException::getErrSeverity ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_a7b5ffd11c04e3955d874ea7a6b18063f}
+To get the Severity of the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Severity of type \hyperlink{classnxos_1_1NxTrace_a582f6e5a22e788c61807657f8bca088f}{NxTrace::Priority} 
+\end{DoxyReturn}
+\hypertarget{classnxos_1_1NxException_ad475b90fb193848245b9537524439943}{
+\index{nxos::NxException@{nxos::NxException}!what@{what}}
+\index{what@{what}!nxos::NxException@{nxos::NxException}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ nxos::NxException::what ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classnxos_1_1NxException_ad475b90fb193848245b9537524439943}
+To get the Error Reason string for the thrown exception.
+
+\begin{DoxyReturn}{Returns}
+Error reason as string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/nobackup/sathsrin/trial/nxsdk/include/\hyperlink{nx__exception_8h}{nx\_\-exception.h}\end{DoxyCompactItemize}

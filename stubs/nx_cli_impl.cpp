@@ -118,6 +118,13 @@ void NxCliCmdImpl::printConsole(const char *fmt, ...)
 {
 }
 
+void NxCliCmdImpl::updateKeyword(const char *keyword_name,
+                                 const char *help_str,
+                                 bool make_key)
+{
+    return;
+}
+
 /**
  * Destructor
  **/

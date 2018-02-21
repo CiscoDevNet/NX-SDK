@@ -1,7 +1,7 @@
 /** @file nx_sdk.h
  *  @brief Abstract SDK interface to Nexus(NXOS) tools
  *
- *  NXOS Infra SDK V1.0 provides a flexible and powerful way for third party 
+ *  NX-SDK v1.0.0 provides a flexible and powerful way for third party 
  *  custom Application development to access Nexus infra tools like  
  *      1. generating Custom CLIs 
  *      2. Custom Syslogs, Events and Error history for the App.
@@ -21,6 +21,8 @@
 #include <string>
 #include <cstring>
 #include <stdexcept>
+#include "types/nx_common.h"
+#include "nx_exception.h"
 
 namespace nxos {
 
@@ -29,6 +31,9 @@ class NxCliParser;
 
 /// Forward Declaration - Refer to nx_trace.h
 class NxTrace;
+
+/// Forward Declaration - Refer to nx_rib_mgr.h
+class NxRibMgr;
 
 /**
  *  @brief Abstract SDK interface to NXOS infra
@@ -46,7 +51,7 @@ public:
 
     /**
      * [Required] To get Nx SDK Instance which enables
-     *            the thrid party applications to 
+     *            the third party applications to 
      *            gain access to Nexus functionalities.
      * @note Do all SDK specific initializations in the 
      *       same thread.
@@ -63,6 +68,9 @@ public:
      * @endcode
      * @returns  - SDK instance to operate on (registered with NXOS Infra successfully).
      *           - NULL in case of any errors and there will be a Error syslog on the failure.
+     * 
+     * @note From v1.5.0, by default an NX-SDK App will be started as Low Priority App.
+     *       To change the priority, refer to setAppPriority(). 
      **/
     static NxSdk *getSdkInst(int argc, char **argv);
 
@@ -114,6 +122,69 @@ public:
      * Stop Event loop to quit the Application.
      **/
     virtual void stopEventLoop()=0;
+
+    /**
+     * @note Following APIs are supported from NX-SDK v1.5.0 
+     **/
+
+    /**
+     * [Required] To get Nx SDK Instance which enables the third
+     *            party applications to gain access to NXOS Infra 
+     *            functionalities.
+     * @since NX-SDK v1.5.0
+     *
+     * @note - Supported from NxSDK v1.5.0. Similar to getSdkInst 
+     *         except the addition of new parameter advException. 
+     *       - Do all SDK specific initializations in the same thread.
+     *
+     * @param[in] pass in the command line arguments as its
+     *            needed when the App is started from VSH.
+     * @param[in] advException: TRUE -  If the App can handle Advanced
+     *                                  Exceptions then Exception will be
+     *                                  thrown of the type NxException.
+     *                          FALSE - Default Mode. Exception will be
+     *                                  thrown of the type 
+     *                                  C++ - std::logic_err, Python - String
+     *                          Note: Supported from v1.5.0
+     *
+     * @code
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argvi, true);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+     * @endcode
+     *
+     * @returns  - SDK instance to operate on (registered with NXOS Infra successfully).
+     *           - NULL in case of any errors and there will be a Error syslog on the failure.
+     * 
+     * @note From v1.5.0, by default an NX-SDK App will be started as Low Priority App.
+     *       To change the priority, refer to setAppPriority(). 
+     **/
+    static NxSdk *getSdkInst(int argc, char **argv, bool advException);
+
+    /**
+     * Get Nx Rib Manager object to update and register for route events.
+     *
+     * @since NX-SDK v1.5.0
+     *
+     * @returns Pointer of type NxRibMgr.
+     **/
+    virtual NxRibMgr *getRibMgr()=0;
+
+    /**
+     * [Optional] To Set the Priority of the application to limit the 
+     * use of CPU for the application. By default, the App is set as 
+     * low priotiy Application(only 25% of CPU).
+     *     LOW_PRIO  - 25% of CPU 
+     *     MED_PRIO  - 50% of CPU
+     *     HIGH_PRIO - 75% of CPU
+     *     NO_PRIO   - No limit 
+     *
+     * @since NX-SDK v1.5.0
+     **/
+    virtual void setAppPriority(nxos::prio_e prio)=0;
 };
 
 }

@@ -1,0 +1,87 @@
+\hypertarget{nx__exception_8h}{
+\section{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-exception.h File Reference}
+\label{nx__exception_8h}\index{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-exception.h@{/nobackup/sathsrin/trial/nxsdk/include/nx\_\-exception.h}}
+}
+
+
+Abstract Exception Interface for all thrown NX errors.  
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$cstring$>$}\par
+{\ttfamily \#include $<$stdexcept$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnxos_1_1NxException}{nxos::NxException}
+\begin{DoxyCompactList}\small\item\em Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type \hyperlink{classnxos_1_1NxException}{NxException} when advException is enabled for an App to handle the failures gracefully. Refer to nxsdk applications for the usage of \hyperlink{classnxos_1_1NxException}{NxException}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries err\_\-type\_\-e} \{ \par
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8b80bc949bbe8fed86aa8812da694c70}{nxos::ERR\_\-INVALID\_\-USAGE} =  1, 
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ab639ff1ebdbaf5a6053a6eebf1037835}{nxos::ERR\_\-INVALID} =  2, 
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a0fc8433288c708e1a89a1a10292834eb}{nxos::ERR\_\-NULL\_\-PTR} =  3, 
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a45c4b0f31ee98947576572b4355077a1}{nxos::ERR\_\-NOT\_\-FOUND} =  4, 
+\par
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8dfb2f701566b74a0a1207af6d4a0073}{nxos::ERR\_\-EMPTY} =  5, 
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a4cbaa77687a1fea3093ca96a9011ee52}{nxos::ERR\_\-MAX\_\-LIMIT} =  6, 
+\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ae6dca61095454a329e3f37bc65f62fb2}{nxos::ERR\_\-FAILURE} =  7
+ \}
+\begin{DoxyCompactList}\small\item\em Supported Error types. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Exception Interface for all thrown NX errors. NX-\/SDK v1.0.0 supports \par
+
+\begin{DoxyItemize}
+\item Throws Simple exception of the type in \par
+
+\begin{DoxyItemize}
+\item C++ -\/ std::logic\_\-err \par
+
+\item Python -\/ String Object. \par
+\par
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+NX-\/SDK v1.5.0 supports \par
+
+\begin{DoxyItemize}
+\item Throws Simple exception of the type as version v1.0.0, \par
+
+\begin{DoxyItemize}
+\item C++ -\/ std::logic\_\-err \par
+
+\item Python -\/ String Object. \par
+\par
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Also Throws Advanced exeception of the type NxException across all \par
+ languages with more information. \par
+
+\begin{DoxyItemize}
+\item C++ -\/ NxException Object \par
+
+\item Python -\/ NxException Object \par
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+By default, simple exception is enabled for an App. If the App supports Advanced Exception handling then to enable Advanced exception, set advException flag to TRUE in getSdkInst Api.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+NX-\/SDK v1.5.0
+\end{DoxySince}
+Refer to some example Applications.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[\hyperlink{bug__bug000002}{Bug}]No known bugs. \end{Desc}

@@ -1,21 +1,19 @@
 <snippet>
   <content>
   
-# NX-SDK V1.0
+# NX-SDK 
 
 # Table of Contents
 
-  - [Cisco NXSDK](#cisco-nxsdk)
-  - [Documentation](#documentation)
-  - [Usage](#usage)
+  - [Cisco NX-SDK](#cisco-nx-sdk)
   - [Release](#release)
-    * [Version V1.0](#version-v10)
-    * [Future Versions](#future-versions)
-  - [Custom Application Development using NXSDK Requirements](#custom-application-development-using-nxsdk-requirements)
-  - [Custom Application Development Flow using NXSDK](#custom-application-development-flow-using-nxsdk)
-    * [1. Install NXSDK](#1-install-nxsdk)
+  - [Documentation and Usage](#documentation-and-usage)
+  - [Description](#description)
+  - [Custom Application Development using NX-SDK Requirements](#custom-application-development-using-nx-sdk-requirements)
+  - [Custom Application Development Flow using NX-SDK](#custom-application-development-flow-using-nx-sdk)
+    * [1. Install NX-SDK](#1-install-nx-sdk)
       + [a) ENXOS SDK Build Environment [Optional]](#a-enxos-sdk-build-environment-optional)
-      + [b) Get NXSDK toolkit](#b-get-nxsdk-toolkit)
+      + [b) Get NX-SDK toolkit](#b-get-nx-sdk-toolkit)
     * [2. Building Custom Applications](#2-building-custom-applications)
     * [3. Unit Testing Custom Application](#3-unit-testing-custom-application)
     * [4. Packaging Custom Application](#4-packaging-custom-application)
@@ -27,68 +25,51 @@
     * [8. Stop Custom Application in Switch](#8-stop-custom-application-in-switch)
     * [9. Remove Custom Application from switch](#9-remove-custom-application-from-switch)
     * [10. Troubleshoot](#10-troubleshoot)
-    * [11. Sample Custom Applications created using NXSDK](#11-sample-custom-applications-created-using-nxsdk)
+    * [11. Sample Custom Applications created using NX-SDK](#11-sample-custom-applications-created-using-nx-sdk)
     * [12. Helpful Notes](#12-helpful-notes)
 
-# Cisco NXSDK
+# Cisco NX-SDK
 
 <p align="justify">
-Cisco NXSDK provides a simple, flexible and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
+Cisco NX-SDK provides a simple, flexible, modernized and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
 functionalities which when run inside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
-It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NXSDK offers various functionalities like ability to 
-generate custom CLIs, Syslogs, Event manager, Inter-Application communication, HA, Route Manager and much more.
+It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NX-SDK offers various functionalities like ability to 
+generate custom CLIs, Syslogs, Event manager, HA, Route Manager, Streaming Telemetry and much more. <br><br>
 
-NXSDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
-Hence, its easy and simple to change infra without affecting the applications. Hence, NXSDK can be used for
-developing native Cisco Applications as well. 
+NX-SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
+Hence, its easy and simple to change infra without affecting the applications. Hence, NX-SDK is being used for
+developing native Cisco Applications as well. <br><br>
 
-It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-OS SDK hence custom applications 
-can be developed and built in any language of users choice.
+It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-SDK hence custom applications 
+can be developed and built in any language of users choice. <br><br>
 
-This github provides NXSDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
+This github provides NX-SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
 </p>
-
-# Documentation
-
-For detailed description and directory structure of Cisco NXSDK toolkit, refer to <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/description.md">description.md</a>
-
-# Usage
-
-Detailed usage of NXSDK:
-  - For C++ custom Application development, public Classes and APIs to be used are available in <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/include">include/</a>. Its description and usage are available 
-    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/c++">examples/c++</a> for sample C++ Apps.
-  - Python and other language bindings will be auto-generated from the above classes and APIs using <a href="http://www.swig.org/">SWIG</a>. 
-    Only Python language bindings for NXSDK will be supported in Version 1.0
-    Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/python">examples/python</a> for python Apps leveraging the NXSDK functionalities for Python custom App development.
 
 # Release 
 
-## Version V1.0
-  - NXSDK will be first available on N9K switches as part of F release.
-  - Ability to develop C++ and Python custom application using NXSDK.
-  - Ability for custom applications to generate custom CLIs (config and show commands) and get callbacks.
-  - Ability to generate custom Syslogs, Events & Error history messages.
-  - Ability to start/stop C++ and Python custom Applications from VSH just like any other native Nexus applications (like feature bgp)
-    thereby providing HA capability for custom applications. 
-  - C++ and Python NXSDK custom Application development toolkit.
+- Refer to [NX-SDK versions](versions.md) for more details on different versions and its supported features.
+- Refer to [NX-SDK releases](releases) to get older NX-SDK versions. 
 
-## Future Versions
-  - Go and Ruby custom Application development toolkit.
-  - Event manager (state change like Next-hop change, interface up/down, Rib route manager, DME events & more to custom application to take action based 
-    on registered events)
-  - Stream custom events through Telemetry.
-  - Program and process Control and Data Plane Policies (ex Apps: DPI apps, TCP analytics and some other analytics App)
-  - High Availability
-  - Security
+# Documentation and Usage
 
-# Custom Application Development using NXSDK Requirements
- The user has two options in development environments when using the NXSDK for application development:
+  - For C++ custom Application development, public APIs are available in [include/](include/). Its description and usage are available 
+    in <a href="https://htmlpreview.github.io/?doc/html/annotated.html">API documentation</a> (doxygen generated). 
+  - Python and other language bindings will be auto-generated from the above C++ APIs using <a href="http://www.swig.org/">SWIG</a>. Refer to [version](versions.md) for more details on supported language bindings in each NX-SDK version.
+  - Refer to [example NX-SDK applications](examples/README.md) for details.
+
+# Description
+
+For detailed description and directory structure of Cisco NX-SDK toolkit, refer to [description](description.md).
+
+# Custom Application Development using NX-SDK Requirements
+ The user has two options in development environments when using the NX-SDK for application development:
   - Linux (Currently supported platforms) <br>
     Any recent version of the major distributions that have access to the GNU C/C++ toolchains and standard 
     libraries.  This also includes running Linux as a virtual machine. <br>
                (Or) <br>
-  - Docker [Recommended] (Docker container with ENXOS SDK containing all tools to build an application to be run 
-    in NXOS switches successfully. For best results, build the App using NXSDK as RPM package in ENXOS SDK).<br>
+  - Docker Recommended (Docker container with ENXOS SDK containing all tools to build an application to be run 
+    in NXOS switches successfully. For best results, build the App using NX-SDK as RPM package in ENXOS SDK).<br>
     NOTE: It is required to have at least 8GB of free space available for the installation of the Docker environment.
           The Docker image and associated build tools are built to run in  64-bit host systems only.
     ```
@@ -108,9 +89,9 @@ Detailed usage of NXSDK:
       NOTE: Please ensure that the name of the custom application does not collide with any existing Native Nexus applications.
     ```        
 
-#  Custom Application Development Flow using NXSDK
+#  Custom Application Development Flow using NX-SDK
 
-## 1. Install NXSDK
+## 1. Install NX-SDK
 
 ### a) ENXOS SDK Build Environment [Optional]
 
@@ -149,7 +130,7 @@ Detailed usage of NXSDK:
       source environment-setup-x86-wrsmllib32-linux 
     ```   
 
-### b) Get NXSDK toolkit
+### b) Get NX-SDK toolkit
   - ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
     ```
       export NXSDK_ROOT=/NX-SDK (by default)
@@ -167,11 +148,19 @@ Detailed usage of NXSDK:
       ls (Makefile  README.md  doc  examples  include  python  rpm  src  scripts stubs)
       git pull
     ```
+
+  - To get the older version of NX-SDK, git clone the branch using the respective tag   
+    ```
+       git clone -b <tag> <url>
+       For ex) To Clone older version NX-SDK v1.0.0
+         git clone -b v1.0.0 https://github.com/CiscoDevNet/NX-SDK.git
+    ```
+    
   - Refer to API usage and sample applications to develop your application based on your needs.
 
 ## 2. Building Custom Applications
   - C++ Application 
-    - To build C++ custom application, add your application to the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/Makefile">Makefile</a> just like example apps <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">(example/customCliApp.cpp)</a>
+    - To build C++ custom application, add your application to the [Makefile](Makefile) just like example apps [customCliApp.cpp](examples/customCliApp.cpp)
       and follow the instructions in the Makefile.
     - Make sure the App builds without any errors using
 
@@ -185,13 +174,13 @@ Detailed usage of NXSDK:
          cd $ENXOS_SDK_ROOT
          source environment-setup-x86-wrsmllib32-linux 
       ```
-    -  NOTE: <p>If building applications in the native Linux environment (outside the NXSDK build environment), 
+    -  NOTE: <p>If building applications in the native Linux environment (outside the NX-SDK build environment), 
              use the proper options for the build tools to generate 32-bit binaries, e.g. "-m32".  This is 
-             taken care of for you if using the NXSDK build environment. </p>
+             taken care of for you if using the NX-SDK build environment. </p>
   - Nothing to build for Python Applications.      
 
 ## 3. Unit Testing Custom Application
-  - For simple testing of the custom application, copy the application (binary) to the switch.
+  - For simple testing of the custom application, copy the application (binary(C++) or source(Python)) to the switch.
   - Start the custom application from BASH (step 6) for simple testing.
   - Once the custom application has been tested and verified in BASH then proceed to step (4) to start the application from VSH.
  
@@ -201,8 +190,8 @@ Detailed usage of NXSDK:
   - NOTE: RPM packaging needs to be done within the provided ENXOS Docker image. 
 
 ### a) Auto-generate RPM package using Script
- - Use <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/scripts">rpm_gen.py</a> script to auto-generate RPM package 
-   for a custom application. For usage and more information, please run the script with -h option.
+ - Use [rpm_gen.py](scripts/rpm_gen.py) script to auto-generate RPM package 
+   for your custom application. For usage and more information, please run the script with -h option.
    ```
      /NX-SDK# python scripts/rpm_gen.py -h 
     ``` 
@@ -215,9 +204,9 @@ Detailed usage of NXSDK:
     Auto-generate RPM package for python App python/examples/customCliPyApp)
 
 <p align="center">
-  <img title="Script usage & Help" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_help.png" width="450" height="250"/>
-  <img title="Auto-generate RPM Package for C++ App" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_for_c%2B%2B_app.png" width="400" height="250"/>
-  <img title="Auto-generate RPM Package for Python App" src="https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/rpm_gen_py_for_python_app.png" width="400" height="250"/>
+  <img title="Script usage & Help" src="doc/rpm_gen_py_help.png" width="450" height="250"/>
+  <img title="Auto-generate RPM Package for C++ App" src="doc/rpm_gen_py_for_c%2B%2B_app.png" width="400" height="250"/>
+  <img title="Auto-generate RPM Package for Python App" src="doc/rpm_gen_py_for_python_app.png" width="400" height="250"/>
 </p>
 
 ### b) Manually-generate RPM Package
@@ -228,9 +217,9 @@ Detailed usage of NXSDK:
       ls $RPM_ROOT (BUILD  RPMS  SOURCES  SPECS  SRPMS)
       vi $RPM_ROOT/SPECS/<app>.spec
     ``` 
-    Refer to the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> file for the sample App <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/customCliApp.cpp">examples/customCliApp.cpp</a>
+    Refer to the [customCliApp.spec](rpm/SPECS/customCliApp.spec) file for the sample App [customCliApp.cpp](examples/customCliApp.cpp)
     
-  - Follow the instructions mentioned in the <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/rpm/SPECS/customCliApp.spec">rpm/SPECS/customCliApp.spec</a> to build a spec file for your Application.
+  - Follow the instructions mentioned in the [customCliApp.spec](rpm/SPECS/customCliApp.spec) to build a spec file for your Application.
   - To build an RPM package use
  
     ```
@@ -241,6 +230,8 @@ Detailed usage of NXSDK:
     ```
       ls $RPM_ROOT/RPMS/x86_64/
     ```
+  - NOTE: All sample application RPMs are located at [rpm/RPMS](rpm/RPMS).
+  
 ## 5. Installing Custom Application in Switch 
   - Copy the Application [binary] (or) RPM package to the switch (/bootflash). 
   - To install RPM package in the switch use,
@@ -278,7 +269,7 @@ Detailed usage of NXSDK:
           
 
 ## 6. Running Custom Application in Switch
-  - To run the custom Application using NxSDK in the switch, as a prerequisite enable 
+  - To run the custom Application using NX-SDK in the switch, as a prerequisite enable 
  
     ```
       switch(config)# feature nxsdk
@@ -317,11 +308,11 @@ Detailed usage of NXSDK:
       ```
   - To run Python Custom Application
     - VSH
-      - Same as running C++ application from VSH. 
-        NOTE: Python app should be made as executable to be started from VSH. 
-              chmod +x <app-full-path> 
-              Place, #!/isan/bin/nxpython in the first line of python application.
-              /isan/bin/nxpython should be used to run NXOS Infra SDK Python Apps.
+      - Same as running C++ application from VSH. <br>
+        NOTE: Python app should be made as executable to be started from VSH. <br>
+              chmod +x app-full-path  <br>
+              Place, #!/isan/bin/nxpython in the first line of python application. <br>
+              /isan/bin/nxpython should be used to run NX-SDK Python Apps. <br>
       
     - BASH
     
@@ -330,7 +321,7 @@ Detailed usage of NXSDK:
         
         bash# nohup /isan/bin/python <app-full-path> &
         
-        NOTE: To run the python App using NX-OS SDk in BASH, use /isan/bin/python to run the app as it sets the 
+        NOTE: To run the python App using NX-SDk in BASH, use /isan/bin/python to run the app as it sets the 
               necessary environment needed to run python Apps in BASH.
       ```
 
@@ -413,7 +404,7 @@ Detailed usage of NXSDK:
   - Refer to the generated doxygen and usage for each API and the different exceptions they throw. 
   - Best practice is to verify your Application by running it in BASH first and then integrate your App in VSH
     for seamless integration into NXOS along with other Nexus native applications.
-  - If an errorneous application (ex syntactical errors, crashes at startup etc) is started from VSH then that
+  - [Only in v1.0.0] If an errorneous application (ex syntactical errors, crashes at startup etc) is started from VSH then that
     application will be blocked for sometime (aprox 15mins). Until the application is unblocked, no operation
     can be performed on the blocked application. Hence, a blocked application cannot be removed (or) another 
     instance of the blocked application cannot be started.
@@ -436,21 +427,13 @@ Detailed usage of NXSDK:
              blocked(15mins from start attempt). Test the App in BASH before starting in VSH
     ```
 
-## 11. Sample Custom Applications created using NXSDK
+## 11. Sample Custom Applications created using NX-SDK
 
-### C++ NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/c++/customCliApp.cpp">customCliApp</a> - A Sample template/usage App to generate custom CLI of users choice along with respective callbacks 
-                       showcasing the usage of gaining access to NX-OS CLI infrastructure.  
+Refer to [example NX-SDK applications](examples/README.md) for more details.
 
-### Python NXSDK Custom Applications:
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/customCliPyApp">customCliPyApp</a> - Python counterpart of C++ customCliApp showcasing the usage of gaining access to NX-OS CLI infrastructure.
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/pbwMonitor">pbwMonitor</a>   - Port bandwidth utilization percentage Monitor based on a set threshold.
-  - <a href="https://github.com/CiscoDevNet/NX-SDK/blob/master/examples/python/tmCfgBot">tmCfgBot</a> - Telemetry Config Helper Bot to automatically [de]configure/monitor the necessaary paths for a given instance type. 
-  - <a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a> - PTP Monitor Application
+NOTE: All sample application RPMs are located at [RPMS](rpm/RPMS).
   
-  - NOTE: All sample application RPMs are located at <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/rpm/RPMS">RPMS</a>.
-  
-### Sample Python Application created using NXSDK:
+### Sample Python Application created using NX-SDK:
     ```
       pbwMonitor: To Monitor Port Tx & Rx Bandwidth Utilization %
 
@@ -538,15 +521,14 @@ Detailed usage of NXSDK:
    - Ensure that the name of the custom application does not collide with any existing Native Nexus applications.
    - For custom applications to be started in VSH, please name the application as one word containing alphabets. 
    - ENXOS Built Environment is Mandatory for Custom Applications to be started in VSH.
-   - ENXOS SDK docker image already has NX-SDK V1.0 installed in (/NX-SDK). To get latest versions do a git pull.
-   - Soon a script will be provided to auto-generate RPM package for custom applications to be started in VSH.
+   - ENXOS SDK docker image already has NX-SDK v1.0.0 installed in (/NX-SDK). To get latest versions do a git pull.
    - On Dual-Sup make sure that RPM package is installed on both Active and Standby Supervisors. If not installed on standby, then on 
      system switchover, custom Applications may not be started.
    - An NX-SDK csutom Application can be started from VSH only if it is installed through RPM Package.
    - For NX-SDK Python application to be started in VSH, place ```#!/isan/bin/nxpython``` in the first line of python application.
    - For NX-SDK Python application to be started in BASH, use ```/isan/bin/python``` to run the application as it sets the 
      necessary environment needed to run python Apps in BASH.    
-   - Perform all NXSDK related initializations in one thread. Refer to sample example custom applications for sample template and usage.
+   - Perform all NX-SDK related initializations in one thread. Refer to sample example custom applications for sample template and usage.
      
 </content>
 

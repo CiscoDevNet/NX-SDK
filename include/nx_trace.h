@@ -37,20 +37,36 @@ public:
      * Priority level for the custom syslog.
      **/
     typedef enum { 
-                    EMERG, 
-                    ALERT,
-                    CTRI,
-                    ERR,
-                    WARNING,
-                    NOTICE,
-                    INFO,
-                    DEBUG,
-                 } Priority;
+    
+       /// Emergency - Highest Priority
+       EMERG, 
+ 
+       /// Its a severe Alert
+       ALERT,
+
+       /// Critical. 
+       CTRI,
+
+       /// Error Scenario
+       ERR,
+
+       /// Warning but not critical
+       WARNING,
+
+       /// Notice Alert but not severe.
+       NOTICE,
+       
+       /// For Information.
+       INFO,
+
+       /// For internal Debugging purposes.
+       DEBUG,
+    } Priority;
 
     /// Destructor
     virtual ~NxTrace() {}
     
-    /// Generate Custom Syslog with Priority 
+    /// Generate Custom Syslog with the specified Priority 
     virtual void syslog(Priority prio, const char *fmt, ...)=0;
 
     /**
@@ -64,7 +80,21 @@ public:
      * Use "show <AppName> internal event-history errors".
      **/
     virtual void error(const char *fmt, ...)=0;
+
+    /**
+     * @note Following APIs are supported from NX-SDK v1.5.0 
+     **/
+
+    /**
+     * Get the specified priority as String
+     *
+     * @since NX-SDK v1.5.0
+     *
+     * @returns Priotiry as a string
+     **/
+    static const char *getPrioStr(Priority prio);
 };
+
 }
 
 #endif //__NX_TRACE_H__

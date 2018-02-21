@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nexus Infra SDK: nxos::NxCliCmd Class Reference</title>
+<title>NX-SDK: nxos::NxCliCmd Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -94,9 +94,10 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get CLI Cmd Err if there is any. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#af100c6495c0e383c8e3d11d5cdb68cd2">isKeywordSet</a> (const char *keyword_name)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual nxos::param_type_e&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#ab3722b567439f8ebd6422a5727bb7af6">getParamType</a> (const char *param_name)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#a4d15b397304c3499c5dbae8ef9210ad1">getParamValue</a> (const char *param_name)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#a827bd696ec228767cb1f6dbfdbbd271c">getParamValue</a> (const char *param_name, bool fromFirst=false)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#a12e56ced4646ba1a27417030c0d20e7b">getParamCount</a> (const char *param_name)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#a10c723c79d75ac2c85821b5ca6540c62">printConsole</a> (const char *fmt,...)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1NxCliCmd.html#ae1669d9fbeaa164494a503379ca52b86">updateKeyword</a> (const char *keyword_name, const char *help_str, bool make_key)=0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Abstract custom CLI command Interface used to construct a custom CLI config. </p>
@@ -337,7 +338,7 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 
 </div>
 </div>
-<a class="anchor" id="a4d15b397304c3499c5dbae8ef9210ad1"></a><!-- doxytag: member="nxos::NxCliCmd::getParamValue" ref="a4d15b397304c3499c5dbae8ef9210ad1" args="(const char *param_name)=0" -->
+<a class="anchor" id="a827bd696ec228767cb1f6dbfdbbd271c"></a><!-- doxytag: member="nxos::NxCliCmd::getParamValue" ref="a827bd696ec228767cb1f6dbfdbbd271c" args="(const char *param_name, bool fromFirst=false)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -345,9 +346,18 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
           <td class="memname">virtual void* nxos::NxCliCmd::getParamValue </td>
           <td>(</td>
           <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>param_name</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [pure virtual]</code></td>
+          <td class="paramname"> <em>param_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>fromFirst</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -355,7 +365,8 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 <p>Gets the values of the given input parameter in &lt;&gt;. Should be called only in command handler postCliCb. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>param_name</em>&nbsp;</td><td>Name of the input parameter</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>param_name</em>&nbsp;</td><td>Name of the input parameter </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>fromFirst</em>&nbsp;</td><td>At anytime, to get or start from first input parameter value, set fromFirst to True and then call it in a while loop with fromFirst to False to loop through the list if the input parameter is an array. Refer to usage.</td></tr>
   </table>
   </dd>
 </dl>
@@ -367,22 +378,30 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
  P_INTERFACE | char * <br/>
  P_IP_ADDR | char * <br/>
  P_MAC_ADDR | char * <br/>
+ P_VRF | char * <br/>
 <br/>
 </dd></dl>
 <div class="fragment"><pre class="fragment">  Usage <span class="keywordflow">for</span> <span class="keywordflow">return</span> type <span class="keywordtype">int</span> *:
    Ex) Syntax: port-bw threshold &lt;threshold&gt;
-       CLI: $appname port-bw threshold 10 
-   In postCliCb, to get &lt;threshold&gt; parameter value (=10)
+       CLI: $appname port-bw threshold 10 20 
+   In postCliCb, to get &lt;threshold&gt; parameter value (=10, 20)
 
   C++:
-       <span class="keywordtype">int</span> val = *((<span class="keywordtype">int</span> *)cmd-&gt;getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>));     
+       <span class="comment">// To get Multiple values</span>
+       <span class="keywordtype">int</span> val = *((<span class="keywordtype">int</span> *)cmd-&gt;getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>), <span class="keyword">true</span>);     
+       <span class="keywordflow">while</span> (val) {
+           <span class="comment">//print val</span>
+           val = *((<span class="keywordtype">int</span> *)cmd-&gt;getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>));
+       }
 
   Python:
 <span class="preprocessor">       ### Use nx_sdk_py.void_to_int to convert from C void * </span>
 <span class="preprocessor"></span><span class="preprocessor">       ### of type int to python int Object.</span>
-<span class="preprocessor"></span>       int_p = nx_sdk_py.void_to_int(cmd.getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>))
-       <span class="keywordflow">if</span> int_p:
+<span class="preprocessor"></span>       int_p = nx_sdk_py.void_to_int(cmd.getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>), True)
+       <span class="keywordflow">while</span> int_p:
           threshold = <span class="keywordtype">int</span>(nx_sdk_py.intp_value(int_p))
+          #print threshold
+          int_p = nx_sdk_py.void_to_int(cmd.getParamValue(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>), True)
 </pre></div><div class="fragment"><pre class="fragment">  Usage <span class="keywordflow">for</span> <span class="keywordflow">return</span> type <span class="keywordtype">char</span> *:
     Ex) Syntax: show $appname port-bw &lt;port&gt;
         CLI: show $appname port-bw ethernet1/1 
@@ -481,6 +500,55 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 <div class="memdoc">
 <p>Print custom output on the switch console only when called inside command handler postCliCb. Does nothing if called in anyother place.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Refer to example Apps. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1669d9fbeaa164494a503379ca52b86"></a><!-- doxytag: member="nxos::NxCliCmd::updateKeyword" ref="ae1669d9fbeaa164494a503379ca52b86" args="(const char *keyword_name, const char *help_str, bool make_key)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxCliCmd::updateKeyword </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>keyword_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>help_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>make_key</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="note"><dt><b>Note:</b></dt><dd>Following APIs are supported from NX-SDK v1.5.0 Same as v1.0.0 except the addition of new parameter make_key.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>make_key</em>&nbsp;</td><td>If set to TRUE then this keyword will be added to the unique key for this config. Used only for config commands. For Ex) Lets say CLI syntax is "action [A| B]",</p>
+<ul>
+<li>If A keyword is not set as key (make_key=false) then Lets say we configure "action A" then we config "action B" then config "action B" would replace/update "action A". Hence "show run" will have "action B".</li>
+<li>If A &amp; B keywords are set as key (make_key=true) then Lets say we configure action A" then we config "action B", we will
+                     have two entries "action A" and "action B". Hence "show run"
+                     will have both "action A" and "action B.</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Refer to v1.0.0 API section to get more details about other parameters.</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>v1.5.0 </dd></dl>
 
 </div>
 </div>
@@ -631,6 +699,7 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
  P_INTERFACE | NULL <br/>
  P_IP_ADDR | cli_param_type_ip_addr_attr <br/>
  P_MAC_ADDR | NULL <br/>
+ P_VRF | NULL <br/>
 <br/>
 </td></tr>
   </table>
@@ -699,7 +768,7 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nobackup/sathsrin/NX-SDK/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
+<li>/nobackup/sathsrin/trial/nxsdk/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -716,7 +785,7 @@ virtual std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class=
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Jun 2017 for Nexus Infra SDK by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 21 Feb 2018 for NX-SDK by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
