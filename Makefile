@@ -36,13 +36,6 @@ SRCNXSDK_BIN :=
 ####################### Dont update beyond this point###########################################
 ################################################################################################
 
-### VERSION of this Tool kit. 
-MAJOR_VERSION := 1
-MINOR_VERSION := 0
-
-### Set this as the VERSION in the rpm SPEC file to build an RPM package.
-VERSION    := ${MAJOR_VERSION}.${MINOR_VERSION}
-
 ### Directory Structure
 HEADERDIR  := include
 BUILDDIR   := build
