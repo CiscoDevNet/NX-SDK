@@ -25,7 +25,7 @@
  *  Refer to template and sample Applications. 
  *
  *  @author nxos-sdk@cisco.com
- *  @bug No known bugs.
+ *  @bug Application using nx_rib_mgr.h APIs work only in VSH and not in BASH.
  */
 
 #ifndef __NX_RIB_MGR_H__
@@ -696,7 +696,9 @@ public:
      * User to overload the postL3RouteCb callback method 
      * to receive any registered route updates based on the  
      * set filters.
-     * @param[in]  NxL3Route object.
+     * @param[in]  NxL3Route object. NOTE: Its scope is
+     *             local hence its valid only within 
+     *             postCb functions. 
      *
      * @returns True : if the action was successful.
      *          False: if the action was not successful. 
@@ -743,7 +745,9 @@ public:
      * User to overload the postVrfCb callback method 
      * to receive any registered VRF updates based on 
      * the set filters.
-     * @param[in]  NxVrf object.
+     * @param[in]  NxVrf object. NOTE: Its scope is
+     *             local hence its valid only within 
+     *             postCb functions. 
      *
      * @returns True : if the action was successful.
      *          False: if the action was not successful. 

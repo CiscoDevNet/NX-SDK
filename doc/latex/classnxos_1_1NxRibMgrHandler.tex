@@ -40,7 +40,7 @@ Destructor.
 \label{classnxos_1_1NxRibMgrHandler_a1b742d50365fdece0ea47eb38300f7de}
 User to overload the postL3RouteCb callback method to receive any registered route updates based on the set filters. 
 \begin{DoxyParams}{Parameters}
-\item[\mbox{$\leftarrow$} {\em \hyperlink{classnxos_1_1NxL3Route}{NxL3Route}}]object.\end{DoxyParams}
+\item[\mbox{$\leftarrow$} {\em \hyperlink{classnxos_1_1NxL3Route}{NxL3Route}}]object. NOTE: Its scope is local hence its valid only within postCb functions.\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True : if the action was successful. False: if the action was not successful.
 \end{DoxyReturn}
@@ -87,7 +87,7 @@ True : if the action was successful. False: if the action was not successful.
 \label{classnxos_1_1NxRibMgrHandler_a2ed5a3ad9c0e55d21e18d88a19419a5e}
 User to overload the postVrfCb callback method to receive any registered VRF updates based on the set filters. 
 \begin{DoxyParams}{Parameters}
-\item[\mbox{$\leftarrow$} {\em \hyperlink{classnxos_1_1NxVrf}{NxVrf}}]object.\end{DoxyParams}
+\item[\mbox{$\leftarrow$} {\em \hyperlink{classnxos_1_1NxVrf}{NxVrf}}]object. NOTE: Its scope is local hence its valid only within postCb functions.\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True : if the action was successful. False: if the action was not successful.
 \end{DoxyReturn}
@@ -116,4 +116,4 @@ True : if the action was successful. False: if the action was not successful.
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-/nobackup/sathsrin/trial/nxsdk/include/\hyperlink{nx__rib__mgr_8h}{nx\_\-rib\_\-mgr.h}\end{DoxyCompactItemize}
+/nobackup/sathsrin/v1.5/NX-\/SDK/include/\hyperlink{nx__rib__mgr_8h}{nx\_\-rib\_\-mgr.h}\end{DoxyCompactItemize}
