@@ -1,4 +1,4 @@
-# NX-SDK v1.5 (latest):
+# NX-SDK v1.5.0 (latest):
 
 ## Nexus Release:
    - N9Ks, N3Ks from I7(3) release. 
