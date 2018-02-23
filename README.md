@@ -324,6 +324,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
         NOTE: To run the python App using NX-SDk in BASH, use /isan/bin/python to run the app as it sets the 
               necessary environment needed to run python Apps in BASH.
       ```
+  - NOTE: Maximum of only 32 NX-SDK applications can be run at a time both from VSH & BASH.     
 
 ## 7. Verify if Custom Application is running
   - Check if your service is running by
