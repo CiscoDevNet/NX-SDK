@@ -21,4 +21,4 @@ NOTE: Click on the App for source code & detailed description. Application RPMs 
  
 | NX-SDK Interface | Version | App/Language | Description | 
 | --- | --- | --- | --- |
-| Custom Cli & syslog | v1.0.0 | <ul><li>[customCliApp](c++/customCliApp) - C++ </li><li>[customCliPyApp](python/customCliPyApp) - Python</li></ul> | Showcasing how to generate Custom [CLIs](../include/nx_cli.h) and [syslogs](../include/nx_trace.h).|
+| Custom Cli & syslog | v1.0.0 | <ul><li>[customCliApp](c++/customCliApp.cpp) - C++ </li><li>[customCliPyApp](python/customCliPyApp) - Python</li></ul> | Showcasing how to generate Custom [CLIs](../include/nx_cli.h) and [syslogs](../include/nx_trace.h).|
