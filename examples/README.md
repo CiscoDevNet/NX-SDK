@@ -7,6 +7,7 @@ NOTE: Click on the App for source code & detailed description. Application RPMs 
 
 | Application | Version | Language | Description | 
 | --- | --- | --- | --- | 
+|<b><a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/ECMP_Monitoring">ecmp_monitoring</a></b> | v1.5.0 | Python | ECMP Monitoring Application |
 |<b>[routeTracker](examples/python/routeTracker)</b> | v1.5.0 | Python | <ul><li>Track, Collect & Maintain history of interested route events as time series data.</li><li>Stream this time series data using streaming telemetry.</li></ul> |
 |<b>[healthMonitor](examples/python/healthMonitor)</b> | v1.5.0 | Python | Computes & Monitors Health Score for various factors on a given switch. |
 |<b>[pbwMonitor](examples/python/pbwMonitor)</b>| v1.0.0 | Python | Port Bandwidth Utilization Monitor |
