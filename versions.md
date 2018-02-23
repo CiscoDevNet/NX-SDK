@@ -33,7 +33,7 @@
 |Languages | C++, Python |
 |Custom Cli | <ul><li>APIs to generate custom CLIs (config and show commands) and get callbacks.</li><li>For more details on the custom CLI APIs and its usage, refer to [nx_cli.h](include/nx_cli.h).</li><li>For sample application generating custom CLI, refer to [customCliApp.cpp](examples/c++/customCliApp.cpp) app.</li></ul>|
 |Custom Syslog|<ul><li>APIs to generate custom syslogs and to log application Events & Error history.</li><li>To view application logged Events & Error history use "show $appname nxsdk event-history events or errors".</li><li>For more details on the APIs and its usage, refer to [nx_trace.h](include/nx_trace.h).</li><li>For sample application using custom syslog, refer to [customCliApp.cpp](examples/c++/customCliApp.cpp) app.</li></ul>|
-|Start/Stop Apps |<ul><li>To start/stop custom NX-SDK Applications from VSH just like any other native Nexus applications (like feature bgp) thereby persisting custom applications across system reloads, System Switchover etc.</li><li>Refer to [README.md](README.md) for more details</li></ul>            |
+|Start/Stop Apps |<ul><li>To start/stop custom NX-SDK Applications from VSH just like any other native Nexus applications (like feature bgp) thereby persisting custom applications across system reloads, System Switchover etc.</li><li>Refer to [README.md](README.md) for more details</li><li>Supports upto 32 NX-SDK applications.</li></ul>            |
 
 ## Sample Applications:
    - tmCfgBot, pbwMonitor. Refer to [examples](examples) for more details. 
