@@ -1,7 +1,7 @@
 ## To be updated by the User
 
-## 1. Simple Application build:
-##    If your Application is a simple application with a single file 
+## 1. Simple C++ Application build:
+##    If your Application is a simple C++ application with a single file 
 ##    and linking just to nxsdk Library and not to any others then just 
 ##    add your App name (same as filename without the extension)
 ##    in SRCNXSDK_BIN and on "make" your respective bins will be 
@@ -17,18 +17,21 @@
 ##                 just add SRCNXSDK_BIN := myApp1 myApp2
 ##                 This would automatically build myApp1 and myApp2
 ##                 binaries on Make. 
+##    NOTE: App source code should be in src/ (create src directory
+##          if not available) to be added into SRCNXSDK_BIN (or)
+##          change the SRCDIR accordingly.
 SRCDIR       := src
 SRCNXSDK_BIN :=  
 
-## 2. Complex Application build
-##    If your Application is a complex application with multiple files
+## 2. Complex C++ Application build:
+##    If your Application is a complex C++ application with multiple files
 ##    and linking to other libraries then you need to add explicit 
 ##    recipes in this Makefile to build your project.
 ##    Lets say myApp.bin consists of two files myApp1.cpp & myApp2.cpp
 ##    A) Build your binary using the following example
-##         ${TARGETDIR}/<AppBinName>: myApp1.cpp myApp2.cpp 
-##            $(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(TARGETDIR)/$@  $(SRCDIR)/$@.cpp
-##    B) Add ${TARGETDIR}/<AppBinName> to all: recipe. Or write your own recipe to
+##         ${CXX_TARGETDIR}/<AppBinName>: myApp1.cpp myApp2.cpp 
+##            $(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(SRCDIR)/$@.cpp
+##    B) Add ${CXX_TARGETDIR}/<AppBinName> to all: recipe. Or write your own recipe to
 ##       build your project if not in all.
 
 
@@ -37,22 +40,23 @@ SRCNXSDK_BIN :=
 ################################################################################################
 
 ### Directory Structure
-HEADERDIR  := include
-BUILDDIR   := build
-EXSRCDIR   := examples/c++
-TARGETDIR  := bin
-LIBDIR     := libs
-NXLIBDIR   := /isan/lib
-LIBSRCDIR  := stubs
-LIBNAME    := libnxsdk.so
-LIBTARGET  := ${LIBDIR}/${LIBNAME}
-EXNXSDK_BIN:= customCliApp 
+CXX_HEADERDIR  := include
+CXX_BUILDDIR   := build
+CXX_EXSRCDIR   := examples/c++
+CXX_TARGETDIR  := bin
+CXX_LIBDIR     := libs
+CXX_LIBSRCDIR  := stubs
+CXX_LIBNAME    := libnxsdk.so
+CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
+NXLIBDIR       := /isan/lib
+
+### Binaries to be build for Example C++ apps.
+EXNXSDK_BIN    := customCliApp 
 
 ## Includes for the project
-INCLUDES  := -I$(HEADERDIR) -I$(LIBSRCDIR) -I$(EXSRCDIR) -I$(LIBDIR)  
+INCLUDES  := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR)  
 
 ## Compiler
-#SDK_CXXFLAGS = -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-write-strings 
 SDK_CXXFLAGS = -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings 
 
 ## Check if $(CXX) is set, if not set it to g++
@@ -75,44 +79,46 @@ endif
 SDK_CXX       := $(CXX) -m32 $(INCLUDES) 
 
 ## Linking
-LDFLAGS   := -ldl -L./$(LIBDIR)
+LDFLAGS   := -ldl -L./$(CXX_LIBDIR)
 RPATH     := -Wl,-rpath=${NXLIBDIR}
 
 ### All Binaries needed for this module
-all: setup ${LIBTARGET} ${EXNXSDK_BIN} ${SRCNXSDK_BIN}
+all: setup ${CXX_LIBTARGET} ${EXNXSDK_BIN} ${SRCNXSDK_BIN}
 
 ### Build NXSDK Library
 # Create stub Objs needed for NXSDK Library
-LIBNXSDK_CPP  := $(wildcard ${LIBSRCDIR}/*.cpp)
-LIBNXSDK_OBJS := $(addprefix $(BUILDDIR)/,$(notdir $(LIBNXSDK_CPP:.cpp=.o)))
+LIBNXSDK_CPP  := $(wildcard ${CXX_LIBSRCDIR}/*.cpp)
+LIBNXSDK_OBJS := $(addprefix $(CXX_BUILDDIR)/,$(notdir $(LIBNXSDK_CPP:.cpp=.o)))
 
-$(BUILDDIR)/%.o: ${LIBSRCDIR}/%.cpp
+$(CXX_BUILDDIR)/%.o: ${CXX_LIBSRCDIR}/%.cpp
 	@echo -e "\n### Building Shared NXSDK Library Objects - ($<)!!!"
 	$(SDK_CXX) $(SDK_CXXFLAGS) -c -fPIC $< -o $@
 
-${LIBTARGET}: ${LIBNXSDK_OBJS} 
-	@echo -e "\n### Building Shared NXSDK Library - (${LIBTARGET})!!!"
-	$(SDK_CXX) -shared -Wl,-soname,${LIBNAME} -o $@ $^ -lc -ldl    
+${LIBNXSDK_OBJS}: setup
+
+${CXX_LIBTARGET}: ${LIBNXSDK_OBJS} 
+	@echo -e "\n### Building Shared NXSDK Library - (${CXX_LIBTARGET})!!!"
+	$(SDK_CXX) -shared -Wl,-soname,${CXX_LIBNAME} -o $@ $^ -lc -ldl    
 
 ### Build your simple App Binaries
 # Create Objs needed for src programs
-${SRCNXSDK_BIN}:
+${SRCNXSDK_BIN}: ${CXX_LIBTARGET}
 	@echo -e "\n### Building Source Apps  - ($@)!!!"
-	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(TARGETDIR)/$@  $(SRCDIR)/$@.cpp -lnxsdk
+	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(SRCDIR)/$@.cpp -lnxsdk
 
 ### Build Example binaries
 # Create Objs needed for Example programs
-${EXNXSDK_BIN}:
-	@echo -e "\n### Building Example TestApp  - ($@)!!!"
-	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(TARGETDIR)/$@  $(EXSRCDIR)/$@.cpp -lnxsdk
+${EXNXSDK_BIN}: ${CXX_LIBTARGET}
+	@echo -e "\n### Building Example C++ App  - ($@)!!!"
+	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(CXX_EXSRCDIR)/$@.cpp -lnxsdk
 
 setup:
-	@mkdir -p ${BUILDDIR}
-	@mkdir -p ${LIBDIR}
-	@mkdir -p ${TARGETDIR}
+	@mkdir -p ${CXX_BUILDDIR}
+	@mkdir -p ${CXX_LIBDIR}
+	@mkdir -p ${CXX_TARGETDIR}
  
 clean:
-	rm -rf *.o ${LIBDIR}/*.so ${TARGETDIR}/* ${BUILDDIR}/*.o 
+	rm -rf *.o ${CXX_LIBDIR}/*.so ${CXX_TARGETDIR}/* ${CXX_BUILDDIR}/*.o 
 
 cleaner:
-	rm -rf  ${LIBDIR} ${TARGETDIR} ${BUILDDIR}
+	rm -rf  ${CXX_LIBDIR} ${CXX_TARGETDIR} ${CXX_BUILDDIR}
