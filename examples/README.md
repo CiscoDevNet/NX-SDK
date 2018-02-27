@@ -8,10 +8,10 @@ NOTE: Click on the App for source code & detailed description. Application RPMs 
 | Application | Version | Language | Description | 
 | --- | --- | --- | --- | 
 |<b><a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/ECMP_Monitoring">ecmp_monitoring</a></b> | v1.5.0 | Python | ECMP Monitoring Application |
-|<b>[routeTracker](examples/python/routeTracker)</b> | v1.5.0 | Python | <ul><li>Track, Collect & Maintain history of interested route events as time series data.</li><li>Stream this time series data using streaming telemetry.</li></ul> |
-|<b>[healthMonitor](examples/python/healthMonitor)</b> | v1.5.0 | Python | Computes & Monitors Health Score for various factors on a given switch. |
-|<b>[pbwMonitor](examples/python/pbwMonitor)</b>| v1.0.0 | Python | Port Bandwidth Utilization Monitor |
-|<b>[tmCfgBot](examples/python/tmCfgBot)</b> | v1.0.0 | Python | <ul><li>Telemetry Config helper Bot application.</li><li>To automatically configure & manage multiple telemetry path configs per given instance.</li><li> For Ex) "tmCfgBot apply-inst evpn default-template". tmCfgBot automatically configures & manages telemetry path configs to be streamed out for EVPN instance. Use, "show tmCfgBot default-instance" to show all the paths and instances managed by the app. </li></ul> |
+|<b>[routeTracker](python/routeTracker)</b> | v1.5.0 | Python | <ul><li>Track, Collect & Maintain history of interested route events as time series data.</li><li>Stream this time series data using streaming telemetry.</li></ul> |
+|<b>[healthMonitor](python/healthMonitor)</b> | v1.5.0 | Python | Computes & Monitors Health Score for various factors on a given switch. |
+|<b>[pbwMonitor](python/pbwMonitor)</b>| v1.0.0 | Python | Port Bandwidth Utilization Monitor |
+|<b>[tmCfgBot](python/tmCfgBot)</b> | v1.0.0 | Python | <ul><li>Telemetry Config helper Bot application.</li><li>To automatically configure & manage multiple telemetry path configs per given instance.</li><li> For Ex) "tmCfgBot apply-inst evpn default-template". tmCfgBot automatically configures & manages telemetry path configs to be streamed out for EVPN instance. Use, "show tmCfgBot default-instance" to show all the paths and instances managed by the app. </li></ul> |
 |<b><a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a></b>| v1.0.0 | Python| PTP Monitor Application |
 
 # NX-SDK Interface Template and Usage Applications
