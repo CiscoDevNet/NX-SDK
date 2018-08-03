@@ -96,42 +96,64 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
 ### a) ENXOS SDK Build Environment [Optional]
 
   - NOTE: Mandatory for Custom Applications to be started in VSH.
-  - ENXOS SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
+  - ENXOS build environment can built using the provided Dockerfiles
+
+  *starting NXOS release 9.2.1, wrlinux compiler toolchain has been upgraded from wrl5 to wrl8. Applications compiled with wrl5 should still run. However, if you encounter issues with your C++ applciations, you must re-compile with wrl8.*
+
+  #### For NXOS 9.2.1 release and onwards:
+  ```
+      Ex for ubuntu) docker build --squash -t nxsdk_ubuntu containers/wrl8/ubuntu
+      Ex for alpine) docker build --squash -t nxsdk_alpine containers/wrl8/alpine
+  ```
+  #### For previous NXOS releases:
+   ```
+      Ex for ubuntu) docker build --squash -t nxsdk_ubuntu containers/wrl5/ubuntu
+  ``` 
+  - Alternatively, Wrl5 ENXOS SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
     Pull the Image version of your choice using.
 
     ```
       docker pull dockercisco/nxsdk:<tag>
-      Ex) docker pull dockercisco/nxsdk:v1
-      
+      Ex)    docker pull dockercisco/nxsdk:v1
       NOTE: Tag latest needs to be updated. 
     ```
-  - To start a container running the pulled image, use
+
+  #### To start a container
      
-    ```
-       docker images ! to get the <tag>
-       docker run -it dockercisco/nxsdk:<tag> /bin/bash
-       
-       or
-       
-       docker images ! to get the <docker-image-id>
-       docker run -it <docker-image-id> /bin/bash
-    ```
+   ```
+    If you built one from a Dockerfile:
+
+    docker run -it nxsdk_ubuntu /bin/bash
+
+    If you pulled one from dockerhub:
+
+    docker images ! to get the <tag>
+    docker run -it dockercisco/nxsdk:<tag> /bin/bash
+   ```
+   ---
+  **NOTE**
+  *Changes made in the docker container are transient and will go away after you 
+  exit the container. Make plans accordingly.*
+
+   ---
     
   - ENXOS SDK build environment is already installed in 
     ```
-      $PWD/enxos-sdk
+      /enxos-sdk
     ```
     
-  - Source 32-bit environment for your application 
+  - The following environment variables are set by default in v1.5
  
     ```
-      export ENXOS_SDK_ROOT=/enxos-sdk
-      cd $ENXOS_SDK_ROOT
-      source environment-setup-x86-wrsmllib32-linux 
+      ENXOS_SDK_ROOT=/enxos-sdk
     ```   
+  - The enxos-sdk toolchain is sourced by default in v1.5
+    ```
+      source /enxos-sdk/environment-setup-x86-wrsmllib32-linux 
+    ```
 
 ### b) Get NX-SDK toolkit
-  - ENXOS SDK docker image already has NX-SDK V1.0 installed in /NX-SDK (default location).
+  - ENXOS SDK docker image already has NX-SDK V1.5 installed in /NX-SDK (default location) with NXSDK_ROOT environment variable set to /NX-SDK.
     ```
       export NXSDK_ROOT=/NX-SDK (by default)
     ```  
@@ -200,14 +222,118 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
    ```
       export NXSDK_ROOT=<absolute-path-to-NX-SDK> (if not default /NX-SDK)
    ```
-  - Refer to the following screenshots (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
+  - Refer to the following screen captures (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
     Auto-generate RPM package for python App python/examples/customCliPyApp)
 
-<p align="center">
-  <img title="Script usage & Help" src="doc/rpm_gen_py_help.png" width="450" height="250"/>
-  <img title="Auto-generate RPM Package for C++ App" src="doc/rpm_gen_py_for_c%2B%2B_app.png" width="400" height="250"/>
-  <img title="Auto-generate RPM Package for Python App" src="doc/rpm_gen_py_for_python_app.png" width="400" height="250"/>
-</p>
+#### Example 1: rpm_gen.py -h
+
+```
+root@f15a7b454b00:/NX-SDK# python scripts/rpm_gen.py -h
+usage: rpm_gen.py [-h] [-s SOURCE] [-u | -t TARGET] [-d DESCRIPTION] [-v VERSION] name
+
+This script generates RPM packages for custom applications built using NX-SDK. Please export the path
+for NX-SDK as environment variable NXSDK_ROOT and ENXOS-SDK as environment variable ENXOS_SDK_ROOT
+before calling the script. If not found, the script assumes NX-SDK to be present at the following
+location /NX-SDK and ENXOS-SDK to be present at /enxos-sdk
+
+positional arguments:
+  name                  Name of the application binary or the file name in case of python
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SOURCE, --source SOURCE
+                        Path of the folder where application source files are present (default: /NX-
+                        SDK/examples)
+  -u, --use_source_as_target
+                        If the source file is the same as the executable (default: False)
+  -t TARGET, --target TARGET
+                        Path where the application binary or the python file is present (default: /NX-
+                        SDK/bin)
+  -d DESCRIPTION, --description DESCRIPTION
+                        Application Description (default: RPM package for custom application)
+  -v VERSION, --version VERSION
+                        Application Version (default: 1.0)
+root@f15a7b454b00:/NX-SDK#
+```
+
+#### Example 2: Generating an RPM for a C++ Application 
+
+```
+root@f15a7b454b00:/NX-SDK# ./scripts/rpm_gen.py customCliApp
+####################################################################################################
+Generating rpm package...
+Executing(%prep): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.26482
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%build): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.26482
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%install): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.26482
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root
++ /bin/mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root
++ rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root//isan/bin/nxsdk
++ mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root//isan/bin/nxsdk
++ cp -R /NX-SDK/bin/customCliApp /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root//isan/bin/nxsdk
++ exit 0
+Processing files: customCliApp-1.0-1.5.0.x86_64
+Provides: elf(buildid) = 0aafb98cd3ee12b036b83faff7d9383a1d905ee0
+Requires: libc.so.6 libc.so.6(GLIBC_2.0) libc.so.6(GLIBC_2.1.3) libdl.so.2 libgcc_s.so.1 libgcc_s.so.1(GCC_3.0) libm.so.6 libnxsdk.so libstdc++.so.6 libstdc++.so.6(CXXABI_1.3) libstdc++.so.6(GLIBCXX_3.4) libstdc++.so.6(GLIBCXX_3.4.21) rtld(GNU_HASH)
+Checking for unpackaged file(s): /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/check-files /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/SRPMS/customCliApp-1.0-1.5.0.src.rpm
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/RPMS/x86_64/customCliApp-1.0-1.5.0.x86_64.rpm
+Executing(%clean): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.26482
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliApp-root
+RPM Package: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/RPMS/x86_64/customCliApp-1.0-1.5.0.x86_64.rpm
+RPM package has been built
+####################################################################################################
+SPEC file: /NX-SDK/rpm/SPECS/customCliApp.spec
+RPM file : /NX-SDK/rpm/RPMS/customCliApp-1.0-1.5.0.x86_64.rpm
+```
+
+#### Example 3: Generating an RPM for a Python Application
+
+```
+root@f15a7b454b00:/NX-SDK# ./scripts/rpm_gen.py customCliPyApp -s examples/python -u
+####################################################################################################
+Generating rpm package...
+Executing(%prep): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.37123
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%build): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.37123
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%install): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.37123
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root
++ /bin/mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root
++ rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root//isan/bin/nxsdk
++ mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root//isan/bin/nxsdk
++ cp -R /NX-SDK/examples/python/customCliPyApp /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root//isan/bin/nxsdk
++ exit 0
+Processing files: customCliPyApp-1.0-1.5.0.x86_64
+Checking for unpackaged file(s): /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/check-files /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/SRPMS/customCliPyApp-1.0-1.5.0.src.rpm
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/RPMS/x86_64/customCliPyApp-1.0-1.5.0.x86_64.rpm
+Executing(%clean): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.37123
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/../lib/rpm/../../../var/tmp/customCliPyApp-root
+RPM Package: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/RPMS/x86_64/customCliPyApp-1.0-1.5.0.x86_64.rpm
+RPM package has been built
+####################################################################################################
+SPEC file: /NX-SDK/rpm/SPECS/customCliPyApp.spec
+RPM file : /NX-SDK/rpm/RPMS/customCliPyApp-1.0-1.5.0.x86_64.rpm
+root@f15a7b454b00:/NX-SDK#
+```
 
 ### b) Manually-generate RPM Package
   - Write the respective <app>.spec to build an RPM package for your App. This is to address building RPM packaging 
