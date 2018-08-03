@@ -98,7 +98,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
   - NOTE: Mandatory for Custom Applications to be started in VSH.
   - ENXOS build environment can built using the provided Dockerfiles
 
-  *starting NXOS release 9.2.1, wrlinux compiler toolchain has been upgraded from wrl5 to wrl8. Applications compiled with wrl5 should still run. However, if you encounter issues with your C++ applciations, you must re-compile with wrl8.*
+  *starting NXOS release 9.2.1, wrlinux compiler tool-chain has been upgraded from wrl5 to wrl8. Applications compiled with wrl5 should still run. However, if you encounter issues with your C++ applications, you must re-compile with wrl8.*
 
   #### For NXOS 9.2.1 release and onwards:
   ```
@@ -531,8 +531,8 @@ root@f15a7b454b00:/NX-SDK#
   - Refer to the generated doxygen and usage for each API and the different exceptions they throw. 
   - Best practice is to verify your Application by running it in BASH first and then integrate your App in VSH
     for seamless integration into NXOS along with other Nexus native applications.
-  - [Only in v1.0.0] If an errorneous application (ex syntactical errors, crashes at startup etc) is started from VSH then that
-    application will be blocked for sometime (aprox 15mins). Until the application is unblocked, no operation
+  - [Only in v1.0.0] If an erroneous application (ex syntactical errors, crashes at startup etc) is started from VSH then that
+    application will be blocked for sometime (approx 15mins). Until the application is unblocked, no operation
     can be performed on the blocked application. Hence, a blocked application cannot be removed (or) another 
     instance of the blocked application cannot be started.
     
