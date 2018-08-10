@@ -134,7 +134,16 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
   **NOTE**
   *Changes made in the docker container are transient and will go away after you 
   exit the container. Make plans accordingly.*
-
+   
+   ---
+   ---
+  **Docker Build Troubleshooting**
+  
+  | Issue | Solution |
+  |---|---|
+  |*Unknown option --squash*| *--sqash* is a feature available in newer versions of docker. If you are running if you are running an older docker version use use build command without *--squash*.|
+  |*Error message: Directory renamed before its status could be extracted*| This message has been seen in some cases when using *overlay/overlay2* as the docker storage-driver. Change docker configuration to use *aufs*.|
+  
    ---
     
   - ENXOS SDK build environment is already installed in 
@@ -142,20 +151,22 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
       /enxos-sdk
     ```
     
-  - The following environment variables are set by default in v1.5
+  - The following environment variables are set by default if you build your container using `docker build`
  
     ```
       ENXOS_SDK_ROOT=/enxos-sdk
     ```   
-  - The enxos-sdk toolchain is sourced by default in v1.5
+  - The enxos-sdk toolchain is sourced by default if you built your container using `docker build`
     ```
       source /enxos-sdk/environment-setup-x86-wrsmllib32-linux 
     ```
 
+    *If you used `docker pull` to download your container, you need to set the above environment variabled manually.*
+
 ### b) Get NX-SDK toolkit
-  - ENXOS SDK docker image already has NX-SDK V1.5 installed in /NX-SDK (default location) with NXSDK_ROOT environment variable set to /NX-SDK.
+  - ENXOS SDK docker image already has NX-SDK installed in /NX-SDK (default location) with NXSDK_ROOT environment variable set to /NX-SDK.
     ```
-      export NXSDK_ROOT=/NX-SDK (by default)
+      export NXSDK_ROOT=/NX-SDK
     ```  
 
   - If NX-SDK is installed in any other location other than default /NX-SDK then

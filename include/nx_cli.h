@@ -1,7 +1,7 @@
 /** @file nx_cli.h
  *  @brief Abstract CLI interface to generate custom CLI configs in Nexus Switches.
  *
- *  Provides necessary Abstraction/Plugin for NXOS CLI Parser functionalities. 
+ *  Provides necessary Abstraction/Plugin for NXOS CLI Parser functionalities.
  *  It provides the Ability to construct custom CLIs and callback handlers
  *  when a specific CLI is exectuted.
  *
@@ -11,10 +11,10 @@
  *   3) Fill in the appropriate fields for the command like cmdName, type, syntax etc.
  *   4) Update the Keywords, param if needed with custom values using updateKeyword(),
  *      updateParam() etc.
- *   5) Repeat steps 2)-4) for new commands. 
- *   6) After creating all the cmds then set the callback handler to be called 
+ *   5) Repeat steps 2)-4) for new commands.
+ *   6) After creating all the cmds then set the callback handler to be called
  *   7) Add them to NX CLI Parser List using addToParseTree().
- *      If it succeeds then try your commands in NX VSH.  
+ *      If it succeeds then try your commands in NX VSH.
  *   NOTE: By default, some custom CLIs are auto-generated for the NxSDK App.
  *         Try "show $appname ?" in the box to access them.
  *
@@ -33,62 +33,65 @@
 
 using namespace std;
 
-namespace nxos {
+namespace nxos
+{
 
 /**
  * @brief Abstract custom CLI command Interface used to construct a custom CLI config.
- * 
+ *
  * Takes Parameters for custom CLI like cmdName, Syntax, Keywords, Params, etc.
  **/
-class NxCliCmd {
+class NxCliCmd
+{
 public:
+    /* ***************************************
+     * ** public data members
+     * ***************************************/
 
-	/* ***************************************
-	 * ** public data members
-	 * ***************************************/
-
-	///Custom Mode for a Custom CLI command.
-	typedef enum { 
+    ///Custom Mode for a Custom CLI command.
+    typedef enum
+    {
         /// Command can be executed in "conf t".
-		CONF_MODE = 0, 
-       
+        CONF_MODE = 0,
+
         /// Command can be executed in any mode.
         EXEC_MODE,
 
-        /// Maximum modes supported 
+        /// Maximum modes supported
         MAX_MODE
-	} modes_t;
+    } modes_t;
 
-	///Custom CLI command type
-	typedef enum { 
-        /// Custom command is a Configuration command. 
-		CONF_CMD = 0, 
+    ///Custom CLI command type
+    typedef enum
+    {
+        /// Custom command is a Configuration command.
+        CONF_CMD = 0,
 
         /// Custom command is a show command.
-        SHOW_CMD, 
+        SHOW_CMD,
 
         /// Maximum command type supported.
         MAX_CMD
-	} cmdtype_t;
+    } cmdtype_t;
 
-	/**
-	 * Destructor
-	 **/
-	virtual ~NxCliCmd() {};
+    /**
+     * Destructor
+     **/
+    virtual ~NxCliCmd(){};
 
-	/**
-	 * [Optional] Update more semantics to keywords in the CLI. Like HelpString, 
-     * Alias etc. By default Keywords are constructed from the syntax with 
+    /**
+     * [Optional] Update more semantics to keywords in the CLI. Like HelpString,
+     * Alias etc. By default Keywords are constructed from the syntax with
      * HelpString same as the keyword name and without any Aliases.
      * @param[in] keyword_name Keyword used in the syntax
      * @param[in] help_str HelpString associated with the keyword.
      *
      *  @code
-     *  Usage: 
-     *     If you need to create a CLI with custom keyword (HelpString etc) 
-     *     
-     *        CLI     : $appname port-bw threshold <threshold>        
-     *        Keywords: port-bw, threshold                             
+     *  Usage:
+     *     If you need to create a CLI with custom keyword (HelpString etc)
+     *
+     *        CLI     : $appname port-bw threshold <threshold>
+     *        Keywords: port-bw, threshold
      *        Default HelpString for: port-bw is "port-bw", threshold is "threshold"
      *
      *  C++:
@@ -103,39 +106,39 @@ public:
      *       import nx_sdk_py
      *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *       cliP = sdk.getCliParser()
-     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd", 
+     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
      *                               "port-bw threshold <threshold>")
      *       cmd.updateKeyword("port-bw", "Port Bandwidth Information");
      *       cmd.updateKeyword("threshold", "Port BandWidth Threshold Alert");
      *
      *   Switch:
      *       After setting Custom HelpString for keywords.
-     *       switch(config)# $appname ?                             
-     *                       port-bw    Port Bandwidth Information  
-     *       switch(config)# $appname port-bw ?                     
-     *                       threshold  Port Bandwidth Threshold 
-     *  @endcode   
-     * 
+     *       switch(config)# $appname ?
+     *                       port-bw    Port Bandwidth Information
+     *       switch(config)# $appname port-bw ?
+     *                       threshold  Port Bandwidth Threshold
+     *  @endcode
+     *
      *   @throws Keyword and help_str cannot be empty or NULL.
      *   @throws Keyword does not exist in the cmd Syntax
      *   @throws Cannot edit the keyword if the cmd is already added to NX Parser.
-     **/   
-	virtual void updateKeyword(const char *keyword_name,
-		                       const char *help_str)=0;
+     **/
+    virtual void updateKeyword(const char *keyword_name,
+                               const char *help_str) = 0;
 
     /**
      * [Optional] Update more semantics to the input parameter in the CLI.
-     *            Input parameters should be enclosed in <>. By default, 
+     *            Input parameters should be enclosed in <>. By default,
      *            Input parameters type is a string. By default param
      *            semantics are generated from the syntax with defaults.
-     *            By default, HelpString is same as the parameter name. 
+     *            By default, HelpString is same as the parameter name.
      * @param[in] param_name Name of the input parameter
      * @param[in] help_str HelpString for the input parameter
      * @param[in] param_type Type of the input Parameter. Default is String.
-     * @param[in] param_type_attributes Optional Additional attributes needed for 
-     *                                  the input parameter type. Refer to 
+     * @param[in] param_type_attributes Optional Additional attributes needed for
+     *                                  the input parameter type. Refer to
      *                                  example applications.          <br>
-     *            param_type  |  param_type_attributes                 <br> 
+     *            param_type  |  param_type_attributes                 <br>
      *            --------------------------------------------------   <br>
      *            P_INTEGER   | cli_param_type_integer_attr            <br>
      *            P_STRING    | cli_param_type_string_attr             <br>
@@ -147,8 +150,8 @@ public:
      * @note For usage and code refer to respective types in types/nx_cli.h
      * @param[in] param_type_attr_len Length of the void *param_type_attributes
      *                                if passed. With this we can validate if
-     *                                right attribute has been passed for the type. 
-     * @param[in] is_key If set to TRUE then this param value will be added to the 
+     *                                right attribute has been passed for the type.
+     * @param[in] is_key If set to TRUE then this param value will be added to the
      *                   unique key for this config. Used only for config commands.
      *                   For Ex) Lets say CLI syntax is A <id>,
      *                   - If <id> is not set as key (is_key=false) then
@@ -168,11 +171,11 @@ public:
      *                 <id> can take from 1 to 5 inputs.             <br>
      *
      *  @code
-     *  Usage: 
-     *     If you need to create a CLI with custom HelpString 
-     *     
-     *        CLI      : $appname port-bw threshold <threshold>        
-     *        Parameter: <threshold>                            
+     *  Usage:
+     *     If you need to create a CLI with custom HelpString
+     *
+     *        CLI      : $appname port-bw threshold <threshold>
+     *        Parameter: <threshold>
      *
      *  C++:
      *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
@@ -192,28 +195,28 @@ public:
      *       int_attr = nx_sdk_py.cli_param_type_integer_attr()
      *       int_attr.min_val = 1;
      *       int_attr.max_val = 100;
-     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd", 
+     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
      *                               "port-bw threshold <threshold>")
      *       cmd.updateParam("<threshold>", "Threshold Limit. Default 50%", nxos::P_INTEGER,
      *                       int_attr, len(int_attr))
-     *  @endcode 
+     *  @endcode
      *
      *   @throws param and help_str cannot be empty/NULL.
      *   @throws Param does not exist in the cmd Syntax
-     *   @throws Cannot edit the keyword if the cmd is already added to NX Parser.  
+     *   @throws Cannot edit the keyword if the cmd is already added to NX Parser.
      *   @throws param_name does contains more than one word and doesnt match
      *           regex A-Za-z0-9_-
      *   @throws param_type is a invalid type.
      *   @throws param_type_attr_len doesnt match with the expected sizeof(param_type).
      **/
-    virtual void updateParam (const char *param_name,
-                              const char *help_str, 
-                              nxos::param_type_e param_type = nxos::P_STRING,
-                              void *param_type_attributes   = NULL,
-                              int  param_type_attr_len      = 0,
-                              bool is_key                   = false,
-                              bool additive                 = false,
-                              uint8_t repeat_count          = 0)=0;
+    virtual void updateParam(const char         *param_name,
+                             const char         *help_str,
+                             nxos::param_type_e param_type = nxos::P_STRING,
+                             void               *param_type_attributes = NULL,
+                             int                param_type_attr_len = 0,
+                             bool               is_key = false,
+                             bool               additive = false,
+                             uint8_t            repeat_count = 0) = 0;
 
     /**
      * [Optional] Timeout to be set for the CLI if its going to take more time
@@ -221,9 +224,9 @@ public:
      * @param[in] timeout in seconds
      *
      * @throws Cannot edit timeout if the cmd is already added to NX Parser.
-     **/    
-    virtual void addTimeout(uint32_t timeout)=0;
-    
+     **/
+    virtual void addTimeout(uint32_t timeout) = 0;
+
     /**
      * [Optional] Specify the mode in which the cmd belongs.
      *  Defaults: For SHOW_CMD, mode is EXEC_MODE.
@@ -231,30 +234,30 @@ public:
      *   @throws mode is invalid.
      *   @throws Cannot edit the mode if the cmd is already added to NX Parser.
      **/
-	virtual void addMode(modes_t mode)=0;
+    virtual void addMode(modes_t mode) = 0;
 
     /// Get the type of the CLI command.
-	virtual cmdtype_t   getCmdType()=0;
+    virtual cmdtype_t getCmdType() = 0;
 
     /// Get the mode of the CLI command
-	virtual modes_t     getCmdMode()=0;
+    virtual modes_t getCmdMode() = 0;
 
     /// Get the Name of the CLI command
-	virtual std::string getCmdName()=0;
+    virtual std::string getCmdName() = 0;
 
     /// Get the Syntax of the CLI command
-	virtual std::string getCmdSyntax()=0;
+    virtual std::string getCmdSyntax() = 0;
 
-    /// Get the CLI command entered 
-	virtual std::string getCmdLineStr()=0;
+    /// Get the CLI command entered
+    virtual std::string getCmdLineStr() = 0;
 
     /// Get CLI Cmd Err if there is any
-    virtual std::string getCmdErr()=0;
+    virtual std::string getCmdErr() = 0;
 
     /**
-     * Helper function to Check if the given keyword is set/present 
-     * in the entered CLI. Should be called only in command handler 
-     * postCliCb. Or other way is you can use getCmdLineStr() to 
+     * Helper function to Check if the given keyword is set/present
+     * in the entered CLI. Should be called only in command handler
+     * postCliCb. Or other way is you can use getCmdLineStr() to
      * get the entered CLI and do a string find yourself to find
      * the keywords set.
      *
@@ -262,7 +265,7 @@ public:
      *
      * @code
      *  Usage:
-     *       switch(config)# $appname port-bw (threshold <val1> | port <val2>)            
+     *       switch(config)# $appname port-bw (threshold <val1> | port <val2>)
      *       This CLI can either take threshold (or) port.
      *       In postCliCb func, to check which keyword was entereted
      *
@@ -274,65 +277,65 @@ public:
      *  Python:
      *       if (cmd.isKeywordSet("threshold")) :
      *       elif (cmd.isKeywordSet("port")) :
-     *  @endcode 
+     *  @endcode
      *
      * @returns true  - if keyword is set in the entered CLI
      *          false - if keyword is not set in the entered CLI
      *
      * @throws if the API is called outside of command handler postCliCb.
-     * @note Refer to example Apps. 
+     * @note Refer to example Apps.
      **/
-    virtual bool isKeywordSet(const char *keyword_name)=0;
+    virtual bool isKeywordSet(const char *keyword_name) = 0;
 
     /**
-     * Gets the type of parameter in the CLI. Should be called 
+     * Gets the type of parameter in the CLI. Should be called
      * only in command handler postCliCb.
      * @param[in] param_name Name of the input parameter
      * @param[out] returns the type of parameter.
-     *  
+     *
      *  @code
-     *  Usage: 
+     *  Usage:
      *     If you need to get the type of input parameter.
-     *     
-     *       CLI      : $appname port-bw threshold <threshold> 
+     *
+     *       CLI      : $appname port-bw threshold <threshold>
      *       Parameter: <threshold>
      *
-     *       switch(config)# $appname port-bw threshold 10 
+     *       switch(config)# $appname port-bw threshold 10
      *       In postCliCb func, Get Parameter type for Threshold(=P_INTEGER)
      *
      *  C++:
-     *       nxos::param_type_e val = cmd->getParamType("<threshold>"); 
+     *       nxos::param_type_e val = cmd->getParamType("<threshold>");
      *
      *  Python:
      *       val = cmd.getParamType("<threshold>");
-     *  @endcode 
-     *         
-     * @throws param_name is not a single word and does not match 
+     *  @endcode
+     *
+     * @throws param_name is not a single word and does not match
      *         regex A-Za-z0-9-_
      * @throws if the API is called outside of command handler postCliCb.
-     * @throws if the param_name does not exist in the entered config. 
-     * @note Refer to example Apps. 
+     * @throws if the param_name does not exist in the entered config.
+     * @note Refer to example Apps.
      **/
-    virtual nxos::param_type_e getParamType(const char *param_name)=0;
+    virtual nxos::param_type_e getParamType(const char *param_name) = 0;
 
     /**
      * Gets the values of the given input parameter in <>.
      * Should be called only in command handler postCliCb.
      * @param[in] param_name Name of the input parameter
-     * @param[in] fromFirst At anytime, to get or start from first 
-     *                      input parameter value, set fromFirst to 
-     *                      True and then call it in a while loop 
-     *                      with fromFirst to False to loop through 
-     *                      the list if the input parameter is an 
+     * @param[in] fromFirst At anytime, to get or start from first
+     *                      input parameter value, set fromFirst to
+     *                      True and then call it in a while loop
+     *                      with fromFirst to False to loop through
+     *                      the list if the input parameter is an
      *                      array. Refer to usage.
      *
-     * @returns single value of the input parameter if called once. 
+     * @returns single value of the input parameter if called once.
      *          To get an array of values associated with a additive
      *          parameter, call the API in a while loop. If cannot be
      *          found it returns NULL. NOTE: Its not thread-safe.
      *           <br>
      *            param_type  |  Return type                         <br>
-     *            -------------------------------------------------- <br>   
+     *            -------------------------------------------------- <br>
      *            P_INTEGER   |  int *                               <br>
      *            P_STRING    |  char *                              <br>
      *            P_INTERFACE |  char *                              <br>
@@ -343,19 +346,19 @@ public:
      *  @code
      *  Usage for return type int *:
      *   Ex) Syntax: port-bw threshold <threshold>
-     *       CLI: $appname port-bw threshold 10 20 
+     *       CLI: $appname port-bw threshold 10 20
      *   In postCliCb, to get <threshold> parameter value (=10, 20)
      *
      *  C++:
      *       // To get Multiple values
-     *       int val = *((int *)cmd->getParamValue("<threshold>"), true);     
+     *       int val = *((int *)cmd->getParamValue("<threshold>"), true);
      *       while (val) {
      *           //print val
      *           val = *((int *)cmd->getParamValue("<threshold>"));
      *       }
      *
      *  Python:
-     *       ### Use nx_sdk_py.void_to_int to convert from C void * 
+     *       ### Use nx_sdk_py.void_to_int to convert from C void *
      *       ### of type int to python int Object.
      *       int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
      *       while int_p:
@@ -364,102 +367,102 @@ public:
      *          int_p = nx_sdk_py.void_to_int(cmd.getParamValue("<threshold>"), True)
      *
      *  @endcode
-     * 
+     *
      *  @code
      *  Usage for return type char *:
      *    Ex) Syntax: show $appname port-bw <port>
-     *        CLI: show $appname port-bw ethernet1/1 
+     *        CLI: show $appname port-bw ethernet1/1
      *    In postCliCb, to get <port> parameter value (=ethernet1/1)
      *
      *  C++:
-     *       char *port = (char *)cmd->getParamValue("<port>");     
+     *       char *port = (char *)cmd->getParamValue("<port>");
      *
      *  Python:
-     *       ### Use nx_sdk_py.void_to_string to convert from C void * 
+     *       ### Use nx_sdk_py.void_to_string to convert from C void *
      *       ### of type char * to python String Object.
      *       port = nx_sdk_py.void_to_string(cmd.getParamValue("<port>"))
      *       print port
      *  @endcode
      *
      * @throws param_name is not enclosed in <>
-     * @throws param_name is not a single word and does not match 
+     * @throws param_name is not a single word and does not match
      *         regex A-Za-z0-9-_
      * @throws if the API is called outside of command handler postCliCb.
-     * @throws if the param_name does not exist in the entered config. 
-     * @note Refer to example Apps. 
+     * @throws if the param_name does not exist in the entered config.
+     * @note Refer to example Apps.
      **/
-    virtual void *getParamValue(const char *param_name, bool fromFirst=false)=0;
+    virtual void *getParamValue(const char *param_name, bool fromFirst = false) = 0;
 
     /**
-     * Given the input parameter, getParamCount returns the number(count) 
-     * of values associated with the input parameter. Should be called 
+     * Given the input parameter, getParamCount returns the number(count)
+     * of values associated with the input parameter. Should be called
      * only in command handler postCliCb.
-     * 
+     *
      * @param[in] param_name Name of the input parameter
      *
      * @returns the count of array of values associated with the parameter.
      *          A <param> can contain a single value or array of
-     *          values if its set as additive. Should be called only 
-     *          in command handler postCliCb. 
+     *          values if its set as additive. Should be called only
+     *          in command handler postCliCb.
      *
      *  @code
-     *  Usage: 
+     *  Usage:
      *     To get a count of the number of input param.
-     *     
-     *       CLI      : $appname port-bw threshold <threshold> 
-     *       Parameter: <threshold> [in updateParam set, additive = true, 
-     *                               repeat_count = 5]                     
-     *                  <threshold> can take one value (or) an array of 
-     *                  utpo 5 values       
      *
-     *       switch(config)# $appname port-bw threshold 10 20 30            
+     *       CLI      : $appname port-bw threshold <threshold>
+     *       Parameter: <threshold> [in updateParam set, additive = true,
+     *                               repeat_count = 5]
+     *                  <threshold> can take one value (or) an array of
+     *                  utpo 5 values
+     *
+     *       switch(config)# $appname port-bw threshold 10 20 30
      *       In postCliCb func, Get Parameter array count for Threshold (=3)
      *
      *  C++:
-     *       int val = cmd->getParamCount("<threshold>"); 
+     *       int val = cmd->getParamCount("<threshold>");
      *
      *  Python:
      *       val = cmd.getParamCount("<threshold>");
-     *  @endcode 
+     *  @endcode
      *
      * @throws param_name is not enclosed in <>
-     * @throws param_name is not a single word and does not match 
+     * @throws param_name is not a single word and does not match
      *         regex A-Za-z0-9-_
      * @throws if the API is called outside of command handler postCliCb.
-     * @throws if the param_name does not exist in the entered config. 
-     * @note Refer to example Apps. 
+     * @throws if the param_name does not exist in the entered config.
+     * @note Refer to example Apps.
      **/
-    virtual int getParamCount(const char *param_name)=0;
+    virtual int getParamCount(const char *param_name) = 0;
 
     /**
      * Print custom output on the switch console only
      * when called inside command handler postCliCb.
      * Does nothing if called in anyother place.
      *
-     * @note Refer to example Apps. 
+     * @note Refer to example Apps.
      **/
-    virtual void printConsole(const char *fmt, ...)=0;
+    virtual void printConsole(const char *fmt, ...) = 0;
 
     /**
-     * @note Following APIs are supported from NX-SDK v1.5.0 
+     * @note Following APIs are supported from NX-SDK v1.5.0
      **/
 
-    /** 
+    /**
      *  Same as v1.0.0 except the addition of new parameter
      *  make_key.
      *
-     * @param[in] make_key If set to TRUE then this keyword will be added to the 
+     * @param[in] make_key If set to TRUE then this keyword will be added to the
      *                   unique key for this config. Used only for config commands.
      *                   For Ex) Lets say CLI syntax is "action [A| B]",
      *                   - If A keyword is not set as key (make_key=false) then
-     *                     Lets say we configure "action A" then we config 
-     *                     "action B" then config "action B" would replace/update 
+     *                     Lets say we configure "action A" then we config
+     *                     "action B" then config "action B" would replace/update
      *                     "action A". Hence "show run" will have "action B".
      *                   - If A & B keywords are set as key (make_key=true) then Lets say
      *                     we configure action A" then we config "action B", we will
      *                     have two entries "action A" and "action B". Hence "show run"
      *                     will have both "action A" and "action B".
-     * 
+     *
      *  @note Refer to v1.0.0 API section to get more details
      *        about other parameters.
      *
@@ -467,62 +470,62 @@ public:
      **/
     virtual void updateKeyword(const char *keyword_name,
                                const char *help_str,
-                               bool make_key)=0;
-
+                               bool       make_key) = 0;
 };
 
 /**
- * @brief Custom Cli Command Callback Handler Class 
+ * @brief Custom Cli Command Callback Handler Class
  **/
-class NxCmdHandler {
+class NxCmdHandler
+{
 public:
-    virtual ~NxCmdHandler() {};
+    virtual ~NxCmdHandler(){};
 
     /**
-     * User to overload the postCliCb callback method 
+     * User to overload the postCliCb callback method
      * to execute an action when their respective custom
-     * CLI is executed. 
+     * CLI is executed.
      * @param[in]  assoicated cmd obj for the executed CLI command.
      * @param[out] True : the command was successful
-     *             False: command failed. 
+     *             False: command failed.
      **/
-	virtual bool postCliCb(NxCliCmd *cmd){ return(true); }
+    virtual bool postCliCb(NxCliCmd *cmd) { return (true); }
 };
 
 /**
  * @brief Abstract Interface to access Nexus CLI Parser tools.
  *
  * Interface to add, delete, modify custom CLI commands into
- * Nexus Parser. 
+ * Nexus Parser.
  **/
-class NxCliParser {
+class NxCliParser
+{
 public:
-
-	/* ***************************************
-	 * ** public methods
-	 * ***************************************/
+    /* ***************************************
+     * ** public methods
+     * ***************************************/
 
     /**
      * Destructor
      **/
-    virtual ~NxCliParser() {};
+    virtual ~NxCliParser(){};
 
     /**
-     * Create a new Custom Cli command object 
+     * Create a new Custom Cli command object
      * @param[in] ctype    Cmd Type (ex CONF_CMD, SHOW_CMD etc)
-     * @param[in] cmd_name Cmd Name (NOTE: SDK appends App Name to the 
+     * @param[in] cmd_name Cmd Name (NOTE: SDK appends App Name to the
      *                                     passed Cmd Name (AppName_CmdName))
      * @param[in] syntax   Custom Cmd syntax. Syntax comprises of Keywords
      *                     and input parameters. Input parameters are identified
      *                     by enclosing in <> and by default they are of the type "string".
      *                     Refer to updateKeyword & updateParam usage.
      *                     NOTE: All CONF commands are prefixed with AppName. For SHOW
-     *                           commands, SDK appends AppName after the show keyword. 
+     *                           commands, SDK appends AppName after the show keyword.
      *                           So that the custom configs dont overwrite the existing
      *                           Nexus Configs.
      *
      * @code
-     *  Usage:                             
+     *  Usage:
      *       Ex1) For Config: $appName port-bw threshold <threshold>
      *             API:  newCliCmd(nxos::NxCliCmd::CONF_CMD, "vlan_cmd", "vlan <vlanid>");
      *             $AppName: (Automatically appended by SDK)
@@ -536,20 +539,20 @@ public:
      *       import nx_sdk_py
      *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *       cliP = sdk.getCliParser()
-     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd", 
+     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
      *                               "port-bw threshold <threshold>")
      * @endcode
      *
      * @code
-     *       Ex2) For Config: show $appName (A | B <id>) [C] 
+     *       Ex2) For Config: show $appName (A | B <id>) [C]
      *             API:  newCliCmd(nxos::NxCliCmd::SHOW_CMD, "complex_cmd", "(A | B <id>) [C]");
      *             App Name: show $appName (Automatically appended by SDK)
      *             Syntax  : (A | B <id>) [C]
      *                 Keyword   : A, B, C
      *                 Param     : <id> (Default type: String)
-     *                 Explantion: (| - A or B <id>) 
+     *                 Explantion: (| - A or B <id>)
      *                             ([] - Optional keyword C)
-     * 
+     *
      *  C++:
      *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
      *       cliP = sdk->getCliParser();
@@ -560,10 +563,10 @@ public:
      *       import nx_sdk_py
      *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *       cliP = sdk.getCliParser()
-     *       cmd = cliP.newConfigCmd("set_complex_cmd", "(A | B <id>) [C]") 
+     *       cmd = cliP.newConfigCmd("set_complex_cmd", "(A | B <id>) [C]")
      * @endcode
-     *    
-     * NOTE: 
+     *
+     * NOTE:
      *   @throws ctype is a invalid command type
      *   @throws cmd_name and syntax cannot be empty or NULL.
      *   @throws syntax is not balanced.
@@ -577,23 +580,23 @@ public:
      *           regex A-Za-z0-9_-
      *   @throws syntax contains predefined keywords (no, show)
      */
-    virtual NxCliCmd* newCliCmd (NxCliCmd::cmdtype_t ctype,
-                                 const char *cmd_name,
-                                 const char *syntax)=0;
+    virtual NxCliCmd *newCliCmd(NxCliCmd::cmdtype_t ctype,
+                                const char          *cmd_name,
+                                const char          *syntax) = 0;
 
     /**
      * Create a new custom Show CLI command object.
      * Calls newCliCmd(nxos::NxCliCmd::SHOW_CMD, cmd_name, syntax)
      **/
-    virtual NxCliCmd *newShowCmd (const char *cmd_name, 
-                                  const char *syntax)=0;
- 
+    virtual NxCliCmd *newShowCmd(const char *cmd_name,
+                                 const char *syntax) = 0;
+
     /**
      * Create a new custom Show CLI command object.
      * Calls newCliCmd(nxos::NxCliCmd::CONF_CMD, cmd_name, syntax)
      **/
-    virtual NxCliCmd *newConfigCmd (const char *cmd_name,
-                                    const char *syntax)=0;
+    virtual NxCliCmd *newConfigCmd(const char *cmd_name,
+                                   const char *syntax) = 0;
 
     /**
      * Register all created custom commands to NX CLI Parser Tree.
@@ -602,26 +605,26 @@ public:
      *  @throws if called without creating any custom commands.
      *  @throws if NX CLI Parser rejects the custom commands.
      **/
-    virtual void addToParseTree()=0;
+    virtual void addToParseTree() = 0;
 
     /**
      * Delete all your custom commands from NX CLI Parser Tree.
      * @note Check "show AppName internal state" if the custom
      *       commands are successfully deleted or not.
      **/
-    virtual void delFromParseTree()=0;
+    virtual void delFromParseTree() = 0;
 
     /**
      * Set the CLI callback handler object when the
      * respective config is executed.
      **/
-    virtual void setCmdHandler(NxCmdHandler *handler)=0;
+    virtual void setCmdHandler(NxCmdHandler *handler) = 0;
 
     /// Get Parser Status/Errors
-    virtual std::string   getParserStatus()=0;
+    virtual std::string getParserStatus() = 0;
 
     /// Get Cli callback handler object
-    virtual NxCmdHandler  *getCmdHandler()=0;
+    virtual NxCmdHandler *getCmdHandler() = 0;
 
     /**
      * Execute other show commands.
@@ -635,10 +638,10 @@ public:
      *             of the output than the pointer if you need to store the
      *             output.
      **/
-    virtual char* execShowCmd(std::string show_syntax,
-                              nxos::record_type_e type=nxos::R_TEXT,
-                              bool *oper_result=NULL)=0;
-     
+    virtual char *execShowCmd(std::string         show_syntax,
+                              nxos::record_type_e type = nxos::R_TEXT,
+                              bool                *oper_result = NULL) = 0;
+
     /**
      * Execute other config commands in a file.
      * @param[in] filename File that contains all the config commands to be  executed.
@@ -668,9 +671,9 @@ public:
      * @endcode
      *
      **/
-    virtual char* execConfigCmd(const char *filename)=0;
+    virtual char *execConfigCmd(const char *filename) = 0;
 };
 
-}
+} // namespace nxos
 
 #endif //__NX_CLI_H__
