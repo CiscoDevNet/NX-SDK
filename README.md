@@ -136,12 +136,12 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
   exit the container. Make plans accordingly.*
    
    ---
-   ---
+
   **Docker Build Troubleshooting**
   
   | Issue | Solution |
   |---|---|
-  |*Unknown option --squash*| *--sqash* is a feature available in newer versions of docker. If you are running if you are running an older docker version use use build command without *--squash*.|
+  |*Unknown option --squash*| *--squash* is a feature available in newer versions of docker. If you are running if you are running an older docker version use use build command without *--squash*.|
   |*Error message: "Directory renamed before its status could be extracted"*| This message has been seen in some cases when using *overlay/overlay2* as the docker storage-driver. Change docker configuration to use *aufs*.|
   
    ---
@@ -161,7 +161,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
       source /enxos-sdk/environment-setup-x86-wrsmllib32-linux 
     ```
 
-    *If you used `docker pull` to download your container, you need to set the above environment variabled manually.*
+    *If you used `docker pull` to download your container, you need to set the above environment variables manually.*
 
 ### b) Get NX-SDK toolkit
   - ENXOS SDK docker image already has NX-SDK installed in /NX-SDK (default location) with NXSDK_ROOT environment variable set to /NX-SDK.
