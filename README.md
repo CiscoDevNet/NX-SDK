@@ -142,7 +142,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
   | Issue | Solution |
   |---|---|
   |*Unknown option --squash*| *--sqash* is a feature available in newer versions of docker. If you are running if you are running an older docker version use use build command without *--squash*.|
-  |*Error message: Directory renamed before its status could be extracted*| This message has been seen in some cases when using *overlay/overlay2* as the docker storage-driver. Change docker configuration to use *aufs*.|
+  |*Error message: "Directory renamed before its status could be extracted"*| This message has been seen in some cases when using *overlay/overlay2* as the docker storage-driver. Change docker configuration to use *aufs*.|
   
    ---
     
