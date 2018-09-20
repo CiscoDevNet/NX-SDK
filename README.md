@@ -93,23 +93,17 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
 
 ## 1. Install NX-SDK
 
-### a) ENXOS SDK Build Environment [Optional]
+### a) ENXOS SDK Build Environment 
 
   - NOTE: Mandatory for Custom Applications to be started in VSH.
   - ENXOS build environment can built using the provided Dockerfiles
 
-  *starting NXOS release 9.2.1, wrlinux compiler tool-chain has been upgraded from wrl5 to wrl8. Applications compiled with wrl5 should still run. However, if you encounter issues with your C++ applications, you must re-compile with wrl8.*
-
-  #### For NXOS 9.2.1 release and onwards:
-  ```
-      Ex for ubuntu) docker build --squash -t nxsdk_ubuntu containers/wrl8/ubuntu
-      Ex for alpine) docker build --squash -t nxsdk_alpine containers/wrl8/alpine
-  ```
-  #### For previous NXOS releases:
+  #### Build using Dockerfile
    ```
-      Ex for ubuntu) docker build --squash -t nxsdk_ubuntu containers/wrl5/ubuntu
-  ``` 
-  - Alternatively, Wrl5 ENXOS SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
+      Ex for ubuntu) docker build --squash -t  nxsdk_ubuntu containers/wrl5/ubuntu
+   ``` 
+  #### Download from Docker Hub
+  - SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
     Pull the Image version of your choice using.
 
     ```
