@@ -168,7 +168,7 @@ myIntfHandler::postIntfStateCb (NxIntf *intf)
 
     if (intf) {
         traceP->syslog(NxTrace::NOTICE,"State change for interface: %s", intf->getName().c_str());
-        traceP->syslog(NxTrace::NOTICE,"\t new state is: %s", 
+        traceP->syslog(NxTrace::NOTICE,"\t new state is: %d", 
                        intf->getOperState());
     }
 }
@@ -313,7 +313,7 @@ int main (int argc, char *argv[], char *env[])
         exit(-1);
     }
     
-    if (argc > 1) {
+    if ((sdk->getRunningEnv() == BASH) && argc > 1) {
         for (i=1, arg = string(argv[1]);
              i < argc;
              i++) {
