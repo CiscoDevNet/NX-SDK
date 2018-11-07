@@ -25,76 +25,78 @@
 #include <stdint.h>
 #include <iostream>
 
-namespace nxos {
+namespace nxos
+{
 
 /**
  * @brief Tracer interface to generate custom Syslogs, Events & Errors history.
  **/
-class NxTrace {
-public:
-
+class NxTrace
+{
+  public:
     /**
      * Priority level for the custom syslog.
      **/
-    typedef enum { 
-    
-       /// Emergency - Highest Priority
-       EMERG, 
- 
-       /// Its a severe Alert
-       ALERT,
+    typedef enum
+    {
 
-       /// Critical. 
-       CTRI,
+        /// Emergency - Highest Priority
+        EMERG,
 
-       /// Error Scenario
-       ERR,
+        /// Its a severe Alert
+        ALERT,
 
-       /// Warning but not critical
-       WARNING,
+        /// Critical.
+        CTRI,
 
-       /// Notice Alert but not severe.
-       NOTICE,
-       
-       /// For Information.
-       INFO,
+        /// Error Scenario
+        ERR,
 
-       /// For internal Debugging purposes.
-       DEBUG,
+        /// Warning but not critical
+        WARNING,
+
+        /// Notice Alert but not severe.
+        NOTICE,
+
+        /// For Information.
+        INFO,
+
+        /// For internal Debugging purposes.
+        DEBUG,
     } Priority;
 
     /// Destructor
     virtual ~NxTrace() {}
-    
-    /// Generate Custom Syslog with the specified Priority 
-    virtual void syslog(Priority prio, const char *fmt, ...)=0;
+
+    /// Generate Custom Syslog with the specified Priority
+    virtual void syslog(Priority prio, const char *fmt, ...) = 0;
 
     /**
      * Generate custom App Event in its event history.
      * Use "show <AppName> internal event-history events".
      **/
-    virtual void event(const char *fmt, ...)=0;
+    virtual void event(const char *fmt, ...) = 0;
 
     /**
      * Generate custom App Error in its event history.
      * Use "show <AppName> internal event-history errors".
      **/
-    virtual void error(const char *fmt, ...)=0;
+    virtual void error(const char *fmt, ...) = 0;
 
     /**
-     * @note Following APIs are supported from NX-SDK v1.5.0 
+     * @note Following APIs are supported from NXSDK V1.5 
      **/
 
     /**
      * Get the specified priority as String
      *
-     * @since NX-SDK v1.5.0
+     * @since NXSDK V1.5
      *
      * @returns Priotiry as a string
      **/
     static const char *getPrioStr(Priority prio);
 };
 
-}
+} // namespace nxos
 
 #endif //__NX_TRACE_H__

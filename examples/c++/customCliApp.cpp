@@ -7,6 +7,8 @@
  *    along with respective callbacks showcasing the usage of
  *    CLI infrastructure of NX-OS SDK.
  *
+ *  Supported since NX-SDK v1.0.0
+ *
  * Copyright (c) 2016-2017 by cisco Systems, Inc.
  * All rights reserved.
  *

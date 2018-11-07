@@ -1,87 +1,74 @@
-\hypertarget{nx__exception_8h}{
-\section{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-exception.h File Reference}
-\label{nx__exception_8h}\index{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-exception.h@{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-exception.h}}
-}
+\hypertarget{nx__exception_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+exception.h File Reference}
+\label{nx__exception_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+exception.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+exception.\+h}}
 
 
 Abstract Exception Interface for all thrown NX errors.  
-{\ttfamily \#include $<$iostream$>$}\par
-{\ttfamily \#include $<$string$>$}\par
-{\ttfamily \#include $<$cstring$>$}\par
-{\ttfamily \#include $<$stdexcept$>$}\par
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classnxos_1_1NxException}{nxos::NxException}
-\begin{DoxyCompactList}\small\item\em Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type \hyperlink{classnxos_1_1NxException}{NxException} when advException is enabled for an App to handle the failures gracefully. Refer to nxsdk applications for the usage of \hyperlink{classnxos_1_1NxException}{NxException}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classnxos_1_1_nx_exception}{nxos\+::\+Nx\+Exception}}
+\begin{DoxyCompactList}\small\item\em Abstract Exception Interface for all N\+X\+OS thrown errors. Each A\+PI throws an exception of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}} when adv\+Exception is enabled for an App in case of a failure for the Apps to handle the failures gracefully. Refer to sample applications for the usage of \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum {\bfseries err\_\-type\_\-e} \{ \par
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8b80bc949bbe8fed86aa8812da694c70}{nxos::ERR\_\-INVALID\_\-USAGE} =  1, 
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ab639ff1ebdbaf5a6053a6eebf1037835}{nxos::ERR\_\-INVALID} =  2, 
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a0fc8433288c708e1a89a1a10292834eb}{nxos::ERR\_\-NULL\_\-PTR} =  3, 
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a45c4b0f31ee98947576572b4355077a1}{nxos::ERR\_\-NOT\_\-FOUND} =  4, 
-\par
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8dfb2f701566b74a0a1207af6d4a0073}{nxos::ERR\_\-EMPTY} =  5, 
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a4cbaa77687a1fea3093ca96a9011ee52}{nxos::ERR\_\-MAX\_\-LIMIT} =  6, 
-\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ae6dca61095454a329e3f37bc65f62fb2}{nxos::ERR\_\-FAILURE} =  7
+enum \mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1}{nxos\+::err\+\_\+type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a02b0f4aa199a01d3e506e935467ba337}{nxos\+::\+E\+R\+R\+\_\+\+E\+S\+U\+C\+C\+E\+SS}} = 0, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8b80bc949bbe8fed86aa8812da694c70}{nxos\+::\+E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ab639ff1ebdbaf5a6053a6eebf1037835}{nxos\+::\+E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a0fc8433288c708e1a89a1a10292834eb}{nxos\+::\+E\+R\+R\+\_\+\+N\+U\+L\+L\+\_\+\+P\+TR}}, 
+\newline
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a45c4b0f31ee98947576572b4355077a1}{nxos\+::\+E\+R\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ac595764cd29a4b662900497b759ae34e}{nxos\+::\+E\+R\+R\+\_\+\+E\+X\+I\+S\+TS}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a8dfb2f701566b74a0a1207af6d4a0073}{nxos\+::\+E\+R\+R\+\_\+\+E\+M\+P\+TY}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a4cbaa77687a1fea3093ca96a9011ee52}{nxos\+::\+E\+R\+R\+\_\+\+M\+A\+X\+\_\+\+L\+I\+M\+IT}}, 
+\newline
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ae6dca61095454a329e3f37bc65f62fb2}{nxos\+::\+E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a41983d301d18e11ab28383fa9aa75d14}{nxos\+::\+E\+R\+R\+\_\+\+E\+S\+U\+C\+C\+E\+S\+S\+\_\+\+M\+O\+RE}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1af963a50ead559307664acb2dbec90074}{nxos\+::\+E\+R\+R\+\_\+\+S\+I\+G\+I\+NT}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1ac1f0542c2643446880b97f3d7f74c2d9}{nxos\+::\+E\+R\+R\+\_\+\+E\+N\+O\+M\+EM}}, 
+\newline
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a1543b412e48aaff0040df78f97b4fa21}{nxos\+::\+E\+R\+R\+\_\+\+B\+A\+D\+FD}}, 
+\mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a9cf23b6a138939ee61910a071d45534b}{nxos\+::\+E\+R\+R\+\_\+\+U\+N\+K\+N\+O\+WN}}
  \}
-\begin{DoxyCompactList}\small\item\em Supported Error types. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Supported Error types. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Abstract Exception Interface for all thrown NX errors. NX-\/SDK v1.0.0 supports \par
+Abstract Exception Interface for all thrown NX errors. 
 
+N\+X\+S\+DK V1.\+0 supports
 \begin{DoxyItemize}
-\item Throws Simple exception of the type in \par
-
-\begin{DoxyItemize}
-\item C++ -\/ std::logic\_\-err \par
-
-\item Python -\/ String Object. \par
-\par
-
-\end{DoxyItemize}
+\item Throws Simple exception of the type in C++ -\/ std\+::logic\+\_\+err Python -\/ String Object.
 \end{DoxyItemize}
 
-NX-\/SDK v1.5.0 supports \par
-
+N\+X\+S\+DK V1.\+5 supports
 \begin{DoxyItemize}
-\item Throws Simple exception of the type as version v1.0.0, \par
-
-\begin{DoxyItemize}
-\item C++ -\/ std::logic\_\-err \par
-
-\item Python -\/ String Object. \par
-\par
-
-\end{DoxyItemize}
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item Also Throws Advanced exeception of the type NxException across all \par
- languages with more information. \par
-
-\begin{DoxyItemize}
-\item C++ -\/ NxException Object \par
-
-\item Python -\/ NxException Object \par
-
-\end{DoxyItemize}
+\item Throws Simple exception of the type as version V1.\+0, C++ -\/ std\+::logic\+\_\+err Python -\/ String Object.
+\item Also Throws Advanced exeception of the type Nx\+Exception across all languages with more information. ~\newline
+ C++ -\/ Nx\+Exception Object Python -\/ Nx\+Exception Object
 \end{DoxyItemize}
 
 \begin{DoxyNote}{Note}
-By default, simple exception is enabled for an App. If the App supports Advanced Exception handling then to enable Advanced exception, set advException flag to TRUE in getSdkInst Api.
+By default, simple exception is enabled for an App. If the App supports Advanced Exception handling then to enable Advanced exception, set adv\+Exception flag to T\+R\+UE in get\+Sdk\+Inst Api.
 \end{DoxyNote}
 \begin{DoxySince}{Since}
-NX-\/SDK v1.5.0
+N\+X\+S\+DK V1.\+5
 \end{DoxySince}
 Refer to some example Applications.
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
 \end{DoxyAuthor}
-\begin{Desc}
-\item[\hyperlink{bug__bug000002}{Bug}]No known bugs. \end{Desc}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]No known bugs. \end{DoxyRefDesc}

@@ -1,0 +1,103 @@
+\hypertarget{classnxos_1_1_nx_exception}{}\section{nxos\+:\+:Nx\+Exception Class Reference}
+\label{classnxos_1_1_nx_exception}\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+
+
+Abstract Exception Interface for all N\+X\+OS thrown errors. Each A\+PI throws an exception of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}} when adv\+Exception is enabled for an App in case of a failure for the Apps to handle the failures gracefully. Refer to sample applications for the usage of \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+exception.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_exception_a2063f2937b4fdfe7a2e58f0ce727d70c}{$\sim$\+Nx\+Exception}} ()
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_exception_ad475b90fb193848245b9537524439943}{what}} ()=0
+\item 
+virtual unsigned long \mbox{\hyperlink{classnxos_1_1_nx_exception_ace42c480c5b1efc0779028339a09f067}{get\+Err\+Code}} ()=0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_exception_ad428a765217581f320af95386350ef30}{get\+Err\+Module}} ()=0
+\item 
+virtual unsigned short \mbox{\hyperlink{classnxos_1_1_nx_exception_a7b5ffd11c04e3955d874ea7a6b18063f}{get\+Err\+Severity}} ()=0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_exception_a82ce0a75c61b55ca191c86e5abfeaa20}{get\+Err\+Api}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Exception Interface for all N\+X\+OS thrown errors. Each A\+PI throws an exception of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}} when adv\+Exception is enabled for an App in case of a failure for the Apps to handle the failures gracefully. Refer to sample applications for the usage of \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_a2063f2937b4fdfe7a2e58f0ce727d70c}\label{classnxos_1_1_nx_exception_a2063f2937b4fdfe7a2e58f0ce727d70c}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!````~Nx\+Exception@{$\sim$\+Nx\+Exception}}
+\index{````~Nx\+Exception@{$\sim$\+Nx\+Exception}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Exception()}{~NxException()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Exception\+::$\sim$\+Nx\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{[}Optional\mbox{]} Destructor
+
+To Delete the Exception instance gracefully. Automatically called when the App Exits. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_a82ce0a75c61b55ca191c86e5abfeaa20}\label{classnxos_1_1_nx_exception_a82ce0a75c61b55ca191c86e5abfeaa20}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!get\+Err\+Api@{get\+Err\+Api}}
+\index{get\+Err\+Api@{get\+Err\+Api}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{get\+Err\+Api()}{getErrApi()}}
+{\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Exception\+::get\+Err\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the A\+PI name in the Module/\+Class that threw the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Api Name as string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_ace42c480c5b1efc0779028339a09f067}\label{classnxos_1_1_nx_exception_ace42c480c5b1efc0779028339a09f067}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!get\+Err\+Code@{get\+Err\+Code}}
+\index{get\+Err\+Code@{get\+Err\+Code}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{get\+Err\+Code()}{getErrCode()}}
+{\footnotesize\ttfamily virtual unsigned long nxos\+::\+Nx\+Exception\+::get\+Err\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Error code ID for the thrown exception.
+
+\begin{DoxyReturn}{Returns}
+Error Code of type err\+\_\+type\+\_\+e 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_ad428a765217581f320af95386350ef30}\label{classnxos_1_1_nx_exception_ad428a765217581f320af95386350ef30}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!get\+Err\+Module@{get\+Err\+Module}}
+\index{get\+Err\+Module@{get\+Err\+Module}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{get\+Err\+Module()}{getErrModule()}}
+{\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Exception\+::get\+Err\+Module (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Module/\+Class Name that threw the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Module Name as string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_a7b5ffd11c04e3955d874ea7a6b18063f}\label{classnxos_1_1_nx_exception_a7b5ffd11c04e3955d874ea7a6b18063f}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!get\+Err\+Severity@{get\+Err\+Severity}}
+\index{get\+Err\+Severity@{get\+Err\+Severity}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{get\+Err\+Severity()}{getErrSeverity()}}
+{\footnotesize\ttfamily virtual unsigned short nxos\+::\+Nx\+Exception\+::get\+Err\+Severity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Severity of the Exception.
+
+\begin{DoxyReturn}{Returns}
+Error Severity of type \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Nx\+Trace\+::\+Priority}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_exception_ad475b90fb193848245b9537524439943}\label{classnxos_1_1_nx_exception_ad475b90fb193848245b9537524439943}} 
+\index{nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}!what@{what}}
+\index{what@{what}!nxos\+::\+Nx\+Exception@{nxos\+::\+Nx\+Exception}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Error Reason string for the thrown exception.
+
+\begin{DoxyReturn}{Returns}
+Error reason as string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__exception_8h}{nx\+\_\+exception.\+h}}\end{DoxyCompactItemize}

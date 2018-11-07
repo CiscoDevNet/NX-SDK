@@ -9,3 +9,8 @@ examples/go/src/*/nx_sdk_go_cb.go
 .Trashes
 ehthumbs.db
 Thumbs.db
+bin/*
+libs/*
+examples/go/bin/*
+examples/go/pkg/*
+examples/go/src/nx_sdk_go

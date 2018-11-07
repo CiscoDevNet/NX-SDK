@@ -1,0 +1,320 @@
+\hypertarget{classnxos_1_1_nx_adj_mgr}{}\section{nxos\+:\+:Nx\+Adj\+Mgr Class Reference}
+\label{classnxos_1_1_nx_adj_mgr}\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+
+
+Abstract N\+X-\/\+S\+DK Adj Manager interface to gain access to N\+X\+OS adjacency Manager.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+adj\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a771d390eda9cac623c3b8f9452721da5}{$\sim$\+Nx\+Adj\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a0e3f6888c7c34531ff846c359195259e}{get\+Adj}} (const std\+::string \&intf\+Name, const std\+::string \&ip\+Addr)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a9c347e5836f0ec686fe6605a41fbef5e}{discover\+Adj}} (const std\+::string \&intf\+Name, const std\+::string \&ip\+Addr)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a2d0bc4dfa5a270ff464238a59c613993}{watch\+All\+Adjs}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} addr\+\_\+family=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}, bool download=true)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_aa3a1b51dc9fd549e2ef1ac1928030883}{unwatch\+All\+Adjs}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} addr\+\_\+family=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}})=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_ae8bd120a58a32548d68a4327e9c26459}{watch\+Adj}} (const std\+::string \&intf\+Name, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} addr\+\_\+family=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}, bool download=true, const std\+::string \&ip\+Addr=\char`\"{}\char`\"{})=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a70afce2634199180031767e150332687}{unwatch\+Adj}} (const std\+::string \&intf\+Name, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} addr\+\_\+family=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}, const std\+::string \&ip\+Addr=\char`\"{}\char`\"{})=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_afc37b95ddfe24357cfd0803cad8feb74}{set\+Adj\+Mgr\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}} $\ast$handler)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a9937a382ff7f6eb789b728a2512e37f3}{unset\+Adj\+Mgr\+Handler}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_a0a25f49f42b92d373d341d3b013c7404}{get\+Adj\+Mgr\+Handler}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract N\+X-\/\+S\+DK Adj Manager interface to gain access to N\+X\+OS adjacency Manager. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a771d390eda9cac623c3b8f9452721da5}\label{classnxos_1_1_nx_adj_mgr_a771d390eda9cac623c3b8f9452721da5}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!````~Nx\+Adj\+Mgr@{$\sim$\+Nx\+Adj\+Mgr}}
+\index{````~Nx\+Adj\+Mgr@{$\sim$\+Nx\+Adj\+Mgr}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Adj\+Mgr()}{~NxAdjMgr()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Adj\+Mgr\+::$\sim$\+Nx\+Adj\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor
+
+Delete the Adjacency manager instance and its associated objects gracefully. Its cleaned on delete sdk too. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a9c347e5836f0ec686fe6605a41fbef5e}\label{classnxos_1_1_nx_adj_mgr_a9c347e5836f0ec686fe6605a41fbef5e}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!discover\+Adj@{discover\+Adj}}
+\index{discover\+Adj@{discover\+Adj}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{discover\+Adj()}{discoverAdj()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+Mgr\+::discover\+Adj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{const std\+::string \&}]{ip\+Addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Discover an adjacency by probing the interface and IP address for an adjacency. If one exists, user will be notified via post\+Adj\+Cb. User must have post\+Adj\+Cb registered and have a watch on the host via watch\+All\+Adjs or watch\+Adj A\+PI.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+Name} & interface name. \\
+\hline
+\mbox{\tt in}  & {\em ip\+Addr} & I\+P\+V4 or I\+P\+V6 Address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if discover\+Adj operation is successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
+
+     NxAdj *adj;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     adjMgr = sdk->getAdjMgr();
+     adjMgr->watchAllAdjs();
+     adj = adjMgr->discoverAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"10.1.1.2"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     adjMgr = sdk.getAdjMgr()
+     adjMgr.watchAllAdj()
+     adj = adjMgr.discoverAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"10.1.1.2"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & Invalid intf\+Name \& ip\+Addr \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a0e3f6888c7c34531ff846c359195259e}\label{classnxos_1_1_nx_adj_mgr_a0e3f6888c7c34531ff846c359195259e}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!get\+Adj@{get\+Adj}}
+\index{get\+Adj@{get\+Adj}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Adj()}{getAdj()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}}$\ast$ nxos\+::\+Nx\+Adj\+Mgr\+::get\+Adj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{const std\+::string \&}]{ip\+Addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Lookup adjacency based on Interface \& Address. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+Name} & interface name. \\
+\hline
+\mbox{\tt in}  & {\em ip\+Addr} & I\+P\+V4 or I\+P\+V6 Address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} Object if it exists. N\+U\+LL if it does not exist. 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
+
+     NxAdj *adj;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     adjMgr = sdk->getAdjMgr();
+
+     adj = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"10.1.1.2"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     adjMgr = sdk.getAdjMgr()
+
+     adj = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"10.1.1.2"})
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & Invalid intf\+Name \& ip\+Addr \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a0a25f49f42b92d373d341d3b013c7404}\label{classnxos_1_1_nx_adj_mgr_a0a25f49f42b92d373d341d3b013c7404}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!get\+Adj\+Mgr\+Handler@{get\+Adj\+Mgr\+Handler}}
+\index{get\+Adj\+Mgr\+Handler@{get\+Adj\+Mgr\+Handler}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Adj\+Mgr\+Handler()}{getAdjMgrHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}}$\ast$ nxos\+::\+Nx\+Adj\+Mgr\+::get\+Adj\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the Handler object registered with Adjacency Manager.
+
+\begin{DoxyReturn}{Returns}
+user defined \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}} Obj if registered using set\+Adj\+Mgr\+Handler (or) N\+U\+LL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_afc37b95ddfe24357cfd0803cad8feb74}\label{classnxos_1_1_nx_adj_mgr_afc37b95ddfe24357cfd0803cad8feb74}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!set\+Adj\+Mgr\+Handler@{set\+Adj\+Mgr\+Handler}}
+\index{set\+Adj\+Mgr\+Handler@{set\+Adj\+Mgr\+Handler}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{set\+Adj\+Mgr\+Handler()}{setAdjMgrHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+::set\+Adj\+Mgr\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Register your handler object with Adjacency manager to handle adjacency events. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler}{Nx\+Adj\+Mgr\+Handler}}} & object with user overloaded functions to handle adjacency events.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{void} postAdjCb(NxAdj *adj) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxAdjMgr *adjMgr = sdk->getAdjMgr();
+        NxAdjMgrHandler *myadjcb = \textcolor{keyword}{new} myAdjMgrHandler();
+        adjMgr->setAdjMgrHandler(myadjcb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
+         def postAdjCb(self, nxadj):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       adjMgr = sdk.getAdjMgr()
+       myadjcb = myAdjMgrHandler()
+       adjMgr.\mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_afc37b95ddfe24357cfd0803cad8feb74}{setAdjMgrHandler}}(myadjcb)
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a9937a382ff7f6eb789b728a2512e37f3}\label{classnxos_1_1_nx_adj_mgr_a9937a382ff7f6eb789b728a2512e37f3}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!unset\+Adj\+Mgr\+Handler@{unset\+Adj\+Mgr\+Handler}}
+\index{unset\+Adj\+Mgr\+Handler@{unset\+Adj\+Mgr\+Handler}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{unset\+Adj\+Mgr\+Handler()}{unsetAdjMgrHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+::unset\+Adj\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Unset Adjacency Manager Handler \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a70afce2634199180031767e150332687}\label{classnxos_1_1_nx_adj_mgr_a70afce2634199180031767e150332687}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!unwatch\+Adj@{unwatch\+Adj}}
+\index{unwatch\+Adj@{unwatch\+Adj}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+Adj()}{unwatchAdj()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+Mgr\+::unwatch\+Adj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{addr\+\_\+family = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}},  }\item[{const std\+::string \&}]{ip\+Addr = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+unwatch adjacency. Register for receiving all adjacencies on a specified interface, or a specific adjacency if you specify the IP.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+Name} & interface name in string. \\
+\hline
+\mbox{\tt in}  & {\em addr\+\_\+family} & \mbox{[}Optional\mbox{]} \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} or \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} \\
+\hline
+\mbox{\tt in}  & {\em ip\+Addr} & \mbox{[}Optional\mbox{]} IP address in string. If not specified, \char`\"{}\char`\"{} is used to unwatch on all IP address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & if intf\+Name or addr\+\_\+family or ip\+Addr is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_aa3a1b51dc9fd549e2ef1ac1928030883}\label{classnxos_1_1_nx_adj_mgr_aa3a1b51dc9fd549e2ef1ac1928030883}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!unwatch\+All\+Adjs@{unwatch\+All\+Adjs}}
+\index{unwatch\+All\+Adjs@{unwatch\+All\+Adjs}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+All\+Adjs()}{unwatchAllAdjs()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+::unwatch\+All\+Adjs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{addr\+\_\+family = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Un\+Watch All adjacencies. Stop receiving adjacency events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr\+\_\+family} & \mbox{[}Optional\mbox{]} \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} or \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
+
+     NxAdj *adj;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     adjMgr = sdk->getAdjMgr();
+
+     adjMgr->unwatchAllAdjs();
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     adjMgr = sdk.getAdjMgr()
+
+     adjMgr.unwatchAllAdjs()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_ae8bd120a58a32548d68a4327e9c26459}\label{classnxos_1_1_nx_adj_mgr_ae8bd120a58a32548d68a4327e9c26459}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!watch\+Adj@{watch\+Adj}}
+\index{watch\+Adj@{watch\+Adj}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+Adj()}{watchAdj()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+Mgr\+::watch\+Adj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{addr\+\_\+family = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}},  }\item[{bool}]{download = {\ttfamily true},  }\item[{const std\+::string \&}]{ip\+Addr = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Watch an adjacency 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+Name} & interface name in string. \\
+\hline
+\mbox{\tt in}  & {\em addr\+\_\+family} & \mbox{[}Optional\mbox{]} \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} or \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} \\
+\hline
+\mbox{\tt in}  & {\em download} & \mbox{[}Optional\mbox{]} true or false. If true, if the adjacency is already created in the system will be notified via post\+Adj\+Cb and the end of download is signalled by overloading the respective post\+Adj\+I\+Pv4\+Download\+Done (or) post\+Adj\+I\+Pv6\+Download\+Done callbacks. \\
+\hline
+\mbox{\tt in}  & {\em ip\+Addr} & \mbox{[}Optional\mbox{]} IP address in string. If not specified, \char`\"{}\char`\"{} is used to watch on all IP address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & if intf\+Name or addr\+\_\+family or ip\+Addr is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_a2d0bc4dfa5a270ff464238a59c613993}\label{classnxos_1_1_nx_adj_mgr_a2d0bc4dfa5a270ff464238a59c613993}} 
+\index{nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}!watch\+All\+Adjs@{watch\+All\+Adjs}}
+\index{watch\+All\+Adjs@{watch\+All\+Adjs}!nxos\+::\+Nx\+Adj\+Mgr@{nxos\+::\+Nx\+Adj\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+All\+Adjs()}{watchAllAdjs()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+::watch\+All\+Adjs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{addr\+\_\+family = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{A\+F\+\_\+\+I\+P\+V4}}},  }\item[{bool}]{download = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Watch All Adjacencies and get notified when an adjacency is created or deleted. User must have post\+Adj\+Cb registered to receive events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr\+\_\+family} & \mbox{[}Optional\mbox{]} \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} or \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} \\
+\hline
+\mbox{\tt in}  & {\em download} & \mbox{[}Optional\mbox{]} true or false. If true, all adjacencies already created in the system will be notified via post\+Adj\+Cb and the end of download is signalled by overloading the respective post\+Adj\+I\+Pv4\+Download\+Done (or) post\+Adj\+I\+Pv6\+Download\+Done callbacks.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
+
+     NxAdj *adj;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     adjMgr = sdk->getAdjMgr();
+
+     adjMgr->watchAllAdjs();
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     adjMgr = sdk.getAdjMgr()
+
+     adjMgr.watchAllAdjs()
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__adj__mgr_8h}{nx\+\_\+adj\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

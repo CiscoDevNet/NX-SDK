@@ -19,8 +19,6 @@
 #ifndef __NX_EXCEPTION_IMPL_H__
 #define __NX_EXCEPTION_IMPL_H__
 
-using namespace std;
-
 #include "nx_exception.h"
 
 namespace nxos {

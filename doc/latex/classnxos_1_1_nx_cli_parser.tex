@@ -1,0 +1,257 @@
+\hypertarget{classnxos_1_1_nx_cli_parser}{}\section{nxos\+:\+:Nx\+Cli\+Parser Class Reference}
+\label{classnxos_1_1_nx_cli_parser}\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+
+
+Abstract Interface to access Nexus C\+LI Parser tools.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_ae7d5ada6ff25efd19ba95161fa60eeac}{$\sim$\+Nx\+Cli\+Parser}} ()
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a210cbbb8b312093285741f753c4cdcda}{new\+Cli\+Cmd}} (\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}{Nx\+Cli\+Cmd\+::cmdtype\+\_\+t}} ctype, const char $\ast$cmd\+\_\+name, const char $\ast$syntax)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_ac07fa22d7d83d4c9015ea1f3976163d8}{new\+Show\+Cmd}} (const char $\ast$cmd\+\_\+name, const char $\ast$syntax)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a51481c851ccf87288513ba73e0380895}{new\+Config\+Cmd}} (const char $\ast$cmd\+\_\+name, const char $\ast$syntax)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a3c5295a4b2de3068d1653a6c303a22ee}{add\+To\+Parse\+Tree}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a169976099ecf7a05277bfc72259ff1bc}{del\+From\+Parse\+Tree}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a711e36619a40625ebf62b59693529d88}{set\+Cmd\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_cmd_handler}{Nx\+Cmd\+Handler}} $\ast$handler)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a5a6839c678451ecbb78449df6960cf8c}{get\+Parser\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Get Parser Status/\+Errors. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cmd_handler}{Nx\+Cmd\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_af058955d7c6dae444a5dab084342d03c}{get\+Cmd\+Handler}} ()=0
+\begin{DoxyCompactList}\small\item\em Get Cli callback handler object. \end{DoxyCompactList}\item 
+virtual char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a44b08502fa02c0f83b9dc26ef02e2be8}{exec\+Show\+Cmd}} (std\+::string show\+\_\+syntax, \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} type=\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos\+::\+R\+\_\+\+T\+E\+XT}}, bool $\ast$oper\+\_\+result=N\+U\+LL)=0
+\item 
+virtual char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_aa22ee0395ceadc46a3e28b93c5a5b75e}{exec\+Config\+Cmd}} (const char $\ast$filename)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Interface to access Nexus C\+LI Parser tools. 
+
+Interface to add, delete, modify custom C\+LI commands into Nexus Parser. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_ae7d5ada6ff25efd19ba95161fa60eeac}\label{classnxos_1_1_nx_cli_parser_ae7d5ada6ff25efd19ba95161fa60eeac}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!````~Nx\+Cli\+Parser@{$\sim$\+Nx\+Cli\+Parser}}
+\index{````~Nx\+Cli\+Parser@{$\sim$\+Nx\+Cli\+Parser}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Cli\+Parser()}{~NxCliParser()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Cli\+Parser\+::$\sim$\+Nx\+Cli\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a3c5295a4b2de3068d1653a6c303a22ee}\label{classnxos_1_1_nx_cli_parser_a3c5295a4b2de3068d1653a6c303a22ee}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!add\+To\+Parse\+Tree@{add\+To\+Parse\+Tree}}
+\index{add\+To\+Parse\+Tree@{add\+To\+Parse\+Tree}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{add\+To\+Parse\+Tree()}{addToParseTree()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Parser\+::add\+To\+Parse\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Register all created custom commands to NX C\+LI Parser Tree. \begin{DoxyNote}{Note}
+Check \char`\"{}show \$appname internal state\char`\"{} if the custom commands are successfully added or not. 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em if} & called without creating any custom commands. \\
+\hline
+{\em if} & NX C\+LI Parser rejects the custom commands. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a169976099ecf7a05277bfc72259ff1bc}\label{classnxos_1_1_nx_cli_parser_a169976099ecf7a05277bfc72259ff1bc}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!del\+From\+Parse\+Tree@{del\+From\+Parse\+Tree}}
+\index{del\+From\+Parse\+Tree@{del\+From\+Parse\+Tree}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{del\+From\+Parse\+Tree()}{delFromParseTree()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Parser\+::del\+From\+Parse\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Delete all your custom commands from NX C\+LI Parser Tree. \begin{DoxyNote}{Note}
+Check \char`\"{}show App\+Name internal state\char`\"{} if the custom commands are successfully deleted or not. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_aa22ee0395ceadc46a3e28b93c5a5b75e}\label{classnxos_1_1_nx_cli_parser_aa22ee0395ceadc46a3e28b93c5a5b75e}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!exec\+Config\+Cmd@{exec\+Config\+Cmd}}
+\index{exec\+Config\+Cmd@{exec\+Config\+Cmd}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{exec\+Config\+Cmd()}{execConfigCmd()}}
+{\footnotesize\ttfamily virtual char$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::exec\+Config\+Cmd (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Execute other config commands in a file. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & File that contains all the config commands to be executed. \\
+\hline
+\mbox{\tt out}  & {\em char$\ast$} & S\+U\+C\+C\+E\+SS if config commands were executed successfully if not contains the reason for failure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     cliP = sdk->getCliParser();
+     \textcolor{keywordtype}{char} *result = cliP->execConfigCmd(filename);
+     \textcolor{keywordflow}{if} (strcmp(result, \textcolor{stringliteral}{"SUCCESS"})== 0) \{
+         \textcolor{comment}{// Configs applied successfully.}
+     \} \textcolor{keywordflow}{else} \{
+         \textcolor{comment}{// Configs failed. Check the Error.}
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     cliP = sdk.getCliParser()
+     result = cliP.execConfigCmd(filename)
+     \textcolor{keywordflow}{if} \textcolor{stringliteral}{"SUCCESS"} in result:
+\textcolor{preprocessor}{         #Configs applied successfully.}
+     \textcolor{keywordflow}{else}:
+\textcolor{preprocessor}{         #Configs failed. Check the Error.}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a44b08502fa02c0f83b9dc26ef02e2be8}\label{classnxos_1_1_nx_cli_parser_a44b08502fa02c0f83b9dc26ef02e2be8}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!exec\+Show\+Cmd@{exec\+Show\+Cmd}}
+\index{exec\+Show\+Cmd@{exec\+Show\+Cmd}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{exec\+Show\+Cmd()}{execShowCmd()}}
+{\footnotesize\ttfamily virtual char$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::exec\+Show\+Cmd (\begin{DoxyParamCaption}\item[{std\+::string}]{show\+\_\+syntax,  }\item[{\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}}}]{type = {\ttfamily \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos\+::\+R\+\_\+\+T\+E\+XT}}},  }\item[{bool $\ast$}]{oper\+\_\+result = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Execute other show commands. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em show\+\_\+syntax} & syntax of show command to be executed. \\
+\hline
+\mbox{\tt in}  & {\em type} & Type(\+T\+E\+X\+T, X\+M\+L, J\+S\+O\+N) of the record to be returned. \\
+\hline
+\mbox{\tt in}  & {\em oper\+\_\+result} & if show output was successful. Returns true if show was successful (or) false if its a invalid show command. \\
+\hline
+\mbox{\tt out}  & {\em Char$\ast$} & containing show output in the type format specified. It is not thread safe and any subsequent call to exec\+Show\+Cmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_af058955d7c6dae444a5dab084342d03c}\label{classnxos_1_1_nx_cli_parser_af058955d7c6dae444a5dab084342d03c}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!get\+Cmd\+Handler@{get\+Cmd\+Handler}}
+\index{get\+Cmd\+Handler@{get\+Cmd\+Handler}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{get\+Cmd\+Handler()}{getCmdHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cmd_handler}{Nx\+Cmd\+Handler}}$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::get\+Cmd\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get Cli callback handler object. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a5a6839c678451ecbb78449df6960cf8c}\label{classnxos_1_1_nx_cli_parser_a5a6839c678451ecbb78449df6960cf8c}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!get\+Parser\+Status@{get\+Parser\+Status}}
+\index{get\+Parser\+Status@{get\+Parser\+Status}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{get\+Parser\+Status()}{getParserStatus()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Cli\+Parser\+::get\+Parser\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get Parser Status/\+Errors. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a210cbbb8b312093285741f753c4cdcda}\label{classnxos_1_1_nx_cli_parser_a210cbbb8b312093285741f753c4cdcda}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!new\+Cli\+Cmd@{new\+Cli\+Cmd}}
+\index{new\+Cli\+Cmd@{new\+Cli\+Cmd}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{new\+Cli\+Cmd()}{newCliCmd()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}}$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::new\+Cli\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}{Nx\+Cli\+Cmd\+::cmdtype\+\_\+t}}}]{ctype,  }\item[{const char $\ast$}]{cmd\+\_\+name,  }\item[{const char $\ast$}]{syntax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create a new Custom Cli command object 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ctype} & Cmd Type (ex C\+O\+N\+F\+\_\+\+C\+MD, S\+H\+O\+W\+\_\+\+C\+MD etc) \\
+\hline
+\mbox{\tt in}  & {\em cmd\+\_\+name} & Cmd Name (N\+O\+TE\+: S\+DK appends App Name to the passed Cmd Name (App\+Name\+\_\+\+Cmd\+Name)) \\
+\hline
+\mbox{\tt in}  & {\em syntax} & Custom Cmd syntax. Syntax comprises of Keywords and input parameters. Input parameters are identified by enclosing in $<$$>$ and by default they are of the type \char`\"{}string\char`\"{}. Refer to update\+Keyword \& update\+Param usage. N\+O\+TE\+: All C\+O\+NF commands are prefixed with App\+Name. For S\+H\+OW commands, S\+DK appends App\+Name after the show keyword. So that the custom configs dont overwrite the existing Nexus Configs.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+Usage:
+     Ex1) For Config: $appName port-bw threshold <threshold>
+           API:  \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a210cbbb8b312093285741f753c4cdcda}{newCliCmd}}(\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142}{nxos::NxCliCmd::CONF\_CMD}}, \textcolor{stringliteral}{"vlan\_cmd"}, \textcolor{stringliteral}{"vlan
+       <vlanid>"});
+           $AppName: (Automatically appended by SDK)
+C++:
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     cliP = sdk->\mbox{\hyperlink{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}{getCliParser}}();
+     cmd = cliP->\mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a51481c851ccf87288513ba73e0380895}{newConfigCmd}}(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
+                                  \textcolor{stringliteral}{"port-bw threshold <threshold>"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     cliP = sdk.getCliParser()
+     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
+                             \textcolor{stringliteral}{"port-bw threshold <threshold>"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+     Ex2) For Config: show $appName (A | B <id>) [C]
+           API:  \mbox{\hyperlink{classnxos_1_1_nx_cli_parser_a210cbbb8b312093285741f753c4cdcda}{newCliCmd}}(\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe}{nxos::NxCliCmd::SHOW\_CMD}}, \textcolor{stringliteral}{"complex\_cmd"}, \textcolor{stringliteral}{"(A |
+       B <id>) [C]"});
+           App Name: show $appName (Automatically appended by SDK)
+           Syntax  : (A | B <id>) [C]
+               Keyword   : A, B, C
+               Param     : <\textcolor{keywordtype}{id}> (Default type: String)
+               Explantion: (| - A or B <id>)
+                           ([] - Optional keyword C)
+
+C++:
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     cliP = sdk->getCliParser();
+     cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_complex\_cmd"},
+                              \textcolor{stringliteral}{"(A | B <id>) [C]"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     cliP = sdk.getCliParser()
+     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_complex\_cmd"}, \textcolor{stringliteral}{"(A | B <id>) [C]"})
+\end{DoxyCode}
+
+
+N\+O\+TE\+: 
+\begin{DoxyExceptions}{Exceptions}
+{\em ctype} & is a invalid command type \\
+\hline
+{\em cmd\+\_\+name} & and syntax cannot be empty or N\+U\+LL. \\
+\hline
+{\em syntax} & is not balanced. \\
+\hline
+{\em Cannot} & edit the syntax if the cmd is already added to NX Parser. Can add new custom cmd to Nx Parser but not edit existing cmd already added to the parser. \\
+\hline
+{\em syntax} & contains anything other than the regex \char`\"{}\+A-\/\+Za-\/z0-\/9\mbox{[}$\,$\mbox{]}\{\}()$<$$>$$\vert$\+\_\+-\/ \char`\"{} \\
+\hline
+{\em syntax} & contains free standing \+\_\+ or -\/ or $\vert$. \\
+\hline
+{\em syntax} & contains empty open close paranthesis without a word. \\
+\hline
+{\em syntax} & dose not contain only one word and doesnt match regex A-\/\+Za-\/z0-\/9\+\_\+-\/ \\
+\hline
+{\em syntax} & contains predefined keywords (no, show) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a51481c851ccf87288513ba73e0380895}\label{classnxos_1_1_nx_cli_parser_a51481c851ccf87288513ba73e0380895}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!new\+Config\+Cmd@{new\+Config\+Cmd}}
+\index{new\+Config\+Cmd@{new\+Config\+Cmd}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{new\+Config\+Cmd()}{newConfigCmd()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}}$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::new\+Config\+Cmd (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cmd\+\_\+name,  }\item[{const char $\ast$}]{syntax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create a new custom Show C\+LI command object. Calls new\+Cli\+Cmd(nxos\+::\+Nx\+Cli\+Cmd\+::\+C\+O\+N\+F\+\_\+\+C\+M\+D, cmd\+\_\+name, syntax) \mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_ac07fa22d7d83d4c9015ea1f3976163d8}\label{classnxos_1_1_nx_cli_parser_ac07fa22d7d83d4c9015ea1f3976163d8}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!new\+Show\+Cmd@{new\+Show\+Cmd}}
+\index{new\+Show\+Cmd@{new\+Show\+Cmd}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{new\+Show\+Cmd()}{newShowCmd()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}}$\ast$ nxos\+::\+Nx\+Cli\+Parser\+::new\+Show\+Cmd (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cmd\+\_\+name,  }\item[{const char $\ast$}]{syntax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create a new custom Show C\+LI command object. Calls new\+Cli\+Cmd(nxos\+::\+Nx\+Cli\+Cmd\+::\+S\+H\+O\+W\+\_\+\+C\+M\+D, cmd\+\_\+name, syntax) \mbox{\Hypertarget{classnxos_1_1_nx_cli_parser_a711e36619a40625ebf62b59693529d88}\label{classnxos_1_1_nx_cli_parser_a711e36619a40625ebf62b59693529d88}} 
+\index{nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}!set\+Cmd\+Handler@{set\+Cmd\+Handler}}
+\index{set\+Cmd\+Handler@{set\+Cmd\+Handler}!nxos\+::\+Nx\+Cli\+Parser@{nxos\+::\+Nx\+Cli\+Parser}}
+\subsubsection{\texorpdfstring{set\+Cmd\+Handler()}{setCmdHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Parser\+::set\+Cmd\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_cmd_handler}{Nx\+Cmd\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the C\+LI callback handler object when the respective config is executed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__cli_8h}{nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

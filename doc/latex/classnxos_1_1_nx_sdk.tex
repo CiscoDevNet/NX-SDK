@@ -1,0 +1,322 @@
+\hypertarget{classnxos_1_1_nx_sdk}{}\section{nxos\+:\+:Nx\+Sdk Class Reference}
+\label{classnxos_1_1_nx_sdk}\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+
+
+Abstract S\+DK interface to N\+X\+OS infra.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+sdk.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}{$\sim$\+Nx\+Sdk}} ()
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}{set\+App\+Desc}} (std\+::string desc)=0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a9ba7da2cd8cb4f82438135ee651efdb0}{get\+App\+Name}} ()=0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_ad6964fa8ee52a8b0a22c27abdcf871e3}{get\+App\+Desc}} ()=0
+\item 
+virtual int \mbox{\hyperlink{classnxos_1_1_nx_sdk_ac82af6d262439275f27c745082bf3fd7}{get\+App\+Id}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_parser}{Nx\+Cli\+Parser}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}{get\+Cli\+Parser}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_trace}{Nx\+Trace}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_ad2c729bd12d1b9f4bf06f4b70fe28347}{get\+Tracer}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{start\+Event\+Loop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc8018315}{stop\+Event\+Loop}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}{get\+Rib\+Mgr}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority}} (\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} prio)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}{get\+Intf\+Mgr}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr}{Nx\+Adj\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_af6e3db3e34b003693d765835ea0dbb49}{get\+Adj\+Mgr}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{Nx\+Mac\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_adfa969f547080efd92f90f55ebc930c5}{get\+Mac\+Mgr}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr}{Nx\+Dme\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a089933980bfe0466870510bb94158763}{get\+Dme\+Mgr}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}{is\+In\+Event\+Loop}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}{get\+Running\+Env}} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{get\+Sdk\+Inst}} (int argc, char $\ast$$\ast$argv)
+\item 
+static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_acdeb12edbd291b5421ddb3260547bf8a}{get\+Sdk\+Inst}} (int argc, char $\ast$$\ast$argv, bool adv\+Exception)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract S\+DK interface to N\+X\+OS infra. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}\label{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!````~Nx\+Sdk@{$\sim$\+Nx\+Sdk}}
+\index{````~Nx\+Sdk@{$\sim$\+Nx\+Sdk}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Sdk()}{~NxSdk()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Sdk\+::$\sim$\+Nx\+Sdk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{[}Required\mbox{]} Destructor
+
+To Delete the S\+DK instance and its associated objects gracefully on App exit. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_af6e3db3e34b003693d765835ea0dbb49}\label{classnxos_1_1_nx_sdk_af6e3db3e34b003693d765835ea0dbb49}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Adj\+Mgr@{get\+Adj\+Mgr}}
+\index{get\+Adj\+Mgr@{get\+Adj\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Adj\+Mgr()}{getAdjMgr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr}{Nx\+Adj\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Adj\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Adjacency Manager object to get and register for adjacency events.
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr}{Nx\+Adj\+Mgr}} if valid (or) N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad6964fa8ee52a8b0a22c27abdcf871e3}\label{classnxos_1_1_nx_sdk_ad6964fa8ee52a8b0a22c27abdcf871e3}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Desc@{get\+App\+Desc}}
+\index{get\+App\+Desc@{get\+App\+Desc}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+App\+Desc()}{getAppDesc()}}
+{\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Sdk\+::get\+App\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get App Description. If not set the default description is \char`\"{}\+Nx\+S\+D\+K Application\char`\"{} \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ac82af6d262439275f27c745082bf3fd7}\label{classnxos_1_1_nx_sdk_ac82af6d262439275f27c745082bf3fd7}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Id@{get\+App\+Id}}
+\index{get\+App\+Id@{get\+App\+Id}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+App\+Id()}{getAppId()}}
+{\footnotesize\ttfamily virtual int nxos\+::\+Nx\+Sdk\+::get\+App\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get App ID. App ID is automatically set by the sysmgr if the service is started from V\+SH \mbox{[}recommended\mbox{]}. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a9ba7da2cd8cb4f82438135ee651efdb0}\label{classnxos_1_1_nx_sdk_a9ba7da2cd8cb4f82438135ee651efdb0}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Name@{get\+App\+Name}}
+\index{get\+App\+Name@{get\+App\+Name}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+App\+Name()}{getAppName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Sdk\+::get\+App\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the App Name which is the name of App binary. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}\label{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Cli\+Parser@{get\+Cli\+Parser}}
+\index{get\+Cli\+Parser@{get\+Cli\+Parser}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Cli\+Parser()}{getCliParser()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_parser}{Nx\+Cli\+Parser}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Cli\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Cli Parser object to create custom C\+L\+Is. This automatically generates internal show commands for the App. Use \char`\"{}show $<$\+App\+Name$>$ ?\char`\"{} in V\+SH to navigate to the pre-\/generated commands for the App. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a089933980bfe0466870510bb94158763}\label{classnxos_1_1_nx_sdk_a089933980bfe0466870510bb94158763}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Dme\+Mgr@{get\+Dme\+Mgr}}
+\index{get\+Dme\+Mgr@{get\+Dme\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Dme\+Mgr()}{getDmeMgr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr}{Nx\+Dme\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Dme\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx D\+ME Manager object to get, update and register for D\+ME objectore events.
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} if valid (or) N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}\label{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Intf\+Mgr@{get\+Intf\+Mgr}}
+\index{get\+Intf\+Mgr@{get\+Intf\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Intf\+Mgr()}{getIntfMgr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Intf\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Interface Manager object to get, update and register for interface events.
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+
+\begin{DoxyCode}
+C++:
+       sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true});
+       intfMgr = sdk->getIntfMgr();
+Python:
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       intfMgr = sdk.getIntfMgr()
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}} if valid (or) N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_adfa969f547080efd92f90f55ebc930c5}\label{classnxos_1_1_nx_sdk_adfa969f547080efd92f90f55ebc930c5}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Mac\+Mgr@{get\+Mac\+Mgr}}
+\index{get\+Mac\+Mgr@{get\+Mac\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Mac\+Mgr()}{getMacMgr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{Nx\+Mac\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Mac\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Mac Manager object to get, update and register for mac events.
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{Nx\+Mac\+Mgr}} if valid (or) N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}\label{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Rib\+Mgr@{get\+Rib\+Mgr}}
+\index{get\+Rib\+Mgr@{get\+Rib\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Rib\+Mgr()}{getRibMgr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Rib\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Rib Manager object to update and register for route events.
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}\label{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Running\+Env@{get\+Running\+Env}}
+\index{get\+Running\+Env@{get\+Running\+Env}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Running\+Env()}{getRunningEnv()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} nxos\+::\+Nx\+Sdk\+::get\+Running\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns running environment
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+running\+\_\+env\+\_\+r (B\+A\+SH or V\+SH) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}\label{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
+\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{[}Required\mbox{]} To get Nx S\+DK Instance which enables the third party applications to gain access to Nexus functionalities. \begin{DoxyNote}{Note}
+Do all S\+DK specific initializations in the same thread. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+-\/ S\+DK instance to operate on (registered with N\+X\+OS Infra successfully).
+\begin{DoxyItemize}
+\item N\+U\+LL in case of any errors and there will be a Error syslog on the failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+From V1.\+5, by default an N\+X\+S\+DK App will be started as Low Priority App. To change the priority, refer to \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority()}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_acdeb12edbd291b5421ddb3260547bf8a}\label{classnxos_1_1_nx_sdk_acdeb12edbd291b5421ddb3260547bf8a}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
+\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{bool}]{adv\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyNote}{Note}
+Following A\+P\+Is are supported from N\+X\+S\+DK V1.\+5 \mbox{[}Required\mbox{]} To get Nx S\+DK Instance which enables the third party applications to gain access to N\+X\+OS Infra functionalities. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V1.\+5
+\end{DoxySince}
+\begin{DoxyNote}{Note}
+-\/ Supported from Nx\+S\+DK V1.\+5. Similar to get\+Sdk\+Inst except the addition of new parameter adv\+Exception.
+\begin{DoxyItemize}
+\item Do all S\+DK specific initializations in the same thread.
+\end{DoxyItemize}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH. \\
+\hline
+\mbox{\tt in}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced Exceptions then Exception will be thrown of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. F\+A\+L\+SE -\/ Default Mode. Exception will be thrown of the type C++ -\/ std\+::logic\+\_\+err, Python -\/ String Note\+: Supported from V1.\+5\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argvi, \textcolor{keyword}{true});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+-\/ S\+DK instance to operate on (registered with N\+X\+OS Infra successfully).
+\begin{DoxyItemize}
+\item N\+U\+LL in case of any errors and there will be a Error syslog on the failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+From V1.\+5, by default an N\+X\+S\+DK App will be started as Low Priority App. To change the priority, refer to \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority()}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad2c729bd12d1b9f4bf06f4b70fe28347}\label{classnxos_1_1_nx_sdk_ad2c729bd12d1b9f4bf06f4b70fe28347}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Tracer@{get\+Tracer}}
+\index{get\+Tracer@{get\+Tracer}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{get\+Tracer()}{getTracer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_trace}{Nx\+Trace}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Tracer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Nx Tracer syslog object to generate custom syslogs, custom App Event history logs. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}\label{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!is\+In\+Event\+Loop@{is\+In\+Event\+Loop}}
+\index{is\+In\+Event\+Loop@{is\+In\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{is\+In\+Event\+Loop()}{isInEventLoop()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Sdk\+::is\+In\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns true if event loop has been started
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}\label{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!set\+App\+Desc@{set\+App\+Desc}}
+\index{set\+App\+Desc@{set\+App\+Desc}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{set\+App\+Desc()}{setAppDesc()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+App\+Desc (\begin{DoxyParamCaption}\item[{std\+::string}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{[}Optional\mbox{]} Set the description for the Application. This description will be used as the helpstring when generating custom C\+L\+Is for the App\+Name keyword in the config. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}\label{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!set\+App\+Priority@{set\+App\+Priority}}
+\index{set\+App\+Priority@{set\+App\+Priority}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{set\+App\+Priority()}{setAppPriority()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+App\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}}}]{prio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{[}Optional\mbox{]} To Set the Priority of the application to limit the use of C\+PU for the application. By default, the App is set as low priotiy Application(only 25\% of C\+PU). L\+O\+W\+\_\+\+P\+R\+IO -\/ 25\% of C\+PU M\+E\+D\+\_\+\+P\+R\+IO -\/ 50\% of C\+PU H\+I\+G\+H\+\_\+\+P\+R\+IO -\/ 75\% of C\+PU N\+O\+\_\+\+P\+R\+IO -\/ No limit
+
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK V1.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}\label{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!start\+Event\+Loop@{start\+Event\+Loop}}
+\index{start\+Event\+Loop@{start\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{start\+Event\+Loop()}{startEventLoop()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::start\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{[}Required\mbox{]} Start Event loop. This keeps the Application running. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc8018315}\label{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc8018315}} 
+\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!stop\+Event\+Loop@{stop\+Event\+Loop}}
+\index{stop\+Event\+Loop@{stop\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\subsubsection{\texorpdfstring{stop\+Event\+Loop()}{stopEventLoop()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::stop\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Stop Event loop to quit the Application. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__sdk_8h}{nx\+\_\+sdk.\+h}}\end{DoxyCompactItemize}

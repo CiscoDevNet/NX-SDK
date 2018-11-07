@@ -1,75 +1,93 @@
-\hypertarget{structnxos_1_1cli__param__type__ip__addr__attr__}{
-\section{nxos::cli\_\-param\_\-type\_\-ip\_\-addr\_\-attr\_\- Struct Reference}
-\label{structnxos_1_1cli__param__type__ip__addr__attr__}\index{nxos::cli\_\-param\_\-type\_\-ip\_\-addr\_\-attr\_\-@{nxos::cli\_\-param\_\-type\_\-ip\_\-addr\_\-attr\_\-}}
-}
+\hypertarget{structnxos_1_1cli__param__type__ip__addr__attr__}{}\section{nxos\+:\+:cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+ Struct Reference}
+\label{structnxos_1_1cli__param__type__ip__addr__attr__}\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+}}
 
 
-Specifies that the type of the CLI input parameter is ipv4 or ipv6 address or prefix.  
+Specifies that the type of the C\+LI input parameter is ipv4 or ipv6 address or prefix.  
 
 
-{\ttfamily \#include $<$nx\_\-cli.h$>$}\subsection*{Public Attributes}
+
+
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
+
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}{
-bool {\bfseries is\_\-ipv6}}
-\label{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}
-
+bool \mbox{\hyperlink{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}{is\+\_\+ipv6}}
 \item 
-\hypertarget{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}{
-bool \hyperlink{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}{is\_\-prefix}}
-\label{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}
-
-\begin{DoxyCompactList}\small\item\em Default is false. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}{is\+\_\+prefix}}
+\begin{DoxyCompactList}\small\item\em Default is false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Specifies that the type of the CLI input parameter is ipv4 or ipv6 address or prefix. Matching param type is P\_\-IP\_\-ADDR. When used in updateParam context: 
-\begin{DoxyParams}{Parameters}
-\item[\mbox{$\leftarrow$} {\em is\_\-ipv6}]If set then Input parameter is a IPv6 addr else its IPv4 address. \item[\mbox{$\leftarrow$} {\em is\_\-mask}]If set then Input parameter is a Prefix.\end{DoxyParams}
-Usage: If you need to create a CLI which will take a IP or IPv6 Prefix
+Specifies that the type of the C\+LI input parameter is ipv4 or ipv6 address or prefix. 
 
-CLI: \$appname filter-\/prefix ? A.B.C.D/LEN Enter Filter IP Prefix A:B::C:D/LEN Enter Filter IPv6 Prefix
+Matching param type is P\+\_\+\+I\+P\+\_\+\+A\+D\+DR. When used in update\+Param context\+: 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is\+\_\+ipv6} & If set then Input parameter is a I\+Pv6 addr else its I\+Pv4 address. \\
+\hline
+\mbox{\tt in}  & {\em is\+\_\+mask} & If set then Input parameter is a Prefix.\\
+\hline
+\end{DoxyParams}
+Usage\+: If you need to create a C\+LI which will take a IP or I\+Pv6 Prefix \begin{DoxyVerb}CLI: $appname filter-prefix ?
+     A.B.C.D/LEN        Enter Filter IP Prefix
+     A:B::C:D/LEN       Enter Filter IPv6 Prefix
+\end{DoxyVerb}
+
 
 
 \begin{DoxyCode}
- {.cpp}
-       sdk = nxos::NxSdk::getSdkInst(argc, argv);
-       cliP = sdk->getCliParser();
-       nxos::cli_param_type_ip_addr_attr ip_pfx_attr = {0};
-       ip_pfx_attr.is_ipv6 = false;
-       ip_pfx_attr.is_prefix = true;
-       cmd = cliP->newConfigCmd("set_filter_prefix_cmd",
-                                "filter-prefix [<ip-prefix> | <ipv6-prefix>]");
-       cmd->updateParam("<ip-prefix>", "Enter Filter IP Prefix", nxos::P_IP_ADDR,
-      
-                        (void *)&ip_pfx_attr, sizeof(ip_pfx_attr));
-       ip_pfx_attr.is_ipv6 = true;
-       cmd->updateParam("<ipv6-prefix>", "Enter Filter IPv6 Prefix", nxos::P_IP_A
-      DDR,
-                        (void *)&ip_pfx_attr, sizeof(ip_pfx_attr));
+sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+cliP = sdk->getCliParser();
+\mbox{\hyperlink{structnxos_1_1cli__param__type__ip__addr__attr__}{nxos::cli\_param\_type\_ip\_addr\_attr}} ip\_pfx\_attr = \{0\};
+ip\_pfx\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}{is\_ipv6}} = \textcolor{keyword}{false};
+ip\_pfx\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}{is\_prefix}} = \textcolor{keyword}{true};
+cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_filter\_prefix\_cmd"},
+                         \textcolor{stringliteral}{"filter-prefix [<ip-prefix> | <ipv6-prefix>]"});
+cmd->updateParam(\textcolor{stringliteral}{"<ip-prefix>"}, \textcolor{stringliteral}{"Enter Filter IP Prefix"}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa082fd4c4bdfc40e03adc023b3d4e5edc}{nxos::P\_IP\_ADDR}},
+                 (\textcolor{keywordtype}{void} *)&ip\_pfx\_attr, \textcolor{keyword}{sizeof}(ip\_pfx\_attr));
+ip\_pfx\_attr.is\_ipv6 = \textcolor{keyword}{true};
+cmd->updateParam(\textcolor{stringliteral}{"<ipv6-prefix>"}, \textcolor{stringliteral}{"Enter Filter IPv6 Prefix"}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa082fd4c4bdfc40e03adc023b3d4e5edc}{nxos::P\_IP\_ADDR}},
+                 (\textcolor{keywordtype}{void} *)&ip\_pfx\_attr, \textcolor{keyword}{sizeof}(ip\_pfx\_attr));
 \end{DoxyCode}
 
 
 
 \begin{DoxyCode}
- {.py}
-       import nx_sdk_py
-       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-       cliP = sdk.getCliParser()
-       ip_pfx_attr = nx_sdk_py.cli_param_type_ip_addr_attr()
-       ip_pfx_attr.is_ipv6 = False
-       ip_pfx_attr.is_prefix = True
-       cmd = cliP.newConfigCmd("set_filter_prefix_cmd",
-                               "filter-prefix [<ip-prefix> | <ipv6-prefix>]")
-       cmd.updateParam("<ip-prefix>", "Enter Filter IP Prefix", nxos::P_IP_ADDR,
-                       ip_pfx_attr, len(ip_pfx_attr))
-       ip_pfx_attr.is_ipv6 = True
-       cmd.updateParam("<ipv6-prefix>", "Enter Filter IPv6 Prefix", nxos::P_IP_AD
-      DR,
-                       ip_pfx_attr, len(ip_pfx_attr));
+\textcolor{keyword}{import} nx\_sdk\_py
+sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+cliP = sdk.getCliParser()
+ip\_pfx\_attr = nx\_sdk\_py.cli\_param\_type\_ip\_addr\_attr()
+ip\_pfx\_attr.is\_ipv6 = \textcolor{keyword}{False}
+ip\_pfx\_attr.is\_prefix = \textcolor{keyword}{True}
+cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_filter\_prefix\_cmd"},
+                        \textcolor{stringliteral}{"filter-prefix [<ip-prefix> | <ipv6-prefix>]"})
+cmd.updateParam(\textcolor{stringliteral}{"<ip-prefix>"}, \textcolor{stringliteral}{"Enter Filter IP Prefix"}, nxos::P\_IP\_ADDR,
+                ip\_pfx\_attr, len(ip\_pfx\_attr))
+ip\_pfx\_attr.is\_ipv6 = \textcolor{keyword}{True}
+cmd.updateParam(\textcolor{stringliteral}{"<ipv6-prefix>"}, \textcolor{stringliteral}{"Enter Filter IPv6 Prefix"}, nxos::P\_IP\_ADDR,
+                ip\_pfx\_attr, len(ip\_pfx\_attr));
 \end{DoxyCode}
  
 
-The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}\label{structnxos_1_1cli__param__type__ip__addr__attr___a767316999a46b9f012b818131455980b}} 
+\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+}!is\+\_\+ipv6@{is\+\_\+ipv6}}
+\index{is\+\_\+ipv6@{is\+\_\+ipv6}!nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+}}
+\subsubsection{\texorpdfstring{is\+\_\+ipv6}{is\_ipv6}}
+{\footnotesize\ttfamily bool nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+\+::is\+\_\+ipv6}
+
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}\label{structnxos_1_1cli__param__type__ip__addr__attr___a0a059b592a9bc394c9fed521fb5a9552}} 
+\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+}!is\+\_\+prefix@{is\+\_\+prefix}}
+\index{is\+\_\+prefix@{is\+\_\+prefix}!nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+}}
+\subsubsection{\texorpdfstring{is\+\_\+prefix}{is\_prefix}}
+{\footnotesize\ttfamily bool nxos\+::cli\+\_\+param\+\_\+type\+\_\+ip\+\_\+addr\+\_\+attr\+\_\+\+::is\+\_\+prefix}
+
+
+
+Default is false. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/nobackup/sathsrin/v1.5/NX-\/SDK/include/types/nx\_\-cli.h\end{DoxyCompactItemize}
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/types/\mbox{\hyperlink{types_2nx__cli_8h}{nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

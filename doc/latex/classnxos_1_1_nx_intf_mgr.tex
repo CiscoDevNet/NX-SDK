@@ -1,0 +1,391 @@
+\hypertarget{classnxos_1_1_nx_intf_mgr}{}\section{nxos\+:\+:Nx\+Intf\+Mgr Class Reference}
+\label{classnxos_1_1_nx_intf_mgr}\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+
+
+Public interface to N\+X-\/\+S\+DK interface manager.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+intf\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}{$\sim$\+Nx\+Intf\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_acbe3d94cba5b7982d80cc498d7fcbdf7}{iterate\+Intf}} (bool from\+First=false)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a1271144b1921be0dcb27a6aa7310bbc5}{get\+Intf}} (std\+::string name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_af70ee700e633a9f5ae35608d7637ee04}{get\+Intf\+All}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}{close\+Intf\+All}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a818e4d019413e8111cbb9610e465f714}{add\+Intf}} (std\+::string name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a89ab4d3bcc05b6c2d938ebd969454306}{remove\+Intf}} (std\+::string name, bool del\+\_\+sdk=false)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_aa07fd4d582d52a9aac7a2efd88675bfc}{watch\+Intf}} (std\+::string name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a325eed4d08efc01fca1993148911a21a}{un\+Watch\+Intf}} (std\+::string name)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a9a8927131c8edd906ff035a2bbbe0eb0}{set\+Intf\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}} $\ast$handler)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_af3fff8d1738bc43b2441a8b868984665}{get\+Intf\+Handler}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Public interface to N\+X-\/\+S\+DK interface manager. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}\label{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!````~Nx\+Intf\+Mgr@{$\sim$\+Nx\+Intf\+Mgr}}
+\index{````~Nx\+Intf\+Mgr@{$\sim$\+Nx\+Intf\+Mgr}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Intf\+Mgr()}{~NxIntfMgr()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Intf\+Mgr\+::$\sim$\+Nx\+Intf\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a818e4d019413e8111cbb9610e465f714}\label{classnxos_1_1_nx_intf_mgr_a818e4d019413e8111cbb9610e465f714}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!add\+Intf@{add\+Intf}}
+\index{add\+Intf@{add\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{add\+Intf()}{addIntf()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}}$\ast$ nxos\+::\+Nx\+Intf\+Mgr\+::add\+Intf (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create a system interface based on name. The interface name is of the form in \char`\"{}show interface brief\char`\"{}, upper/lower case\+: e.\+g. eth10.\+1, tunnel1, vlan2, po1, lo1 Caller is responsible for deleting object when done. The application can free all opened objects in one call using \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}{close\+Intf\+All()}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Interface name to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interface object (Nx\+Intf$\ast$) or N\+U\+LL
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   objp = intfMgr->addIntf(\textcolor{stringliteral}{"lo9"});
+
+Python:
+   intfMgr = sdk.getIntfMgr()
+   objp = intfMgr.addIntf(\textcolor{stringliteral}{"lo9"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- invalid interface specified E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID -- interface type unknown E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE -- internal failure occurred. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}\label{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!close\+Intf\+All@{close\+Intf\+All}}
+\index{close\+Intf\+All@{close\+Intf\+All}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{close\+Intf\+All()}{closeIntfAll()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+::close\+Intf\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Close and release all interfaces that have been opened by the application. This has no effect on interfaces in the system. ~\newline
+ \begin{DoxyReturn}{Returns}
+true if successful, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   ret = intfMgr->getIntfAll();
+   objp = intfMgr->iterateIntf(\textcolor{keyword}{true});
+   \textcolor{keywordflow}{while} (objp) \{
+        do\_work(objp);
+        objp = intfMgr->iterateIntf();
+   \}
+   \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}{closeIntfAll}}();     
+
+Python:
+   intfMgr = sdk.getIntfMgr()
+   intfMgr.getIntfAll()  
+   obj = intfMgr.iterateIntf(True)
+   \textcolor{keywordflow}{while} obj is not None:
+      queryIntf(obj)
+      obj = intfMgr.iterateIntf()
+   intfMgr.closeIntfAll();
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a1271144b1921be0dcb27a6aa7310bbc5}\label{classnxos_1_1_nx_intf_mgr_a1271144b1921be0dcb27a6aa7310bbc5}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!get\+Intf@{get\+Intf}}
+\index{get\+Intf@{get\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Intf()}{getIntf()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}}$\ast$ nxos\+::\+Nx\+Intf\+Mgr\+::get\+Intf (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Open a system interface based on name. The interface name is of the form in \char`\"{}show interface brief\char`\"{}, upper/lower case\+: e.\+g. eth1/1, eth10.\+1, tunnel1, vlan2, po1, lo1, mgmt0 If already open, returns existing object reference. Caller is responsible for deleting object when done. The application can free all opened objects in one call using \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a45e7cb2a8e3919667c14264dd618168a}{close\+Intf\+All()}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the interface to open. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interface object (Nx\+Intf$\ast$) or N\+U\+LL 
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   objp = intfMgr->getIntf(\textcolor{stringliteral}{"eth1/1"});
+
+Python:
+   intfMgr = sdk.getIntfMgr()
+   objp = intfMgr.getIntf(\textcolor{stringliteral}{"eth1/1"})
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- \textquotesingle{}create\textquotesingle{} not implemented E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID -- interface type unknown E\+R\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND -- interface not found \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_af70ee700e633a9f5ae35608d7637ee04}\label{classnxos_1_1_nx_intf_mgr_af70ee700e633a9f5ae35608d7637ee04}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!get\+Intf\+All@{get\+Intf\+All}}
+\index{get\+Intf\+All@{get\+Intf\+All}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Intf\+All()}{getIntfAll()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+::get\+Intf\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Open all system interfaces in single call. Application can then use iterate api to learn all interfaces. Caller frees objects opened. Existing interface objects are not duplicated. Currently limited to around 3000 interfaces before memory allocation begins to fail.
+
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   ret = intfMgr->getIntfAll();
+   objp = intfMgr->iterateIntf(\textcolor{keyword}{true});
+   \textcolor{keywordflow}{while} (objp) \{
+        do\_work(objp);
+        objp = intfMgr->iterateIntf();
+    \}
+Python:
+   intfMgr = sdk.getIntfMgr()
+   intfMgr.getIntfAll()  
+   obj = intfMgr.iterateIntf(True)
+   \textcolor{keywordflow}{while} obj is not None:
+      queryIntf(obj)
+      obj = intfMgr.iterateIntf()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_af3fff8d1738bc43b2441a8b868984665}\label{classnxos_1_1_nx_intf_mgr_af3fff8d1738bc43b2441a8b868984665}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!get\+Intf\+Handler@{get\+Intf\+Handler}}
+\index{get\+Intf\+Handler@{get\+Intf\+Handler}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Intf\+Handler()}{getIntfHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}}$\ast$ nxos\+::\+Nx\+Intf\+Mgr\+::get\+Intf\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns a pointer to the currently installed event handler object that was previously installed. ~\newline
+ \begin{DoxyReturn}{Returns}
+Pointer the the handler object.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     intfHandler = intfMgr->getIntfHandler();
+
+Python:
+     myintfcb = intfMgr.getIntfHandler()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_acbe3d94cba5b7982d80cc498d7fcbdf7}\label{classnxos_1_1_nx_intf_mgr_acbe3d94cba5b7982d80cc498d7fcbdf7}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!iterate\+Intf@{iterate\+Intf}}
+\index{iterate\+Intf@{iterate\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{iterate\+Intf()}{iterateIntf()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}}$\ast$ nxos\+::\+Nx\+Intf\+Mgr\+::iterate\+Intf (\begin{DoxyParamCaption}\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Iterate over all open interfaces. Only interfaces explicitly opened by the application are returned. ~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from\+First} & \mbox{[}Optional\mbox{]} Start iteration from beginning or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} object pointer (Nx\+Intf$\ast$)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   objp = intfMgr->iterateIntf(\textcolor{keyword}{true});
+   \textcolor{keywordflow}{while} (objp) \{
+        do\_work(objp);
+        objp = intfMgr->iterateIntf();
+    \}
+Python:
+   intfMgr = sdk.getIntfMgr()
+   obj = intfMgr.iterateIntf(True)
+   \textcolor{keywordflow}{while} obj is not None:
+      queryIntf(obj)
+      obj = intfMgr.iterateIntf()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a89ab4d3bcc05b6c2d938ebd969454306}\label{classnxos_1_1_nx_intf_mgr_a89ab4d3bcc05b6c2d938ebd969454306}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!remove\+Intf@{remove\+Intf}}
+\index{remove\+Intf@{remove\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{remove\+Intf()}{removeIntf()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+::remove\+Intf (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{bool}]{del\+\_\+sdk = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Remove a system interface based on name. The interface name is of the form in \char`\"{}show interface brief\char`\"{}, upper/lower case\+: e.\+g. eth1/1, eth10.\+1, tunnel1, vlan2, po1, lo1, mgmt0
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the interface to remove. Only logical interfaces can be removed. \\
+\hline
+\mbox{\tt in}  & {\em del\+\_\+sdk} & \mbox{[}Optional\mbox{]} Remove the object reference also if open. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intfMgr = sdk->getIntfMgr();
+   intfMgr->removeIntf(\textcolor{stringliteral}{"lo9"});
+
+Python:
+   intfMgr = sdk.getIntfMgr()
+   objp = intfMgr.removeIntf(\textcolor{stringliteral}{"lo9"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a9a8927131c8edd906ff035a2bbbe0eb0}\label{classnxos_1_1_nx_intf_mgr_a9a8927131c8edd906ff035a2bbbe0eb0}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!set\+Intf\+Handler@{set\+Intf\+Handler}}
+\index{set\+Intf\+Handler@{set\+Intf\+Handler}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{set\+Intf\+Handler()}{setIntfHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Intf\+Mgr\+::set\+Intf\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Install event handlers for interface events. The application derives a new handler class from Nx\+Intf\+Mgr\+Event\+Handler and overrides each event handling method the app is interested in handling.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler} & Pointer to handler class that defines each application specific handler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       NxIntfMgrEventHandler *intfHandler = \textcolor{keyword}{new} myIntfHandler();
+       intfMgr->setIntfHandler(intfHandler);     
+Python:
+       myintfcb = pyIntfHandler()
+       intfMgr.\mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a9a8927131c8edd906ff035a2bbbe0eb0}{setIntfHandler}}(myintfcb)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a325eed4d08efc01fca1993148911a21a}\label{classnxos_1_1_nx_intf_mgr_a325eed4d08efc01fca1993148911a21a}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!un\+Watch\+Intf@{un\+Watch\+Intf}}
+\index{un\+Watch\+Intf@{un\+Watch\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{un\+Watch\+Intf()}{unWatchIntf()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+::un\+Watch\+Intf (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Remove interface from watch list by name, or \char`\"{}all\char`\"{} to clear the watch list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The interface name, or \char`\"{}all\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      intfMgr = sdk->getIntfMgr();
+      intfMgr->watchIntf(\textcolor{stringliteral}{"vlan1"});  \textcolor{comment}{//watch vlan1}
+      intfMgr->watchIntf(\textcolor{stringliteral}{"all"});   \textcolor{comment}{//watch all interfaces}
+      ....
+      intfMgr->unwatchIntf(\textcolor{stringliteral}{"vlan1"});  \textcolor{comment}{//unwatch vlan1}
+      intfMgr->unwatchIntf(\textcolor{stringliteral}{"all"});   \textcolor{comment}{//clear watch list}
+
+Python:
+      intfMgr = sdk.getIntfMgr()
+      intfMgr.unwatchIntf(\textcolor{stringliteral}{"vlan1"}) 
+      intfMgr.unwatchIntf(\textcolor{stringliteral}{"all"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_aa07fd4d582d52a9aac7a2efd88675bfc}\label{classnxos_1_1_nx_intf_mgr_aa07fd4d582d52a9aac7a2efd88675bfc}} 
+\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!watch\+Intf@{watch\+Intf}}
+\index{watch\+Intf@{watch\+Intf}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+Intf()}{watchIntf()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+::watch\+Intf (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Watch an interface for events. Input is the interface name or \char`\"{}all\char`\"{} to watch all interfaces. The interface does not have to be open or even exist in the system yet to set a watch. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the interface to watch, or \char`\"{}all\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      intfMgr = sdk->getIntfMgr();
+      intfMgr->watchIntf(\textcolor{stringliteral}{"vlan1"});  \textcolor{comment}{//watch vlan1}
+      intfMgr->watchIntf(\textcolor{stringliteral}{"all"});   \textcolor{comment}{//watch all interfaces}
+
+Python:
+      intfMgr = sdk.getIntfMgr()
+      intfMgr.watchIntf(\textcolor{stringliteral}{"vlan1"}) 
+      intfMgr.watchIntf(\textcolor{stringliteral}{"all"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

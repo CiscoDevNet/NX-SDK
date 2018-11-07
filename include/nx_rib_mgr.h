@@ -1,31 +1,31 @@
 /** @file nx_rib_mgr.h
- *  @brief Abstract SDK interface to Nexus(NXOS) Layer 3 Unicast RIB
+ *  @brief Abstract SDK interface to Nexus(NXOS) Layer 3 RIB
  *
  *  Provides necessary Abstraction/Plugin for NXOS RIB functionalities.
  *  It provides the Ability to register for Route and VRF updates and more.
  *
- *  Steps to register for route event from RIB: <br>
- *   1) Instantiate NX-SDK Rib Manager Object using getRibMgr(). <br>
+ *  Steps to register for route event from RIB:
+ *   1) Instantiate NxSDK Rib Manager Object using getRibMgr().
  *   2) To watch for VRF updates, use watchVrf() (or) watchAllVrf()
- *      for all VRF updates. <br>
- *   3) To watch for L3 route updates, use watchL3Route() <br>
+ *      for all VRF updates.
+ *   3) To watch for L3 route updates, use watchL3Route()
  *   4) Register for callback handler with NxRibMgr to get the regsitered
- *      RIB updates. <br>
- *   5) Overload NxRibMgrHandler class and its member functions like <br>
- *      (postVrfCb()     - To get watched VRF updates, <br>
- *       postL3RouteCb() - To get watched L3 route update, <br>
- *       etc) with your own implementation to handle various events.<br>
- *   6) NOTE: Adding/Deleting Routes in Rib will be supported soon. <br>
+ *      RIB updates.
+ *   5) Overload NxRibMgrHandler class and its member functions like
+ *      (postVrfCb()     - To get watched VRF updates,
+ *       postL3RouteCb() - To get watched L3 route update,
+ *       etc) with your own implementation to handle various events.
+ *   6) NOTE: Adding/Deleting Routes in Rib will be supported soon.
  *
- *   @note By default, ribMgr CLI is auto-generated for the NX-SDK Apps.
+ *   @note By default, ribMgr CLI is auto-generated for the NxSDK Apps.
  *         Try "show $appname nxsdk ribmgr" in the box to access them.
  *
- *  @since NX-SDK v1.5.0
+ *  @since NXSDK V1.5
  *
- *  Refer to template and sample Applications.
+ *  Refer to some example Applications.
  *
  *  @author nxos-sdk@cisco.com
- *  @bug Application using nx_rib_mgr.h APIs work only in VSH and not in BASH.
+ *  @bug No known bugs.
  */
 
 #ifndef __NX_RIB_MGR_H__
@@ -35,15 +35,14 @@
 #include <string>
 #include <cstring>
 #include <stdexcept>
-#include "types/nx_common.h"
+
+#include "nx_common.h"
 
 namespace nxos
 {
 
 /**
  * @brief Abstract VRF Interface used to get details about a VRF.
- *
- * @since NX-SDK v1.5.0
  **/
 class NxVrf
 {
@@ -170,7 +169,6 @@ public:
      *                cout << "VRF Event: " << vrf->getEvent();
      *           }
      *     };
-     *
      *  Python:
      *     class pyRibHandler(nx_sdk_py.NxRibMgrHandler):
      *     ### Overloaded Callback to get VRF events
@@ -179,19 +177,63 @@ public:
      *  @endcode
      **/
     virtual nxos::event_type_e getEvent() = 0;
+
+    /**
+     *
+     *  @returns
+     *     true if equality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool operator==(NxVrf const &vrf_obj) const = 0;
+
+    /**
+     *
+     *  @returns
+     *     true if inequality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool operator!=(NxVrf const &vrf_obj) const = 0;
+
+    /**
+     *  Test equality of vrf objects.
+     *
+     *  @returns
+     *     true if equality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool equal(NxVrf const &vrf_obj) const = 0;
 };
 
 /**
  * @brief Abstract NextHoP Interface for a given L3 Route.
- *
- *  @since NX-SDK v1.5.0
  **/
 class NxL3NextHop
 {
 public:
     /* ***************************************
-     * ** public data members
-     * ***************************************/
+    * ** public data members
+    * ***************************************/
     typedef enum
     {
         /// Directly connected to this system
@@ -413,16 +455,13 @@ public:
 /**
  * @brief Abstract Route Interface to Add/Delete and receive Route updates
  *        from NXOS RIB.
- *
- *  @since NX-SDK v1.5.0
- *
  **/
 class NxL3Route
 {
 public:
     /* ***************************************
-     * ** public data members
-     * ***************************************/
+    * ** public data members
+    * ***************************************/
     /**
      * Destructor
      **/
@@ -669,7 +708,6 @@ public:
      *                cout << "Route Event: " << route->getEvent();
      *           }
      *     };
-     *
      *  Python:
      *     class pyRibHandler(nx_sdk_py.NxRibMgrHandler):
      *     ### Overloaded Callback to get Route events
@@ -678,14 +716,57 @@ public:
      *  @endcode
      **/
     virtual nxos::event_type_e getEvent() = 0;
+
+    /**
+     *
+     *  @returns
+     *     true if equality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool operator==(NxL3Route const &route_obj) const = 0;
+
+    /**
+     *
+     *  @returns
+     *     true if inequality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool operator!=(NxL3Route const &route_obj) const = 0;
+
+    /**
+     *  Test equality of route objects.
+     *
+     *  @returns
+     *     true if equality property holds, false otherwise
+     *
+     *  @code
+     *
+     *
+     *  @endcode
+     *
+     *  @throws
+     *
+     **/
+    virtual bool equal(NxL3Route const &route_obj) const = 0;
 };
 
 /**
  * @brief Abstract RibMgr callback Interface to receive VRF,
  *        Route updates etc from NXOS RIB.
- *
- *  @since NX-SDK v1.5.0
- *
  **/
 class NxRibMgrHandler
 {
@@ -699,9 +780,7 @@ public:
      * User to overload the postL3RouteCb callback method
      * to receive any registered route updates based on the
      * set filters.
-     * @param[in]  NxL3Route object. NOTE: Its scope is
-     *             local hence its valid only within
-     *             postCb functions.
+     * @param[in]  NxL3Route object.
      *
      * @returns True : if the action was successful.
      *          False: if the action was not successful.
@@ -748,9 +827,7 @@ public:
      * User to overload the postVrfCb callback method
      * to receive any registered VRF updates based on
      * the set filters.
-     * @param[in]  NxVrf object. NOTE: Its scope is
-     *             local hence its valid only within
-     *             postCb functions.
+     * @param[in]  NxVrf object.
      *
      * @returns True : if the action was successful.
      *          False: if the action was not successful.
@@ -781,8 +858,6 @@ public:
 
 /**
  *  @brief Abstract Rib Manager interface to gain access to NXOS RIB.
- *
- *  @since NX-SDK v1.5.0
  */
 class NxRibMgr
 {
@@ -837,7 +912,7 @@ public:
      * NOTE: Forward referencing is allowed for a non created
      *       VRF i.e API can be called even if the VRF is not
      *       yet created. vrfName cannot be empty.
-     * @param[in] VrfName [Optional] name of the vrf in string.
+     * @param[in] vrfName [Optional] name of the vrf in string.
      *                    If not specified, "all" is used to
      *                    watch on all VRFs. VrfName cannot be
      *                    empty string.
@@ -933,7 +1008,7 @@ public:
      * to handle regsiterd events like VRF, Route
      * updates etc and register the handler object
      * with RIB manager to handle rib events.
-     * @param[in]  NxRibMgrHandler object with user overloaded
+     * @param[in] NxRibMgrHandler object with user overloaded
      *             functions to handle rib events.
      *
      *  @code
@@ -982,7 +1057,7 @@ public:
     /**
      * To get the L3 Route based on the passed input parameters.
      * @param[in] routeAddr Address of the route as a string.
-     * @param[in] maskeLen [Optional] MaskLength if its a prefix.
+     * @param[in] maskLen [Optional] MaskLength if its a prefix.
      *                     If not set it will pick /32 for IP
      *                     address (or) /128 for IPv6 address.
      * @param[in] vrfName [Optional] VrfName in which the route is
@@ -992,9 +1067,9 @@ public:
      *                        getL3Route() creates a new NxL3Route
      *                        object. [Recommended] App owners must
      *                        free/destory the L3 Route object once
-     *                        done. If they fail to free it, NX-SDK
+     *                        done. If they fail to free it, NXSDK
      *                        will store the object until its freed.
-     *                        NOTE: NX-SDK allows a max of 10 getL3Route
+     *                        NOTE: NXSDK allows a max of 10 getL3Route
      *                        Objects per VRF without having the Apps
      *                        to free it explicitly. If user failed to
      *                        cleanup after 10 getL3Route objects, it
@@ -1042,7 +1117,7 @@ public:
      * protocol owner of the route, vrf, Address Family
      * etc. To get the route updates, user overloaded
      * postL3RouteCb handler will be called.
-     * @param[in] protocol/owner of the routes in NX RIB.
+     * @param[in] protocol owner of the routes in NX RIB.
      * @param[in] tag [Optional] instance id of the owner
      *            for ex) for BGP  - tag is the asn
      *                    for isis - instance id
@@ -1118,7 +1193,7 @@ public:
      * To unsubscribe for Route updates based on
      * protocol owner of the route, vrf, Address Family
      * etc. To get the route updates, user overloaded
-     * @param[in] protocol/owner of the routes in NX RIB.
+     * @param[in] protocol Owner of the routes in NX RIB.
      * @param[in] tag [Optional] instance id of the owner
      *            for ex) for BGP  - tag is the asn
      *                    for isis - instance id

@@ -1,0 +1,48 @@
+\hypertarget{nx__mac__mgr_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+mac\+\_\+mgr.h File Reference}
+\label{nx__mac__mgr_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+mac\+\_\+mgr.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+mac\+\_\+mgr.\+h}}
+
+
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) M\+AC Management.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}types/nx\+\_\+common.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_mac}{nxos\+::\+Nx\+Mac}}
+\begin{DoxyCompactList}\small\item\em Abstract M\+AC Interface used to get details about M\+AC entry. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{nxos\+::\+Nx\+Mac\+Mgr\+Handler}}
+\begin{DoxyCompactList}\small\item\em Abstract Mac\+Mgr callback Interface to receive M\+AC updates from N\+X-\/\+OS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{nxos\+::\+Nx\+Mac\+Mgr}}
+\begin{DoxyCompactList}\small\item\em Abstract N\+X-\/\+S\+DK M\+AC Manager interface to gain access to N\+X\+OS M\+AC address table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) M\+AC Management. 
+
+Provides necessary Abstraction/\+Plugin for N\+X\+OS M\+AC functionalities. It provides the Ability to register for M\+AC updates and more.
+
+Steps to register for M\+AC event\+: 1) Instantiate Nx\+S\+DK Mac Manager Object using get\+Mac\+Mgr(). 2) To watch for M\+AC updates, use watch\+Mac() (or) watch\+All\+Mac() for all M\+AC updates. 3) Register for callback handler with Nx\+Mac\+Mgr to get the regsitered M\+AC updates. 4) Overload Nx\+Mac\+Mgr\+Handler class and its member functions like (post\+Mac\+Cb() -\/ To get watched M\+AC updates) with your own implementation to handle various events.
+
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V1.\+7.\+5
+\end{DoxySince}
+Refer to some example Applications.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]No known bugs.\end{DoxyRefDesc}
+
+
+Copyright (c) 2018 by cisco Systems, Inc. All rights reserved. 

@@ -1,0 +1,326 @@
+#!/isan/bin/nxpython
+
+##########################################################################
+### File:   neighbourApp
+###
+### Supported since NX-SDK v1.7.5
+###
+### Description:
+###   Neighbour Application written in Python. It detects and keeps track 
+###     of host neighbours.
+###
+###   Refer to 
+###    - "show neighbourApp nxsdk state" for custom config & show
+###      supported by the application
+###    - "neighbourApp watch all [IPV4 | IPV6 ][download]" 
+###         get notified if host appears on any interface
+###    - "neighbourApp watch interface <intf-name> [IPV4 | IPV6 ][download]"
+###         get notified if host appears on specific interface
+###    - "show neighbourApp adjacencies <vlan-interface>" to display 
+###      tracked neighbours.
+### 
+###  Sample Output:
+###  switch(config)# neighbourApp watch all download    
+###  switch(config)# show neighbourApp adjacencies vlan 100 ###  
+###  Showing all adjacencies for Vlan100
+###  10.1.1.11            0002.0003.000b       Ethernet1/1          default 
+###  10.1.1.10            0002.0003.000a       Ethernet1/1          default 
+###  10.1.1.13            0002.0003.000d       Ethernet1/1          default 
+###  10.1.1.12            0002.0003.000c       Ethernet1/1          default 
+###  10.1.1.9             0002.0003.0009       Ethernet1/1          default 
+###  10.1.1.8             0002.0003.0008       Ethernet1/1          default 
+###  10.1.1.5             0002.0003.0005       Ethernet1/1          default 
+###  10.1.1.4             0002.0003.0004       Ethernet1/1          default 
+###  10.1.1.7             0002.0003.0007       Ethernet1/1          default 
+###  10.1.1.6             0002.0003.0006       Ethernet1/1          default 
+###
+##########################################################################
+
+import threading
+import sys
+from collections import defaultdict
+
+
+# Imports NX-OS SDK package
+import nx_sdk_py
+
+
+def display_adjacency(adj):
+    global tmsg
+    tmsg.event("Intf       : %s" % (adj.getIntfName()))
+    tmsg.event("PhysIntf   : %s" % (adj.getPhyIntfName()))
+    tmsg.event("Ip Address : %s" % (adj.getIpAddr()))
+    tmsg.event("Mac Address: %s" % (adj.getMacAddr()))
+    tmsg.event("Vrf        : %s" % (adj.getVrf()))
+
+def process_adjacency(adj):
+    global adj_dict, counter
+
+    intf = adj.getIntfName()
+    phys_if = adj.getPhyIntfName()
+    ip_addr = adj.getIpAddr()
+    mac_addr = adj.getMacAddr()
+    vrf = adj.getVrf()
+    ev = adj.getEvent()
+
+    if ev == nx_sdk_py.ADD or ev == nx_sdk_py.UPDATE:
+        entry = adj_dict[intf][ip_addr]
+        entry["mac"] = mac_addr
+        entry["phys_if"] = phys_if
+        entry["vrf"] = vrf
+        entry["ip"] = ip_addr
+    elif ev == nx_sdk_py.DELETE:
+        entry = adj_dict[intf].pop(ip_addr, None)
+
+def af_str(af):
+    if af == nx_sdk_py.AF_IPV4:
+        return "IPV4"
+    else:
+        return "IPV6"
+
+def adjacency_str(adj):
+    if not adj:
+        return("No Adjacency")
+    return ("if:%s phys:%s %s:%s mac:%s vrf:%s" % 
+        (adj.getIntfName(), adj.getPhyIntfName(), 
+            af_str(adj.getAF()),
+            adj.getIpAddr(), 
+            adj.getMacAddr(), adj.getVrf()))
+
+class pyNxAdjMgrHandler(nx_sdk_py.NxAdjMgrHandler):
+
+    event_type = ["", "ADD", "DELETE", "UPDATE", "Unknown"]
+
+    def postAdjCb(self, adj):
+        global tmsg,counter, adj_dict
+        counter += 1
+        #tmsg.event("Adjacency %s Notification" % (self.event_type[adj.getEvent()]))
+        process_adjacency(adj)
+
+    def postAdjIPv4DownloadDone(self, intf, addr):
+        if not intf:
+            intf = "ALL"
+        tmsg.event("Done downloading %s IPV4 adjacencies" % (intf))
+    
+    def postAdjIPv6DownloadDone(self, intf, addr):
+        if not intf:
+            intf = "ALL"
+        tmsg.event("Done downloading %s IPV6 adjacencies" % (intf))
+
+
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+    port = ""
+
+    def postCliCb(self, clicmd):
+
+        # To access the global Cli Parser Obj
+        global cliP, amP, tmsg, counter, adj_dict
+        cmdname = clicmd.getCmdName()
+        is_delete = clicmd.isKeywordSet("no")
+        download = False
+        if clicmd.isKeywordSet("download"):
+            download = True
+        af = nx_sdk_py.AF_IPV4
+        if clicmd.isKeywordSet("IPV6"):
+            af = nx_sdk_py.AF_IPV6
+        if "watch_all_adj" in cmdname:
+            if is_delete:
+                amP.unwatchAllAdjs(af)
+                tmsg.event("Unwatched all %s adjacencies" % (af_str(af)))
+            else:
+                amP.watchAllAdjs(af, download)
+                tmsg.event("Watching all %s adjacencies [download=%s]" % 
+                        (af_str(af), str(download)))
+
+        elif "watch_adj" in cmdname:
+            intf_name = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<intf>"))
+
+            pfx = ""
+            if clicmd.isKeywordSet("prefix"):
+                pfx = nx_sdk_py.void_to_string(clicmd.getParamValue("<pfx>"))
+            if is_delete:
+                amP.unwatchAdj(intf_name, af, pfx)
+                tmsg.event("UnWatching %s %s %s" % 
+                    (intf_name, af_str(af), pfx))
+            else:
+                amP.watchAdj(intf_name, af, download, pfx)
+                tmsg.event("Watching %s %s %s [download=%s]" % 
+                    (intf_name, af_str(af), pfx, str(download)))
+
+        elif "discover_adj" in cmdname:
+            intf_name = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<intf>"))
+            ip_addr = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<ip>"))
+            if not is_delete:
+                amP.discoverAdj(intf_name, ip_addr)
+                return True
+
+        elif "show_adj" in cmdname:
+            intf_name = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<intf>"))
+            ip_addr = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<ip>"))
+            adj = amP.getAdj(intf_name, ip_addr)
+            if (adj):
+                clicmd.printConsole(adjacency_str(adj))
+            else:
+                clicmd.printConsole("No adjacency for %s %s" %
+                                    (intf_name, ip_addr))
+
+        elif "show_counter" in cmdname:
+            clicmd.printConsole("counter = %d" % (counter))
+        elif "show_all_adjs" in cmdname:
+            intf_name = nx_sdk_py.void_to_string(
+                clicmd.getParamValue("<intf>"))
+            intf_dict = adj_dict[intf_name]
+            clicmd.printConsole("\nShowing all adjacencies for %s" %
+                                (intf_name))
+            for ip, v in intf_dict.items():
+                clicmd.printConsole("\n%s %s %s %s " %
+                                    (v['ip'].ljust(20),
+                                     v['mac'].ljust(20),
+                                     v['phys_if'].ljust(20),
+                                     v['vrf']))
+        return True
+
+# Perform all SDK related initializations in one thread.
+# All SDK related activities happen here, while the main thread
+# may continue to do other work.  The call to startEventLoop will
+# block until we break out of it by calling stopEventLoop.
+
+
+def sdkThread(name, val):
+    global cliP, sdk, event_hdlr, tmsg, amP
+
+    ###
+    # getSdkInst is the first step for any custom Application
+    # wanting to gain access to NXOS Infra. Without this
+    # NXOS infra cannot be used.
+    # iiii
+    # NOTE:
+    #   Perform all SDK related initializations and startEventLoop in one
+    #   thread. The call to startEventLoop will block the thread until we
+    #   break out of it by calling stopEventLoop.
+    #
+    #   Perform other actions in a different thread.
+    ###
+    sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+    if not sdk:
+        return
+
+    # Set a short Application description.
+    sdk.setAppDesc('Sample Custom CLI Python App')
+
+    ###
+    # To Create & Manage Custom syslogs one must do
+    # getTracer() which loads the plugin to NXOS Syslog
+    # Infra Functionalities.
+    ###
+    tmsg = sdk.getTracer()
+
+    # To log some Trace events
+    tmsg.event("[%s] Started service" % sdk.getAppName())
+
+    ###
+    # To Create & Manage Custom CLI commands one must do
+    # getCliParser() which loads the plugin to NXOS CLI
+    # Infra Functionalities.
+    ###
+    cliP = sdk.getCliParser()
+    amP = sdk.getAdjMgr()
+    adjHandler = pyNxAdjMgrHandler()
+    amP.setAdjMgrHandler(adjHandler)
+
+    # Construct Custom show utr platform-mappings commands
+    nxcmd = cliP.newConfigCmd("watch_all_adj", "watch all [IPV4|IPV6] [download]")
+    nxcmd.updateKeyword("watch", "Watch adjacency")
+    nxcmd.updateKeyword("all", "All Adjacencies")
+
+    nxcmd2 = cliP.newConfigCmd(
+        "watch_adj", "watch interface <intf> [IPV4|IPV6] [prefix <pfx>] [download]")
+    nxcmd2.updateKeyword("interface", "Interface name")
+    nxcmd2.updateParam("<intf>", "Interface to watch on",
+                       nx_sdk_py.P_INTERFACE,
+                       None, 0, True)
+    nxcmd2.updateKeyword("prefix", "Optional IP to watch")
+    nxcmd2.updateParam("<pfx>", "Ip address to watch", nx_sdk_py.P_IP_ADDR,
+                       None, 0, True)
+
+    nxcmd3 = cliP.newConfigCmd("discover_adj",
+                               "discover <intf> <ip>")
+    nxcmd3.updateKeyword("discover", "discover adjacency")
+    nxcmd3.updateParam("<intf>", "Interface name", nx_sdk_py.P_INTERFACE,
+                       None, 0, True)
+    nxcmd3.updateParam("<ip>", "Ip address", nx_sdk_py.P_IP_ADDR,
+                       None, 0, True)
+
+    nxcmd4 = cliP.newShowCmd("show_adj", "adjacency <intf> <ip>")
+    nxcmd4.updateParam("<intf>", "Interface name", nx_sdk_py.P_INTERFACE,
+                       None, 0, True)
+    nxcmd4.updateParam("<ip>", "Ip address", nx_sdk_py.P_IP_ADDR,
+                       None, 0, True)
+
+    nxcmd4 = cliP.newShowCmd("show_all_adjs", "adjacencies <intf>")
+    nxcmd4.updateParam("<intf>", "Interface name", nx_sdk_py.P_INTERFACE,
+                       None, 0, True)
+
+
+    nxcmd5 = cliP.newShowCmd("show_counter", "counter")
+    ###
+    # Add the command callback Handler.
+    # When the respective CLI commands gets configured
+    # the overloaded postCliCb callback will be instantiated.
+    ###
+    mycmd = pyCmdHandler()
+    cliP.setCmdHandler(mycmd)
+
+    ###
+    # This is important as it Adds the constructed custom configs
+    # to NXOS CLI Parse tree. If it succeeds then for config command
+    # use <app-name> ? and for show commands use show <app-name> ?
+    # to check if your commands have been added to NXOS CLI tree
+    # successfully. Refer to API documentation for the exceptions
+    # thrown. Use "show <appname> nxsdk state".
+    ###
+    cliP.addToParseTree()
+
+    ###
+    # startEventLoop will block the thread until we break out
+    # of it by calling stopEventLoop. This is required to
+    # receive any NX-OS specific events. Without this, none of
+    # the NXSDK functionalities will work.
+    ###
+    sdk.startEventLoop()
+
+    # Got here either by calling stopEventLoop() or when App
+    # is removed from VSH.
+    tmsg.event("Service Quitting...!")
+
+    # [Required] Needed for graceful exit.
+    nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+
+# main thread
+# Global Variables
+cliP = 0
+sdk = 0
+tmsg = 0
+amP = 0
+counter = 0
+adj_dict = defaultdict(lambda: defaultdict(dict))
+
+# create a new sdkThread to setup SDK service and handle events.
+sdk_thread = threading.Thread(target=sdkThread, args=("sdkThread", 0))
+sdk_thread.start()
+
+###
+# Starting timer thread. Start it after sdkThread is started so that
+# any SDK specific APIs will work without any issues in timerThread.
+###
+# timer_thread.start()
+
+# Main thread is blocked until sdkThread exits. This keeps the
+# App running and listening to NX-OS events.
+sdk_thread.join()

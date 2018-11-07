@@ -1,55 +1,90 @@
-\hypertarget{nx__common_8h}{
-\section{/nobackup/sathsrin/v1.5/NX-\/SDK/include/types/nx\_\-common.h File Reference}
-\label{nx__common_8h}\index{/nobackup/sathsrin/v1.5/NX-\/SDK/include/types/nx\_\-common.h@{/nobackup/sathsrin/v1.5/NX-\/SDK/include/types/nx\_\-common.h}}
-}
+\hypertarget{nx__common_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/types/nx\+\_\+common.h File Reference}
+\label{nx__common_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/types/nx\+\_\+common.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/types/nx\+\_\+common.\+h}}
 
 
-Provides necessary common types for using NX-\/SDK.  
+Provides necessary common types for using N\+X\+S\+DK.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum {\bfseries record\_\-type\_\-e} \{ \hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos::R\_\-TEXT} =  0, 
-\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos::R\_\-JSON}, 
-\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}{nxos::R\_\-XML}, 
-\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}{nxos::R\_\-MAX\_\-TYPE}
+enum \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos\+::\+R\+\_\+\+T\+E\+XT}} = 0, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos\+::\+R\+\_\+\+J\+S\+ON}}, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}{nxos\+::\+R\+\_\+\+X\+ML}}, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}{nxos\+::\+R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum {\bfseries event\_\-type\_\-e} \{ \par
-\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}{nxos::NO\_\-EVENT} =  0, 
-\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{nxos::ADD} =  1, 
-\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{nxos::DELETE}, 
-\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{nxos::UPDATE}, 
-\par
-\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}{nxos::E\_\-MAX\_\-TYPE}
+enum \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}{nxos\+::\+N\+O\+\_\+\+E\+V\+E\+NT}} = 0, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{nxos\+::\+A\+DD}} = 1, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{nxos\+::\+D\+E\+L\+E\+TE}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{nxos\+::\+U\+P\+D\+A\+TE}}, 
+\newline
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba07275d9326efab346529becbd8a88632}{nxos\+::\+D\+O\+W\+N\+L\+O\+AD}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cbaecf471107f74d8cbdd4e5272c017a10d}{nxos\+::\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}{nxos\+::\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum {\bfseries state\_\-type\_\-e} \{ \hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{nxos::DOWN} =  0, 
-\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos::UP}, 
-\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}{nxos::S\_\-MAX\_\-TYPE}
+enum \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a3647f6a8f0522ccfd26934ae54b36220}{nxos\+::\+U\+N\+K\+N\+O\+WN}} = -\/1, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{nxos\+::\+D\+O\+WN}} = 0, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos\+::\+UP}}, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}{nxos\+::\+S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum {\bfseries encap\_\-type\_\-e} \{ \hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}{nxos::NONE} =  0, 
-\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}{nxos::VXLAN}, 
-\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}{nxos::ENCAP\_\-MAX\_\-TYPE}
+enum \mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0}{nxos\+::encap\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}{nxos\+::\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}{nxos\+::\+V\+X\+L\+AN}}, 
+\mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}{nxos\+::\+E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum {\bfseries af\_\-e} \{ {\bfseries AF\_\-START} =  0, 
-\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos::AF\_\-IPV4} =  0, 
-\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos::AF\_\-IPV6} =  1, 
-\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos::MAX\_\-AF}
+enum \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7af359e1254b552737480a3eccb9866ac6}{nxos\+::\+A\+F\+\_\+\+S\+T\+A\+RT}} = 0, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} = 0, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} = 1, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}
  \}
 \item 
-enum {\bfseries prio\_\-e} \{ \hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}{nxos::LOW\_\-PRIO} =  1, 
-\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}{nxos::MED\_\-PRIO}, 
-\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}{nxos::HIGH\_\-PRIO}, 
-\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}{nxos::NO\_\-PRIO}
+enum \mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}{nxos\+::\+L\+O\+W\+\_\+\+P\+R\+IO}} = 1, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}{nxos\+::\+M\+E\+D\+\_\+\+P\+R\+IO}}, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}{nxos\+::\+H\+I\+G\+H\+\_\+\+P\+R\+IO}}, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}{nxos\+::\+N\+O\+\_\+\+P\+R\+IO}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ae00dd654d02e160d47999104f465fc0a}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a5b8651e09026bfcfb6862f71f876893d}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+TH}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a3283203647c370588ec5581c00d05507}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+VI}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ad5dc1913e2eb1332886d886295b67ed3}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+T\+H\+\_\+\+PC}}, 
+\newline
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ac4583770d7814477a60bf01155f70079}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+O\+O\+P\+B\+A\+CK}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a1224540f810e8c583ae52938a7ca04be}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+U\+B\+I\+N\+TF}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a548b7915160aaf2c90347c50d3895dc9}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N\+N\+EL}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a04cb5e6c9f58eb2e195c4a2a9d1ae22d}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+G\+MT}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10}{nxos\+::\+T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE}} = 0, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be}{nxos\+::\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}}, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769}{nxos\+::\+T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC}}, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce}{nxos\+::\+T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506ae86b3d043df28e4e196bc8769abda717}{nxos\+::\+B\+A\+SH}}, 
+\mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506a1965e355322840cdd1e35dad00d1469e}{nxos\+::\+V\+SH}}
  \}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Provides necessary common types for using NX-\/SDK. \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+Provides necessary common types for using N\+X\+S\+DK. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
 \end{DoxyAuthor}
-\begin{Desc}
-\item[\hyperlink{bug__bug000007}{Bug}]No known bugs. \end{Desc}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]No known bugs.\end{DoxyRefDesc}
+
+
+Copyright (c) 2018 by cisco Systems, Inc. All rights reserved. 

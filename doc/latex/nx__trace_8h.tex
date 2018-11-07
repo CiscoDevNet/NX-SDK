@@ -1,28 +1,35 @@
-\hypertarget{nx__trace_8h}{
-\section{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-trace.h File Reference}
-\label{nx__trace_8h}\index{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-trace.h@{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-trace.h}}
-}
+\hypertarget{nx__trace_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+trace.h File Reference}
+\label{nx__trace_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+trace.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+trace.\+h}}
 
 
 Abstract Tracer interface to generate custom Syslogs, Events \& Errors history in Nexus Switches.  
-{\ttfamily \#include $<$cstdio$>$}\par
-{\ttfamily \#include $<$string$>$}\par
-{\ttfamily \#include $<$cerrno$>$}\par
-{\ttfamily \#include $<$cstddef$>$}\par
-{\ttfamily \#include $<$stdint.h$>$}\par
-{\ttfamily \#include $<$iostream$>$}\par
+
+
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cerrno$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classnxos_1_1NxTrace}{nxos::NxTrace}
-\begin{DoxyCompactList}\small\item\em Tracer interface to generate custom Syslogs, Events \& Errors history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classnxos_1_1_nx_trace}{nxos\+::\+Nx\+Trace}}
+\begin{DoxyCompactList}\small\item\em Tracer interface to generate custom Syslogs, Events \& Errors history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Abstract Tracer interface to generate custom Syslogs, Events \& Errors history in Nexus Switches. Steps to construct a custom syslog, Events \& Erros history: 1) Instantiate NxSDK Tracer Object using getTracer(). 2) To generate custom syslogs, use TracerObj-\/$>$syslog(..). 3) To generate custom events, use TracerObj-\/$>$event(...). To check the events, use \char`\"{}show $<$AppName$>$ internal event-\/history events\char`\"{} 4) To generate custom errors, use TracerObj-\/$>$error(...). To check the events, use \char`\"{}show $<$AppName$>$ internal event-\/history events\char`\"{}( 5) Refer to examples for usage.
+Abstract Tracer interface to generate custom Syslogs, Events \& Errors history in Nexus Switches. 
+
+Steps to construct a custom syslog, Events \& Erros history\+: 1) Instantiate Nx\+S\+DK Tracer Object using get\+Tracer(). 2) To generate custom syslogs, use Tracer\+Obj-\/$>$syslog(..). 3) To generate custom events, use Tracer\+Obj-\/$>$event(...). To check the events, use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history events\char`\"{} 4) To generate custom errors, use Tracer\+Obj-\/$>$error(...). To check the events, use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history events\char`\"{}( 5) Refer to examples for usage.
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
 \end{DoxyAuthor}
-\begin{Desc}
-\item[\hyperlink{bug__bug000005}{Bug}]No known bugs. \end{Desc}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]No known bugs. \end{DoxyRefDesc}

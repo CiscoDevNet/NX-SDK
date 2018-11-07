@@ -1,0 +1,464 @@
+\hypertarget{classnxos_1_1_nx_mac_mgr}{}\section{nxos\+:\+:Nx\+Mac\+Mgr Class Reference}
+\label{classnxos_1_1_nx_mac_mgr}\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+
+
+Abstract N\+X-\/\+S\+DK M\+AC Manager interface to gain access to N\+X\+OS M\+AC address table.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+mac\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a850cc17a798501d3e5e1aea213bb2a41}{$\sim$\+Nx\+Mac\+Mgr}} ()
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a688eeadbbf960420b24eb13883f77008}{add\+Static\+Mac}} (const std\+::string \&mac\+Addr, const unsigned int vlan, const std\+::string \&intf\+\_\+name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_aa8853103d4b94e6153f2b0cc5f130b77}{del\+Static\+Mac}} (const std\+::string \&mac\+Addr, const unsigned int vlan)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_ab205e4819bfc3eca4396a194400d9b12}{get\+Mac}} (const std\+::string \&mac\+Addr, const unsigned int vlan, bool clear\+Buffer=false)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a5f4d2d56e21e3ae39969fa67774779d8}{watch\+All\+Mac}} (bool download=true)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_aac2eae84327fa4a94616d214ac779fac}{unwatch\+All\+Mac}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a12dde38c22d9a27e1e3bde318d418134}{watch\+Mac}} (const unsigned int vlan, const std\+::string \&mac\+Addr=\char`\"{}\char`\"{}, bool download=true)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_af3a7878b8b604baa1e388c9b9ea9c952}{unwatch\+Mac}} (const unsigned int vlan, const std\+::string \&mac\+Addr=\char`\"{}\char`\"{})=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}{set\+Mac\+Mgr\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}} $\ast$handler)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a94e3fcb535f109501d319d72a24bdead}{get\+Mac\+Mgr\+Handler}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract N\+X-\/\+S\+DK M\+AC Manager interface to gain access to N\+X\+OS M\+AC address table. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a850cc17a798501d3e5e1aea213bb2a41}\label{classnxos_1_1_nx_mac_mgr_a850cc17a798501d3e5e1aea213bb2a41}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!````~Nx\+Mac\+Mgr@{$\sim$\+Nx\+Mac\+Mgr}}
+\index{````~Nx\+Mac\+Mgr@{$\sim$\+Nx\+Mac\+Mgr}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Mac\+Mgr()}{~NxMacMgr()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Mac\+Mgr\+::$\sim$\+Nx\+Mac\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor
+
+To delete the M\+AC manager instance and its associated objects gracefully. Its cleaned on delete sdk too. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a688eeadbbf960420b24eb13883f77008}\label{classnxos_1_1_nx_mac_mgr_a688eeadbbf960420b24eb13883f77008}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!add\+Static\+Mac@{add\+Static\+Mac}}
+\index{add\+Static\+Mac@{add\+Static\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{add\+Static\+Mac()}{addStaticMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::add\+Static\+Mac (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mac\+Addr,  }\item[{const unsigned int}]{vlan,  }\item[{const std\+::string \&}]{intf\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To add static mac
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mac\+Addr} & Mac address to add \\
+\hline
+\mbox{\tt in}  & {\em vlan} & \+: vlan value \\
+\hline
+\mbox{\tt in}  & {\em intf\+\_\+name} & Interface name that connects to this mac. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ if successful. False -\/ if it not successful. 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     NxMac *mac;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     macMgr = sdk->getMacMgr();
+     \textcolor{keywordflow}{if} (macMgr) \{
+         \textcolor{keywordtype}{bool} ret = macMgr->addStaticMac(\textcolor{stringliteral}{"1.1.1"}, 2, \textcolor{stringliteral}{"eth1/1"});
+         \textcolor{keywordflow}{if} (ret) \{  
+             cout << \textcolor{stringliteral}{"Static MAC added\(\backslash\)n"};
+         \} \textcolor{keywordflow}{else} \{
+             cout << \textcolor{stringliteral}{"Failed to add static mac\(\backslash\)n"};
+         \}
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     macMgr = sdk.getMacMgr()
+     \textcolor{keywordflow}{if} macMgr:
+         ret = macMgr.addStaticMac(\textcolor{stringliteral}{"1.1.1"}, 2, \textcolor{stringliteral}{"eth1/1"})
+         \textcolor{keywordflow}{if} ret:
+            print \textcolor{stringliteral}{"static mac added\(\backslash\)n"}
+         \textcolor{keywordflow}{else}:
+            print \textcolor{stringliteral}{"Failed to add static mac\(\backslash\)n"}
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & mac\+Addr or vlan or intf\+\_\+name is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_aa8853103d4b94e6153f2b0cc5f130b77}\label{classnxos_1_1_nx_mac_mgr_aa8853103d4b94e6153f2b0cc5f130b77}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!del\+Static\+Mac@{del\+Static\+Mac}}
+\index{del\+Static\+Mac@{del\+Static\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{del\+Static\+Mac()}{delStaticMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::del\+Static\+Mac (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mac\+Addr,  }\item[{const unsigned int}]{vlan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To delete static mac 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mac\+Addr} & Mac address to remove \\
+\hline
+\mbox{\tt in}  & {\em vlan} & \+: vlan value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful. 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     NxMac *mac;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     macMgr = sdk->getMacMgr();
+     \textcolor{keywordflow}{if} (macMgr) \{
+         \textcolor{keywordtype}{bool} ret = macMgr->delStaticMac(\textcolor{stringliteral}{"1.1.1"}, 2, \textcolor{stringliteral}{"eth1/1"});
+         \textcolor{keywordflow}{if} (ret) \{  
+             cout << \textcolor{stringliteral}{"Static MAC deleted\(\backslash\)n"};
+         \} \textcolor{keywordflow}{else} \{
+             cout << \textcolor{stringliteral}{"Failed to delete static mac\(\backslash\)n"};
+         \}
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     macMgr = sdk.getMacMgr()
+     \textcolor{keywordflow}{if} macMgr:
+         ret = macMgr.addStaticMac(\textcolor{stringliteral}{"1.1.1"}, 2, \textcolor{stringliteral}{"eth1/1"})
+         \textcolor{keywordflow}{if} ret:
+            print \textcolor{stringliteral}{"static mac deleted\(\backslash\)n"}
+         \textcolor{keywordflow}{else}:
+            print \textcolor{stringliteral}{"Failed to delete static mac\(\backslash\)n"}
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & mac\+Addr or vlan is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_ab205e4819bfc3eca4396a194400d9b12}\label{classnxos_1_1_nx_mac_mgr_ab205e4819bfc3eca4396a194400d9b12}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!get\+Mac@{get\+Mac}}
+\index{get\+Mac@{get\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Mac()}{getMac()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}}$\ast$ nxos\+::\+Nx\+Mac\+Mgr\+::get\+Mac (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mac\+Addr,  }\item[{const unsigned int}]{vlan,  }\item[{bool}]{clear\+Buffer = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the M\+AC object from a given M\+AC address and vlan. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mac\+Addr} & M\+AC address in string. \\
+\hline
+\mbox{\tt in}  & {\em vlan} & vlan in unsigned int \\
+\hline
+\mbox{\tt in}  & {\em clear\+Buffer} & \mbox{[}Optional\mbox{]} If the M\+AC is present, \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_ab205e4819bfc3eca4396a194400d9b12}{get\+Mac()}} creates a new M\+AC object. \mbox{[}Recommended\mbox{]} App owners must free/destroy the M\+AC object once done. If they fail to free it, N\+X\+S\+DK will store the object until it is freed. When clear\+Buffer flag is set to True it will free all the previously created M\+AC objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} Object if it exists. N\+U\+LL if it does not exist.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     NxMac *mac;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     macMgr = sdk->getMacMgr();
+     \textcolor{keywordflow}{if} (macMgr) \{
+         mac = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     macMgr = sdk.getMacMgr()
+     \textcolor{keywordflow}{if} macMgr:
+         mac = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & mac\+Addr or vlan is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a94e3fcb535f109501d319d72a24bdead}\label{classnxos_1_1_nx_mac_mgr_a94e3fcb535f109501d319d72a24bdead}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!get\+Mac\+Mgr\+Handler@{get\+Mac\+Mgr\+Handler}}
+\index{get\+Mac\+Mgr\+Handler@{get\+Mac\+Mgr\+Handler}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Mac\+Mgr\+Handler()}{getMacMgrHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}}$\ast$ nxos\+::\+Nx\+Mac\+Mgr\+::get\+Mac\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Handler object registered with M\+AC Manager.
+
+\begin{DoxyReturn}{Returns}
+user defined \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}} Obj if registered using set\+Mac\+Mgr\+Handler (or) N\+U\+LL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}\label{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!set\+Mac\+Mgr\+Handler@{set\+Mac\+Mgr\+Handler}}
+\index{set\+Mac\+Mgr\+Handler@{set\+Mac\+Mgr\+Handler}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{set\+Mac\+Mgr\+Handler()}{setMacMgrHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Mac\+Mgr\+::set\+Mac\+Mgr\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Users to overload M\+AC Manager Handler class to handle registered events like M\+AC updates and register the handler object with M\+AC manager to handle mac events. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler}{Nx\+Mac\+Mgr\+Handler}}} & object with user overloaded functions to handle mac events.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxMacMgr *macMgr = sdk->getMacMgr();
+        NxMacMgrHandler *mymaccb = \textcolor{keyword}{new} myMacMgrHandler();
+        macMgr->setMacMgrHandler(mymaccb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
+         def postMacCb(self, nxmac):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       macMgr = sdk.getMacMgr()
+       mymaccb = myMacMgrHandler()
+       macMgr.\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}{setMacMgrHandler}}(mymaccb)
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_aac2eae84327fa4a94616d214ac779fac}\label{classnxos_1_1_nx_mac_mgr_aac2eae84327fa4a94616d214ac779fac}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!unwatch\+All\+Mac@{unwatch\+All\+Mac}}
+\index{unwatch\+All\+Mac@{unwatch\+All\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+All\+Mac()}{unwatchAllMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::unwatch\+All\+Mac (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To unsubscribe for all M\+AC updates.
+
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     NxMac *mac;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     macMgr = sdk->getMacMgr();
+
+     macMgr->unwatchAllMac();
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     macMgr = sdk.getMacMgr()
+
+     macMgr.unwatchAllMac()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_af3a7878b8b604baa1e388c9b9ea9c952}\label{classnxos_1_1_nx_mac_mgr_af3a7878b8b604baa1e388c9b9ea9c952}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!unwatch\+Mac@{unwatch\+Mac}}
+\index{unwatch\+Mac@{unwatch\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+Mac()}{unwatchMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::unwatch\+Mac (\begin{DoxyParamCaption}\item[{const unsigned int}]{vlan,  }\item[{const std\+::string \&}]{mac\+Addr = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To un-\/subscribe for any updates to this vlan and mac address. To un-\/subscribe all M\+AC address for specific vlan, use mac\+Addr as \char`\"{}\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vlan} & vlan in unsigned int. \\
+\hline
+\mbox{\tt in}  & {\em mac\+Addr} & \mbox{[}Optional\mbox{]} M\+AC address in string. If not specified, \char`\"{}\char`\"{} is used to watch on all M\+AC address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     NxMac *mac;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     macMgr = sdk->getMacMgr();
+
+     macMgr->unwatchMac(2, \textcolor{stringliteral}{"1.1.1"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     macMgr = sdk.getMacMgr()
+
+     macMgr.unwatchMac(2, \textcolor{stringliteral}{"1.1.1"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & mac\+Addr or vlan is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a5f4d2d56e21e3ae39969fa67774779d8}\label{classnxos_1_1_nx_mac_mgr_a5f4d2d56e21e3ae39969fa67774779d8}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!watch\+All\+Mac@{watch\+All\+Mac}}
+\index{watch\+All\+Mac@{watch\+All\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+All\+Mac()}{watchAllMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::watch\+All\+Mac (\begin{DoxyParamCaption}\item[{bool}]{download = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To receive/subscribe for all M\+AC updates. On any update to any M\+AC, user overloaded post\+Mac\+Cb handler will be called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em download} & \mbox{[}Optional\mbox{]} If set to true, all existing macs in the system will be notified to the application via the registered callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful. 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
+        \textcolor{keyword}{public}:
+           \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{
+                cout << \textcolor{stringliteral}{"MAC changed"};
+           \}
+     \};
+
+     \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+     \{
+          NxSdk    *sdk;
+          NxMacMgr *macMgr;
+          NxMac    *mac;
+
+          NxMacMgrHandler *mymaccb = \textcolor{keyword}{new} myMacMgrHandler();
+          sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+          macMgr = sdk->getMacMgr();
+          macMgr->setMacMgrHandler(mymaccb);
+
+          macMgr->watchAllMac();
+     \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
+         def postMacCb(self, nxmac):
+             print "MAC has changed"
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       macMgr = sdk.getMacMgr()
+       mymaccb = myMacMgrHandler()
+       macMgr.\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}{setMacMgrHandler}}(mymaccb)
+
+       macMgr.\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a5f4d2d56e21e3ae39969fa67774779d8}{watchAllMac}}()
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_a12dde38c22d9a27e1e3bde318d418134}\label{classnxos_1_1_nx_mac_mgr_a12dde38c22d9a27e1e3bde318d418134}} 
+\index{nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}!watch\+Mac@{watch\+Mac}}
+\index{watch\+Mac@{watch\+Mac}!nxos\+::\+Nx\+Mac\+Mgr@{nxos\+::\+Nx\+Mac\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+Mac()}{watchMac()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+::watch\+Mac (\begin{DoxyParamCaption}\item[{const unsigned int}]{vlan,  }\item[{const std\+::string \&}]{mac\+Addr = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{download = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To receive/subscribe for any updates to this vlan and mac address. On any update to this M\+AC, users overloaded post\+Mac\+Cb handler will be called. To subscribe all M\+AC address for specific vlan, use mac\+Addr as \char`\"{}\char`\"{}. N\+O\+TE\+: Forward referencing is allowed for a non created M\+AC i.\+e A\+PI can be called even if the M\+AC is not yet created. Subscribing all vlans for specific M\+AC address is not supported. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vlan} & vlan in unsigned int. \\
+\hline
+\mbox{\tt in}  & {\em mac\+Addr} & \mbox{[}Optional\mbox{]} M\+AC address in string. If not specified, \char`\"{}\char`\"{} is used to watch on all M\+AC address. \\
+\hline
+\mbox{\tt in}  & {\em download} & \mbox{[}Optional\mbox{]} Specify to get sync download of existing M\+AC objects or not (default True) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
+
+     \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
+        \textcolor{keyword}{public}:
+           \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{
+                cout << \textcolor{stringliteral}{"MAC changed"};
+           \}
+     \};
+
+     \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+     \{
+          NxSdk    *sdk;
+          NxMacMgr *macMgr;
+          NxMac    *mac;
+
+          NxMacMgrHandler *mymaccb = \textcolor{keyword}{new} myMacMgrHandler();
+          sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+          macMgr = sdk->getMacMgr();
+          macMgr->setMacMgrHandler(mymaccb);
+
+          macMgr->watchMac(2, \textcolor{stringliteral}{"1.1.1"});
+     \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
+         def postMacCb(self, nxmac):
+             print "MAC has changed"
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       macMgr = sdk.getMacMgr()
+       mymaccb = myMacMgrHandler()
+       macMgr.\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a06f53bd41ddb17e6cfaef5a02b00415d}{setMacMgrHandler}}(mymaccb)
+
+       macMgr.\mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_a12dde38c22d9a27e1e3bde318d418134}{watchMac}}(2, "1.1.1")
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & mac\+Addr or vlan is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

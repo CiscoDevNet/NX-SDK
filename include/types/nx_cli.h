@@ -1,5 +1,5 @@
 /** @file nx_cli.h
- *  @brief Provides necessary types needed for managing Custom CLIs using NX-SDK
+ *  @brief Provides necessary types needed for managing Custom CLIs using NXSDK
  *
  *  @author nxos-sdk@cisco.com
  *  @bug No known bugs.
@@ -12,7 +12,7 @@
 
 namespace nxos {
 
-/**
+/*!
  * @brief Supported Input Parameter Types in a CLI.
  *
  * Types help/guide the user to input the right information for a CLI
@@ -50,7 +50,7 @@ typedef enum {
    /// CLI Param Type is MAC address
    P_MAC_ADDR,
 
-   /// CLI Param type is VRF. since v1.5.0
+   /// CLI Param type is VRF
    P_VRF,
 
    /// CLI Param Type MAX_TYPE

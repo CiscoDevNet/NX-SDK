@@ -109,6 +109,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
     | NX-SDK Docker Container | Usage Notes |
     |------------------------|-------------|
     |dockercisco/nxsdk:v1    | Contains wrl5 toolchain needed to compile Nexus Applications. |
+    |dockercisco/nxsdk:v1.7.5| Contains the same toolchain as v1 plus golang compiler for Go applications.|
    
    
   #### To start a container
@@ -169,7 +170,7 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
 
 ## 2. Building Custom Applications
   - C++ Application 
-    - To build C++ custom application, add your application to the [Makefile](Makefile) just like example apps [customCliApp.cpp](examples/customCliApp.cpp)
+    - To build C++ custom application, add your application to the [Makefile](Makefile) just like example apps [customCliApp.cpp](examples/c++/customCliApp.cpp)
       and follow the instructions in the Makefile.
     - Make sure the App builds without any errors using
 
@@ -186,7 +187,12 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
     -  NOTE: <p>If building applications in the native Linux environment (outside the NX-SDK build environment), 
              use the proper options for the build tools to generate 32-bit binaries, e.g. "-m32".  This is 
              taken care of for you if using the NX-SDK build environment. </p>
-  - Nothing to build for Python Applications.      
+             
+  - Python Application
+    - Nothing to build for Python Applications.      
+ 
+  - Go Application
+    - Refer to [Go README](go/README.md)
 
 ## 3. Unit Testing Custom Application
   - For simple testing of the custom application, copy the application (binary(C++) or source(Python)) to the switch.
@@ -209,8 +215,8 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
    ```
       export NXSDK_ROOT=<absolute-path-to-NX-SDK> (if not default /NX-SDK)
    ```
-  - Refer to the following screen captures (Script Usage & Help, Auto-generate RPM package for C++ App examples/customCliApp.cpp, 
-    Auto-generate RPM package for python App python/examples/customCliPyApp)
+  - Refer to the following screen captures (Script Usage & Help, Auto-generate RPM package for C++ App [customCliApp.cpp](examples/c++/customCliApp.cpp), 
+    Auto-generate RPM package for python App [customCliPyApp](examples/python/customCliPyApp) )
 
 #### Example 1: rpm_gen.py -h
 
@@ -321,6 +327,44 @@ SPEC file: /NX-SDK/rpm/SPECS/customCliPyApp.spec
 RPM file : /NX-SDK/rpm/RPMS/customCliPyApp-1.0-1.5.0.x86_64.rpm
 root@f15a7b454b00:/NX-SDK#
 ```
+#### Example 4: Generating an RPM for a Go Application
+
+```
+root@497861c45f74:/NX-SDK/scripts# python rpm_gen.py customCliGoApp -s ../examples/go/src -t ../examples/go/bin
+####################################################################################################
+Generating rpm package...
+Executing(%prep): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.22976
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%build): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.22976
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../src/rpm/BUILD
++ exit 0
+Executing(%install): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.22976
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root
++ /bin/mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root
++ rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root//isan/bin/nxsdk
++ mkdir -p /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root//isan/bin/nxsdk
++ cp -R /NX-SDK/examples/go/bin/customCliGoApp /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root//isan/bin/nxsdk
++ exit 0
+Processing files: customCliGoApp-1.0-1.7.5.x86_64
+Requires: libc.so.6 libc.so.6(GLIBC_2.0) libc.so.6(GLIBC_2.1.3) libgcc_s.so.1 libgcc_s.so.1(GCC_3.0) libm.so.6 libnxsdk.so libpthread.so.0 libpthread.so.0(GLIBC_2.0) libpthread.so.0(GLIBC_2.1) libpthread.so.0(GLIBC_2.3.2) libstdc++.so.6 libstdc++.so.6(CXXABI_1.3) libstdc++.so.6(GLIBCXX_3.4) rtld(GNU_HASH)
+Checking for unpackaged file(s): /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/check-files /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/SRPMS/customCliGoApp-1.0-1.7.5.src.rpm
+Wrote: /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/src/rpm/RPMS/x86_64/customCliGoApp-1.0-1.7.5.x86_64.rpm
+Executing(%clean): /bin/sh -e /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/var/tmp/rpm-tmp.50216
++ umask 022
++ cd /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../src/rpm/BUILD
++ /bin/rm -rf /enxos-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/lib/rpm/../../../var/tmp/customCliGoApp-root
+RPM package has been built
+####################################################################################################
+
+SPEC file: /NX-SDK/rpm/SPECS/customCliGoApp.spec
+RPM file : /NX-SDK/rpm/RPMS/customCliGoApp-1.0-1.7.5.x86_64.rpmApplication 
+```
 
 ### b) Manually-generate RPM Package
   - Write the respective <app>.spec to build an RPM package for your App. This is to address building RPM packaging 
@@ -330,7 +374,7 @@ root@f15a7b454b00:/NX-SDK#
       ls $RPM_ROOT (BUILD  RPMS  SOURCES  SPECS  SRPMS)
       vi $RPM_ROOT/SPECS/<app>.spec
     ``` 
-    Refer to the [customCliApp.spec](rpm/SPECS/customCliApp.spec) file for the sample App [customCliApp.cpp](examples/customCliApp.cpp)
+    Refer to the [customCliApp.spec](rpm/SPECS/customCliApp.spec) file for the sample App [customCliApp.cpp](examples/c++/customCliApp.cpp)
     
   - Follow the instructions mentioned in the [customCliApp.spec](rpm/SPECS/customCliApp.spec) to build a spec file for your Application.
   - To build an RPM package use
@@ -387,7 +431,7 @@ root@f15a7b454b00:/NX-SDK#
     ```
       switch(config)# feature nxsdk
     ```   
-  - To run C++ Custom Application from 
+  - To run C++/Go Custom Application from 
     - VSH
       - rpm_gen.py script installs the application in default location /isan/bin/nxsdk. 
         NOTE: To start an Application from the default location just use the App Name and 

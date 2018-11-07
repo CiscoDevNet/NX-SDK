@@ -1,55 +1,52 @@
-\hypertarget{nx__rib__mgr_8h}{
-\section{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-rib\_\-mgr.h File Reference}
-\label{nx__rib__mgr_8h}\index{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-rib\_\-mgr.h@{/nobackup/sathsrin/v1.5/NX-\/SDK/include/nx\_\-rib\_\-mgr.h}}
-}
+\hypertarget{nx__rib__mgr_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+rib\+\_\+mgr.h File Reference}
+\label{nx__rib__mgr_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+rib\+\_\+mgr.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+rib\+\_\+mgr.\+h}}
 
 
-Abstract SDK interface to Nexus(NXOS) Layer 3 Unicast RIB.  
-{\ttfamily \#include $<$iostream$>$}\par
-{\ttfamily \#include $<$string$>$}\par
-{\ttfamily \#include $<$cstring$>$}\par
-{\ttfamily \#include $<$stdexcept$>$}\par
-{\ttfamily \#include \char`\"{}types/nx\_\-common.h\char`\"{}}\par
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) Layer 3 R\+IB.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}nx\+\_\+common.\+h\char`\"{}}\newline
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classnxos_1_1NxVrf}{nxos::NxVrf}
-\begin{DoxyCompactList}\small\item\em Abstract VRF Interface used to get details about a VRF. \item\end{DoxyCompactList}\item 
-class \hyperlink{classnxos_1_1NxL3NextHop}{nxos::NxL3NextHop}
-\begin{DoxyCompactList}\small\item\em Abstract NextHoP Interface for a given L3 Route. \item\end{DoxyCompactList}\item 
-class \hyperlink{classnxos_1_1NxL3Route}{nxos::NxL3Route}
-\begin{DoxyCompactList}\small\item\em Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. \item\end{DoxyCompactList}\item 
-class \hyperlink{classnxos_1_1NxRibMgrHandler}{nxos::NxRibMgrHandler}
-\begin{DoxyCompactList}\small\item\em Abstract RibMgr callback Interface to receive VRF, Route updates etc from NXOS RIB. \item\end{DoxyCompactList}\item 
-class \hyperlink{classnxos_1_1NxRibMgr}{nxos::NxRibMgr}
-\begin{DoxyCompactList}\small\item\em Abstract Rib Manager interface to gain access to NXOS RIB. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classnxos_1_1_nx_vrf}{nxos\+::\+Nx\+Vrf}}
+\begin{DoxyCompactList}\small\item\em Abstract V\+RF Interface used to get details about a V\+RF. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{nxos\+::\+Nx\+L3\+Next\+Hop}}
+\begin{DoxyCompactList}\small\item\em Abstract Next\+HoP Interface for a given L3 Route. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{nxos\+::\+Nx\+L3\+Route}}
+\begin{DoxyCompactList}\small\item\em Abstract Route Interface to Add/\+Delete and receive Route updates from N\+X\+OS R\+IB. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
+\begin{DoxyCompactList}\small\item\em Abstract Rib\+Mgr callback Interface to receive V\+RF, Route updates etc from N\+X\+OS R\+IB. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{nxos\+::\+Nx\+Rib\+Mgr}}
+\begin{DoxyCompactList}\small\item\em Abstract Rib Manager interface to gain access to N\+X\+OS R\+IB. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Abstract SDK interface to Nexus(NXOS) Layer 3 Unicast RIB. Provides necessary Abstraction/Plugin for NXOS RIB functionalities. It provides the Ability to register for Route and VRF updates and more.
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) Layer 3 R\+IB. 
 
-Steps to register for route event from RIB: \par
- 1) Instantiate NX-\/SDK Rib Manager Object using getRibMgr(). \par
- 2) To watch for VRF updates, use watchVrf() (or) watchAllVrf() for all VRF updates. \par
- 3) To watch for L3 route updates, use watchL3Route() \par
- 4) Register for callback handler with NxRibMgr to get the regsitered RIB updates. \par
- 5) Overload NxRibMgrHandler class and its member functions like \par
- (postVrfCb() -\/ To get watched VRF updates, \par
- postL3RouteCb() -\/ To get watched L3 route update, \par
- etc) with your own implementation to handle various events.\par
- 6) NOTE: Adding/Deleting Routes in Rib will be supported soon. \par
+Provides necessary Abstraction/\+Plugin for N\+X\+OS R\+IB functionalities. It provides the Ability to register for Route and V\+RF updates and more.
 
+Steps to register for route event from R\+IB\+: 1) Instantiate Nx\+S\+DK Rib Manager Object using get\+Rib\+Mgr(). 2) To watch for V\+RF updates, use watch\+Vrf() (or) watch\+All\+Vrf() for all V\+RF updates. 3) To watch for L3 route updates, use watch\+L3\+Route() 4) Register for callback handler with Nx\+Rib\+Mgr to get the regsitered R\+IB updates. 5) Overload Nx\+Rib\+Mgr\+Handler class and its member functions like (post\+Vrf\+Cb() -\/ To get watched V\+RF updates, post\+L3\+Route\+Cb() -\/ To get watched L3 route update, etc) with your own implementation to handle various events. 6) N\+O\+TE\+: Adding/\+Deleting Routes in Rib will be supported soon.
 
 \begin{DoxyNote}{Note}
-By default, ribMgr CLI is auto-\/generated for the NX-\/SDK Apps. Try \char`\"{}show \$appname nxsdk ribmgr\char`\"{} in the box to access them.
+By default, rib\+Mgr C\+LI is auto-\/generated for the Nx\+S\+DK Apps. Try \char`\"{}show \$appname nxsdk ribmgr\char`\"{} in the box to access them.
 \end{DoxyNote}
 \begin{DoxySince}{Since}
-NX-\/SDK v1.5.0
+N\+X\+S\+DK V1.\+5
 \end{DoxySince}
-Refer to template and sample Applications.
+Refer to some example Applications.
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.com} 
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
 \end{DoxyAuthor}
-\begin{Desc}
-\item[\hyperlink{bug__bug000003}{Bug}]Application using \hyperlink{nx__rib__mgr_8h}{nx\_\-rib\_\-mgr.h} APIs work only in VSH and not in BASH. \end{Desc}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs. \end{DoxyRefDesc}

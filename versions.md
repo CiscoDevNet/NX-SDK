@@ -1,4 +1,29 @@
-# NX-SDK v1.5.0 (latest):
+# NX-SDK v1.7.5 (latest):
+
+## Nexus Release:
+   - N9Ks, N3Ks from 9.2(2) release. 
+   
+## Features: 
+
+| Features  | Details |
+| --- | --- |
+|Languages | C++, Python, <b>Go</b> |
+| NxIntfMgr | <ul><li>Provides access to NX-OS Interface Manager.</li><li>Custom Applications can now use the NxIntfMgr APIs to get, add, delete, update and register for interface events.</li><li>For more details on the NxIntfMgr APIs and its usage, refer to [nx_intf_mgr.h](include/nx_intf_mgr.h)</li></li></ul>|
+| NxMacMgr  | <ul><li>Provides access to NX-OS Mac Manager.</li><li>Custom Applications can now use the NxMacMgr APIs to get, add, delete, update and register for MAC events.</li><li>For more details on the NxMacMgr APIs and its usage, refer to [nx_mac_mgr.h](include/nx_mac_mgr.h)</li></ul> |
+| NxAdjMgr  | <ul><li>Provides access to NX-OS Adjacency Manager.</li><li>Custom Applications can now use the NxAdjMgr APIs to get and register for Adjacency/Neighbour events.</li><li>For more details on the NxAdjMgr APIs and its usage, refer to [nx_adj_mgr.h](include/nx_adj_mgr.h)</li></ul>|
+| NxDmeMgr | <ul><li>Provides access to NX-OS Data Management Engine (DME) database.</li><li>Custom Applications can now use the NX-SDK DmeMgr APIs to get, add, delete, update and register for datastore events.</li><li>DME database is keyed by distinguished name (DN) paths. For ex) To access LLDP related datastore, use DN path "sys/lldp".</li> <li>For more details on the NxDmeMgr APIs and its usage, refer to [nx_dme.h](include/nx_dme.h)</li><li>Refer to <a href="https://developer.cisco.com/site/nxapi-dme-model-reference-api/">DME  Model documentation</a> for supported DNs and their properties.</li></ul>|
+| Go | <ul><li>For more information on how to develop NX-SDK Go Apps refer to [Go README](go/README.md) 
+
+## Sample Applications:
+   - featureMonitor, silentHostDiscovery. Refer to [examples](examples) for more details. 
+   
+## Known Bugs:
+   - Exception handling in GO. 
+   - NxMacMgr events are generated only for MACs for which there is an AM adjacency.
+   - NxMacMgr, NxAmMgr APIs works only in VSH Mode and not in BASH mode.
+   - NxIntfMgr can only open around 3000 interfaces before memory limits are reached.
+   
+# NX-SDK v1.5.0:
 
 ## Nexus Release:
    - N9Ks, N3Ks from I7(3) release. 
@@ -9,7 +34,7 @@
 |Languages | C++, Python |
 | NxRibMgr | <ul><li>Ability for custom applications to register with Nexus L3 RIB for route updates & lookups.</li><li>For more details on the NxRibMgr APIs and its usage, refer to [nx_rib_mgr.h](include/nx_rib_mgr.h)</li><li>For sample application using NxRibMgr, refer to [routeTracker](examples/python/routeTracker) NX-SDK application.</li><li>Known Bug: nx_rib_mgr.h APIs works only in VSH not in BASH.</li></ul>|
 | Streaming telemetry | <ul><li>Ability to stream custom information from custom NX-SDK application through NXOS telemetry.</li><li>To stream custom data, define custom "show" command in your NX-SDK application to directly ouput JSON data to be streamed out of the switch.</li><li>Set <b>“query-condition show-output-format=json”</b> in the telemetry path config as follows to stream custom JSON data from custom NX-SDK Show cli.</li><li>For sample application using streaming telemetry, refer to [routeTracker](examples/python/routeTracker) NX-SDK application.</li></ul> |
-| CPU Limit | <ul><li>CGROUP support for NX-SDK Applications ensure NX-SDK user applications, do not overconsume system resources(CPU cycles, system memory) from other native system processes.</li><li>NX-SDK supports three cgroup modes: <ul><li>Low: All NX-SDK apps started in this mode combined can use upto 25% of CPU and 768M of Memory in contention.</li><li>Med: All NX-SDK apps started in this mode combined can use upto 50% of CPU and 1GB of Memory in contention.</li>High: All NX-SDK apps started in this mode combined can use upto 75% of CPU and 1.5GB of Memory in contention.</li></ul><li>By default, all NX-SDK Apps will be started as Low priority app.</li><li>App priority can be changed using the API, `setAppPriority(nxos::prio_e prio)` defined in [nx_sdk.h](include/nx_sdk.h).</li></ul> |
+| CPU Limit | <ul><li>CGROUP support for NX-SDK Applications ensure NX-SDK user applications, do not overconsume system resources(CPU cycles, system memory) from other native system processes.</li><li>NX-SDK supports three cgroup modes: <ul><li>Low: All NX-SDK apps started in this mode combined can use upto 25% of CPU and 768M of Memory in contention.</li><li>Med: All NX-SDK apps started in this mode combined can use upto 50% of CPU and 1GB of Memory in contention.</li>High - All NX-SDK apps started in this mode combined can use upto 75% of CPU and 1.5GB of Memory in contention.</li></ul><li>By default, all NX-SDK Apps will be started as Low priority app.</li><li>App priority can be changed using the API, `setAppPriority(nxos::prio_e prio)` defined in [nx_sdk.h](include/nx_sdk.h).</li></ul> |
 | Memory footprint | <ul><li>Memory footprint for all NX-SDK objects created and its sizes for an NX-SDK Application.</li><li>To get the memory footprint use, "show $appname nxsdk mem-stats".</li></ul>|
 | Advanced Exception | <ul><li>On failure, APIs throw exceptions. Refer to the API documentation for more details on the failures cases for each & every API.</li><li>In v1.0.0, failures are thrown as simple exceptions as Strings.</li><li>From v1.5.0, applications can either catch simple or advanced exceptions. Advanced exceptions are of common type "NxException" across all languages with more detailed information on the failure.</li><li>Refer to [nx_exception.h](include/nx_exception.h) for more details on the supported APIs & its usage.</li></ul>|
 
@@ -33,7 +58,7 @@
 |Languages | C++, Python |
 |Custom Cli | <ul><li>APIs to generate custom CLIs (config and show commands) and get callbacks.</li><li>For more details on the custom CLI APIs and its usage, refer to [nx_cli.h](include/nx_cli.h).</li><li>For sample application generating custom CLI, refer to [customCliApp.cpp](examples/c++/customCliApp.cpp) app.</li></ul>|
 |Custom Syslog|<ul><li>APIs to generate custom syslogs and to log application Events & Error history.</li><li>To view application logged Events & Error history use "show $appname nxsdk event-history events or errors".</li><li>For more details on the APIs and its usage, refer to [nx_trace.h](include/nx_trace.h).</li><li>For sample application using custom syslog, refer to [customCliApp.cpp](examples/c++/customCliApp.cpp) app.</li></ul>|
-|Start/Stop Apps |<ul><li>To start/stop custom NX-SDK Applications from VSH just like any other native Nexus applications (like feature bgp) thereby persisting custom applications across system reloads, System Switchover etc.</li><li>Refer to [README.md](README.md) for more details</li><li>Supports upto 32 NX-SDK applications.</li></ul>            |
+|Start/Stop Apps |<ul><li>To start/stop custom NX-SDK Applications from VSH just like any other native Nexus applications (like feature bgp) thereby persisting custom applications across system reloads, System Switchover etc.</li><li>Refer to [README.md](README.md) for more details</li></ul>            |
 
 ## Sample Applications:
    - tmCfgBot, pbwMonitor. Refer to [examples](examples) for more details. 

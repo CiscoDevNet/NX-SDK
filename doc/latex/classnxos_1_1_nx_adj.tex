@@ -1,0 +1,319 @@
+\hypertarget{classnxos_1_1_nx_adj}{}\section{nxos\+:\+:Nx\+Adj Class Reference}
+\label{classnxos_1_1_nx_adj}\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+
+
+Abstract Adjacency Interface used to get details about an adjacency.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+adj\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_a308082669b2c45fe0bc3ae8ceedacdb6}{$\sim$\+Nx\+Adj}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_a21e819518fd33c40436a6e2df427f064}{get\+Ip\+Addr}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_ad35857c95529b40fbaf363bd6aebc0ec}{get\+Mac\+Addr}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_a0928d29814a978c7b8b825fcc99b1fb1}{get\+Vrf}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_ada50b00bb73ea35a3282481c949187d2}{get\+Intf\+Name}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_aaf3b120882857af70467cd02dc01a844}{get\+Phy\+Intf\+Name}} ()=0
+\item 
+virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_adj_a53629d8a995e5ab54ed63d175f5ab6cf}{get\+Preference}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_adj_a1f60bed95c387db33eba7ae4b48c965d}{get\+Source}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_adj_a75c503c316c39c12aa8b4c431c81d2de}{get\+Event}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_adj_a5e026c5187f3a88337790ad5d7cb4e5b}{get\+AF}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_a19eea20ba216dd722d783bbb0982814e}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&adj\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_a17e77aa58ac0b094a766dbd4d805bfe2}{operator!=}} (\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&adj\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_adj_ac734e9f8f4bbacea1bfdd4d28b7a72d2}{equal}} (\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&adj\+\_\+obj) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Adjacency Interface used to get details about an adjacency. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_a308082669b2c45fe0bc3ae8ceedacdb6}\label{classnxos_1_1_nx_adj_a308082669b2c45fe0bc3ae8ceedacdb6}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!````~Nx\+Adj@{$\sim$\+Nx\+Adj}}
+\index{````~Nx\+Adj@{$\sim$\+Nx\+Adj}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Adj()}{~NxAdj()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Adj\+::$\sim$\+Nx\+Adj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor, called when application releases object reference. Removes the object from the S\+DK map. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_ac734e9f8f4bbacea1bfdd4d28b7a72d2}\label{classnxos_1_1_nx_adj_ac734e9f8f4bbacea1bfdd4d28b7a72d2}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!equal@{equal}}
+\index{equal@{equal}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{equal()}{equal()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+::equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&}]{adj\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of adjacency objects.
+
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    NxAdj *adj1 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"});
+    NxAdj *adj2 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"});
+    \textcolor{keywordflow}{if} (adj1->equal(*adj2))
+        cout << \textcolor{stringliteral}{"Equal"} << endl;
+Python:
+    adj1 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"})
+    adj2 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"})
+    \textcolor{keywordflow}{if} adj1.equal(adj2):
+         print \textcolor{stringliteral}{"Equal"}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a5e026c5187f3a88337790ad5d7cb4e5b}\label{classnxos_1_1_nx_adj_a5e026c5187f3a88337790ad5d7cb4e5b}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+AF@{get\+AF}}
+\index{get\+AF@{get\+AF}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+A\+F()}{getAF()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} nxos\+::\+Nx\+Adj\+::get\+AF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the type of address family (A\+F\+\_\+\+I\+P\+V4 or A\+F\+\_\+\+I\+P\+V6).
+
+\begin{DoxyReturn}{Returns}
+Type of address family (af\+\_\+e)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{void} postAdjCb(NxAdj *adj) \{
+              cout << \textcolor{stringliteral}{"Adjacency AF: "} << adj->getAF();
+         \}
+   \}
+
+Python:
+   \textcolor{keyword}{class }pyAdjHandler(nx\_sdk\_py.NxAdjMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
+         def postAdjCb(self, nxadj):
+             print "Adjacency AF: %d" % nxadj.\mbox{\hyperlink{classnxos_1_1_nx_adj_a5e026c5187f3a88337790ad5d7cb4e5b}{getAF}}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a75c503c316c39c12aa8b4c431c81d2de}\label{classnxos_1_1_nx_adj_a75c503c316c39c12aa8b4c431c81d2de}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Adj\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the type of Event(\+Add, Update, Delete etc). Should be used only in Adjacency Handler Callbacks like post\+Adj\+Cb(). If used outside of Adjacency Handler Callbacks its set to N\+O\+\_\+\+E\+V\+E\+NT.
+
+\begin{DoxyReturn}{Returns}
+Type of Adjacency Event (event\+\_\+type\+\_\+e)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{void} postAdjCb(NxAdj *adj) \{
+              cout << \textcolor{stringliteral}{"Adjacency Event: "} << adj->getEvent();
+         \}
+   \}
+
+Python:
+   \textcolor{keyword}{class }pyAdjHandler(nx\_sdk\_py.NxAdjMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
+         def postAdjCb(self, nxadj):
+             print "Adjacency Event: %d" % nxadj.\mbox{\hyperlink{classnxos_1_1_nx_adj_a75c503c316c39c12aa8b4c431c81d2de}{getEvent}}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_ada50b00bb73ea35a3282481c949187d2}\label{classnxos_1_1_nx_adj_ada50b00bb73ea35a3282481c949187d2}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Intf\+Name@{get\+Intf\+Name}}
+\index{get\+Intf\+Name@{get\+Intf\+Name}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Intf\+Name()}{getIntfName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Intf\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Layer3 Interface of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+interface name (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string \textcolor{keyword}{interface }= adj->\mbox{\hyperlink{classnxos_1_1_nx_adj_ada50b00bb73ea35a3282481c949187d2}{getIntfName}}();
+
+Python:
+     print \textcolor{stringliteral}{"Interface: %s"} % adj.getIntfName()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a21e819518fd33c40436a6e2df427f064}\label{classnxos_1_1_nx_adj_a21e819518fd33c40436a6e2df427f064}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Ip\+Addr@{get\+Ip\+Addr}}
+\index{get\+Ip\+Addr@{get\+Ip\+Addr}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Ip\+Addr()}{getIpAddr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Ip\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get IP (or) Ipv6 address of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+IP (or) Ipv6 address (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string ipAddr = adj->getIpAddr();
+
+Python:
+     print \textcolor{stringliteral}{"IP Address: %s"} % adj.getIpAddr()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_ad35857c95529b40fbaf363bd6aebc0ec}\label{classnxos_1_1_nx_adj_ad35857c95529b40fbaf363bd6aebc0ec}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Mac\+Addr@{get\+Mac\+Addr}}
+\index{get\+Mac\+Addr@{get\+Mac\+Addr}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Mac\+Addr()}{getMacAddr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Mac\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get M\+AC address of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+M\+AC address (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string macAddress = adj->getMacAddr();
+
+Python:
+     print \textcolor{stringliteral}{"Mac Address: %s"} % adj.getMacAddr()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_aaf3b120882857af70467cd02dc01a844}\label{classnxos_1_1_nx_adj_aaf3b120882857af70467cd02dc01a844}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Phy\+Intf\+Name@{get\+Phy\+Intf\+Name}}
+\index{get\+Phy\+Intf\+Name@{get\+Phy\+Intf\+Name}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Phy\+Intf\+Name()}{getPhyIntfName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Phy\+Intf\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Layer2 physical Interface of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+physical interface name (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string phyIntf = adj->getPhyIntfName();
+
+Python:
+     print \textcolor{stringliteral}{"Physical Interface: %s"} % adj.getPhyIntfName()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a53629d8a995e5ab54ed63d175f5ab6cf}\label{classnxos_1_1_nx_adj_a53629d8a995e5ab54ed63d175f5ab6cf}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Preference@{get\+Preference}}
+\index{get\+Preference@{get\+Preference}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Preference()}{getPreference()}}
+{\footnotesize\ttfamily virtual unsigned int nxos\+::\+Nx\+Adj\+::get\+Preference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Preference of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+preference (unsigned int)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} preference = adj->getPreference();
+
+Python:
+     print \textcolor{stringliteral}{"Preference: %d"} % int(adj.getPreference())
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a1f60bed95c387db33eba7ae4b48c965d}\label{classnxos_1_1_nx_adj_a1f60bed95c387db33eba7ae4b48c965d}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Source@{get\+Source}}
+\index{get\+Source@{get\+Source}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Source()}{getSource()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Source (Arp, ND etc) of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+Source (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string source = adj->getSource();
+
+Python:
+     print \textcolor{stringliteral}{"Source: %s"} % adj.getSource()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a0928d29814a978c7b8b825fcc99b1fb1}\label{classnxos_1_1_nx_adj_a0928d29814a978c7b8b825fcc99b1fb1}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!get\+Vrf@{get\+Vrf}}
+\index{get\+Vrf@{get\+Vrf}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{get\+Vrf()}{getVrf()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Adj\+::get\+Vrf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Vrf of the adjacency.
+
+\begin{DoxyReturn}{Returns}
+V\+RF (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string vrf = adj->getVrf();
+
+Python:
+     print \textcolor{stringliteral}{"VRF: %s"} % adj.getVrf()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a17e77aa58ac0b094a766dbd4d805bfe2}\label{classnxos_1_1_nx_adj_a17e77aa58ac0b094a766dbd4d805bfe2}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&}]{adj\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test inequality of adjacency objects.
+
+\begin{DoxyReturn}{Returns}
+true if inequality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    NxAdj *adj1 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"});
+    NxAdj *adj2 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.3"});
+    \textcolor{keywordflow}{if} (*adj1 != *adj2)
+        cout << \textcolor{stringliteral}{"Not Equal"} << endl;
+Python:
+    adj1 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"})
+    adj2 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.3"})
+    \textcolor{keywordflow}{if} adj1 != adj2:
+         print \textcolor{stringliteral}{"Not Equal"}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_adj_a19eea20ba216dd722d783bbb0982814e}\label{classnxos_1_1_nx_adj_a19eea20ba216dd722d783bbb0982814e}} 
+\index{nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}!operator==@{operator==}}
+\index{operator==@{operator==}!nxos\+::\+Nx\+Adj@{nxos\+::\+Nx\+Adj}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Adj\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} const \&}]{adj\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of adjacency objects.
+
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    NxAdj *adj1 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"});
+    NxAdj *adj2 = adjMgr->getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.3"});
+    \textcolor{keywordflow}{if} (*adj1 == *adj2)
+        cout << \textcolor{stringliteral}{"Equal"} << endl;
+Python:
+    adj1 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"})
+    adj2 = adjMgr.getAdj(\textcolor{stringliteral}{"Vlan100"}, \textcolor{stringliteral}{"1.1.1.2"})
+    \textcolor{keywordflow}{if} adj1 == adj2:
+         print \textcolor{stringliteral}{"Equal"}
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__adj__mgr_8h}{nx\+\_\+adj\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

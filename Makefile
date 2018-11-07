@@ -41,6 +41,7 @@ SRCNXSDK_BIN :=
 
 ### Directory Structure
 CXX_HEADERDIR  := include
+CXX_TYPESDIR   := include/types
 CXX_BUILDDIR   := build
 CXX_EXSRCDIR   := examples/c++
 CXX_TARGETDIR  := bin
@@ -51,13 +52,13 @@ CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
 NXLIBDIR       := /isan/lib
 
 ### Binaries to be build for Example C++ apps.
-EXNXSDK_BIN    := customCliApp 
+EXNXSDK_BIN    := customCliApp  featureMonitor intfMonitor 
 
 ## Includes for the project
-INCLUDES  := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR)  
+INCLUDES  := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR) 
 
 ## Compiler
-SDK_CXXFLAGS = -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings 
+SDK_CXXFLAGS = -g -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings 
 
 ## Check if $(CXX) is set, if not set it to g++
 ifneq "$(CXX)" ""

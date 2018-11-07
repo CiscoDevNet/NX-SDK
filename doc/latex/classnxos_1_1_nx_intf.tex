@@ -1,0 +1,1028 @@
+\hypertarget{classnxos_1_1_nx_intf}{}\section{nxos\+:\+:Nx\+Intf Class Reference}
+\label{classnxos_1_1_nx_intf}\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+
+
+Public interface to N\+X-\/\+S\+DK interface objects.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+intf\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_a10fbaca5467637b238b8a4f1f1aa75e0}{$\sim$\+Nx\+Intf}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a8a0bff66b97d72172f8ed5ce22d8efbd}{get\+Name}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_af3a8f5ce6dd05fa582d1f7056a4438ca}{get\+Layer}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_aa0885ab26e4abfaa8c7e8e8adb9d32ab}{get\+Type}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ae8d21d7a42388aedcda5c7bc3f5c4b04}{get\+Vrf}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a3f7942d5ae1a998904d9ea97b252eb21}{get\+Vlan}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ae18aa83b5f9984c6b133a8d447aa5430}{get\+Description}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ace33155a23a777c0f6e5f978d44af0e6}{get\+L3\+Pr\+Addr}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_af0aebadac66f6b4fbe8ddbd567a577b6}{get\+L3\+Sc\+Addr}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af, bool from\+First=false)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a8a7f92f0c28178165fd0448c33ff681b}{get\+L2\+Address}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a2c057f3f9691205712f70aea8c46f639}{get\+L2\+Address\+HW}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a161d3222b8e6f5dff510eef2406996fb}{get\+Admin\+State}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_abd5291d975d3193c3603efd7ec17deda}{get\+Oper\+State}} ()=0
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_intf_ae0b1d1c5fed67948cb0bbb9040a8f4de}{get\+Mtu}} ()=0
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_intf_ac1fdcdff8093c76a11b06951d2673356}{get\+Speed}} ()=0
+\item 
+virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_intf_a21f7c1b00f609f61ac2d8b68abea1f77}{get\+Member\+Count}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a7c197b62e8135c8b78aa8fbf8958f9a2}{get\+Members}} (bool from\+First=false)=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}{get\+Event}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_aa431b02d46df5e7822fdd0c7a19d93ab}{get\+Last\+Mod}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a20e5e820227e592874bf155573e3e700}{set\+Layer}} (const std\+::string \&layer)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a91343eb99de8391f1a0e06646ae13b5e}{set\+Vrf}} (const std\+::string \&vrf)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_af5d5c584845fe42bea0d1d40f9907065}{set\+Vlan}} (unsigned int vlan\+\_\+id)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_aaaa5e4a9b9161b2908eb9c7979e96f8e}{set\+Description}} (const std\+::string \&desc)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a9ff78e595e9d16ab1eca675daa98c34e}{set\+L3\+Address}} (const std\+::string \&addr, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} type, bool primary)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a90a3cca36e76717085fecf575e815139}{set\+L2\+Address}} (const std\+::string \&mac)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a2244d9def0a3538d1f66f8816ad8b545}{set\+Admin\+State}} (\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} state)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_ae2790907b869c62c01567452d66d03f9}{set\+Mtu}} (uint32\+\_\+t mtu)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_ad42e229fc4c3aa9111b3a8805d55588c}{set\+Speed}} (uint32\+\_\+t speed)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a499756ef5447cd4037d095a444aefc99}{add\+Member}} (const std\+::string \&intf\+\_\+name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a6886f3b84e843069a5fdf5434b061f80}{del\+Member}} (const std\+::string \&intf\+\_\+name)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a132f11f6cf7b6d93af1c9e565dc853c5}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&intf\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_aa0b5180978bbdcb3da2f18ed9bef089c}{operator!=}} (\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&intf\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a3121854504b3d9828f75e3d47f50d7f8}{equal}} (\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&intf\+\_\+obj) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Public interface to N\+X-\/\+S\+DK interface objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a10fbaca5467637b238b8a4f1f1aa75e0}\label{classnxos_1_1_nx_intf_a10fbaca5467637b238b8a4f1f1aa75e0}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!````~Nx\+Intf@{$\sim$\+Nx\+Intf}}
+\index{````~Nx\+Intf@{$\sim$\+Nx\+Intf}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Intf()}{~NxIntf()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Intf\+::$\sim$\+Nx\+Intf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor, called when application releases object reference. ~\newline
+Removes the object from the S\+DK map. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a499756ef5447cd4037d095a444aefc99}\label{classnxos_1_1_nx_intf_a499756ef5447cd4037d095a444aefc99}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!add\+Member@{add\+Member}}
+\index{add\+Member@{add\+Member}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{add\+Member()}{addMember()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::add\+Member (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Add interface to this port-\/channel interface. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+\_\+name} & Interface to add to port-\/channel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. ~\newline
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   pc\_intf->addMember(\textcolor{stringliteral}{"eth1/1"});
+Python:
+   pc\_intf.addMember(\textcolor{stringliteral}{"eth1/2"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a6886f3b84e843069a5fdf5434b061f80}\label{classnxos_1_1_nx_intf_a6886f3b84e843069a5fdf5434b061f80}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!del\+Member@{del\+Member}}
+\index{del\+Member@{del\+Member}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{del\+Member()}{delMember()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::del\+Member (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Remove interface from port-\/channel. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+\_\+name} & Interface name to remove from port-\/channel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. ~\newline
+ 
+\begin{DoxyCode}
+C++:
+    pc\_intf->delMember(\textcolor{stringliteral}{"eth1/1"});
+Python:
+    pc\_intf.delMember(\textcolor{stringliteral}{"eth1/2"})
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a3121854504b3d9828f75e3d47f50d7f8}\label{classnxos_1_1_nx_intf_a3121854504b3d9828f75e3d47f50d7f8}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!equal@{equal}}
+\index{equal@{equal}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{equal()}{equal()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&}]{intf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of interface objects. This version can be used in languages that do not support operator overloading \char`\"{}==\char`\"{}, such as Go. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+\_\+obj} & Interface to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxIntf *obj1 = intfMgr->getIntf(arg1);
+     NxIntf *obj2 = intfMgr->getIntf(arg2);
+         \textcolor{keywordflow}{if} (obj1->equal(*obj2))
+             cout << \textcolor{stringliteral}{"Equal"} << endl;
+         \textcolor{keywordflow}{else}
+             cout << \textcolor{stringliteral}{"Not Equal"} << endl;
+
+Python:
+    obj1 = intfMgr.getIntf(cmds[1])
+    obj2 = intfMgr.getIntf(cmds[2])
+    \textcolor{keywordflow}{if} (obj1.equal(obj2)):
+        print \textcolor{stringliteral}{"Equal"}
+    \textcolor{keywordflow}{else}:
+        print \textcolor{stringliteral}{"Not Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a161d3222b8e6f5dff510eef2406996fb}\label{classnxos_1_1_nx_intf_a161d3222b8e6f5dff510eef2406996fb}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Admin\+State@{get\+Admin\+State}}
+\index{get\+Admin\+State@{get\+Admin\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Admin\+State()}{getAdminState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Admin\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the administrative state of the interface.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
+    std::string adminSt;
+    state   = objp->getAdminState();
+    adminSt = state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
+                  (state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
+Python:
+     print \textcolor{stringliteral}{"\(\backslash\)tAdminSt: "} + getStateStr(intf.getAdminState())
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ae18aa83b5f9984c6b133a8d447aa5430}\label{classnxos_1_1_nx_intf_ae18aa83b5f9984c6b133a8d447aa5430}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the configured description for interface.
+
+\begin{DoxyReturn}{Returns}
+description (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       std::string desc = intf->getDescription();
+Python:
+       print \textcolor{stringliteral}{"\(\backslash\)tDescr: "} + intf.getDescription()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}\label{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the event code from the interface. If an event occurs for an interface, this code is set in the \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} object before being delivered to the application handler.
+
+\begin{DoxyReturn}{Returns}
+The event type value of this object.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    \textcolor{keywordtype}{bool} myIntfHandler::postIntfAddDelCb (NxIntf *intf)
+    \{
+     
+    \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
+       cout << \textcolor{stringliteral}{"App got ADD notification for interface  "} << 
+       intf->getName() << endl;
+    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
+       cout << \textcolor{stringliteral}{"App got DELETE notification for interface "} << 
+       intf->getName() << endl;
+    \}
+    \}  
+
+ Python:
+    def postIntfAddDelCb(\textcolor{keyword}{self}, intf):
+       event = intf.\mbox{\hyperlink{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}{getEvent}}()
+       print \textcolor{stringliteral}{"Application Add/Del cb "}
+       print \textcolor{stringliteral}{"intf "} + intf.\mbox{\hyperlink{classnxos_1_1_nx_intf_a8a0bff66b97d72172f8ed5ce22d8efbd}{getName}}()
+       if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+          print \textcolor{stringliteral}{"ADDED"}
+       elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
+          print \textcolor{stringliteral}{"DELETED"}
+       return True;   
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a8a7f92f0c28178165fd0448c33ff681b}\label{classnxos_1_1_nx_intf_a8a7f92f0c28178165fd0448c33ff681b}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L2\+Address@{get\+L2\+Address}}
+\index{get\+L2\+Address@{get\+L2\+Address}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+L2\+Address()}{getL2Address()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L2\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retrieve the configured interface M\+AC address.
+
+\begin{DoxyReturn}{Returns}
+mac address (string), or empty string \char`\"{}\char`\"{} if not available.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string  mac = intf->getL2Address();
+Python:
+      print \textcolor{stringliteral}{"\(\backslash\)tL2: "} + intf.getL2Address()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a2c057f3f9691205712f70aea8c46f639}\label{classnxos_1_1_nx_intf_a2c057f3f9691205712f70aea8c46f639}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L2\+Address\+HW@{get\+L2\+Address\+HW}}
+\index{get\+L2\+Address\+HW@{get\+L2\+Address\+HW}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+L2\+Address\+H\+W()}{getL2AddressHW()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L2\+Address\+HW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the backplane hw address for interface. ~\newline
+ \begin{DoxyReturn}{Returns}
+mac address (string), or empty string \char`\"{}\char`\"{} if not available.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      std::string  machw = intf->getL2AddressHW();
+Python:
+       print \textcolor{stringliteral}{"\(\backslash\)tL2hw: "} + intf.getL2AddressHW()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ace33155a23a777c0f6e5f978d44af0e6}\label{classnxos_1_1_nx_intf_ace33155a23a777c0f6e5f978d44af0e6}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L3\+Pr\+Addr@{get\+L3\+Pr\+Addr}}
+\index{get\+L3\+Pr\+Addr@{get\+L3\+Pr\+Addr}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+L3\+Pr\+Addr()}{getL3PrAddr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Pr\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the interface primary IP address for address family 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em af} & Address family of L3 address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Pv4 or I\+Pv6 address (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+        std::string ip4 = intf->getL3PrAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}});
+        std::string ip6 = intf->getL3PrAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{AF\_IPV6}});
+Python:
+        print \textcolor{stringliteral}{"\(\backslash\)tIPv4: "} + intf.getL3PrAddr(nx\_sdk\_py.AF\_IPV4)
+        print \textcolor{stringliteral}{"\(\backslash\)tIPv6: "} + intf.getL3PrAddr(nx\_sdk\_py.AF\_IPV6)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- invalid address family \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_af0aebadac66f6b4fbe8ddbd567a577b6}\label{classnxos_1_1_nx_intf_af0aebadac66f6b4fbe8ddbd567a577b6}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L3\+Sc\+Addr@{get\+L3\+Sc\+Addr}}
+\index{get\+L3\+Sc\+Addr@{get\+L3\+Sc\+Addr}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+L3\+Sc\+Addr()}{getL3ScAddr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Sc\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af,  }\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return interface secondary IP addresses in address family. Call iteratively to retrieve all addresses. Returns empty string \char`\"{}\char`\"{} when no more addresses are available. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em af} & Address family of L3 address \\
+\hline
+\mbox{\tt in}  & {\em from\+First} & \mbox{[}Optional\mbox{]} Start from first address or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IP address (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     std::string l3\_sec\_addr = objp->getL3ScAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{true});
+     \textcolor{keywordflow}{while} (!l3\_sec\_addr.empty()) \{
+         cout << l3\_sec\_addr << \textcolor{stringliteral}{" "};
+         l3\_sec\_addr = objp->getL3ScAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}});
+     \}
+Python:
+     l3\_sec\_addr = intf.getL3ScAddr(nx\_sdk\_py.AF\_IPV4, True)
+     \textcolor{keywordflow}{while} l3\_sec\_addr:
+        print l3\_sec\_addr + \textcolor{stringliteral}{" "},
+        l3\_sec\_addr = intf.getL3ScAddr(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- invalid address family \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_aa431b02d46df5e7822fdd0c7a19d93ab}\label{classnxos_1_1_nx_intf_aa431b02d46df5e7822fdd0c7a19d93ab}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Last\+Mod@{get\+Last\+Mod}}
+\index{get\+Last\+Mod@{get\+Last\+Mod}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Last\+Mod()}{getLastMod()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Last\+Mod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the last modification time of interface
+
+\begin{DoxyReturn}{Returns}
+time of last modification (string) ex. 2018-\/01-\/19\+T00\+:45\+:08.\+159+00\+:00
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    std::string  lastmod  =  objp->getLastMod();
+Python:
+    print \textcolor{stringliteral}{"\(\backslash\)tLastMod: "} + intf.getLastMod()   
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_af3a8f5ce6dd05fa582d1f7056a4438ca}\label{classnxos_1_1_nx_intf_af3a8f5ce6dd05fa582d1f7056a4438ca}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Layer@{get\+Layer}}
+\index{get\+Layer@{get\+Layer}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Layer()}{getLayer()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the network layer of this interface
+
+\begin{DoxyReturn}{Returns}
+Layer2 or Layer3 (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+         std::string layer = intf->getLayer();
+Python:
+         print \textcolor{stringliteral}{"\(\backslash\)tLayer: "} + intf.getLayer()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a21f7c1b00f609f61ac2d8b68abea1f77}\label{classnxos_1_1_nx_intf_a21f7c1b00f609f61ac2d8b68abea1f77}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Member\+Count@{get\+Member\+Count}}
+\index{get\+Member\+Count@{get\+Member\+Count}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Member\+Count()}{getMemberCount()}}
+{\footnotesize\ttfamily virtual unsigned int nxos\+::\+Nx\+Intf\+::get\+Member\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the number of member ports in a channel group
+
+\begin{DoxyReturn}{Returns}
+number of members in a port-\/channel
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       cout << \textcolor{stringliteral}{"Member count: "} << objp->getMemberCount() << endl;
+Python:
+       print \textcolor{stringliteral}{"Member count: "} + str(intf.getMemberCount())
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- wrong interface type \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a7c197b62e8135c8b78aa8fbf8958f9a2}\label{classnxos_1_1_nx_intf_a7c197b62e8135c8b78aa8fbf8958f9a2}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Members@{get\+Members}}
+\index{get\+Members@{get\+Members}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Members()}{getMembers()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Members (\begin{DoxyParamCaption}\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Iterate over the members in channel group. The interface name is returned for each call until the end of the group is reached, then the empty string is returned. The name returned is the short name format. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from\+First} & \mbox{[}Optional\mbox{]} Start iterating at beginning or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+member interface name (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      std::string mbr;
+
+      mbr = objp->getMembers(\textcolor{keyword}{true});
+      \textcolor{keywordflow}{while} (!mbr.empty()) \{
+          cout << mbr << endl;
+          mbr = objp->getMembers();
+      \}
+Python
+      \textcolor{keywordflow}{if} intf.getType() == nx\_sdk\_py.NX\_TYPE\_ETH\_PC:
+         mbr = intf.getMembers(True);
+         \textcolor{keywordflow}{while} mbr:
+            print \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)t<"} + mbr + \textcolor{stringliteral}{">"}
+            mbr = intf.getMembers();
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- wrong interface type \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ae0b1d1c5fed67948cb0bbb9040a8f4de}\label{classnxos_1_1_nx_intf_ae0b1d1c5fed67948cb0bbb9040a8f4de}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Mtu@{get\+Mtu}}
+\index{get\+Mtu@{get\+Mtu}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Mtu()}{getMtu()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t nxos\+::\+Nx\+Intf\+::get\+Mtu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the configured M\+TU of the interface if available.
+
+\begin{DoxyReturn}{Returns}
+M\+TU integer value
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      uint mtu =  objp->getMtu();
+Python:
+      print \textcolor{stringliteral}{"\(\backslash\)tMtu: "} + str(intf.getMtu())
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a8a0bff66b97d72172f8ed5ce22d8efbd}\label{classnxos_1_1_nx_intf_a8a0bff66b97d72172f8ed5ce22d8efbd}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retrieve the interface name from the object. The name is of the short form as shown in \char`\"{}show interface brief\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+interface name (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       std::string name = intf->getName();
+
+Python:
+       print \textcolor{stringliteral}{"Interface: "} + intf.getName() 
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_abd5291d975d3193c3603efd7ec17deda}\label{classnxos_1_1_nx_intf_abd5291d975d3193c3603efd7ec17deda}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Oper\+State@{get\+Oper\+State}}
+\index{get\+Oper\+State@{get\+Oper\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Oper\+State()}{getOperState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Oper\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the operational status of the interface
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
+    std::string operSt;
+    state   = objp->getOperState();
+    operSt = state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
+       (state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
+Python:
+    print \textcolor{stringliteral}{"\(\backslash\)tOperSt: "} + getStateStr(intf.getOperState())      
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ac1fdcdff8093c76a11b06951d2673356}\label{classnxos_1_1_nx_intf_ac1fdcdff8093c76a11b06951d2673356}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t nxos\+::\+Nx\+Intf\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the configured interface speed ~\newline
+ \begin{DoxyReturn}{Returns}
+Value representing the speed setting. ~\newline
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       uint32\_t speed    =  objp->getSpeed();
+Python:
+       print \textcolor{stringliteral}{"\(\backslash\)tSpeed: "} + intf.getSpeed()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_aa0885ab26e4abfaa8c7e8e8adb9d32ab}\label{classnxos_1_1_nx_intf_aa0885ab26e4abfaa8c7e8e8adb9d32ab}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the interface type
+
+\begin{DoxyReturn}{Returns}
+numberic value of type intf\+\_\+type\+\_\+e
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos::intf\_type\_e}}   type = intf->getType();
+Python:
+       print \textcolor{stringliteral}{"\(\backslash\)tType: "} + getTypeStr(intf.getType())
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a3f7942d5ae1a998904d9ea97b252eb21}\label{classnxos_1_1_nx_intf_a3f7942d5ae1a998904d9ea97b252eb21}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Vlan@{get\+Vlan}}
+\index{get\+Vlan@{get\+Vlan}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Vlan()}{getVlan()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Vlan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return default vlan based on switching mode; if access mode return access vlan. If trunking mode return native vlan. S\+VI returns vlan it is defined on.
+
+\begin{DoxyReturn}{Returns}
+vlan name (string), same as \char`\"{}show vlan\char`\"{}
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      std::string vlan = intf->getVlan();
+Python:
+       print \textcolor{stringliteral}{"\(\backslash\)tVlan: "} + intf.getVlan()
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ae8d21d7a42388aedcda5c7bc3f5c4b04}\label{classnxos_1_1_nx_intf_ae8d21d7a42388aedcda5c7bc3f5c4b04}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Vrf@{get\+Vrf}}
+\index{get\+Vrf@{get\+Vrf}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{get\+Vrf()}{getVrf()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+Vrf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the vrf this interface belongs to
+
+\begin{DoxyReturn}{Returns}
+vrf name (string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+       std::string  vrf = intf->getVrf()\textcolor{stringliteral}{'}
+\textcolor{stringliteral}{Python:}
+\textcolor{stringliteral}{       print "\(\backslash\)tVrf: " + intf.getVrf() }
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_aa0b5180978bbdcb3da2f18ed9bef089c}\label{classnxos_1_1_nx_intf_aa0b5180978bbdcb3da2f18ed9bef089c}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&}]{intf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test inequality of interface objects. Two objects are not equal if they refer to different interface names or have different D\+ME property values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+\_\+obj} & Interface to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if inequality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxIntf *obj1 = intfMgr->getIntf(arg1);
+     NxIntf *obj2 = intfMgr->getIntf(arg2);
+     \textcolor{keywordflow}{if} (*obj1 != *obj2)
+         cout << \textcolor{stringliteral}{"Not Equal"} << endl;
+Python:
+     obj1 = intfMgr.getIntf(cmds[1])
+     obj2 = intfMgr.getIntf(cmds[2])
+     \textcolor{keywordflow}{if} (obj1 != obj2):
+         print \textcolor{stringliteral}{"Not Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a132f11f6cf7b6d93af1c9e565dc853c5}\label{classnxos_1_1_nx_intf_a132f11f6cf7b6d93af1c9e565dc853c5}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!operator==@{operator==}}
+\index{operator==@{operator==}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} const \&}]{intf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of intf objects. Two objects are equal if they refer to the same interface name and have the same D\+ME property values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intf\+\_\+obj} & Interface to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxIntf *obj1 = intfMgr->getIntf(arg1);
+     NxIntf *obj2 = intfMgr->getIntf(arg2);
+     \textcolor{keywordflow}{if} (*obj1 == *obj2)
+         cout << \textcolor{stringliteral}{"Equal"} << endl;
+Python:
+     obj1 = intfMgr.getIntf(cmds[1])
+     obj2 = intfMgr.getIntf(cmds[2])
+     \textcolor{keywordflow}{if} (obj1 == obj2):
+         print \textcolor{stringliteral}{"Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a2244d9def0a3538d1f66f8816ad8b545}\label{classnxos_1_1_nx_intf_a2244d9def0a3538d1f66f8816ad8b545}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Admin\+State@{set\+Admin\+State}}
+\index{set\+Admin\+State@{set\+Admin\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Admin\+State()}{setAdminState()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Admin\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set administrative state for interface 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & The state to set interface to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intf->setAdminState(\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos::UP}});
+Python:
+   intf.setAdminState(nx\_sdk\_py.UP)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_aaaa5e4a9b9161b2908eb9c7979e96f8e}\label{classnxos_1_1_nx_intf_aaaa5e4a9b9161b2908eb9c7979e96f8e}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Description@{set\+Description}}
+\index{set\+Description@{set\+Description}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Description()}{setDescription()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the interface description. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em desc} & The description to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   intf->setDescription(\textcolor{stringliteral}{"Net-1 interface"});
+Python:
+   intf.setDescription(\textcolor{stringliteral}{"Private segment interface"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- invalid input E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE -- operation failed \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a90a3cca36e76717085fecf575e815139}\label{classnxos_1_1_nx_intf_a90a3cca36e76717085fecf575e815139}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+L2\+Address@{set\+L2\+Address}}
+\index{set\+L2\+Address@{set\+L2\+Address}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+L2\+Address()}{setL2Address()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+L2\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mac }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Configure L2 mac address for routed interface. L2 address string must be in form\+: A\+A\+:\+B\+B\+:\+C\+C\+:\+D\+D\+:\+EE\+:FF 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mac} & The mac address in string format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+      intf->setL2Address(\textcolor{stringliteral}{"52:54:00:C0:CB:C7"});
+Python:
+      intf.setL2Address(\textcolor{stringliteral}{"52:54:00:C0:CB:C7"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a9ff78e595e9d16ab1eca675daa98c34e}\label{classnxos_1_1_nx_intf_a9ff78e595e9d16ab1eca675daa98c34e}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+L3\+Address@{set\+L3\+Address}}
+\index{set\+L3\+Address@{set\+L3\+Address}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+L3\+Address()}{setL3Address()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+L3\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{addr,  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{type,  }\item[{bool}]{primary }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the I\+Pv4/\+I\+Pv6 address for an L3 interface, primary or secondary. IP address string must be a string in form\+: A.\+B.\+C.\+D/mm 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr} & The L3 address in string format. \\
+\hline
+\mbox{\tt in}  & {\em type} & The address family of the address. \\
+\hline
+\mbox{\tt in}  & {\em primary} & This is the primary address or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.1/24"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{true}); \textcolor{comment}{//primary}
+    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.100/24"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{false}); \textcolor{comment}{//sec}
+Python:
+    intf.setL3Address(\textcolor{stringliteral}{"192.168.4.100/24"}, nx\_sdk\_py.AF\_IPV4, False)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- invalid input parameter E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE -- operation failed \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a20e5e820227e592874bf155573e3e700}\label{classnxos_1_1_nx_intf_a20e5e820227e592874bf155573e3e700}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Layer@{set\+Layer}}
+\index{set\+Layer@{set\+Layer}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Layer()}{setLayer()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Layer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the interface switching mode, Layer2 or Layer3 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em layer} & Set the interface layer value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   ret = intf->setLayer(\textcolor{stringliteral}{"Layer3"});
+Python:
+   intf.setLayer(\textcolor{stringliteral}{"Layer2"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ae2790907b869c62c01567452d66d03f9}\label{classnxos_1_1_nx_intf_ae2790907b869c62c01567452d66d03f9}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Mtu@{set\+Mtu}}
+\index{set\+Mtu@{set\+Mtu}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Mtu()}{setMtu()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Mtu (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{mtu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set interface mtu. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mtu} & The mtu value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     intf->setMtu(1440);
+Python:
+     intf.setMtu(1440)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_ad42e229fc4c3aa9111b3a8805d55588c}\label{classnxos_1_1_nx_intf_ad42e229fc4c3aa9111b3a8805d55588c}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Speed()}{setSpeed()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Speed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set interface speed. Input values are one of I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+$\ast$ values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em speed} & The speed value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    intf->setSpeed(\mbox{\hyperlink{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}{INTF\_SPEED\_10G}});
+Python:
+    intf.setSpeed(\mbox{\hyperlink{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}{INTF\_SPEED\_10G}})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_af5d5c584845fe42bea0d1d40f9907065}\label{classnxos_1_1_nx_intf_af5d5c584845fe42bea0d1d40f9907065}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Vlan@{set\+Vlan}}
+\index{set\+Vlan@{set\+Vlan}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Vlan()}{setVlan()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Vlan (\begin{DoxyParamCaption}\item[{unsigned int}]{vlan\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set interface vlan membership. Input is the vlan id number. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vlan\+\_\+id} & The vlan id value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     intf->setVlan(3);
+Python:
+     intf.setVlan(2)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- invalid argument E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE -- operation failed \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_a91343eb99de8391f1a0e06646ae13b5e}\label{classnxos_1_1_nx_intf_a91343eb99de8391f1a0e06646ae13b5e}} 
+\index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Vrf@{set\+Vrf}}
+\index{set\+Vrf@{set\+Vrf}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
+\subsubsection{\texorpdfstring{set\+Vrf()}{setVrf()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Vrf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vrf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the interface vrf membership. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vrf} & The vrf name to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++ :
+     intf->setVrf(\textcolor{stringliteral}{"vlan-test2"});
+Python:
+     intf.setVrf(\textcolor{stringliteral}{"vlan-test2"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & -- invalid argument E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE -- operation failed E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID -- vrf does no exist \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

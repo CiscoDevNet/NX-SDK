@@ -1,28 +1,28 @@
 /** @file nx_exception.h
  *  @brief Abstract Exception Interface for all thrown NX errors.
  *
- *  NX-SDK v1.0.0 supports <br>
- *     - Throws Simple exception of the type in <br>
- *         - C++    - std::logic_err    <br>
- *         - Python - String Object.    <br><br>
+ *  NXSDK V1.0 supports
+ *     - Throws Simple exception of the type in
+ *         C++    - std::logic_err
+ *         Python - String Object.
  *
- *  NX-SDK v1.5.0 supports    <br>
- *     - Throws Simple exception of the type as version v1.0.0, <br>
- *         - C++    - std::logic_err   <br>
- *         - Python - String Object.   <br><br>
+ *  NXSDK V1.5 supports
+ *     - Throws Simple exception of the type as version V1.0,
+ *         C++    - std::logic_err
+ *         Python - String Object.
  *     
- *     - Also Throws Advanced exeception of the type NxException across all <br>
- *       languages with more information.  <br>
- *         - C++    - NxException Object   <br>
- *         - Python - NxException Object   <br>
+ *     - Also Throws Advanced exeception of the type NxException across all 
+ *       languages with more information.  
+ *         C++    - NxException Object
+ *         Python - NxException Object
  *
  *  @note By default, simple exception is enabled for an App. 
  *        If the App supports Advanced Exception handling then 
  *        to enable Advanced exception, set advException flag to 
  *        TRUE in getSdkInst Api.
  *
- *  @since NX-SDK v1.5.0
-
+ *  @since NXSDK V1.5
+ *
  *  Refer to some example Applications. 
  *
  *  @author nxos-sdk@cisco.com
@@ -42,57 +42,10 @@ namespace nxos {
 /**
  *  @brief Abstract Exception Interface for all NXOS thrown errors.
  *         Each API throws an exception of the type NxException 
- *         when advException is enabled for an App to handle the 
- *         failures gracefully. Refer to nxsdk applications for the 
- *         usage of NxException.
- *
- *  @since NX-SDK v1.5.0
- *
- *  1) To Enable advanced exception, 
- *  @code
- *  Usage:
- *
- *  C++:
- *     sdk = nxos::NxSdk::getSdkInst(argc, argv, true);
- *
- *  Python:
- *     import nx_sdk_py
- *     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
- *          
- *  @endcode 
- * 
- *  2) To catch the exceptions,
- *  @code
- *  Usage:
- *
- *  C++:
- *     try {
- *         ribMgr->watchL3Route(protocol, tag, vrf_name, af);
- *     } catch (std::logic_error const& err) {
- *         clicmd.printConsole("Failed with Err (%s)", err.what());    
- *     } catch (const NxException *e) {
- *         clicmd.printConsole("Module: %s, API: %s, Severity: %s, 
- *                             ErrCode %d(%s)", e->getErrModule(), 
- *                             e->getErrApi(), 
- *                             NxTrace::getPrioStr(e->getErrSeverity()), 
- *                             e->getErrCode(), e->what()));
- *     }
- *
- *  Python:
- *     try:           
- *        ribMgr.watchL3Route(protocol, tag, vrf_name, af)       
- *     except RuntimeError,e:                     
- *        # If Simple Exception is set (since v1.0.0
- *        clicmd.printConsole("Error %s" % str(e))
- *     except nx_sdk_py.NxException as e:           
- *        #If Advanced Exception is set(since v1.5.0))
- *        clicmd.printConsole("Module: %s, API: %s, Severity: %s, \
- *                            ErrCode %d(%s)" % (e.getErrModule(), \
- *                            e.getErrApi(), \
- *                            nx_sdk_py.NxTrace.getPrioStr(e.getErrSeverity()), \
- *                            e.getErrCode(), e.what()))  
- *  @endcode   
- **/
+ *         when advException is enabled for an App in case of a
+ *         failure for the Apps to handle the failures gracefully. 
+ *         Refer to sample applications for the usage of NxException.
+ */
 class NxException {
 public:
 
@@ -143,28 +96,48 @@ public:
 
 /// Supported Error types
 typedef enum {
+   // No error
+   ERR_ESUCCESS       = 0, 
+ 
    /// Not used Right.
-   ERR_INVALID_USAGE = 1,
-   
+   ERR_INVALID_USAGE,
+    
    /// Not a valid scenario.
-   ERR_INVALID       = 2,
-
+   ERR_INVALID,
+   
    /// NULL Pointer Parameter passed
-   ERR_NULL_PTR      = 3,
-
+   ERR_NULL_PTR,
+   
    /// Does not exist
-   ERR_NOT_FOUND     = 4,
+   ERR_NOT_FOUND,
 
+   /// Already exists
+   ERR_EXISTS,
+   
    /// Empty case
-   ERR_EMPTY         = 5,
-
+   ERR_EMPTY,
+   
    /// Reached Max Limit
-   ERR_MAX_LIMIT     = 6,
-
+   ERR_MAX_LIMIT,
+   
    /// Failure case
-   ERR_FAILURE       = 7,
+   ERR_FAILURE,
+   
+   // No error, but requires further processing
+   ERR_ESUCCESS_MORE,
+   
+   // Signal interrupt received
+   ERR_SIGINT,
+   
+   // Not enough memory to complete
+   ERR_ENOMEM,
+   
+   // Bad fd found
+   ERR_BADFD, 
+   
+   ERR_UNKNOWN
 } err_type_e;
-
+ 
 }
 
 #endif //__NX_EXCEPTION_H__

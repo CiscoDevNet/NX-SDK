@@ -1,0 +1,250 @@
+\hypertarget{classnxos_1_1_nx_vrf}{}\section{nxos\+:\+:Nx\+Vrf Class Reference}
+\label{classnxos_1_1_nx_vrf}\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+
+
+Abstract V\+RF Interface used to get details about a V\+RF.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+rib\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_vrf_ad5f50e3424b3d78304447600a3678e0b}{$\sim$\+Nx\+Vrf}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_vrf_a276a8d8170f372089a5653bdd7febfde}{get\+Name}} ()=0
+\item 
+virtual unsigned long \mbox{\hyperlink{classnxos_1_1_nx_vrf_a4ab30d5ff7a1d5d2abbab21652cd59fa}{get\+Id}} ()=0
+\item 
+virtual unsigned long \mbox{\hyperlink{classnxos_1_1_nx_vrf_a6f1529908decf0dfb531e674440d82ed}{get\+Table\+Id}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} af)=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_vrf_a443e508684e9804f14cc3526302ac8b4}{get\+State}} ()=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_vrf_a42bdba27e42981d74066a72c24809c98}{get\+Event}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_vrf_adc5d2e97b5fceb4fab75c448fb54ada5}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&vrf\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_vrf_a2cc336534a1caff79ade7ed9b2a5a110}{operator!=}} (\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&vrf\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_vrf_ade190af878a57a5f49a329fdffd6714e}{equal}} (\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&vrf\+\_\+obj) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract V\+RF Interface used to get details about a V\+RF. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_vrf_ad5f50e3424b3d78304447600a3678e0b}\label{classnxos_1_1_nx_vrf_ad5f50e3424b3d78304447600a3678e0b}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!````~Nx\+Vrf@{$\sim$\+Nx\+Vrf}}
+\index{````~Nx\+Vrf@{$\sim$\+Nx\+Vrf}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Vrf()}{~NxVrf()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Vrf\+::$\sim$\+Nx\+Vrf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_vrf_ade190af878a57a5f49a329fdffd6714e}\label{classnxos_1_1_nx_vrf_ade190af878a57a5f49a329fdffd6714e}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!equal@{equal}}
+\index{equal@{equal}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{equal()}{equal()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Vrf\+::equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&}]{vrf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of vrf objects.
+
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_vrf_a42bdba27e42981d74066a72c24809c98}\label{classnxos_1_1_nx_vrf_a42bdba27e42981d74066a72c24809c98}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Vrf\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the type of Event(\+Add, Update, Delete etc) when there is a change to a tracked V\+RF. Should be used only in Rib Handler Callbacks like post\+Vrf\+Cb(). If used outside of R\+IB Handler Callbacks its set to N\+O\+\_\+\+E\+V\+E\+NT.
+
+\begin{DoxyReturn}{Returns}
+Type of V\+RF Event(event\+\_\+type\+\_\+e)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} postVrfCb(NxVrf *vrf) \{
+              cout << \textcolor{stringliteral}{"VRF Event: "} << vrf->getEvent();
+         \}
+   \};
+Python:
+   \textcolor{keyword}{class }pyRibHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get VRF events}
+         def postVrfCb(self, nxvrf):
+             print "VRF Event: %d" % vrf.\mbox{\hyperlink{classnxos_1_1_nx_vrf_a42bdba27e42981d74066a72c24809c98}{getEvent}}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_vrf_a4ab30d5ff7a1d5d2abbab21652cd59fa}\label{classnxos_1_1_nx_vrf_a4ab30d5ff7a1d5d2abbab21652cd59fa}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily virtual unsigned long nxos\+::\+Nx\+Vrf\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the ID of the V\+RF from the given V\+RF object. Returns 0 if the V\+RF is not yet created.
+
+V\+RF Id(unsigned long)
+
+
+\begin{DoxyCode}
+C++:
+     NxVrf *vrf;
+     vrf = ribMgr->getVrf(\textcolor{stringliteral}{"default"});
+     cout << \textcolor{stringliteral}{"Vrf Id: "} << vrf->getId();
+
+Python:
+     vrf = ribMgr.getVrf(\textcolor{stringliteral}{"default"})
+     print \textcolor{stringliteral}{"Vrf Id %d"} % vrf.getId()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_vrf_a276a8d8170f372089a5653bdd7febfde}\label{classnxos_1_1_nx_vrf_a276a8d8170f372089a5653bdd7febfde}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Vrf\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Name of the V\+RF from the given V\+RF object.
+
+\begin{DoxyReturn}{Returns}
+V\+RF Name(string)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     NxRibMgr *ribMgr;
+     NxVrf    *vrf;
+
+     \textcolor{keywordflow}{if} (sdk) \{
+         ribMgr = sdk->getRibMgr();
+         \textcolor{keywordflow}{if} (rigMgr) \{
+             vrf = ribMgr->getVrf(\textcolor{stringliteral}{"default"});
+             \textcolor{keywordflow}{if} (vrf) \{
+                 cout << \textcolor{stringliteral}{"Vrf Name: "} << vrf->getName();
+             \}
+         \}
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     \textcolor{keywordflow}{if} sdk:
+        ribMgr = sdk.getRibMgr()
+        \textcolor{keywordflow}{if} ribMgr:
+           vrf = ribMgr.getVrf(\textcolor{stringliteral}{"default"})
+           \textcolor{keywordflow}{if} vrf:
+              print \textcolor{stringliteral}{"Vrf Name: %s"} % vrf.getName()
+\end{DoxyCode}
+ N\+O\+TE\+: For rest of the A\+P\+Is usage, object exists check will not be done. Please check for object existence before referring the object. \mbox{\Hypertarget{classnxos_1_1_nx_vrf_a443e508684e9804f14cc3526302ac8b4}\label{classnxos_1_1_nx_vrf_a443e508684e9804f14cc3526302ac8b4}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Vrf\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the state(\+U\+P or D\+O\+W\+N or etc) of the V\+RF for the given V\+RF object.
+
+\begin{DoxyReturn}{Returns}
+V\+RF state(state\+\_\+type\+\_\+e)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxVrf *vrf;
+     vrf = ribMgr->getVrf(\textcolor{stringliteral}{"default"});
+     cout << \textcolor{stringliteral}{"VRF State: "} << vrf->getState();
+
+Python:
+     vrf = ribMgr.getVrf(\textcolor{stringliteral}{"default"})
+     print \textcolor{stringliteral}{"VRF State: %d"} % vrf.getState()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_vrf_a6f1529908decf0dfb531e674440d82ed}\label{classnxos_1_1_nx_vrf_a6f1529908decf0dfb531e674440d82ed}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!get\+Table\+Id@{get\+Table\+Id}}
+\index{get\+Table\+Id@{get\+Table\+Id}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{get\+Table\+Id()}{getTableId()}}
+{\footnotesize\ttfamily virtual unsigned long nxos\+::\+Nx\+Vrf\+::get\+Table\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Table ID of the V\+RF for the given Address Family (AF) from the given V\+RF object. Returns 0 if the Table is not yet created.
+
+\begin{DoxyReturn}{Returns}
+Table(\+I\+Pv4 or I\+Pv6) Id in a V\+R\+F(unsigned long)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxVrf *vrf;
+     vrf = ribMgr->getVrf(\textcolor{stringliteral}{"default"});
+     cout << \textcolor{stringliteral}{"IPv4 Table Id: "} << vrf->getTableId(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos::AF\_IPV4}});
+
+Python:
+     vrf = ribMgr.getVrf(\textcolor{stringliteral}{"default"})
+     print \textcolor{stringliteral}{"IPv4 Table Id %d"} % vrf.getTableId(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid} & Address-\/\+Family(AF) passed \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_vrf_a2cc336534a1caff79ade7ed9b2a5a110}\label{classnxos_1_1_nx_vrf_a2cc336534a1caff79ade7ed9b2a5a110}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Vrf\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&}]{vrf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if inequality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_vrf_adc5d2e97b5fceb4fab75c448fb54ada5}\label{classnxos_1_1_nx_vrf_adc5d2e97b5fceb4fab75c448fb54ada5}} 
+\index{nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}!operator==@{operator==}}
+\index{operator==@{operator==}!nxos\+::\+Nx\+Vrf@{nxos\+::\+Nx\+Vrf}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Vrf\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} const \&}]{vrf\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if equality property holds, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

@@ -45,8 +45,8 @@ class NxCliCmd
 {
 public:
     /* ***************************************
-     * ** public data members
-     * ***************************************/
+    * ** public data members
+    * ***************************************/
 
     ///Custom Mode for a Custom CLI command.
     typedef enum
@@ -237,10 +237,10 @@ public:
     virtual void addMode(modes_t mode) = 0;
 
     /// Get the type of the CLI command.
-    virtual cmdtype_t getCmdType() = 0;
+    virtual NxCliCmd::cmdtype_t getCmdType() = 0;
 
     /// Get the mode of the CLI command
-    virtual modes_t getCmdMode() = 0;
+    virtual NxCliCmd::modes_t getCmdMode() = 0;
 
     /// Get the Name of the CLI command
     virtual std::string getCmdName() = 0;
@@ -444,11 +444,11 @@ public:
     virtual void printConsole(const char *fmt, ...) = 0;
 
     /**
-     * @note Following APIs are supported from NX-SDK v1.5.0
+     * @note Following APIs are supported from NXSDK V1.5
      **/
 
     /**
-     *  Same as v1.0.0 except the addition of new parameter
+     *  Same as V1.0 except the addition of new parameter
      *  make_key.
      *
      * @param[in] make_key If set to TRUE then this keyword will be added to the
@@ -457,16 +457,17 @@ public:
      *                   - If A keyword is not set as key (make_key=false) then
      *                     Lets say we configure "action A" then we config
      *                     "action B" then config "action B" would replace/update
-     *                     "action A". Hence "show run" will have "action B".
+     *                     "action A".
+     *                     Hence "show run" will have "action B".
      *                   - If A & B keywords are set as key (make_key=true) then Lets say
      *                     we configure action A" then we config "action B", we will
      *                     have two entries "action A" and "action B". Hence "show run"
      *                     will have both "action A" and "action B".
      *
-     *  @note Refer to v1.0.0 API section to get more details
+     *  @note Refer to V1.0 API section to get more details
      *        about other parameters.
      *
-     * @since v1.5.0
+     * @since V1.5
      **/
     virtual void updateKeyword(const char *keyword_name,
                                const char *help_str,
@@ -502,8 +503,8 @@ class NxCliParser
 {
 public:
     /* ***************************************
-     * ** public methods
-     * ***************************************/
+    * ** public methods
+    * ***************************************/
 
     /**
      * Destructor

@@ -1,0 +1,423 @@
+\hypertarget{classnxos_1_1_nx_rib_mgr}{}\section{nxos\+:\+:Nx\+Rib\+Mgr Class Reference}
+\label{classnxos_1_1_nx_rib_mgr}\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+
+
+Abstract Rib Manager interface to gain access to N\+X\+OS R\+IB.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+rib\+\_\+mgr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a5f390bcc244b9f5984d35290aea0e2cc}{$\sim$\+Nx\+Rib\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a605323f1d764bc8c27fe770a9a6b4628}{get\+Vrf}} (std\+::string vrf\+Name=\char`\"{}default\char`\"{}, bool watch=false)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a35e2a52be337d47cd111803f64aca904}{watch\+Vrf}} (std\+::string vrf\+Name=\char`\"{}all\char`\"{})=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a957da78022cd4af95ee27941d0b67ce0}{unwatch\+Vrf}} (std\+::string vrf\+Name=\char`\"{}all\char`\"{})=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}{set\+Rib\+Mgr\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler}} $\ast$handler)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_aeed917ba912782303662c4009f3fcfcd}{get\+Rib\+Mgr\+Handler}} ()=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}{get\+L3\+Route}} (std\+::string route\+Addr, unsigned char mask\+Len=0, std\+::string vrf\+Name=\char`\"{}default\char`\"{}, bool clear\+Buffer=false)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}{watch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}})=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}{unwatch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}})=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Rib Manager interface to gain access to N\+X\+OS R\+IB. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a5f390bcc244b9f5984d35290aea0e2cc}\label{classnxos_1_1_nx_rib_mgr_a5f390bcc244b9f5984d35290aea0e2cc}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!````~Nx\+Rib\+Mgr@{$\sim$\+Nx\+Rib\+Mgr}}
+\index{````~Nx\+Rib\+Mgr@{$\sim$\+Nx\+Rib\+Mgr}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Rib\+Mgr()}{~NxRibMgr()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Rib\+Mgr\+::$\sim$\+Nx\+Rib\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor
+
+To Delete the R\+IB manager instance and its associated objects gracefully. Its cleaned on delete sdk too. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}\label{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!get\+L3\+Route@{get\+L3\+Route}}
+\index{get\+L3\+Route@{get\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{get\+L3\+Route()}{getL3Route()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::get\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{route\+Addr,  }\item[{unsigned char}]{mask\+Len = {\ttfamily 0},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}},  }\item[{bool}]{clear\+Buffer = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the L3 Route based on the passed input parameters. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em route\+Addr} & Address of the route as a string. \\
+\hline
+\mbox{\tt in}  & {\em mask\+Len} & \mbox{[}Optional\mbox{]} Mask\+Length if its a prefix. If not set it will pick /32 for IP address (or) /128 for I\+Pv6 address. \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Vrf\+Name in which the route is present. If not set \char`\"{}default\char`\"{} will be used. vrf\+Name cannot be \char`\"{}all\char`\"{} or empty string \char`\"{}\char`\"{}. \\
+\hline
+\mbox{\tt in}  & {\em clear\+Buffer} & \mbox{[}Optional\mbox{]} If the route is present, \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}{get\+L3\+Route()}} creates a new \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} object. \mbox{[}Recommended\mbox{]} App owners must free/destory the L3 Route object once done. If they fail to free it, N\+X\+S\+DK will store the object until its freed. N\+O\+TE\+: N\+X\+S\+DK allows a max of 10 get\+L3\+Route Objects per V\+RF without having the Apps to free it explicitly. If user failed to cleanup after 10 get\+L3\+Route objects, it will raise an exception. If the App owners, failed/forgot to free the route object then set clear\+Buffer flag to True which will free all the previously created route objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} object if it exists. N\+U\+LL if not (Vrf\+Name empty (or) \char`\"{}all\char`\"{}, Vrf does not exist, down or invalid, no route etc).
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid} & route\+Addr \\
+\hline
+{\em invalid} & mask\+Len \\
+\hline
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+{\em get\+Route} & buffer is full, cleanup previous pointers (or) call get\+L3\+Route with clear\+Buffer set to true. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_aeed917ba912782303662c4009f3fcfcd}\label{classnxos_1_1_nx_rib_mgr_aeed917ba912782303662c4009f3fcfcd}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!get\+Rib\+Mgr\+Handler@{get\+Rib\+Mgr\+Handler}}
+\index{get\+Rib\+Mgr\+Handler@{get\+Rib\+Mgr\+Handler}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Rib\+Mgr\+Handler()}{getRibMgrHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::get\+Rib\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the Handler object registered with R\+IB Mgr. \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a605323f1d764bc8c27fe770a9a6b4628}\label{classnxos_1_1_nx_rib_mgr_a605323f1d764bc8c27fe770a9a6b4628}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!get\+Vrf@{get\+Vrf}}
+\index{get\+Vrf@{get\+Vrf}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{get\+Vrf()}{getVrf()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::get\+Vrf (\begin{DoxyParamCaption}\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}},  }\item[{bool}]{watch = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the V\+RF object from a given name. Returns N\+U\+LL if \char`\"{}all\char`\"{} (or) empty string \char`\"{}\char`\"{} is passed. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vrf\+Name} & name of the V\+RF in string. vrf\+Name cannot be \char`\"{}all\char`\"{} or empty string \char`\"{}\char`\"{} \\
+\hline
+\mbox{\tt in}  & {\em watch} & \mbox{[}Optional\mbox{]} set to True if this V\+RF needs to be tracked. By default, its set to False. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} Object if it exists. N\+U\+LL if it does not exist.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxVrf *vrf;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     vrf = ribMgr->getVrf(\textcolor{stringliteral}{"default"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     vrf = ribMgr.getVrf(\textcolor{stringliteral}{"default"})
+\end{DoxyCode}
+ 
+\begin{DoxyExceptions}{Exceptions}
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}\label{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!set\+Rib\+Mgr\+Handler@{set\+Rib\+Mgr\+Handler}}
+\index{set\+Rib\+Mgr\+Handler@{set\+Rib\+Mgr\+Handler}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{set\+Rib\+Mgr\+Handler()}{setRibMgrHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+::set\+Rib\+Mgr\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Users to overload R\+IB Manager Handler class to handle regsiterd events like V\+RF, Route updates etc and register the handler object with R\+IB manager to handle rib events. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler}}} & object with user overloaded functions to handle rib events.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} postL3RouteCb(NxL3Route *route) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr = sdk->getRibMgr();
+        NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrHandler();
+        ribMgr->setRibMgrHandler(myribcb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Route events}
+         def postL3RouteCb(self, nxroute):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+       myribcb = myRibMgrHandler()
+       ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}{setRibMgrHandler}}(myribcb)
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}\label{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!unwatch\+L3\+Route@{unwatch\+L3\+Route}}
+\index{unwatch\+L3\+Route@{unwatch\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+L3\+Route()}{unwatchL3Route()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+::unwatch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To unsubscribe for Route updates based on protocol owner of the route, vrf, Address Family etc. To get the route updates, user overloaded 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em protocol} & Owner of the routes in NX R\+IB. \\
+\hline
+\mbox{\tt in}  & {\em tag} & \mbox{[}Optional\mbox{]} instance id of the owner for ex) for B\+GP -\/ tag is the asn for isis -\/ instance id \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Register for route events only from this Vrf. If not specified, it means for all Vrfs. vrf\+Name cannot be empty string. \\
+\hline
+\mbox{\tt in}  & {\em af} & \mbox{[}Optional\mbox{]} Register for route events only from the specified address-\/family (af). For ex) To get only I\+Pv4 route events, use A\+F\+\_\+\+I\+P\+V4 etc. IF not speficied, it means from all A\+Fs.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr = sdk->getRibMgr();
+        ribMgr->unwatchL3Route(\textcolor{stringliteral}{"bgp"}, \textcolor{stringliteral}{"100"}, \textcolor{stringliteral}{"vpn1"});
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+       ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}{unwatchL3Route}}(\textcolor{stringliteral}{"bgp"}, \textcolor{stringliteral}{"100"}, \textcolor{stringliteral}{"vpn1"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em vrf\+Name} & is more than 32 characters.\\
+\hline
+\end{DoxyExceptions}
+N\+O\+TE\+: Use the pregenerated \char`\"{}show $<$appname$>$ nxsdk rib\+Mgr\char`\"{} command to verify if the A\+PI has succeeded. \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a957da78022cd4af95ee27941d0b67ce0}\label{classnxos_1_1_nx_rib_mgr_a957da78022cd4af95ee27941d0b67ce0}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!unwatch\+Vrf@{unwatch\+Vrf}}
+\index{unwatch\+Vrf@{unwatch\+Vrf}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{unwatch\+Vrf()}{unwatchVrf()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+::unwatch\+Vrf (\begin{DoxyParamCaption}\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To unsubscribe for any updates to this V\+RF. To unsubscribe for all V\+RF updates, use vrf\+Name as \char`\"{}all\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Vrf\+Name} & \mbox{[}Optional\mbox{]} name of the vrf in string. If not specified, \char`\"{}all\char`\"{} is used to unwatch all V\+R\+Fs. Vrf\+Name cannot be empty string.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxVrf *vrf;
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     ribMgr->unwatchVrf(\textcolor{stringliteral}{"vpn1"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     ribMgr.unwatchVrf(\textcolor{stringliteral}{"vpn1"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em vrf\+Name} & is more than 32 characters.\\
+\hline
+\end{DoxyExceptions}
+N\+O\+TE\+: Use the pregenerated \char`\"{}show $<$appname$>$ nxsdk rib\+Mgr\char`\"{} command to verify if the A\+PI has succeeded. \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}\label{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!watch\+L3\+Route@{watch\+L3\+Route}}
+\index{watch\+L3\+Route@{watch\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+L3\+Route()}{watchL3Route()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::watch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To receive/subscribe for Route updates based on protocol owner of the route, vrf, Address Family etc. To get the route updates, user overloaded post\+L3\+Route\+Cb handler will be called. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em protocol} & owner of the routes in NX R\+IB. \\
+\hline
+\mbox{\tt in}  & {\em tag} & \mbox{[}Optional\mbox{]} instance id of the owner for ex) for B\+GP -\/ tag is the asn for isis -\/ instance id \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Register for route events only from this Vrf. If not specified, it means for all Vrfs. vrf\+Name cannot be empty string. \\
+\hline
+\mbox{\tt in}  & {\em af} & \mbox{[}Optional\mbox{]} Register for route events only from the specified address-\/family (af). For ex) To get only I\+Pv4 route events, use A\+F\+\_\+\+I\+P\+V4 etc. IF not speficied, it means from all A\+Fs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful(\+Empty V\+Rf\+Name).
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} postL3RouteCb(NxL3Route *route) \{
+              cout << \textcolor{stringliteral}{"Received bgp-100 updates for IPV4 routes on vpn1"};
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr;
+        NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrMgrHandler();
+
+        ribMgr = sdk->getRibMgr();
+        \textcolor{keywordflow}{if} (ribMgr) \{
+            ribMgr->setRibMgrHandler(myribcb);
+            ribMgr->watchL3Route(\textcolor{stringliteral}{"bgp"}, \textcolor{stringliteral}{"100"}, \textcolor{stringliteral}{"vpn1"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos::AF\_IPV4}});
+        \}
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Route events}
+         def postL3RouteCb(self, nxroute):
+             print "Received bgp-100 updates for IPV4 routes on vpn1"
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       myribcb = myRibMgrHandler()
+       if sdk:
+          ribMgr = sdk.getRibMgr()
+          if ribMgr:
+             ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}{setRibMgrHandler}}(myribcb)
+             ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}{watchL3Route}}("bgp", "100", "vpn1", nxos::AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+{\em reached} & maximum watch filter count\+: 15 for this Address-\/\+Family(AF) in this V\+RF.\\
+\hline
+\end{DoxyExceptions}
+N\+O\+TE\+: Use the pregenerated \char`\"{}show $<$appname$>$ nxsdk rib\+Mgr\char`\"{} command to verify if the A\+PI has succeeded. \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a35e2a52be337d47cd111803f64aca904}\label{classnxos_1_1_nx_rib_mgr_a35e2a52be337d47cd111803f64aca904}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!watch\+Vrf@{watch\+Vrf}}
+\index{watch\+Vrf@{watch\+Vrf}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{watch\+Vrf()}{watchVrf()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::watch\+Vrf (\begin{DoxyParamCaption}\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To receive/subscribe for any updates to this V\+RF. On any update to this V\+RF, users overloaded post\+Vrf\+Cb handler will be called. To subscribe for all V\+R\+Fs, use vrf\+Name as \char`\"{}all\char`\"{}. N\+O\+TE\+: Forward referencing is allowed for a non created V\+RF i.\+e A\+PI can be called even if the V\+RF is not yet created. vrf\+Name cannot be empty. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} name of the vrf in string. If not specified, \char`\"{}all\char`\"{} is used to watch on all V\+R\+Fs. Vrf\+Name cannot be empty string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True -\/ if successful. False -\/ if not successful(\+Empty V\+Rf\+Name).
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+ C++:
+\textcolor{preprocessor}{      #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{      #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+      \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+         \textcolor{keyword}{public}:
+            \textcolor{keywordtype}{bool} postVrfCb(NxVrf *vrf) \{
+                 cout << \textcolor{stringliteral}{"Vpn1 VRF changed"};
+            \}
+      \};
+
+      \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+      \{
+           NxSdk    *sdk;
+           NxRibMgr *ribMgr;
+           NxVrf    *vrf;
+
+           NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrHandler();
+           sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+           ribMgr = sdk->getRibMgr();
+           ribMgr->setRibMgrHandler(myribcb);
+
+           ribMgr->watchVrf(\textcolor{stringliteral}{"vpn1"});
+      \}
+
+ Python:
+    \textcolor{keyword}{import} nx\_sdk\_py
+
+    \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{    ### Overloaded Callback to get Route events}
+          def postVrfCb(self, nxvrf):
+              print "vpn1 has changed"
+
+\textcolor{preprocessor}{    # Do SDK related inits in one thread.}
+    def sdkThread(name,val):
+        sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+        ribMgr = sdk.getRibMgr()
+        myribcb = myRibMgrHandler()
+        ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}{setRibMgrHandler}}(myribcb)
+
+        ribMgr.\mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a35e2a52be337d47cd111803f64aca904}{watchVrf}}("vpn1")
+NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
+      to verify if the API has succeeded.
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\hypertarget{classnxos_1_1_nx_cmd_handler}{}\section{nxos\+:\+:Nx\+Cmd\+Handler Class Reference}
+\label{classnxos_1_1_nx_cmd_handler}\index{nxos\+::\+Nx\+Cmd\+Handler@{nxos\+::\+Nx\+Cmd\+Handler}}
+
+
+Custom Cli Command Callback Handler Class.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_cmd_handler_ae8e41c78decceb133f2d22b516099e55}{$\sim$\+Nx\+Cmd\+Handler}} ()
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_cmd_handler_ab60a4672e08b1acd1faa249936963ead}{post\+Cli\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}} $\ast$cmd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Custom Cli Command Callback Handler Class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_cmd_handler_ae8e41c78decceb133f2d22b516099e55}\label{classnxos_1_1_nx_cmd_handler_ae8e41c78decceb133f2d22b516099e55}} 
+\index{nxos\+::\+Nx\+Cmd\+Handler@{nxos\+::\+Nx\+Cmd\+Handler}!````~Nx\+Cmd\+Handler@{$\sim$\+Nx\+Cmd\+Handler}}
+\index{````~Nx\+Cmd\+Handler@{$\sim$\+Nx\+Cmd\+Handler}!nxos\+::\+Nx\+Cmd\+Handler@{nxos\+::\+Nx\+Cmd\+Handler}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Cmd\+Handler()}{~NxCmdHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Cmd\+Handler\+::$\sim$\+Nx\+Cmd\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_cmd_handler_ab60a4672e08b1acd1faa249936963ead}\label{classnxos_1_1_nx_cmd_handler_ab60a4672e08b1acd1faa249936963ead}} 
+\index{nxos\+::\+Nx\+Cmd\+Handler@{nxos\+::\+Nx\+Cmd\+Handler}!post\+Cli\+Cb@{post\+Cli\+Cb}}
+\index{post\+Cli\+Cb@{post\+Cli\+Cb}!nxos\+::\+Nx\+Cmd\+Handler@{nxos\+::\+Nx\+Cmd\+Handler}}
+\subsubsection{\texorpdfstring{post\+Cli\+Cb()}{postCliCb()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Cmd\+Handler\+::post\+Cli\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{Nx\+Cli\+Cmd}} $\ast$}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+User to overload the post\+Cli\+Cb callback method to execute an action when their respective custom C\+LI is executed. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em assoicated} & cmd obj for the executed C\+LI command. \\
+\hline
+\mbox{\tt out}  & {\em True} & \+: the command was successful False\+: command failed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__cli_8h}{nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

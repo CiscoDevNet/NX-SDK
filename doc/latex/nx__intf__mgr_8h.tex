@@ -1,0 +1,131 @@
+\hypertarget{nx__intf__mgr_8h}{}\section{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+intf\+\_\+mgr.h File Reference}
+\label{nx__intf__mgr_8h}\index{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+intf\+\_\+mgr.\+h@{C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/nx\+\_\+intf\+\_\+mgr.\+h}}
+
+
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) Interface Management.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}types/nx\+\_\+common.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_intf}{nxos\+::\+Nx\+Intf}}
+\begin{DoxyCompactList}\small\item\em Public interface to N\+X-\/\+S\+DK interface objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
+\begin{DoxyCompactList}\small\item\em Public interface to N\+X-\/\+S\+DK interface events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{nxos\+::\+Nx\+Intf\+Mgr}}
+\begin{DoxyCompactList}\small\item\em Public interface to N\+X-\/\+S\+DK interface manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_aba26beddf88b4f5ecf23ef49cf04d4a4}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO}}~0
+\begin{DoxyCompactList}\small\item\em \+: Interface speed values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_a70c8ccc94996c19b93fca7221249fedf}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M}}~100
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_a03bb2b211e046bc7c8636f5fae6e663e}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G}}~1000
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G}}~10000
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_adfefc6fe1ce2f76c654e8e2b59eb88e3}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G}}~100000
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_a412158ddf2a73dfbc00f59708c0f0a3c}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G}}~25000
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_aa4af54f9d587976884bf75eddc292604}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G}}~40000
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_ad2c86b742538fb87bb04fa3b6f9085d9}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100}}~110
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_aa7f286268f339f68cce631a5f2fa4560}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000}}~120
+\item 
+\#define \mbox{\hyperlink{nx__intf__mgr_8h_a5a2f4600697cfa38474800885eecffa0}{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN}}~$\sim$((uint32\+\_\+t)0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) Interface Management. 
+
+Provides abstractions for N\+X\+OS interface functionalites such as reading and setting interface settings, and handling certain interface events.
+
+Copyright (c) 2018 by cisco Systems, Inc. All rights reserved.
+
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V1.\+7.\+5 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{nx__intf__mgr_8h_adfefc6fe1ce2f76c654e8e2b59eb88e3}\label{nx__intf__mgr_8h_adfefc6fe1ce2f76c654e8e2b59eb88e3}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G}{INTF\_SPEED\_100G}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100G~100000}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_a70c8ccc94996c19b93fca7221249fedf}\label{nx__intf__mgr_8h_a70c8ccc94996c19b93fca7221249fedf}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M}{INTF\_SPEED\_100M}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+100M~100}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}\label{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G}{INTF\_SPEED\_10G}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+10G~10000}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_a03bb2b211e046bc7c8636f5fae6e663e}\label{nx__intf__mgr_8h_a03bb2b211e046bc7c8636f5fae6e663e}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G}{INTF\_SPEED\_1G}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+1G~1000}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_a412158ddf2a73dfbc00f59708c0f0a3c}\label{nx__intf__mgr_8h_a412158ddf2a73dfbc00f59708c0f0a3c}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G}{INTF\_SPEED\_25G}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+25G~25000}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_aa4af54f9d587976884bf75eddc292604}\label{nx__intf__mgr_8h_aa4af54f9d587976884bf75eddc292604}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G}{INTF\_SPEED\_40G}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+40G~40000}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_aba26beddf88b4f5ecf23ef49cf04d4a4}\label{nx__intf__mgr_8h_aba26beddf88b4f5ecf23ef49cf04d4a4}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO}{INTF\_SPEED\_AUTO}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+TO~0}
+
+
+
+\+: Interface speed values. 
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_ad2c86b742538fb87bb04fa3b6f9085d9}\label{nx__intf__mgr_8h_ad2c86b742538fb87bb04fa3b6f9085d9}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100}{INTF\_SPEED\_AUTO\_100}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100~110}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_aa7f286268f339f68cce631a5f2fa4560}\label{nx__intf__mgr_8h_aa7f286268f339f68cce631a5f2fa4560}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000}{INTF\_SPEED\_AUTO\_100\_1000}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+A\+U\+T\+O\+\_\+100\+\_\+1000~120}
+
+\mbox{\Hypertarget{nx__intf__mgr_8h_a5a2f4600697cfa38474800885eecffa0}\label{nx__intf__mgr_8h_a5a2f4600697cfa38474800885eecffa0}} 
+\index{nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}!I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN}}
+\index{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN@{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN}!nx\+\_\+intf\+\_\+mgr.\+h@{nx\+\_\+intf\+\_\+mgr.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN}{INTF\_SPEED\_UNKNOWN}}
+{\footnotesize\ttfamily \#define I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_\+\+U\+N\+K\+N\+O\+WN~$\sim$((uint32\+\_\+t)0)}
+

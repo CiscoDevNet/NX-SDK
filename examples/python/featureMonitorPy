@@ -1,0 +1,107 @@
+#!/isan/bin/nxpython
+
+
+##########################################################################
+#Copyright (c) 2018
+#All rights reserved.
+##########################################################################
+
+##########################################################################
+### File:   featureMonitorPy
+###
+### Supported since NX-SDK v1.7.5
+###
+### Description:
+###     A simple NX-SDK Python application to demonstrate the usage 
+###     of NX-SDK DME manager to monitor for different feature enable 
+###     or disable events.
+###
+###     After starting the app, add or delete a feature from the switch
+###     CLI.  A message is displayed for the event.
+###     ex) switch(config)# feature bgp
+###         switch(config)# feature ospf
+###         switch(config)# no feature bgp
+###  
+###
+###
+##########################################################################
+
+import signal
+import time
+import threading
+import sys
+import json
+from time import gmtime, strftime
+from datetime import datetime, date, timedelta
+from pprint import pprint
+
+### Imports NX-OS SDK package
+import nx_sdk_py
+
+trace_level = nx_sdk_py.NxTrace.EMERG
+
+def sig_handler(signal, frame):
+    global sdk
+
+    sdk.stopEventLoop()
+    
+
+
+def getEventStr(event):
+    if event == nx_sdk_py.ADD:
+        return "Add"
+    elif event == nx_sdk_py.DELETE:
+        return "Delete"
+    elif event == nx_sdk_py.UPDATE:
+        return "Update"
+    else:
+        return "Unknown"
+
+
+class pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):
+
+    def postDmeHandlerCb(self, obj):
+        global traceP
+
+        traceP.event("Feature monitor callback: dn=%s event=%s" % 
+                     (obj.getDn(), getEventStr(obj.getEvent())))
+        traceP.syslog(nx_sdk_py.NxTrace.NOTICE,"Feature monitor callback: dn=%s event=%s" % 
+                     (obj.getDn(), getEventStr(obj.getEvent())))
+        
+#### main
+signal.signal(signal.SIGINT, sig_handler)
+
+sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+if not sdk:
+    print "sdk failed"
+    sys.exit()
+
+## Set a short Application description.
+sdk.setAppDesc('Feature Monitor  Python App')
+
+traceP = sdk.getTracer()
+
+traceP.event("[%s] Started service" % sdk.getAppName())
+traceP.syslog(trace_level, "Started service %s" % sdk.getAppName())
+
+dmeP = sdk.getDmeMgr()
+if not dmeP:
+    traceP.syslog(nx_sdk_py.NxTrace.EMERG, "Failed to open DME Mgr")
+    sys.exit()
+
+myDmeHandler = pyDmeHandler()
+
+dmeP.watch("sys/fm")
+dmeP.setDmeHandler(myDmeHandler)
+
+traceP.syslog(trace_level,"Starting event loop...")
+sdk.startEventLoop()
+
+### Got here either by calling stopEventLoop() or when App 
+### is removed from VSH.
+
+
+### [Required] Needed for graceful exit.
+nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+
+

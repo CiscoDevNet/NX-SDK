@@ -687,7 +687,7 @@ def sdkThread(name,val):
     ###
     cliP = sdk.getCliParser()
 
-    ### Construct Custom watch route command
+    ### Construct Custom show Port Bandwidth Utilization commands
     nxcmd = cliP.newConfigCmd("watch_route_cmd", "watch owner <protocol> [<tag>] [ipv4 | ipv6] [vrf <vrf-name>] ")
     nxcmd.updateKeyword("watch", "Watch on a object")
     nxcmd.updateKeyword("owner", "Owner of the route")
@@ -698,14 +698,15 @@ def sdkThread(name,val):
     nxcmd.updateKeyword("vrf", "VRF Information")
     nxcmd.updateParam("<vrf-name>", "VRF Name. By default vrf name is default", nx_sdk_py.P_VRF)
 
-    ### Construct Custom Clear telemetry stream index command. To stream from the beginning.
+    ### Construct Custom show Port Bandwidth Utilization commands
+    #nxcmd = cliP.newConfigCmd("watch_vrf_cmd", "watch vrf <vrf-name>")
     nxcmd = cliP.newConfigCmd("clear_tm_index_cmd", "clear-tm-index [<start-index>]")
     nxcmd.updateKeyword("clear-tm-index", "To stream all records from a certain index. Default is 0")
     nxcmd.updateParam("<start-index>", "Index from which records need to be streamed. Default 0", nx_sdk_py.P_INTEGER)
     nxcmd.addMode(nx_sdk_py.NxCliCmd.EXEC_MODE)
     
 
-    ### Construct Custom Config command to set the route history buffer period.
+    ### Construct Custom show Port Bandwidth Utilization commands
     nxcmd = cliP.newConfigCmd("set_route_history_period_cmd", "route-history period \
                               [<dayp> days] [<hourp> hours] {<minp> mins}")
     nxcmd.updateKeyword("route-history", "History of route updates")

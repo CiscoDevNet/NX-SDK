@@ -1,0 +1,473 @@
+\hypertarget{classnxos_1_1_nx_dme}{}\section{nxos\+:\+:Nx\+Dme Class Reference}
+\label{classnxos_1_1_nx_dme}\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+
+
+Public interface for N\+X\+S\+DK D\+ME objects. These objects are used by applications to read or update the D\+ME object store in N\+X\+OS, and also for D\+ME event processing.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+dme.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_a8dc547fb29c4db31558f05566cde616d}{$\sim$\+Nx\+Dme}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_ad97ecb092308dcacdd5de64327742210}{get\+Dn}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_dme_a353542ba7f8354730b78dd50659c0c30}{set\+Property}} (const std\+::string \&s\+In\+Prop\+Name, const std\+::string \&s\+In\+Value, int $\ast$err)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_af4a2a0bb41b6be55593e8624700a2d6d}{get\+Property}} (const std\+::string \&s\+In\+Prop\+Name, int $\ast$err)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_a61e01267ff642ace49a8fe75296a0cbd}{commit}} (int $\ast$err)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_a846519c8ee7521dac1c7e6c961903b0f}{get\+Data\+Json}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_abb7ee373c1fe3a50b52a243be2f9a863}{iterate\+Properties}} (bool from\+First=false)=0
+\item 
+virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}{get\+Event}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_dme_a6f7052ff8ef29df2f692dbfdb3a8c987}{get\+Event\+Is\+Property\+Changed}} (const std\+::string \&property)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_dme_a2fe8b05c2c14f16ad7a2f4002a63baf2}{iterate\+Event\+Updated\+Properties}} (bool from\+First=false)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_dme_a847650a963a30b0cad5969cac7ecb9bc}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&dme\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_dme_a8d1ffa9c69d24635fb28b52549ab666c}{operator!=}} (\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&dme\+\_\+obj) const =0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_dme_a3bbd85bc12faba3ee4737abaa907e4e5}{equal}} (\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&dme\+\_\+obj) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Public interface for N\+X\+S\+DK D\+ME objects. These objects are used by applications to read or update the D\+ME object store in N\+X\+OS, and also for D\+ME event processing. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a8dc547fb29c4db31558f05566cde616d}\label{classnxos_1_1_nx_dme_a8dc547fb29c4db31558f05566cde616d}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!````~Nx\+Dme@{$\sim$\+Nx\+Dme}}
+\index{````~Nx\+Dme@{$\sim$\+Nx\+Dme}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{$\sim$\+Nx\+Dme()}{~NxDme()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Dme\+::$\sim$\+Nx\+Dme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a61e01267ff642ace49a8fe75296a0cbd}\label{classnxos_1_1_nx_dme_a61e01267ff642ace49a8fe75296a0cbd}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!commit@{commit}}
+\index{commit@{commit}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::commit (\begin{DoxyParamCaption}\item[{int $\ast$}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Commit the pending changes that were made to this object. Only the changes to this object are committed. The completion of the commit does not imply that any child objects that may be created as a result of config change are also created. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Error} & value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error string, err\+\_\+type\+\_\+e set in argument 
+\begin{DoxyCode}
+C++:
+   \textcolor{keywordtype}{int}  err;
+   std::string  err\_str;
+
+   objp->setProperty(\textcolor{stringliteral}{"property1"}, \textcolor{stringliteral}{"value1"}, &err);
+   objp->setProperty(\textcolor{stringliteral}{"property2"}, \textcolor{stringliteral}{"value2"}, &err);
+   err\_str =  objp->commit(&err);
+   cout << \textcolor{stringliteral}{"commit status: "} << err << \textcolor{stringliteral}{" status: "} << err\_str;
+Python:
+   errp = nx\_sdk\_py.new\_intp();
+   err\_str = obj.commit(errp)
+   err = nx\_sdk\_py.intp\_value(errp);
+   nx\_sdk\_py.delete\_intp(errp);
+
+   \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a3bbd85bc12faba3ee4737abaa907e4e5}\label{classnxos_1_1_nx_dme_a3bbd85bc12faba3ee4737abaa907e4e5}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!equal@{equal}}
+\index{equal@{equal}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{equal()}{equal()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+::equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&}]{dme\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of dme objects. Can be used in languages which do not support overloading \char`\"{}==\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dme\+\_\+obj} & Object to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equivalence relationship evaluates to true.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+     NxDme *dme1 = dme\_v.at(idx1);
+     NxDme *dme2 = dme\_v.at(idx2);
+     \textcolor{keywordflow}{if} (dme1->equal(*dme2))
+         cout << \textcolor{stringliteral}{"Equal"} << endl;
+ Python:
+     \textcolor{keywordflow}{if} obj1.equal(obj2):
+         print \textcolor{stringliteral}{"Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a846519c8ee7521dac1c7e6c961903b0f}\label{classnxos_1_1_nx_dme_a846519c8ee7521dac1c7e6c961903b0f}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!get\+Data\+Json@{get\+Data\+Json}}
+\index{get\+Data\+Json@{get\+Data\+Json}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{get\+Data\+Json()}{getDataJson()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::get\+Data\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the object data as a J\+S\+ON string.
+
+\begin{DoxyReturn}{Returns}
+string containing json string 
+\begin{DoxyCode}
+C++:
+   NxDme *dme = dmeP->getDmeObj(\textcolor{stringliteral}{"some/dn/path"});
+   \textcolor{keywordtype}{string}  jdata = dme->getDataJson(); \textcolor{comment}{//read from obj}
+           json\_parse(jdata); \textcolor{comment}{//etc.}
+Python:
+    data = obj.getDataJson()
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_ad97ecb092308dcacdd5de64327742210}\label{classnxos_1_1_nx_dme_ad97ecb092308dcacdd5de64327742210}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!get\+Dn@{get\+Dn}}
+\index{get\+Dn@{get\+Dn}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{get\+Dn()}{getDn()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::get\+Dn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the DN string for the object \begin{DoxyReturn}{Returns}
+DN string 
+\begin{DoxyCode}
+C++:
+     cout << \textcolor{stringliteral}{"NxDme obj = "} << objp->getDn() << endl;
+Python:
+     print \textcolor{stringliteral}{"%s"} % obj.getDn()
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}\label{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Dme\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the event code for this object, which was set if this object is coming from an event handler.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} value indicating the source of the event 
+\begin{DoxyCode}
+C++:
+   \textcolor{keywordtype}{void} postdmeHandlerCb (NxDme *objp)
+   \{
+       \textcolor{keywordtype}{string} value;
+
+       cout << \textcolor{stringliteral}{"application callback called"} << endl;
+       cout << \textcolor{stringliteral}{"NxDme event = "} << event\_str(objp->getEvent()) << endl;
+   \}
+Python:
+   \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):
+
+       def postDmeHandlerCb(self, obj):
+           print "pyDmeHandler: application callback"
+           print "dn = %s" % obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_ad97ecb092308dcacdd5de64327742210}{getDn}}()
+           print "event = %d" % obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}{getEvent}}()
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a6f7052ff8ef29df2f692dbfdb3a8c987}\label{classnxos_1_1_nx_dme_a6f7052ff8ef29df2f692dbfdb3a8c987}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!get\+Event\+Is\+Property\+Changed@{get\+Event\+Is\+Property\+Changed}}
+\index{get\+Event\+Is\+Property\+Changed@{get\+Event\+Is\+Property\+Changed}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{get\+Event\+Is\+Property\+Changed()}{getEventIsPropertyChanged()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+::get\+Event\+Is\+Property\+Changed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check if the specified property is in the list of properties that changed in the current event object. This api is only valid for objects returned to the event callback with an event type of U\+P\+D\+A\+TE.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em property} & Name of property to test for change. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if property was modified in the event 
+\begin{DoxyCode}
+C++:
+    \textcolor{keywordtype}{void} postDmeHandlerCb (NxDme *objp)
+    \{
+       \textcolor{keywordflow}{if} (objp->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{
+         \textcolor{keywordflow}{if} (objp->getEventIsPropertyChanged(\textcolor{stringliteral}{"adminSt"})) \{
+            cout << \textcolor{stringliteral}{" Property changed: "} << \textcolor{stringliteral}{"adminSt"} << endl;
+            cout << \textcolor{stringliteral}{" new value is: "} <<
+              objp->getProperty(\textcolor{stringliteral}{"adminSt"}, &err) << endl;;
+        \}
+
+     \}
+Python:
+    \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeMgrHandler):
+
+        def postDmeHandlerCb(self, obj):
+           if obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}{getEvent}}() == nx\_sdy\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:
+               if obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_a6f7052ff8ef29df2f692dbfdb3a8c987}{getEventIsPropertyChanged}}("adminSt"):
+                   print "adminSt changed"
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE,E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_af4a2a0bb41b6be55593e8624700a2d6d}\label{classnxos_1_1_nx_dme_af4a2a0bb41b6be55593e8624700a2d6d}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!get\+Property@{get\+Property}}
+\index{get\+Property@{get\+Property}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{get\+Property()}{getProperty()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Prop\+Name,  }\item[{int $\ast$}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Read an object property. By default reads from the object cache.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\+In\+Prop\+Name} & Name of property to get. \\
+\hline
+\mbox{\tt out}  & {\em err} & Error return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+property string, err\+\_\+type\+\_\+e set in argument 
+\begin{DoxyCode}
+C++:
+  \textcolor{keywordtype}{string}  mode;
+  \textcolor{keywordtype}{int}     err;
+  mode =  \_dmeobj->getProperty(\textcolor{stringliteral}{"mode"}, &err);
+Python:
+   errp = nx\_sdk\_py.new\_intp();
+   value = obj.getProperty(cmds[1], errp)
+   err = nx\_sdk\_py.intp\_value(errp);
+   nx\_sdk\_py.delete\_intp(errp);
+
+   \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a2fe8b05c2c14f16ad7a2f4002a63baf2}\label{classnxos_1_1_nx_dme_a2fe8b05c2c14f16ad7a2f4002a63baf2}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!iterate\+Event\+Updated\+Properties@{iterate\+Event\+Updated\+Properties}}
+\index{iterate\+Event\+Updated\+Properties@{iterate\+Event\+Updated\+Properties}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{iterate\+Event\+Updated\+Properties()}{iterateEventUpdatedProperties()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::iterate\+Event\+Updated\+Properties (\begin{DoxyParamCaption}\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Iterate through the list of properties that changed in the current event object. This is only applicable to U\+P\+D\+A\+TE events. The property name can then be used in \mbox{\hyperlink{classnxos_1_1_nx_dme_af4a2a0bb41b6be55593e8624700a2d6d}{get\+Property()}} to retrieve the new property.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from\+First} & \mbox{[}Optional\mbox{]} Start iteration from beginning or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The property names which were modified in the event. 
+\begin{DoxyCode}
+C++:
+     \textcolor{keywordtype}{void} postDmeHandlerCb (NxDme *objp)
+     \{
+        std::string value;
+
+        \textcolor{keywordflow}{if} (objp->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{
+          value = objp->iterateEventUpdatedProperties(\textcolor{keyword}{true});
+          \textcolor{keywordflow}{while} (value.length()) \{
+            cout << \textcolor{stringliteral}{"iterateEvent prop: "} << value << endl;
+            value = objp->iterateEventUpdatedProperties();
+          \}
+        \}
+Python:
+      \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeMgrHandler):
+
+        def postDmeHandlerCb(self, obj):
+           if obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_aff302a3891e0b6f69e9e0fd26e6e16a7}{getEvent}}() == nx\_sdy\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:
+               value = obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_a2fe8b05c2c14f16ad7a2f4002a63baf2}{iterateEventUpdatedProperties}}(True)
+               while len(value) :
+                  print "Property changed: %s" % value
+                  value = obj.\mbox{\hyperlink{classnxos_1_1_nx_dme_a2fe8b05c2c14f16ad7a2f4002a63baf2}{iterateEventUpdatedProperties}}()
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE,E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_abb7ee373c1fe3a50b52a243be2f9a863}\label{classnxos_1_1_nx_dme_abb7ee373c1fe3a50b52a243be2f9a863}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!iterate\+Properties@{iterate\+Properties}}
+\index{iterate\+Properties@{iterate\+Properties}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{iterate\+Properties()}{iterateProperties()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+::iterate\+Properties (\begin{DoxyParamCaption}\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Iteratively return all of the property names for the object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from\+First} & \mbox{[}Optional\mbox{]} Start iteration from beginning or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representing the next property name 
+\begin{DoxyCode}
+C++:
+   \textcolor{keywordtype}{string}  name;
+   NxDme   *dme = dmeMgr->getDmeObj(\textcolor{stringliteral}{"dn/mo/path"});
+   name = dme->iterateProperties(\textcolor{keyword}{true});
+       \textcolor{keywordflow}{while} (!name.empty()) \{
+           cout << name << endl;
+           name = dme->iterateProperties();
+       \}
+Python:
+   data = obj.iterateProperties(True)
+   \textcolor{keywordflow}{while} len(data):
+       errp = nx\_sdk\_py.new\_intp();
+       value = obj.getProperty(data, errp)
+       err = nx\_sdk\_py.intp\_value(errp);
+       nx\_sdk\_py.delete\_intp(errp);
+
+       print \textcolor{stringliteral}{"%s : %s"} % (data,value)
+       data = obj.iterateProperties()
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a8d1ffa9c69d24635fb28b52549ab666c}\label{classnxos_1_1_nx_dme_a8d1ffa9c69d24635fb28b52549ab666c}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&}]{dme\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test inequality of dme objects. Two objects are not equal if they refer to different dn paths or have different property values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dme\+\_\+obj} & Object to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if inequality relationship evaluates to true.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    NxDme *dme1 = dme\_v.at(idx1);
+    NxDme *dme2 = dme\_v.at(idx2);
+    \textcolor{keywordflow}{if} (*dme1 != *dme2)
+        cout << \textcolor{stringliteral}{"Not Equal"} << endl;
+Python:
+    \textcolor{keywordflow}{if} obj1 != obj2:
+        print \textcolor{stringliteral}{"Not Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a847650a963a30b0cad5969cac7ecb9bc}\label{classnxos_1_1_nx_dme_a847650a963a30b0cad5969cac7ecb9bc}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!operator==@{operator==}}
+\index{operator==@{operator==}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} const \&}]{dme\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Test equality of dme objects. Two objects are equal if they refer to the same DN path and have the same property values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dme\+\_\+obj} & Object to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equivalence relationship evaluates to true.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+    NxDme *dme1 = dme\_v.at(idx1);
+    NxDme *dme2 = dme\_v.at(idx2);
+    \textcolor{keywordflow}{if} (*dme1 == *dme2)
+        cout << \textcolor{stringliteral}{"Equal"} << endl;
+Python:
+    \textcolor{keywordflow}{if} obj1 == obj2:
+         print \textcolor{stringliteral}{"Equal"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None.} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_a353542ba7f8354730b78dd50659c0c30}\label{classnxos_1_1_nx_dme_a353542ba7f8354730b78dd50659c0c30}} 
+\index{nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!nxos\+::\+Nx\+Dme@{nxos\+::\+Nx\+Dme}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Dme\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Prop\+Name,  }\item[{const std\+::string \&}]{s\+In\+Value,  }\item[{int $\ast$}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set an object\textquotesingle{}s property to specified value. The change becomes active on this object\textquotesingle{}s next \mbox{\hyperlink{classnxos_1_1_nx_dme_a61e01267ff642ace49a8fe75296a0cbd}{Nx\+Dme\+::commit()}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\+In\+Prop\+Name} & Name of the property to set \\
+\hline
+\mbox{\tt in}  & {\em s\+In\+Value} & Value of the property \\
+\hline
+\mbox{\tt out}  & {\em err} & Error return value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void, err\+\_\+type\+\_\+e set in argument 
+\begin{DoxyCode}
+C++:
+   \textcolor{keywordtype}{int} err;
+   objp->setProperty(\textcolor{stringliteral}{"property1"}, \textcolor{stringliteral}{"value"}, &err);
+Python:
+    errp = nx\_sdk\_py.new\_intp();
+    obj.setProperty(cmds[1], cmds[2], errp)
+    err = nx\_sdk\_py.intp\_value(errp);
+    nx\_sdk\_py.delete\_intp(errp);
+
+    \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}

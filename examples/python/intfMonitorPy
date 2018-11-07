@@ -1,0 +1,195 @@
+#!/isan/bin/nxpython
+
+##########################################################################
+#Copyright (c) 2018
+#All rights reserved.
+##########################################################################
+
+##########################################################################
+### File:   intfMonitorPyr
+###
+### Supported since NX-SDK v1.7.5
+###
+### Description:
+###    A sample NX-SDK python application that uses NX-SDK interface manager 
+###    to monitor all existing interfaces for events.  The events may include 
+###    an interface being added or removed, state change, layer change, IP
+###    address update, agg port membership change, or interface changes vrf
+###    or vlan membership.  A message is sent to syslog recording the event.
+###
+###
+##########################################################################
+ 
+import signal
+import time
+import threading
+import sys
+import json
+from time import gmtime, strftime
+from datetime import datetime, date, timedelta
+from pprint import pprint
+
+### Imports NX-OS SDK package
+import nx_sdk_py
+
+trace_level = nx_sdk_py.NxTrace.EMERG
+
+def sig_handler(signal, frame):
+    global sdk
+    sdk.stopEventLoop()
+
+
+def getEventStr(event):
+    if event == nx_sdk_py.ADD:
+        return "Add"
+    elif event == nx_sdk_py.DELETE:
+        return "Delete"
+    elif event == nx_sdk_py.UPDATE:
+        return "Update"
+    else:
+        return "Unknown"
+
+
+class pyIntfHandler(nx_sdk_py.NxIntfMgrHandler):
+
+    def postIntfAddDelCb (self, intf):
+        traceP.event("Application callback: postIntfAddDelCb")
+        
+        event = intf.getEvent()
+        traceP.syslog(trace_level,"Application Add/Del cb ")
+        traceP.syslog(trace_level,"intf = %s " % intf.getName())
+        
+        if event == nx_sdk_py.ADD:
+            traceP.syslog(trace_level, "ADDED")
+        elif event == nx_sdk_py.DELETE:
+            traceP.syslog(trace_level, "DELETED")
+        return True;
+        
+    def postIntfStateCb   (self, intf):
+        traceP.event("Application callback: postIntfStateCb")
+
+        event = intf.getEvent()
+        if event == nx_sdk_py.ADD:
+            state = "Up"
+        elif event == nx_sdk_py.DELETE:
+            state = "Down"
+
+        traceP.syslog(trace_level,"Application State cb ")
+        traceP.syslog(trace_level,"state changed, new state is: %s " % state)
+        return True
+
+    def postIntfLayerCb  (self, intf):
+        traceP.event("Application callback: postIntfLayerCb")
+        traceP.syslog(trace_level,
+                      "Application got layer change notification")
+        traceP.syslog(trace_level,"interface %s" % intf.getName())
+        return True
+
+    def postIntfIpv4AddrCb (self, intf):
+        traceP.event("Application callback: postIntfIpv4AddrCb")
+        event = intf.getEvent()
+        traceP.syslog(trace_level,"Application ipv4 addr cb ")
+        traceP.syslog(trace_level,"intf = %s" % intf.getName())
+        if event == nx_sdk_py.ADD:
+            traceP.syslog(trace_level,
+                          "App got ADD notification, new secondary address")
+        elif event == nx_sdk_py.DELETE:
+            traceP.syslog(trace_level,
+                          "App got DELETE notification, secondary address removed")
+        elif event == nx_sdk_py.UPDATE:
+            traceP.syslog(trace_level,
+                          "App got UPDATE notification, primary address changed")
+        return True
+
+    def postIntfIpv6AddrCb (self, intf):
+        traceP.event("Application callback: postIntfIpv6AddrCb")
+
+        event = intf.getEvent()
+        traceP.syslog(trace_level,"Application ipv6 addr cb ")
+        traceP.syslog(trace_level,"intf = %s" % intf.getName())
+        if event == nx_sdk_py.ADD:
+            traceP.syslog(trace_level,
+                          "App got ADD notification, new secondary address")
+        elif event == nx_sdk_py.DELETE:
+            traceP.syslog(trace_level,
+                          "App got DELETE notification, secondary address removed")
+        elif event == nx_sdk_py.UPDATE:
+            traceP.syslog(trace_level,
+                          "App got UPDATE notification, primary address changed")
+        return True
+
+    def postIntfPortMemberCb (self, intf):
+        traceP.event("Application callback: postIntfPortMemberCb")
+
+        event = intf.getEvent()
+        if event == nx_sdk_py.ADD:
+            state = "ADD"
+        elif event == nx_sdk_py.DELETE:
+            state = "DELETE"
+
+        traceP.syslog(trace_level, 
+                      "Got port member %s event for interface %s" %
+                      (state, intf.getName()))
+        if intf.getMemberCount() > 0:
+            mbr = intf.getMembers(True);
+            while mbr:
+                traceP.syslog(trace_level,
+                              "\t<%s>" % mbr) 
+                mbr = intf.getMembers();
+        return True
+
+    def postIntfVrfCb  (self, intf):
+        traceP.event("Application callback: postIntfVrfCb")
+
+        event = intf.getEvent()
+        traceP.syslog(trace_level,"Application Vrf cb ")
+        traceP.syslog(trace_level,"intf %s moved to vrf %s" % 
+                      (intf.getName(), intf.getVrf()))
+        return True
+
+    def postIntfVlanCb  (self, intf):
+        traceP.event("Application callback: postIntfVlanCb")
+
+        event = intf.getEvent()
+        traceP.syslog(trace_level,"Application Vlan cb ")
+        traceP.syslog(trace_level,"intf %s new vlan is %s" %
+                      (intf.getName(), intf.getVlan()))
+        return True
+
+        
+signal.signal(signal.SIGINT, sig_handler)
+sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+if not sdk:
+    print "sdk failed"
+    sys.exit()
+
+## Set a short Application description.
+sdk.setAppDesc('Feature Monitor  Python App')
+
+traceP = sdk.getTracer()
+if not traceP:
+    print "Tracer init failed"
+    sys.exit()
+
+traceP.event("[%s] Started service" % sdk.getAppName())
+traceP.syslog(trace_level, "Started service %s" % sdk.getAppName())
+
+
+intfMgr = sdk.getIntfMgr()
+if not intfMgr:
+    traceP.syslog(nx_sdk_py.NxTrace.EMERG,"Interface Mgr failure")
+    sys.exit()
+
+### install handlers for interface events
+myIntfHandler = pyIntfHandler()
+intfMgr.setIntfHandler(myIntfHandler)
+intfMgr.watchIntf("all")
+
+traceP.syslog(trace_level,"Starting event loop...")
+sdk.startEventLoop()
+
+### Got here either by calling stopEventLoop() or when App 
+### is removed from VSH.
+
+### [Required] Needed for graceful exit.
+nx_sdk_py.NxSdk.__swig_destroy__(sdk)

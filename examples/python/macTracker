@@ -1,0 +1,463 @@
+#!/isan/bin/nxpython
+
+##########################################################################
+#Copyright (c) 2018
+#All rights reserved.
+##########################################################################
+
+##########################################################################
+### File:   macTracker
+###
+### Supported since NX-SDK v1.7.5
+###
+### Description:
+###    A sample NX-SDK python application that uses NX-SDK mac manager 
+###    to monitor mac events. 
+###
+###     After starting the app, execute "show macTracker nxsdk state"
+###     cli to get the list of commands supported by this app.
+##########################################################################
+
+import signal
+import time
+import threading
+import sys
+import json
+from time import gmtime, strftime
+from datetime import datetime, date, timedelta
+from pprint import pprint
+
+### Imports NX-OS SDK package
+import nx_sdk_py
+
+###############################################
+############# Global variables#################
+###############################################
+### List of dicts. To maintain a history of all 
+### registered route update events.
+rteHistory = []
+
+### To lock/unlock while making changes to rteHistory
+rteHistoryLock = threading.Lock()
+
+### rteHistory cleanup old entries time period
+rteHistoryPurgeTime = timedelta(minutes=30)
+
+### Route prefix tracking per vrf table Dict
+### To keep track of route Add event for
+### for the first by the App and the owner of
+### the routes as when the route gets deleted, 
+### the delete  event does not specify the owner 
+### of the route.
+
+### Set when we are walking during show command.
+showWalkList = False
+
+### Helper function to convert Event type to string
+def getEventStr(event):
+    if event == nx_sdk_py.ADD:
+       return "Add"
+    elif event == nx_sdk_py.DELETE:
+       return "Delete"
+    elif event == nx_sdk_py.UPDATE:
+       return "Update"
+    elif event == nx_sdk_py.DOWNLOAD:
+        return "DOWNLOAD"   
+    else:
+       return "Unknown"
+
+### Helper function to convert mac type to string
+def getTypeStr(state):
+    if state == nx_sdk_py.TYPE_NO_TYPE:
+       return "None"
+    elif state == nx_sdk_py.TYPE_STATIC:
+       return "Static"
+    elif state == nx_sdk_py.TYPE_DYNAMIC:
+       return "Dynamic"
+    else:
+       return "Unknown"
+
+### Overloaded NxMacMgrHandler class.
+class pyMacHandler(nx_sdk_py.NxMacMgrHandler):
+        ### Overloaded Callback to get Mac events
+        global rteHistory
+
+        ###
+        # - Overload postMacCb to handle VRF specific updates.
+        #   To get VRF specific updates, refer to watchVrf()
+        ###
+        def postMacHandlerCb(self,nxmac):
+            rtelem = {}
+            rtelem["time"]    = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            rtelem["macaddr"] = nxmac.getMacAddress()
+            rtelem["type"]    = getTypeStr(nxmac.getType())
+            rtelem["vlan"]    = int(nxmac.getVlan())
+            rtelem["intf"]    = nxmac.getIntfName()
+            rtelem["event"]   = getEventStr(nxmac.getEvent())
+            
+            tmsg.event("#### Application mac handler callback ####")
+            tmsg.event("mac address: %s\n" % rtelem["macaddr"])
+            tmsg.event("vlan       : %d\n" % rtelem["vlan"])
+            tmsg.event("interface  : %s\n" % rtelem["intf"])
+            tmsg.event("type       : %s\n" % rtelem["type"])
+            tmsg.event("event      : %s\n" % rtelem["event"])
+            
+            ### Add to the end of the list 
+            #rteHistory.insert(len(rteHistory), rtelem)
+            return True
+
+
+### 
+# Inherit from the NxCmdHandler class, define the application
+# callback in 'postCliCb'. Handler Callback for Custom Cli execution.
+# Returns True if the action was successful. False incase of failure.
+###
+class pyCmdHandler(nx_sdk_py.NxCmdHandler):
+        ### To access the global Cli Parser Obj
+        global cliP, macMgr, tmsg
+
+        def postCliCb(self,clicmd):
+            global rteHistoryPurgeTime
+
+            ### Some local variable to store the value of input parameters
+            mac_addr = ""
+            mac_type = ""
+            vlan     = 0
+            intf     = ""
+            no_cmd   = False
+
+            ### Check if its a no command
+            if "no" in clicmd.getCmdLineStr():
+               no_cmd = True
+
+            if "get_mac_cmd" in clicmd.getCmdName():
+               mac_addr = nx_sdk_py.void_to_string(clicmd.getParamValue("<mac_addr>"))
+               vlan_p   = nx_sdk_py.void_to_int(clicmd.getParamValue("<vlan>"))
+               if vlan_p:
+                   vlan = int(nx_sdk_py.intp_value(vlan_p))
+               try:
+                   if "clearBuffer" in clicmd.getCmdLineStr():
+                       mac_obj = macMgr.getMac(mac_addr,vlan,True)
+                   else:
+                       mac_obj = macMgr.getMac(mac_addr,vlan)
+               except RuntimeError,e:
+                   tmsg.event("Error: %s" % str(e))
+                   return False
+
+               if mac_obj:
+                   mac_type = getTypeStr(mac_obj.getType())
+                   intf     = mac_obj.getIntfName()
+                   clicmd.printConsole("mac address: %s\n" % mac_addr)
+                   clicmd.printConsole("vlan       : %d\n" % vlan)
+                   clicmd.printConsole("interface  : %s\n" % intf)
+                   clicmd.printConsole("type       : %s\n" % mac_type)
+               else:
+                   clicmd.printConsole("mac does't exist.");
+            elif "add_mac_cmd" in clicmd.getCmdName():
+               
+               mac_addr = nx_sdk_py.void_to_string(clicmd.getParamValue("<mac_addr>"))
+               vlan_p   = nx_sdk_py.void_to_int(clicmd.getParamValue("<vlan>"))
+               intf_name = nx_sdk_py.void_to_string(clicmd.getParamValue("<intf>"))
+               
+               clicmd.printConsole("Got mac address: %s\n" % mac_addr)
+               clicmd.printConsole("Got interface  : %s\n" % intf_name)
+
+               if vlan_p:
+                   vlan = int(nx_sdk_py.intp_value(vlan_p))
+                   clicmd.printConsole("Got vlan       : %d\n" % vlan)
+                   if no_cmd:
+                       try:
+                           clicmd.printConsole("Call delStaticMac()\n")
+                           if not macMgr.delStaticMac(mac_addr,vlan):
+                               return False
+                       except RuntimeError,e:
+                           tmsg.event("Error: %s" % str(e))
+                           return False
+                   else:
+                       try:
+                           clicmd.printConsole("Call addStaticMac()\n")
+                           if not macMgr.addStaticMac(mac_addr,vlan,intf_name):
+                               return False
+                       except RuntimeError,e:
+                           tmsg.event("Error: %s" % str(e))
+                           return False
+
+            elif "watch_mac_cmd" in clicmd.getCmdName():
+               mac_addr = nx_sdk_py.void_to_string(clicmd.getParamValue("<mac_addr>"))
+               vlan_p   = nx_sdk_py.void_to_int(clicmd.getParamValue("<vlan>"))
+               if vlan_p:
+                   vlan = int(nx_sdk_py.intp_value(vlan_p))
+
+               if no_cmd:
+                  try:
+                      macMgr.unwatchMac(vlan, mac_addr)
+                  except RuntimeError,e:
+                      tmsg.event("Error: %s" % str(e))
+                      return False
+                  
+                  clicmd.printConsole("Unwatching mac %s vlan %d\n" % (mac_addr, vlan))
+               else:
+                  try:
+                      macMgr.watchMac(vlan, mac_addr)
+                  except RuntimeError,e:
+                      tmsg.event("Error: %s" % str(e))
+                      return False
+                  
+                  clicmd.printConsole("Watching mac %s vlan %d\n" % (mac_addr, vlan))
+            elif "watch_all_mac_cmd" in clicmd.getCmdName():
+               if no_cmd:
+                  try:
+                      macMgr.unwatchAllMac()
+                  except RuntimeError,e:
+                      tmsg.event("Error: %s" % str(e))
+                      return False
+                  
+                  clicmd.printConsole("Unwatching all mac\n")
+               else:
+                  try:
+                      macMgr.watchAllMac()
+                  except RuntimeError,e:
+                      tmsg.event("Error: %s" % str(e))
+                      return False
+
+                  clicmd.printConsole("Watching all mac\n")
+               
+            return True
+
+class pyIntfHandler(nx_sdk_py.NxIntfMgrHandler):
+
+    def postIntfAddDelCb (self, intf):
+        tmsg.event("Application callback: postIntfAddDelCb")
+        
+        event = intf.getEvent()
+        tmsg.syslog(trace_level,"Application Add/Del cb ")
+        tmsg.syslog(trace_level,"intf = %s " % intf.getName())
+        
+        if event == nx_sdk_py.ADD:
+            tmsg.syslog(trace_level, "ADDED")
+        elif event == nx_sdk_py.DELETE:
+            tmsg.syslog(trace_level, "DELETED")
+        return True;
+        
+    def postIntfStateCb   (self, intf):
+        tmsg.event("Application callback: postIntfStateCb")
+
+        event = intf.getEvent()
+        if event == nx_sdk_py.ADD:
+            state = "Up"
+        elif event == nx_sdk_py.DELETE:
+            state = "Down"
+
+        tmsg.syslog(trace_level,"Application State cb ")
+        tmsg.syslog(trace_level,"state changed, new state is: %s " % state)
+        return True
+
+    def postIntfLayerCb  (self, intf):
+        tmsg.event("Application callback: postIntfLayerCb")
+        tmsg.syslog(trace_level,
+                      "Application got layer change notification")
+        tmsg.syslog(trace_level,"interface %s" % intf.getName())
+        return True
+
+    def postIntfIpv4AddrCb (self, intf):
+        tmsg.event("Application callback: postIntfIpv4AddrCb")
+        event = intf.getEvent()
+        tmsg.syslog(trace_level,"Application ipv4 addr cb ")
+        tmsg.syslog(trace_level,"intf = %s" % intf.getName())
+        if event == nx_sdk_py.ADD:
+            tmsg.syslog(trace_level,
+                          "App got ADD notification, new secondary address")
+        elif event == nx_sdk_py.DELETE:
+            tmsg.syslog(trace_level,
+                          "App got DELETE notification, secondary address removed")
+        elif event == nx_sdk_py.UPDATE:
+            tmsg.syslog(trace_level,
+                          "App got UPDATE notification, primary address changed")
+        return True
+
+    def postIntfIpv6AddrCb (self, intf):
+        tmsg.event("Application callback: postIntfIpv6AddrCb")
+
+        event = intf.getEvent()
+        tmsg.syslog(trace_level,"Application ipv6 addr cb ")
+        tmsg.syslog(trace_level,"intf = %s" % intf.getName())
+        if event == nx_sdk_py.ADD:
+            tmsg.syslog(trace_level,
+                          "App got ADD notification, new secondary address")
+        elif event == nx_sdk_py.DELETE:
+            tmsg.syslog(trace_level,
+                          "App got DELETE notification, secondary address removed")
+        elif event == nx_sdk_py.UPDATE:
+            tmsg.syslog(trace_level,
+                          "App got UPDATE notification, primary address changed")
+        return True
+
+    def postIntfPortMemberCb (self, intf):
+        tmsg.event("Application callback: postIntfPortMemberCb")
+
+        event = intf.getEvent()
+        if event == nx_sdk_py.ADD:
+            state = "ADD"
+        elif event == nx_sdk_py.DELETE:
+            state = "DELETE"
+
+        tmsg.syslog(trace_level, 
+                      "Got port member %s event for interface %s" %
+                      (state, intf.getName()))
+        if intf.getMemberCount() > 0:
+            mbr = intf.getMembers(True);
+            while mbr:
+                tmsg.syslog(trace_level,
+                              "\t<%s>" % mbr) 
+                mbr = intf.getMembers();
+        return True
+
+    def postIntfVrfCb  (self, intf):
+        tmsg.event("Application callback: postIntfVrfCb")
+
+        event = intf.getEvent()
+        tmsg.syslog(trace_level,"Application Vrf cb ")
+        tmsg.syslog(trace_level,"intf %s moved to vrf %s" % 
+                      (intf.getName(), intf.getVrf()))
+        return True
+
+    def postIntfVlanCb  (self, intf):
+        tmsg.event("Application callback: postIntfVlanCb")
+
+        event = intf.getEvent()
+        tmsg.syslog(trace_level,"Application Vlan cb ")
+        tmsg.syslog(trace_level,"intf %s new vlan is %s" %
+                      (intf.getName(), intf.getVlan()))
+        return True
+
+
+
+    
+### main thread
+### Global Variables
+cliP = 0
+sdk  = 0
+tmsg = 0
+macMgr = 0
+
+
+###
+# getSdkInst is the first step for any custom Application
+# wanting to gain access to NXOS Infra. Without this 
+# NXOS infra cannot be used.
+#
+# NOTE: 
+#   Perform all SDK related initializations and startEventLoop in one
+#   thread. The call to startEventLoop will block the thread until we 
+#   break out of it by calling stopEventLoop.  
+#
+#   Perform other actions in a different thread.   
+    ###
+sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+if not sdk:
+    print "sdk failed"
+    sys.exit()
+
+    ### Set a short Application description.
+sdk.setAppDesc('Mac Event Monitor Python App')
+
+    ###
+    # To Create & Manage Custom syslogs one must do
+    # getTracer() which loads the plugin to NXOS Syslog
+    # Infra Functionalities. 
+    ###
+tmsg = sdk.getTracer()
+
+    ### To log some Trace events
+tmsg.event("[%s] Started service" % sdk.getAppName())
+
+intfMgr = sdk.getIntfMgr()
+if not intfMgr:
+    tmsg.syslog(nx_sdk_py.NxTrace.EMERG,"Interface Mgr failure")
+    sys.exit()
+
+### install handlers for interface events
+myIntfHandler = pyIntfHandler()
+intfMgr.setIntfHandler(myIntfHandler)
+intfMgr.watchIntf("all")
+
+    ###
+    # To Create & Manage Custom CLI commands one must do
+    # getCliParser() which loads the plugin to NXOS CLI
+    # Infra Functionalities. 
+    ###
+cliP = sdk.getCliParser()
+
+# Get Command
+nxcmd = cliP.newShowCmd("get_mac_cmd", "getMac <mac_addr> vlan <vlan> [clearBuffer]")
+nxcmd.updateKeyword("getMac", "get a mac object")
+nxcmd.updateParam("<mac_addr>", "mac address", nx_sdk_py.P_STRING)
+nxcmd.updateKeyword("vlan", "VLAN")
+int_attr = nx_sdk_py.cli_param_type_integer_attr()
+int_attr.min_val = 1;
+int_attr.max_val = 3967;
+nxcmd.updateParam("<vlan>", "vlan", nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+nxcmd.updateKeyword("clearBuffer", "clear all the getMac objects created previously")
+
+# Add Command
+nxcmd = cliP.newConfigCmd("add_mac_cmd", "addMac <mac_addr> vlan <vlan> interface <intf>")
+nxcmd.updateKeyword("addMac", "add a mac object")
+nxcmd.updateParam("<mac_addr>", "mac address", nx_sdk_py.P_STRING)
+nxcmd.updateKeyword("vlan", "VLAN")
+int_attr = nx_sdk_py.cli_param_type_integer_attr()
+int_attr.min_val = 1;
+int_attr.max_val = 3967;
+nxcmd.updateParam("<vlan>", "vlan", nx_sdk_py.P_INTEGER, int_attr, len(int_attr))
+nxcmd.updateKeyword("interface", "interface")
+nxcmd.updateParam("<intf>", "interface", nx_sdk_py.P_STRING)
+
+# Watch Command
+nxcmd = cliP.newConfigCmd("watch_mac_cmd", "watch mac <mac_addr> vlan <vlan> ")
+nxcmd.updateKeyword("watch", "Watch on a object")
+nxcmd.updateKeyword("mac", "mac address")
+nxcmd.updateParam("<mac_addr>", "mac address", nx_sdk_py.P_STRING, None, 0, True)
+nxcmd.updateParam("<vlan>", "vlan", nx_sdk_py.P_INTEGER, int_attr, len(int_attr), True)
+
+# Watch All Command
+nxcmd = cliP.newConfigCmd("watch_all_mac_cmd", "watch all mac")
+nxcmd.updateKeyword("all", "all mac notifications")
+
+    ###
+    # Add the command callback Handler.
+    # When the respective CLI commands gets configured 
+    # the overloaded postCliCb callback will be instantiated.
+    ###
+mycmd = pyCmdHandler()
+cliP.setCmdHandler(mycmd)
+
+    ###
+    # This is important as it Adds the constructed custom configs 
+    # to NXOS CLI Parse tree. If it succeeds then for config command
+    # use <app-name> ? and for show commands use show <app-name> ?
+    # to check if your commands have been added to NXOS CLI tree
+    # successfully. Refer to API documentation for the exceptions
+    # thrown. Use "show <appname> nxsdk state".
+    ###
+cliP.addToParseTree()
+
+    ###
+    # add the mac notification callback handler
+    ###
+macMgr = sdk.getMacMgr()
+mymaccb = pyMacHandler()
+macMgr.setMacMgrHandler(mymaccb)
+
+    ###
+    # startEventLoop will block the thread until we break out
+    # of it by calling stopEventLoop. This is required to
+    # receive any NX-OS specific events. Without this, none of 
+    # the NXSDK functionalities will work. 
+    ###
+sdk.startEventLoop()
+
+    ### Got here either by calling stopEventLoop() or when App 
+    ### is removed from VSH.
+tmsg.event("Service Quitting...!")
+
+    ### [Required] Needed for graceful exit.
+nx_sdk_py.NxSdk.__swig_destroy__(sdk)

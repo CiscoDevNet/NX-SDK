@@ -1,8 +1,14 @@
 /** @file nx_common.h
- *  @brief Provides necessary common types for  using NX-SDK
+ *  @brief Provides necessary common types for  using NXSDK
  *
  *  @author nxos-sdk@cisco.com
  *  @bug No known bugs.
+ *
+ *
+ * Copyright (c) 2018 by cisco Systems, Inc.
+ * All rights reserved.
+ *
+
  */
 
 #ifndef __NX_COMMON_TYPES_H__
@@ -39,12 +45,19 @@ typedef enum {
    /// Event is UPDATE
    UPDATE,
 
+   /// Event is DOWNLOAD
+   DOWNLOAD, 
+
+   /// Event is DOWNLOAD_DONE
+   DOWNLOAD_DONE,
+
    /// MAX Action Types
    E_MAX_TYPE
 } event_type_e;
 
 // Supported State types
 typedef enum {
+    UNKNOWN = -1,
    /// State is DOWN
    DOWN = 0,
 
@@ -99,6 +112,40 @@ typedef enum {
    /// No Priority.
    NO_PRIO
 } prio_e;
+
+
+typedef enum {
+    NX_TYPE_UNKNOWN,
+    NX_TYPE_ETH,
+    NX_TYPE_SVI,
+    NX_TYPE_ETH_PC,
+    NX_TYPE_LOOPBACK,
+    NX_TYPE_SUBINTF,
+    NX_TYPE_TUNNEL,
+    NX_TYPE_MGMT
+} intf_type_e;
+
+
+// Supported Mac types
+typedef enum {
+   /// Type is not set
+   TYPE_NO_TYPE = 0,
+
+   /// Type is static
+   TYPE_STATIC,
+
+   /// Type is dynamic
+   TYPE_DYNAMIC,
+
+   /// MAX Action Types
+   TYPE_MAX_TYPE
+} type_e;
+
+// Running Environment
+typedef enum {
+    BASH, 
+    VSH
+} running_env_e;
 
 }
 
