@@ -1,0 +1,11 @@
+examples/go/src/*/nx_sdk_go_cb.go
+*.lo
+*.o
+*.out
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

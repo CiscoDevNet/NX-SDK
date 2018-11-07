@@ -96,31 +96,24 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
 ### a) ENXOS SDK Build Environment 
 
   - NOTE: Mandatory for Custom Applications to be started in VSH.
-  - ENXOS build environment can built using the provided Dockerfiles
 
-  #### Build using Dockerfile
-   ```
-      Ex for ubuntu) docker build --squash -t  nxsdk_ubuntu containers/wrl5/ubuntu
-   ``` 
   #### Download from Docker Hub
   - SDK Build Environment can be obtained from https://hub.docker.com/r/dockercisco/nxsdk
-    Pull the Image version of your choice using.
-
+    Pull the Image version of your choice.
     ```
       docker pull dockercisco/nxsdk:<tag>
       Ex)    docker pull dockercisco/nxsdk:v1
       NOTE: Tag latest needs to be updated. 
     ```
-
+    
+    | NX-SDK Docker Container | Usage Notes |
+    |------------------------|-------------|
+    |dockercisco/nxsdk:v1    | Contains wrl5 toolchain needed to compile Nexus Applications. |
+   
+   
   #### To start a container
      
    ```
-    If you built one from a Dockerfile:
-
-    docker run -it nxsdk_ubuntu /bin/bash
-
-    If you pulled one from dockerhub:
-
     docker images ! to get the <tag>
     docker run -it dockercisco/nxsdk:<tag> /bin/bash
    ```
@@ -130,32 +123,21 @@ For detailed description and directory structure of Cisco NX-SDK toolkit, refer 
   exit the container. Make plans accordingly.*
    
    ---
-
-  **Docker Build Troubleshooting**
-  
-  | Issue | Solution |
-  |---|---|
-  |*Unknown option --squash*| *--squash* is a feature available in newer versions of docker. If you are running if you are running an older docker version use use build command without *--squash*.|
-  |*Error message: "Directory renamed before its status could be extracted"*| This message has been seen in some cases when using *overlay/overlay2* as the docker storage-driver. Change docker configuration to use *aufs*.|
-  
-   ---
     
   - ENXOS SDK build environment is already installed in 
     ```
       /enxos-sdk
     ```
     
-  - The following environment variables are set by default if you build your container using `docker build`
+  - The following environment variables need to be set
  
     ```
       ENXOS_SDK_ROOT=/enxos-sdk
     ```   
-  - The enxos-sdk toolchain is sourced by default if you built your container using `docker build`
+  - The enxos-sdk toolchain needs to be sourced
     ```
       source /enxos-sdk/environment-setup-x86-wrsmllib32-linux 
     ```
-
-    *If you used `docker pull` to download your container, you need to set the above environment variables manually.*
 
 ### b) Get NX-SDK toolkit
   - ENXOS SDK docker image already has NX-SDK installed in /NX-SDK (default location) with NXSDK_ROOT environment variable set to /NX-SDK.
