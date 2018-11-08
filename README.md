@@ -54,7 +54,7 @@ This github provides NX-SDK toolkit for custom application development in your f
 # Documentation and Usage
 
   - For C++ custom Application development, public APIs are available in [include/](include/). Its description and usage are available 
-    in <a href="https://htmlpreview.github.io/?https://github.com/CiscoDevNet/NX-SDK/blob/master/doc/html/annotated.html">API documentation</a> (doxygen generated). 
+    in <a href="https://nx-sdk.readthedocs.io/en/latest/">API documentation</a> (doxygen generated). 
   - Python and other language bindings will be auto-generated from the above C++ APIs using <a href="http://www.swig.org/">SWIG</a>. Refer to [version](versions.md) for more details on supported language bindings in each NX-SDK version.
   - Refer to [example NX-SDK applications](examples/README.md) for more details.
 
@@ -389,7 +389,9 @@ RPM file : /NX-SDK/rpm/RPMS/customCliGoApp-1.0-1.7.5.x86_64.rpmApplication
     ```
   - NOTE: All sample application RPMs are located at [rpm/RPMS](rpm/RPMS).
   
-## 5. Installing Custom Application in Switch 
+## 5. Installing Custom Application in Switch
+
+### Manual Installation:
   - Copy the Application [binary] (or) RPM package to the switch (/bootflash). 
   - To install RPM package in the switch use,
   - <b> VSH</b>
@@ -424,7 +426,11 @@ RPM file : /NX-SDK/rpm/RPMS/customCliGoApp-1.0-1.7.5.x86_64.rpmApplication
   - NOTE: On Dual-Sup make sure that RPM package is installed on both Active and Standby Sups. If not 
           installed on standby, then on system switchover, Apps may not be started.
           
+### Installing RPM Package using Ansible 
 
+  - Refer to <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/modules/network/nxos/nxos_rpm.py">NX-OS RPM Ansible Module</a>
+  - Refer to <a href="https://github.com/ansible/ansible/blob/devel/test/integration/targets/nxos_rpm/tests/common/sanity.yaml">NX-OS RPM Ansible Test Playbook</a>
+    
 ## 6. Running Custom Application in Switch
   - To run the custom Application using NX-SDK in the switch, as a prerequisite enable 
  
