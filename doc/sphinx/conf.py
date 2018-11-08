@@ -154,6 +154,3 @@ texinfo_documents = [
      author, 'NX-SDK', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-import subprocess
- subprocess.call('cd ../../include ; doxygen', shell=True)
