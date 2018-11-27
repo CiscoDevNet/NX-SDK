@@ -238,7 +238,7 @@ class NxSdk
      * Get Nx DME Manager object to get, update and register for DME objectore events.
      *
      * @since NX-SDK V1.7.5
-     * @returns Pointer of type NxDme if valid (or) NULL
+     * @returns Pointer of type NxDmeMgr if valid (or) NULL
      **/
     virtual NxDmeMgr *getDmeMgr() = 0;
 
