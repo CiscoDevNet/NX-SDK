@@ -8,7 +8,7 @@
 
 %define NXSDK_ROOT /NX-SDK
 
-%define RELEASE_VERSION 1.7.5
+%define RELEASE_VERSION 1.5.0
 
 %define APP_SOURCE /NX-SDK/examples/python
 
