@@ -1088,19 +1088,33 @@ def getAclUtilHealth(factor_name):
            module_num = str(module["module_number"])
            if module_num not in module_d:
               continue
-
-           for table in module["TABLE_resource_util_info"]["ROW_resource_util_info"]:
-               if "ents_pctage" in table:
-                  if module_num not in module_acl_d:
-                     module_acl_d[module_num] = {}
-                  module_acl_d[module_num]["module_num"] = module_num
-                  if "resource_health" not in module_acl_d[module_num]:
-                     module_acl_d[module_num]["resource_health"] = {}
-                  percent = 100 - float(table["ents_pctage"].encode('ascii', 'ignore'))
-                  module_acl_d[module_num]["resource_health"]\
-                    [str(table["resource_hdr"])] = percent
-                  mod_health_percent += percent
-                  mod_resource_num   += 1
+           instance_list = []
+           if "TABLE_instance" in module: 
+              instance = module["TABLE_instance"]["ROW_instance"]
+              if type(instance) != list:
+                 instance_list = [instance]
+              else:
+                 instance_list = instance     
+           elif "TABLE_resource_util_info" in module:
+               if type(module) != list:
+                  instance_list = [module]
+               else:
+                  instance_list = module  
+           else:
+               continue 
+           for instance in instance_list:
+               for table in instance["TABLE_resource_util_info"]["ROW_resource_util_info"]:
+                   if "ents_pctage" in table:
+                      if module_num not in module_acl_d:
+                         module_acl_d[module_num] = {}
+                      module_acl_d[module_num]["module_num"] = module_num
+                      if "resource_health" not in module_acl_d[module_num]:
+                         module_acl_d[module_num]["resource_health"] = {}
+                      percent = 100 - float(table["ents_pctage"].encode('ascii', 'ignore'))
+                      module_acl_d[module_num]["resource_health"]\
+                           [str(table["resource_hdr"])] = percent
+                      mod_health_percent += percent
+                      mod_resource_num   += 1
            if mod_resource_num:
               mod_health_percent = float(mod_health_percent/mod_resource_num)
               acl_health_percent += mod_health_percent
@@ -1155,7 +1169,7 @@ factors_d = {
             "acl-util" : {
                "desc"    : "ACL Utilization Health %% and its details",
                "func"    : getAclUtilHealth,
-               "cmd"     : "show hardware access-list resource utilization module <modnum>",
+               "cmd"     : "show hardware access-list resource utilization",
             },
             "flash-sup" : {
                "desc"    : "Flash Memory(SUP) Health %% and its details",
