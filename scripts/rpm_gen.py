@@ -106,7 +106,7 @@ def main():
 	parser.add_argument("-v", "--version", default=default_app_version,
 		help="Application Version")
         parser.add_argument("-r", "--sdk_version", default=default_release_version,
-                help="Application Version")
+                help="NX-SDK Release Version")
 	args = parser.parse_args()
 
 	if not args.use_source_as_target:
