@@ -8,7 +8,7 @@
 ##########################################################################
 ### File:   healthMonitor
 ###
-### Supported since NX-SDK v1.5.0
+### Supported since NX-SDK v1.0.0
 ###
 ### Description:
 ###   Health Monitor Python Application. It computes and monitors the Health 
@@ -165,22 +165,35 @@ def addHealthReport(health_report, percent, json_res, status = -1):
        
 
 ### Update the global Factor dictionary with all the details
-def updateFactors(factor, health, detail_list):
-    global  switchTime
+def updateFactors(factor_name, factor, health, detail_list, syslog = ""):
+    global  switchTime, tmsg, sdk
 
-    health = float("{0:.2f}".format(health))
+    health     = float("{0:.2f}".format(health))
+    status     = ""
+    syslog_str = ""
 
+    if len(detail_list) > 0:
+       status = detail_list[0]["status"]
+    else:
+       status = getStatusStr(0)
+   
+    if "Major" in status or "Minor" in status:
+       syslog_str = "\"" + factor_name + "\" health has hit " + status
+       if not syslog:
+          syslog = "Refer to \"show " + sdk.getAppName() + " report alerts\""
+       syslog_str += "(" + syslog + ")"
+       if "syslog" not in factor or factor["syslog"] != syslog_str:
+          tmsg.syslog(nx_sdk_py.NxTrace.ALERT, "%s" % syslog_str)
+    
     ### Get the lock here if you are modifying the keys.
     ### Modifying the values are fine.
     factor["health"] = health
-    if len(detail_list) > 0:
-       factor["status"] = detail_list[0]["status"]
-    else:
-       factor["status"] = getStatusStr(0)
+    factor["status"] = status
     factor["time"]   = switchTime 
-    if factor["detail"]:
+    if factor["detail"]: 
        del factor["detail"]
     factor["detail"] = detail_list
+    factor["syslog"] = syslog_str
 
 ### Get Factor Formula
 def getFactorFormula(factor_name):
@@ -247,6 +260,24 @@ def getFactorFormula(factor_name):
     return (per_factor_formula, total_formula)
 
 ###
+# Get image version
+###
+def getImageVersion():
+    global cliP
+    return cliP.execShowCmd("show run | grep \"version\" | head -n 1")
+
+###
+# Check if the image is I6
+###
+def checkI6Image():
+    image_version = getImageVersion()
+    print image_version
+    if "7.0(3)I6" in image_version:
+       return True
+
+    return False
+
+###
 # Get the Fan Health Percentage using,
 #
 #   per_fan_health_percent = (100 - speed%)
@@ -266,6 +297,7 @@ def getFanHealth(factor_name):
 
     result = cliP.execShowCmd("show environment fan detail", nx_sdk_py.R_JSON)
     if result:
+       syslog_fan = ""
        json_res = json.loads(result)["fandetails"]["TABLE_fantray"]["ROW_fantray"]
        for key in json_res:
            if type(key) != dict: 
@@ -279,7 +311,7 @@ def getFanHealth(factor_name):
        ### Get the Fan health Percentage
        if total_num_entries:
           fan_health_percent = float(fan_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], fan_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], fan_health_percent, healthReportDetail)
 
 ###
 # Get the Power Health Percentage using,
@@ -332,7 +364,7 @@ def getPowerHealth(factor_name):
               total_num_entries += 1
        if total_num_entries:
           power_health_percent = float(power_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], power_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], power_health_percent, healthReportDetail)
 
 def getMemoryHealth(factor_name):
     global cliP, factors_d
@@ -376,7 +408,7 @@ def getMemoryHealth(factor_name):
 
        if total_num_entries:
           memory_health_percent = float(memory_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], memory_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], memory_health_percent, healthReportDetail)
 
 
 ### Get Flash Memory Health
@@ -403,7 +435,7 @@ def getFlashMemoryHealth(factor_name):
            total_num_entries += 1
        if total_num_entries:
           flash_health_percent = float(flash_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], flash_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], flash_health_percent, healthReportDetail)
 
 ### Get the GOLD health % per module
 def getGoldDiagModHealth(healthReportDetail, gold_mod_d):
@@ -476,7 +508,7 @@ def getGoldDiagHealth(factor_name):
               total_num_entries += 1
        if total_num_entries:
           gold_health_percent = float(gold_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], gold_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], gold_health_percent, healthReportDetail)
 
 ### Get Top Processes hogging the CPU
 def getCpuTopProcesses(cpuReportDetail, cpu_health_percent):
@@ -578,7 +610,7 @@ def getMemoryCpuHealth(factor_name):
           memory_d["memory_usage_free"]     = total_memory_free
           memory_d["current_memory_status"] = json_res["current_memory_status"]
           getMemoryTopProcess(memoryReportDetail, memory_health_percent, memory_d)
-          updateFactors(factors_d["dram-sup"], memory_health_percent, memoryReportDetail)
+          updateFactors(factor_name, factors_d["dram-sup"], memory_health_percent, memoryReportDetail)
 
        ### Check if Memory Monitor is turned on if it is calculate
        ### both memory & cpu at one go.
@@ -597,7 +629,7 @@ def getMemoryCpuHealth(factor_name):
              if total_cpu_entries:
                 cpu_health_percent = float(cpu_health_percent/total_cpu_entries)
                 getCpuTopProcesses(cpuReportDetail, cpu_health_percent)
-                updateFactors(factors_d["cpu-sup"], cpu_health_percent, cpuReportDetail)
+                updateFactors(factor_name, factors_d["cpu-sup"], cpu_health_percent, cpuReportDetail)
 
 
 ###
@@ -647,7 +679,7 @@ def getTemperatureHealth(factor_name):
        ### Get average temperature percentage for all the modules.   
        if num_sensors:
           temp_health_percent = float(((num_sensors - sensor_state) * 100)/num_sensors)
-          updateFactors(factors_d[factor_name], temp_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], temp_health_percent, healthReportDetail)
 
 ###
 # Get the Rib Health Percentage using,
@@ -678,7 +710,7 @@ def getRibHealth(factor_name):
  
        rib_health_percent = float(((curr_max_mb - curr_use_mb) * 100)/curr_max_mb)
        addHealthReport(healthReportDetail, rib_health_percent, json_res)
-       updateFactors(factors_d[factor_name], rib_health_percent, healthReportDetail)
+       updateFactors(factor_name, factors_d[factor_name], rib_health_percent, healthReportDetail)
 
 ### Get Port BW utilization, Usage(Up), Drops Health
 def getPortHealth(factor_name):
@@ -844,22 +876,22 @@ def getPortHealth(factor_name):
        ### Compute the overall RX errors/discards health % for all the ports.
        if total_num_rx_port_drops_health:
           total_percent = port_rx_drops_health_percent/total_num_rx_port_drops_health
-          updateFactors(factors_d["port-drops-rx"], total_percent, portRxDropsReportDetail)
+          updateFactors(factor_name, factors_d["port-drops-rx"], total_percent, portRxDropsReportDetail)
 
        ### Compute the overall TX errors/discards health % for all the ports.
        if total_num_tx_port_drops_health:
           total_percent = port_tx_drops_health_percent/total_num_tx_port_drops_health
-          updateFactors(factors_d["port-drops-tx"], total_percent, portTxDropsReportDetail)
+          updateFactors(factor_name, factors_d["port-drops-tx"], total_percent, portTxDropsReportDetail)
            
        ### Compute the overall RX BW Utilization health % for all the ports.
        if total_num_rx_port_bw_health:
           total_percent = port_rx_bw_health_percent/total_num_rx_port_bw_health
-          updateFactors(factors_d["port-bw-rx"], total_percent, portRxReportDetail)
+          updateFactors(factor_name, factors_d["port-bw-rx"], total_percent, portRxReportDetail)
 
        ### Compute the overall TX BW Utilization health % for all the ports.
        if total_num_tx_port_bw_health:
           total_percent = port_tx_bw_health_percent/total_num_tx_port_bw_health
-          updateFactors(factors_d["port-bw-tx"], total_percent, portTxReportDetail)
+          updateFactors(factor_name, factors_d["port-bw-tx"], total_percent, portTxReportDetail)
 
        ### Compute overall port usage(Up) health %
        if factors_d["port-usage"]["monitor"] and total_num_intf:
@@ -868,7 +900,7 @@ def getPortHealth(factor_name):
           port_usage_d["total_ports_up"] = total_num_up_intf
           total_percent = float((total_num_up_intf * 100)/total_num_intf)
           addHealthReport(portUsageReportDetail, total_percent, port_usage_d)
-          updateFactors(factors_d["port-usage"], total_percent, portUsageReportDetail)
+          updateFactors(factor_name, factors_d["port-usage"], total_percent, portUsageReportDetail)
 
 ###
 # Get the PKT Drop rate limiter using,
@@ -910,7 +942,7 @@ def getPktDropRateLimiterHealth(factor_name):
                  pkt_drop_health_percent += percent
        if total_num_entries:
           pkt_drop_health_percent = float(pkt_drop_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
 
 ### Get QOS Mod information 
 def getPktDropModQosHealth(healthReportDetail, cmap_name, slot):
@@ -974,7 +1006,7 @@ def getPktDropQosHealth(factor_name):
        ### Get the Fan health Percentage
        if total_num_entries:
           pkt_drop_health_percent = float(pkt_drop_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], pkt_drop_health_percent, healthReportDetail)
 
 def getSyslogHealth(factor_name):
     global cliP, factors_d, syslog_start_time 
@@ -1053,9 +1085,9 @@ def getSyslogHealth(factor_name):
         health_percent += percent * syslog_stats_d[key]["weight"]
         addHealthReport(syslogReportDetail, percent, syslog_stats_d[key])
     if health_percent:
-       updateFactors(factors_d[factor_name], health_percent, syslogReportDetail)
+       updateFactors(factor_name, factors_d[factor_name], health_percent, syslogReportDetail)
 
-def getAclUtilHealth(factor_name):
+def getAclUtilHealth_json(factor_name):
     global cliP, factors_d
 
     if not cliP:
@@ -1122,10 +1154,182 @@ def getAclUtilHealth(factor_name):
               addHealthReport(healthReportDetail, mod_health_percent, module_acl_d[module_num])
        if total_num_entries:
           acl_health_percent = float(acl_health_percent/total_num_entries)
-          updateFactors(factors_d[factor_name], acl_health_percent, healthReportDetail)
+          updateFactors(factor_name, factors_d[factor_name], acl_health_percent, healthReportDetail)
 
+def getAclUtilHealth_text(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    ### Get Fan Health Percentage
+    total_num_entries       = int(0)
+    acl_health_percent      = float(0)
+    healthReportDetail      = []
+    module_d                = {}
+    module_acl_d            = {}
+    syslog                  = ""
+    syslog_d                = {}
+
+    result = cliP.execShowCmd("show module", nx_sdk_py.R_JSON)
+    if result:
+       json_res = json.loads(result)["TABLE_modinfo"]["ROW_modinfo"]
+       if type(json_res) != list:
+          json_res = [json_res]
+       for key in json_res:
+           if str(key["modinf"]) not in module_d and \
+              str(key["ports"]) != "0":
+              module_d[str(key["modinf"]).strip()] = str(key["ports"])
+    for mod in module_d:
+        result = cliP.execShowCmd("show hardware access-list resource utilization module %s" % mod)
+        if result:
+           result = result.splitlines()
+           instance = ""
+           status = -1
+           if mod not in module_acl_d:
+              module_acl_d[mod] = {}
+              module_acl_d[mod]["module_num"] = mod
+              if "resource_health" not in module_acl_d[mod]:
+                 module_acl_d[mod]["resource_health"] = {}
+
+           for line in result:
+               if not line:
+                  continue
+               if "INSTANCE" in line:
+                  instance = line.split("INSTANCE")[1].strip()
+               if line[0] != " ":
+                  acl_hdr   = ['ents_used', 'ents_free', 'ents_pctage']
+                  acl_det   = [0, 0, 0.0]
+                  tmp_list  = line.split()
+                  acl_len   = len(tmp_list) 
+                  acl_index = len(acl_det) - 1
+                  index     = 1
+                
+                  while True:
+                      if not tmp_list[acl_len - index].replace('.','',1).isdigit():
+                         break
+                      if "." in tmp_list[acl_len - index]: 
+                         acl_det[acl_index] = float(tmp_list[acl_len - index])
+                      else:
+                         acl_det[acl_index] = int(tmp_list[acl_len - index])
+                      acl_index -= 1 
+                      if index == 3:
+                         acl_name = line.split(tmp_list[acl_len - index])[0].strip()
+                         ents_pctage = 100 - acl_det[acl_hdr.index("ents_pctage")]
+                         if ents_pctage < minorThreshPercent or \
+                            (acl_name in module_acl_d[mod]["resource_health"] and \
+                             type(module_acl_d[mod]["resource_health"][acl_name]) == dict):
+                            if status <= getStatus(ents_pctage):
+                               status = getStatus(ents_pctage)
+                            if getStatus(ents_pctage) > 0: 
+                               if mod not in syslog_d:
+                                  syslog_d[mod] = {}
+                               if acl_name not in syslog_d[mod]:
+                                  syslog_d[mod][acl_name] = 0
+                               if syslog_d[mod][acl_name] < getStatus(ents_pctage):
+                                  syslog_d[mod][acl_name] = getStatus(ents_pctage)
+                            if acl_name not in module_acl_d[mod]["resource_health"]:
+                               module_acl_d[mod]["resource_health"][acl_name] = {}
+                            elif type(module_acl_d[mod]["resource_health"][acl_name]) != dict:
+                               health_val = module_acl_d[mod]["resource_health"][acl_name]
+                               module_acl_d[mod]["resource_health"][acl_name] = {}
+                               module_acl_d[mod]["resource_health"][acl_name]["health"] = health_val
+                            if "health" not in module_acl_d[mod]["resource_health"][acl_name]:
+                               module_acl_d[mod]["resource_health"][acl_name]["health"] = ents_pctage
+                            else:
+                               module_acl_d[mod]["resource_health"][acl_name]["health"] += \
+                                      ents_pctage
+                               module_acl_d[mod]["resource_health"][acl_name]["health"]/= 2
+                               module_acl_d[mod]["resource_health"][acl_name]["health"] = \
+                                      round(module_acl_d[mod]["resource_health"][acl_name]["health"], 2)
+                            if "alert" not in module_acl_d[mod]["resource_health"][acl_name]:
+                               module_acl_d[mod]["resource_health"][acl_name]["alert"] = \
+                                            getStatusStr(getStatus(ents_pctage))
+                            else:
+                               if "Major" in module_acl_d[mod]["resource_health"][acl_name]["alert"]:
+                                  pass
+                               elif "Major" in getStatusStr(getStatus(ents_pctage)):
+                                  module_acl_d[mod]["resource_health"][acl_name]["alert"] = "Major"
+                               elif "Minor" in module_acl_d[mod]["resource_health"][acl_name]["alert"]:
+                                  pass
+                               elif "Minor" in getStatusStr(getStatus(ents_pctage)):
+                                  module_acl_d[mod]["resource_health"][acl_name]["alert"] = "Minor"
+                            if "instance" not in  module_acl_d[mod]["resource_health"][acl_name]:
+                                module_acl_d[mod]["resource_health"][acl_name]["instance"] = {}
+                            indicator = ""
+                            if ents_pctage < minorThreshPercent:
+                               indicator = " <<<"
+                            module_acl_d[mod]["resource_health"][acl_name]["instance"][instance] = \
+                               str(ents_pctage) + indicator
+                         else: 
+                            if acl_name not in module_acl_d[mod]["resource_health"]:
+                               module_acl_d[mod]["resource_health"][acl_name] = ents_pctage
+                            else:
+                               module_acl_d[mod]["resource_health"][acl_name] += ents_pctage
+                               module_acl_d[mod]["resource_health"][acl_name]/= 2
+                               module_acl_d[mod]["resource_health"][acl_name] = \
+                                      round(module_acl_d[mod]["resource_health"][acl_name], 2)
+                         break
+                      index += 1
+        #print module_acl_d[mod]
+        mod_health_percent = 0.0
+        total_acl_entries  = 0
+        for acl in module_acl_d[mod]["resource_health"]:
+            if type(module_acl_d[mod]["resource_health"][acl]) == dict:
+               mod_health_percent += module_acl_d[mod]["resource_health"][acl]["health"]
+            else:
+               mod_health_percent += module_acl_d[mod]["resource_health"][acl]
+            total_acl_entries += 1
+        if total_acl_entries:               
+           addHealthReport(healthReportDetail, float(mod_health_percent/total_acl_entries), \
+                           module_acl_d[mod], status)
+           total_num_entries += 1
+           acl_health_percent += float(mod_health_percent/total_acl_entries)
+    if total_num_entries:
+       syslog = ""
+       mod_first = True
+       if syslog_d:
+          for mod in syslog_d:
+              if not mod_first:
+                 syslog += ", "
+              mod_first = False
+              syslog += "Module: " + mod + "(Acl: "
+              acl_first = True
+              for acl in syslog_d[mod]:
+                  if not acl_first:
+                     syslog += ", "
+                  acl_first = False
+                  syslog += acl + "(" + getStatusStr(syslog_d[mod][acl]) + ")" 
+              syslog += ")" 
+       #print syslog_d
+       updateFactors(factor_name, factors_d[factor_name], \
+                     float(acl_health_percent/total_num_entries), healthReportDetail, syslog)
+
+
+def getAclUtilHealth(factor_name):
+    global cliP, factors_d
+
+    if not cliP:
+       return 0.0
+
+    getAclUtilHealth_text(factor_name)
+
+"""
+factors_d = {
+            "acl-util" : {
+               "desc"    : "ACL Utilization Health %% and its details",
+               "func"    : getAclUtilHealth,
+               "cmd"     : "show hardware access-list resource utilization",
+            }
+           }
+"""
 ### FActors to be considered for health
 factors_d = {
+            "acl-util" : {
+               "desc"    : "ACL Utilization Health %% and its details",
+               "func"    : getAclUtilHealth,
+               "cmd"     : "show hardware access-list resource utilization",
+            },
             "fan" : {
                "desc"    : "Fan Health %% and its details",
                "func"    : getFanHealth,
@@ -1165,11 +1369,6 @@ factors_d = {
                "desc"    : "Syslog{1,2, 3} Health %% and its details",
                "func"    : getSyslogHealth,
                "cmd"     : "show logging logfile",
-            },
-            "acl-util" : {
-               "desc"    : "ACL Utilization Health %% and its details",
-               "func"    : getAclUtilHealth,
-               "cmd"     : "show hardware access-list resource utilization",
             },
             "flash-sup" : {
                "desc"    : "Flash Memory(SUP) Health %% and its details",
@@ -1300,6 +1499,7 @@ def compute_system_health():
             index += 1 
 
         index = 1
+        cpu_count = 1
         while index <= cpu_count: 
             worker_thread[int(index)].join()
             index += 1
