@@ -35,7 +35,8 @@ default_app_source = os.path.join(nxsdk_path, "examples")
 default_app_desc="RPM package for custom application"
 default_app_target = os.path.join(nxsdk_path, "bin")
 default_app_version = "1.0"
-release_version = "1.7.5"
+default_release_version = "1.7.5"
+sdk_supported_versions = ["1.0.0", "1.5.0", "1.7.5"]
 
 # Spec file parameters
 custom_spec_file_path = os.path.join(nxsdk_path, "scripts/template.spec")
@@ -104,7 +105,8 @@ def main():
 		help="Application Description")
 	parser.add_argument("-v", "--version", default=default_app_version,
 		help="Application Version")
-
+        parser.add_argument("-r", "--sdk_version", default=default_release_version,
+                help="Application Version")
 	args = parser.parse_args()
 
 	if not args.use_source_as_target:
@@ -112,6 +114,13 @@ def main():
 	else:
 		target = os.path.join(args.source, args.name)
 
+        release_version = default_release_version
+        if args.sdk_version:
+           if args.sdk_version not in sdk_supported_versions:
+              sys.exit("Not supported NX-SDK Version: " + args.sdk_version)
+           else:
+              release_version = args.sdk_version
+           
 	target = os.path.abspath(target)
 	if not os.path.isfile(target):
 		parser.print_help()
