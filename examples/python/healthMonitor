@@ -1820,6 +1820,7 @@ def sdkThread(name,val):
 
     ### [Required] Needed for graceful exit.
     nx_sdk_py.NxSdk.__swig_destroy__(sdk)
+    cliP = 0
 
 ### main thread
 ### Global Variables
