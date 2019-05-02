@@ -168,6 +168,7 @@ sdk                 = 0
 tmp_filename        = "/nxos/tmp/tm-bot-dn"
 tm_cfg_tmp_filename = "/nxos/tmp/tm-bot-cfg"
 tm_cfg_applied_paths_dict_lock = threading.Lock()
+valid_config        = ""
 
 ### Dictionary to keep track of the paths matching a 
 ### pattern that are applied currently.
@@ -279,7 +280,7 @@ def tm_dict_copy(tm_cfg_applied_paths_dict, tm_cfg_staging_paths_dict):
 ###
 def timerThread(name,val):
     global tm_cfg_applied_paths_dict, tm_cfg_staging_paths_dict, tm_cfg_diff_dict
-    global cliP, tmp_filename, delete_key, path_absolute_key
+    global cliP, tmp_filename, delete_key, path_absolute_key, valid_config
 
     sleep_time = 5
     tmp_dict = {}
@@ -314,16 +315,22 @@ def timerThread(name,val):
                         dn_str=getDmeDnFromPattern(path_pattern)
                         if not cliP:
                            break
-             
+
                         ### Get all the matching paths for the given pattern
-                        result = cliP.execShowCmd("show system internal dme applied-config " \
-                                                  "all dn %s | grep \"dn\"" % dn_str)
+                        result = cliP.execShowCmd("show system internal dme %sapplied-config " \
+                                                  "all dn %s | grep \"dn\"" % (valid_config, dn_str))
+                        ### Show command has changed in the new releases. Hence updating the 
+                        ### code to handle the change.
+                        if "Syntax error" in result:
+                           valid_config = "running-config "
+                           result = cliP.execShowCmd("show system internal dme %sapplied-config " \
+                                                     "all dn %s | grep \"dn\"" % (valid_config, dn_str))
                         if not result:
-                           result = cliP.execShowCmd("show system internal dme hidden-config " \
-                                                     "all dn %s | grep \"dn\"" % dn_str)
+                           result = cliP.execShowCmd("show system internal dme %shidden-config " \
+                                                     "all dn %s | grep \"dn\"" % (valid_config, dn_str))
                            if not result:
                               continue
-  
+             
                         ### Dump the result to a file and get all the applied paths in this 
                         ### run matching the pattern.
                         with open(tmp_filename, 'w') as the_file:
