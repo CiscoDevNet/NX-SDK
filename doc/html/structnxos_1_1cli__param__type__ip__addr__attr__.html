@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NXSDK API: nxos::cli_param_type_ip_addr_attr_ Struct Reference</title>
+<title>NX-SDK API: nxos::cli_param_type_ip_addr_attr_ Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NXSDK API
+   <div id="projectname">NX-SDK API
    </div>
   </td>
  </tr>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('structnxos_1_1cli__param__type__ip__ad
 <p>Specifies that the type of the CLI input parameter is ipv4 or ipv6 address or prefix.  
  <a href="structnxos_1_1cli__param__type__ip__addr__attr__.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">include/types/nx_cli.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -121,7 +121,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
      A.B.C.D/LEN        Enter Filter IP Prefix
      A:B::C:D/LEN       Enter Filter IPv6 Prefix
 </pre><div class="fragment"><div class="line">sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">cliP = sdk-&gt;getCliParser();</div><div class="line"><a class="code" href="structnxos_1_1cli__param__type__ip__addr__attr__.html">nxos::cli_param_type_ip_addr_attr</a> ip_pfx_attr = {0};</div><div class="line">ip_pfx_attr.is_ipv6 = <span class="keyword">false</span>;</div><div class="line">ip_pfx_attr.<a class="code" href="structnxos_1_1cli__param__type__ip__addr__attr__.html#a0a059b592a9bc394c9fed521fb5a9552">is_prefix</a> = <span class="keyword">true</span>;</div><div class="line">cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_filter_prefix_cmd&quot;</span>,</div><div class="line">                         <span class="stringliteral">&quot;filter-prefix [&lt;ip-prefix&gt; | &lt;ipv6-prefix&gt;]&quot;</span>);</div><div class="line">cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;ip-prefix&gt;&quot;</span>, <span class="stringliteral">&quot;Enter Filter IP Prefix&quot;</span>, nxos::P_IP_ADDR,</div><div class="line">                 (<span class="keywordtype">void</span> *)&amp;ip_pfx_attr, <span class="keyword">sizeof</span>(ip_pfx_attr));</div><div class="line">ip_pfx_attr.is_ipv6 = <span class="keyword">true</span>;</div><div class="line">cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;ipv6-prefix&gt;&quot;</span>, <span class="stringliteral">&quot;Enter Filter IPv6 Prefix&quot;</span>, nxos::P_IP_ADDR,</div><div class="line">                 (<span class="keywordtype">void</span> *)&amp;ip_pfx_attr, <span class="keyword">sizeof</span>(ip_pfx_attr));</div></div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">import</span> nx_sdk_py</div><div class="line">sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">cliP = sdk.getCliParser()</div><div class="line">ip_pfx_attr = nx_sdk_py.cli_param_type_ip_addr_attr()</div><div class="line">ip_pfx_attr.is_ipv6 = <span class="keyword">False</span></div><div class="line">ip_pfx_attr.is_prefix = <span class="keyword">True</span></div><div class="line">cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_filter_prefix_cmd&quot;</span>,</div><div class="line">                        <span class="stringliteral">&quot;filter-prefix [&lt;ip-prefix&gt; | &lt;ipv6-prefix&gt;]&quot;</span>)</div><div class="line">cmd.updateParam(<span class="stringliteral">&quot;&lt;ip-prefix&gt;&quot;</span>, <span class="stringliteral">&quot;Enter Filter IP Prefix&quot;</span>, nxos::P_IP_ADDR,</div><div class="line">                ip_pfx_attr, len(ip_pfx_attr))</div><div class="line">ip_pfx_attr.is_ipv6 = <span class="keyword">True</span></div><div class="line">cmd.updateParam(<span class="stringliteral">&quot;&lt;ipv6-prefix&gt;&quot;</span>, <span class="stringliteral">&quot;Enter Filter IPv6 Prefix&quot;</span>, nxos::P_IP_ADDR,</div><div class="line">                ip_pfx_attr, len(ip_pfx_attr));</div></div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="types_2nx__cli_8h_source.html">types/nx_cli.h</a></li>
+<li>include/types/<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

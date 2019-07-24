@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "NXSDK API", "index.html", [
+  [ "NX-SDK API", "index.html", [
     [ "Bug List", "bug.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NXSDK API: nxos::cli_param_type_string_attr_ Struct Reference</title>
+<title>NX-SDK API: nxos::cli_param_type_string_attr_ Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NXSDK API
+   <div id="projectname">NX-SDK API
    </div>
   </td>
  </tr>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('structnxos_1_1cli__param__type__string
 <p>Specifies that the type of the CLI input parameter is string.  
  <a href="structnxos_1_1cli__param__type__string__attr__.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">include/types/nx_cli.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -120,7 +120,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <p>Usage: If you need to create a CLI which will take a string with max length 25 and matches a regex pattern "^[a-zA-Z]+$"</p>
 <p>CLI: $appname encryption-text ? WORD Enter Encrypted text (Max Size 25) <br />
  </p><div class="fragment"><div class="line">sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">cliP = sdk-&gt;getCliParser();</div><div class="line"><a class="code" href="structnxos_1_1cli__param__type__string__attr__.html">nxos::cli_param_type_string_attr</a> str_attr = {0};</div><div class="line">str_attr.length = 25;</div><div class="line">strcpy(str_attr.<a class="code" href="structnxos_1_1cli__param__type__string__attr__.html#a2a547a1318e243011f100535aebf0a49">regex_pattern</a>, pattern);</div><div class="line">cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_encryption_text_cmd&quot;</span>,</div><div class="line">                         <span class="stringliteral">&quot;encryption-text &lt;text&gt;&quot;</span>);</div><div class="line">cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;text&gt;&quot;</span>, <span class="stringliteral">&quot;Enter Encrypted text&quot;</span>, nxos::P_STRING,</div><div class="line">                 (<span class="keywordtype">void</span> *)&amp;str_attr, <span class="keyword">sizeof</span>(str_attr));</div></div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">import</span> nx_sdk_py</div><div class="line">sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">cliP = sdk.getCliParser()</div><div class="line">str_attr = nx_sdk_py.cli_param_type_string_attr()</div><div class="line">str_attr.length = 25;</div><div class="line">str_attr.regex_pattern = <span class="stringliteral">&quot;^[a-zA-Z]+$&quot;</span>;</div><div class="line">cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_encryption_text_cmd&quot;</span>, </div><div class="line">                        <span class="stringliteral">&quot;encryption-text &lt;text&gt;&quot;</span>)</div><div class="line">cmd.updateParam(<span class="stringliteral">&quot;&lt;text&gt;&quot;</span>, <span class="stringliteral">&quot;Encrypted text&quot;</span>, nxos::P_STRING,</div><div class="line">                str_attr, len(str_attr))</div></div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="types_2nx__cli_8h_source.html">types/nx_cli.h</a></li>
+<li>include/types/<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
