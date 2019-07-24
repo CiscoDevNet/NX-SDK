@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxDmeMgr Class Reference</title>
+<title>NXSDK API: nxos::NxDmeMgr Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -100,10 +100,8 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_dme_mgr.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e64bc40ea7fc589711b5abf3fbd76d7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr.html#a8e64bc40ea7fc589711b5abf3fbd76d7">~NxDmeMgr</a> ()</td></tr>
-<tr class="separator:a8e64bc40ea7fc589711b5abf3fbd76d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15e7bdf416b3e17005327e556ad954e8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr.html#a15e7bdf416b3e17005327e556ad954e8">getDmeObj</a> (const std::string &amp;Dn)=0</td></tr>
-<tr class="separator:a15e7bdf416b3e17005327e556ad954e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf4e25cc54e1cb352c9c79bb7dfa4021"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr.html#acf4e25cc54e1cb352c9c79bb7dfa4021">getDmeObj</a> (const std::string &amp;Dn, bool getChildren=false)=0</td></tr>
+<tr class="separator:acf4e25cc54e1cb352c9c79bb7dfa4021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bbf25e6b6565bfef6f81e5d74ba4a9d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr.html#a9bbf25e6b6565bfef6f81e5d74ba4a9d">addDmeObj</a> (const std::string &amp;sInDn, int *error)=0</td></tr>
 <tr class="separator:a9bbf25e6b6565bfef6f81e5d74ba4a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae29687ce5a8ac402e1297bb3c8528936"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr.html#ae29687ce5a8ac402e1297bb3c8528936">delDmeObj</a> (const std::string &amp;sInDn)=0</td></tr>
@@ -125,33 +123,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Public DME Manager interface to gain access to NXOS DME functionality such as reading DME objects, getting/setting object properties, and capturing DME events. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8e64bc40ea7fc589711b5abf3fbd76d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e64bc40ea7fc589711b5abf3fbd76d7">&#9670;&nbsp;</a></span>~NxDmeMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual nxos::NxDmeMgr::~NxDmeMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9bbf25e6b6565bfef6f81e5d74ba4a9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bbf25e6b6565bfef6f81e5d74ba4a9d">&#9670;&nbsp;</a></span>addDmeObj()</h2>
 
@@ -188,12 +160,15 @@ Public Member Functions</h2></td></tr>
 <p>Create a new DME object that will be added to the running configuration. Reference : <a href="https://developer.cisco.com/site/nxapi-dme-model-reference-api/?version=9.2(1)">https://developer.cisco.com/site/nxapi-dme-model-reference-api/?version=9.2(1)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sInDn</td><td>The DN path for the object to be added. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>The error value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>The error value.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to created <a class="el" href="classnxos_1_1_nx_dme.html" title="Public interface for NXSDK DME objects. These objects are used by applications to read or update the ...">NxDme</a> object <div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">int</span>   err;</div><div class="line">    NxDme *obj;</div><div class="line">    NxDmeMgr       *dmeP =  sdk-&gt;getDmeMgr();</div><div class="line">    </div><div class="line">    obj = dmeP-&gt;addDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>, &amp;err);</div><div class="line">Python:</div><div class="line">    obj = dmeP.addDmeObj(<span class="stringliteral">&quot;sys/intf/lb-[lo1]&quot;</span>, err)</div><div class="line">    <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div></div><!-- fragment --></dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<dl class="section return"><dt>Returns</dt><dd>pointer to created <a class="el" href="classnxos_1_1_nx_dme.html" title="Public interface for NXSDK DME objects. These objects are used by applications to read or update the ...">NxDme</a> object</dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">int</span>   err;</div><div class="line">    NxDme *obj;</div><div class="line">    NxDmeMgr       *dmeP =  sdk-&gt;getDmeMgr();</div><div class="line">    </div><div class="line">    obj = dmeP-&gt;addDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>, &amp;err);</div><div class="line">Python:</div><div class="line">    obj = dmeP.addDmeObj(<span class="stringliteral">&quot;sys/intf/lb-[lo1]&quot;</span>, err)</div><div class="line">    <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID_USAGE</td><td></td></tr>
   </table>
@@ -227,12 +202,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Remove an objet from the running DME configuration. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sInDn</td><td>The DN path of the object to delete. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sInDn</td><td>The DN path of the object to delete.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>err_type_e value <div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">int</span> err;</div><div class="line">    err = dmeP-&gt;delDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>);</div><div class="line">    <span class="keywordflow">if</span> (err == <a class="code" href="namespacenxos.html#ab37a154d6e66b6fabe61025ba9f523e1a02b0f4aa199a01d3e506e935467ba337">ERR_ESUCCESS</a>) ...</div><div class="line">Python:</div><div class="line">    err = dmeP.delDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>)</div><div class="line">    <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div><div class="line">         ...</div></div><!-- fragment --></dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<dl class="section return"><dt>Returns</dt><dd>err_type_e value</dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">int</span> err;</div><div class="line">    err = dmeP-&gt;delDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>);</div><div class="line">    <span class="keywordflow">if</span> (err == ERR_ESUCCESS) ...</div><div class="line">Python:</div><div class="line">    err = dmeP.delDmeObj(<span class="stringliteral">&quot;path/to/object&quot;</span>)</div><div class="line">    <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div><div class="line">         ...</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID_USAGE,ERR_FAILURE</td><td></td></tr>
   </table>
@@ -362,8 +340,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a15e7bdf416b3e17005327e556ad954e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15e7bdf416b3e17005327e556ad954e8">&#9670;&nbsp;</a></span>getDmeObj()</h2>
+<a id="acf4e25cc54e1cb352c9c79bb7dfa4021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4e25cc54e1cb352c9c79bb7dfa4021">&#9670;&nbsp;</a></span>getDmeObj()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,8 +353,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a>* nxos::NxDmeMgr::getDmeObj </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>Dn</em></td><td>)</td>
+          <td class="paramname"><em>Dn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>getChildren</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -388,6 +376,7 @@ Public Member Functions</h2></td></tr>
 <p>Opens DME object path and return an object for it, which the caller owns and must delete. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">Dn</td><td>The DN string which specifies the DME object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">getChildren</td><td>Read child information for this object. Required if using any children related apis.</td></tr>
   </table>
   </dd>
 </dl>
@@ -599,14 +588,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
+<li><a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme_mgr.html">NxDmeMgr</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme_mgr.html">NxDmeMgr</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

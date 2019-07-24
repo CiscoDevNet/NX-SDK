@@ -12,9 +12,7 @@ Public D\+ME Manager interface to gain access to N\+X\+OS D\+ME functionality su
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}{$\sim$\+Nx\+Dme\+Mgr}} ()
-\item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a15e7bdf416b3e17005327e556ad954e8}{get\+Dme\+Obj}} (const std\+::string \&Dn)=0
+virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}{get\+Dme\+Obj}} (const std\+::string \&Dn, bool get\+Children=false)=0
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a9bbf25e6b6565bfef6f81e5d74ba4a9d}{add\+Dme\+Obj}} (const std\+::string \&s\+In\+Dn, int $\ast$error)=0
 \item 
@@ -39,15 +37,6 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler
 \subsection{Detailed Description}
 Public D\+ME Manager interface to gain access to N\+X\+OS D\+ME functionality such as reading D\+ME objects, getting/setting object properties, and capturing D\+ME events. 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}\label{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!````~Nx\+Dme\+Mgr@{$\sim$\+Nx\+Dme\+Mgr}}
-\index{````~Nx\+Dme\+Mgr@{$\sim$\+Nx\+Dme\+Mgr}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Dme\+Mgr()}{~NxDmeMgr()}}
-{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Dme\+Mgr\+::$\sim$\+Nx\+Dme\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a9bbf25e6b6565bfef6f81e5d74ba4a9d}\label{classnxos_1_1_nx_dme_mgr_a9bbf25e6b6565bfef6f81e5d74ba4a9d}} 
 \index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!add\+Dme\+Obj@{add\+Dme\+Obj}}
@@ -59,11 +48,19 @@ Create a new D\+ME object that will be added to the running configuration. Refer
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em s\+In\+Dn} & The DN path for the object to be added. \\
 \hline
-\mbox{\tt out}  & {\em error} & The error value. \\
+\mbox{\tt out}  & {\em error} & The error value.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-pointer to created \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} object 
+pointer to created \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} object
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
 \begin{DoxyCode}
 C++:
     \textcolor{keywordtype}{int}   err;
@@ -76,7 +73,7 @@ Python:
     \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
 \end{DoxyCode}
 
-\end{DoxyReturn}
+
 
 \begin{DoxyExceptions}{Exceptions}
 {\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & \\
@@ -90,23 +87,31 @@ Python:
 
 Remove an objet from the running D\+ME configuration. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the object to delete. \\
+\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the object to delete.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-err\+\_\+type\+\_\+e value 
+err\+\_\+type\+\_\+e value
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
 \begin{DoxyCode}
 C++:
     \textcolor{keywordtype}{int} err;
     err = dmeP->delDmeObj(\textcolor{stringliteral}{"path/to/object"});
-    \textcolor{keywordflow}{if} (err == \mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a02b0f4aa199a01d3e506e935467ba337}{ERR\_ESUCCESS}}) ...
+    \textcolor{keywordflow}{if} (err == ERR\_ESUCCESS) ...
 Python:
     err = dmeP.delDmeObj(\textcolor{stringliteral}{"path/to/object"})
     \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
          ...
 \end{DoxyCode}
 
-\end{DoxyReturn}
+
 
 \begin{DoxyExceptions}{Exceptions}
 {\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE,E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE} & \\
@@ -201,15 +206,17 @@ Python:
 {\em None.} & \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a15e7bdf416b3e17005327e556ad954e8}\label{classnxos_1_1_nx_dme_mgr_a15e7bdf416b3e17005327e556ad954e8}} 
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}\label{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}} 
 \index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!get\+Dme\+Obj@{get\+Dme\+Obj}}
 \index{get\+Dme\+Obj@{get\+Dme\+Obj}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
 \subsubsection{\texorpdfstring{get\+Dme\+Obj()}{getDmeObj()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}}$\ast$ nxos\+::\+Nx\+Dme\+Mgr\+::get\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Dn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}}$\ast$ nxos\+::\+Nx\+Dme\+Mgr\+::get\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Dn,  }\item[{bool}]{get\+Children = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Opens D\+ME object path and return an object for it, which the caller owns and must delete. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Dn} & The DN string which specifies the D\+ME object. \\
+\hline
+\mbox{\tt in}  & {\em get\+Children} & Read child information for this object. Required if using any children related apis.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -414,4 +421,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}

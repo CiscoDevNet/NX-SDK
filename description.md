@@ -4,7 +4,7 @@
    ```
      git clone https://github.com/CiscoDevNet/NX-SDK.git
      cd $PWD/NX-SDK
-     ls (Makefile doc  examples  include  python  rpm  src  stubs)
+     ls (Makefile doc  examples  go include  python  readmes remote rpm  src  stubs)
    ```
 
 ## NX-SDK toolkit Directory Structure
@@ -25,6 +25,10 @@
           </ul>  
          When the Application is then run in the Nexus switches it then links to the real NX-SDK library packaged in the Nexus
          images. Refer to <a href="https://github.com/CiscoDevNet/NX-SDK#release">Nexus releases</a> in which NX-SDK is available. NOTE: For python custom applications, stubs will soon be published.</p>
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/readmes">readmes/</a>: <p align="justify"> Contains all NX-SDK related readme docs.</p>
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/python">python/</a>: <p align="justify"> Python bindings to run remote NX-SDK python applications.</p>
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/go">go/</a>: <p align="justify"> Go bindings to run NX-SDK GO applications inside as well as outside of NX-OS.</p>
+ - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/remote">remote/</a>: <p align="justify"> Contains the steps to deploy NX-SDK applications remotely and the pre-built remote nxsdk library (libndsdk).</p>
  - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples">examples/</a>: <p align="justify"> Sample custom Applications showcasing the usage of NX-SDK.</p>
    - <a href="https://github.com/CiscoDevNet/NX-SDK/tree/master/examples/c++">c++/</a>: <p align="justify"> Sample C++ 
         custom Applications using NX-SDK. </p>

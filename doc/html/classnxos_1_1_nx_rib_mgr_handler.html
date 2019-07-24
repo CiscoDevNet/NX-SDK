@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxRibMgrHandler Class Reference</title>
+<title>NXSDK API: nxos::NxRibMgrHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -92,11 +92,6 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_rib_mgr_handler.html'
 <div class="title">nxos::NxRibMgrHandler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Abstract RibMgr callback Interface to receive VRF, Route updates etc from NXOS RIB.  
- <a href="classnxos_1_1_nx_rib_mgr_handler.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="nx__rib__mgr_8h_source.html">nx_rib_mgr.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -106,10 +101,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b742d50365fdece0ea47eb38300f7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed5a3ad9c0e55d21e18d88a19419a5e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html#a2ed5a3ad9c0e55d21e18d88a19419a5e">postVrfCb</a> (<a class="el" href="classnxos_1_1_nx_vrf.html">NxVrf</a> *vrf)</td></tr>
 <tr class="separator:a2ed5a3ad9c0e55d21e18d88a19419a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae11a0ef873528002f86cd41a5871ad65"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html#ae11a0ef873528002f86cd41a5871ad65">postL3RecursiveNextHopCb</a> (<a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *rnhRoute, bool isResolved)</td></tr>
+<tr class="separator:ae11a0ef873528002f86cd41a5871ad65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4214a821d17a84b4746b0dd94b5d58b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html#af4214a821d17a84b4746b0dd94b5d58b">postMyL3RouteCb</a> (<a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *route)</td></tr>
+<tr class="separator:af4214a821d17a84b4746b0dd94b5d58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b189923604f553505b0741b8acd39d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html#ac3b189923604f553505b0741b8acd39d">postL3RouteRepopulateCb</a> (const std::string vrfName, const std::string routeAddress, unsigned char maskLen=0)</td></tr>
+<tr class="separator:ac3b189923604f553505b0741b8acd39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract RibMgr callback Interface to receive VRF, Route updates etc from NXOS RIB. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0b2d07d8f5547b196f6eda3d77f9ca97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b2d07d8f5547b196f6eda3d77f9ca97">&#9670;&nbsp;</a></span>~NxRibMgrHandler()</h2>
 
@@ -137,6 +136,51 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae11a0ef873528002f86cd41a5871ad65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11a0ef873528002f86cd41a5871ad65">&#9670;&nbsp;</a></span>postL3RecursiveNextHopCb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxRibMgrHandler::postL3RecursiveNextHopCb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *&#160;</td>
+          <td class="paramname"><em>rnhRoute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isResolved</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>User to overload the postL3RecursiveNextHopCb callback method to receive updates after a recursive next hop is added by the application.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classnxos_1_1_nx_l3_route.html" title="Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. ">NxL3Route</a></td><td>object representing the route for the added recursive next-hop </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isResolved</td><td>A boolean value representing whether the RNH is resolved.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True : if the action was successful. False: if the action was not successful.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#ae11a0ef873528002f86cd41a5871ad65">postL3RecursiveNextHopCb</a>(NxL3Route *route) {</div><div class="line">              <span class="comment">// Do your action</span></div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrHandler();</div><div class="line">        ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#ae11a0ef873528002f86cd41a5871ad65">postL3RecursiveNextHopCb</a>(self, nxroute):</div><div class="line"><span class="preprocessor">             # Do your action here</span></div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       ribMgr = sdk.getRibMgr()</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       ribMgr.setRibMgrHandler(myribcb)</div></div><!-- fragment --> 
+</div>
+</div>
 <a id="a1b742d50365fdece0ea47eb38300f7de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b742d50365fdece0ea47eb38300f7de">&#9670;&nbsp;</a></span>postL3RouteCb()</h2>
 
@@ -168,6 +212,89 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True : if the action was successful. False: if the action was not successful.</dd></dl>
 <div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#a1b742d50365fdece0ea47eb38300f7de">postL3RouteCb</a>(NxL3Route *route) {</div><div class="line">              <span class="comment">// Do your action</span></div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrHandler();</div><div class="line">        ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#a1b742d50365fdece0ea47eb38300f7de">postL3RouteCb</a>(self, nxroute):</div><div class="line"><span class="preprocessor">             # Do your action here</span></div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       ribMgr = sdk.getRibMgr()</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       ribMgr.setRibMgrHandler(myribcb)</div></div><!-- fragment --> 
+</div>
+</div>
+<a id="ac3b189923604f553505b0741b8acd39d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b189923604f553505b0741b8acd39d">&#9670;&nbsp;</a></span>postL3RouteRepopulateCb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxRibMgrHandler::postL3RouteRepopulateCb </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>vrfName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>routeAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>maskLen</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>User to overload the postL3RouteRepopulateCb callback method to receive a notification when the application needs to re-add all it's routes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vrfName</td><td>A string representing the VRF name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">routeAddress</td><td>string representation of the address if address is all zeros, that means repopulate all routes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maskLen</td><td>route mask. If value is zero along with zero routeAddress, this means repopulate all routes for this vrf</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#ac3b189923604f553505b0741b8acd39d">postL3RouteRepopulateCb</a>(<span class="keyword">const</span> std::string vrfName,</div><div class="line">                                      <span class="keyword">const</span> std::string routePrefix,</div><div class="line">                                      <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>     maskLen) {</div><div class="line">              <span class="comment">// Do your action</span></div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrHandler();</div><div class="line">        ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#ac3b189923604f553505b0741b8acd39d">postL3RouteRepopulateCb</a>(self, vrfName, routeAddr, maskLen):</div><div class="line"><span class="preprocessor">             # Do your action here</span></div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       ribMgr = sdk.getRibMgr()</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       ribMgr.setRibMgrHandler(myribcb)</div></div><!-- fragment --> 
+</div>
+</div>
+<a id="af4214a821d17a84b4746b0dd94b5d58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4214a821d17a84b4746b0dd94b5d58b">&#9670;&nbsp;</a></span>postMyL3RouteCb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxRibMgrHandler::postMyL3RouteCb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *&#160;</td>
+          <td class="paramname"><em>route</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>User to overload the postMyL3RouteCb callback method to receive any registered route updates for routes added or modified by the application. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classnxos_1_1_nx_l3_route.html" title="Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. ">NxL3Route</a></td><td>object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True : if the action was successful. False: if the action was not successful.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#af4214a821d17a84b4746b0dd94b5d58b">postMyL3RouteCb</a>(NxL3Route *route) {</div><div class="line">              <span class="comment">// Do your action</span></div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrHandler();</div><div class="line">        ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def <a class="code" href="classnxos_1_1_nx_rib_mgr_handler.html#af4214a821d17a84b4746b0dd94b5d58b">postMyL3RouteCb</a>(self, nxroute):</div><div class="line"><span class="preprocessor">             # Do your action here</span></div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       ribMgr = sdk.getRibMgr()</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       ribMgr.setRibMgrHandler(myribcb)</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="a2ed5a3ad9c0e55d21e18d88a19419a5e"></a>
@@ -204,14 +331,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__rib__mgr_8h_source.html">nx_rib_mgr.h</a></li>
+<li><a class="el" href="nx__rib__mgr_8h_source.html">nx_rib_mgr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html">NxRibMgrHandler</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html">NxRibMgrHandler</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

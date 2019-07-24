@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxSdk Class Reference</title>
+<title>NXSDK API: nxos::NxSdk Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc80e6f244a7cbc050f9dacbc8018315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cdb42126b1132cf9aa00426a8d5d428"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_rib_mgr.html">NxRibMgr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a3cdb42126b1132cf9aa00426a8d5d428">getRibMgr</a> ()=0</td></tr>
 <tr class="separator:a3cdb42126b1132cf9aa00426a8d5d428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d9487216506aa19e5499759f5eaef7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority</a> (<a class="el" href="namespacenxos.html#af446a76676837368bde9b15343ae21d5">nxos::prio_e</a> prio)=0</td></tr>
+<tr class="memitem:a46d9487216506aa19e5499759f5eaef7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority</a> (<a class="el" href="nx__common_8h.html#af446a76676837368bde9b15343ae21d5">nxos::prio_e</a> prio)=0</td></tr>
 <tr class="separator:a46d9487216506aa19e5499759f5eaef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac860ca0ab2bd58d28f990685c63906a0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_intf_mgr.html">NxIntfMgr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#ac860ca0ab2bd58d28f990685c63906a0">getIntfMgr</a> ()=0</td></tr>
 <tr class="separator:ac860ca0ab2bd58d28f990685c63906a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,8 +133,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a089933980bfe0466870510bb94158763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2a6d199227de068bda5a720a7f29e94"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#ae2a6d199227de068bda5a720a7f29e94">isInEventLoop</a> () const =0</td></tr>
 <tr class="separator:ae2a6d199227de068bda5a720a7f29e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ebf9ceb029ce71ecfead7d9183ae4e3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacenxos.html#a5d2faf90d8673c5bf207f3883d3ca506">nxos::running_env_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a6ebf9ceb029ce71ecfead7d9183ae4e3">getRunningEnv</a> () const =0</td></tr>
+<tr class="memitem:a6ebf9ceb029ce71ecfead7d9183ae4e3"><td class="memItemLeft" align="right" valign="top">virtual nxos::running_env_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a6ebf9ceb029ce71ecfead7d9183ae4e3">getRunningEnv</a> () const =0</td></tr>
 <tr class="separator:a6ebf9ceb029ce71ecfead7d9183ae4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cec82b30925240ce24e052b4c800c4"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#ad5cec82b30925240ce24e052b4c800c4">getRemoteIp</a> ()=0</td></tr>
+<tr class="separator:ad5cec82b30925240ce24e052b4c800c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af922404fa50aa22299189f759cfbc4ca"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#af922404fa50aa22299189f759cfbc4ca">getRemotePort</a> ()=0</td></tr>
+<tr class="separator:af922404fa50aa22299189f759cfbc4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17102543d36406daaed8370802eecca3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__common_8h.html#a7c257059d03188765435b36e95dbb764">nxos::state_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a17102543d36406daaed8370802eecca3">getRemoteConnStatus</a> ()=0</td></tr>
+<tr class="separator:a17102543d36406daaed8370802eecca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd0b2d92b51fc18bb30c059fa5b4a9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#abfd0b2d92b51fc18bb30c059fa5b4a9b">purgeAllSdkObjs</a> ()=0</td></tr>
+<tr class="separator:abfd0b2d92b51fc18bb30c059fa5b4a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f14e71747eac4fd5703d0cb490abe89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a5f14e71747eac4fd5703d0cb490abe89">setSdkHandler</a> (<a class="el" href="classnxos_1_1_nx_sdk_handler.html">NxSdkHandler</a> *handler)=0</td></tr>
+<tr class="separator:a5f14e71747eac4fd5703d0cb490abe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86348d2475862e149dcdbe04634db3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#ad86348d2475862e149dcdbe04634db3b">unsetSdkHandler</a> ()=0</td></tr>
+<tr class="separator:ad86348d2475862e149dcdbe04634db3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079be3a7d8861fc9817903b7a6b0e9ab"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_sdk_handler.html">NxSdkHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a079be3a7d8861fc9817903b7a6b0e9ab">getSdkHandler</a> ()=0</td></tr>
+<tr class="separator:a079be3a7d8861fc9817903b7a6b0e9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -142,6 +156,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a5050e2d26c40744b4fc7862068a83f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdeb12edbd291b5421ddb3260547bf8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#acdeb12edbd291b5421ddb3260547bf8a">getSdkInst</a> (int argc, char **argv, bool advException)</td></tr>
 <tr class="separator:acdeb12edbd291b5421ddb3260547bf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced70eb68eaccdd3c11f36c21575ade0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#aced70eb68eaccdd3c11f36c21575ade0">getSdkInst</a> (int argc, char **argv, bool advException, const char *remoteIp, uint32_t remotePort)</td></tr>
+<tr class="separator:aced70eb68eaccdd3c11f36c21575ade0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225be30e47270295fbe08151b4745692"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_sdk.html#a225be30e47270295fbe08151b4745692">getSdkInst</a> (int argc, char **argv, bool advException, const char *remoteIp, uint32_t remotePort, const char *certificate)</td></tr>
+<tr class="separator:a225be30e47270295fbe08151b4745692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract SDK interface to NXOS infra. </p>
@@ -330,7 +348,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Get Nx DME Manager object to get, update and register for DME objectore events.</p>
 <dl class="section since"><dt>Since</dt><dd>NX-SDK V1.7.5 </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer of type <a class="el" href="classnxos_1_1_nx_dme_mgr.html" title="Public interface for NXSDK DME objects. These objects are used by applications to read or update the ...">NxDmeMgr</a> if valid (or) NULL </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer of type <a class="el" href="classnxos_1_1_nx_dme.html" title="Public interface for NXSDK DME objects. These objects are used by applications to read or update the ...">NxDme</a> if valid (or) NULL </dd></dl>
 
 </div>
 </div>
@@ -390,6 +408,99 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a17102543d36406daaed8370802eecca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17102543d36406daaed8370802eecca3">&#9670;&nbsp;</a></span>getRemoteConnStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="nx__common_8h.html#a7c257059d03188765435b36e95dbb764">nxos::state_type_e</a> nxos::NxSdk::getRemoteConnStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To get the destination switch remote connection status <br />
+associated with this SDK instance. <br />
+ </p><dl class="section return"><dt>Returns</dt><dd>True - if the remote connection is Up. False - if the remote connection is Down. <br />
+ For apps running natively it always return True.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 <br />
+ <div class="fragment"><div class="line">C++:                                                       </div><div class="line">     cout &lt;&lt; <span class="stringliteral">&quot;Remote Connection status: &quot;</span> &lt;&lt; sdk-&gt;getRemoteConnStatus() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;                         </div><div class="line">                                                                                      </div><div class="line">Python:                                                 </div><div class="line">   print <span class="stringliteral">&quot;Remote Connection Status:  &quot;</span> + sdk.getRemoteConnStatus()                                     </div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ad5cec82b30925240ce24e052b4c800c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cec82b30925240ce24e052b4c800c4">&#9670;&nbsp;</a></span>getRemoteIp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string nxos::NxSdk::getRemoteIp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To get the destination switch remote IP address associated with this SDK instance.</p>
+<dl class="section return"><dt>Returns</dt><dd>Destination remote IP address if the app is running remotely. Returns empty string if app is running natively in the switch.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 <br />
+ <div class="fragment"><div class="line">C++:                                                                                              </div><div class="line">     cout &lt;&lt; <span class="stringliteral">&quot;Dest Ip: &quot;</span> &lt;&lt; sdk-&gt;getRemoteIp() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;            </div><div class="line">                                                              </div><div class="line">Python:                                                       </div><div class="line">   print <span class="stringliteral">&quot;Dest Ip &quot;</span> + sdk.getRemoteIp() </div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="af922404fa50aa22299189f759cfbc4ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af922404fa50aa22299189f759cfbc4ca">&#9670;&nbsp;</a></span>getRemotePort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t nxos::NxSdk::getRemotePort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To get the destination switch remote Port associated <br />
+with this SDK instance. <br />
+ </p><dl class="section return"><dt>Returns</dt><dd>Destination remote Port if the app is running <br />
+ remotely. Returns 0 if app is running <br />
+ natively in the switch. <br />
+ </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 <br />
+ <div class="fragment"><div class="line">C++:                                                                                              </div><div class="line">     cout &lt;&lt; <span class="stringliteral">&quot;Dest Port: &quot;</span> &lt;&lt; sdk-&gt;getRemotePort() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;                                             </div><div class="line">                                                                                                  </div><div class="line">Python:                                                                                           </div><div class="line">   print <span class="stringliteral">&quot;Dest Ip &quot;</span> + sdk.getRemotePort()                                                             </div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a3cdb42126b1132cf9aa00426a8d5d428"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cdb42126b1132cf9aa00426a8d5d428">&#9670;&nbsp;</a></span>getRibMgr()</h2>
 
@@ -413,7 +524,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Get Nx Rib Manager object to update and register for route events.</p>
-<dl class="section since"><dt>Since</dt><dd>NX-SDK V1.5</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NXSDK V1.5</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer of type <a class="el" href="classnxos_1_1_nx_rib_mgr.html" title="Abstract Rib Manager interface to gain access to NXOS RIB. ">NxRibMgr</a>. </dd></dl>
 
 </div>
@@ -428,7 +539,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacenxos.html#a5d2faf90d8673c5bf207f3883d3ca506">nxos::running_env_e</a> nxos::NxSdk::getRunningEnv </td>
+          <td class="memname">virtual nxos::running_env_e nxos::NxSdk::getRunningEnv </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -446,8 +557,36 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a079be3a7d8861fc9817903b7a6b0e9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079be3a7d8861fc9817903b7a6b0e9ab">&#9670;&nbsp;</a></span>getSdkHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_sdk_handler.html">NxSdkHandler</a>* nxos::NxSdk::getSdkHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Handler object registered with <a class="el" href="classnxos_1_1_nx_sdk.html" title="Abstract SDK interface to NXOS infra. ">NxSdk</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnxos_1_1_nx_sdk_handler.html" title="Abstract NX-SDK callback Interface to receive SDK updates. ">NxSdkHandler</a> user overloaded obj.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 </dd></dl>
+
+</div>
+</div>
 <a id="a5050e2d26c40744b4fc7862068a83f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5050e2d26c40744b4fc7862068a83f39">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5050e2d26c40744b4fc7862068a83f39">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +634,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="acdeb12edbd291b5421ddb3260547bf8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdeb12edbd291b5421ddb3260547bf8a">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acdeb12edbd291b5421ddb3260547bf8a">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,12 +685,209 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argvi, <span class="keyword">true</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- SDK instance to operate on (registered with NXOS Infra successfully).<ul>
+<div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv, <span class="keyword">true</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- SDK instance to operate on (registered with NXOS Infra successfully).<ul>
 <li>NULL in case of any errors and there will be a Error syslog on the failure.</li>
 </ul>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>From V1.5, by default an NXSDK App will be started as Low Priority App. To change the priority, refer to <a class="el" href="classnxos_1_1_nx_sdk.html#a46d9487216506aa19e5499759f5eaef7">setAppPriority()</a>. </dd></dl>
 
+</div>
+</div>
+<a id="aced70eb68eaccdd3c11f36c21575ade0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced70eb68eaccdd3c11f36c21575ade0">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a>* nxos::NxSdk::getSdkInst </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>advException</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>remoteIp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>remotePort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>[Required] To get Nx SDK Instance which enables the third <br />
+ party applications to gain access to NXOS Infra <br />
+ functionalities. <br />
+</p><dl class="section since"><dt>Since</dt><dd>NXSDK V2.0 <br />
+ </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- Earlier variants supported from NxSDK V1.5. This version adds two new parameters for remote ip/port for applications executing outside the switch. It is the same in all other respects as prior variants so refer to those for additional information.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pass</td><td>in the command line arguments as its <br />
+ needed when the App is started from VSH. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">advException</td><td>TRUE - If the App can handle Advanced <br />
+ Exceptions then Exception will be <br />
+ thrown of the type <a class="el" href="classnxos_1_1_nx_exception.html" title="Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type NxE...">NxException</a>. <br />
+ FALSE - Default Mode. Exception will be <br />
+ thrown of the type <br />
+ C++ - std::logic_err, Python - String <br />
+ Note: Supported from V1.5 <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteIp</td><td>IPv4 (or) IPv6 of the remote switch to connect to. Used only if the NX-SDK app is running remotely.Its a no-op if the app is running natively in the switch. <br />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remotePort</td><td>Port in the remote switch to connect to. To be used only <br />
+ if the NX-SDK app is running remotely.Its a no-op if the app is running natively in the switch.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- SDK instance to operate on (successfully registered with NXOS Infra remotely). An App can connect to multiple switches by specifying different IP addresses and port as shown below thereby acquiring SDK instances per switch respectively. But an NX-SDK App running natively in the switch can acquire only "ONE" SDK instance.<ul>
+<li>NULL in case of any errors and are thrown as exceptions.</li>
+</ul>
+</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ERR_INVALID</td><td>Connection could not be established with the switch.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">C++:                                                                                  </div><div class="line">     sdk_switchA  = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv, <span class="keyword">true</span>, <span class="stringliteral">&quot;172.22.32.1&quot;</span>, 50001);                                 </div><div class="line">     sdk_switchB  = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv, <span class="keyword">true</span>, <span class="stringliteral">&quot;172.22.32.2&quot;</span>, 50002); </div><div class="line">                                                                                      </div><div class="line">Python:                                                                               </div><div class="line">     <span class="keyword">import</span> nx_sdk_py                                                                 </div><div class="line">     sdk_switchA = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, <span class="stringliteral">&quot;172.22.32.1&quot;</span>, 50001)                  </div><div class="line">     sdk_switchB = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, <span class="stringliteral">&quot;172.22.32.2&quot;</span>, 50002)   </div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a225be30e47270295fbe08151b4745692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225be30e47270295fbe08151b4745692">&#9670;&nbsp;</a></span>getSdkInst() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a>* nxos::NxSdk::getSdkInst </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>advException</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>remoteIp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>remotePort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>certificate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>[Required] To get Nx SDK Instance which enables the third <br />
+ party applications to gain access to NXOS Infra <br />
+ functionalities. <br />
+</p><dl class="section since"><dt>Since</dt><dd>NXSDK V2.0 <br />
+ </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>- Earlier variants supported from NxSDK V1.5. This version adds two new parameters for remote ip/port for applications executing outside the switch. It is the same in all other respects as prior variants so refer to those for additional information.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pass</td><td>in the command line arguments as its <br />
+ needed when the App is started from VSH. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">advException</td><td>TRUE - If the App can handle Advanced <br />
+ Exceptions then Exception will be <br />
+ thrown of the type <a class="el" href="classnxos_1_1_nx_exception.html" title="Abstract Exception Interface for all NXOS thrown errors. Each API throws an exception of the type NxE...">NxException</a>. <br />
+ FALSE - Default Mode. Exception will be <br />
+ thrown of the type <br />
+ C++ - std::logic_err, Python - String <br />
+ Note: Supported from V1.5 <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteIp</td><td>IPv4 (or) IPv6 of the remote switch to connect to. Used only if the NX-SDK app is running remotely.Its a no-op if the app is running natively in the switch. <br />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remotePort</td><td>Port in the remote switch to connect to. To be used only <br />
+ if the NX-SDK app is running remotely.Its a no-op if the app is running natively in the switch.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">certificate</td><td>The path to the certificate file to use for the <br />
+ connection with the switch. This is not strictly <br />
+ required as there are other ways to provide the <br />
+ certificate. Using the certificate is required, <br />
+ and below are the ordered methods to specify the <br />
+ certificate location: <br />
+ 1- The value of this parameter if non-empty <br />
+ 2- $NXSDK_SERVER_CERT_A.B.C.D, where A_B_C_D is the ip address of the switch <br />
+ 3- $NXSDK_SERVER_CERT <br />
+ 4- "nxsdkTmpCert.pem" in app current directory <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- SDK instance to operate on (successfully registered with NXOS Infra remotely). An App can connect to multiple switches by specifying different IP addresses and port as shown below thereby acquiring SDK instances per switch respectively. But an NX-SDK App running natively in the switch can acquire only "ONE" SDK instance.<ul>
+<li>NULL in case of any errors and are thrown as exceptions.</li>
+</ul>
+</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ERR_INVALID</td><td>Connection could not be established with the switch.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">C++:                                                                                  </div><div class="line">     sdk_switchA  = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv, <span class="keyword">true</span>, <span class="stringliteral">&quot;172.22.32.1&quot;</span>, 50001, <span class="stringliteral">&quot;/tmp/switchA_cert.pem&quot;</span>);                                 </div><div class="line">     sdk_switchB  = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv, <span class="keyword">true</span>, <span class="stringliteral">&quot;172.22.32.2&quot;</span>, 50002, <span class="stringliteral">&quot;/tmp/switchB_cert.pem&quot;</span>); </div><div class="line">                                                                                      </div><div class="line">Python:                                                                               </div><div class="line">     <span class="keyword">import</span> nx_sdk_py                                                                 </div><div class="line">     sdk_switchA = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, <span class="stringliteral">&quot;172.22.32.1&quot;</span>, 50001, <span class="stringliteral">&quot;/tmp/switchA_cert.pem&quot;</span>)                  </div><div class="line">     sdk_switchB = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, <span class="stringliteral">&quot;172.22.32.2&quot;</span>, 50002, <span class="stringliteral">&quot;/tmp/switchB_cert.pem&quot;</span>)   </div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ad2c729bd12d1b9f4bf06f4b70fe28347"></a>
@@ -608,6 +944,38 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abfd0b2d92b51fc18bb30c059fa5b4a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd0b2d92b51fc18bb30c059fa5b4a9b">&#9670;&nbsp;</a></span>purgeAllSdkObjs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxSdk::purgeAllSdkObjs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This API will purge all the objects created under that SDK instance. Use it with caution.</p>
+<p>To be used in cases like, <br />
+ On postRemoteConnDownCb, all the objects are stale under <br />
+ that SDK instance. This API will purge all the objects. NOTE: When the remote connection goes down and comes back up, it is mandatory to call this API before re-initializing with all the NX-SDK managers. Without this API, app will not be able to re-init with all the NX-SDK mgrs on postRemoteConnUpCb.</p>
+<p>NOTE: Refer to sample remote applications on the usage.</p>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 <br />
+ <div class="fragment"><div class="line">C++:                                                </div><div class="line">                                                  </div><div class="line">Python:                                         </div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a2c6007a383114285951b2d2a062dacec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c6007a383114285951b2d2a062dacec">&#9670;&nbsp;</a></span>setAppDesc()</h2>
 
@@ -647,7 +1015,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void nxos::NxSdk::setAppPriority </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacenxos.html#af446a76676837368bde9b15343ae21d5">nxos::prio_e</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#af446a76676837368bde9b15343ae21d5">nxos::prio_e</a>&#160;</td>
           <td class="paramname"><em>prio</em></td><td>)</td>
           <td></td>
         </tr>
@@ -659,7 +1027,41 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>[Optional] To Set the Priority of the application to limit the use of CPU for the application. By default, the App is set as low priotiy Application(only 25% of CPU). LOW_PRIO - 25% of CPU MED_PRIO - 50% of CPU HIGH_PRIO - 75% of CPU NO_PRIO - No limit</p>
-<dl class="section since"><dt>Since</dt><dd>NX-SDK V1.5 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NXSDK V1.5 </dd></dl>
+
+</div>
+</div>
+<a id="a5f14e71747eac4fd5703d0cb490abe89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f14e71747eac4fd5703d0cb490abe89">&#9670;&nbsp;</a></span>setSdkHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxSdk::setSdkHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnxos_1_1_nx_sdk_handler.html">NxSdkHandler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Users to overload <a class="el" href="classnxos_1_1_nx_sdk.html" title="Abstract SDK interface to NXOS infra. ">NxSdk</a> Handler class to handle regsiterd <a class="el" href="classnxos_1_1_nx_sdk.html" title="Abstract SDK interface to NXOS infra. ">NxSdk</a> events. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classnxos_1_1_nx_sdk_handler.html" title="Abstract NX-SDK callback Interface to receive SDK updates. ">NxSdkHandler</a></td><td>object with user overloaded functions to handle Nxsdk events.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 <br />
+ <div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>mySdkHandler : <span class="keyword">public</span> NxSdkHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">void</span> postRemoteConnUpCb(NxSdk *sdk) {</div><div class="line">              <span class="comment">// Do your action</span></div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        <span class="keywordflow">if</span> (sdk) {</div><div class="line">            NxSdkHandler *mysdkcb = <span class="keyword">new</span> mySdkHandler();</div><div class="line">            sdk-&gt;setSdkHandler(mysdkcb);</div><div class="line">        }</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>mySdkHandler(nx_sdk_py.NxSdkHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Sdk events</span></div><div class="line">         def postRemoteConnUpCb(self, nxsdk):</div><div class="line"><span class="preprocessor">             # Do your action here</span></div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.<a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">getSdkInst</a>(len(sys.argv), sys.argv)</div><div class="line">       if sdk:</div><div class="line">          mysdkcb = mySdkHandler()</div><div class="line">          sdk.<a class="code" href="classnxos_1_1_nx_sdk.html#a5f14e71747eac4fd5703d0cb490abe89">setSdkHandler</a>(mysdkcb)</div></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -715,15 +1117,42 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad86348d2475862e149dcdbe04634db3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86348d2475862e149dcdbe04634db3b">&#9670;&nbsp;</a></span>unsetSdkHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nxos::NxSdk::unsetSdkHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Unset <a class="el" href="classnxos_1_1_nx_sdk.html" title="Abstract SDK interface to NXOS infra. ">NxSdk</a> Handler</p>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0 </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__sdk_8h_source.html">nx_sdk.h</a></li>
+<li><a class="el" href="nx__sdk_8h_source.html">nx_sdk.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_sdk.html">NxSdk</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

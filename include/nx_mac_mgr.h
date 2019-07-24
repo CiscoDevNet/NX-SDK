@@ -357,6 +357,12 @@ public:
      * @param[in] macAddr: Mac address to add
      * @param[in] vlan   : vlan value
      * @param[in] intf_name: Interface name that connects to this mac. 
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
      * @returns True  - if successful.
      *          False - if it not successful.     
      *  @code

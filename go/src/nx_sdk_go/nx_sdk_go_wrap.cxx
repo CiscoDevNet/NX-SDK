@@ -350,26 +350,54 @@ static void swig_acquire_pointer(Swig_memory** pmem, Type* ptr) {
   (*pmem)->swig_acquire_pointer(ptr);
 }
 
+SwigDirector_NxSdkHandler::SwigDirector_NxSdkHandler(int swig_p)
+    : nxos::NxSdkHandler(),
+      go_val(swig_p), swig_mem(0)
+{ }
+
+extern "C" void Swiggo_DeleteDirector_NxSdkHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
+SwigDirector_NxSdkHandler::~SwigDirector_NxSdkHandler()
+{
+  Swiggo_DeleteDirector_NxSdkHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
+  delete swig_mem;
+}
+
+extern "C" void Swig_DirectorNxSdkHandler_callback_postRemoteConnUpCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxSdk *arg2);
+void SwigDirector_NxSdkHandler::postRemoteConnUpCb(nxos::NxSdk *sdk) {
+  nxos::NxSdk *swig_arg2;
+  
+  *(nxos::NxSdk **)&swig_arg2 = (nxos::NxSdk *)sdk; 
+  Swig_DirectorNxSdkHandler_callback_postRemoteConnUpCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
+}
+
+extern "C" void Swig_DirectorNxSdkHandler_callback_postRemoteConnDownCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxSdk *arg2);
+void SwigDirector_NxSdkHandler::postRemoteConnDownCb(nxos::NxSdk const *sdk) {
+  nxos::NxSdk *swig_arg2;
+  
+  *(nxos::NxSdk **)&swig_arg2 = (nxos::NxSdk *)sdk; 
+  Swig_DirectorNxSdkHandler_callback_postRemoteConnDownCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
+}
+
 SwigDirector_NxCmdHandler::SwigDirector_NxCmdHandler(int swig_p)
     : nxos::NxCmdHandler(),
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxCmdHandler::~SwigDirector_NxCmdHandler()
 {
-  Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_92557035fa796fff(int, nxos::NxCliCmd *arg2);
+extern "C" bool Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxCliCmd *arg2);
 bool SwigDirector_NxCmdHandler::postCliCb(nxos::NxCliCmd *cmd) {
   bool c_result;
   bool result;
   nxos::NxCliCmd *swig_arg2;
   
   *(nxos::NxCliCmd **)&swig_arg2 = (nxos::NxCliCmd *)cmd; 
-  result = Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
@@ -379,35 +407,83 @@ SwigDirector_NxRibMgrHandler::SwigDirector_NxRibMgrHandler(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxRibMgrHandler::~SwigDirector_NxRibMgrHandler()
 {
-  Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_92557035fa796fff(int, nxos::NxL3Route *arg2);
+extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxL3Route *arg2);
 bool SwigDirector_NxRibMgrHandler::postL3RouteCb(nxos::NxL3Route *route) {
   bool c_result;
   bool result;
   nxos::NxL3Route *swig_arg2;
   
   *(nxos::NxL3Route **)&swig_arg2 = (nxos::NxL3Route *)route; 
-  result = Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_92557035fa796fff(int, nxos::NxVrf *arg2);
+extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxVrf *arg2);
 bool SwigDirector_NxRibMgrHandler::postVrfCb(nxos::NxVrf *vrf) {
   bool c_result;
   bool result;
   nxos::NxVrf *swig_arg2;
   
   *(nxos::NxVrf **)&swig_arg2 = (nxos::NxVrf *)vrf; 
-  result = Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
+}
+
+extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postL3RecursiveNextHopCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxL3Route *arg2, bool arg3);
+bool SwigDirector_NxRibMgrHandler::postL3RecursiveNextHopCb(nxos::NxL3Route *rnhRoute, bool isResolved) {
+  bool c_result;
+  bool result;
+  nxos::NxL3Route *swig_arg2;
+  bool swig_arg3;
+  
+  *(nxos::NxL3Route **)&swig_arg2 = (nxos::NxL3Route *)rnhRoute; 
+  swig_arg3 = (bool)isResolved; 
+  result = Swig_DirectorNxRibMgrHandler_callback_postL3RecursiveNextHopCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3);
+  c_result = (bool)result; 
+  return c_result;
+}
+
+extern "C" bool Swig_DirectorNxRibMgrHandler_callback_postMyL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxL3Route *arg2);
+bool SwigDirector_NxRibMgrHandler::postMyL3RouteCb(nxos::NxL3Route *route) {
+  bool c_result;
+  bool result;
+  nxos::NxL3Route *swig_arg2;
+  
+  *(nxos::NxL3Route **)&swig_arg2 = (nxos::NxL3Route *)route; 
+  result = Swig_DirectorNxRibMgrHandler_callback_postMyL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
+  c_result = (bool)result; 
+  return c_result;
+}
+
+extern "C" void Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(int, _gostring_ arg2, _gostring_ arg3, char arg4);
+void SwigDirector_NxRibMgrHandler::postL3RouteRepopulateCb(std::string const vrfName, std::string const routeAddress, unsigned char maskLen) {
+  _gostring_ swig_arg2;
+  _gostring_ swig_arg3;
+  char swig_arg4;
+  
+  swig_arg2 = Swig_AllocateString((&vrfName)->data(), (&vrfName)->length()); 
+  swig_arg3 = Swig_AllocateString((&routeAddress)->data(), (&routeAddress)->length()); 
+  swig_arg4 = (unsigned char)maskLen; 
+  Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3, swig_arg4);
+}
+
+extern "C" void Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(int, _gostring_ arg2, _gostring_ arg3);
+void SwigDirector_NxRibMgrHandler::postL3RouteRepopulateCb(std::string const vrfName, std::string const routeAddress) {
+  _gostring_ swig_arg2;
+  _gostring_ swig_arg3;
+  
+  swig_arg2 = Swig_AllocateString((&vrfName)->data(), (&vrfName)->length()); 
+  swig_arg3 = Swig_AllocateString((&routeAddress)->data(), (&routeAddress)->length()); 
+  Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3);
 }
 
 SwigDirector_NxIntfMgrHandler::SwigDirector_NxIntfMgrHandler(int swig_p)
@@ -415,105 +491,105 @@ SwigDirector_NxIntfMgrHandler::SwigDirector_NxIntfMgrHandler(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxIntfMgrHandler::~SwigDirector_NxIntfMgrHandler()
 {
-  Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfAddDelCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfIpv4AddrCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfIpv6AddrCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfStateCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfLayerCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfPortMemberCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfVrfCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_92557035fa796fff(int, nxos::NxIntf *arg2);
+extern "C" bool Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxIntf *arg2);
 bool SwigDirector_NxIntfMgrHandler::postIntfVlanCb(nxos::NxIntf *obj) {
   bool c_result;
   bool result;
   nxos::NxIntf *swig_arg2;
   
   *(nxos::NxIntf **)&swig_arg2 = (nxos::NxIntf *)obj; 
-  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
@@ -523,27 +599,27 @@ SwigDirector_NxDmeMgrHandler::SwigDirector_NxDmeMgrHandler(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxDmeMgrHandler::~SwigDirector_NxDmeMgrHandler()
 {
-  Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" void Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(int, nxos::NxDme *arg2);
+extern "C" void Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxDme *arg2);
 void SwigDirector_NxDmeMgrHandler::postDmeHandlerCb(nxos::NxDme *objp) {
   nxos::NxDme *swig_arg2;
   
   *(nxos::NxDme **)&swig_arg2 = (nxos::NxDme *)objp; 
-  Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
 }
 
-extern "C" void Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(int, _gostring_ arg2);
+extern "C" void Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_b16b6edb28d0fe19(int, _gostring_ arg2);
 void SwigDirector_NxDmeMgrHandler::postDmeHandlerDownloadDoneCb(std::string const &dn) {
   _gostring_ swig_arg2;
   
   swig_arg2 = Swig_AllocateString((&dn)->data(), (&dn)->length()); 
-  Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
 }
 
 SwigDirector_NxAdjMgrHandler::SwigDirector_NxAdjMgrHandler(int swig_p)
@@ -551,39 +627,39 @@ SwigDirector_NxAdjMgrHandler::SwigDirector_NxAdjMgrHandler(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxAdjMgrHandler::~SwigDirector_NxAdjMgrHandler()
 {
-  Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_92557035fa796fff(int, nxos::NxAdj *arg2);
+extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxAdj *arg2);
 void SwigDirector_NxAdjMgrHandler::postAdjCb(nxos::NxAdj *adj_obj) {
   nxos::NxAdj *swig_arg2;
   
   *(nxos::NxAdj **)&swig_arg2 = (nxos::NxAdj *)adj_obj; 
-  Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
 }
 
-extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(int, _gostring_ arg2, _gostring_ arg3);
+extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_b16b6edb28d0fe19(int, _gostring_ arg2, _gostring_ arg3);
 void SwigDirector_NxAdjMgrHandler::postAdjIPv4DownloadDone(std::string const &intfName, std::string const &ipv4_addr) {
   _gostring_ swig_arg2;
   _gostring_ swig_arg3;
   
   swig_arg2 = Swig_AllocateString((&intfName)->data(), (&intfName)->length()); 
   swig_arg3 = Swig_AllocateString((&ipv4_addr)->data(), (&ipv4_addr)->length()); 
-  Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(go_val, swig_arg2, swig_arg3);
+  Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3);
 }
 
-extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(int, _gostring_ arg2, _gostring_ arg3);
+extern "C" void Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_b16b6edb28d0fe19(int, _gostring_ arg2, _gostring_ arg3);
 void SwigDirector_NxAdjMgrHandler::postAdjIPv6DownloadDone(std::string const &intfName, std::string const &ipv6_addr) {
   _gostring_ swig_arg2;
   _gostring_ swig_arg3;
   
   swig_arg2 = Swig_AllocateString((&intfName)->data(), (&intfName)->length()); 
   swig_arg3 = Swig_AllocateString((&ipv6_addr)->data(), (&ipv6_addr)->length()); 
-  Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(go_val, swig_arg2, swig_arg3);
+  Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3);
 }
 
 SwigDirector_NxMacMgrHandler::SwigDirector_NxMacMgrHandler(int swig_p)
@@ -591,40 +667,40 @@ SwigDirector_NxMacMgrHandler::SwigDirector_NxMacMgrHandler(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(intgo);
+extern "C" void Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo);
 SwigDirector_NxMacMgrHandler::~SwigDirector_NxMacMgrHandler()
 {
-  Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(go_val);
+  Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_92557035fa796fff(int, nxos::NxMac *arg2);
+extern "C" bool Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_b16b6edb28d0fe19(int, nxos::NxMac *arg2);
 bool SwigDirector_NxMacMgrHandler::postMacHandlerCb(nxos::NxMac *mac_obj) {
   bool c_result;
   bool result;
   nxos::NxMac *swig_arg2;
   
   *(nxos::NxMac **)&swig_arg2 = (nxos::NxMac *)mac_obj; 
-  result = Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2);
+  result = Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2);
   c_result = (bool)result; 
   return c_result;
 }
 
-extern "C" void Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(int, intgo arg2, _gostring_ arg3);
+extern "C" void Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_b16b6edb28d0fe19(int, intgo arg2, _gostring_ arg3);
 void SwigDirector_NxMacMgrHandler::postMacHandlerDownloadCb(unsigned int id, std::string const &macaddr) {
   intgo swig_arg2;
   _gostring_ swig_arg3;
   
   swig_arg2 = (unsigned int)id; 
   swig_arg3 = Swig_AllocateString((&macaddr)->data(), (&macaddr)->length()); 
-  Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(go_val, swig_arg2, swig_arg3);
+  Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_b16b6edb28d0fe19(go_val, swig_arg2, swig_arg3);
 }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void _wrap_Swig_free_nx_sdk_go_92557035fa796fff(void *_swig_go_0) {
+void _wrap_Swig_free_nx_sdk_go_b16b6edb28d0fe19(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -634,7 +710,7 @@ void _wrap_Swig_free_nx_sdk_go_92557035fa796fff(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -647,7 +723,7 @@ void *_wrap_Swig_malloc_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
 }
 
 
-intgo _wrap_R_TEXT_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_R_TEXT_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -659,7 +735,7 @@ intgo _wrap_R_TEXT_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_R_JSON_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_R_JSON_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -671,7 +747,7 @@ intgo _wrap_R_JSON_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_R_XML_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_R_XML_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -683,7 +759,7 @@ intgo _wrap_R_XML_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_R_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_R_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -695,7 +771,7 @@ intgo _wrap_R_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NO_EVENT_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NO_EVENT_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -707,7 +783,7 @@ intgo _wrap_NO_EVENT_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ADD_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ADD_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -719,7 +795,7 @@ intgo _wrap_ADD_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DELETE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DELETE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -731,7 +807,7 @@ intgo _wrap_DELETE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_UPDATE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_UPDATE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -743,7 +819,7 @@ intgo _wrap_UPDATE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DOWNLOAD_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DOWNLOAD_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -755,7 +831,7 @@ intgo _wrap_DOWNLOAD_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DOWNLOAD_DONE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DOWNLOAD_DONE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -767,7 +843,7 @@ intgo _wrap_DOWNLOAD_DONE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_E_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_E_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -779,7 +855,7 @@ intgo _wrap_E_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_UNKNOWN_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_UNKNOWN_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -791,7 +867,7 @@ intgo _wrap_UNKNOWN_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DOWN_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DOWN_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -803,7 +879,7 @@ intgo _wrap_DOWN_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_UP_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_UP_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -815,7 +891,7 @@ intgo _wrap_UP_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_S_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_S_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -827,7 +903,7 @@ intgo _wrap_S_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NONE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NONE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -839,7 +915,7 @@ intgo _wrap_NONE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_VXLAN_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_VXLAN_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -851,7 +927,7 @@ intgo _wrap_VXLAN_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ENCAP_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ENCAP_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -863,7 +939,7 @@ intgo _wrap_ENCAP_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_AF_START_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_AF_START_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -875,7 +951,7 @@ intgo _wrap_AF_START_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_AF_IPV4_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_AF_IPV4_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -887,7 +963,7 @@ intgo _wrap_AF_IPV4_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_AF_IPV6_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_AF_IPV6_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -899,7 +975,7 @@ intgo _wrap_AF_IPV6_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_MAX_AF_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_MAX_AF_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -911,7 +987,7 @@ intgo _wrap_MAX_AF_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_LOW_PRIO_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_LOW_PRIO_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -923,7 +999,7 @@ intgo _wrap_LOW_PRIO_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_MED_PRIO_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_MED_PRIO_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -935,7 +1011,7 @@ intgo _wrap_MED_PRIO_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_HIGH_PRIO_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_HIGH_PRIO_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -947,7 +1023,7 @@ intgo _wrap_HIGH_PRIO_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NO_PRIO_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NO_PRIO_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -959,7 +1035,7 @@ intgo _wrap_NO_PRIO_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_UNKNOWN_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_UNKNOWN_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -971,7 +1047,7 @@ intgo _wrap_NX_TYPE_UNKNOWN_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_ETH_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_ETH_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -983,7 +1059,7 @@ intgo _wrap_NX_TYPE_ETH_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_SVI_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_SVI_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -995,7 +1071,7 @@ intgo _wrap_NX_TYPE_SVI_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_ETH_PC_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_ETH_PC_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1007,7 +1083,7 @@ intgo _wrap_NX_TYPE_ETH_PC_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_LOOPBACK_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_LOOPBACK_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1019,7 +1095,7 @@ intgo _wrap_NX_TYPE_LOOPBACK_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_SUBINTF_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_SUBINTF_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1031,7 +1107,7 @@ intgo _wrap_NX_TYPE_SUBINTF_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_TUNNEL_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_TUNNEL_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1043,7 +1119,7 @@ intgo _wrap_NX_TYPE_TUNNEL_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NX_TYPE_MGMT_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_MGMT_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1055,7 +1131,19 @@ intgo _wrap_NX_TYPE_MGMT_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_TYPE_NO_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NX_TYPE_MAX_nx_sdk_go_b16b6edb28d0fe19() {
+  int result;
+  intgo _swig_go_result;
+  
+  
+  result = nxos::NX_TYPE_MAX;
+  
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_TYPE_NO_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1067,7 +1155,7 @@ intgo _wrap_TYPE_NO_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_TYPE_STATIC_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_TYPE_STATIC_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1079,7 +1167,7 @@ intgo _wrap_TYPE_STATIC_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_TYPE_DYNAMIC_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_TYPE_DYNAMIC_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1091,7 +1179,7 @@ intgo _wrap_TYPE_DYNAMIC_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_TYPE_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_TYPE_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1103,7 +1191,7 @@ intgo _wrap_TYPE_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_BASH_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_BASH_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1115,7 +1203,7 @@ intgo _wrap_BASH_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_VSH_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_VSH_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1127,7 +1215,19 @@ intgo _wrap_VSH_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_START_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_REMOTE_nx_sdk_go_b16b6edb28d0fe19() {
+  int result;
+  intgo _swig_go_result;
+  
+  
+  result = nxos::REMOTE;
+  
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_P_START_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1139,7 +1239,7 @@ intgo _wrap_P_START_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_STRING_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_STRING_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1151,7 +1251,7 @@ intgo _wrap_P_STRING_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_INTEGER_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_INTEGER_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1163,7 +1263,7 @@ intgo _wrap_P_INTEGER_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_INTERFACE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_INTERFACE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1175,7 +1275,7 @@ intgo _wrap_P_INTERFACE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_IP_ADDR_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_IP_ADDR_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1187,7 +1287,7 @@ intgo _wrap_P_IP_ADDR_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_MAC_ADDR_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_MAC_ADDR_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1199,7 +1299,7 @@ intgo _wrap_P_MAC_ADDR_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_VRF_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_VRF_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1211,7 +1311,7 @@ intgo _wrap_P_VRF_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_P_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_P_MAX_TYPE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1223,7 +1323,7 @@ intgo _wrap_P_MAX_TYPE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0, intgo _swig_go_1) {
+void _wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0, intgo _swig_go_1) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   int arg2 ;
   
@@ -1235,7 +1335,7 @@ void _wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_92557035fa796fff
 }
 
 
-intgo _wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1248,7 +1348,7 @@ intgo _wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_92557035fa796ff
 }
 
 
-void _wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0, intgo _swig_go_1) {
+void _wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0, intgo _swig_go_1) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   int arg2 ;
   
@@ -1260,7 +1360,7 @@ void _wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_92557035fa796fff
 }
 
 
-intgo _wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1273,7 +1373,7 @@ intgo _wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_92557035fa796ff
 }
 
 
-intgo _wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1286,7 +1386,7 @@ intgo _wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::
 }
 
 
-nxos::cli_param_type_integer_attr_ *_wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff() {
+nxos::cli_param_type_integer_attr_ *_wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::cli_param_type_integer_attr_ *result = 0 ;
   nxos::cli_param_type_integer_attr_ *_swig_go_result;
   
@@ -1305,7 +1405,7 @@ nxos::cli_param_type_integer_attr_ *_wrap_new_Cli_param_type_integer_attr_go_nx_
 }
 
 
-void _wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
+void _wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_integer_attr_ *_swig_go_0) {
   nxos::cli_param_type_integer_attr_ *arg1 = (nxos::cli_param_type_integer_attr_ *) 0 ;
   
   arg1 = *(nxos::cli_param_type_integer_attr_ **)&_swig_go_0; 
@@ -1323,7 +1423,7 @@ void _wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-void _wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0, intgo _swig_go_1) {
+void _wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0, intgo _swig_go_1) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   int arg2 ;
   
@@ -1335,7 +1435,7 @@ void _wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_92557035fa796fff(n
 }
 
 
-intgo _wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1348,7 +1448,7 @@ intgo _wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_92557035fa796fff(
 }
 
 
-void _wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   char *arg2 ;
   
@@ -1372,7 +1472,7 @@ void _wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_92557035fa7
 }
 
 
-_gostring_ _wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0) {
+_gostring_ _wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -1385,7 +1485,7 @@ _gostring_ _wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_92557
 }
 
 
-intgo _wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1398,7 +1498,7 @@ intgo _wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::c
 }
 
 
-nxos::cli_param_type_string_attr_ *_wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff() {
+nxos::cli_param_type_string_attr_ *_wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::cli_param_type_string_attr_ *result = 0 ;
   nxos::cli_param_type_string_attr_ *_swig_go_result;
   
@@ -1417,7 +1517,7 @@ nxos::cli_param_type_string_attr_ *_wrap_new_Cli_param_type_string_attr_go_nx_sd
 }
 
 
-void _wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_string_attr_ *_swig_go_0) {
+void _wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_string_attr_ *_swig_go_0) {
   nxos::cli_param_type_string_attr_ *arg1 = (nxos::cli_param_type_string_attr_ *) 0 ;
   
   arg1 = *(nxos::cli_param_type_string_attr_ **)&_swig_go_0; 
@@ -1435,7 +1535,7 @@ void _wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff(nxos:
 }
 
 
-void _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0, bool _swig_go_1) {
+void _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0, bool _swig_go_1) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   bool arg2 ;
   
@@ -1447,7 +1547,7 @@ void _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_92557035fa796fff
 }
 
 
-bool _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
+bool _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -1460,7 +1560,7 @@ bool _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_92557035fa796fff
 }
 
 
-void _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0, bool _swig_go_1) {
+void _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0, bool _swig_go_1) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   bool arg2 ;
   
@@ -1472,7 +1572,7 @@ void _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_92557035fa796f
 }
 
 
-bool _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
+bool _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -1485,7 +1585,7 @@ bool _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_92557035fa796f
 }
 
 
-intgo _wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
+intgo _wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1498,7 +1598,7 @@ intgo _wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_92557035fa796fff(nxos::
 }
 
 
-nxos::cli_param_type_ip_addr_attr_ *_wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff() {
+nxos::cli_param_type_ip_addr_attr_ *_wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::cli_param_type_ip_addr_attr_ *result = 0 ;
   nxos::cli_param_type_ip_addr_attr_ *_swig_go_result;
   
@@ -1517,7 +1617,7 @@ nxos::cli_param_type_ip_addr_attr_ *_wrap_new_Cli_param_type_ip_addr_attr_go_nx_
 }
 
 
-void _wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
+void _wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_b16b6edb28d0fe19(nxos::cli_param_type_ip_addr_attr_ *_swig_go_0) {
   nxos::cli_param_type_ip_addr_attr_ *arg1 = (nxos::cli_param_type_ip_addr_attr_ *) 0 ;
   
   arg1 = *(nxos::cli_param_type_ip_addr_attr_ **)&_swig_go_0; 
@@ -1535,7 +1635,7 @@ void _wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-void _wrap_delete_NxSdk_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+void _wrap_delete_NxSdk_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   
   arg1 = *(nxos::NxSdk **)&_swig_go_0; 
@@ -1545,7 +1645,7 @@ void _wrap_delete_NxSdk_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
 }
 
 
-nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_92557035fa796fff(intgo _swig_go_0, _goslice_ _swig_go_1) {
+nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0, _goslice_ _swig_go_1) {
   int arg1 ;
   char **arg2 = (char **) 0 ;
   nxos::NxSdk *result = 0 ;
@@ -1578,7 +1678,7 @@ nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_92557035fa796fff(intgo _sw
 }
 
 
-void _wrap_NxSdk_setAppDesc_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxSdk_setAppDesc_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   std::string arg2 ;
   
@@ -1590,7 +1690,7 @@ void _wrap_NxSdk_setAppDesc_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0, 
 }
 
 
-_gostring_ _wrap_NxSdk_getAppName_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+_gostring_ _wrap_NxSdk_getAppName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -1603,7 +1703,7 @@ _gostring_ _wrap_NxSdk_getAppName_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_
 }
 
 
-_gostring_ _wrap_NxSdk_getAppDesc_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+_gostring_ _wrap_NxSdk_getAppDesc_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -1616,7 +1716,7 @@ _gostring_ _wrap_NxSdk_getAppDesc_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_
 }
 
 
-intgo _wrap_NxSdk_getAppId_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+intgo _wrap_NxSdk_getAppId_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -1629,7 +1729,7 @@ intgo _wrap_NxSdk_getAppId_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
 }
 
 
-nxos::NxCliParser *_wrap_NxSdk_getCliParser_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxCliParser *_wrap_NxSdk_getCliParser_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxCliParser *result = 0 ;
   nxos::NxCliParser *_swig_go_result;
@@ -1642,7 +1742,7 @@ nxos::NxCliParser *_wrap_NxSdk_getCliParser_nx_sdk_go_92557035fa796fff(nxos::NxS
 }
 
 
-nxos::NxTrace *_wrap_NxSdk_getTracer_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxTrace *_wrap_NxSdk_getTracer_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxTrace *result = 0 ;
   nxos::NxTrace *_swig_go_result;
@@ -1655,7 +1755,7 @@ nxos::NxTrace *_wrap_NxSdk_getTracer_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_sw
 }
 
 
-void _wrap_NxSdk_startEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+void _wrap_NxSdk_startEventLoop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   
   arg1 = *(nxos::NxSdk **)&_swig_go_0; 
@@ -1665,7 +1765,7 @@ void _wrap_NxSdk_startEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go
 }
 
 
-void _wrap_NxSdk_stopEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+void _wrap_NxSdk_stopEventLoop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   
   arg1 = *(nxos::NxSdk **)&_swig_go_0; 
@@ -1675,7 +1775,7 @@ void _wrap_NxSdk_stopEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_
 }
 
 
-nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_92557035fa796fff(intgo _swig_go_0, _goslice_ _swig_go_1, bool _swig_go_2) {
+nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0, _goslice_ _swig_go_1, bool _swig_go_2) {
   int arg1 ;
   char **arg2 = (char **) 0 ;
   bool arg3 ;
@@ -1710,7 +1810,7 @@ nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_92557035fa796fff(intgo _sw
 }
 
 
-nxos::NxRibMgr *_wrap_NxSdk_getRibMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxRibMgr *_wrap_NxSdk_getRibMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxRibMgr *result = 0 ;
   nxos::NxRibMgr *_swig_go_result;
@@ -1723,7 +1823,7 @@ nxos::NxRibMgr *_wrap_NxSdk_getRibMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_s
 }
 
 
-void _wrap_NxSdk_setAppPriority_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0, intgo _swig_go_1) {
+void _wrap_NxSdk_setAppPriority_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0, intgo _swig_go_1) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::prio_e arg2 ;
   
@@ -1735,7 +1835,7 @@ void _wrap_NxSdk_setAppPriority_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go
 }
 
 
-nxos::NxIntfMgr *_wrap_NxSdk_getIntfMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxIntfMgr *_wrap_NxSdk_getIntfMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxIntfMgr *result = 0 ;
   nxos::NxIntfMgr *_swig_go_result;
@@ -1748,7 +1848,7 @@ nxos::NxIntfMgr *_wrap_NxSdk_getIntfMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *
 }
 
 
-nxos::NxAdjMgr *_wrap_NxSdk_getAdjMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxAdjMgr *_wrap_NxSdk_getAdjMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxAdjMgr *result = 0 ;
   nxos::NxAdjMgr *_swig_go_result;
@@ -1761,7 +1861,7 @@ nxos::NxAdjMgr *_wrap_NxSdk_getAdjMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_s
 }
 
 
-nxos::NxMacMgr *_wrap_NxSdk_getMacMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxMacMgr *_wrap_NxSdk_getMacMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxMacMgr *result = 0 ;
   nxos::NxMacMgr *_swig_go_result;
@@ -1774,7 +1874,7 @@ nxos::NxMacMgr *_wrap_NxSdk_getMacMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_s
 }
 
 
-nxos::NxDmeMgr *_wrap_NxSdk_getDmeMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+nxos::NxDmeMgr *_wrap_NxSdk_getDmeMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::NxDmeMgr *result = 0 ;
   nxos::NxDmeMgr *_swig_go_result;
@@ -1787,7 +1887,7 @@ nxos::NxDmeMgr *_wrap_NxSdk_getDmeMgr_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_s
 }
 
 
-bool _wrap_NxSdk_isInEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+bool _wrap_NxSdk_isInEventLoop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -1800,7 +1900,7 @@ bool _wrap_NxSdk_isInEventLoop_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_
 }
 
 
-intgo _wrap_NxSdk_getRunningEnv_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go_0) {
+intgo _wrap_NxSdk_getRunningEnv_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
   nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
   nxos::running_env_e result;
   intgo _swig_go_result;
@@ -1813,7 +1913,318 @@ intgo _wrap_NxSdk_getRunningEnv_nx_sdk_go_92557035fa796fff(nxos::NxSdk *_swig_go
 }
 
 
-intgo _wrap_EMERG_NxTrace_nx_sdk_go_92557035fa796fff() {
+nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0, _goslice_ _swig_go_1, bool _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4) {
+  int arg1 ;
+  char **arg2 = (char **) 0 ;
+  bool arg3 ;
+  char *arg4 = (char *) 0 ;
+  uint32_t arg5 ;
+  nxos::NxSdk *result = 0 ;
+  nxos::NxSdk *_swig_go_result;
+  
+  arg1 = (int)_swig_go_0; 
+  {
+    int i;
+    int len;
+    _gostring_* a;
+    
+    len = _swig_go_1.len;
+    a = (_gostring_*) _swig_go_1.array;
+    arg2 = (char **) malloc ((len + 1) * sizeof (char *));
+    for (i = 0; i < len; i++) {
+      _gostring_ *ps = &a[i];
+      arg2[i] = (char *) ps->p;
+    }
+    arg2[i] = NULL;
+  }
+  arg3 = (bool)_swig_go_2; 
+  
+  arg4 = (char *)malloc(_swig_go_3.n + 1);
+  memcpy(arg4, _swig_go_3.p, _swig_go_3.n);
+  arg4[_swig_go_3.n] = '\0';
+  
+  arg5 = (uint32_t)_swig_go_4; 
+  
+  result = (nxos::NxSdk *)nxos::NxSdk::getSdkInst(arg1,arg2,arg3,(char const *)arg4,arg5);
+  *(nxos::NxSdk **)&_swig_go_result = (nxos::NxSdk *)result; 
+  {
+    if (arg2) {
+      free(arg2);
+    }
+  }
+  free(arg4); 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_NxSdk_getRemoteIp_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  result = (arg1)->getRemoteIp();
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_NxSdk_getRemotePort_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  uint32_t result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  result = (uint32_t)(arg1)->getRemotePort();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_NxSdk_getRemoteConnStatus_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  nxos::state_type_e result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  result = (nxos::state_type_e)(arg1)->getRemoteConnStatus();
+  _swig_go_result = (intgo)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_NxSdk_purgeAllSdkObjs_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  (arg1)->purgeAllSdkObjs();
+  
+}
+
+
+void _wrap_NxSdk_setSdkHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0, nxos::NxSdkHandler *_swig_go_1) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  nxos::NxSdkHandler *arg2 = (nxos::NxSdkHandler *) 0 ;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  arg2 = *(nxos::NxSdkHandler **)&_swig_go_1; 
+  
+  (arg1)->setSdkHandler(arg2);
+  
+}
+
+
+void _wrap_NxSdk_unsetSdkHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  (arg1)->unsetSdkHandler();
+  
+}
+
+
+nxos::NxSdkHandler *_wrap_NxSdk_getSdkHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdk *_swig_go_0) {
+  nxos::NxSdk *arg1 = (nxos::NxSdk *) 0 ;
+  nxos::NxSdkHandler *result = 0 ;
+  nxos::NxSdkHandler *_swig_go_result;
+  
+  arg1 = *(nxos::NxSdk **)&_swig_go_0; 
+  
+  result = (nxos::NxSdkHandler *)(arg1)->getSdkHandler();
+  *(nxos::NxSdkHandler **)&_swig_go_result = (nxos::NxSdkHandler *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxSdk *_wrap_NxSdk_getSdkInst__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0, _goslice_ _swig_go_1, bool _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4, _gostring_ _swig_go_5) {
+  int arg1 ;
+  char **arg2 = (char **) 0 ;
+  bool arg3 ;
+  char *arg4 = (char *) 0 ;
+  uint32_t arg5 ;
+  char *arg6 = (char *) 0 ;
+  nxos::NxSdk *result = 0 ;
+  nxos::NxSdk *_swig_go_result;
+  
+  arg1 = (int)_swig_go_0; 
+  {
+    int i;
+    int len;
+    _gostring_* a;
+    
+    len = _swig_go_1.len;
+    a = (_gostring_*) _swig_go_1.array;
+    arg2 = (char **) malloc ((len + 1) * sizeof (char *));
+    for (i = 0; i < len; i++) {
+      _gostring_ *ps = &a[i];
+      arg2[i] = (char *) ps->p;
+    }
+    arg2[i] = NULL;
+  }
+  arg3 = (bool)_swig_go_2; 
+  
+  arg4 = (char *)malloc(_swig_go_3.n + 1);
+  memcpy(arg4, _swig_go_3.p, _swig_go_3.n);
+  arg4[_swig_go_3.n] = '\0';
+  
+  arg5 = (uint32_t)_swig_go_4; 
+  
+  arg6 = (char *)malloc(_swig_go_5.n + 1);
+  memcpy(arg6, _swig_go_5.p, _swig_go_5.n);
+  arg6[_swig_go_5.n] = '\0';
+  
+  
+  result = (nxos::NxSdk *)nxos::NxSdk::getSdkInst(arg1,arg2,arg3,(char const *)arg4,arg5,(char const *)arg6);
+  *(nxos::NxSdk **)&_swig_go_result = (nxos::NxSdk *)result; 
+  {
+    if (arg2) {
+      free(arg2);
+    }
+  }
+  free(arg4); 
+  free(arg6); 
+  return _swig_go_result;
+}
+
+
+nxos::NxSdkHandler *_wrap__swig_NewDirectorNxSdkHandlerNxSdkHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
+  int arg1 ;
+  nxos::NxSdkHandler *result = 0 ;
+  nxos::NxSdkHandler *_swig_go_result;
+  
+  arg1 = (int)_swig_go_0; 
+  
+  {
+    try {
+      result = new SwigDirector_NxSdkHandler(arg1);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  *(nxos::NxSdkHandler **)&_swig_go_result = (nxos::NxSdkHandler *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_DeleteDirectorNxSdkHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdkHandler *_swig_go_0) {
+  nxos::NxSdkHandler *arg1 = (nxos::NxSdkHandler *) 0 ;
+  
+  arg1 = *(nxos::NxSdkHandler **)&_swig_go_0; 
+  
+  {
+    try {
+      delete arg1;
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  
+}
+
+
+void _wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnUpCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxSdkHandler *_swig_go_0, nxos::NxSdk *_swig_go_1) {
+  SwigDirector_NxSdkHandler *arg1 = (SwigDirector_NxSdkHandler *) 0 ;
+  nxos::NxSdk *arg2 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(SwigDirector_NxSdkHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxSdk **)&_swig_go_1; 
+  
+  {
+    try {
+      arg1->_swig_upcall_postRemoteConnUpCb(arg2);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  
+}
+
+
+void _wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnDownCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxSdkHandler *_swig_go_0, nxos::NxSdk *_swig_go_1) {
+  SwigDirector_NxSdkHandler *arg1 = (SwigDirector_NxSdkHandler *) 0 ;
+  nxos::NxSdk *arg2 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(SwigDirector_NxSdkHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxSdk **)&_swig_go_1; 
+  
+  {
+    try {
+      arg1->_swig_upcall_postRemoteConnDownCb(arg2);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  
+}
+
+
+void _wrap_delete_NxSdkHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdkHandler *_swig_go_0) {
+  nxos::NxSdkHandler *arg1 = (nxos::NxSdkHandler *) 0 ;
+  
+  arg1 = *(nxos::NxSdkHandler **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_NxSdkHandler_postRemoteConnUpCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdkHandler *_swig_go_0, nxos::NxSdk *_swig_go_1) {
+  nxos::NxSdkHandler *arg1 = (nxos::NxSdkHandler *) 0 ;
+  nxos::NxSdk *arg2 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(nxos::NxSdkHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxSdk **)&_swig_go_1; 
+  
+  (arg1)->postRemoteConnUpCb(arg2);
+  
+}
+
+
+void _wrap_NxSdkHandler_postRemoteConnDownCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxSdkHandler *_swig_go_0, nxos::NxSdk *_swig_go_1) {
+  nxos::NxSdkHandler *arg1 = (nxos::NxSdkHandler *) 0 ;
+  nxos::NxSdk *arg2 = (nxos::NxSdk *) 0 ;
+  
+  arg1 = *(nxos::NxSdkHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxSdk **)&_swig_go_1; 
+  
+  (arg1)->postRemoteConnDownCb((nxos::NxSdk const *)arg2);
+  
+}
+
+
+nxos::NxSdkHandler *_wrap_new_NxSdkHandler_nx_sdk_go_b16b6edb28d0fe19() {
+  nxos::NxSdkHandler *result = 0 ;
+  nxos::NxSdkHandler *_swig_go_result;
+  
+  
+  {
+    try {
+      result = (nxos::NxSdkHandler *)new nxos::NxSdkHandler();
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  *(nxos::NxSdkHandler **)&_swig_go_result = (nxos::NxSdkHandler *)result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_EMERG_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1825,7 +2236,7 @@ intgo _wrap_EMERG_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ALERT_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ALERT_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1837,7 +2248,7 @@ intgo _wrap_ALERT_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_CTRI_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_CTRI_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1849,7 +2260,7 @@ intgo _wrap_CTRI_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1861,7 +2272,7 @@ intgo _wrap_ERR_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_WARNING_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_WARNING_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1873,7 +2284,7 @@ intgo _wrap_WARNING_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_NOTICE_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_NOTICE_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1885,7 +2296,7 @@ intgo _wrap_NOTICE_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_INFO_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_INFO_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1897,7 +2308,7 @@ intgo _wrap_INFO_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DEBUG_NxTrace_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DEBUG_NxTrace_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -1909,7 +2320,7 @@ intgo _wrap_DEBUG_NxTrace_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxTrace_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0) {
+void _wrap_delete_NxTrace_nx_sdk_go_b16b6edb28d0fe19(nxos::NxTrace *_swig_go_0) {
   nxos::NxTrace *arg1 = (nxos::NxTrace *) 0 ;
   
   arg1 = *(nxos::NxTrace **)&_swig_go_0; 
@@ -1919,7 +2330,7 @@ void _wrap_delete_NxTrace_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0) 
 }
 
 
-void _wrap_NxTrace_syslog_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxTrace_syslog_nx_sdk_go_b16b6edb28d0fe19(nxos::NxTrace *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxTrace *arg1 = (nxos::NxTrace *) 0 ;
   nxos::NxTrace::Priority arg2 ;
   char *arg3 = (char *) 0 ;
@@ -1939,7 +2350,7 @@ void _wrap_NxTrace_syslog_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, 
 }
 
 
-void _wrap_NxTrace_event_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxTrace_event_nx_sdk_go_b16b6edb28d0fe19(nxos::NxTrace *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxTrace *arg1 = (nxos::NxTrace *) 0 ;
   char *arg2 = (char *) 0 ;
   void *arg3 = 0 ;
@@ -1957,7 +2368,7 @@ void _wrap_NxTrace_event_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, _
 }
 
 
-void _wrap_NxTrace_error_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxTrace_error_nx_sdk_go_b16b6edb28d0fe19(nxos::NxTrace *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxTrace *arg1 = (nxos::NxTrace *) 0 ;
   char *arg2 = (char *) 0 ;
   void *arg3 = 0 ;
@@ -1975,7 +2386,7 @@ void _wrap_NxTrace_error_nx_sdk_go_92557035fa796fff(nxos::NxTrace *_swig_go_0, _
 }
 
 
-_gostring_ _wrap_NxTrace_getPrioStr_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+_gostring_ _wrap_NxTrace_getPrioStr_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   nxos::NxTrace::Priority arg1 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -1988,7 +2399,7 @@ _gostring_ _wrap_NxTrace_getPrioStr_nx_sdk_go_92557035fa796fff(intgo _swig_go_0)
 }
 
 
-intgo _wrap_CONF_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_CONF_MODE_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2000,7 +2411,7 @@ intgo _wrap_CONF_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2012,7 +2423,7 @@ intgo _wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_MAX_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_MAX_MODE_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2024,7 +2435,7 @@ intgo _wrap_MAX_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_CONF_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_CONF_CMD_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2036,7 +2447,7 @@ intgo _wrap_CONF_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2048,7 +2459,7 @@ intgo _wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_MAX_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_MAX_CMD_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2060,7 +2471,7 @@ intgo _wrap_MAX_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxCliCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+void _wrap_delete_NxCliCmd_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   
   arg1 = *(nxos::NxCliCmd **)&_swig_go_0; 
@@ -2070,7 +2481,7 @@ void _wrap_delete_NxCliCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0
 }
 
 
-void _wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2094,7 +2505,7 @@ void _wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCli
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6, bool _swig_go_7, char _swig_go_8) {
+void _wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6, bool _swig_go_7, char _swig_go_8) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2130,7 +2541,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6, bool _swig_go_7) {
+void _wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6, bool _swig_go_7) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2164,7 +2575,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6) {
+void _wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5, bool _swig_go_6) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2196,7 +2607,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5) {
+void _wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4, intgo _swig_go_5) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2226,7 +2637,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4) {
+void _wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3, void *_swig_go_4) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2254,7 +2665,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3) {
+void _wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2280,7 +2691,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2304,7 +2715,7 @@ void _wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-void _wrap_NxCliCmd_addTimeout_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, intgo _swig_go_1) {
+void _wrap_NxCliCmd_addTimeout_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, intgo _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   uint32_t arg2 ;
   
@@ -2316,7 +2727,7 @@ void _wrap_NxCliCmd_addTimeout_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_
 }
 
 
-void _wrap_NxCliCmd_addMode_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, intgo _swig_go_1) {
+void _wrap_NxCliCmd_addMode_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, intgo _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   nxos::NxCliCmd::modes_t arg2 ;
   
@@ -2328,7 +2739,7 @@ void _wrap_NxCliCmd_addMode_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_
 }
 
 
-intgo _wrap_NxCliCmd_getCmdType_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+intgo _wrap_NxCliCmd_getCmdType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   nxos::NxCliCmd::cmdtype_t result;
   intgo _swig_go_result;
@@ -2341,7 +2752,7 @@ intgo _wrap_NxCliCmd_getCmdType_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig
 }
 
 
-intgo _wrap_NxCliCmd_getCmdMode_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+intgo _wrap_NxCliCmd_getCmdMode_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   nxos::NxCliCmd::modes_t result;
   intgo _swig_go_result;
@@ -2354,7 +2765,7 @@ intgo _wrap_NxCliCmd_getCmdMode_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig
 }
 
 
-_gostring_ _wrap_NxCliCmd_getCmdName_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+_gostring_ _wrap_NxCliCmd_getCmdName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2367,7 +2778,7 @@ _gostring_ _wrap_NxCliCmd_getCmdName_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *
 }
 
 
-_gostring_ _wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+_gostring_ _wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2380,7 +2791,7 @@ _gostring_ _wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd
 }
 
 
-_gostring_ _wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+_gostring_ _wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2393,7 +2804,7 @@ _gostring_ _wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_92557035fa796fff(nxos::NxCliCm
 }
 
 
-_gostring_ _wrap_NxCliCmd_getCmdErr_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0) {
+_gostring_ _wrap_NxCliCmd_getCmdErr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2406,7 +2817,7 @@ _gostring_ _wrap_NxCliCmd_getCmdErr_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_
 }
 
 
-bool _wrap_NxCliCmd_isKeywordSet_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxCliCmd_isKeywordSet_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   bool result;
@@ -2426,7 +2837,7 @@ bool _wrap_NxCliCmd_isKeywordSet_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swi
 }
 
 
-intgo _wrap_NxCliCmd_getParamType_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
+intgo _wrap_NxCliCmd_getParamType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   nxos::param_type_e result;
@@ -2446,7 +2857,7 @@ intgo _wrap_NxCliCmd_getParamType_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_sw
 }
 
 
-void *_wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+void *_wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   bool arg3 ;
@@ -2468,7 +2879,7 @@ void *_wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCl
 }
 
 
-void *_wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
+void *_wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   void *result = 0 ;
@@ -2488,7 +2899,7 @@ void *_wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCl
 }
 
 
-intgo _wrap_NxCliCmd_getParamCount_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
+intgo _wrap_NxCliCmd_getParamCount_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   int result;
@@ -2508,7 +2919,7 @@ intgo _wrap_NxCliCmd_getParamCount_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_s
 }
 
 
-void _wrap_NxCliCmd_printConsole_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxCliCmd_printConsole_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   void *arg3 = 0 ;
@@ -2526,7 +2937,7 @@ void _wrap_NxCliCmd_printConsole_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swi
 }
 
 
-void _wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
+void _wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
   nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2552,7 +2963,20 @@ void _wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCli
 }
 
 
-nxos::NxCmdHandler *_wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+intgo _wrap_NxCliCmd_showCliOutFormat_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliCmd *_swig_go_0) {
+  nxos::NxCliCmd *arg1 = (nxos::NxCliCmd *) 0 ;
+  nxos::record_type_e result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxCliCmd **)&_swig_go_0; 
+  
+  result = (nxos::record_type_e)(arg1)->showCliOutFormat();
+  _swig_go_result = (intgo)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxCmdHandler *_wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxCmdHandler *result = 0 ;
   nxos::NxCmdHandler *_swig_go_result;
@@ -2573,7 +2997,7 @@ nxos::NxCmdHandler *_wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_92
 }
 
 
-void _wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCmdHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCmdHandler *_swig_go_0) {
   nxos::NxCmdHandler *arg1 = (nxos::NxCmdHandler *) 0 ;
   
   arg1 = *(nxos::NxCmdHandler **)&_swig_go_0; 
@@ -2591,7 +3015,7 @@ void _wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCmdHand
 }
 
 
-bool _wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxCmdHandler *_swig_go_0, nxos::NxCliCmd *_swig_go_1) {
+bool _wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxCmdHandler *_swig_go_0, nxos::NxCliCmd *_swig_go_1) {
   SwigDirector_NxCmdHandler *arg1 = (SwigDirector_NxCmdHandler *) 0 ;
   nxos::NxCliCmd *arg2 = (nxos::NxCliCmd *) 0 ;
   bool result;
@@ -2614,7 +3038,7 @@ bool _wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_92557035fa796ff
 }
 
 
-void _wrap_delete_NxCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCmdHandler *_swig_go_0) {
+void _wrap_delete_NxCmdHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCmdHandler *_swig_go_0) {
   nxos::NxCmdHandler *arg1 = (nxos::NxCmdHandler *) 0 ;
   
   arg1 = *(nxos::NxCmdHandler **)&_swig_go_0; 
@@ -2624,7 +3048,7 @@ void _wrap_delete_NxCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCmdHandler *_s
 }
 
 
-bool _wrap_NxCmdHandler_postCliCb_nx_sdk_go_92557035fa796fff(nxos::NxCmdHandler *_swig_go_0, nxos::NxCliCmd *_swig_go_1) {
+bool _wrap_NxCmdHandler_postCliCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCmdHandler *_swig_go_0, nxos::NxCliCmd *_swig_go_1) {
   nxos::NxCmdHandler *arg1 = (nxos::NxCmdHandler *) 0 ;
   nxos::NxCliCmd *arg2 = (nxos::NxCliCmd *) 0 ;
   bool result;
@@ -2639,7 +3063,7 @@ bool _wrap_NxCmdHandler_postCliCb_nx_sdk_go_92557035fa796fff(nxos::NxCmdHandler 
 }
 
 
-nxos::NxCmdHandler *_wrap_new_NxCmdHandler_nx_sdk_go_92557035fa796fff() {
+nxos::NxCmdHandler *_wrap_new_NxCmdHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxCmdHandler *result = 0 ;
   nxos::NxCmdHandler *_swig_go_result;
   
@@ -2658,7 +3082,7 @@ nxos::NxCmdHandler *_wrap_new_NxCmdHandler_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxCliParser_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0) {
+void _wrap_delete_NxCliParser_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   
   arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
@@ -2668,7 +3092,7 @@ void _wrap_delete_NxCliParser_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swi
 }
 
 
-nxos::NxCliCmd *_wrap_NxCliParser_newCliCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
+nxos::NxCliCmd *_wrap_NxCliParser_newCliCmd_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   nxos::NxCliCmd::cmdtype_t arg2 ;
   char *arg3 = (char *) 0 ;
@@ -2697,7 +3121,7 @@ nxos::NxCliCmd *_wrap_NxCliParser_newCliCmd_nx_sdk_go_92557035fa796fff(nxos::NxC
 }
 
 
-nxos::NxCliCmd *_wrap_NxCliParser_newShowCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+nxos::NxCliCmd *_wrap_NxCliParser_newShowCmd_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2724,7 +3148,7 @@ nxos::NxCliCmd *_wrap_NxCliParser_newShowCmd_nx_sdk_go_92557035fa796fff(nxos::Nx
 }
 
 
-nxos::NxCliCmd *_wrap_NxCliParser_newConfigCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+nxos::NxCliCmd *_wrap_NxCliParser_newConfigCmd_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2751,7 +3175,7 @@ nxos::NxCliCmd *_wrap_NxCliParser_newConfigCmd_nx_sdk_go_92557035fa796fff(nxos::
 }
 
 
-void _wrap_NxCliParser_addToParseTree_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0) {
+void _wrap_NxCliParser_addToParseTree_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   
   arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
@@ -2761,7 +3185,7 @@ void _wrap_NxCliParser_addToParseTree_nx_sdk_go_92557035fa796fff(nxos::NxCliPars
 }
 
 
-void _wrap_NxCliParser_delFromParseTree_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0) {
+void _wrap_NxCliParser_delFromParseTree_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   
   arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
@@ -2771,7 +3195,7 @@ void _wrap_NxCliParser_delFromParseTree_nx_sdk_go_92557035fa796fff(nxos::NxCliPa
 }
 
 
-void _wrap_NxCliParser_setCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, nxos::NxCmdHandler *_swig_go_1) {
+void _wrap_NxCliParser_setCmdHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, nxos::NxCmdHandler *_swig_go_1) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   nxos::NxCmdHandler *arg2 = (nxos::NxCmdHandler *) 0 ;
   
@@ -2783,7 +3207,7 @@ void _wrap_NxCliParser_setCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCliParse
 }
 
 
-_gostring_ _wrap_NxCliParser_getParserStatus_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0) {
+_gostring_ _wrap_NxCliParser_getParserStatus_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2796,7 +3220,7 @@ _gostring_ _wrap_NxCliParser_getParserStatus_nx_sdk_go_92557035fa796fff(nxos::Nx
 }
 
 
-nxos::NxCmdHandler *_wrap_NxCliParser_getCmdHandler_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0) {
+nxos::NxCmdHandler *_wrap_NxCliParser_getCmdHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   nxos::NxCmdHandler *result = 0 ;
   nxos::NxCmdHandler *_swig_go_result;
@@ -2809,7 +3233,7 @@ nxos::NxCmdHandler *_wrap_NxCliParser_getCmdHandler_nx_sdk_go_92557035fa796fff(n
 }
 
 
-_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool *_swig_go_3) {
+_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool *_swig_go_3) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   std::string arg2 ;
   nxos::record_type_e arg3 ;
@@ -2828,7 +3252,7 @@ _gostring_ _wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   std::string arg2 ;
   nxos::record_type_e arg3 ;
@@ -2845,7 +3269,7 @@ _gostring_ _wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1) {
+_gostring_ _wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   std::string arg2 ;
   char *result = 0 ;
@@ -2860,7 +3284,7 @@ _gostring_ _wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-_gostring_ _wrap_NxCliParser_execConfigCmd_nx_sdk_go_92557035fa796fff(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1) {
+_gostring_ _wrap_NxCliParser_execConfigCmd__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
   char *arg2 = (char *) 0 ;
   char *result = 0 ;
@@ -2880,7 +3304,74 @@ _gostring_ _wrap_NxCliParser_execConfigCmd_nx_sdk_go_92557035fa796fff(nxos::NxCl
 }
 
 
-void _wrap_delete_NxVrf_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
+_gostring_ _wrap_NxCliParser_execConfigCmd__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+  nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
+  char *arg2 = (char *) 0 ;
+  bool arg3 ;
+  char *result = 0 ;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
+  
+  arg2 = (char *)malloc(_swig_go_1.n + 1);
+  memcpy(arg2, _swig_go_1.p, _swig_go_1.n);
+  arg2[_swig_go_1.n] = '\0';
+  
+  arg3 = (bool)_swig_go_2; 
+  
+  result = (char *)(arg1)->execConfigCmd((char const *)arg2,arg3);
+  _swig_go_result = Swig_AllocateString((char*)result, result ? strlen((char*)result) : 0); 
+  free(arg2); 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_NxCliParser_addTechSupport__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+  nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
+  std::string arg2 ;
+  bool arg3 ;
+  nxos::err_type_e result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  arg3 = (bool)_swig_go_2; 
+  
+  result = (nxos::err_type_e)(arg1)->addTechSupport(arg2,arg3);
+  _swig_go_result = (intgo)result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_NxCliParser_addTechSupport__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
+  std::string arg2 ;
+  nxos::err_type_e result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  
+  result = (nxos::err_type_e)(arg1)->addTechSupport(arg2);
+  _swig_go_result = (intgo)result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_NxCliParser_addTechSupport__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxCliParser *_swig_go_0) {
+  nxos::NxCliParser *arg1 = (nxos::NxCliParser *) 0 ;
+  nxos::err_type_e result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxCliParser **)&_swig_go_0; 
+  
+  result = (nxos::err_type_e)(arg1)->addTechSupport();
+  _swig_go_result = (intgo)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_NxVrf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   
   arg1 = *(nxos::NxVrf **)&_swig_go_0; 
@@ -2890,7 +3381,7 @@ void _wrap_delete_NxVrf_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxVrf_getName_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
+_gostring_ _wrap_NxVrf_getName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -2903,7 +3394,7 @@ _gostring_ _wrap_NxVrf_getName_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_
 }
 
 
-long long _wrap_NxVrf_getId_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
+long long _wrap_NxVrf_getId_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   unsigned long result;
   long long _swig_go_result;
@@ -2916,7 +3407,7 @@ long long _wrap_NxVrf_getId_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) 
 }
 
 
-long long _wrap_NxVrf_getTableId_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0, intgo _swig_go_1) {
+long long _wrap_NxVrf_getTableId_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   nxos::af_e arg2 ;
   unsigned long result;
@@ -2931,7 +3422,7 @@ long long _wrap_NxVrf_getTableId_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_g
 }
 
 
-intgo _wrap_NxVrf_getState_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
+intgo _wrap_NxVrf_getState_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   nxos::state_type_e result;
   intgo _swig_go_result;
@@ -2944,7 +3435,7 @@ intgo _wrap_NxVrf_getState_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
 }
 
 
-intgo _wrap_NxVrf_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
+intgo _wrap_NxVrf_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -2957,7 +3448,7 @@ intgo _wrap_NxVrf_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0) {
 }
 
 
-bool _wrap_NxVrf_equal_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0, nxos::NxVrf *_swig_go_1) {
+bool _wrap_NxVrf_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxVrf *_swig_go_0, nxos::NxVrf *_swig_go_1) {
   nxos::NxVrf *arg1 = (nxos::NxVrf *) 0 ;
   nxos::NxVrf *arg2 = 0 ;
   bool result;
@@ -2972,7 +3463,7 @@ bool _wrap_NxVrf_equal_nx_sdk_go_92557035fa796fff(nxos::NxVrf *_swig_go_0, nxos:
 }
 
 
-intgo _wrap_ATTACHED_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ATTACHED_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2984,7 +3475,7 @@ intgo _wrap_ATTACHED_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_LOCAL_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_LOCAL_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -2996,7 +3487,7 @@ intgo _wrap_LOCAL_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DIRECT_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DIRECT_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3008,7 +3499,7 @@ intgo _wrap_DIRECT_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3020,7 +3511,7 @@ intgo _wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_BACKUP_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_BACKUP_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3032,7 +3523,7 @@ intgo _wrap_BACKUP_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DROP_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DROP_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3044,7 +3535,7 @@ intgo _wrap_DROP_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_DISCARD_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_DISCARD_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3056,7 +3547,7 @@ intgo _wrap_DISCARD_NxL3NextHop_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxL3NextHop_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+void _wrap_delete_NxL3NextHop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   
   arg1 = *(nxos::NxL3NextHop **)&_swig_go_0; 
@@ -3066,7 +3557,7 @@ void _wrap_delete_NxL3NextHop_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swi
 }
 
 
-_gostring_ _wrap_NxL3NextHop_getAddress_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+_gostring_ _wrap_NxL3NextHop_getAddress_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3079,7 +3570,7 @@ _gostring_ _wrap_NxL3NextHop_getAddress_nx_sdk_go_92557035fa796fff(nxos::NxL3Nex
 }
 
 
-_gostring_ _wrap_NxL3NextHop_getOutInterface_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+_gostring_ _wrap_NxL3NextHop_getOutInterface_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3092,7 +3583,7 @@ _gostring_ _wrap_NxL3NextHop_getOutInterface_nx_sdk_go_92557035fa796fff(nxos::Nx
 }
 
 
-_gostring_ _wrap_NxL3NextHop_getVrfName_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+_gostring_ _wrap_NxL3NextHop_getVrfName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3105,7 +3596,7 @@ _gostring_ _wrap_NxL3NextHop_getVrfName_nx_sdk_go_92557035fa796fff(nxos::NxL3Nex
 }
 
 
-_gostring_ _wrap_NxL3NextHop_getOwner_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+_gostring_ _wrap_NxL3NextHop_getOwner_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3118,7 +3609,7 @@ _gostring_ _wrap_NxL3NextHop_getOwner_nx_sdk_go_92557035fa796fff(nxos::NxL3NextH
 }
 
 
-intgo _wrap_NxL3NextHop_getPreference_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getPreference_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3131,7 +3622,7 @@ intgo _wrap_NxL3NextHop_getPreference_nx_sdk_go_92557035fa796fff(nxos::NxL3NextH
 }
 
 
-intgo _wrap_NxL3NextHop_getMetric_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getMetric_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3144,7 +3635,7 @@ intgo _wrap_NxL3NextHop_getMetric_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *
 }
 
 
-intgo _wrap_NxL3NextHop_getTag_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getTag_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3157,7 +3648,7 @@ intgo _wrap_NxL3NextHop_getTag_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_sw
 }
 
 
-intgo _wrap_NxL3NextHop_getSegmentId_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getSegmentId_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3170,7 +3661,7 @@ intgo _wrap_NxL3NextHop_getSegmentId_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHo
 }
 
 
-intgo _wrap_NxL3NextHop_getTunnelId_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getTunnelId_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3183,7 +3674,7 @@ intgo _wrap_NxL3NextHop_getTunnelId_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop
 }
 
 
-intgo _wrap_NxL3NextHop_getEncapType_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0) {
+intgo _wrap_NxL3NextHop_getEncapType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   nxos::encap_type_e result;
   intgo _swig_go_result;
@@ -3196,7 +3687,7 @@ intgo _wrap_NxL3NextHop_getEncapType_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHo
 }
 
 
-bool _wrap_NxL3NextHop_checkType_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxL3NextHop_checkType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3NextHop *_swig_go_0, intgo _swig_go_1) {
   nxos::NxL3NextHop *arg1 = (nxos::NxL3NextHop *) 0 ;
   nxos::NxL3NextHop::nh_types_e arg2 ;
   bool result;
@@ -3211,7 +3702,7 @@ bool _wrap_NxL3NextHop_checkType_nx_sdk_go_92557035fa796fff(nxos::NxL3NextHop *_
 }
 
 
-void _wrap_delete_NxL3Route_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+void _wrap_delete_NxL3Route_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   
   arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
@@ -3221,7 +3712,7 @@ void _wrap_delete_NxL3Route_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go
 }
 
 
-_gostring_ _wrap_NxL3Route_getVrfName_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+_gostring_ _wrap_NxL3Route_getVrfName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3234,7 +3725,7 @@ _gostring_ _wrap_NxL3Route_getVrfName_nx_sdk_go_92557035fa796fff(nxos::NxL3Route
 }
 
 
-_gostring_ _wrap_NxL3Route_getAddress_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+_gostring_ _wrap_NxL3Route_getAddress_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -3247,7 +3738,7 @@ _gostring_ _wrap_NxL3Route_getAddress_nx_sdk_go_92557035fa796fff(nxos::NxL3Route
 }
 
 
-intgo _wrap_NxL3Route_getMaskLen_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+intgo _wrap_NxL3Route_getMaskLen_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3260,7 +3751,7 @@ intgo _wrap_NxL3Route_getMaskLen_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_sw
 }
 
 
-intgo _wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+intgo _wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -3273,22 +3764,48 @@ intgo _wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_92557035fa796fff(nxos::NxL3Rou
 }
 
 
-nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
-  std::string arg2 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
   nxos::NxL3NextHop *result = 0 ;
   nxos::NxL3NextHop *_swig_go_result;
   
   arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
-  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
   
-  result = (nxos::NxL3NextHop *)(arg1)->getL3NextHop(arg2);
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  std::string arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  
+  result = (nxos::NxL3NextHop *)(arg1)->getL3NextHop((std::string const &)*arg2,(std::string const &)*arg3);
   *(nxos::NxL3NextHop **)&_swig_go_result = (nxos::NxL3NextHop *)result; 
   return _swig_go_result;
 }
 
 
-nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0, bool _swig_go_1) {
+nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string *arg2 = 0 ;
+  nxos::NxL3NextHop *result = 0 ;
+  nxos::NxL3NextHop *_swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  result = (nxos::NxL3NextHop *)(arg1)->getL3NextHop((std::string const &)*arg2);
+  *(nxos::NxL3NextHop **)&_swig_go_result = (nxos::NxL3NextHop *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, bool _swig_go_1) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   bool arg2 ;
   nxos::NxL3NextHop *result = 0 ;
@@ -3303,7 +3820,7 @@ nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_92557035fa796f
 }
 
 
-nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   nxos::NxL3NextHop *result = 0 ;
   nxos::NxL3NextHop *_swig_go_result;
@@ -3316,7 +3833,7 @@ nxos::NxL3NextHop *_wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_92557035fa796f
 }
 
 
-intgo _wrap_NxL3Route_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0) {
+intgo _wrap_NxL3Route_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -3329,7 +3846,7 @@ intgo _wrap_NxL3Route_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig
 }
 
 
-bool _wrap_NxL3Route_equal_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
+bool _wrap_NxL3Route_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
   nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
   nxos::NxL3Route *arg2 = 0 ;
   bool result;
@@ -3344,7 +3861,106 @@ bool _wrap_NxL3Route_equal_nx_sdk_go_92557035fa796fff(nxos::NxL3Route *_swig_go_
 }
 
 
-nxos::NxRibMgrHandler *_wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+nxos::NxL3NextHop *_wrap_NxL3Route_addL3DirectNextHop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, char _swig_go_3) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  uint8_t arg4 ;
+  nxos::NxL3NextHop *result = 0 ;
+  nxos::NxL3NextHop *_swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  std::string arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  arg4 = (uint8_t)_swig_go_3; 
+  
+  result = (nxos::NxL3NextHop *)(arg1)->addL3DirectNextHop((std::string const &)*arg2,(std::string const &)*arg3,arg4);
+  *(nxos::NxL3NextHop **)&_swig_go_result = (nxos::NxL3NextHop *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3NextHop *_wrap_NxL3Route_addL3RecursiveNextHop_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string *arg2 = 0 ;
+  uint8_t arg3 ;
+  nxos::NxL3NextHop *result = 0 ;
+  nxos::NxL3NextHop *_swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (uint8_t)_swig_go_2; 
+  
+  result = (nxos::NxL3NextHop *)(arg1)->addL3RecursiveNextHop((std::string const &)*arg2,arg3);
+  *(nxos::NxL3NextHop **)&_swig_go_result = (nxos::NxL3NextHop *)result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxL3Route_delL3NextHop__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  std::string arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  
+  result = (bool)(arg1)->delL3NextHop((std::string const &)*arg2,(std::string const &)*arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxL3Route_delL3NextHop__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  result = (bool)(arg1)->delL3NextHop((std::string const &)*arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_NxL3Route_getL3Prefix_nx_sdk_go_b16b6edb28d0fe19(nxos::NxL3Route *_swig_go_0) {
+  nxos::NxL3Route *arg1 = (nxos::NxL3Route *) 0 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxL3Route **)&_swig_go_0; 
+  
+  result = ((nxos::NxL3Route const *)arg1)->getL3Prefix();
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+nxos::NxRibMgrHandler *_wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxRibMgrHandler *result = 0 ;
   nxos::NxRibMgrHandler *_swig_go_result;
@@ -3365,7 +3981,7 @@ nxos::NxRibMgrHandler *_wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_
 }
 
 
-void _wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0) {
   nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
@@ -3383,7 +3999,7 @@ void _wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
+bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
   SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
   nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
   bool result;
@@ -3406,7 +4022,7 @@ bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_92557035
 }
 
 
-bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxVrf *_swig_go_1) {
+bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxVrf *_swig_go_1) {
   SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
   nxos::NxVrf *arg2 = (nxos::NxVrf *) 0 ;
   bool result;
@@ -3429,7 +4045,101 @@ bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_92557035fa79
 }
 
 
-void _wrap_delete_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHandler *_swig_go_0) {
+bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RecursiveNextHopCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1, bool _swig_go_2) {
+  SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
+  nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
+  bool arg3 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(SwigDirector_NxRibMgrHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxL3Route **)&_swig_go_1; 
+  arg3 = (bool)_swig_go_2; 
+  
+  {
+    try {
+      result = (bool)arg1->_swig_upcall_postL3RecursiveNextHopCb(arg2, arg3);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostMyL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
+  SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
+  nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(SwigDirector_NxRibMgrHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxL3Route **)&_swig_go_1; 
+  
+  {
+    try {
+      result = (bool)arg1->_swig_upcall_postMyL3RouteCb(arg2);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, char _swig_go_3) {
+  SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  unsigned char arg4 ;
+  
+  arg1 = *(SwigDirector_NxRibMgrHandler **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  (&arg3)->assign(_swig_go_2.p, _swig_go_2.n); 
+  arg4 = (unsigned char)_swig_go_3; 
+  
+  {
+    try {
+      arg1->_swig_upcall_postL3RouteRepopulateCb__SWIG_0(arg2, arg3, arg4);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  
+}
+
+
+void _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxRibMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+  SwigDirector_NxRibMgrHandler *arg1 = (SwigDirector_NxRibMgrHandler *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  
+  arg1 = *(SwigDirector_NxRibMgrHandler **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  (&arg3)->assign(_swig_go_2.p, _swig_go_2.n); 
+  
+  {
+    try {
+      arg1->_swig_upcall_postL3RouteRepopulateCb__SWIG_1(arg2, arg3);
+    } catch (std::logic_error const &err) {
+      _swig_gopanic(err.what());
+    } catch (nxos::NxException *err) {
+      
+    }
+  }
+  
+}
+
+
+void _wrap_delete_NxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0) {
   nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
@@ -3439,7 +4149,7 @@ void _wrap_delete_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHandl
 }
 
 
-bool _wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
+bool _wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
   nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
   nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
   bool result;
@@ -3454,7 +4164,7 @@ bool _wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-bool _wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxVrf *_swig_go_1) {
+bool _wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxVrf *_swig_go_1) {
   nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
   nxos::NxVrf *arg2 = (nxos::NxVrf *) 0 ;
   bool result;
@@ -3469,7 +4179,69 @@ bool _wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_92557035fa796fff(nxos::NxRibMgrHa
 }
 
 
-nxos::NxRibMgrHandler *_wrap_new_NxRibMgrHandler_nx_sdk_go_92557035fa796fff() {
+bool _wrap_NxRibMgrHandler_postL3RecursiveNextHopCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1, bool _swig_go_2) {
+  nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
+  nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
+  bool arg3 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxL3Route **)&_swig_go_1; 
+  arg3 = (bool)_swig_go_2; 
+  
+  result = (bool)(arg1)->postL3RecursiveNextHopCb(arg2,arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgrHandler_postMyL3RouteCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, nxos::NxL3Route *_swig_go_1) {
+  nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
+  nxos::NxL3Route *arg2 = (nxos::NxL3Route *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
+  arg2 = *(nxos::NxL3Route **)&_swig_go_1; 
+  
+  result = (bool)(arg1)->postMyL3RouteCb(arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, char _swig_go_3) {
+  nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  unsigned char arg4 ;
+  
+  arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  (&arg3)->assign(_swig_go_2.p, _swig_go_2.n); 
+  arg4 = (unsigned char)_swig_go_3; 
+  
+  (arg1)->postL3RouteRepopulateCb(arg2,arg3,arg4);
+  
+}
+
+
+void _wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+  nxos::NxRibMgrHandler *arg1 = (nxos::NxRibMgrHandler *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  
+  arg1 = *(nxos::NxRibMgrHandler **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  (&arg3)->assign(_swig_go_2.p, _swig_go_2.n); 
+  
+  (arg1)->postL3RouteRepopulateCb(arg2,arg3);
+  
+}
+
+
+nxos::NxRibMgrHandler *_wrap_new_NxRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxRibMgrHandler *result = 0 ;
   nxos::NxRibMgrHandler *_swig_go_result;
   
@@ -3488,7 +4260,7 @@ nxos::NxRibMgrHandler *_wrap_new_NxRibMgrHandler_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxRibMgr_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0) {
+void _wrap_delete_NxRibMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   
   arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
@@ -3498,7 +4270,7 @@ void _wrap_delete_NxRibMgr_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0
 }
 
 
-nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   bool arg3 ;
@@ -3515,7 +4287,7 @@ nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   nxos::NxVrf *result = 0 ;
@@ -3530,7 +4302,7 @@ nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0) {
+nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   nxos::NxVrf *result = 0 ;
   nxos::NxVrf *_swig_go_result;
@@ -3543,7 +4315,7 @@ nxos::NxVrf *_wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-bool _wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   bool result;
@@ -3558,7 +4330,7 @@ bool _wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *
 }
 
 
-bool _wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0) {
+bool _wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -3571,7 +4343,7 @@ bool _wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *
 }
 
 
-void _wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   
@@ -3583,7 +4355,7 @@ void _wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr
 }
 
 
-void _wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0) {
+void _wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   
   arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
@@ -3593,7 +4365,7 @@ void _wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr
 }
 
 
-void _wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, nxos::NxRibMgrHandler *_swig_go_1) {
+void _wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, nxos::NxRibMgrHandler *_swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   nxos::NxRibMgrHandler *arg2 = (nxos::NxRibMgrHandler *) 0 ;
   
@@ -3605,7 +4377,7 @@ void _wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *
 }
 
 
-nxos::NxRibMgrHandler *_wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0) {
+nxos::NxRibMgrHandler *_wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   nxos::NxRibMgrHandler *result = 0 ;
   nxos::NxRibMgrHandler *_swig_go_result;
@@ -3618,7 +4390,7 @@ nxos::NxRibMgrHandler *_wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_92557035fa796ff
 }
 
 
-nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3, bool _swig_go_4) {
+nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3, bool _swig_go_4) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   unsigned char arg3 ;
@@ -3639,7 +4411,7 @@ nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
+nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   unsigned char arg3 ;
@@ -3658,7 +4430,7 @@ nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2) {
+nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   unsigned char arg3 ;
@@ -3675,7 +4447,7 @@ nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   nxos::NxL3Route *result = 0 ;
@@ -3690,7 +4462,7 @@ nxos::NxL3Route *_wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-bool _wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4) {
+bool _wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3711,7 +4483,7 @@ bool _wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-bool _wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
+bool _wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3730,7 +4502,7 @@ bool _wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-bool _wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3747,7 +4519,7 @@ bool _wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-bool _wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   bool result;
@@ -3762,7 +4534,7 @@ bool _wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxRibM
 }
 
 
-void _wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4) {
+void _wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3, intgo _swig_go_4) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3780,7 +4552,7 @@ void _wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-void _wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
+void _wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3796,7 +4568,7 @@ void _wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-void _wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   std::string arg3 ;
@@ -3810,7 +4582,7 @@ void _wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-void _wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
   std::string arg2 ;
   
@@ -3822,7 +4594,272 @@ void _wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxRi
 }
 
 
-void _wrap_delete_NxException_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+nxos::NxL3Route *_wrap_NxRibMgr_getL3RouteDetail__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, _gostring_ _swig_go_3) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned int arg3 ;
+  std::string *arg4 = 0 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned int)_swig_go_2; 
+  
+  std::string arg4_str(_swig_go_3.p, _swig_go_3.n);
+  arg4 = &arg4_str;
+  
+  
+  result = (nxos::NxL3Route *)(arg1)->getL3RouteDetail((std::string const &)*arg2,arg3,(std::string const &)*arg4);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3Route *_wrap_NxRibMgr_getL3RouteDetail__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned int arg3 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned int)_swig_go_2; 
+  
+  result = (nxos::NxL3Route *)(arg1)->getL3RouteDetail((std::string const &)*arg2,arg3);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3Route *_wrap_NxRibMgr_getL3RouteDetail__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  result = (nxos::NxL3Route *)(arg1)->getL3RouteDetail((std::string const &)*arg2);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3Route *_wrap_NxRibMgr_addL3Route__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned char arg3 ;
+  std::string *arg4 = 0 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  std::string arg4_str(_swig_go_3.p, _swig_go_3.n);
+  arg4 = &arg4_str;
+  
+  
+  result = (nxos::NxL3Route *)(arg1)->addL3Route((std::string const &)*arg2,arg3,(std::string const &)*arg4);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3Route *_wrap_NxRibMgr_addL3Route__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned char arg3 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  result = (nxos::NxL3Route *)(arg1)->addL3Route((std::string const &)*arg2,arg3);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxL3Route *_wrap_NxRibMgr_addL3Route__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  nxos::NxL3Route *result = 0 ;
+  nxos::NxL3Route *_swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  result = (nxos::NxL3Route *)(arg1)->addL3Route((std::string const &)*arg2);
+  *(nxos::NxL3Route **)&_swig_go_result = (nxos::NxL3Route *)result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_delL3Route__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned char arg3 ;
+  std::string *arg4 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  std::string arg4_str(_swig_go_3.p, _swig_go_3.n);
+  arg4 = &arg4_str;
+  
+  
+  result = (bool)(arg1)->delL3Route((std::string const &)*arg2,arg3,(std::string const &)*arg4);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_delL3Route__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1, char _swig_go_2) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  unsigned char arg3 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  result = (bool)(arg1)->delL3Route((std::string const &)*arg2,arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_delL3Route__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, _gostring_ _swig_go_1) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  result = (bool)(arg1)->delL3Route((std::string const &)*arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, intgo _swig_go_1) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  nxos::af_e arg2 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  arg2 = (nxos::af_e)_swig_go_1; 
+  
+  result = (bool)(arg1)->sendMyL3RoutesToRib(arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  result = (bool)(arg1)->sendMyL3RoutesToRib();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_converged__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  nxos::af_e arg2 ;
+  std::string *arg3 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  arg2 = (nxos::af_e)_swig_go_1; 
+  
+  std::string arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  
+  result = (bool)(arg1)->converged(arg2,(std::string const &)*arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_converged__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0, intgo _swig_go_1) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  nxos::af_e arg2 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  arg2 = (nxos::af_e)_swig_go_1; 
+  
+  result = (bool)(arg1)->converged(arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxRibMgr_converged__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxRibMgr *_swig_go_0) {
+  nxos::NxRibMgr *arg1 = (nxos::NxRibMgr *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxRibMgr **)&_swig_go_0; 
+  
+  result = (bool)(arg1)->converged();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_NxException_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   
   arg1 = *(nxos::NxException **)&_swig_go_0; 
@@ -3832,7 +4869,7 @@ void _wrap_delete_NxException_nx_sdk_go_92557035fa796fff(nxos::NxException *_swi
 }
 
 
-_gostring_ _wrap_NxException_what_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+_gostring_ _wrap_NxException_what_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -3845,7 +4882,7 @@ _gostring_ _wrap_NxException_what_nx_sdk_go_92557035fa796fff(nxos::NxException *
 }
 
 
-long long _wrap_NxException_getErrCode_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+long long _wrap_NxException_getErrCode_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   unsigned long result;
   long long _swig_go_result;
@@ -3858,7 +4895,7 @@ long long _wrap_NxException_getErrCode_nx_sdk_go_92557035fa796fff(nxos::NxExcept
 }
 
 
-_gostring_ _wrap_NxException_getErrModule_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+_gostring_ _wrap_NxException_getErrModule_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -3871,7 +4908,7 @@ _gostring_ _wrap_NxException_getErrModule_nx_sdk_go_92557035fa796fff(nxos::NxExc
 }
 
 
-short _wrap_NxException_getErrSeverity_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+short _wrap_NxException_getErrSeverity_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   unsigned short result;
   short _swig_go_result;
@@ -3884,7 +4921,7 @@ short _wrap_NxException_getErrSeverity_nx_sdk_go_92557035fa796fff(nxos::NxExcept
 }
 
 
-_gostring_ _wrap_NxException_getErrApi_nx_sdk_go_92557035fa796fff(nxos::NxException *_swig_go_0) {
+_gostring_ _wrap_NxException_getErrApi_nx_sdk_go_b16b6edb28d0fe19(nxos::NxException *_swig_go_0) {
   nxos::NxException *arg1 = (nxos::NxException *) 0 ;
   char *result = 0 ;
   _gostring_ _swig_go_result;
@@ -3897,7 +4934,7 @@ _gostring_ _wrap_NxException_getErrApi_nx_sdk_go_92557035fa796fff(nxos::NxExcept
 }
 
 
-intgo _wrap_ERR_ESUCCESS_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_ESUCCESS_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3909,7 +4946,7 @@ intgo _wrap_ERR_ESUCCESS_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_INVALID_USAGE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_INVALID_USAGE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3921,7 +4958,7 @@ intgo _wrap_ERR_INVALID_USAGE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_INVALID_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_INVALID_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3933,7 +4970,7 @@ intgo _wrap_ERR_INVALID_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_NULL_PTR_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_NULL_PTR_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3945,7 +4982,7 @@ intgo _wrap_ERR_NULL_PTR_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_NOT_FOUND_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_NOT_FOUND_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3957,7 +4994,7 @@ intgo _wrap_ERR_NOT_FOUND_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_EXISTS_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_EXISTS_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3969,7 +5006,7 @@ intgo _wrap_ERR_EXISTS_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_EMPTY_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_EMPTY_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3981,7 +5018,7 @@ intgo _wrap_ERR_EMPTY_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_MAX_LIMIT_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_MAX_LIMIT_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -3993,7 +5030,7 @@ intgo _wrap_ERR_MAX_LIMIT_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_FAILURE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_FAILURE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4005,7 +5042,7 @@ intgo _wrap_ERR_FAILURE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_ESUCCESS_MORE_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_ESUCCESS_MORE_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4017,7 +5054,7 @@ intgo _wrap_ERR_ESUCCESS_MORE_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_SIGINT_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_SIGINT_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4029,7 +5066,7 @@ intgo _wrap_ERR_SIGINT_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_ENOMEM_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_ENOMEM_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4041,7 +5078,7 @@ intgo _wrap_ERR_ENOMEM_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_BADFD_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_BADFD_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4053,7 +5090,7 @@ intgo _wrap_ERR_BADFD_nx_sdk_go_92557035fa796fff() {
 }
 
 
-intgo _wrap_ERR_UNKNOWN_nx_sdk_go_92557035fa796fff() {
+intgo _wrap_ERR_UNKNOWN_nx_sdk_go_b16b6edb28d0fe19() {
   int result;
   intgo _swig_go_result;
   
@@ -4065,7 +5102,31 @@ intgo _wrap_ERR_UNKNOWN_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_ERR_REMOTE_DOWN_nx_sdk_go_b16b6edb28d0fe19() {
+  int result;
+  intgo _swig_go_result;
+  
+  
+  result = nxos::ERR_REMOTE_DOWN;
+  
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_ERR_REMOTE_SDK_OBJS_OBSOLETE_nx_sdk_go_b16b6edb28d0fe19() {
+  int result;
+  intgo _swig_go_result;
+  
+  
+  result = nxos::ERR_REMOTE_SDK_OBJS_OBSOLETE;
+  
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_NxIntf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   
   arg1 = *(nxos::NxIntf **)&_swig_go_0; 
@@ -4075,7 +5136,7 @@ void _wrap_delete_NxIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxIntf_getName_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4088,7 +5149,7 @@ _gostring_ _wrap_NxIntf_getName_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_g
 }
 
 
-_gostring_ _wrap_NxIntf_getLayer_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getLayer_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4101,7 +5162,7 @@ _gostring_ _wrap_NxIntf_getLayer_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_
 }
 
 
-intgo _wrap_NxIntf_getType_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::intf_type_e result;
   intgo _swig_go_result;
@@ -4114,7 +5175,7 @@ intgo _wrap_NxIntf_getType_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) 
 }
 
 
-_gostring_ _wrap_NxIntf_getVrf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getVrf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4127,7 +5188,7 @@ _gostring_ _wrap_NxIntf_getVrf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go
 }
 
 
-_gostring_ _wrap_NxIntf_getVlan_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getVlan_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4140,7 +5201,7 @@ _gostring_ _wrap_NxIntf_getVlan_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_g
 }
 
 
-_gostring_ _wrap_NxIntf_getDescription_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getDescription_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4153,7 +5214,7 @@ _gostring_ _wrap_NxIntf_getDescription_nx_sdk_go_92557035fa796fff(nxos::NxIntf *
 }
 
 
-_gostring_ _wrap_NxIntf_getL3PrAddr_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+_gostring_ _wrap_NxIntf_getL3PrAddr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::af_e arg2 ;
   std::string result;
@@ -4168,7 +5229,7 @@ _gostring_ _wrap_NxIntf_getL3PrAddr_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_sw
 }
 
 
-_gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1, bool _swig_go_2) {
+_gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1, bool _swig_go_2) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::af_e arg2 ;
   bool arg3 ;
@@ -4185,7 +5246,7 @@ _gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxI
 }
 
 
-_gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+_gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::af_e arg2 ;
   std::string result;
@@ -4200,7 +5261,7 @@ _gostring_ _wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxI
 }
 
 
-_gostring_ _wrap_NxIntf_getL2Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getL2Address_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4213,7 +5274,7 @@ _gostring_ _wrap_NxIntf_getL2Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_s
 }
 
 
-_gostring_ _wrap_NxIntf_getL2AddressHW_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getL2AddressHW_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4226,7 +5287,7 @@ _gostring_ _wrap_NxIntf_getL2AddressHW_nx_sdk_go_92557035fa796fff(nxos::NxIntf *
 }
 
 
-intgo _wrap_NxIntf_getAdminState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getAdminState_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::state_type_e result;
   intgo _swig_go_result;
@@ -4239,7 +5300,7 @@ intgo _wrap_NxIntf_getAdminState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_
 }
 
 
-intgo _wrap_NxIntf_getOperState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getOperState_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::state_type_e result;
   intgo _swig_go_result;
@@ -4252,7 +5313,7 @@ intgo _wrap_NxIntf_getOperState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_g
 }
 
 
-intgo _wrap_NxIntf_getMtu_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getMtu_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   uint32_t result;
   intgo _swig_go_result;
@@ -4265,7 +5326,7 @@ intgo _wrap_NxIntf_getMtu_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
 }
 
 
-intgo _wrap_NxIntf_getSpeed_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getSpeed_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   uint32_t result;
   intgo _swig_go_result;
@@ -4278,7 +5339,7 @@ intgo _wrap_NxIntf_getSpeed_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0)
 }
 
 
-intgo _wrap_NxIntf_getMemberCount_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getMemberCount_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -4291,7 +5352,7 @@ intgo _wrap_NxIntf_getMemberCount_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig
 }
 
 
-_gostring_ _wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, bool _swig_go_1) {
+_gostring_ _wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, bool _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   bool arg2 ;
   std::string result;
@@ -4306,7 +5367,7 @@ _gostring_ _wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIn
 }
 
 
-_gostring_ _wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4319,7 +5380,7 @@ _gostring_ _wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIn
 }
 
 
-intgo _wrap_NxIntf_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+intgo _wrap_NxIntf_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -4332,7 +5393,7 @@ intgo _wrap_NxIntf_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0)
 }
 
 
-_gostring_ _wrap_NxIntf_getLastMod_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0) {
+_gostring_ _wrap_NxIntf_getLastMod_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -4345,7 +5406,7 @@ _gostring_ _wrap_NxIntf_getLastMod_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swi
 }
 
 
-bool _wrap_NxIntf_setLayer_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_setLayer_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4363,7 +5424,7 @@ bool _wrap_NxIntf_setLayer_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, 
 }
 
 
-bool _wrap_NxIntf_setVrf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_setVrf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4381,7 +5442,7 @@ bool _wrap_NxIntf_setVrf_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _g
 }
 
 
-bool _wrap_NxIntf_setVlan_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxIntf_setVlan_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -4396,7 +5457,7 @@ bool _wrap_NxIntf_setVlan_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, i
 }
 
 
-bool _wrap_NxIntf_setDescription_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_setDescription_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4414,7 +5475,7 @@ bool _wrap_NxIntf_setDescription_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_
 }
 
 
-bool _wrap_NxIntf_setL3Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
+bool _wrap_NxIntf_setL3Address_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -4436,7 +5497,7 @@ bool _wrap_NxIntf_setL3Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go
 }
 
 
-bool _wrap_NxIntf_setL2Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_setL2Address_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4454,7 +5515,7 @@ bool _wrap_NxIntf_setL2Address_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go
 }
 
 
-bool _wrap_NxIntf_setAdminState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxIntf_setAdminState_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::state_type_e arg2 ;
   bool result;
@@ -4469,7 +5530,7 @@ bool _wrap_NxIntf_setAdminState_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_g
 }
 
 
-bool _wrap_NxIntf_setMtu_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxIntf_setMtu_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   uint32_t arg2 ;
   bool result;
@@ -4484,7 +5545,7 @@ bool _wrap_NxIntf_setMtu_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, in
 }
 
 
-bool _wrap_NxIntf_setSpeed_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxIntf_setSpeed_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, intgo _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   uint32_t arg2 ;
   bool result;
@@ -4499,7 +5560,7 @@ bool _wrap_NxIntf_setSpeed_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, 
 }
 
 
-bool _wrap_NxIntf_addMember_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_addMember_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4517,7 +5578,7 @@ bool _wrap_NxIntf_addMember_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0,
 }
 
 
-bool _wrap_NxIntf_delMember_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntf_delMember_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -4535,7 +5596,7 @@ bool _wrap_NxIntf_delMember_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0,
 }
 
 
-bool _wrap_NxIntf_equal_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntf_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntf *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntf *arg1 = (nxos::NxIntf *) 0 ;
   nxos::NxIntf *arg2 = 0 ;
   bool result;
@@ -4550,7 +5611,7 @@ bool _wrap_NxIntf_equal_nx_sdk_go_92557035fa796fff(nxos::NxIntf *_swig_go_0, nxo
 }
 
 
-nxos::NxIntfMgrHandler *_wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+nxos::NxIntfMgrHandler *_wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxIntfMgrHandler *result = 0 ;
   nxos::NxIntfMgrHandler *_swig_go_result;
@@ -4571,7 +5632,7 @@ nxos::NxIntfMgrHandler *_wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_
 }
 
 
-void _wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxIntfMgrHandler **)&_swig_go_0; 
@@ -4589,7 +5650,7 @@ void _wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxInt
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4612,7 +5673,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_9255
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4635,7 +5696,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_92
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4658,7 +5719,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_92
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4681,7 +5742,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_92557
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4704,7 +5765,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_92557
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4727,7 +5788,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4750,7 +5811,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_9255703
 }
 
 
-bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   SwigDirector_NxIntfMgrHandler *arg1 = (SwigDirector_NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4773,7 +5834,7 @@ bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_925570
 }
 
 
-void _wrap_delete_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0) {
+void _wrap_delete_NxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxIntfMgrHandler **)&_swig_go_0; 
@@ -4783,7 +5844,7 @@ void _wrap_delete_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHan
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4798,7 +5859,7 @@ bool _wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(nxos::Nx
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4813,7 +5874,7 @@ bool _wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(nxos::
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4828,7 +5889,7 @@ bool _wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(nxos::
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4843,7 +5904,7 @@ bool _wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_92557035fa796fff(nxos::NxI
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4858,7 +5919,7 @@ bool _wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_92557035fa796fff(nxos::NxI
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4873,7 +5934,7 @@ bool _wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4888,7 +5949,7 @@ bool _wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_92557035fa796fff(nxos::NxInt
 }
 
 
-bool _wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
+bool _wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgrHandler *_swig_go_0, nxos::NxIntf *_swig_go_1) {
   nxos::NxIntfMgrHandler *arg1 = (nxos::NxIntfMgrHandler *) 0 ;
   nxos::NxIntf *arg2 = (nxos::NxIntf *) 0 ;
   bool result;
@@ -4903,7 +5964,7 @@ bool _wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_92557035fa796fff(nxos::NxIn
 }
 
 
-nxos::NxIntfMgrHandler *_wrap_new_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff() {
+nxos::NxIntfMgrHandler *_wrap_new_NxIntfMgrHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxIntfMgrHandler *result = 0 ;
   nxos::NxIntfMgrHandler *_swig_go_result;
   
@@ -4922,7 +5983,7 @@ nxos::NxIntfMgrHandler *_wrap_new_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff() 
 }
 
 
-void _wrap_delete_NxIntfMgr_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0) {
+void _wrap_delete_NxIntfMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   
   arg1 = *(nxos::NxIntfMgr **)&_swig_go_0; 
@@ -4932,7 +5993,7 @@ void _wrap_delete_NxIntfMgr_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go
 }
 
 
-nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, bool _swig_go_1) {
+nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, bool _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   bool arg2 ;
   nxos::NxIntf *result = 0 ;
@@ -4947,7 +6008,7 @@ nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_92557035fa796fff(nxo
 }
 
 
-nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0) {
+nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   nxos::NxIntf *result = 0 ;
   nxos::NxIntf *_swig_go_result;
@@ -4960,7 +6021,7 @@ nxos::NxIntf *_wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_92557035fa796fff(nxo
 }
 
 
-nxos::NxIntf *_wrap_NxIntfMgr_getIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxIntf *_wrap_NxIntfMgr_getIntf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   nxos::NxIntf *result = 0 ;
@@ -4975,7 +6036,7 @@ nxos::NxIntf *_wrap_NxIntfMgr_getIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr
 }
 
 
-bool _wrap_NxIntfMgr_getIntfAll_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0) {
+bool _wrap_NxIntfMgr_getIntfAll_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -4988,7 +6049,7 @@ bool _wrap_NxIntfMgr_getIntfAll_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swi
 }
 
 
-bool _wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0) {
+bool _wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -5001,7 +6062,7 @@ bool _wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_s
 }
 
 
-nxos::NxIntf *_wrap_NxIntfMgr_addIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxIntf *_wrap_NxIntfMgr_addIntf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   nxos::NxIntf *result = 0 ;
@@ -5016,7 +6077,7 @@ nxos::NxIntf *_wrap_NxIntfMgr_addIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr
 }
 
 
-bool _wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+bool _wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   bool arg3 ;
@@ -5033,7 +6094,7 @@ bool _wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxIntfM
 }
 
 
-bool _wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   bool result;
@@ -5048,7 +6109,7 @@ bool _wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxIntfM
 }
 
 
-bool _wrap_NxIntfMgr_watchIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntfMgr_watchIntf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   bool result;
@@ -5063,7 +6124,7 @@ bool _wrap_NxIntfMgr_watchIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig
 }
 
 
-bool _wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   std::string arg2 ;
   bool result;
@@ -5078,7 +6139,7 @@ bool _wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_sw
 }
 
 
-void _wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0, nxos::NxIntfMgrHandler *_swig_go_1) {
+void _wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0, nxos::NxIntfMgrHandler *_swig_go_1) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   nxos::NxIntfMgrHandler *arg2 = (nxos::NxIntfMgrHandler *) 0 ;
   
@@ -5090,7 +6151,7 @@ void _wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *
 }
 
 
-nxos::NxIntfMgrHandler *_wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_92557035fa796fff(nxos::NxIntfMgr *_swig_go_0) {
+nxos::NxIntfMgrHandler *_wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxIntfMgr *_swig_go_0) {
   nxos::NxIntfMgr *arg1 = (nxos::NxIntfMgr *) 0 ;
   nxos::NxIntfMgrHandler *result = 0 ;
   nxos::NxIntfMgrHandler *_swig_go_result;
@@ -5103,7 +6164,7 @@ nxos::NxIntfMgrHandler *_wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_92557035fa796ff
 }
 
 
-void _wrap_delete_NxDme_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+void _wrap_delete_NxDme_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   
   arg1 = *(nxos::NxDme **)&_swig_go_0; 
@@ -5113,7 +6174,7 @@ void _wrap_delete_NxDme_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxDme_getDn_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+_gostring_ _wrap_NxDme_getDn_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5126,7 +6187,7 @@ _gostring_ _wrap_NxDme_getDn_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0)
 }
 
 
-void _wrap_NxDme_setProperty_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo *_swig_go_3) {
+void _wrap_NxDme_setProperty_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, intgo *_swig_go_3) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5148,7 +6209,7 @@ void _wrap_NxDme_setProperty_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0,
 }
 
 
-_gostring_ _wrap_NxDme_getProperty_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
+_gostring_ _wrap_NxDme_getProperty_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string *arg2 = 0 ;
   int *arg3 = (int *) 0 ;
@@ -5168,7 +6229,7 @@ _gostring_ _wrap_NxDme_getProperty_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig
 }
 
 
-_gostring_ _wrap_NxDme_commit_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, intgo *_swig_go_1) {
+_gostring_ _wrap_NxDme_commit_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, intgo *_swig_go_1) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   int *arg2 = (int *) 0 ;
   std::string result;
@@ -5183,7 +6244,7 @@ _gostring_ _wrap_NxDme_commit_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0
 }
 
 
-_gostring_ _wrap_NxDme_getDataJson_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+_gostring_ _wrap_NxDme_getDataJson_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5196,7 +6257,7 @@ _gostring_ _wrap_NxDme_getDataJson_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig
 }
 
 
-_gostring_ _wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, bool _swig_go_1) {
+_gostring_ _wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, bool _swig_go_1) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   bool arg2 ;
   std::string result;
@@ -5211,7 +6272,7 @@ _gostring_ _wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-_gostring_ _wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+_gostring_ _wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5224,7 +6285,7 @@ _gostring_ _wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_92557035fa796fff(nxos
 }
 
 
-intgo _wrap_NxDme_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+intgo _wrap_NxDme_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -5237,7 +6298,7 @@ intgo _wrap_NxDme_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
 }
 
 
-bool _wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -5255,7 +6316,7 @@ bool _wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_92557035fa796fff(nxos::NxDm
 }
 
 
-_gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, bool _swig_go_1) {
+_gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, bool _swig_go_1) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   bool arg2 ;
   std::string result;
@@ -5270,7 +6331,7 @@ _gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_92557035f
 }
 
 
-_gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0) {
+_gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5283,7 +6344,7 @@ _gostring_ _wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_92557035f
 }
 
 
-bool _wrap_NxDme_equal_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, nxos::NxDme *_swig_go_1) {
+bool _wrap_NxDme_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, nxos::NxDme *_swig_go_1) {
   nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
   nxos::NxDme *arg2 = 0 ;
   bool result;
@@ -5298,7 +6359,81 @@ bool _wrap_NxDme_equal_nx_sdk_go_92557035fa796fff(nxos::NxDme *_swig_go_0, nxos:
 }
 
 
-nxos::NxDmeMgrHandler *_wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+intgo _wrap_NxDme_getChildrenDmeObjCount_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
+  nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(nxos::NxDme **)&_swig_go_0; 
+  
+  result = (int)(arg1)->getChildrenDmeObjCount();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_NxDme_iterateChildrenDmeDn__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, bool _swig_go_1) {
+  nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
+  bool arg2 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxDme **)&_swig_go_0; 
+  arg2 = (bool)_swig_go_1; 
+  
+  result = (arg1)->iterateChildrenDmeDn(arg2);
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_NxDme_iterateChildrenDmeDn__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
+  nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxDme **)&_swig_go_0; 
+  
+  result = (arg1)->iterateChildrenDmeDn();
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+bool _wrap_NxDme_isModified_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0) {
+  nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(nxos::NxDme **)&_swig_go_0; 
+  
+  result = (bool)(arg1)->isModified();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_NxDme_getEventPropertyValue_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDme *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
+  nxos::NxDme *arg1 = (nxos::NxDme *) 0 ;
+  std::string *arg2 = 0 ;
+  int *arg3 = (int *) 0 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(nxos::NxDme **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = *(int **)&_swig_go_2; 
+  
+  result = (arg1)->getEventPropertyValue((std::string const &)*arg2,arg3);
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+nxos::NxDmeMgrHandler *_wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxDmeMgrHandler *result = 0 ;
   nxos::NxDmeMgrHandler *_swig_go_result;
@@ -5319,7 +6454,7 @@ nxos::NxDmeMgrHandler *_wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_
 }
 
 
-void _wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgrHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgrHandler *_swig_go_0) {
   nxos::NxDmeMgrHandler *arg1 = (nxos::NxDmeMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxDmeMgrHandler **)&_swig_go_0; 
@@ -5337,7 +6472,7 @@ void _wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeM
 }
 
 
-void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxDmeMgrHandler *_swig_go_0, nxos::NxDme *_swig_go_1) {
+void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxDmeMgrHandler *_swig_go_0, nxos::NxDme *_swig_go_1) {
   SwigDirector_NxDmeMgrHandler *arg1 = (SwigDirector_NxDmeMgrHandler *) 0 ;
   nxos::NxDme *arg2 = (nxos::NxDme *) 0 ;
   
@@ -5357,7 +6492,7 @@ void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_92557
 }
 
 
-void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxDmeMgrHandler *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxDmeMgrHandler *_swig_go_0, _gostring_ _swig_go_1) {
   SwigDirector_NxDmeMgrHandler *arg1 = (SwigDirector_NxDmeMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   
@@ -5380,7 +6515,7 @@ void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_
 }
 
 
-void _wrap_delete_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgrHandler *_swig_go_0) {
+void _wrap_delete_NxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgrHandler *_swig_go_0) {
   nxos::NxDmeMgrHandler *arg1 = (nxos::NxDmeMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxDmeMgrHandler **)&_swig_go_0; 
@@ -5390,7 +6525,7 @@ void _wrap_delete_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgrHandl
 }
 
 
-void _wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgrHandler *_swig_go_0, nxos::NxDme *_swig_go_1) {
+void _wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgrHandler *_swig_go_0, nxos::NxDme *_swig_go_1) {
   nxos::NxDmeMgrHandler *arg1 = (nxos::NxDmeMgrHandler *) 0 ;
   nxos::NxDme *arg2 = (nxos::NxDme *) 0 ;
   
@@ -5402,7 +6537,7 @@ void _wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(nxos::NxD
 }
 
 
-void _wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgrHandler *_swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgrHandler *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgrHandler *arg1 = (nxos::NxDmeMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   
@@ -5417,7 +6552,7 @@ void _wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796f
 }
 
 
-nxos::NxDmeMgrHandler *_wrap_new_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff() {
+nxos::NxDmeMgrHandler *_wrap_new_NxDmeMgrHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxDmeMgrHandler *result = 0 ;
   nxos::NxDmeMgrHandler *_swig_go_result;
   
@@ -5436,7 +6571,7 @@ nxos::NxDmeMgrHandler *_wrap_new_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxDmeMgr_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0) {
+void _wrap_delete_NxDmeMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   
   arg1 = *(nxos::NxDmeMgr **)&_swig_go_0; 
@@ -5446,7 +6581,27 @@ void _wrap_delete_NxDmeMgr_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0
 }
 
 
-nxos::NxDme *_wrap_NxDmeMgr_getDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
+nxos::NxDme *_wrap_NxDmeMgr_getDmeObj__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, bool _swig_go_2) {
+  nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
+  std::string *arg2 = 0 ;
+  bool arg3 ;
+  nxos::NxDme *result = 0 ;
+  nxos::NxDme *_swig_go_result;
+  
+  arg1 = *(nxos::NxDmeMgr **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  arg3 = (bool)_swig_go_2; 
+  
+  result = (nxos::NxDme *)(arg1)->getDmeObj((std::string const &)*arg2,arg3);
+  *(nxos::NxDme **)&_swig_go_result = (nxos::NxDme *)result; 
+  return _swig_go_result;
+}
+
+
+nxos::NxDme *_wrap_NxDmeMgr_getDmeObj__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::NxDme *result = 0 ;
@@ -5464,7 +6619,7 @@ nxos::NxDme *_wrap_NxDmeMgr_getDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr 
 }
 
 
-nxos::NxDme *_wrap_NxDmeMgr_addDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
+nxos::NxDme *_wrap_NxDmeMgr_addDmeObj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   int *arg3 = (int *) 0 ;
@@ -5484,7 +6639,7 @@ nxos::NxDme *_wrap_NxDmeMgr_addDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr 
 }
 
 
-intgo _wrap_NxDmeMgr_delDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
+intgo _wrap_NxDmeMgr_delDmeObj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   int result;
@@ -5502,7 +6657,7 @@ intgo _wrap_NxDmeMgr_delDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_
 }
 
 
-_gostring_ _wrap_NxDmeMgr_getMoJson_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
+_gostring_ _wrap_NxDmeMgr_getMoJson_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   int *arg3 = (int *) 0 ;
@@ -5522,7 +6677,7 @@ _gostring_ _wrap_NxDmeMgr_getMoJson_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_
 }
 
 
-_gostring_ _wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
+_gostring_ _wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, intgo *_swig_go_2) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   int *arg3 = (int *) 0 ;
@@ -5542,7 +6697,7 @@ _gostring_ _wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_92557035fa796fff(nxos::NxD
 }
 
 
-bool _wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -5560,7 +6715,7 @@ bool _wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swi
 }
 
 
-bool _wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
+bool _wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5585,7 +6740,7 @@ bool _wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_sw
 }
 
 
-bool _wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5608,7 +6763,7 @@ bool _wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_sw
 }
 
 
-bool _wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -5626,7 +6781,7 @@ bool _wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_sw
 }
 
 
-bool _wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5649,7 +6804,7 @@ bool _wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_
 }
 
 
-bool _wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -5667,7 +6822,7 @@ bool _wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_
 }
 
 
-bool _wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0, nxos::NxDmeMgrHandler *_swig_go_1) {
+bool _wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0, nxos::NxDmeMgrHandler *_swig_go_1) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   nxos::NxDmeMgrHandler *arg2 = (nxos::NxDmeMgrHandler *) 0 ;
   bool result;
@@ -5682,7 +6837,7 @@ bool _wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_sw
 }
 
 
-nxos::NxDmeMgrHandler *_wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_92557035fa796fff(nxos::NxDmeMgr *_swig_go_0) {
+nxos::NxDmeMgrHandler *_wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxDmeMgr *_swig_go_0) {
   nxos::NxDmeMgr *arg1 = (nxos::NxDmeMgr *) 0 ;
   nxos::NxDmeMgrHandler *result = 0 ;
   nxos::NxDmeMgrHandler *_swig_go_result;
@@ -5695,7 +6850,7 @@ nxos::NxDmeMgrHandler *_wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_92557035fa796fff(n
 }
 
 
-void _wrap_delete_NxAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+void _wrap_delete_NxAdj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   
   arg1 = *(nxos::NxAdj **)&_swig_go_0; 
@@ -5705,7 +6860,7 @@ void _wrap_delete_NxAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxAdj_getIpAddr_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getIpAddr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5718,7 +6873,7 @@ _gostring_ _wrap_NxAdj_getIpAddr_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_g
 }
 
 
-_gostring_ _wrap_NxAdj_getMacAddr_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getMacAddr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5731,7 +6886,7 @@ _gostring_ _wrap_NxAdj_getMacAddr_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_
 }
 
 
-_gostring_ _wrap_NxAdj_getVrf_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getVrf_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5744,7 +6899,7 @@ _gostring_ _wrap_NxAdj_getVrf_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0
 }
 
 
-_gostring_ _wrap_NxAdj_getIntfName_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getIntfName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5757,7 +6912,7 @@ _gostring_ _wrap_NxAdj_getIntfName_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig
 }
 
 
-_gostring_ _wrap_NxAdj_getPhyIntfName_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getPhyIntfName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5770,7 +6925,7 @@ _gostring_ _wrap_NxAdj_getPhyIntfName_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_s
 }
 
 
-intgo _wrap_NxAdj_getPreference_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+intgo _wrap_NxAdj_getPreference_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -5783,7 +6938,7 @@ intgo _wrap_NxAdj_getPreference_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go
 }
 
 
-_gostring_ _wrap_NxAdj_getSource_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+_gostring_ _wrap_NxAdj_getSource_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -5796,7 +6951,7 @@ _gostring_ _wrap_NxAdj_getSource_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_g
 }
 
 
-intgo _wrap_NxAdj_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+intgo _wrap_NxAdj_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -5809,7 +6964,7 @@ intgo _wrap_NxAdj_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
 }
 
 
-intgo _wrap_NxAdj_getAF_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
+intgo _wrap_NxAdj_getAF_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   nxos::af_e result;
   intgo _swig_go_result;
@@ -5822,7 +6977,7 @@ intgo _wrap_NxAdj_getAF_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0) {
 }
 
 
-bool _wrap_NxAdj_equal_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0, nxos::NxAdj *_swig_go_1) {
+bool _wrap_NxAdj_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdj *_swig_go_0, nxos::NxAdj *_swig_go_1) {
   nxos::NxAdj *arg1 = (nxos::NxAdj *) 0 ;
   nxos::NxAdj *arg2 = 0 ;
   bool result;
@@ -5837,7 +6992,7 @@ bool _wrap_NxAdj_equal_nx_sdk_go_92557035fa796fff(nxos::NxAdj *_swig_go_0, nxos:
 }
 
 
-nxos::NxAdjMgrHandler *_wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+nxos::NxAdjMgrHandler *_wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxAdjMgrHandler *result = 0 ;
   nxos::NxAdjMgrHandler *_swig_go_result;
@@ -5858,7 +7013,7 @@ nxos::NxAdjMgrHandler *_wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_
 }
 
 
-void _wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgrHandler *_swig_go_0) {
   nxos::NxAdjMgrHandler *arg1 = (nxos::NxAdjMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxAdjMgrHandler **)&_swig_go_0; 
@@ -5876,7 +7031,7 @@ void _wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjM
 }
 
 
-void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxAdjMgrHandler *_swig_go_0, nxos::NxAdj *_swig_go_1) {
+void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxAdjMgrHandler *_swig_go_0, nxos::NxAdj *_swig_go_1) {
   SwigDirector_NxAdjMgrHandler *arg1 = (SwigDirector_NxAdjMgrHandler *) 0 ;
   nxos::NxAdj *arg2 = (nxos::NxAdj *) 0 ;
   
@@ -5896,7 +7051,7 @@ void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_92557035fa79
 }
 
 
-void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(SwigDirector_NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_NxAdjMgrHandler *arg1 = (SwigDirector_NxAdjMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5924,7 +7079,7 @@ void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_g
 }
 
 
-void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(SwigDirector_NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_NxAdjMgrHandler *arg1 = (SwigDirector_NxAdjMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5952,7 +7107,7 @@ void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_g
 }
 
 
-void _wrap_delete_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandler *_swig_go_0) {
+void _wrap_delete_NxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgrHandler *_swig_go_0) {
   nxos::NxAdjMgrHandler *arg1 = (nxos::NxAdjMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxAdjMgrHandler **)&_swig_go_0; 
@@ -5962,7 +7117,7 @@ void _wrap_delete_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandl
 }
 
 
-void _wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandler *_swig_go_0, nxos::NxAdj *_swig_go_1) {
+void _wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgrHandler *_swig_go_0, nxos::NxAdj *_swig_go_1) {
   nxos::NxAdjMgrHandler *arg1 = (nxos::NxAdjMgrHandler *) 0 ;
   nxos::NxAdj *arg2 = (nxos::NxAdj *) 0 ;
   
@@ -5974,7 +7129,7 @@ void _wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHa
 }
 
 
-void _wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxAdjMgrHandler *arg1 = (nxos::NxAdjMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -5994,7 +7149,7 @@ void _wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-void _wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgrHandler *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxAdjMgrHandler *arg1 = (nxos::NxAdjMgrHandler *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -6014,7 +7169,7 @@ void _wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(nx
 }
 
 
-nxos::NxAdjMgrHandler *_wrap_new_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff() {
+nxos::NxAdjMgrHandler *_wrap_new_NxAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxAdjMgrHandler *result = 0 ;
   nxos::NxAdjMgrHandler *_swig_go_result;
   
@@ -6033,7 +7188,7 @@ nxos::NxAdjMgrHandler *_wrap_new_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxAdjMgr_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0) {
+void _wrap_delete_NxAdjMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   
   arg1 = *(nxos::NxAdjMgr **)&_swig_go_0; 
@@ -6043,7 +7198,7 @@ void _wrap_delete_NxAdjMgr_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0
 }
 
 
-nxos::NxAdj *_wrap_NxAdjMgr_getAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+nxos::NxAdj *_wrap_NxAdjMgr_getAdj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -6066,7 +7221,7 @@ nxos::NxAdj *_wrap_NxAdjMgr_getAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_s
 }
 
 
-bool _wrap_NxAdjMgr_discoverAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxAdjMgr_discoverAdj_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -6089,7 +7244,7 @@ bool _wrap_NxAdjMgr_discoverAdj_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig
 }
 
 
-void _wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1, bool _swig_go_2) {
+void _wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1, bool _swig_go_2) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   nxos::af_e arg2 ;
   bool arg3 ;
@@ -6103,7 +7258,7 @@ void _wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjM
 }
 
 
-void _wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1) {
+void _wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   nxos::af_e arg2 ;
   
@@ -6115,7 +7270,7 @@ void _wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjM
 }
 
 
-void _wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0) {
+void _wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   
   arg1 = *(nxos::NxAdjMgr **)&_swig_go_0; 
@@ -6125,7 +7280,7 @@ void _wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjM
 }
 
 
-void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1) {
+void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, intgo _swig_go_1) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   nxos::af_e arg2 ;
   
@@ -6137,7 +7292,7 @@ void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAd
 }
 
 
-void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0) {
+void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   
   arg1 = *(nxos::NxAdjMgr **)&_swig_go_0; 
@@ -6147,7 +7302,7 @@ void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAd
 }
 
 
-bool _wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3, _gostring_ _swig_go_4) {
+bool _wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3, _gostring_ _swig_go_4) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -6174,7 +7329,7 @@ bool _wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *
 }
 
 
-bool _wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
+bool _wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -6196,7 +7351,7 @@ bool _wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *
 }
 
 
-bool _wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+bool _wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -6216,7 +7371,7 @@ bool _wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *
 }
 
 
-bool _wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -6234,7 +7389,7 @@ bool _wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *
 }
 
 
-bool _wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, _gostring_ _swig_go_3) {
+bool _wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -6259,7 +7414,7 @@ bool _wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr
 }
 
 
-bool _wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+bool _wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   nxos::af_e arg3 ;
@@ -6279,7 +7434,7 @@ bool _wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr
 }
 
 
-bool _wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1) {
+bool _wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, _gostring_ _swig_go_1) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -6297,7 +7452,7 @@ bool _wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr
 }
 
 
-void _wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0, nxos::NxAdjMgrHandler *_swig_go_1) {
+void _wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0, nxos::NxAdjMgrHandler *_swig_go_1) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   nxos::NxAdjMgrHandler *arg2 = (nxos::NxAdjMgrHandler *) 0 ;
   
@@ -6309,7 +7464,7 @@ void _wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *
 }
 
 
-void _wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0) {
+void _wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   
   arg1 = *(nxos::NxAdjMgr **)&_swig_go_0; 
@@ -6319,7 +7474,7 @@ void _wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr
 }
 
 
-nxos::NxAdjMgrHandler *_wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxAdjMgr *_swig_go_0) {
+nxos::NxAdjMgrHandler *_wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxAdjMgr *_swig_go_0) {
   nxos::NxAdjMgr *arg1 = (nxos::NxAdjMgr *) 0 ;
   nxos::NxAdjMgrHandler *result = 0 ;
   nxos::NxAdjMgrHandler *_swig_go_result;
@@ -6332,7 +7487,7 @@ nxos::NxAdjMgrHandler *_wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_92557035fa796ff
 }
 
 
-void _wrap_delete_NxMac_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+void _wrap_delete_NxMac_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   
   arg1 = *(nxos::NxMac **)&_swig_go_0; 
@@ -6342,7 +7497,7 @@ void _wrap_delete_NxMac_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxMac_getMacAddress_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+_gostring_ _wrap_NxMac_getMacAddress_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -6355,7 +7510,7 @@ _gostring_ _wrap_NxMac_getMacAddress_nx_sdk_go_92557035fa796fff(nxos::NxMac *_sw
 }
 
 
-intgo _wrap_NxMac_getType_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+intgo _wrap_NxMac_getType_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   nxos::type_e result;
   intgo _swig_go_result;
@@ -6368,7 +7523,7 @@ intgo _wrap_NxMac_getType_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
 }
 
 
-intgo _wrap_NxMac_getVlan_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+intgo _wrap_NxMac_getVlan_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   unsigned int result;
   intgo _swig_go_result;
@@ -6381,7 +7536,7 @@ intgo _wrap_NxMac_getVlan_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
 }
 
 
-_gostring_ _wrap_NxMac_getIntfName_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+_gostring_ _wrap_NxMac_getIntfName_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   std::string result;
   _gostring_ _swig_go_result;
@@ -6394,7 +7549,7 @@ _gostring_ _wrap_NxMac_getIntfName_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig
 }
 
 
-intgo _wrap_NxMac_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
+intgo _wrap_NxMac_getEvent_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   nxos::event_type_e result;
   intgo _swig_go_result;
@@ -6407,7 +7562,7 @@ intgo _wrap_NxMac_getEvent_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0) {
 }
 
 
-bool _wrap_NxMac_equal_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0, nxos::NxMac *_swig_go_1) {
+bool _wrap_NxMac_equal_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMac *_swig_go_0, nxos::NxMac *_swig_go_1) {
   nxos::NxMac *arg1 = (nxos::NxMac *) 0 ;
   nxos::NxMac *arg2 = 0 ;
   bool result;
@@ -6422,7 +7577,7 @@ bool _wrap_NxMac_equal_nx_sdk_go_92557035fa796fff(nxos::NxMac *_swig_go_0, nxos:
 }
 
 
-nxos::NxMacMgrHandler *_wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_92557035fa796fff(intgo _swig_go_0) {
+nxos::NxMacMgrHandler *_wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(intgo _swig_go_0) {
   int arg1 ;
   nxos::NxMacMgrHandler *result = 0 ;
   nxos::NxMacMgrHandler *_swig_go_result;
@@ -6443,7 +7598,7 @@ nxos::NxMacMgrHandler *_wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_
 }
 
 
-void _wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgrHandler *_swig_go_0) {
+void _wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgrHandler *_swig_go_0) {
   nxos::NxMacMgrHandler *arg1 = (nxos::NxMacMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxMacMgrHandler **)&_swig_go_0; 
@@ -6461,7 +7616,7 @@ void _wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacM
 }
 
 
-bool _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxMacMgrHandler *_swig_go_0, nxos::NxMac *_swig_go_1) {
+bool _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxMacMgrHandler *_swig_go_0, nxos::NxMac *_swig_go_1) {
   SwigDirector_NxMacMgrHandler *arg1 = (SwigDirector_NxMacMgrHandler *) 0 ;
   nxos::NxMac *arg2 = (nxos::NxMac *) 0 ;
   bool result;
@@ -6484,7 +7639,7 @@ bool _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_92557
 }
 
 
-void _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(SwigDirector_NxMacMgrHandler *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_b16b6edb28d0fe19(SwigDirector_NxMacMgrHandler *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_NxMacMgrHandler *arg1 = (SwigDirector_NxMacMgrHandler *) 0 ;
   unsigned int arg2 ;
   std::string *arg3 = 0 ;
@@ -6509,7 +7664,7 @@ void _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_
 }
 
 
-void _wrap_delete_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgrHandler *_swig_go_0) {
+void _wrap_delete_NxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgrHandler *_swig_go_0) {
   nxos::NxMacMgrHandler *arg1 = (nxos::NxMacMgrHandler *) 0 ;
   
   arg1 = *(nxos::NxMacMgrHandler **)&_swig_go_0; 
@@ -6519,7 +7674,7 @@ void _wrap_delete_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgrHandl
 }
 
 
-bool _wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_92557035fa796fff(nxos::NxMacMgrHandler *_swig_go_0, nxos::NxMac *_swig_go_1) {
+bool _wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgrHandler *_swig_go_0, nxos::NxMac *_swig_go_1) {
   nxos::NxMacMgrHandler *arg1 = (nxos::NxMacMgrHandler *) 0 ;
   nxos::NxMac *arg2 = (nxos::NxMac *) 0 ;
   bool result;
@@ -6534,7 +7689,7 @@ bool _wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_92557035fa796fff(nxos::NxM
 }
 
 
-void _wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(nxos::NxMacMgrHandler *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgrHandler *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxMacMgrHandler *arg1 = (nxos::NxMacMgrHandler *) 0 ;
   unsigned int arg2 ;
   std::string *arg3 = 0 ;
@@ -6551,7 +7706,7 @@ void _wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(n
 }
 
 
-nxos::NxMacMgrHandler *_wrap_new_NxMacMgrHandler_nx_sdk_go_92557035fa796fff() {
+nxos::NxMacMgrHandler *_wrap_new_NxMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19() {
   nxos::NxMacMgrHandler *result = 0 ;
   nxos::NxMacMgrHandler *_swig_go_result;
   
@@ -6570,7 +7725,7 @@ nxos::NxMacMgrHandler *_wrap_new_NxMacMgrHandler_nx_sdk_go_92557035fa796fff() {
 }
 
 
-void _wrap_delete_NxMacMgr_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0) {
+void _wrap_delete_NxMacMgr_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   
   arg1 = *(nxos::NxMacMgr **)&_swig_go_0; 
@@ -6580,7 +7735,7 @@ void _wrap_delete_NxMacMgr_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0
 }
 
 
-bool _wrap_NxMacMgr_addStaticMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, _gostring_ _swig_go_3) {
+bool _wrap_NxMacMgr_addStaticMac_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, _gostring_ _swig_go_3) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   std::string *arg2 = 0 ;
   unsigned int arg3 ;
@@ -6605,7 +7760,7 @@ bool _wrap_NxMacMgr_addStaticMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swi
 }
 
 
-bool _wrap_NxMacMgr_delStaticMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+bool _wrap_NxMacMgr_delStaticMac_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   std::string *arg2 = 0 ;
   unsigned int arg3 ;
@@ -6625,7 +7780,7 @@ bool _wrap_NxMacMgr_delStaticMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swi
 }
 
 
-nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
+nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2, bool _swig_go_3) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   std::string *arg2 = 0 ;
   unsigned int arg3 ;
@@ -6647,7 +7802,7 @@ nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMa
 }
 
 
-nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   std::string *arg2 = 0 ;
   unsigned int arg3 ;
@@ -6667,7 +7822,7 @@ nxos::NxMac *_wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMa
 }
 
 
-bool _wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, bool _swig_go_1) {
+bool _wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, bool _swig_go_1) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   bool arg2 ;
   bool result;
@@ -6682,7 +7837,7 @@ bool _wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMg
 }
 
 
-bool _wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0) {
+bool _wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -6695,7 +7850,7 @@ bool _wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMg
 }
 
 
-bool _wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0) {
+bool _wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -6708,7 +7863,7 @@ bool _wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_sw
 }
 
 
-bool _wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
+bool _wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, bool _swig_go_3) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   unsigned int arg2 ;
   std::string *arg3 = 0 ;
@@ -6730,7 +7885,7 @@ bool _wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *
 }
 
 
-bool _wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   unsigned int arg2 ;
   std::string *arg3 = 0 ;
@@ -6750,7 +7905,7 @@ bool _wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *
 }
 
 
-bool _wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -6765,7 +7920,7 @@ bool _wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *
 }
 
 
-bool _wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   unsigned int arg2 ;
   std::string *arg3 = 0 ;
@@ -6785,7 +7940,7 @@ bool _wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr
 }
 
 
-bool _wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1) {
+bool _wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, intgo _swig_go_1) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -6800,7 +7955,7 @@ bool _wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr
 }
 
 
-void _wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0, nxos::NxMacMgrHandler *_swig_go_1) {
+void _wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0, nxos::NxMacMgrHandler *_swig_go_1) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   nxos::NxMacMgrHandler *arg2 = (nxos::NxMacMgrHandler *) 0 ;
   
@@ -6812,7 +7967,7 @@ void _wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *
 }
 
 
-nxos::NxMacMgrHandler *_wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_92557035fa796fff(nxos::NxMacMgr *_swig_go_0) {
+nxos::NxMacMgrHandler *_wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_b16b6edb28d0fe19(nxos::NxMacMgr *_swig_go_0) {
   nxos::NxMacMgr *arg1 = (nxos::NxMacMgr *) 0 ;
   nxos::NxMacMgrHandler *result = 0 ;
   nxos::NxMacMgrHandler *_swig_go_result;

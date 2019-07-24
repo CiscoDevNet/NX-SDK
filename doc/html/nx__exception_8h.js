@@ -15,6 +15,8 @@ var nx__exception_8h =
       [ "ERR_SIGINT", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1af963a50ead559307664acb2dbec90074", null ],
       [ "ERR_ENOMEM", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1ac1f0542c2643446880b97f3d7f74c2d9", null ],
       [ "ERR_BADFD", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1a1543b412e48aaff0040df78f97b4fa21", null ],
-      [ "ERR_UNKNOWN", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1a9cf23b6a138939ee61910a071d45534b", null ]
+      [ "ERR_UNKNOWN", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1a9cf23b6a138939ee61910a071d45534b", null ],
+      [ "ERR_REMOTE_DOWN", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1a8c81f3eea05c485a34846d2660e69cc3", null ],
+      [ "ERR_REMOTE_SDK_OBJS_OBSOLETE", "nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1a6711c33a6cdacde8d9ba3c87e2d62eec", null ]
     ] ]
 ];

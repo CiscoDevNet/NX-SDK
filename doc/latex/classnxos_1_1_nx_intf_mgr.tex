@@ -12,8 +12,6 @@ Public interface to N\+X-\/\+S\+DK interface manager.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}{$\sim$\+Nx\+Intf\+Mgr}} ()
-\item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_acbe3d94cba5b7982d80cc498d7fcbdf7}{iterate\+Intf}} (bool from\+First=false)=0
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_a1271144b1921be0dcb27a6aa7310bbc5}{get\+Intf}} (std\+::string name)=0
@@ -39,15 +37,6 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handl
 \subsection{Detailed Description}
 Public interface to N\+X-\/\+S\+DK interface manager. 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}\label{classnxos_1_1_nx_intf_mgr_a15014eefb460c6f52cb0244de4b03355}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!````~Nx\+Intf\+Mgr@{$\sim$\+Nx\+Intf\+Mgr}}
-\index{````~Nx\+Intf\+Mgr@{$\sim$\+Nx\+Intf\+Mgr}!nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Intf\+Mgr()}{~NxIntfMgr()}}
-{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Intf\+Mgr\+::$\sim$\+Nx\+Intf\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_a818e4d019413e8111cbb9610e465f714}\label{classnxos_1_1_nx_intf_mgr_a818e4d019413e8111cbb9610e465f714}} 
 \index{nxos\+::\+Nx\+Intf\+Mgr@{nxos\+::\+Nx\+Intf\+Mgr}!add\+Intf@{add\+Intf}}
@@ -63,6 +52,12 @@ Create a system interface based on name. The interface name is of the form in \c
 \begin{DoxyReturn}{Returns}
 interface object (Nx\+Intf$\ast$) or N\+U\+LL
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -144,7 +139,7 @@ Python:
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- \textquotesingle{}create\textquotesingle{} not implemented E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID -- interface type unknown E\+R\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND -- interface not found \\
+{\em $<$br$>$} & E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE -- \textquotesingle{}create\textquotesingle{} not implemented E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+ID -- interface type unknown \\
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_af70ee700e633a9f5ae35608d7637ee04}\label{classnxos_1_1_nx_intf_mgr_af70ee700e633a9f5ae35608d7637ee04}} 
@@ -264,6 +259,12 @@ Remove a system interface based on name. The interface name is of the form in \c
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -388,4 +389,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

@@ -63,9 +63,15 @@ To add static mac
 \hline
 \mbox{\tt in}  & {\em vlan} & \+: vlan value \\
 \hline
-\mbox{\tt in}  & {\em intf\+\_\+name} & Interface name that connects to this mac. \\
+\mbox{\tt in}  & {\em intf\+\_\+name} & Interface name that connects to this mac.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 \begin{DoxyReturn}{Returns}
 True -\/ if successful. False -\/ if it not successful. 
 \begin{DoxyCode}
@@ -461,4 +467,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

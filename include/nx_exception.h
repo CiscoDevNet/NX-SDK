@@ -123,19 +123,27 @@ typedef enum {
    /// Failure case
    ERR_FAILURE,
    
-   // No error, but requires further processing
+   /// No error, but requires further processing
    ERR_ESUCCESS_MORE,
    
-   // Signal interrupt received
+   /// Signal interrupt received
    ERR_SIGINT,
    
-   // Not enough memory to complete
+   /// Not enough memory to complete
    ERR_ENOMEM,
    
-   // Bad fd found
+   /// Bad fd found
    ERR_BADFD, 
-   
-   ERR_UNKNOWN
+ 
+   /// Unknown Error  
+   ERR_UNKNOWN,
+
+   /// Remote operations performed when the session is Down
+   ERR_REMOTE_DOWN,
+
+   /// Using old SDK objects prior to remote session down
+   ERR_REMOTE_SDK_OBJS_OBSOLETE
+
 } err_type_e;
  
 }

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxIntfMgr Class Reference</title>
+<title>NXSDK API: nxos::NxIntfMgr Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -100,8 +100,6 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_intf_mgr.html','');})
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15014eefb460c6f52cb0244de4b03355"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_intf_mgr.html#a15014eefb460c6f52cb0244de4b03355">~NxIntfMgr</a> ()</td></tr>
-<tr class="separator:a15014eefb460c6f52cb0244de4b03355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbe3d94cba5b7982d80cc498d7fcbdf7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_intf.html">NxIntf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_intf_mgr.html#acbe3d94cba5b7982d80cc498d7fcbdf7">iterateIntf</a> (bool fromFirst=false)=0</td></tr>
 <tr class="separator:acbe3d94cba5b7982d80cc498d7fcbdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1271144b1921be0dcb27a6aa7310bbc5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_intf.html">NxIntf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_intf_mgr.html#a1271144b1921be0dcb27a6aa7310bbc5">getIntf</a> (std::string name)=0</td></tr>
@@ -125,33 +123,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Public interface to NX-SDK interface manager. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a15014eefb460c6f52cb0244de4b03355"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15014eefb460c6f52cb0244de4b03355">&#9670;&nbsp;</a></span>~NxIntfMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual nxos::NxIntfMgr::~NxIntfMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a818e4d019413e8111cbb9610e465f714"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a818e4d019413e8111cbb9610e465f714">&#9670;&nbsp;</a></span>addIntf()</h2>
 
@@ -182,7 +154,10 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interface object (NxIntf*) or NULL</dd></dl>
-<div class="fragment"><div class="line">C++:</div><div class="line">   intfMgr = sdk-&gt;getIntfMgr();</div><div class="line">   objp = intfMgr-&gt;addIntf(<span class="stringliteral">&quot;lo9&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">   intfMgr = sdk.getIntfMgr()</div><div class="line">   objp = intfMgr.addIntf(<span class="stringliteral">&quot;lo9&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">   intfMgr = sdk-&gt;getIntfMgr();</div><div class="line">   objp = intfMgr-&gt;addIntf(<span class="stringliteral">&quot;lo9&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">   intfMgr = sdk.getIntfMgr()</div><div class="line">   objp = intfMgr.addIntf(<span class="stringliteral">&quot;lo9&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">&lt;br&gt;</td><td>ERR_INVALID_USAGE &ndash; invalid interface specified ERR_INVALID &ndash; interface type unknown ERR_FAILURE &ndash; internal failure occurred. </td></tr>
   </table>
@@ -256,7 +231,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>interface object (NxIntf*) or NULL <div class="fragment"><div class="line">C++:</div><div class="line">   intfMgr = sdk-&gt;getIntfMgr();</div><div class="line">   objp = intfMgr-&gt;getIntf(<span class="stringliteral">&quot;eth1/1&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">   intfMgr = sdk.getIntfMgr()</div><div class="line">   objp = intfMgr.getIntf(<span class="stringliteral">&quot;eth1/1&quot;</span>)</div></div><!-- fragment --></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">&lt;br&gt;</td><td>ERR_INVALID_USAGE &ndash; 'create' not implemented ERR_INVALID &ndash; interface type unknown ERR_NOT_FOUND &ndash; interface not found </td></tr>
+    <tr><td class="paramname">&lt;br&gt;</td><td>ERR_INVALID_USAGE &ndash; 'create' not implemented ERR_INVALID &ndash; interface type unknown </td></tr>
   </table>
   </dd>
 </dl>
@@ -411,7 +386,10 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if successful</dd></dl>
-<div class="fragment"><div class="line">C++:</div><div class="line">   intfMgr = sdk-&gt;getIntfMgr();</div><div class="line">   intfMgr-&gt;removeIntf(<span class="stringliteral">&quot;lo9&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">   intfMgr = sdk.getIntfMgr()</div><div class="line">   objp = intfMgr.removeIntf(<span class="stringliteral">&quot;lo9&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">   intfMgr = sdk-&gt;getIntfMgr();</div><div class="line">   intfMgr-&gt;removeIntf(<span class="stringliteral">&quot;lo9&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">   intfMgr = sdk.getIntfMgr()</div><div class="line">   objp = intfMgr.removeIntf(<span class="stringliteral">&quot;lo9&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">&lt;br&gt;</td><td>ERR_INVALID_USAGE ERR_FAILURE </td></tr>
   </table>
@@ -540,14 +518,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__intf__mgr_8h_source.html">nx_intf_mgr.h</a></li>
+<li><a class="el" href="nx__intf__mgr_8h_source.html">nx_intf_mgr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_intf_mgr.html">NxIntfMgr</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_intf_mgr.html">NxIntfMgr</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

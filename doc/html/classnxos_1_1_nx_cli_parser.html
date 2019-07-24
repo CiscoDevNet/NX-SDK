@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxCliParser Class Reference</title>
+<title>NXSDK API: nxos::NxCliParser Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -115,15 +115,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a711e36619a40625ebf62b59693529d88"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a711e36619a40625ebf62b59693529d88">setCmdHandler</a> (<a class="el" href="classnxos_1_1_nx_cmd_handler.html">NxCmdHandler</a> *handler)=0</td></tr>
 <tr class="separator:a711e36619a40625ebf62b59693529d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a6839c678451ecbb78449df6960cf8c"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a5a6839c678451ecbb78449df6960cf8c">getParserStatus</a> ()=0</td></tr>
-<tr class="memdesc:a5a6839c678451ecbb78449df6960cf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Parser Status/Errors.  <a href="#a5a6839c678451ecbb78449df6960cf8c">More...</a><br /></td></tr>
 <tr class="separator:a5a6839c678451ecbb78449df6960cf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af058955d7c6dae444a5dab084342d03c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_cmd_handler.html">NxCmdHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#af058955d7c6dae444a5dab084342d03c">getCmdHandler</a> ()=0</td></tr>
-<tr class="memdesc:af058955d7c6dae444a5dab084342d03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Cli callback handler object.  <a href="#af058955d7c6dae444a5dab084342d03c">More...</a><br /></td></tr>
 <tr class="separator:af058955d7c6dae444a5dab084342d03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b08502fa02c0f83b9dc26ef02e2be8"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a44b08502fa02c0f83b9dc26ef02e2be8">execShowCmd</a> (std::string show_syntax, <a class="el" href="namespacenxos.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a> type=<a class="el" href="namespacenxos.html#a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e">nxos::R_TEXT</a>, bool *oper_result=NULL)=0</td></tr>
+<tr class="memitem:a44b08502fa02c0f83b9dc26ef02e2be8"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a44b08502fa02c0f83b9dc26ef02e2be8">execShowCmd</a> (std::string show_syntax, <a class="el" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a> type=nxos::R_TEXT, bool *oper_result=NULL)=0</td></tr>
 <tr class="separator:a44b08502fa02c0f83b9dc26ef02e2be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa22ee0395ceadc46a3e28b93c5a5b75e"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#aa22ee0395ceadc46a3e28b93c5a5b75e">execConfigCmd</a> (const char *filename)=0</td></tr>
 <tr class="separator:aa22ee0395ceadc46a3e28b93c5a5b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82767646d23e67dd7e62740587a368ea"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a82767646d23e67dd7e62740587a368ea">execConfigCmd</a> (const char *filename_cmd, bool isfilename)=0</td></tr>
+<tr class="separator:a82767646d23e67dd7e62740587a368ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f0361d21af2b7b45a72a9144394968"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1">nxos::err_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_parser.html#a80f0361d21af2b7b45a72a9144394968">addTechSupport</a> (string show_cmd_group=&quot;&quot;, bool add_internals=true)=0</td></tr>
+<tr class="separator:a80f0361d21af2b7b45a72a9144394968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract Interface to access Nexus CLI Parser tools. </p>
@@ -156,6 +158,59 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a80f0361d21af2b7b45a72a9144394968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f0361d21af2b7b45a72a9144394968">&#9670;&nbsp;</a></span>addTechSupport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="nx__exception_8h.html#ab37a154d6e66b6fabe61025ba9f523e1">nxos::err_type_e</a> nxos::NxCliParser::addTechSupport </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>show_cmd_group</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>add_internals</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To Create show tech-support for your application. For ex) For NX-SDK app: healthMonitor, it creates "show tech-support healthMonitor" command.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">show_cmd_group</td><td>Optional. List of show commands separated by ; whose output to be collected on executing show tech-support for your app. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">add_internals</td><td>Optional. To add all the output of auto-generated commands created by NX-SDK to the show tech-support of your app. For ex) It auto-adds commands like show version show running-config &lt;app-name&gt; show startup-config &lt;app-name&gt; And also Auto-generated commands like show &lt;app-name&gt; nxsdk state show &lt;app-name&gt; nxsdk mem-stats etc </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err_type_e</td><td>SUCCESS if used correctly.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>V2.0</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Internal Use Only. To be used only by internal apps. For any other apps it returns ERR_INVALID_USAGE</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     cliP-&gt;addTechSupport(<span class="stringliteral">&quot;show healthMonitor report ; show healthMonitor report alerts&quot;</span>);</div><div class="line">     cliP-&gt;addToParseTree();</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cliP.addTechSupport(<span class="stringliteral">&quot;show healthMonitor report ; \</span></div><div class="line"><span class="stringliteral">                          show healthMonitor report alerts&quot;</span>)</div><div class="line">     cliP.addToParseTree()</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Cannot</td><td>use this API post addToParseTree i.e after the commands have been added to NX Parser. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3c5295a4b2de3068d1653a6c303a22ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c5295a4b2de3068d1653a6c303a22ee">&#9670;&nbsp;</a></span>addToParseTree()</h2>
 
@@ -178,11 +233,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Register all created custom commands to NX CLI Parser Tree. </p><dl class="section note"><dt>Note</dt><dd>Check "show $appname internal state" if the custom commands are successfully added or not. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<p>Register all created custom commands to NX CLI Parser Tree.</p>
+<dl class="section note"><dt>Note</dt><dd>Check "show $appname internal state" if the custom commands are successfully added or not.</dd></dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">     NxSdk       *sdk  = NULL;</div><div class="line">     NxCliParser *cliP = NULL;</div><div class="line">     NxCliCmd    *cmd  = NULL;</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     cmd = cliP-&gt;newShowCmd(<span class="stringliteral">&quot;show_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                            <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">     cliP-&gt;addToParseTree();                       </div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newShowCmd(<span class="stringliteral">&quot;show_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                           <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">     cliP.addToParseTree()</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">if</td><td>called without creating any custom commands. </td></tr>
     <tr><td class="paramname">if</td><td>NX CLI Parser rejects the custom commands. </td></tr>
+    <tr><td class="paramname">if</td><td>NX CLI Parser is busy and not ready. In that case, the onus is on the applications to do retry. </td></tr>
   </table>
   </dd>
 </dl>
@@ -211,12 +269,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Delete all your custom commands from NX CLI Parser Tree. </p><dl class="section note"><dt>Note</dt><dd>Check "show AppName internal state" if the custom commands are successfully deleted or not. </dd></dl>
-
+<p>Delete all your custom commands from NX CLI Parser Tree.</p>
+<dl class="section note"><dt>Note</dt><dd>Check "show AppName internal state" if the custom commands are successfully deleted or not.</dd></dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)</pre> 
 </div>
 </div>
 <a id="aa22ee0395ceadc46a3e28b93c5a5b75e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa22ee0395ceadc46a3e28b93c5a5b75e">&#9670;&nbsp;</a></span>execConfigCmd()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22ee0395ceadc46a3e28b93c5a5b75e">&#9670;&nbsp;</a></span>execConfigCmd() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,14 +297,62 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Execute other config commands in a file. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Execute other config commands in a file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>File that contains all the config commands to be executed. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">char*</td><td>SUCCESS if config commands were executed successfully if not contains the reason for failure.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>File that contains all the config commands to be executed.</td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <span class="keywordtype">char</span> *result = cliP-&gt;execConfigCmd(filename);</div><div class="line">     <span class="keywordflow">if</span> (strcmp(result, <span class="stringliteral">&quot;SUCCESS&quot;</span>)== 0) {</div><div class="line">         <span class="comment">// Configs applied successfully.</span></div><div class="line">     } <span class="keywordflow">else</span> {</div><div class="line">         <span class="comment">// Configs failed. Check the Error.</span></div><div class="line">     }</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     result = cliP.execConfigCmd(filename)</div><div class="line">     <span class="keywordflow">if</span> <span class="stringliteral">&quot;SUCCESS&quot;</span> in result:</div><div class="line"><span class="preprocessor">         #Configs applied successfully.</span></div><div class="line">     <span class="keywordflow">else</span>:</div><div class="line"><span class="preprocessor">         #Configs failed. Check the Error.</span></div></div><!-- fragment --> 
+<dl class="section return"><dt>Returns</dt><dd>"SUCCESS" if config commands were executed successfully if not contains the reason for failure.</dd></dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <span class="keywordtype">char</span> *result = cliP-&gt;execConfigCmd(filename);</div><div class="line">     <span class="keywordflow">if</span> (strcmp(result, <span class="stringliteral">&quot;SUCCESS&quot;</span>)== 0) {</div><div class="line">         <span class="comment">// Configs applied successfully.</span></div><div class="line">     } <span class="keywordflow">else</span> {</div><div class="line">         <span class="comment">// Configs failed. Check the Error.</span></div><div class="line">     }</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     result = cliP.execConfigCmd(filename)</div><div class="line">     <span class="keywordflow">if</span> <span class="stringliteral">&quot;SUCCESS&quot;</span> in result:</div><div class="line"><span class="preprocessor">         #Configs applied successfully.</span></div><div class="line">     <span class="keywordflow">else</span>:</div><div class="line"><span class="preprocessor">         #Configs failed. Check the Error.</span></div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a82767646d23e67dd7e62740587a368ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82767646d23e67dd7e62740587a368ea">&#9670;&nbsp;</a></span>execConfigCmd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char* nxos::NxCliParser::execConfigCmd </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename_cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isfilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Execute other config commands in a file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename_cmd</td><td>Filename or config command that contains all the config commands to be executed.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isfilename</td><td>'true' if filename_cmd is the name of a file containing commands, or 'false' if filename_cmd is a command string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>"SUCCESS" if config commands were executed successfully, or an error string otherwise.</dd></dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <span class="comment">// To apply config commands from a file</span></div><div class="line">     <span class="keywordtype">char</span> *result = cliP-&gt;execConfigCmd(<span class="stringliteral">&quot;/tmp/config.cfg&quot;</span>);</div><div class="line">     <span class="comment">// To apply config commands directly from a file</span></div><div class="line">     <span class="keywordtype">char</span> *result = clip-&gt;execConfigCmd(<span class="stringliteral">&quot;conf t ; int eth1/1 ; no shut&quot;</span>, <span class="keyword">false</span>);</div><div class="line">     <span class="keywordflow">if</span> (strcmp(result, <span class="stringliteral">&quot;SUCCESS&quot;</span>)== 0) {</div><div class="line">         <span class="comment">// Configs applied successfully.</span></div><div class="line">     } <span class="keywordflow">else</span> {</div><div class="line">         <span class="comment">// Configs failed. Check the Error.</span></div><div class="line">     }</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     <span class="comment">// To apply config commands from a file</span></div><div class="line">     result = cliP.execConfigCmd(<span class="stringliteral">&quot;/tmp/config.cfg&quot;</span>)</div><div class="line">     <span class="comment">// To apply config commands from a file</span></div><div class="line">     result = cliP.execConfigCmd(<span class="stringliteral">&quot;conf t ; int eth1/1 ; no shut&quot;</span>, False) </div><div class="line">     <span class="keywordflow">if</span> <span class="stringliteral">&quot;SUCCESS&quot;</span> in result:</div><div class="line"><span class="preprocessor">         #Configs applied successfully.</span></div><div class="line">     <span class="keywordflow">else</span>:</div><div class="line"><span class="preprocessor">         #Configs failed. Check the Error.</span></div></div><!-- fragment --> 
 </div>
 </div>
 <a id="a44b08502fa02c0f83b9dc26ef02e2be8"></a>
@@ -266,8 +373,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacenxos.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="namespacenxos.html#a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e">nxos::R_TEXT</a></code>, </td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code>nxos::R_TEXT</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -287,16 +394,17 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Execute other show commands. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Execute other show commands.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">show_syntax</td><td>syntax of show command to be executed. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Type(TEXT, XML, JSON) of the record to be returned. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">oper_result</td><td>if show output was successful. Returns true if show was successful (or) false if its a invalid show command. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Char*</td><td>containing show output in the type format specified. It is not thread safe and any subsequent call to execShowCmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Type(TEXT, XML, JSON) of the record to be returned.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">oper_result</td><td>if show output was successful. Returns true if show was successful (or) false if its a invalid show command.</td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Char* containing show output in the type format specified. It is not thread safe and any subsequent call to execShowCmd will overwrite the previous output. Hence make a copy of the output than the pointer if you need to store the output.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <span class="comment">// To execute other show commands</span></div><div class="line">     <span class="keywordtype">char</span> *result = cliP-&gt;execShowCmd(<span class="stringliteral">&quot;show version&quot;</span>, nxos::R_JSON);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     <span class="comment">// To execute other show commands.</span></div><div class="line">     result = cliP.execShowCmd(<span class="stringliteral">&quot;show version&quot;</span>, nx_sdk_py.R_JSON)</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="af058955d7c6dae444a5dab084342d03c"></a>
@@ -321,8 +429,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Get Cli callback handler object. </p>
+<p>Get Cli callback handler object </p>
 
 </div>
 </div>
@@ -348,9 +455,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Get Parser Status/Errors. </p>
-
+<p>Get Parser Status/Errors</p>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)</pre> 
 </div>
 </div>
 <a id="a210cbbb8b312093285741f753c4cdcda"></a>
@@ -400,7 +506,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">Usage:</div><div class="line">     Ex1) For Config: $appName port-bw threshold &lt;threshold&gt;</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#a210cbbb8b312093285741f753c4cdcda">newCliCmd</a>(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142">nxos::NxCliCmd::CONF_CMD</a>, <span class="stringliteral">&quot;vlan_cmd&quot;</span>, <span class="stringliteral">&quot;vlan &lt;vlanid&gt;&quot;</span>);</div><div class="line">           $AppName: (Automatically appended by SDK)</div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;<a class="code" href="classnxos_1_1_nx_sdk.html#a98bcb70d1bf60e38b41eacdf0a72dc89">getCliParser</a>();</div><div class="line">     cmd = cliP-&gt;<a class="code" href="classnxos_1_1_nx_cli_parser.html#a51481c851ccf87288513ba73e0380895">newConfigCmd</a>(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                                  <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                             <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div></div><!-- fragment --><div class="fragment"><div class="line">     Ex2) For Config: show $appName (A | B &lt;id&gt;) [C]</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#a210cbbb8b312093285741f753c4cdcda">newCliCmd</a>(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe">nxos::NxCliCmd::SHOW_CMD</a>, <span class="stringliteral">&quot;complex_cmd&quot;</span>, <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>);</div><div class="line">           App Name: show $appName (Automatically appended by SDK)</div><div class="line">           Syntax  : (A | B &lt;id&gt;) [C]</div><div class="line">               Keyword   : A, B, C</div><div class="line">               Param     : &lt;<span class="keywordtype">id</span>&gt; (Default type: String)</div><div class="line">               Explantion: (| - A or B &lt;id&gt;)</div><div class="line">                           ([] - Optional keyword C)</div><div class="line"></div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_complex_cmd&quot;</span>,</div><div class="line">                              <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_complex_cmd&quot;</span>, <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>)</div></div><!-- fragment --><p>NOTE: </p><dl class="exception"><dt>Exceptions</dt><dd>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">Usage:</div><div class="line">     Ex1) For Config: $appName port-bw threshold &lt;threshold&gt;</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#a210cbbb8b312093285741f753c4cdcda">newCliCmd</a>(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142">nxos::NxCliCmd::CONF_CMD</a>, <span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>, <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">           $AppName: (Automatically appended by SDK)</div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;<a class="code" href="classnxos_1_1_nx_sdk.html#a98bcb70d1bf60e38b41eacdf0a72dc89">getCliParser</a>();</div><div class="line">     cmd = cliP-&gt;<a class="code" href="classnxos_1_1_nx_cli_parser.html#a210cbbb8b312093285741f753c4cdcda">newCliCmd</a>(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142">nxos::NxCliCmd::CONF_CMD</a>, </div><div class="line">                      <span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                           <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newCliCmd(nx_sdk_py.NxCliCmd.CONF_CMD,</div><div class="line">                          <span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                          <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div></div><!-- fragment --><div class="fragment"><div class="line">     Ex2) For Config: show $appName (A | B &lt;id&gt;) [C]</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#a210cbbb8b312093285741f753c4cdcda">newCliCmd</a>(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe">nxos::NxCliCmd::SHOW_CMD</a>, <span class="stringliteral">&quot;complex_cmd&quot;</span>, <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>);</div><div class="line">           App Name: show $appName (Automatically appended by SDK)</div><div class="line">           Syntax  : (A | B &lt;id&gt;) [C]</div><div class="line">               Keyword   : A, B, C</div><div class="line">               Param     : &lt;<span class="keywordtype">id</span>&gt; (Default type: String)</div><div class="line">               Explantion: (| - A or B &lt;id&gt;)</div><div class="line">                           ([] - Optional keyword C)</div><div class="line"></div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     cmd = cliP-&gt;newCliCmd(<a class="code" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe">nxos::NxCliCmd::SHOW_CMD</a>, <span class="stringliteral">&quot;complex_cmd&quot;</span>,</div><div class="line">                              <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newCliCmd(nx_sdk_py.NxCliCmd.SHOW_CMD, <span class="stringliteral">&quot;complex_cmd&quot;</span>, <span class="stringliteral">&quot;(A | B &lt;id&gt;) [C]&quot;</span>)</div></div><!-- fragment --><p>NOTE: </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ctype</td><td>is a invalid command type </td></tr>
     <tr><td class="paramname">cmd_name</td><td>and syntax cannot be empty or NULL. </td></tr>
@@ -450,7 +557,29 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create a new custom Show CLI command object. Calls newCliCmd(nxos::NxCliCmd::CONF_CMD, cmd_name, syntax) </p>
+<p>Create a new custom Show CLI command object. Calls newCliCmd(nxos::NxCliCmd::CONF_CMD, cmd_name, syntax)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd_name</td><td>Cmd Name (NOTE: SDK appends App Name to the passed Cmd Name (AppName_CmdName)) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">syntax</td><td>Custom Cmd syntax. Syntax comprises of Keywords and input parameters. Input parameters are identified by enclosing in &lt;&gt; and by default they are of the type "string". Refer to updateKeyword &amp; updateParam usage. NOTE: All CONF commands are prefixed with AppName. For SHOW commands, SDK appends AppName after the show keyword. So that the custom configs dont overwrite the existing Nexus Configs.</td></tr>
+  </table>
+  </dd>
+</dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">Usage:</div><div class="line">     Ex1) To create a custom config command: $appName port-bw threshold &lt;threshold&gt;</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#a51481c851ccf87288513ba73e0380895">newConfigCmd</a>(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>, <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">           $AppName: (Automatically appended by SDK)</div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;<a class="code" href="classnxos_1_1_nx_sdk.html#a98bcb70d1bf60e38b41eacdf0a72dc89">getCliParser</a>();</div><div class="line">     cmd = cliP-&gt;<a class="code" href="classnxos_1_1_nx_cli_parser.html#a51481c851ccf87288513ba73e0380895">newConfigCmd</a>(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                              <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                             <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div></div><!-- fragment --><p>NOTE: </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ctype</td><td>is a invalid command type </td></tr>
+    <tr><td class="paramname">cmd_name</td><td>and syntax cannot be empty or NULL. </td></tr>
+    <tr><td class="paramname">syntax</td><td>is not balanced. </td></tr>
+    <tr><td class="paramname">Cannot</td><td>edit the syntax if the cmd is already added to NX Parser. Can add new custom cmd to Nx Parser but not edit existing cmd already added to the parser. </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains anything other than the regex "A-Za-z0-9[]{}()&lt;&gt;|_- " </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains free standing _ or - or |. </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains empty open close paranthesis without a word. </td></tr>
+    <tr><td class="paramname">syntax</td><td>dose not contain only one word and doesnt match regex A-Za-z0-9_- </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains predefined keywords (no, show) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -487,7 +616,29 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create a new custom Show CLI command object. Calls newCliCmd(nxos::NxCliCmd::SHOW_CMD, cmd_name, syntax) </p>
+<p>Create a new custom Show CLI command object. Calls newCliCmd(nxos::NxCliCmd::SHOW_CMD, cmd_name, syntax)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd_name</td><td>Cmd Name (NOTE: SDK appends App Name to the passed Cmd Name (AppName_CmdName)) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">syntax</td><td>Custom Cmd syntax. Syntax comprises of Keywords and input parameters. Input parameters are identified by enclosing in &lt;&gt; and by default they are of the type "string". Refer to updateKeyword &amp; updateParam usage. NOTE: All CONF commands are prefixed with AppName. For SHOW commands, SDK appends AppName after the show keyword. So that the custom configs dont overwrite the existing Nexus Configs.</td></tr>
+  </table>
+  </dd>
+</dl>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)
+</pre><div class="fragment"><div class="line">Usage:</div><div class="line">     Ex1) To create a custom show command: show $appName port-bw threshold &lt;threshold&gt;</div><div class="line">           API:  <a class="code" href="classnxos_1_1_nx_cli_parser.html#ac07fa22d7d83d4c9015ea1f3976163d8">newShowCmd</a>(<span class="stringliteral">&quot;show_port_bw_threshold_cmd&quot;</span>, <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">           $AppName: (Automatically appended by SDK)</div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;<a class="code" href="classnxos_1_1_nx_sdk.html#a98bcb70d1bf60e38b41eacdf0a72dc89">getCliParser</a>();</div><div class="line">     cmd = cliP-&gt;<a class="code" href="classnxos_1_1_nx_cli_parser.html#ac07fa22d7d83d4c9015ea1f3976163d8">newShowCmd</a>(<span class="stringliteral">&quot;show_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                            <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     cmd = cliP.newShowCmd(<span class="stringliteral">&quot;show_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                           <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div></div><!-- fragment --><p>NOTE: </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ctype</td><td>is a invalid command type </td></tr>
+    <tr><td class="paramname">cmd_name</td><td>and syntax cannot be empty or NULL. </td></tr>
+    <tr><td class="paramname">syntax</td><td>is not balanced. </td></tr>
+    <tr><td class="paramname">Cannot</td><td>edit the syntax if the cmd is already added to NX Parser. Can add new custom cmd to Nx Parser but not edit existing cmd already added to the parser. </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains anything other than the regex "A-Za-z0-9[]{}()&lt;&gt;|_- " </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains free standing _ or - or |. </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains empty open close paranthesis without a word. </td></tr>
+    <tr><td class="paramname">syntax</td><td>dose not contain only one word and doesnt match regex A-Za-z0-9_- </td></tr>
+    <tr><td class="paramname">syntax</td><td>contains predefined keywords (no, show) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -514,19 +665,19 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set the CLI callback handler object when the respective config is executed. </p>
-
+<p>Set the CLI callback handler object when the respective config is executed.</p>
+<pre class="fragment">Remote - Not Supported (Throws exception if used remotely)</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
+<li><a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_cli_parser.html">NxCliParser</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_cli_parser.html">NxCliParser</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

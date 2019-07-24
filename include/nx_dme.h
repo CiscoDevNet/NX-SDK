@@ -118,8 +118,15 @@ public:
      *  commit does not imply that any child objects that may be created
      *  as a result of config change are also created.
      *  @param[out]   Error value
+     *
      *  @returns
      *      error string,  err_type_e set in argument
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
      *  @code
      *   C++:
      *      int  err;
@@ -256,8 +263,7 @@ public:
      *  @throws
      *       ERR_INVALID_USAGE, ERR_INVALID
      **/
-    virtual bool
-    getEventIsPropertyChanged(const std::string &property) = 0;
+    virtual bool getEventIsPropertyChanged(const std::string &sInPropName) = 0;
 
     /**
      *  Iterate through the list of properties that changed in the
@@ -295,8 +301,7 @@ public:
      *  @throws
      *      ERR_INVALID_USAGE, ERR_INVALID
      **/
-    virtual std::string
-    iterateEventUpdatedProperties(bool fromFirst = false) = 0;
+    virtual std::string iterateEventUpdatedProperties(bool fromFirst = false) = 0;
 
     /**
      *  Test equality of dme objects.  Two objects are equal if they
@@ -368,6 +373,124 @@ public:
      *      None.
      **/
     virtual bool equal(NxDme const &dme_obj) const = 0;
+
+
+    /**
+     *  Retrieve the number of direct children of this object.  This api
+     *  will return valid count only if this dme object was opened with
+     *  'getChildren = true' in call to getDmeObj().
+     *  
+     *  
+     *  @returns
+     *    The number of children immediately under this object.
+     *
+     *  @code
+     *    C++:
+     *       cout << "Number of children: " << dme->getChildrenDmeObjCount() << endl;
+     *    Python:
+     *       print  "Number of children: %d" % dme.getChildrenDmeObjCount()
+     *  @endcode
+     *
+     *  @throws
+     *     ERR_ENOMEM
+     **/
+    virtual int  getChildrenDmeObjCount () = 0;
+
+    /**
+     *  Iterate through the children of this dme object.  The initial
+     *  call should set fromFirst=true, then subsequent calls use
+     *  the default value of false.  To reset the iteration to the
+     *  beginning, call again with fromFirst=true.  When there are no
+     *  more DNs to retrieve, the function returns empty string "".
+     *  This api will return valid data only if this dme object was opened with
+     *  'getChildren = true' in call to getDmeObj().
+     *
+     *  @param[in]  Start at the beginning or not.
+     *  @returns
+     *     DN string of next child or ""
+     *
+     *  @code
+     *    C++:
+     *      std::string   child_dn;
+     *      int  err;
+     *                
+     *      cout << "Number of children: " << 
+     *               obj->getChildrenDmeObjCount() << endl;
+     *
+     *      child_dn = obj->iterateChildrenDmeDn(true);
+     *      while (child_dn.length()) {
+     *         cout << "child DN: " << child_dn << endl;
+     *         child_dn = obj->iterateChildrenDmeDn(false);
+     *      }
+     *    Python:
+     *      child_dn = obj.iterateChildrenDmeDn(True)
+     *      while child_dn:
+     *          print "child DN: %s"  % child_dn
+     *          child_dn = obj.iterateChildrenDmeDn()
+     *  @endcode
+     *
+     *  @throws
+     *     ERR_INVALID_USAGE, ERR_FAILURE
+     **/
+    virtual std::string iterateChildrenDmeDn (bool fromFirst = false) = 0;
+    /**
+     *  Test if this object has been modified 
+     *
+     *  @returns
+     *     true if this object has been modified, false if not
+     *
+     *  @code
+     *    C++:
+     *       if (dme_obj->isModified()) 
+     *          cout << "Local object has been modified" << endl;
+     *
+     *    Python:
+     *          if dme_obj.isModified():
+     *             print "Local object has been modified"
+     *  @endcode
+     *
+     *  @throws   None.
+     *      
+     **/
+    virtual bool  isModified () = 0;
+
+    /**
+     *  Retrieve the value of a changed property of an object
+     *  passed to event callback.  This is only valid for an
+     *  event object.
+     *  @param[in]  The property name
+     *  @param[out]  Error value, ERR_ESUCCESS or ERR_NOT_FOUND
+     *  @returns
+     *     The value of the property, if present.
+     *
+     *  @code
+     *     C++:
+     *        prop_name = objp->iterateEventUpdatedProperties(true);
+     *        while (prop_name.length()) {
+     *           prop_value = objp->getEventPropertyValue(prop_name, &error);
+     *           cout << "iterateEvent prop: " << prop_name << endl;
+     *           cout << "             value: " << prop_value << endl;
+     *           prop_name = objp->iterateEventUpdatedProperties();
+     *        }
+     *     Python:
+     *        class pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):
+     *
+     *           def postDmeHandlerCb(self, obj):
+     *              if obj.getEvent() == nx_sdy_py.UPDATE:
+     *                  prop = obj.iterateEventUpdatedProperties(True)
+     *                  while len(prop) :
+     *                     errp = nx_sdk_py.new_intp()
+     *                     value = obj.getEventPropertyValue(prop, errp);
+     *                     print "Property changed: %s:%s" % (prop,value)
+     *                     prop = obj.iterateEventUpdatedProperties()
+     *                     nx_sdk_py.delete_intp(errp)
+     *  @endcode
+     *
+     *  @throws  ERR_INVALID_USAGE
+     *
+     **/
+    virtual std::string getEventPropertyValue(const std::string& sInPropName,
+                                              int *err) = 0;
 };
 
 
@@ -487,6 +610,9 @@ public:
      *  Opens DME object path and return an object for it, which the
      *  caller owns and must delete.
      *  @param[in]  Dn  The DN string which specifies the DME object.
+     *  @param[in]  getChildren  Read child information for this object.
+     *                           Required if using any children related apis.
+     *           
      *  @returns
      *     Pointer to object or NULL.
      *  @code
@@ -521,7 +647,8 @@ public:
      *      ERR_FAILURE
      *      ERR_INVALID
      **/
-    virtual NxDme *getDmeObj(const std::string &Dn) = 0;
+    virtual NxDme *getDmeObj(const std::string &Dn,
+	                     bool getChildren=false) = 0;
 
     /**
      *  Create a new DME object that will be added to the running
@@ -530,8 +657,15 @@ public:
      *  https://developer.cisco.com/site/nxapi-dme-model-reference-api/?version=9.2(1)
      *  @param[in]  sInDn    The DN path for the object to be added.
      *  @param[out] error    The error value.
+     *
      *  @returns
      *     pointer to created NxDme object
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
      *  @code
      *  C++:
      *      int   err;
@@ -555,8 +689,15 @@ public:
     /**
      *  Remove an objet from the running DME configuration.
      *  @param[in]  sInDn  The DN path of the object to delete.
+     *
      *  @returns
      *    err_type_e  value
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *                 
      *  @code
      *  C++:
      *      int err;
@@ -567,7 +708,6 @@ public:
      *      if err == nx_sdk_py.ERR_ESUCCESS:
      *           ...
      *  @endcode
-     *
      *
      *  @throws
      *        ERR_INVALID_USAGE, ERR_FAILURE

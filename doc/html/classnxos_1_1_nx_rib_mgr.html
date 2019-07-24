@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxRibMgr Class Reference</title>
+<title>NXSDK API: nxos::NxRibMgr Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -114,10 +114,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeed917ba912782303662c4009f3fcfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84cf1b9546fc3bf70e12bc7209ca190"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#ae84cf1b9546fc3bf70e12bc7209ca190">getL3Route</a> (std::string routeAddr, unsigned char maskLen=0, std::string vrfName=&quot;default&quot;, bool clearBuffer=false)=0</td></tr>
 <tr class="separator:ae84cf1b9546fc3bf70e12bc7209ca190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6749ea02f53fc8b2f6cdba21bbc335d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#ab6749ea02f53fc8b2f6cdba21bbc335d">watchL3Route</a> (std::string protocol, std::string tag=&quot;&quot;, std::string vrfName=&quot;all&quot;, nxos::af_e af=<a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119">nxos::MAX_AF</a>)=0</td></tr>
+<tr class="memitem:ab6749ea02f53fc8b2f6cdba21bbc335d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#ab6749ea02f53fc8b2f6cdba21bbc335d">watchL3Route</a> (std::string protocol, std::string tag=&quot;&quot;, std::string vrfName=&quot;all&quot;, nxos::af_e af=nxos::MAX_AF)=0</td></tr>
 <tr class="separator:ab6749ea02f53fc8b2f6cdba21bbc335d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc61ed1d830f50ea947707576d75b99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a1dc61ed1d830f50ea947707576d75b99">unwatchL3Route</a> (std::string protocol, std::string tag=&quot;&quot;, std::string vrfName=&quot;all&quot;, nxos::af_e af=<a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119">nxos::MAX_AF</a>)=0</td></tr>
+<tr class="memitem:a1dc61ed1d830f50ea947707576d75b99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a1dc61ed1d830f50ea947707576d75b99">unwatchL3Route</a> (std::string protocol, std::string tag=&quot;&quot;, std::string vrfName=&quot;all&quot;, nxos::af_e af=nxos::MAX_AF)=0</td></tr>
 <tr class="separator:a1dc61ed1d830f50ea947707576d75b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bf169a5f8d7b30090c4b3c67468ac18"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a7bf169a5f8d7b30090c4b3c67468ac18">getL3RouteDetail</a> (const std::string &amp;routeAddr, unsigned int maskLen=0, const std::string &amp;vrfName=&quot;default&quot;)=0</td></tr>
+<tr class="separator:a7bf169a5f8d7b30090c4b3c67468ac18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59da8782bb5d41a130c8c238abc92bc3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a59da8782bb5d41a130c8c238abc92bc3">addL3Route</a> (const std::string &amp;routeAddr, unsigned char maskLen=0, const std::string &amp;vrfName=&quot;default&quot;)=0</td></tr>
+<tr class="separator:a59da8782bb5d41a130c8c238abc92bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d838df92cbcc60bf81dabc31b2dd5b1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a6d838df92cbcc60bf81dabc31b2dd5b1">delL3Route</a> (const std::string &amp;routePrefix, unsigned char maskLen=0, const std::string &amp;vrfName=&quot;default&quot;)=0</td></tr>
+<tr class="separator:a6d838df92cbcc60bf81dabc31b2dd5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb60de76f9a6b028350b8144a590e19"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a0eb60de76f9a6b028350b8144a590e19">sendMyL3RoutesToRib</a> (<a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a> af=nxos::AF_IPV4)=0</td></tr>
+<tr class="separator:a0eb60de76f9a6b028350b8144a590e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edd313ab7852713469d84ac588cd08d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_rib_mgr.html#a7edd313ab7852713469d84ac588cd08d">converged</a> (<a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a> af=nxos::AF_IPV4, const std::string &amp;vrfName=&quot;all&quot;)=0</td></tr>
+<tr class="separator:a7edd313ab7852713469d84ac588cd08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract Rib Manager interface to gain access to NXOS RIB. </p>
@@ -150,6 +160,176 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a59da8782bb5d41a130c8c238abc92bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59da8782bb5d41a130c8c238abc92bc3">&#9670;&nbsp;</a></span>addL3Route()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a>* nxos::NxRibMgr::addL3Route </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>routeAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>maskLen</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vrfName</em> = <code>&quot;default&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To add a L3 Route object. This API will return a route object to add/update/remove next-hops. All operations take place when sendMyL3RoutesToRib is called. postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal that route changes are done. postL3RecursiveNextHopCb is called after sendMyL3RoutesToRib to signal changes to the next hop. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">routeAddr</td><td>Address of the route as a string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maskLen</td><td>[Optional] MaskLength if its a prefix. If not set it will pick /32 for IP address (or) /128 for IPv6 address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vrfName</td><td>[Optional] VrfName in which the route is present. If not set "default" will be used. vrfName cannot be "all" or empty string "".</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnxos_1_1_nx_l3_route.html" title="Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. ">NxL3Route</a> object to be used to further configure the route. NULL if not (VrfName empty (or) "all", Vrf does not exist, down or invalid, no route etc).</dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxL3Route    *route;</div><div class="line"></div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     ribMgr = sdk-&gt;getRibMgr();</div><div class="line"></div><div class="line">     route = ribMgr-&gt;addL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>);</div><div class="line">     NxL3NextHop *nh = route-&gt;addL3DirectNextHop(<span class="stringliteral">&quot;10.1.1.3&quot;</span>, </div><div class="line">                                                 <span class="stringliteral">&quot;Eth1/3&quot;</span> 12);</div><div class="line">     <span class="keywordtype">bool</span> result = route-&gt;sendMyL3RoutesToRib(AF_IPV4);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     ribMgr = sdk.getRibMgr()</div><div class="line"></div><div class="line">     route = ribMgr.addL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>)</div><div class="line">     next_hop = route.addL3DirectNextHop(<span class="stringliteral">&quot;10.1.1.3&quot;</span>, <span class="stringliteral">&quot;Eth1/3&quot;</span>, 12)</div><div class="line">     result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid</td><td>routeAddr </td></tr>
+    <tr><td class="paramname">invalid</td><td>maskLen </td></tr>
+    <tr><td class="paramname">vrfName</td><td>is more than 32 characters. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7edd313ab7852713469d84ac588cd08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7edd313ab7852713469d84ac588cd08d">&#9670;&nbsp;</a></span>converged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxRibMgr::converged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
+          <td class="paramname"><em>af</em> = <code>nxos::AF_IPV4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vrfName</em> = <code>&quot;all&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tell Route information base that all routes belonging to the application were programmed. This is needed after system switch over and the application has added all its routes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">af</td><td>Address Family </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vrfName</td><td>Name of the VRF</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if sendMyL3RoutesToRib operation succeeded.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     ribMgr = sdk-&gt;getRibMgr();</div><div class="line"></div><div class="line">     <span class="keywordtype">bool</span> result = ribMgr-&gt;converged();</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     ribMgr = sdk.getRibMgr()</div><div class="line"></div><div class="line">     result = ribMgr.converged()</div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a6d838df92cbcc60bf81dabc31b2dd5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d838df92cbcc60bf81dabc31b2dd5b1">&#9670;&nbsp;</a></span>delL3Route()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxRibMgr::delL3Route </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>routePrefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>maskLen</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vrfName</em> = <code>&quot;default&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To delete a L3 Route and all it's next-hops owned by the application.</p>
+<p>postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal that route changes are done.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">routeAddr</td><td>Address of the route as a string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maskLen</td><td>[Optional] MaskLength if its a prefix. If not set it will pick /32 for IP address (or) /128 for IPv6 address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vrfName</td><td>[Optional] VrfName in which the route is present. If not set "default" will be used. vrfName cannot be "all" or empty string "". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false</dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre> <div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxL3Route    *route;</div><div class="line"></div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     ribMgr = sdk-&gt;getRibMgr();</div><div class="line"></div><div class="line">     route = ribMgr-&gt;getL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     ribMgr = sdk.getRibMgr()</div><div class="line"></div><div class="line">     route = ribMgr.getL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid</td><td>routeAddr </td></tr>
+    <tr><td class="paramname">invalid</td><td>maskLen </td></tr>
+    <tr><td class="paramname">vrfName</td><td>is more than 32 characters. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ae84cf1b9546fc3bf70e12bc7209ca190"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae84cf1b9546fc3bf70e12bc7209ca190">&#9670;&nbsp;</a></span>getL3Route()</h2>
 
@@ -195,7 +375,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>To get the L3 Route based on the passed input parameters. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>To get the L3 Route with it's bext next-hop based on the passed input parameters. Routes returned by this function cannot be used to addL3DirectNextHop() or addL3RecursiveNextHop() </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">routeAddr</td><td>Address of the route as a string. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">maskLen</td><td>[Optional] MaskLength if its a prefix. If not set it will pick /32 for IP address (or) /128 for IPv6 address. </td></tr>
@@ -210,7 +390,65 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">invalid</td><td>routeAddr </td></tr>
     <tr><td class="paramname">invalid</td><td>maskLen </td></tr>
     <tr><td class="paramname">vrfName</td><td>is more than 32 characters. </td></tr>
-    <tr><td class="paramname">getRoute</td><td>buffer is full, cleanup previous pointers (or) call getL3Route with clearBuffer set to true. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7bf169a5f8d7b30090c4b3c67468ac18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf169a5f8d7b30090c4b3c67468ac18">&#9670;&nbsp;</a></span>getL3RouteDetail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_l3_route.html">NxL3Route</a>* nxos::NxRibMgr::getL3RouteDetail </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>routeAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>maskLen</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vrfName</em> = <code>&quot;default&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To get the L3 Route with all its next-hops based on the passed input parameters. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">routeAddr</td><td>Address of the route as a string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maskLen</td><td>[Optional] MaskLength if its a prefix. If not set it will pick /32 for IP address (or) /128 for IPv6 address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vrfName</td><td>[Optional] VrfName in which the route is present. If not set "default" will be used. vrfName cannot be "all" or empty string "". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnxos_1_1_nx_l3_route.html" title="Abstract Route Interface to Add/Delete and receive Route updates from NXOS RIB. ">NxL3Route</a> object if it exists. NULL if not (VrfName empty (or) "all", Vrf does not exist, down or invalid, no route etc).</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxL3Route    *route;</div><div class="line"></div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     ribMgr = sdk-&gt;getRibMgr();</div><div class="line"></div><div class="line">     route = ribMgr-&gt;getL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     ribMgr = sdk.getRibMgr()</div><div class="line"></div><div class="line">     route = ribMgr.getL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid</td><td>routeAddr </td></tr>
+    <tr><td class="paramname">invalid</td><td>maskLen </td></tr>
+    <tr><td class="paramname">vrfName</td><td>is more than 32 characters. </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,6 +531,46 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0eb60de76f9a6b028350b8144a590e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb60de76f9a6b028350b8144a590e19">&#9670;&nbsp;</a></span>sendMyL3RoutesToRib()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxRibMgr::sendMyL3RoutesToRib </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
+          <td class="paramname"><em>af</em> = <code>nxos::AF_IPV4</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Send all pending route operations to RIB. This call is asynchronous. To check if route was added properly, override postMyL3RouteCb to be notified when your route is added or deleted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">af</td><td>[Optional] Register for route events only from the specified address-family (af). For ex) To get only IPv4 route events, use AF_IPV4 etc. IF not speficied, it means from all AFs.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if sendMyL3RoutesToRib operation succeeded.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxL3Route    *route;</div><div class="line"></div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     ribMgr = sdk-&gt;getRibMgr();</div><div class="line"></div><div class="line">     route = ribMgr-&gt;addL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>);</div><div class="line">     NxL3NextHop *nh = route-&gt;addL3DirectNextHop(<span class="stringliteral">&quot;10.1.1.3&quot;</span>, </div><div class="line">                                                 <span class="stringliteral">&quot;Eth1/3&quot;</span>, 12);</div><div class="line">     <span class="keywordtype">bool</span> result = route-&gt;sendMyL3RoutesToRib(AF_IPV4);</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     ribMgr = sdk.getRibMgr()</div><div class="line"></div><div class="line">     route = ribMgr.addL3Route(<span class="stringliteral">&quot;10.1.1.1&quot;</span>, 24, <span class="stringliteral">&quot;default&quot;</span>)</div><div class="line">     next_hop = route.addL3DirectNextHop(<span class="stringliteral">&quot;10.1.1.3&quot;</span>, <span class="stringliteral">&quot;Eth1/3&quot;</span>, 12)</div><div class="line">     result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid</td><td>Address family </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac42dd29e34f9c508614733dbec518b99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac42dd29e34f9c508614733dbec518b99">&#9670;&nbsp;</a></span>setRibMgrHandler()</h2>
 
@@ -318,7 +596,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Users to overload RIB Manager Handler class to handle regsiterd events like VRF, Route updates etc and register the handler object with RIB manager to handle rib events. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html" title="Abstract RibMgr callback Interface to receive VRF, Route updates etc from NXOS RIB. ">NxRibMgrHandler</a></td><td>object with user overloaded functions to handle rib events.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classnxos_1_1_nx_rib_mgr_handler.html">NxRibMgrHandler</a></td><td>object with user overloaded functions to handle rib events.</td></tr>
   </table>
   </dd>
 </dl>
@@ -355,8 +633,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
-          <td class="paramname"><em>af</em> = <code><a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119">nxos::MAX_AF</a></code>&#160;</td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
+          <td class="paramname"><em>af</em> = <code>nxos::MAX_AF</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -458,8 +736,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
-          <td class="paramname"><em>af</em> = <code><a class="el" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119">nxos::MAX_AF</a></code>&#160;</td>
+          <td class="paramtype"><a class="el" href="nx__common_8h.html#a3a667f48b94db10aa398940dc5bf72d7">nxos::af_e</a>&#160;</td>
+          <td class="paramname"><em>af</em> = <code>nxos::MAX_AF</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -483,7 +761,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool True - if successful. False - if not successful(Empty VRfName).</dd></dl>
-<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> postL3RouteCb(NxL3Route *route) {</div><div class="line">              cout &lt;&lt; <span class="stringliteral">&quot;Received bgp-100 updates for IPV4 routes on vpn1&quot;</span>;</div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr;</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrMgrHandler();</div><div class="line"></div><div class="line">        ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        <span class="keywordflow">if</span> (ribMgr) {</div><div class="line">            ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">            ribMgr-&gt;watchL3Route(<span class="stringliteral">&quot;bgp&quot;</span>, <span class="stringliteral">&quot;100&quot;</span>, <span class="stringliteral">&quot;vpn1&quot;</span>, <a class="code" href="namespacenxos.html#a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628">nxos::AF_IPV4</a>);</div><div class="line">        }</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def postL3RouteCb(self, nxroute):</div><div class="line">             print &quot;Received bgp-100 updates for IPV4 routes on vpn1&quot;</div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       if sdk:</div><div class="line">          ribMgr = sdk.getRibMgr()</div><div class="line">          if ribMgr:</div><div class="line">             ribMgr.<a class="code" href="classnxos_1_1_nx_rib_mgr.html#ac42dd29e34f9c508614733dbec518b99">setRibMgrHandler</a>(myribcb)</div><div class="line">             ribMgr.<a class="code" href="classnxos_1_1_nx_rib_mgr.html#ab6749ea02f53fc8b2f6cdba21bbc335d">watchL3Route</a>(&quot;bgp&quot;, &quot;100&quot;, &quot;vpn1&quot;, nxos::AF_IPV4)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+<div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">   #include &lt;<a class="code" href="nx__rib__mgr_8h.html">nx_rib_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrMgrHandler : <span class="keyword">public</span> NxRibMgrHandler {</div><div class="line">      <span class="keyword">public</span>:</div><div class="line">         <span class="keywordtype">bool</span> postL3RouteCb(NxL3Route *route) {</div><div class="line">              cout &lt;&lt; <span class="stringliteral">&quot;Received bgp-100 updates for IPV4 routes on vpn1&quot;</span>;</div><div class="line">         }</div><div class="line">   };</div><div class="line"></div><div class="line">   <span class="keywordtype">int</span>  main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div><div class="line">   {</div><div class="line">        NxSdk    *sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">        NxRibMgr *ribMgr;</div><div class="line">        NxRibMgrHandler *myribcb = <span class="keyword">new</span> myRibMgrMgrHandler();</div><div class="line"></div><div class="line">        ribMgr = sdk-&gt;getRibMgr();</div><div class="line">        <span class="keywordflow">if</span> (ribMgr) {</div><div class="line">            ribMgr-&gt;setRibMgrHandler(myribcb);</div><div class="line">            ribMgr-&gt;watchL3Route(<span class="stringliteral">&quot;bgp&quot;</span>, <span class="stringliteral">&quot;100&quot;</span>, <span class="stringliteral">&quot;vpn1&quot;</span>, nxos::AF_IPV4);</div><div class="line">        }</div><div class="line">   }</div><div class="line"></div><div class="line">Python:</div><div class="line">   <span class="keyword">import</span> nx_sdk_py</div><div class="line"></div><div class="line">   <span class="keyword">class </span>myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):</div><div class="line"><span class="preprocessor">   ### Overloaded Callback to get Route events</span></div><div class="line">         def postL3RouteCb(self, nxroute):</div><div class="line">             print &quot;Received bgp-100 updates for IPV4 routes on vpn1&quot;</div><div class="line"></div><div class="line"><span class="preprocessor">   # Do SDK related inits in one thread.</span></div><div class="line">   def sdkThread(name,val):</div><div class="line">       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">       myribcb = myRibMgrHandler()</div><div class="line">       if sdk:</div><div class="line">          ribMgr = sdk.getRibMgr()</div><div class="line">          if ribMgr:</div><div class="line">             ribMgr.<a class="code" href="classnxos_1_1_nx_rib_mgr.html#ac42dd29e34f9c508614733dbec518b99">setRibMgrHandler</a>(myribcb)</div><div class="line">             ribMgr.<a class="code" href="classnxos_1_1_nx_rib_mgr.html#ab6749ea02f53fc8b2f6cdba21bbc335d">watchL3Route</a>(&quot;bgp&quot;, &quot;100&quot;, &quot;vpn1&quot;, nxos::AF_IPV4)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">vrfName</td><td>is more than 32 characters. </td></tr>
     <tr><td class="paramname">reached</td><td>maximum watch filter count: 15 for this Address-Family(AF) in this VRF.</td></tr>
@@ -534,14 +812,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__rib__mgr_8h_source.html">nx_rib_mgr.h</a></li>
+<li><a class="el" href="nx__rib__mgr_8h_source.html">nx_rib_mgr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_rib_mgr.html">NxRibMgr</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_rib_mgr.html">NxRibMgr</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

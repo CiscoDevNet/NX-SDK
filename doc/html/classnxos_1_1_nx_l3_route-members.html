@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: Member List</title>
+<title>NXSDK API: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -92,12 +92,16 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_l3_route.html','');})
 
 <p>This is the complete list of members for <a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a6dc5e111e8e8ad48aa028fc65cc483b9">equal</a>(NxL3Route const &amp;route_obj) const =0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a3176245539589bf745ce1d196975b3c9">getAddress</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a9ca0b236a35cc616753e09e620b6b02f">getEvent</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a960a2e429fd7514f0d40e64743e04872">getL3NextHop</a>(std::string address)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a7877c5328b1706acbbe5d8dbc6c94f4e">getL3NextHop</a>(bool fromFirst=false)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a5e402096d7ff280b6f4d334b3bd954d4">getL3NextHopCount</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a7ae92c958f54c6e85579eb6ef81f30b3">addL3DirectNextHop</a>(const std::string &amp;nextHopAddr, const std::string &amp;intfName, uint8_t preference)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a8733985ca139f4d33215f032c4932be7">addL3RecursiveNextHop</a>(const std::string &amp;nextHopAddr, uint8_t preference)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a8c0708c54d5bb8ce94f80e0edd43880c">delL3NextHop</a>(const std::string &amp;nexHopAddress, const std::string &amp;intfName=&quot;&quot;)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a6dc5e111e8e8ad48aa028fc65cc483b9">equal</a>(NxL3Route const &amp;route_obj) const =0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a3176245539589bf745ce1d196975b3c9">getAddress</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a9ca0b236a35cc616753e09e620b6b02f">getEvent</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a79bd39e19c238b12f0af22d2781059cd">getL3NextHop</a>(const std::string &amp;address, const std::string &amp;intfName=&quot;&quot;)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a7877c5328b1706acbbe5d8dbc6c94f4e">getL3NextHop</a>(bool fromFirst=false)=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a5e402096d7ff280b6f4d334b3bd954d4">getL3NextHopCount</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#acff8f87abd7dcdc002c97a0ca04bf815">getL3Prefix</a>() const =0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#aaafa1d34e62297bbed574995ff48dba9">getMaskLen</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a06ed660337e8b919dd801267957497d7">getVrfName</a>()=0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html#a945f75e6656623cbf8cf23b6ab7e01d3">operator!=</a>(NxL3Route const &amp;route_obj) const =0</td><td class="entry"><a class="el" href="classnxos_1_1_nx_l3_route.html">nxos::NxL3Route</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>

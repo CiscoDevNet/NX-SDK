@@ -12,8 +12,6 @@ Public interface for N\+X\+S\+DK D\+ME event notification.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}{$\sim$\+Nx\+Dme\+Mgr\+Handler}} ()
-\item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{post\+Dme\+Handler\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$objp)
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb8212c22e506ff568236}{post\+Dme\+Handler\+Download\+Done\+Cb}} (const std\+::string \&dn)
@@ -25,15 +23,6 @@ Public interface for N\+X\+S\+DK D\+ME event notification.
 
 Applications will override this class and provide a specific implementation of the callback methods defined here. ~\newline
  An object will be passed to it which is the object that generated the event. This object is owned by the S\+DK and should not be stored nor deleted by the application. D\+ME events generated from N\+X\+OS are delivered to application callbacks through N\+X\+S\+DK dme objects Steps to register for dme events\+: 1) Open N\+X\+S\+DK dme mgr object using get\+Dme\+Mgr() 2) Define application callbacks by re-\/defining \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler}} class 3) Install application handlers using set\+Dme\+Handler() 4) call \mbox{\hyperlink{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{Nx\+Sdk\+::start\+Event\+Loop()}} 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}\label{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}!````~Nx\+Dme\+Mgr\+Handler@{$\sim$\+Nx\+Dme\+Mgr\+Handler}}
-\index{````~Nx\+Dme\+Mgr\+Handler@{$\sim$\+Nx\+Dme\+Mgr\+Handler}!nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Dme\+Mgr\+Handler()}{~NxDmeMgrHandler()}}
-{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Dme\+Mgr\+Handler\+::$\sim$\+Nx\+Dme\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}\label{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}} 
@@ -128,4 +117,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}

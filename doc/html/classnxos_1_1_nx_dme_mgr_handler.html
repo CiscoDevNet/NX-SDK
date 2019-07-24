@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxDmeMgrHandler Class Reference</title>
+<title>NXSDK API: nxos::NxDmeMgrHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -100,8 +100,6 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_dme_mgr_handler.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a13573474862c7d25f3594fe2e9ab03cd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html#a13573474862c7d25f3594fe2e9ab03cd">~NxDmeMgrHandler</a> ()</td></tr>
-<tr class="separator:a13573474862c7d25f3594fe2e9ab03cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26838519d4f1d17c2036feb036a0e892"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html#a26838519d4f1d17c2036feb036a0e892">postDmeHandlerCb</a> (<a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> *objp)</td></tr>
 <tr class="separator:a26838519d4f1d17c2036feb036a0e892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a785b584b966bb8212c22e506ff568236"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html#a785b584b966bb8212c22e506ff568236">postDmeHandlerDownloadDoneCb</a> (const std::string &amp;dn)</td></tr>
@@ -111,33 +109,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Public interface for NXSDK DME event notification. </p>
 <p>Applications will override this class and provide a specific implementation of the callback methods defined here. <br />
  An object will be passed to it which is the object that generated the event. This object is owned by the SDK and should not be stored nor deleted by the application. DME events generated from NXOS are delivered to application callbacks through NXSDK dme objects Steps to register for dme events: 1) Open NXSDK dme mgr object using getDmeMgr() 2) Define application callbacks by re-defining <a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html" title="Public interface for NXSDK DME event notification. ">NxDmeMgrHandler</a> class 3) Install application handlers using setDmeHandler() 4) call <a class="el" href="classnxos_1_1_nx_sdk.html#a75ca70643fe325ddf0eea62c1f8c4cc8">NxSdk::startEventLoop()</a> </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a13573474862c7d25f3594fe2e9ab03cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13573474862c7d25f3594fe2e9ab03cd">&#9670;&nbsp;</a></span>~NxDmeMgrHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual nxos::NxDmeMgrHandler::~NxDmeMgrHandler </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a26838519d4f1d17c2036feb036a0e892"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26838519d4f1d17c2036feb036a0e892">&#9670;&nbsp;</a></span>postDmeHandlerCb()</h2>
 
@@ -218,14 +190,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
+<li><a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html">NxDmeMgrHandler</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme_mgr_handler.html">NxDmeMgrHandler</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

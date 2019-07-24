@@ -1,6 +1,7 @@
 var searchData=
 [
   ['unsetadjmgrhandler',['unsetAdjMgrHandler',['../classnxos_1_1_nx_adj_mgr.html#a9937a382ff7f6eb789b728a2512e37f3',1,'nxos::NxAdjMgr']]],
+  ['unsetsdkhandler',['unsetSdkHandler',['../classnxos_1_1_nx_sdk.html#ad86348d2475862e149dcdbe04634db3b',1,'nxos::NxSdk']]],
   ['unwatch',['unwatch',['../classnxos_1_1_nx_dme_mgr.html#a96f2b81fd3c248cb1408c95330ae6962',1,'nxos::NxDmeMgr']]],
   ['unwatchadj',['unwatchAdj',['../classnxos_1_1_nx_adj_mgr.html#a70afce2634199180031767e150332687',1,'nxos::NxAdjMgr']]],
   ['unwatchalladjs',['unwatchAllAdjs',['../classnxos_1_1_nx_adj_mgr.html#aa3a1b51dc9fd549e2ef1ac1928030883',1,'nxos::NxAdjMgr']]],

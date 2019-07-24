@@ -6,11 +6,7 @@ var dir_fb319c5e52beeab9ffa82f5fb04d0c6c =
       [ "NxAdjMgrHandler", "classnxos_1_1_nx_adj_mgr_handler.html", "classnxos_1_1_nx_adj_mgr_handler" ],
       [ "NxAdjMgr", "classnxos_1_1_nx_adj_mgr.html", "classnxos_1_1_nx_adj_mgr" ]
     ] ],
-    [ "nx_cli.h", "nx__cli_8h.html", [
-      [ "NxCliCmd", "classnxos_1_1_nx_cli_cmd.html", "classnxos_1_1_nx_cli_cmd" ],
-      [ "NxCmdHandler", "classnxos_1_1_nx_cmd_handler.html", "classnxos_1_1_nx_cmd_handler" ],
-      [ "NxCliParser", "classnxos_1_1_nx_cli_parser.html", "classnxos_1_1_nx_cli_parser" ]
-    ] ],
+    [ "nx_cli.h", "nx__cli_8h_source.html", null ],
     [ "nx_dme.h", "nx__dme_8h.html", [
       [ "NxDme", "classnxos_1_1_nx_dme.html", "classnxos_1_1_nx_dme" ],
       [ "NxDmeMgrHandler", "classnxos_1_1_nx_dme_mgr_handler.html", "classnxos_1_1_nx_dme_mgr_handler" ],
@@ -31,7 +27,8 @@ var dir_fb319c5e52beeab9ffa82f5fb04d0c6c =
       [ "NxRibMgr", "classnxos_1_1_nx_rib_mgr.html", "classnxos_1_1_nx_rib_mgr" ]
     ] ],
     [ "nx_sdk.h", "nx__sdk_8h.html", [
-      [ "NxSdk", "classnxos_1_1_nx_sdk.html", "classnxos_1_1_nx_sdk" ]
+      [ "NxSdk", "classnxos_1_1_nx_sdk.html", "classnxos_1_1_nx_sdk" ],
+      [ "NxSdkHandler", "classnxos_1_1_nx_sdk_handler.html", "classnxos_1_1_nx_sdk_handler" ]
     ] ],
     [ "nx_trace.h", "nx__trace_8h.html", [
       [ "NxTrace", "classnxos_1_1_nx_trace.html", "classnxos_1_1_nx_trace" ]

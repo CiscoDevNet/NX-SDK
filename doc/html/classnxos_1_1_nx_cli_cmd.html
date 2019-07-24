@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NX-SDK API: nxos::NxCliCmd Class Reference</title>
+<title>NXSDK API: nxos::NxCliCmd Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NX-SDK API
+   <div id="projectname">NXSDK API
    </div>
   </td>
  </tr>
@@ -120,33 +120,39 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3678e859df1bd42824f5b9f9f1de3b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa698fdd1026739307e0710e2948f19f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#aa698fdd1026739307e0710e2948f19f5">updateKeyword</a> (const char *keyword_name, const char *help_str)=0</td></tr>
 <tr class="separator:aa698fdd1026739307e0710e2948f19f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc9244b0bcf22142b5d784c06a6aa91b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#abc9244b0bcf22142b5d784c06a6aa91b">updateParam</a> (const char *param_name, const char *help_str, <a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea">nxos::param_type_e</a> param_type=<a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea">nxos::P_STRING</a>, void *param_type_attributes=NULL, int param_type_attr_len=0, bool is_key=false, bool additive=false, uint8_t repeat_count=0)=0</td></tr>
+<tr class="memitem:abc9244b0bcf22142b5d784c06a6aa91b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#abc9244b0bcf22142b5d784c06a6aa91b">updateParam</a> (const char *param_name, const char *help_str, nxos::param_type_e param_type=nxos::P_STRING, void *param_type_attributes=NULL, int param_type_attr_len=0, bool is_key=false, bool additive=false, uint8_t repeat_count=0)=0</td></tr>
 <tr class="separator:abc9244b0bcf22142b5d784c06a6aa91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ebfd3ce0e68266bbc22bb4bc7dad0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ad4ebfd3ce0e68266bbc22bb4bc7dad0b">addTimeout</a> (uint32_t timeout)=0</td></tr>
 <tr class="separator:ad4ebfd3ce0e68266bbc22bb4bc7dad0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38260da2d6b7a227c4dd027521205c0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a38260da2d6b7a227c4dd027521205c0b">addMode</a> (<a class="el" href="classnxos_1_1_nx_cli_cmd.html#a72999b2e8f2995bbb19be346d875e3ce">modes_t</a> mode)=0</td></tr>
 <tr class="separator:a38260da2d6b7a227c4dd027521205c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9dce490e4854f1160ba08fdc646bd37"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1">NxCliCmd::cmdtype_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ab9dce490e4854f1160ba08fdc646bd37">getCmdType</a> ()=0</td></tr>
-<tr class="memdesc:ab9dce490e4854f1160ba08fdc646bd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of the CLI command.  <a href="#ab9dce490e4854f1160ba08fdc646bd37">More...</a><br /></td></tr>
+<tr class="memitem:ab9dce490e4854f1160ba08fdc646bd37"><td class="memItemLeft" align="right" valign="top"><a id="ab9dce490e4854f1160ba08fdc646bd37"></a>
+virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1">NxCliCmd::cmdtype_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ab9dce490e4854f1160ba08fdc646bd37">getCmdType</a> ()=0</td></tr>
+<tr class="memdesc:ab9dce490e4854f1160ba08fdc646bd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of the CLI command. <br /></td></tr>
 <tr class="separator:ab9dce490e4854f1160ba08fdc646bd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac3fe47522ba60987babb8c830153ff"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a72999b2e8f2995bbb19be346d875e3ce">NxCliCmd::modes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a8ac3fe47522ba60987babb8c830153ff">getCmdMode</a> ()=0</td></tr>
-<tr class="memdesc:a8ac3fe47522ba60987babb8c830153ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mode of the CLI command.  <a href="#a8ac3fe47522ba60987babb8c830153ff">More...</a><br /></td></tr>
+<tr class="memitem:a8ac3fe47522ba60987babb8c830153ff"><td class="memItemLeft" align="right" valign="top"><a id="a8ac3fe47522ba60987babb8c830153ff"></a>
+virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a72999b2e8f2995bbb19be346d875e3ce">NxCliCmd::modes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a8ac3fe47522ba60987babb8c830153ff">getCmdMode</a> ()=0</td></tr>
+<tr class="memdesc:a8ac3fe47522ba60987babb8c830153ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mode of the CLI command. <br /></td></tr>
 <tr class="separator:a8ac3fe47522ba60987babb8c830153ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf95739336bb525d749a8e73949cb887"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#acf95739336bb525d749a8e73949cb887">getCmdName</a> ()=0</td></tr>
-<tr class="memdesc:acf95739336bb525d749a8e73949cb887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Name of the CLI command.  <a href="#acf95739336bb525d749a8e73949cb887">More...</a><br /></td></tr>
+<tr class="memitem:acf95739336bb525d749a8e73949cb887"><td class="memItemLeft" align="right" valign="top"><a id="acf95739336bb525d749a8e73949cb887"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#acf95739336bb525d749a8e73949cb887">getCmdName</a> ()=0</td></tr>
+<tr class="memdesc:acf95739336bb525d749a8e73949cb887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Name of the CLI command. <br /></td></tr>
 <tr class="separator:acf95739336bb525d749a8e73949cb887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0568d5404d91ddb89135e632e05d7abe"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a0568d5404d91ddb89135e632e05d7abe">getCmdSyntax</a> ()=0</td></tr>
-<tr class="memdesc:a0568d5404d91ddb89135e632e05d7abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Syntax of the CLI command.  <a href="#a0568d5404d91ddb89135e632e05d7abe">More...</a><br /></td></tr>
+<tr class="memitem:a0568d5404d91ddb89135e632e05d7abe"><td class="memItemLeft" align="right" valign="top"><a id="a0568d5404d91ddb89135e632e05d7abe"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a0568d5404d91ddb89135e632e05d7abe">getCmdSyntax</a> ()=0</td></tr>
+<tr class="memdesc:a0568d5404d91ddb89135e632e05d7abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Syntax of the CLI command. <br /></td></tr>
 <tr class="separator:a0568d5404d91ddb89135e632e05d7abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d856a7d4350f027df53960053901c96"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a3d856a7d4350f027df53960053901c96">getCmdLineStr</a> ()=0</td></tr>
-<tr class="memdesc:a3d856a7d4350f027df53960053901c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the CLI command entered.  <a href="#a3d856a7d4350f027df53960053901c96">More...</a><br /></td></tr>
+<tr class="memitem:a3d856a7d4350f027df53960053901c96"><td class="memItemLeft" align="right" valign="top"><a id="a3d856a7d4350f027df53960053901c96"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a3d856a7d4350f027df53960053901c96">getCmdLineStr</a> ()=0</td></tr>
+<tr class="memdesc:a3d856a7d4350f027df53960053901c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the CLI command entered. <br /></td></tr>
 <tr class="separator:a3d856a7d4350f027df53960053901c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4321d9b60ecb1366157d0ef9356ffbf"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#aa4321d9b60ecb1366157d0ef9356ffbf">getCmdErr</a> ()=0</td></tr>
-<tr class="memdesc:aa4321d9b60ecb1366157d0ef9356ffbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CLI Cmd Err if there is any.  <a href="#aa4321d9b60ecb1366157d0ef9356ffbf">More...</a><br /></td></tr>
+<tr class="memitem:aa4321d9b60ecb1366157d0ef9356ffbf"><td class="memItemLeft" align="right" valign="top"><a id="aa4321d9b60ecb1366157d0ef9356ffbf"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#aa4321d9b60ecb1366157d0ef9356ffbf">getCmdErr</a> ()=0</td></tr>
+<tr class="memdesc:aa4321d9b60ecb1366157d0ef9356ffbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CLI Cmd Err if there is any. <br /></td></tr>
 <tr class="separator:aa4321d9b60ecb1366157d0ef9356ffbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af100c6495c0e383c8e3d11d5cdb68cd2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#af100c6495c0e383c8e3d11d5cdb68cd2">isKeywordSet</a> (const char *keyword_name)=0</td></tr>
 <tr class="separator:af100c6495c0e383c8e3d11d5cdb68cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3722b567439f8ebd6422a5727bb7af6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea">nxos::param_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ab3722b567439f8ebd6422a5727bb7af6">getParamType</a> (const char *param_name)=0</td></tr>
+<tr class="memitem:ab3722b567439f8ebd6422a5727bb7af6"><td class="memItemLeft" align="right" valign="top">virtual nxos::param_type_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ab3722b567439f8ebd6422a5727bb7af6">getParamType</a> (const char *param_name)=0</td></tr>
 <tr class="separator:ab3722b567439f8ebd6422a5727bb7af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a827bd696ec228767cb1f6dbfdbbd271c"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a827bd696ec228767cb1f6dbfdbbd271c">getParamValue</a> (const char *param_name, bool fromFirst=false)=0</td></tr>
 <tr class="separator:a827bd696ec228767cb1f6dbfdbbd271c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +162,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a10c723c79d75ac2c85821b5ca6540c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1669d9fbeaa164494a503379ca52b86"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#ae1669d9fbeaa164494a503379ca52b86">updateKeyword</a> (const char *keyword_name, const char *help_str, bool make_key)=0</td></tr>
 <tr class="separator:ae1669d9fbeaa164494a503379ca52b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71600fafefdd017050e3a357f03ddd24"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_cli_cmd.html#a71600fafefdd017050e3a357f03ddd24">showCliOutFormat</a> ()=0</td></tr>
+<tr class="separator:a71600fafefdd017050e3a357f03ddd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract custom CLI command Interface used to construct a custom CLI config. </p>
@@ -308,168 +316,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa4321d9b60ecb1366157d0ef9356ffbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4321d9b60ecb1366157d0ef9356ffbf">&#9670;&nbsp;</a></span>getCmdErr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string nxos::NxCliCmd::getCmdErr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get CLI Cmd Err if there is any. </p>
-
-</div>
-</div>
-<a id="a3d856a7d4350f027df53960053901c96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d856a7d4350f027df53960053901c96">&#9670;&nbsp;</a></span>getCmdLineStr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string nxos::NxCliCmd::getCmdLineStr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the CLI command entered. </p>
-
-</div>
-</div>
-<a id="a8ac3fe47522ba60987babb8c830153ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ac3fe47522ba60987babb8c830153ff">&#9670;&nbsp;</a></span>getCmdMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a72999b2e8f2995bbb19be346d875e3ce">NxCliCmd::modes_t</a> nxos::NxCliCmd::getCmdMode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the mode of the CLI command. </p>
-
-</div>
-</div>
-<a id="acf95739336bb525d749a8e73949cb887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf95739336bb525d749a8e73949cb887">&#9670;&nbsp;</a></span>getCmdName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string nxos::NxCliCmd::getCmdName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the Name of the CLI command. </p>
-
-</div>
-</div>
-<a id="a0568d5404d91ddb89135e632e05d7abe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0568d5404d91ddb89135e632e05d7abe">&#9670;&nbsp;</a></span>getCmdSyntax()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string nxos::NxCliCmd::getCmdSyntax </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the Syntax of the CLI command. </p>
-
-</div>
-</div>
-<a id="ab9dce490e4854f1160ba08fdc646bd37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9dce490e4854f1160ba08fdc646bd37">&#9670;&nbsp;</a></span>getCmdType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1">NxCliCmd::cmdtype_t</a> nxos::NxCliCmd::getCmdType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the type of the CLI command. </p>
-
-</div>
-</div>
 <a id="a12e56ced4646ba1a27417030c0d20e7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12e56ced4646ba1a27417030c0d20e7b">&#9670;&nbsp;</a></span>getParamCount()</h2>
 
@@ -524,7 +370,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea">nxos::param_type_e</a> nxos::NxCliCmd::getParamType </td>
+          <td class="memname">virtual nxos::param_type_e nxos::NxCliCmd::getParamType </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>param_name</em></td><td>)</td>
@@ -544,7 +390,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">Usage:</div><div class="line">   If you need to <span class="keyword">get</span> the type of input parameter.</div><div class="line"></div><div class="line">     CLI      : $appname port-bw threshold &lt;threshold&gt;</div><div class="line">     Parameter: &lt;threshold&gt;</div><div class="line"></div><div class="line">     <span class="keywordflow">switch</span>(config)# $appname port-bw threshold 10</div><div class="line">     In postCliCb func, Get Parameter type <span class="keywordflow">for</span> Threshold(=<a class="code" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687">P_INTEGER</a>)</div><div class="line"></div><div class="line">C++:</div><div class="line">     <a class="code" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea">nxos::param_type_e</a> val = cmd-&gt;getParamType(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     val = cmd.getParamType(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>);</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+<div class="fragment"><div class="line">Usage:</div><div class="line">   If you need to <span class="keyword">get</span> the type of input parameter.</div><div class="line"></div><div class="line">     CLI      : $appname port-bw threshold &lt;threshold&gt;</div><div class="line">     Parameter: &lt;threshold&gt;</div><div class="line"></div><div class="line">     <span class="keywordflow">switch</span>(config)# $appname port-bw threshold 10</div><div class="line">     In postCliCb func, Get Parameter type <span class="keywordflow">for</span> Threshold(=P_INTEGER)</div><div class="line"></div><div class="line">C++:</div><div class="line">     nxos::param_type_e val = cmd-&gt;getParamType(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>);</div><div class="line"></div><div class="line">Python:</div><div class="line">     val = cmd.getParamType(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>);</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">param_name</td><td>is not a single word and does not match regex A-Za-z0-9-_ </td></tr>
     <tr><td class="paramname">if</td><td>the API is called outside of command handler postCliCb. </td></tr>
@@ -695,6 +541,42 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Print custom output on the switch console only when called inside command handler postCliCb. Does nothing if called in anyother place.</p>
+<dl class="section note"><dt>Note</dt><dd>Refer to example Apps. Since V2.0, based on the showCliOutFormat for the given show command, if R_TEXT: Same as older version. R_JSON: Expects the data to be in JSON format. NOTE: 1) Using invalid JSON will result in "Invalid Json string passed" message in the console on executing the show command. 2) Splitting JSON string into multiple printConsole statements will be treated as invalid json.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">     <span class="keywordflow">if</span> (cmd-&gt;showCliOutFormat() == <a class="code" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34">nxos::R_JSON</a>) {</div><div class="line">         <span class="comment">// print to console in JSON format using printConsole Api.</span></div><div class="line">         <span class="keywordtype">string</span> json_str = <span class="stringliteral">&quot;&lt;some json string&gt;&quot;</span>;</div><div class="line">         cmd-&gt;printConsole(json_str)</div><div class="line">     } <span class="keywordflow">else</span> {</div><div class="line">         <span class="comment">// print to console in TEXT using printConsole Api.</span></div><div class="line">         cmd-&gt;printConsole(<span class="stringliteral">&quot;Text1&quot;</span>)</div><div class="line">         cmd-&gt;printConsole(<span class="stringliteral">&quot;Text2&quot;</span>)</div><div class="line">     } </div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keywordflow">if</span> (cmd.showCliOutFormat() == nx_sdk_py.R_JSON):</div><div class="line">         <span class="comment">// print to console in JSON format using printConsole Api.</span></div><div class="line">         json_str = <span class="stringliteral">&quot;&lt;some json string&gt;&quot;</span></div><div class="line">         cmd.printConsole(json_str)</div><div class="line">     <span class="keywordflow">else</span>:</div><div class="line">         <span class="comment">// print to console in TEXT using printConsole Api.</span></div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a71600fafefdd017050e3a357f03ddd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71600fafefdd017050e3a357f03ddd24">&#9670;&nbsp;</a></span>showCliOutFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91">nxos::record_type_e</a> nxos::NxCliCmd::showCliOutFormat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Expected output format for your custom show command thereby enabling NX-API Support for custom show cli commands generated using NX-SDK.</p>
+<dl class="section note"><dt>Note</dt><dd>As an optimization, showCliOutFormat returns only two output formats JSON or TEXT. For XML, showCliOutFormat still returns the format as JSON but then on printConsole of JSON output it then auto-converts JSON output into XML output automatically in the console thereby reducing onus on the application developers to only support JSON format instead of other formats. Refer to printConsole Api for more details.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>NX-SDK V2.0</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>record_type_e Expected output format for your show command (R_TEXT or R_JSON).</dd></dl>
+<div class="fragment"><div class="line">Usage:</div><div class="line">     <span class="keywordflow">switch</span>(config)# show $appname &lt;command_syntax&gt;</div><div class="line">     ! The expected output format <span class="keywordflow">for</span> <span class="keyword">this</span> show command is TEXT</div><div class="line">     <span class="keywordflow">switch</span>(config)# show $appname &lt;command_syntax&gt; | json</div><div class="line">     ! The expected output format <span class="keywordflow">for</span> <span class="keyword">this</span> show command is JSON</div><div class="line">     <span class="keywordflow">switch</span>(config)# show $appname &lt;command_syntax&gt; | xml</div><div class="line">     ! <a class="code" href="classnxos_1_1_nx_cli_cmd.html#a71600fafefdd017050e3a357f03ddd24">showCliOutFormat</a> returns the format as <a class="code" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34">R_JSON</a>. But</div><div class="line">       on <a class="code" href="classnxos_1_1_nx_cli_cmd.html#a10c723c79d75ac2c85821b5ca6540c62">printConsole</a>, NX-SDK automatically converts the</div><div class="line">       JSON data into XML.</div><div class="line"></div><div class="line">C++:</div><div class="line">     <span class="keywordflow">if</span> (cmd-&gt;showCliOutFormat() == <a class="code" href="nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34">nxos::R_JSON</a>) {</div><div class="line">         <span class="comment">// print to console in JSON format using printConsole Api.</span></div><div class="line">     } <span class="keywordflow">else</span> {</div><div class="line">         <span class="comment">// print to console in TEXT using printConsole Api.</span></div><div class="line">     } </div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keywordflow">if</span> (cmd.showCliOutFormat() == nx_sdk_py.R_JSON):</div><div class="line">         <span class="comment">// print to console in JSON format using printConsole Api.</span></div><div class="line">     <span class="keywordflow">else</span>:</div><div class="line">         <span class="comment">// print to console in TEXT using printConsole Api.</span></div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">if</td><td>the API is called outside of command handler postCliCb. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section note"><dt>Note</dt><dd>Refer to example Apps. </dd></dl>
 
 </div>
@@ -831,8 +713,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea">nxos::param_type_e</a>&#160;</td>
-          <td class="paramname"><em>param_type</em> = <code><a class="el" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea">nxos::P_STRING</a></code>, </td>
+          <td class="paramtype">nxos::param_type_e&#160;</td>
+          <td class="paramname"><em>param_type</em> = <code>nxos::P_STRING</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -895,7 +777,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>For usage and code refer to respective types in <a class="el" href="types_2nx__cli_8h.html">types/nx_cli.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For usage and code refer to respective types in <a class="el" href="types_2nx__cli_8h_source.html">types/nx_cli.h</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">param_type_attr_len</td><td>Length of the void *param_type_attributes if passed. With this we can validate if right attribute has been passed for the type. </td></tr>
@@ -914,7 +796,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">Usage:</div><div class="line">   If you need to create a CLI with custom HelpString</div><div class="line"></div><div class="line">      CLI      : $appname port-bw threshold &lt;threshold&gt;</div><div class="line">      Parameter: &lt;threshold&gt;</div><div class="line"></div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html">nxos::cli_param_type_integer_attr</a> int_attr = {0};</div><div class="line">     int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#af6129171a34b028c5faeb503e8a1985b">min_val</a> = 1;</div><div class="line">     int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a> = 100;</div><div class="line">     cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                                  <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">     cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, <a class="code" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687">nxos::P_INTEGER</a>,</div><div class="line">                      (<span class="keywordtype">void</span> *)&amp;int_attr, <span class="keyword">sizeof</span>(int_attr));</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     int_attr = nx_sdk_py.cli_param_type_integer_attr()</div><div class="line">     int_attr.min_val = 1;</div><div class="line">     int_attr.max_val = 100;</div><div class="line">     cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                             <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div><div class="line">     cmd.updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, <a class="code" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687">nxos::P_INTEGER</a>,</div><div class="line">                     int_attr, len(int_attr))</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+<div class="fragment"><div class="line">Usage:</div><div class="line">   If you need to create a CLI with custom HelpString</div><div class="line"></div><div class="line">      CLI      : $appname port-bw threshold &lt;threshold&gt;</div><div class="line">      Parameter: &lt;threshold&gt;</div><div class="line"></div><div class="line">C++:</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     cliP = sdk-&gt;getCliParser();</div><div class="line">     <a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html">nxos::cli_param_type_integer_attr</a> int_attr = {0};</div><div class="line">     int_attr.min_val = 1;</div><div class="line">     int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a> = 100;</div><div class="line">     cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                                  <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">     cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, nxos::P_INTEGER,</div><div class="line">                      (<span class="keywordtype">void</span> *)&amp;int_attr, <span class="keyword">sizeof</span>(int_attr));</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     cliP = sdk.getCliParser()</div><div class="line">     int_attr = nx_sdk_py.cli_param_type_integer_attr()</div><div class="line">     int_attr.min_val = 1;</div><div class="line">     int_attr.max_val = 100;</div><div class="line">     cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                             <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div><div class="line">     cmd.updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, nx_sdk_py.P_INTEGER,</div><div class="line">                     int_attr, len(int_attr))</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">param</td><td>and help_str cannot be empty/NULL. </td></tr>
     <tr><td class="paramname">Param</td><td>does not exist in the cmd Syntax </td></tr>
@@ -929,14 +811,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
+<li><a class="el" href="nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_cli_cmd.html">NxCliCmd</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_cli_cmd.html">NxCliCmd</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

@@ -1,0 +1,28 @@
+{
+	"switchInfo": [{
+                        "addr": "172.27.254.196",
+                        "name": "sinai",
+                        "port-apps": [{
+                                        "port" : 50002,
+                                        "app"  : "dupHostMonitor"
+                                      }, 
+                                      {
+                                        "port" : 50003,
+                                        "app"  : "routeMonitor"
+                                      }]  
+                                      
+                },
+                {
+                        "addr": "172.27.254.195",
+                        "name": "cyprus-n9k",
+			"port-apps" : [{
+                                        "port" : 50002,
+                                        "app"  : "dupHostMonitor"
+                                      },
+                                      {
+                                        "port" : 50004,
+                                        "app"  : "routeMonitor"
+                                      }]
+                }
+	]
+}

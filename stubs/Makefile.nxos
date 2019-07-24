@@ -1,0 +1,55 @@
+## To build libnxsdk.so stubs in acme tree
+
+################################################################################################
+####################### Dont update beyond this point###########################################
+################################################################################################
+
+### Check if its running in NXOS WRL toolkit
+### if it is set the ENXOS_SDK_ROOT env
+SYSROOT := /auto/andpkg/rep_cache/wr-x86-xeon/5.0-n9k/sysroot/intel_xeon_32_core-wrs-linux
+M_ARCH  := -m32
+C_STD   := c++0x
+
+### Directory Structure
+NXSDK_HEADERDIR       := ../../../public/include
+NXSDK_LIBDIR          := ./
+NXLIBDIR              := /isan/lib
+NXSDK_SRCDIR          := ./
+NXSDK_BUILDDIR        := build
+NXSDK_LIBNAME         := libnxsdk.so
+NXSDK_LIBTARGET       := ${NXSDK_LIBDIR}/${NXSDK_LIBNAME}
+
+## Includes for the project
+INCLUDES         := -I$(SYSROOT)/usr/include -I$(NXSDK_HEADERDIR) -I$(NXSDK_HEADERDIR)/types 
+
+## Compiler
+CXX              := i686-wrs-linux-gnu-g++ ${M_ARCH}  --sysroot=${SYSROOT}
+CXXFLAGS         := ${INCLUDES} -g -std=${C_STD} -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings
+LDXXFLAGS        := ${M_ARCH} --sysroot=${SYSROOT} -L${SYSROOT}/usr/lib -L${SYSROOT}/lib -L$(NXSDK_LIBDIR)
+
+### All Binaries needed for this module
+all: ${NXSDK_LIBTARGET} 
+
+### Build NXSDK Library
+# Create stub Objs needed for NXSDK Library
+LIBNXSDK_CPP  := $(wildcard ${NXSDK_LIBDIR}/*.cpp)
+LIBNXSDK_OBJS := $(addprefix $(NXSDK_BUILDDIR)/,$(notdir $(LIBNXSDK_CPP:.cpp=.o)))
+
+$(NXSDK_BUILDDIR)/%.o: ${NXSDK_LIBDIR}/%.cpp 
+	@echo -e "\n### Building Shared NXSDK Library Objects - ($<)!!!"
+	$(CXX) $(CXXFLAGS) -c -fPIC $< -o $@
+
+${LIBNXSDK_OBJS}: setup
+
+${NXSDK_LIBTARGET}: ${LIBNXSDK_CC_OBJS} ${LIBNXSDK_OBJS} 
+	@echo -e "\n### Building Shared NXSDK Library - (${NXSDK_LIBTARGET})!!!"
+	$(CXX) $(CXXFLAGS) $(LDXXFLAGS) -shared -Wl,-soname,${NXSDK_LIBNAME} -o $@ $^ -lc -ldl 
+
+setup:
+	@mkdir -p ${NXSDK_BUILDDIR}
+ 
+clean:
+	rm -rf ${NXSDK_LIBDIR}/*.so ${NXSDK_BUILDDIR}/*.o 
+
+cleaner:
+	rm -rf  ${NXSDK_LIBDIR}/*.so ${NXSDK_BUILDDIR}

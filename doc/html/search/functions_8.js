@@ -14,9 +14,15 @@ var searchData=
   ['postintfstatecb',['postIntfStateCb',['../classnxos_1_1_nx_intf_mgr_handler.html#a9c3d4d357b1f0ab07558b4611c693755',1,'nxos::NxIntfMgrHandler']]],
   ['postintfvlancb',['postIntfVlanCb',['../classnxos_1_1_nx_intf_mgr_handler.html#aad14cab2e803ceadef82870303db526c',1,'nxos::NxIntfMgrHandler']]],
   ['postintfvrfcb',['postIntfVrfCb',['../classnxos_1_1_nx_intf_mgr_handler.html#aa6f8bc5b1cfa6d99e863c8ede3cafa5f',1,'nxos::NxIntfMgrHandler']]],
+  ['postl3recursivenexthopcb',['postL3RecursiveNextHopCb',['../classnxos_1_1_nx_rib_mgr_handler.html#ae11a0ef873528002f86cd41a5871ad65',1,'nxos::NxRibMgrHandler']]],
   ['postl3routecb',['postL3RouteCb',['../classnxos_1_1_nx_rib_mgr_handler.html#a1b742d50365fdece0ea47eb38300f7de',1,'nxos::NxRibMgrHandler']]],
+  ['postl3routerepopulatecb',['postL3RouteRepopulateCb',['../classnxos_1_1_nx_rib_mgr_handler.html#ac3b189923604f553505b0741b8acd39d',1,'nxos::NxRibMgrHandler']]],
   ['postmachandlercb',['postMacHandlerCb',['../classnxos_1_1_nx_mac_mgr_handler.html#a3a15935d8cd001a554d32a5d7ab216b5',1,'nxos::NxMacMgrHandler']]],
   ['postmachandlerdownloadcb',['postMacHandlerDownloadCb',['../classnxos_1_1_nx_mac_mgr_handler.html#a42d84c9f4da1211024912efd4416827e',1,'nxos::NxMacMgrHandler']]],
+  ['postmyl3routecb',['postMyL3RouteCb',['../classnxos_1_1_nx_rib_mgr_handler.html#af4214a821d17a84b4746b0dd94b5d58b',1,'nxos::NxRibMgrHandler']]],
+  ['postremoteconndowncb',['postRemoteConnDownCb',['../classnxos_1_1_nx_sdk_handler.html#a433426269ae0b8374f3ead9f06edeb0b',1,'nxos::NxSdkHandler']]],
+  ['postremoteconnupcb',['postRemoteConnUpCb',['../classnxos_1_1_nx_sdk_handler.html#a71b575abab99f8798635035986dbdc3f',1,'nxos::NxSdkHandler']]],
   ['postvrfcb',['postVrfCb',['../classnxos_1_1_nx_rib_mgr_handler.html#a2ed5a3ad9c0e55d21e18d88a19419a5e',1,'nxos::NxRibMgrHandler']]],
-  ['printconsole',['printConsole',['../classnxos_1_1_nx_cli_cmd.html#a10c723c79d75ac2c85821b5ca6540c62',1,'nxos::NxCliCmd']]]
+  ['printconsole',['printConsole',['../classnxos_1_1_nx_cli_cmd.html#a10c723c79d75ac2c85821b5ca6540c62',1,'nxos::NxCliCmd']]],
+  ['purgeallsdkobjs',['purgeAllSdkObjs',['../classnxos_1_1_nx_sdk.html#abfd0b2d92b51fc18bb30c059fa5b4a9b',1,'nxos::NxSdk']]]
 ];
