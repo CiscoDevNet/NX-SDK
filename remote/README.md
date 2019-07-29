@@ -65,8 +65,8 @@
    
    - To run NX-SDK application remotely, get the NX-SDK Remote docker image from 
      ```
-      docker pull dockercisco/nxsdk:<tag>
-      Ex)    docker pull dockercisco/nxsdk:v2.0
+      docker pull dockercisco/nxsdk-remote:<tag>
+      Ex)    docker pull dockercisco/nxsdk-remote:v1
      ```
    - NOTE: Refer to [NX-SDK Docker readme](../readmes/NXSDK_docker.md) for more information on docker images provided by 
 	   NX-SDK and which ones to use based on where the application will be deployed (on box or remotely).  
