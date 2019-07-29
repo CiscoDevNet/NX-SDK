@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 '''
 This script generates RPM packages for custom applications built using NX-SDK.
 For more information, please run the script with -h option.
