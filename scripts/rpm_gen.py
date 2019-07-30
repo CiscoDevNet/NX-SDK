@@ -37,8 +37,8 @@ default_app_source = os.path.join(nxsdk_path, "examples")
 default_app_desc="RPM package for custom application"
 default_app_target = os.path.join(nxsdk_path, "bin")
 default_app_version = "1.0"
-default_release_version = "1.7.5"
-sdk_supported_versions = ["1.0.0", "1.5.0", "1.7.5"]
+default_release_version = "2.0.0"
+sdk_supported_versions = ["1.0.0", "1.5.0", "1.7.5", "2.0.0"]
 
 # Spec file parameters
 custom_spec_file_path = os.path.join(nxsdk_path, "scripts/template.spec")
