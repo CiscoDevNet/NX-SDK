@@ -14,7 +14,7 @@
 | Security Profiles | <ul><li>A security profile is an optional object that is attached to the NX-SDK on box service or remote server running in the switch.</li> <li>Security profiles control an NX-SDK (on box or remote) application's ability to interact/access NX-OS.</li><li>For more information refer to [Security Profiles Readme](readmes/security_profiles.md)</li></ul> |
 
 ## Sample Applications:
-   
+   - [dupHostMonitor](readmes/dupHostMonitor_remote_NXSDK.md)
    
 # NX-SDK v1.7.5:
 
