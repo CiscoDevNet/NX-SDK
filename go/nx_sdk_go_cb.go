@@ -21,72 +21,6 @@ import (
 // in Section 23.4.7 (Go Director Classes) in the SWIG 3.0 document at
 // http://www.swig.org/Doc3.0/SWIGDocumentation.pdf
 
-// NxDmeMgrHandler Callback interface
-type NxDmeMgrHandlerGo interface {
-    nx_sdk_go.NxDmeMgrHandler
-    deleteNxDmeMgrHandler()
-    IsNxDmeMgrHandlerGo()
-}
-
-type nxNxDmeMgrHandlerGo struct {
-    nx_sdk_go.NxDmeMgrHandler
-}
-
-func (nchgs *nxNxDmeMgrHandlerGo) deleteNxDmeMgrHandler() {
-    nx_sdk_go.DeleteDirectorNxDmeMgrHandler(nchgs.NxDmeMgrHandler)
-}
-
-func (nchgs *nxNxDmeMgrHandlerGo) IsNxDmeMgrHandlerGo() {}
-
-type NxDmeMgrHandlerGoFunc struct {
-    nch nx_sdk_go.NxDmeMgrHandler
-}
-
-func NewNxDmeMgrHandlerGo() NxDmeMgrHandlerGo {
-    om := &NxDmeMgrHandlerGoFunc{}
-    nch := nx_sdk_go.NewDirectorNxDmeMgrHandler(om)
-    om.nch = nch
-    nchgs := &nxNxDmeMgrHandlerGo{ NxDmeMgrHandler: nch }
-    return nchgs
-}
-
-func DeleteNxDmeMgrHandlerGo(nchg NxDmeMgrHandlerGo) {
-    nchg.deleteNxDmeMgrHandler()
-}
-
-// NxCmdHandler Callback interface
-type NxCmdHandlerGo interface {
-    nx_sdk_go.NxCmdHandler
-    deleteNxCmdHandler()
-    IsNxCmdHandlerGo()
-}
-
-type nxNxCmdHandlerGo struct {
-    nx_sdk_go.NxCmdHandler
-}
-
-func (nchgs *nxNxCmdHandlerGo) deleteNxCmdHandler() {
-    nx_sdk_go.DeleteDirectorNxCmdHandler(nchgs.NxCmdHandler)
-}
-
-func (nchgs *nxNxCmdHandlerGo) IsNxCmdHandlerGo() {}
-
-type NxCmdHandlerGoFunc struct {
-    nch nx_sdk_go.NxCmdHandler
-}
-
-func NewNxCmdHandlerGo() NxCmdHandlerGo {
-    om := &NxCmdHandlerGoFunc{}
-    nch := nx_sdk_go.NewDirectorNxCmdHandler(om)
-    om.nch = nch
-    nchgs := &nxNxCmdHandlerGo{ NxCmdHandler: nch }
-    return nchgs
-}
-
-func DeleteNxCmdHandlerGo(nchg NxCmdHandlerGo) {
-    nchg.deleteNxCmdHandler()
-}
-
 // NxIntfMgrHandler Callback interface
 type NxIntfMgrHandlerGo interface {
     nx_sdk_go.NxIntfMgrHandler
@@ -118,6 +52,72 @@ func NewNxIntfMgrHandlerGo() NxIntfMgrHandlerGo {
 
 func DeleteNxIntfMgrHandlerGo(nchg NxIntfMgrHandlerGo) {
     nchg.deleteNxIntfMgrHandler()
+}
+
+// NxMacMgrHandler Callback interface
+type NxMacMgrHandlerGo interface {
+    nx_sdk_go.NxMacMgrHandler
+    deleteNxMacMgrHandler()
+    IsNxMacMgrHandlerGo()
+}
+
+type nxNxMacMgrHandlerGo struct {
+    nx_sdk_go.NxMacMgrHandler
+}
+
+func (nchgs *nxNxMacMgrHandlerGo) deleteNxMacMgrHandler() {
+    nx_sdk_go.DeleteDirectorNxMacMgrHandler(nchgs.NxMacMgrHandler)
+}
+
+func (nchgs *nxNxMacMgrHandlerGo) IsNxMacMgrHandlerGo() {}
+
+type NxMacMgrHandlerGoFunc struct {
+    nch nx_sdk_go.NxMacMgrHandler
+}
+
+func NewNxMacMgrHandlerGo() NxMacMgrHandlerGo {
+    om := &NxMacMgrHandlerGoFunc{}
+    nch := nx_sdk_go.NewDirectorNxMacMgrHandler(om)
+    om.nch = nch
+    nchgs := &nxNxMacMgrHandlerGo{ NxMacMgrHandler: nch }
+    return nchgs
+}
+
+func DeleteNxMacMgrHandlerGo(nchg NxMacMgrHandlerGo) {
+    nchg.deleteNxMacMgrHandler()
+}
+
+// NxTraceHandler Callback interface
+type NxTraceHandlerGo interface {
+    nx_sdk_go.NxTraceHandler
+    deleteNxTraceHandler()
+    IsNxTraceHandlerGo()
+}
+
+type nxNxTraceHandlerGo struct {
+    nx_sdk_go.NxTraceHandler
+}
+
+func (nchgs *nxNxTraceHandlerGo) deleteNxTraceHandler() {
+    nx_sdk_go.DeleteDirectorNxTraceHandler(nchgs.NxTraceHandler)
+}
+
+func (nchgs *nxNxTraceHandlerGo) IsNxTraceHandlerGo() {}
+
+type NxTraceHandlerGoFunc struct {
+    nch nx_sdk_go.NxTraceHandler
+}
+
+func NewNxTraceHandlerGo() NxTraceHandlerGo {
+    om := &NxTraceHandlerGoFunc{}
+    nch := nx_sdk_go.NewDirectorNxTraceHandler(om)
+    om.nch = nch
+    nchgs := &nxNxTraceHandlerGo{ NxTraceHandler: nch }
+    return nchgs
+}
+
+func DeleteNxTraceHandlerGo(nchg NxTraceHandlerGo) {
+    nchg.deleteNxTraceHandler()
 }
 
 // NxRibMgrHandler Callback interface
@@ -153,6 +153,105 @@ func DeleteNxRibMgrHandlerGo(nchg NxRibMgrHandlerGo) {
     nchg.deleteNxRibMgrHandler()
 }
 
+// NxCmdHandler Callback interface
+type NxCmdHandlerGo interface {
+    nx_sdk_go.NxCmdHandler
+    deleteNxCmdHandler()
+    IsNxCmdHandlerGo()
+}
+
+type nxNxCmdHandlerGo struct {
+    nx_sdk_go.NxCmdHandler
+}
+
+func (nchgs *nxNxCmdHandlerGo) deleteNxCmdHandler() {
+    nx_sdk_go.DeleteDirectorNxCmdHandler(nchgs.NxCmdHandler)
+}
+
+func (nchgs *nxNxCmdHandlerGo) IsNxCmdHandlerGo() {}
+
+type NxCmdHandlerGoFunc struct {
+    nch nx_sdk_go.NxCmdHandler
+}
+
+func NewNxCmdHandlerGo() NxCmdHandlerGo {
+    om := &NxCmdHandlerGoFunc{}
+    nch := nx_sdk_go.NewDirectorNxCmdHandler(om)
+    om.nch = nch
+    nchgs := &nxNxCmdHandlerGo{ NxCmdHandler: nch }
+    return nchgs
+}
+
+func DeleteNxCmdHandlerGo(nchg NxCmdHandlerGo) {
+    nchg.deleteNxCmdHandler()
+}
+
+// NxDmeMgrHandler Callback interface
+type NxDmeMgrHandlerGo interface {
+    nx_sdk_go.NxDmeMgrHandler
+    deleteNxDmeMgrHandler()
+    IsNxDmeMgrHandlerGo()
+}
+
+type nxNxDmeMgrHandlerGo struct {
+    nx_sdk_go.NxDmeMgrHandler
+}
+
+func (nchgs *nxNxDmeMgrHandlerGo) deleteNxDmeMgrHandler() {
+    nx_sdk_go.DeleteDirectorNxDmeMgrHandler(nchgs.NxDmeMgrHandler)
+}
+
+func (nchgs *nxNxDmeMgrHandlerGo) IsNxDmeMgrHandlerGo() {}
+
+type NxDmeMgrHandlerGoFunc struct {
+    nch nx_sdk_go.NxDmeMgrHandler
+}
+
+func NewNxDmeMgrHandlerGo() NxDmeMgrHandlerGo {
+    om := &NxDmeMgrHandlerGoFunc{}
+    nch := nx_sdk_go.NewDirectorNxDmeMgrHandler(om)
+    om.nch = nch
+    nchgs := &nxNxDmeMgrHandlerGo{ NxDmeMgrHandler: nch }
+    return nchgs
+}
+
+func DeleteNxDmeMgrHandlerGo(nchg NxDmeMgrHandlerGo) {
+    nchg.deleteNxDmeMgrHandler()
+}
+
+// NxSdkHandler Callback interface
+type NxSdkHandlerGo interface {
+    nx_sdk_go.NxSdkHandler
+    deleteNxSdkHandler()
+    IsNxSdkHandlerGo()
+}
+
+type nxNxSdkHandlerGo struct {
+    nx_sdk_go.NxSdkHandler
+}
+
+func (nchgs *nxNxSdkHandlerGo) deleteNxSdkHandler() {
+    nx_sdk_go.DeleteDirectorNxSdkHandler(nchgs.NxSdkHandler)
+}
+
+func (nchgs *nxNxSdkHandlerGo) IsNxSdkHandlerGo() {}
+
+type NxSdkHandlerGoFunc struct {
+    nch nx_sdk_go.NxSdkHandler
+}
+
+func NewNxSdkHandlerGo() NxSdkHandlerGo {
+    om := &NxSdkHandlerGoFunc{}
+    nch := nx_sdk_go.NewDirectorNxSdkHandler(om)
+    om.nch = nch
+    nchgs := &nxNxSdkHandlerGo{ NxSdkHandler: nch }
+    return nchgs
+}
+
+func DeleteNxSdkHandlerGo(nchg NxSdkHandlerGo) {
+    nchg.deleteNxSdkHandler()
+}
+
 // NxAdjMgrHandler Callback interface
 type NxAdjMgrHandlerGo interface {
     nx_sdk_go.NxAdjMgrHandler
@@ -184,37 +283,4 @@ func NewNxAdjMgrHandlerGo() NxAdjMgrHandlerGo {
 
 func DeleteNxAdjMgrHandlerGo(nchg NxAdjMgrHandlerGo) {
     nchg.deleteNxAdjMgrHandler()
-}
-
-// NxMacMgrHandler Callback interface
-type NxMacMgrHandlerGo interface {
-    nx_sdk_go.NxMacMgrHandler
-    deleteNxMacMgrHandler()
-    IsNxMacMgrHandlerGo()
-}
-
-type nxNxMacMgrHandlerGo struct {
-    nx_sdk_go.NxMacMgrHandler
-}
-
-func (nchgs *nxNxMacMgrHandlerGo) deleteNxMacMgrHandler() {
-    nx_sdk_go.DeleteDirectorNxMacMgrHandler(nchgs.NxMacMgrHandler)
-}
-
-func (nchgs *nxNxMacMgrHandlerGo) IsNxMacMgrHandlerGo() {}
-
-type NxMacMgrHandlerGoFunc struct {
-    nch nx_sdk_go.NxMacMgrHandler
-}
-
-func NewNxMacMgrHandlerGo() NxMacMgrHandlerGo {
-    om := &NxMacMgrHandlerGoFunc{}
-    nch := nx_sdk_go.NewDirectorNxMacMgrHandler(om)
-    om.nch = nch
-    nchgs := &nxNxMacMgrHandlerGo{ NxMacMgrHandler: nch }
-    return nchgs
-}
-
-func DeleteNxMacMgrHandlerGo(nchg NxMacMgrHandlerGo) {
-    nchg.deleteNxMacMgrHandler()
 }

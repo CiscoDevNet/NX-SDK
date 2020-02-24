@@ -58,7 +58,7 @@ CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
 ### Example Go Apps
 GO_PATH     := ${NXSDK_PATH}/go
 EX_GO_PATH  := ${NXSDK_PATH}/examples/go
-EX_GO_BIN   := customCliGoApp ribMgrGo featureMonitorGo ribRemoteGo
+EX_GO_BIN   := customCliGoApp ribMgrGo featureMonitorGo
 
 ### Compiler
 CXX              := ${CXX} ${M_ARCH} --sysroot=${SYSROOT}

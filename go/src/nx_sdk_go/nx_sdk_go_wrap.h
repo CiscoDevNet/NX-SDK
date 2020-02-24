@@ -33,6 +33,24 @@ class SwigDirector_NxSdkHandler : public nxos::NxSdkHandler
   Swig_memory *swig_mem;
 };
 
+class SwigDirector_NxTraceHandler : public nxos::NxTraceHandler
+{
+ public:
+  SwigDirector_NxTraceHandler(int swig_p);
+  virtual ~SwigDirector_NxTraceHandler();
+  void _swig_upcall_postSyslogCb(nxos::NxSyslog *syslog) {
+    nxos::NxTraceHandler::postSyslogCb(syslog);
+  }
+  virtual void postSyslogCb(nxos::NxSyslog *syslog);
+  void _swig_upcall_postSyslogDownloadDoneCb() {
+    nxos::NxTraceHandler::postSyslogDownloadDoneCb();
+  }
+  virtual void postSyslogDownloadDoneCb();
+ private:
+  intgo go_val;
+  Swig_memory *swig_mem;
+};
+
 class SwigDirector_NxCmdHandler : public nxos::NxCmdHandler
 {
  public:

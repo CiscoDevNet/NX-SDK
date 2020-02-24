@@ -104,7 +104,7 @@
    Supported languages for remote NX-SDK applications are:
   - C++
   - Python
-  - Go (EFT/Beta)
+  - Go (pre EFT/Beta)
   
 ## How to start NX-SDK application remotely
       

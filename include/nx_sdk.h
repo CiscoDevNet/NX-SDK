@@ -540,6 +540,52 @@ class NxSdk
                              const char* remoteIp, uint32_t remotePort,
 			     const char *certificate);
 
+    /**                                                                                                   
+     * To get the version of NX-SDK installed in the NXOS switch.
+     * Usage: NX-SDK version of remote client could be different from  
+     *        NX-SDK version of remote server running in the NX-OS
+     *        switch. Use this API to get NX-SDK version installed in
+     *        the NX-OS switch.
+     *                                                                  
+     * @returns string of the pattern v<major>.<minor>.<patch> 
+     *          ex: v2.5.0
+     *                                                             
+     * @since NX-SDK v2.5.0                                          
+     *                                                             
+     *  @code                                                         
+     *  C++:                                                       
+     *       cout << "NX-SDK version in NXOS switch: " << sdk->getNxSdkVersion() << "\n";                      *                                                                                        
+     *  Python:                                                 
+     *     print "NX-SDK version in NXOS switch:  " + sdk.getNxSdkVersion()                               
+     *                                                           
+     *  @endcode                                               
+     **/
+    virtual std::string getNxSdkVersion() = 0;
+
+    /**                                                                                                   
+     * To get the NX-SDK version of remote client.
+     * Usage: NX-SDK version of remote client could be different from 
+     *        NX-SDK version of remote server running in the NX-OS
+     *        switch. Use this API to get NX-SDK version used by the
+     *        the remote application.
+     *
+     * @returns string of the pattern v<major>.<minor>.<patch> 
+     *          ex: v2.5.0. For apps running inside the NX-OS itself,
+     *          this API returns an empty string. To be used only by
+     *          remote NX-SDK apps.
+     *
+     * @since NX-SDK v2.5.0                                                                                 
+     *                                                                                                    
+     *  @code                                                                                             
+     *  C++:                                                                                              
+     *       cout << "Remote Client NX-SDK version: " << sdk->getRemoteClientNxSdkVersion() << "\n";           
+     *                                                                
+     *  Python:                                                       
+     *     print "Remote Client NX-SDK version" + sdk.getRemoteClientNxSdkVersion() 
+     *                                                                
+     *  @endcode                                                        
+     **/
+    virtual std::string getRemoteClientNxSdkVersion() = 0;    
 };
 
 /**

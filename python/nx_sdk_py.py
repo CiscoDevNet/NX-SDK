@@ -189,6 +189,12 @@ class NxSdk(_object):
         getSdkInst = staticmethod(_nx_sdk_py.NxSdk_getSdkInst)
     else:
         getSdkInst = _nx_sdk_py.NxSdk_getSdkInst
+
+    def getNxSdkVersion(self):
+        return _nx_sdk_py.NxSdk_getNxSdkVersion(self)
+
+    def getRemoteClientNxSdkVersion(self):
+        return _nx_sdk_py.NxSdk_getRemoteClientNxSdkVersion(self)
 NxSdk_swigregister = _nx_sdk_py.NxSdk_swigregister
 NxSdk_swigregister(NxSdk)
 
@@ -228,51 +234,6 @@ class NxSdkHandler(_object):
 NxSdkHandler_swigregister = _nx_sdk_py.NxSdkHandler_swigregister
 NxSdkHandler_swigregister(NxSdkHandler)
 
-class NxException(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, NxException, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, NxException, name)
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined - class is abstract")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _nx_sdk_py.delete_NxException
-    __del__ = lambda self: None
-
-    def what(self):
-        return _nx_sdk_py.NxException_what(self)
-
-    def getErrCode(self):
-        return _nx_sdk_py.NxException_getErrCode(self)
-
-    def getErrModule(self):
-        return _nx_sdk_py.NxException_getErrModule(self)
-
-    def getErrSeverity(self):
-        return _nx_sdk_py.NxException_getErrSeverity(self)
-
-    def getErrApi(self):
-        return _nx_sdk_py.NxException_getErrApi(self)
-NxException_swigregister = _nx_sdk_py.NxException_swigregister
-NxException_swigregister(NxException)
-
-ERR_ESUCCESS = _nx_sdk_py.ERR_ESUCCESS
-ERR_INVALID_USAGE = _nx_sdk_py.ERR_INVALID_USAGE
-ERR_INVALID = _nx_sdk_py.ERR_INVALID
-ERR_NULL_PTR = _nx_sdk_py.ERR_NULL_PTR
-ERR_NOT_FOUND = _nx_sdk_py.ERR_NOT_FOUND
-ERR_EXISTS = _nx_sdk_py.ERR_EXISTS
-ERR_EMPTY = _nx_sdk_py.ERR_EMPTY
-ERR_MAX_LIMIT = _nx_sdk_py.ERR_MAX_LIMIT
-ERR_FAILURE = _nx_sdk_py.ERR_FAILURE
-ERR_ESUCCESS_MORE = _nx_sdk_py.ERR_ESUCCESS_MORE
-ERR_SIGINT = _nx_sdk_py.ERR_SIGINT
-ERR_ENOMEM = _nx_sdk_py.ERR_ENOMEM
-ERR_BADFD = _nx_sdk_py.ERR_BADFD
-ERR_UNKNOWN = _nx_sdk_py.ERR_UNKNOWN
-ERR_REMOTE_DOWN = _nx_sdk_py.ERR_REMOTE_DOWN
-ERR_REMOTE_SDK_OBJS_OBSOLETE = _nx_sdk_py.ERR_REMOTE_SDK_OBJS_OBSOLETE
 class NxCliCmd(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, NxCliCmd, name, value)
@@ -417,6 +378,76 @@ class NxCliParser(_object):
 NxCliParser_swigregister = _nx_sdk_py.NxCliParser_swigregister
 NxCliParser_swigregister(NxCliParser)
 
+class NxSyslog(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NxSyslog, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NxSyslog, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _nx_sdk_py.delete_NxSyslog
+    __del__ = lambda self: None
+
+    def getId(self):
+        return _nx_sdk_py.NxSyslog_getId(self)
+
+    def getNodeName(self):
+        return _nx_sdk_py.NxSyslog_getNodeName(self)
+
+    def getTimeStamp(self):
+        return _nx_sdk_py.NxSyslog_getTimeStamp(self)
+
+    def getSeverity(self):
+        return _nx_sdk_py.NxSyslog_getSeverity(self)
+
+    def getMessageName(self):
+        return _nx_sdk_py.NxSyslog_getMessageName(self)
+
+    def getCategory(self):
+        return _nx_sdk_py.NxSyslog_getCategory(self)
+
+    def getText(self):
+        return _nx_sdk_py.NxSyslog_getText(self)
+
+    def getTimeZone(self):
+        return _nx_sdk_py.NxSyslog_getTimeZone(self)
+NxSyslog_swigregister = _nx_sdk_py.NxSyslog_swigregister
+NxSyslog_swigregister(NxSyslog)
+
+class NxTraceHandler(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NxTraceHandler, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NxTraceHandler, name)
+    __repr__ = _swig_repr
+    __swig_destroy__ = _nx_sdk_py.delete_NxTraceHandler
+    __del__ = lambda self: None
+
+    def postSyslogCb(self, syslog):
+        return _nx_sdk_py.NxTraceHandler_postSyslogCb(self, syslog)
+
+    def postSyslogDownloadDoneCb(self):
+        return _nx_sdk_py.NxTraceHandler_postSyslogDownloadDoneCb(self)
+
+    def __init__(self):
+        if self.__class__ == NxTraceHandler:
+            _self = None
+        else:
+            _self = self
+        this = _nx_sdk_py.new_NxTraceHandler(_self, )
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    def __disown__(self):
+        self.this.disown()
+        _nx_sdk_py.disown_NxTraceHandler(self)
+        return weakref_proxy(self)
+NxTraceHandler_swigregister = _nx_sdk_py.NxTraceHandler_swigregister
+NxTraceHandler_swigregister(NxTraceHandler)
+
 class NxTrace(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, NxTrace, name, value)
@@ -449,6 +480,18 @@ class NxTrace(_object):
         getPrioStr = staticmethod(_nx_sdk_py.NxTrace_getPrioStr)
     else:
         getPrioStr = _nx_sdk_py.NxTrace_getPrioStr
+
+    def watchSyslog(self, download=True):
+        return _nx_sdk_py.NxTrace_watchSyslog(self, download)
+
+    def unwatchSyslog(self):
+        return _nx_sdk_py.NxTrace_unwatchSyslog(self)
+
+    def setTraceHandler(self, handler):
+        return _nx_sdk_py.NxTrace_setTraceHandler(self, handler)
+
+    def getTraceHandler(self):
+        return _nx_sdk_py.NxTrace_getTraceHandler(self)
 NxTrace_swigregister = _nx_sdk_py.NxTrace_swigregister
 NxTrace_swigregister(NxTrace)
 
@@ -932,6 +975,51 @@ class NxMacMgr(_object):
 NxMacMgr_swigregister = _nx_sdk_py.NxMacMgr_swigregister
 NxMacMgr_swigregister(NxMacMgr)
 
+class NxException(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NxException, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NxException, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _nx_sdk_py.delete_NxException
+    __del__ = lambda self: None
+
+    def what(self):
+        return _nx_sdk_py.NxException_what(self)
+
+    def getErrCode(self):
+        return _nx_sdk_py.NxException_getErrCode(self)
+
+    def getErrModule(self):
+        return _nx_sdk_py.NxException_getErrModule(self)
+
+    def getErrSeverity(self):
+        return _nx_sdk_py.NxException_getErrSeverity(self)
+
+    def getErrApi(self):
+        return _nx_sdk_py.NxException_getErrApi(self)
+NxException_swigregister = _nx_sdk_py.NxException_swigregister
+NxException_swigregister(NxException)
+
+ERR_ESUCCESS = _nx_sdk_py.ERR_ESUCCESS
+ERR_INVALID_USAGE = _nx_sdk_py.ERR_INVALID_USAGE
+ERR_INVALID = _nx_sdk_py.ERR_INVALID
+ERR_NULL_PTR = _nx_sdk_py.ERR_NULL_PTR
+ERR_NOT_FOUND = _nx_sdk_py.ERR_NOT_FOUND
+ERR_EXISTS = _nx_sdk_py.ERR_EXISTS
+ERR_EMPTY = _nx_sdk_py.ERR_EMPTY
+ERR_MAX_LIMIT = _nx_sdk_py.ERR_MAX_LIMIT
+ERR_FAILURE = _nx_sdk_py.ERR_FAILURE
+ERR_ESUCCESS_MORE = _nx_sdk_py.ERR_ESUCCESS_MORE
+ERR_SIGINT = _nx_sdk_py.ERR_SIGINT
+ERR_ENOMEM = _nx_sdk_py.ERR_ENOMEM
+ERR_BADFD = _nx_sdk_py.ERR_BADFD
+ERR_UNKNOWN = _nx_sdk_py.ERR_UNKNOWN
+ERR_REMOTE_DOWN = _nx_sdk_py.ERR_REMOTE_DOWN
+ERR_REMOTE_SDK_OBJS_OBSOLETE = _nx_sdk_py.ERR_REMOTE_SDK_OBJS_OBSOLETE
 R_TEXT = _nx_sdk_py.R_TEXT
 R_JSON = _nx_sdk_py.R_JSON
 R_XML = _nx_sdk_py.R_XML
