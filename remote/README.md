@@ -91,11 +91,16 @@
        
      ! Get the latest content by using
      git pull
+     
+     NOTE: If you run into errors during git pull the run
+     git clean  -d  -f .
+     git pull
      ```
      
-   - Set the necessary environment,
+   - Set the necessary environment, by running setup.sh script
      ```
-     export NXSDK_ROOT=/NX-SDK
+     
+     sh setup.sh
      ```
    - Now you have the environment ready to develop NX-SDK remote applications.
 
