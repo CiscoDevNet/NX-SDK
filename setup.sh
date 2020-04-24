@@ -4,6 +4,7 @@ NXSDK_ROOT=/NX-SDK
 echo "----- Updating repo ------"
 cd ${NXSDK_ROOT}
 echo "=> git stash" 
+git clean  -d  -f .
 git stash
 echo "=> git pull"
 git pull
