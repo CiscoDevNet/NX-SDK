@@ -100,7 +100,7 @@
       docker version
       
       ! Pull NX-SDK docker Remote image
-      docker pull dockercisco/nxsdk:v2
+     docker pull dockercisco/nxsdk-remote:v1
       
       ! Get the NX-SDK Docker Remote Image id
       docker images
@@ -111,8 +111,8 @@
       ! NX-SDK toolkit is already available
       cd /NX-SDK
       
-      ! Get the latest NX-SDK toolkit
-      git pull      
+      ! Set the necessary environment, by running setup.sh script
+      sh setup.sh     
    ```   
    
 ### Step 2: Edit switch_details.json
