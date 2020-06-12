@@ -1,5 +1,5 @@
-\hypertarget{structnxos_1_1cli__param__type__string__attr__}{}\section{nxos\+:\+:cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+ Struct Reference}
-\label{structnxos_1_1cli__param__type__string__attr__}\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+}}
+\hypertarget{structnxos_1_1cli__param__type__string__attr__}{}\doxysection{nxos\+::cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+ Struct Reference}
+\label{structnxos_1_1cli__param__type__string__attr__}\index{nxos::cli\_param\_type\_string\_attr\_@{nxos::cli\_param\_type\_string\_attr\_}}
 
 
 Specifies that the type of the C\+LI input parameter is string.  
@@ -7,61 +7,80 @@ Specifies that the type of the C\+LI input parameter is string.
 
 
 
-{\ttfamily \#include $<$include/types/nx\+\_\+cli.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
 
-\subsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}\label{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}} 
-int {\bfseries length}
+int \mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}{length}}
 \item 
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}\label{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}} 
 char \mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}{regex\+\_\+pattern}} \mbox{[}256\mbox{]}
 \begin{DoxyCompactList}\small\item\em Default is 256. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Specifies that the type of the C\+LI input parameter is string. 
 
 Matching param type is P\+\_\+\+S\+T\+R\+I\+NG. When used in update\+Param context\+: 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em length} & Length of the imput parameter string. \\
+\mbox{\texttt{ in}}  & {\em length} & Length of the imput parameter string. \\
 \hline
-\mbox{\tt in}  & {\em regex\+\_\+pattern} & Regular expression for the input parameter\\
+\mbox{\texttt{ in}}  & {\em regex\+\_\+pattern} & Regular expression for the input parameter\\
 \hline
 \end{DoxyParams}
 Usage\+: If you need to create a C\+LI which will take a string with max length 25 and matches a regex pattern \char`\"{}$^\wedge$\mbox{[}a-\/z\+A-\/\+Z\mbox{]}+\$\char`\"{}
 
 C\+LI\+: \$appname encryption-\/text ? W\+O\+RD Enter Encrypted text (Max Size 25) ~\newline
- 
-\begin{DoxyCode}
-sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-cliP = sdk->getCliParser();
-\mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr__}{nxos::cli\_param\_type\_string\_attr}} str\_attr = \{0\};
-str\_attr.length = 25;
-strcpy(str\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}{regex\_pattern}}, pattern);
-cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_encryption\_text\_cmd"},
-                         \textcolor{stringliteral}{"encryption-text <text>"});
-cmd->updateParam(\textcolor{stringliteral}{"<text>"}, \textcolor{stringliteral}{"Enter Encrypted text"}, nxos::P\_STRING,
-                 (\textcolor{keywordtype}{void} *)&str\_attr, \textcolor{keyword}{sizeof}(str\_attr));
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{cliP = sdk-\/>getCliParser();}
+\DoxyCodeLine{\mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr__}{nxos::cli\_param\_type\_string\_attr}} str\_attr = \{0\};}
+\DoxyCodeLine{str\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}{length}} = 25;}
+\DoxyCodeLine{strcpy(str\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}{regex\_pattern}}, pattern);}
+\DoxyCodeLine{cmd = cliP-\/>newConfigCmd(\textcolor{stringliteral}{"{}set\_encryption\_text\_cmd"{}},}
+\DoxyCodeLine{                         \textcolor{stringliteral}{"{}encryption-\/text <text>"{}});}
+\DoxyCodeLine{cmd-\/>updateParam(\textcolor{stringliteral}{"{}<text>"{}}, \textcolor{stringliteral}{"{}Enter Encrypted text"{}}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea}{nxos::P\_STRING}},}
+\DoxyCodeLine{                 (\textcolor{keywordtype}{void} *)\&str\_attr, \textcolor{keyword}{sizeof}(str\_attr));}
 \end{DoxyCode}
 
 
 
-\begin{DoxyCode}
-\textcolor{keyword}{import} nx\_sdk\_py
-sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-cliP = sdk.getCliParser()
-str\_attr = nx\_sdk\_py.cli\_param\_type\_string\_attr()
-str\_attr.length = 25;
-str\_attr.regex\_pattern = \textcolor{stringliteral}{"^[a-zA-Z]+$"};
-cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_encryption\_text\_cmd"}, 
-                        \textcolor{stringliteral}{"encryption-text <text>"})
-cmd.updateParam(\textcolor{stringliteral}{"<text>"}, \textcolor{stringliteral}{"Encrypted text"}, nxos::P\_STRING,
-                str\_attr, len(str\_attr))
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{cliP = sdk.getCliParser()}
+\DoxyCodeLine{str\_attr = nx\_sdk\_py.cli\_param\_type\_string\_attr()}
+\DoxyCodeLine{str\_attr.length = 25;}
+\DoxyCodeLine{str\_attr.regex\_pattern = \textcolor{stringliteral}{"{}\string^[a-\/zA-\/Z]+\$"{}};}
+\DoxyCodeLine{cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"{}set\_encryption\_text\_cmd"{}}, }
+\DoxyCodeLine{                        \textcolor{stringliteral}{"{}encryption-\/text <text>"{}})}
+\DoxyCodeLine{cmd.updateParam(\textcolor{stringliteral}{"{}<text>"{}}, \textcolor{stringliteral}{"{}Encrypted text"{}}, nxos::P\_STRING,}
+\DoxyCodeLine{                str\_attr, len(str\_attr))}
 \end{DoxyCode}
  
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}\label{structnxos_1_1cli__param__type__string__attr___a7d79d5555be5655287949d7830bd876c}} 
+\index{nxos::cli\_param\_type\_string\_attr\_@{nxos::cli\_param\_type\_string\_attr\_}!length@{length}}
+\index{length@{length}!nxos::cli\_param\_type\_string\_attr\_@{nxos::cli\_param\_type\_string\_attr\_}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily int nxos\+::cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+\+::length}
+
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}\label{structnxos_1_1cli__param__type__string__attr___a2a547a1318e243011f100535aebf0a49}} 
+\index{nxos::cli\_param\_type\_string\_attr\_@{nxos::cli\_param\_type\_string\_attr\_}!regex\_pattern@{regex\_pattern}}
+\index{regex\_pattern@{regex\_pattern}!nxos::cli\_param\_type\_string\_attr\_@{nxos::cli\_param\_type\_string\_attr\_}}
+\doxysubsubsection{\texorpdfstring{regex\_pattern}{regex\_pattern}}
+{\footnotesize\ttfamily char nxos\+::cli\+\_\+param\+\_\+type\+\_\+string\+\_\+attr\+\_\+\+::regex\+\_\+pattern\mbox{[}256\mbox{]}}
+
+
+
+Default is 256. 
+
+
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/types/nx\+\_\+cli.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{types_2nx__cli_8h}{types/nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

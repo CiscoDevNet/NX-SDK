@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_trace}{}\section{nxos\+:\+:Nx\+Trace Class Reference}
-\label{classnxos_1_1_nx_trace}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
+\hypertarget{classnxos_1_1_nx_trace}{}\doxysection{nxos\+::Nx\+Trace Class Reference}
+\label{classnxos_1_1_nx_trace}\index{nxos::NxTrace@{nxos::NxTrace}}
 
 
 Tracer interface to generate custom Syslogs, Events \& Errors history.  
@@ -7,9 +7,9 @@ Tracer interface to generate custom Syslogs, Events \& Errors history.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+trace.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+trace.\+h$>$}
 
-\subsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}} \{ \newline
@@ -24,89 +24,108 @@ enum \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{
 \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e}{D\+E\+B\+UG}}
  \}
 \end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}\label{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}} 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}{$\sim$\+Nx\+Trace}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}\label{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}} 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}{syslog}} (\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}} prio, const char $\ast$fmt,...)=0
 \begin{DoxyCompactList}\small\item\em Generate Custom Syslog with the specified Priority. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a22e5e2fff39fae68fba3051dc2720621}{event}} (const char $\ast$fmt,...)=0
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_afc0240b6b9a291729836ffb2fbeef8a4}{error}} (const char $\ast$fmt,...)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_trace_acd022aec8382a59555d9f6b32880f754}{watch\+Syslog}} (bool download=true)=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a837c088581a160e5bee0da07c67f1386}{unwatch\+Syslog}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a367e5034b0a875752ca9c0cc0263209a}{set\+Trace\+Handler}} (\mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}} $\ast$handler)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_trace_aa2d8a5de259b1ce87f45dec9663616de}{get\+Trace\+Handler}} ()=0
 \end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static const char $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_trace_a583b8a49a2111e4e4b8ef2f2eeaa4620}{get\+Prio\+Str}} (\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}} prio)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Tracer interface to generate custom Syslogs, Events \& Errors history. 
 
-\subsection{Member Enumeration Documentation}
+\doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!Priority@{Priority}}
-\index{Priority@{Priority}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{Priority}{Priority}}
+\index{nxos::NxTrace@{nxos::NxTrace}!Priority@{Priority}}
+\index{Priority@{Priority}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{Priority}{Priority}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{nxos\+::\+Nx\+Trace\+::\+Priority}}}
 
 Priority level for the custom syslog. \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+E\+RG@{E\+M\+E\+RG}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!E\+M\+E\+RG@{E\+M\+E\+RG}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMERG@{EMERG}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!EMERG@{EMERG}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa162b57da846293468dd47af10c603df2}} 
 E\+M\+E\+RG&Emergency -\/ Highest Priority. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+E\+RT@{A\+L\+E\+RT}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!A\+L\+E\+RT@{A\+L\+E\+RT}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALERT@{ALERT}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!ALERT@{ALERT}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fa8733d052a42f110d6638988de5b6e4e4}} 
 A\+L\+E\+RT&Its a severe Alert. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+RI@{C\+T\+RI}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!C\+T\+RI@{C\+T\+RI}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRI@{CTRI}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!CTRI@{CTRI}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fad47bf23377867d39c4d53d2b2689b4da}} 
 C\+T\+RI&Critical. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+RR@{E\+RR}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!E\+RR@{E\+RR}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR@{ERR}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!ERR@{ERR}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faeac0f6db2341c975bf8e46d34496eb08}} 
 E\+RR&Error Scenario. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+A\+R\+N\+I\+NG@{W\+A\+R\+N\+I\+NG}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!W\+A\+R\+N\+I\+NG@{W\+A\+R\+N\+I\+NG}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING@{WARNING}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!WARNING@{WARNING}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fab187ad33eec7a961a9b1f3c787ecd003}} 
 W\+A\+R\+N\+I\+NG&Warning but not critical. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+I\+CE@{N\+O\+T\+I\+CE}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!N\+O\+T\+I\+CE@{N\+O\+T\+I\+CE}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTICE@{NOTICE}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!NOTICE@{NOTICE}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fac0c5faafc7a08a2bb2388c2d6c670936}} 
 N\+O\+T\+I\+CE&Notice Alert but not severe. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+FO@{I\+N\+FO}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!I\+N\+FO@{I\+N\+FO}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!INFO@{INFO}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088fae821a1cd215dd3a51942abd8af16f36e}} 
 I\+N\+FO&For Information. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+B\+UG@{D\+E\+B\+UG}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!D\+E\+B\+UG@{D\+E\+B\+UG}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!nxos::NxTrace@{nxos::NxTrace}}\index{nxos::NxTrace@{nxos::NxTrace}!DEBUG@{DEBUG}}}\mbox{\Hypertarget{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e}\label{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088faa682e4987de0b7ca5b5474c68bbf9d4e}} 
 D\+E\+B\+UG&For internal Debugging purposes. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}\label{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!````~NxTrace@{$\sim$NxTrace}}
+\index{````~NxTrace@{$\sim$NxTrace}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxTrace()}{~NxTrace()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Trace\+::$\sim$\+Nx\+Trace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_trace_afc0240b6b9a291729836ffb2fbeef8a4}\label{classnxos_1_1_nx_trace_afc0240b6b9a291729836ffb2fbeef8a4}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!error@{error}}
-\index{error@{error}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{error()}{error()}}
+\index{nxos::NxTrace@{nxos::NxTrace}!error@{error}}
+\index{error@{error}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Generate custom App Error in its event history. Use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history errors\char`\"{}. \mbox{\Hypertarget{classnxos_1_1_nx_trace_a22e5e2fff39fae68fba3051dc2720621}\label{classnxos_1_1_nx_trace_a22e5e2fff39fae68fba3051dc2720621}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!event@{event}}
-\index{event@{event}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{event()}{event()}}
+\index{nxos::NxTrace@{nxos::NxTrace}!event@{event}}
+\index{event@{event}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{event()}{event()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::event (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Generate custom App Event in its event history. Use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history events\char`\"{}. \mbox{\Hypertarget{classnxos_1_1_nx_trace_a583b8a49a2111e4e4b8ef2f2eeaa4620}\label{classnxos_1_1_nx_trace_a583b8a49a2111e4e4b8ef2f2eeaa4620}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!get\+Prio\+Str@{get\+Prio\+Str}}
-\index{get\+Prio\+Str@{get\+Prio\+Str}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{get\+Prio\+Str()}{getPrioStr()}}
+\index{nxos::NxTrace@{nxos::NxTrace}!getPrioStr@{getPrioStr}}
+\index{getPrioStr@{getPrioStr}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{getPrioStr()}{getPrioStr()}}
 {\footnotesize\ttfamily static const char$\ast$ nxos\+::\+Nx\+Trace\+::get\+Prio\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}}}]{prio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyNote}{Note}
@@ -118,8 +137,150 @@ N\+X\+S\+DK V1.\+5
 \begin{DoxyReturn}{Returns}
 Priotiry as a string 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_aa2d8a5de259b1ce87f45dec9663616de}\label{classnxos_1_1_nx_trace_aa2d8a5de259b1ce87f45dec9663616de}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!getTraceHandler@{getTraceHandler}}
+\index{getTraceHandler@{getTraceHandler}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{getTraceHandler()}{getTraceHandler()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}}$\ast$ nxos\+::\+Nx\+Trace\+::get\+Trace\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+Get the Handler object registered with Tracer.
+
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V2.\+5
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+user defined \mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}} Obj if registered using set\+Trace\+Handler (or) N\+U\+LL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_a367e5034b0a875752ca9c0cc0263209a}\label{classnxos_1_1_nx_trace_a367e5034b0a875752ca9c0cc0263209a}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!setTraceHandler@{setTraceHandler}}
+\index{setTraceHandler@{setTraceHandler}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{setTraceHandler()}{setTraceHandler()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::set\+Trace\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Register your handler object with Tracer to handle syslog events. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{Nx\+Trace\+Handler}}} & object with user overloaded functions to handle syslog events.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V2.\+5
+\end{DoxySince}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__trace_8h}{nx\_trace.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myTraceHandler : \textcolor{keyword}{public} NxTraceHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{void} postSyslogCb(NxSyslog *\mbox{\hyperlink{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}{syslog}}) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{        NxTrace  *trace = sdk-\/>getTracer();}
+\DoxyCodeLine{        NxTraceHandler *mytracecb = \textcolor{keyword}{new} myTraceHandler();}
+\DoxyCodeLine{        trace-\/>setTraceHandler(mytracecb);}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myTraceHandler(nx\_sdk\_py.NxTraceHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{         \#\#\# Overloaded Callback to get Syslog events}}
+\DoxyCodeLine{         def postSyslogCb(self, nxsyslog):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{   \# Do SDK related inits in one thread.}}
+\DoxyCodeLine{   def sdkThread(name,val):}
+\DoxyCodeLine{       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{       trace = sdk.getTracer()}
+\DoxyCodeLine{       mytracecb = myTraceHandler()}
+\DoxyCodeLine{       trace.\mbox{\hyperlink{classnxos_1_1_nx_trace_a367e5034b0a875752ca9c0cc0263209a}{setTraceHandler}}(mytracecb)}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}\label{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!syslog@{syslog}}
+\index{syslog@{syslog}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{syslog()}{syslog()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::syslog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}}}]{prio,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generate Custom Syslog with the specified Priority. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_a837c088581a160e5bee0da07c67f1386}\label{classnxos_1_1_nx_trace_a837c088581a160e5bee0da07c67f1386}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!unwatchSyslog@{unwatchSyslog}}
+\index{unwatchSyslog@{unwatchSyslog}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{unwatchSyslog()}{unwatchSyslog()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::unwatch\+Syslog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Un\+Watch syslog events. Stop receiving syslog events.
+
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V2.\+5
+\end{DoxySince}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#include <\mbox{\hyperlink{nx__trace_8h}{nx\_trace.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{     NxTrace *trace;}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{     trace = sdk-\/>getTracer();}
+\DoxyCodeLine{}
+\DoxyCodeLine{     trace-\/>unwatchSyslog();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{     tracer = sdk.getTracer()}
+\DoxyCodeLine{}
+\DoxyCodeLine{     tracer.unwatchSyslog()}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_trace_acd022aec8382a59555d9f6b32880f754}\label{classnxos_1_1_nx_trace_acd022aec8382a59555d9f6b32880f754}} 
+\index{nxos::NxTrace@{nxos::NxTrace}!watchSyslog@{watchSyslog}}
+\index{watchSyslog@{watchSyslog}!nxos::NxTrace@{nxos::NxTrace}}
+\doxysubsubsection{\texorpdfstring{watchSyslog()}{watchSyslog()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Trace\+::watch\+Syslog (\begin{DoxyParamCaption}\item[{bool}]{download = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Watch All syslog and get notified when a syslog occurs. User must have post\+Syslog\+Cb registered to receive events. N\+O\+TE\+: watch\+Syslog does not work if watch\+Oc\+Path in Nx\+Oc\+Mgr for syslog is enabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em download} & \mbox{[}Optional\mbox{]} true or false. If true, all syslogs already created in the system will be notified via post\+Syslog\+Cb and the end of download is signalled by overloading the respective post\+Syslog\+Download\+Done callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the watch is successful. False if its unsuccessful.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+N\+X\+S\+DK V2.\+5
+\end{DoxySince}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#include <\mbox{\hyperlink{nx__trace_8h}{nx\_trace.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{     NxTrace *trace;}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{     trace = sdk-\/>getTracer();}
+\DoxyCodeLine{}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (trace) trace-\/>watchSyslog();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{     trace = sdk.getTracer()}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} trace:}
+\DoxyCodeLine{        trace.watchSyslog()}
+\end{DoxyCode}
+ 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}

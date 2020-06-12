@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_sdk}{}\section{nxos\+:\+:Nx\+Sdk Class Reference}
-\label{classnxos_1_1_nx_sdk}\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
+\hypertarget{classnxos_1_1_nx_sdk}{}\doxysection{nxos\+::Nx\+Sdk Class Reference}
+\label{classnxos_1_1_nx_sdk}\index{nxos::NxSdk@{nxos::NxSdk}}
 
 
 Abstract S\+DK interface to N\+X\+OS infra.  
@@ -7,9 +7,9 @@ Abstract S\+DK interface to N\+X\+OS infra.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+sdk.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+sdk.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}{$\sim$\+Nx\+Sdk}} ()
@@ -32,7 +32,7 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc801
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}{get\+Rib\+Mgr}} ()=0
 \item 
-virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority}} (\mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} prio)=0
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority}} (\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} prio)=0
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}{get\+Intf\+Mgr}} ()=0
 \item 
@@ -44,13 +44,13 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr}{Nx\+Dme\+Mgr}} $\ast$ \mbox{\
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}{is\+In\+Event\+Loop}} () const =0
 \item 
-virtual nxos\+::running\+\_\+env\+\_\+e \mbox{\hyperlink{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}{get\+Running\+Env}} () const =0
+virtual \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}{get\+Running\+Env}} () const =0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_sdk_ad5cec82b30925240ce24e052b4c800c4}{get\+Remote\+Ip}} ()=0
 \item 
 virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_sdk_af922404fa50aa22299189f759cfbc4ca}{get\+Remote\+Port}} ()=0
 \item 
-virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}{get\+Remote\+Conn\+Status}} ()=0
+virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}{get\+Remote\+Conn\+Status}} ()=0
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_abfd0b2d92b51fc18bb30c059fa5b4a9b}{purge\+All\+Sdk\+Objs}} ()=0
 \item 
@@ -59,8 +59,12 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5f14e71747eac4fd5703d0cb490a
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_ad86348d2475862e149dcdbe04634db3b}{unset\+Sdk\+Handler}} ()=0
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a079be3a7d8861fc9817903b7a6b0e9ab}{get\+Sdk\+Handler}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_sdk_a0f07a49831340ad282543d0572547226}{get\+Nx\+Sdk\+Version}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_sdk_a0d62dbdc429265f7782cd2142710a4a7}{get\+Remote\+Client\+Nx\+Sdk\+Version}} ()=0
 \end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{get\+Sdk\+Inst}} (int argc, char $\ast$$\ast$argv)
@@ -73,25 +77,25 @@ static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$ \mbox{\hyperlink{
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract S\+DK interface to N\+X\+OS infra. 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}\label{classnxos_1_1_nx_sdk_a6b5028045019af4be6c8356ec0fdaff9}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!````~Nx\+Sdk@{$\sim$\+Nx\+Sdk}}
-\index{````~Nx\+Sdk@{$\sim$\+Nx\+Sdk}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Sdk()}{~NxSdk()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!````~NxSdk@{$\sim$NxSdk}}
+\index{````~NxSdk@{$\sim$NxSdk}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxSdk()}{~NxSdk()}}
 {\footnotesize\ttfamily virtual nxos\+::\+Nx\+Sdk\+::$\sim$\+Nx\+Sdk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 \mbox{[}Required\mbox{]} Destructor
 
 To Delete the S\+DK instance and its associated objects gracefully on App exit. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_af6e3db3e34b003693d765835ea0dbb49}\label{classnxos_1_1_nx_sdk_af6e3db3e34b003693d765835ea0dbb49}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Adj\+Mgr@{get\+Adj\+Mgr}}
-\index{get\+Adj\+Mgr@{get\+Adj\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Adj\+Mgr()}{getAdjMgr()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getAdjMgr@{getAdjMgr}}
+\index{getAdjMgr@{getAdjMgr}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getAdjMgr()}{getAdjMgr()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr}{Nx\+Adj\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Adj\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Adjacency Manager object to get and register for adjacency events.
@@ -103,33 +107,33 @@ N\+X-\/\+S\+DK V1.\+7.\+5
 Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr}{Nx\+Adj\+Mgr}} if valid (or) N\+U\+LL 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad6964fa8ee52a8b0a22c27abdcf871e3}\label{classnxos_1_1_nx_sdk_ad6964fa8ee52a8b0a22c27abdcf871e3}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Desc@{get\+App\+Desc}}
-\index{get\+App\+Desc@{get\+App\+Desc}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+App\+Desc()}{getAppDesc()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppDesc@{getAppDesc}}
+\index{getAppDesc@{getAppDesc}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getAppDesc()}{getAppDesc()}}
 {\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Sdk\+::get\+App\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get App Description. If not set the default description is \char`\"{}\+Nx\+S\+D\+K Application\char`\"{} \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ac82af6d262439275f27c745082bf3fd7}\label{classnxos_1_1_nx_sdk_ac82af6d262439275f27c745082bf3fd7}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Id@{get\+App\+Id}}
-\index{get\+App\+Id@{get\+App\+Id}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+App\+Id()}{getAppId()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppId@{getAppId}}
+\index{getAppId@{getAppId}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getAppId()}{getAppId()}}
 {\footnotesize\ttfamily virtual int nxos\+::\+Nx\+Sdk\+::get\+App\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get App ID. App ID is automatically set by the sysmgr if the service is started from V\+SH \mbox{[}recommended\mbox{]}. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a9ba7da2cd8cb4f82438135ee651efdb0}\label{classnxos_1_1_nx_sdk_a9ba7da2cd8cb4f82438135ee651efdb0}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+App\+Name@{get\+App\+Name}}
-\index{get\+App\+Name@{get\+App\+Name}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+App\+Name()}{getAppName()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getAppName@{getAppName}}
+\index{getAppName@{getAppName}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getAppName()}{getAppName()}}
 {\footnotesize\ttfamily virtual const char$\ast$ nxos\+::\+Nx\+Sdk\+::get\+App\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the App Name which is the name of App binary. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}\label{classnxos_1_1_nx_sdk_a98bcb70d1bf60e38b41eacdf0a72dc89}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Cli\+Parser@{get\+Cli\+Parser}}
-\index{get\+Cli\+Parser@{get\+Cli\+Parser}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Cli\+Parser()}{getCliParser()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getCliParser@{getCliParser}}
+\index{getCliParser@{getCliParser}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getCliParser()}{getCliParser()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_parser}{Nx\+Cli\+Parser}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Cli\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Cli Parser object to create custom C\+L\+Is. This automatically generates internal show commands for the App. Use \char`\"{}show $<$\+App\+Name$>$ ?\char`\"{} in V\+SH to navigate to the pre-\/generated commands for the App. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a089933980bfe0466870510bb94158763}\label{classnxos_1_1_nx_sdk_a089933980bfe0466870510bb94158763}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Dme\+Mgr@{get\+Dme\+Mgr}}
-\index{get\+Dme\+Mgr@{get\+Dme\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Dme\+Mgr()}{getDmeMgr()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getDmeMgr@{getDmeMgr}}
+\index{getDmeMgr@{getDmeMgr}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getDmeMgr()}{getDmeMgr()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr}{Nx\+Dme\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Dme\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx D\+ME Manager object to get, update and register for D\+ME objectore events.
@@ -141,9 +145,9 @@ N\+X-\/\+S\+DK V1.\+7.\+5
 Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} if valid (or) N\+U\+LL 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}\label{classnxos_1_1_nx_sdk_ac860ca0ab2bd58d28f990685c63906a0}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Intf\+Mgr@{get\+Intf\+Mgr}}
-\index{get\+Intf\+Mgr@{get\+Intf\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Intf\+Mgr()}{getIntfMgr()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getIntfMgr@{getIntfMgr}}
+\index{getIntfMgr@{getIntfMgr}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getIntfMgr()}{getIntfMgr()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Intf\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Interface Manager object to get, update and register for interface events.
@@ -152,13 +156,13 @@ Get Nx Interface Manager object to get, update and register for interface events
 N\+X-\/\+S\+DK V1.\+7.\+5
 \end{DoxySince}
 
-\begin{DoxyCode}
-C++:
-       sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true});
-       intfMgr = sdk->getIntfMgr();
-Python:
-       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-       intfMgr = sdk.getIntfMgr()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{       sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true});}
+\DoxyCodeLine{       intfMgr = sdk-\/>getIntfMgr();}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{       intfMgr = sdk.getIntfMgr()}
 \end{DoxyCode}
 
 
@@ -166,9 +170,9 @@ Python:
 Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr}{Nx\+Intf\+Mgr}} if valid (or) N\+U\+LL 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_adfa969f547080efd92f90f55ebc930c5}\label{classnxos_1_1_nx_sdk_adfa969f547080efd92f90f55ebc930c5}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Mac\+Mgr@{get\+Mac\+Mgr}}
-\index{get\+Mac\+Mgr@{get\+Mac\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Mac\+Mgr()}{getMacMgr()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getMacMgr@{getMacMgr}}
+\index{getMacMgr@{getMacMgr}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getMacMgr()}{getMacMgr()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{Nx\+Mac\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Mac\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Mac Manager object to get, update and register for mac events.
@@ -179,34 +183,85 @@ N\+X-\/\+S\+DK V1.\+7.\+5
 \begin{DoxyReturn}{Returns}
 Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr}{Nx\+Mac\+Mgr}} if valid (or) N\+U\+LL 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}\label{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Remote\+Conn\+Status@{get\+Remote\+Conn\+Status}}
-\index{get\+Remote\+Conn\+Status@{get\+Remote\+Conn\+Status}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Remote\+Conn\+Status()}{getRemoteConnStatus()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Sdk\+::get\+Remote\+Conn\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a0f07a49831340ad282543d0572547226}\label{classnxos_1_1_nx_sdk_a0f07a49831340ad282543d0572547226}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getNxSdkVersion@{getNxSdkVersion}}
+\index{getNxSdkVersion@{getNxSdkVersion}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getNxSdkVersion()}{getNxSdkVersion()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Sdk\+::get\+Nx\+Sdk\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the version of N\+X-\/\+S\+DK installed in the N\+X\+OS switch. Usage\+: N\+X-\/\+S\+DK version of remote client could be different from ~\newline
+ N\+X-\/\+S\+DK version of remote server running in the N\+X-\/\+OS switch. Use this A\+PI to get N\+X-\/\+S\+DK version installed in the N\+X-\/\+OS switch.
+
+\begin{DoxyReturn}{Returns}
+string of the pattern v$<$major$>$.$<$minor$>$.$<$patch$>$ ex\+: v2.\+5.\+0
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK v2.\+5.\+0 ~\newline
+
+\end{DoxySince}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                       }
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}NX-\/SDK version in NXOS switch: "{}} << sdk-\/>getNxSdkVersion() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};                      *                                                                                        }
+\DoxyCodeLine{Python:                                                 }
+\DoxyCodeLine{   print \textcolor{stringliteral}{"{}NX-\/SDK version in NXOS switch:  "{}} + sdk.getNxSdkVersion()                               }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a0d62dbdc429265f7782cd2142710a4a7}\label{classnxos_1_1_nx_sdk_a0d62dbdc429265f7782cd2142710a4a7}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getRemoteClientNxSdkVersion@{getRemoteClientNxSdkVersion}}
+\index{getRemoteClientNxSdkVersion@{getRemoteClientNxSdkVersion}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRemoteClientNxSdkVersion()}{getRemoteClientNxSdkVersion()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Sdk\+::get\+Remote\+Client\+Nx\+Sdk\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the N\+X-\/\+S\+DK version of remote client. Usage\+: N\+X-\/\+S\+DK version of remote client could be different from N\+X-\/\+S\+DK version of remote server running in the N\+X-\/\+OS switch. Use this A\+PI to get N\+X-\/\+S\+DK version used by the the remote application.
+
+\begin{DoxyReturn}{Returns}
+string of the pattern v$<$major$>$.$<$minor$>$.$<$patch$>$ ex\+: v2.\+5.\+0. For apps running inside the N\+X-\/\+OS itself, this A\+PI returns an empty string. To be used only by remote N\+X-\/\+S\+DK apps.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+N\+X-\/\+S\+DK v2.\+5.\+0 ~\newline
+
+\end{DoxySince}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                              }
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}Remote Client NX-\/SDK version: "{}} << sdk-\/>getRemoteClientNxSdkVersion() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};           }
+\DoxyCodeLine{                                                              }
+\DoxyCodeLine{Python:                                                       }
+\DoxyCodeLine{   print \textcolor{stringliteral}{"{}Remote Client NX-\/SDK version"{}} + sdk.getRemoteClientNxSdkVersion() }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}\label{classnxos_1_1_nx_sdk_a17102543d36406daaed8370802eecca3}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getRemoteConnStatus@{getRemoteConnStatus}}
+\index{getRemoteConnStatus@{getRemoteConnStatus}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRemoteConnStatus()}{getRemoteConnStatus()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Sdk\+::get\+Remote\+Conn\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the destination switch remote connection status ~\newline
-associated with this S\+DK instance. ~\newline
- \begin{DoxyReturn}{Returns}
+ associated with this S\+DK instance. ~\newline
+
+
+\begin{DoxyReturn}{Returns}
 True -\/ if the remote connection is Up. False -\/ if the remote connection is Down. ~\newline
  For apps running natively it always return True.
 \end{DoxyReturn}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                       
-     cout << \textcolor{stringliteral}{"Remote Connection status: "} << sdk->getRemoteConnStatus() << \textcolor{stringliteral}{"\(\backslash\)n"};                         
-                                                                                      
-Python:                                                 
-   print \textcolor{stringliteral}{"Remote Connection Status:  "} + sdk.getRemoteConnStatus()                                     
-\end{DoxyCode}
- 
+
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad5cec82b30925240ce24e052b4c800c4}\label{classnxos_1_1_nx_sdk_ad5cec82b30925240ce24e052b4c800c4}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Remote\+Ip@{get\+Remote\+Ip}}
-\index{get\+Remote\+Ip@{get\+Remote\+Ip}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Remote\+Ip()}{getRemoteIp()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                       }
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}Remote Connection status: "{}} << sdk-\/>getRemoteConnStatus() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};                         }
+\DoxyCodeLine{                                                                                      }
+\DoxyCodeLine{Python:                                                 }
+\DoxyCodeLine{   print \textcolor{stringliteral}{"{}Remote Connection Status:  "{}} + sdk.getRemoteConnStatus()                                     }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad5cec82b30925240ce24e052b4c800c4}\label{classnxos_1_1_nx_sdk_ad5cec82b30925240ce24e052b4c800c4}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getRemoteIp@{getRemoteIp}}
+\index{getRemoteIp@{getRemoteIp}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRemoteIp()}{getRemoteIp()}}
 {\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Sdk\+::get\+Remote\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the destination switch remote IP address associated with this S\+DK instance.
@@ -216,46 +271,50 @@ Destination remote IP address if the app is running remotely. Returns empty stri
 \end{DoxyReturn}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                                                              
-     cout << \textcolor{stringliteral}{"Dest Ip: "} << sdk->getRemoteIp() << \textcolor{stringliteral}{"\(\backslash\)n"};            
-                                                              
-Python:                                                       
-   print \textcolor{stringliteral}{"Dest Ip "} + sdk.getRemoteIp() 
-\end{DoxyCode}
- 
+
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_af922404fa50aa22299189f759cfbc4ca}\label{classnxos_1_1_nx_sdk_af922404fa50aa22299189f759cfbc4ca}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Remote\+Port@{get\+Remote\+Port}}
-\index{get\+Remote\+Port@{get\+Remote\+Port}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Remote\+Port()}{getRemotePort()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                              }
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}Dest Ip: "{}} << sdk-\/>getRemoteIp() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};            }
+\DoxyCodeLine{                                                              }
+\DoxyCodeLine{Python:                                                       }
+\DoxyCodeLine{   print \textcolor{stringliteral}{"{}Dest Ip "{}} + sdk.getRemoteIp() }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_af922404fa50aa22299189f759cfbc4ca}\label{classnxos_1_1_nx_sdk_af922404fa50aa22299189f759cfbc4ca}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getRemotePort@{getRemotePort}}
+\index{getRemotePort@{getRemotePort}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRemotePort()}{getRemotePort()}}
 {\footnotesize\ttfamily virtual uint32\+\_\+t nxos\+::\+Nx\+Sdk\+::get\+Remote\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the destination switch remote Port associated ~\newline
-with this S\+DK instance. ~\newline
- \begin{DoxyReturn}{Returns}
+ with this S\+DK instance. ~\newline
+
+
+\begin{DoxyReturn}{Returns}
 Destination remote Port if the app is running ~\newline
  remotely. Returns 0 if app is running ~\newline
  natively in the switch. ~\newline
- 
+
 \end{DoxyReturn}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                                                              
-     cout << \textcolor{stringliteral}{"Dest Port: "} << sdk->getRemotePort() << \textcolor{stringliteral}{"\(\backslash\)n"};                                             
-                                                                                                  
-Python:                                                                                           
-   print \textcolor{stringliteral}{"Dest Ip "} + sdk.getRemotePort()                                                             
-\end{DoxyCode}
- 
+
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}\label{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Rib\+Mgr@{get\+Rib\+Mgr}}
-\index{get\+Rib\+Mgr@{get\+Rib\+Mgr}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Rib\+Mgr()}{getRibMgr()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                              }
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}Dest Port: "{}} << sdk-\/>getRemotePort() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};                                             }
+\DoxyCodeLine{                                                                                                  }
+\DoxyCodeLine{Python:                                                                                           }
+\DoxyCodeLine{   print \textcolor{stringliteral}{"{}Dest Ip "{}} + sdk.getRemotePort()                                                             }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}\label{classnxos_1_1_nx_sdk_a3cdb42126b1132cf9aa00426a8d5d428}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!getRibMgr@{getRibMgr}}
+\index{getRibMgr@{getRibMgr}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRibMgr()}{getRibMgr()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Rib\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Rib Manager object to update and register for route events.
@@ -267,10 +326,10 @@ N\+X\+S\+DK V1.\+5
 Pointer of type \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr}{Nx\+Rib\+Mgr}}. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}\label{classnxos_1_1_nx_sdk_a6ebf9ceb029ce71ecfead7d9183ae4e3}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Running\+Env@{get\+Running\+Env}}
-\index{get\+Running\+Env@{get\+Running\+Env}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Running\+Env()}{getRunningEnv()}}
-{\footnotesize\ttfamily virtual nxos\+::running\+\_\+env\+\_\+e nxos\+::\+Nx\+Sdk\+::get\+Running\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getRunningEnv@{getRunningEnv}}
+\index{getRunningEnv@{getRunningEnv}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getRunningEnv()}{getRunningEnv()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} nxos\+::\+Nx\+Sdk\+::get\+Running\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Returns running environment
 
@@ -281,9 +340,9 @@ N\+X-\/\+S\+DK V1.\+7.\+5
 running\+\_\+env\+\_\+r (B\+A\+SH or V\+SH) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a079be3a7d8861fc9817903b7a6b0e9ab}\label{classnxos_1_1_nx_sdk_a079be3a7d8861fc9817903b7a6b0e9ab}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Handler@{get\+Sdk\+Handler}}
-\index{get\+Sdk\+Handler@{get\+Sdk\+Handler}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Sdk\+Handler()}{getSdkHandler()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkHandler@{getSdkHandler}}
+\index{getSdkHandler@{getSdkHandler}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getSdkHandler()}{getSdkHandler()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the Handler object registered with \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}.
@@ -292,12 +351,13 @@ Get the Handler object registered with \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx
 \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}} user overloaded obj.
 \end{DoxyReturn}
 \begin{DoxySince}{Since}
-N\+X-\/\+S\+DK V2.\+0 
+N\+X-\/\+S\+DK V2.\+0 ~\newline
+ 
 \end{DoxySince}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}\label{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
-\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkInst@{getSdkInst}}
+\index{getSdkInst@{getSdkInst}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getSdkInst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{[}Required\mbox{]} To get Nx S\+DK Instance which enables the third party applications to gain access to Nexus functionalities. \begin{DoxyNote}{Note}
@@ -305,17 +365,17 @@ Do all S\+DK specific initializations in the same thread.
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH.\\
+\mbox{\texttt{ in}}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH.\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-C++:
-     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-
-Python:
-     \textcolor{keyword}{import} nx\_sdk\_py
-     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
 \end{DoxyCode}
  \begin{DoxyReturn}{Returns}
 -\/ S\+DK instance to operate on (registered with N\+X\+OS Infra successfully).
@@ -327,9 +387,9 @@ Python:
 From V1.\+5, by default an N\+X\+S\+DK App will be started as Low Priority App. To change the priority, refer to \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority()}}. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_acdeb12edbd291b5421ddb3260547bf8a}\label{classnxos_1_1_nx_sdk_acdeb12edbd291b5421ddb3260547bf8a}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
-\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkInst@{getSdkInst}}
+\index{getSdkInst@{getSdkInst}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getSdkInst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{bool}]{adv\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyNote}{Note}
@@ -346,19 +406,19 @@ N\+X\+S\+DK V1.\+5
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH. \\
+\mbox{\texttt{ in}}  & {\em pass} & in the command line arguments as its needed when the App is started from V\+SH. \\
 \hline
-\mbox{\tt in}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced Exceptions then Exception will be thrown of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. F\+A\+L\+SE -\/ Default Mode. Exception will be thrown of the type C++ -\/ std\+::logic\+\_\+err, Python -\/ String Note\+: Supported from V1.\+5\\
+\mbox{\texttt{ in}}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced Exceptions then Exception will be thrown of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. F\+A\+L\+SE -\/ Default Mode. Exception will be thrown of the type C++ -\/ std\+::logic\+\_\+err, Python -\/ String Note\+: Supported from V1.\+5\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-C++:
-     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true});
-
-Python:
-     \textcolor{keyword}{import} nx\_sdk\_py
-     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True)}
 \end{DoxyCode}
 
 
@@ -372,40 +432,40 @@ Python:
 From V1.\+5, by default an N\+X\+S\+DK App will be started as Low Priority App. To change the priority, refer to \mbox{\hyperlink{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}{set\+App\+Priority()}}. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_aced70eb68eaccdd3c11f36c21575ade0}\label{classnxos_1_1_nx_sdk_aced70eb68eaccdd3c11f36c21575ade0}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
-\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkInst@{getSdkInst}}
+\index{getSdkInst@{getSdkInst}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getSdkInst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{bool}]{adv\+Exception,  }\item[{const char $\ast$}]{remote\+Ip,  }\item[{uint32\+\_\+t}]{remote\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{[}Required\mbox{]} To get Nx S\+DK Instance which enables the third ~\newline
  party applications to gain access to N\+X\+OS Infra ~\newline
  functionalities. ~\newline
-\begin{DoxySince}{Since}
+ \begin{DoxySince}{Since}
 N\+X\+S\+DK V2.\+0 ~\newline
- 
+
 \end{DoxySince}
 \begin{DoxyNote}{Note}
 -\/ Earlier variants supported from Nx\+S\+DK V1.\+5. This version adds two new parameters for remote ip/port for applications executing outside the switch. It is the same in all other respects as prior variants so refer to those for additional information.
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pass} & in the command line arguments as its ~\newline
+\mbox{\texttt{ in}}  & {\em pass} & in the command line arguments as its ~\newline
  needed when the App is started from V\+SH. ~\newline
-\\
+ \\
 \hline
-\mbox{\tt in}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced ~\newline
+\mbox{\texttt{ in}}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced ~\newline
  Exceptions then Exception will be ~\newline
  thrown of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. ~\newline
  F\+A\+L\+SE -\/ Default Mode. Exception will be ~\newline
  thrown of the type ~\newline
  C++ -\/ std\+::logic\+\_\+err, Python -\/ String ~\newline
  Note\+: Supported from V1.\+5 ~\newline
-\\
-\hline
-\mbox{\tt in}  & {\em remote\+Ip} & I\+Pv4 (or) I\+Pv6 of the remote switch to connect to. Used only if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch. ~\newline
  \\
 \hline
-\mbox{\tt in}  & {\em remote\+Port} & Port in the remote switch to connect to. To be used only ~\newline
+\mbox{\texttt{ in}}  & {\em remote\+Ip} & I\+Pv4 (or) I\+Pv6 of the remote switch to connect to. Used only if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch. ~\newline
+\\
+\hline
+\mbox{\texttt{ in}}  & {\em remote\+Port} & Port in the remote switch to connect to. To be used only ~\newline
  if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch.\\
 \hline
 \end{DoxyParams}
@@ -421,57 +481,55 @@ N\+X\+S\+DK V2.\+0 ~\newline
 \hline
 \end{DoxyExceptions}
 
-\begin{DoxyCode}
-C++:                                                                                  
-     sdk\_switchA  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"172.22.32.1"}, 50001);
-                                       
-     sdk\_switchB  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"172.22.32.2"}, 50002);
-       
-                                                                                      
-Python:                                                                               
-     \textcolor{keyword}{import} nx\_sdk\_py                                                                 
-     sdk\_switchA = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"172.22.32.1"}, 50001)         
-               
-     sdk\_switchB = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"172.22.32.2"}, 50002)   
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                  }
+\DoxyCodeLine{     sdk\_switchA  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"{}172.22.32.1"{}}, 50001);                                 }
+\DoxyCodeLine{     sdk\_switchB  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"{}172.22.32.2"{}}, 50002); }
+\DoxyCodeLine{                                                                                      }
+\DoxyCodeLine{Python:                                                                               }
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py                                                                 }
+\DoxyCodeLine{     sdk\_switchA = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"{}172.22.32.1"{}}, 50001)                  }
+\DoxyCodeLine{     sdk\_switchB = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"{}172.22.32.2"{}}, 50002)   }
 \end{DoxyCode}
+ ~\newline
  \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a225be30e47270295fbe08151b4745692}\label{classnxos_1_1_nx_sdk_a225be30e47270295fbe08151b4745692}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Sdk\+Inst@{get\+Sdk\+Inst}}
-\index{get\+Sdk\+Inst@{get\+Sdk\+Inst}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Sdk\+Inst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getSdkInst@{getSdkInst}}
+\index{getSdkInst@{getSdkInst}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getSdkInst()}{getSdkInst()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Sdk\+Inst (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{bool}]{adv\+Exception,  }\item[{const char $\ast$}]{remote\+Ip,  }\item[{uint32\+\_\+t}]{remote\+Port,  }\item[{const char $\ast$}]{certificate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{[}Required\mbox{]} To get Nx S\+DK Instance which enables the third ~\newline
  party applications to gain access to N\+X\+OS Infra ~\newline
  functionalities. ~\newline
-\begin{DoxySince}{Since}
+ \begin{DoxySince}{Since}
 N\+X\+S\+DK V2.\+0 ~\newline
- 
+
 \end{DoxySince}
 \begin{DoxyNote}{Note}
 -\/ Earlier variants supported from Nx\+S\+DK V1.\+5. This version adds two new parameters for remote ip/port for applications executing outside the switch. It is the same in all other respects as prior variants so refer to those for additional information.
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pass} & in the command line arguments as its ~\newline
+\mbox{\texttt{ in}}  & {\em pass} & in the command line arguments as its ~\newline
  needed when the App is started from V\+SH. ~\newline
-\\
+ \\
 \hline
-\mbox{\tt in}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced ~\newline
+\mbox{\texttt{ in}}  & {\em adv\+Exception} & T\+R\+UE -\/ If the App can handle Advanced ~\newline
  Exceptions then Exception will be ~\newline
  thrown of the type \mbox{\hyperlink{classnxos_1_1_nx_exception}{Nx\+Exception}}. ~\newline
  F\+A\+L\+SE -\/ Default Mode. Exception will be ~\newline
  thrown of the type ~\newline
  C++ -\/ std\+::logic\+\_\+err, Python -\/ String ~\newline
  Note\+: Supported from V1.\+5 ~\newline
-\\
-\hline
-\mbox{\tt in}  & {\em remote\+Ip} & I\+Pv4 (or) I\+Pv6 of the remote switch to connect to. Used only if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch. ~\newline
  \\
 \hline
-\mbox{\tt in}  & {\em remote\+Port} & Port in the remote switch to connect to. To be used only ~\newline
+\mbox{\texttt{ in}}  & {\em remote\+Ip} & I\+Pv4 (or) I\+Pv6 of the remote switch to connect to. Used only if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch. ~\newline
+\\
+\hline
+\mbox{\texttt{ in}}  & {\em remote\+Port} & Port in the remote switch to connect to. To be used only ~\newline
  if the N\+X-\/\+S\+DK app is running remotely.\+Its a no-\/op if the app is running natively in the switch.\\
 \hline
-\mbox{\tt in}  & {\em certificate} & The path to the certificate file to use for the ~\newline
+\mbox{\texttt{ in}}  & {\em certificate} & The path to the certificate file to use for the ~\newline
  connection with the switch. This is not strictly ~\newline
  required as there are other ways to provide the ~\newline
  certificate. Using the certificate is required, ~\newline
@@ -481,7 +539,7 @@ N\+X\+S\+DK V2.\+0 ~\newline
  2-\/ \$\+N\+X\+S\+D\+K\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+A.\+B.\+C.\+D, where A\+\_\+\+B\+\_\+\+C\+\_\+D is the ip address of the switch ~\newline
  3-\/ \$\+N\+X\+S\+D\+K\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+RT ~\newline
  4-\/ \char`\"{}nxsdk\+Tmp\+Cert.\+pem\char`\"{} in app current directory ~\newline
- \\
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -496,30 +554,27 @@ N\+X\+S\+DK V2.\+0 ~\newline
 \hline
 \end{DoxyExceptions}
 
-\begin{DoxyCode}
-C++:                                                                                  
-     sdk\_switchA  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"172.22.32.1"}, 50001, \textcolor{stringliteral}{
-      "/tmp/switchA\_cert.pem"});                                 
-     sdk\_switchB  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"172.22.32.2"}, 50002, \textcolor{stringliteral}{
-      "/tmp/switchB\_cert.pem"}); 
-                                                                                      
-Python:                                                                               
-     \textcolor{keyword}{import} nx\_sdk\_py                                                                 
-     sdk\_switchA = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"172.22.32.1"}, 50001, \textcolor{stringliteral}{"
-      /tmp/switchA\_cert.pem"})                  
-     sdk\_switchB = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"172.22.32.2"}, 50002, \textcolor{stringliteral}{"
-      /tmp/switchB\_cert.pem"})   
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                  }
+\DoxyCodeLine{     sdk\_switchA  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"{}172.22.32.1"{}}, 50001, \textcolor{stringliteral}{"{}/tmp/switchA\_cert.pem"{}});                                 }
+\DoxyCodeLine{     sdk\_switchB  = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv, \textcolor{keyword}{true}, \textcolor{stringliteral}{"{}172.22.32.2"{}}, 50002, \textcolor{stringliteral}{"{}/tmp/switchB\_cert.pem"{}}); }
+\DoxyCodeLine{                                                                                      }
+\DoxyCodeLine{Python:                                                                               }
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py                                                                 }
+\DoxyCodeLine{     sdk\_switchA = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"{}172.22.32.1"{}}, 50001, \textcolor{stringliteral}{"{}/tmp/switchA\_cert.pem"{}})                  }
+\DoxyCodeLine{     sdk\_switchB = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv, True, \textcolor{stringliteral}{"{}172.22.32.2"{}}, 50002, \textcolor{stringliteral}{"{}/tmp/switchB\_cert.pem"{}})   }
 \end{DoxyCode}
+ ~\newline
  \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad2c729bd12d1b9f4bf06f4b70fe28347}\label{classnxos_1_1_nx_sdk_ad2c729bd12d1b9f4bf06f4b70fe28347}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!get\+Tracer@{get\+Tracer}}
-\index{get\+Tracer@{get\+Tracer}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{get\+Tracer()}{getTracer()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!getTracer@{getTracer}}
+\index{getTracer@{getTracer}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{getTracer()}{getTracer()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_trace}{Nx\+Trace}}$\ast$ nxos\+::\+Nx\+Sdk\+::get\+Tracer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get Nx Tracer syslog object to generate custom syslogs, custom App Event history logs. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}\label{classnxos_1_1_nx_sdk_ae2a6d199227de068bda5a720a7f29e94}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!is\+In\+Event\+Loop@{is\+In\+Event\+Loop}}
-\index{is\+In\+Event\+Loop@{is\+In\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{is\+In\+Event\+Loop()}{isInEventLoop()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!isInEventLoop@{isInEventLoop}}
+\index{isInEventLoop@{isInEventLoop}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{isInEventLoop()}{isInEventLoop()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Sdk\+::is\+In\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Returns true if event loop has been started
@@ -531,9 +586,9 @@ N\+X-\/\+S\+DK V1.\+7.\+5
 true or false 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_abfd0b2d92b51fc18bb30c059fa5b4a9b}\label{classnxos_1_1_nx_sdk_abfd0b2d92b51fc18bb30c059fa5b4a9b}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!purge\+All\+Sdk\+Objs@{purge\+All\+Sdk\+Objs}}
-\index{purge\+All\+Sdk\+Objs@{purge\+All\+Sdk\+Objs}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{purge\+All\+Sdk\+Objs()}{purgeAllSdkObjs()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!purgeAllSdkObjs@{purgeAllSdkObjs}}
+\index{purgeAllSdkObjs@{purgeAllSdkObjs}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{purgeAllSdkObjs()}{purgeAllSdkObjs()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::purge\+All\+Sdk\+Objs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 This A\+PI will purge all the objects created under that S\+DK instance. Use it with caution.
@@ -546,25 +601,26 @@ N\+O\+TE\+: Refer to sample remote applications on the usage.
 
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                
-                                                  
-Python:                                         
-\end{DoxyCode}
- 
+
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}\label{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!set\+App\+Desc@{set\+App\+Desc}}
-\index{set\+App\+Desc@{set\+App\+Desc}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{set\+App\+Desc()}{setAppDesc()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                }
+\DoxyCodeLine{                                                  }
+\DoxyCodeLine{Python:                                         }
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}\label{classnxos_1_1_nx_sdk_a2c6007a383114285951b2d2a062dacec}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!setAppDesc@{setAppDesc}}
+\index{setAppDesc@{setAppDesc}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{setAppDesc()}{setAppDesc()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+App\+Desc (\begin{DoxyParamCaption}\item[{std\+::string}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} Set the description for the Application. This description will be used as the helpstring when generating custom C\+L\+Is for the App\+Name keyword in the config. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}\label{classnxos_1_1_nx_sdk_a46d9487216506aa19e5499759f5eaef7}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!set\+App\+Priority@{set\+App\+Priority}}
-\index{set\+App\+Priority@{set\+App\+Priority}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{set\+App\+Priority()}{setAppPriority()}}
-{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+App\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}}}]{prio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxSdk@{nxos::NxSdk}!setAppPriority@{setAppPriority}}
+\index{setAppPriority@{setAppPriority}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{setAppPriority()}{setAppPriority()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+App\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}}}]{prio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} To Set the Priority of the application to limit the use of C\+PU for the application. By default, the App is set as low priotiy Application(only 25\% of C\+PU). L\+O\+W\+\_\+\+P\+R\+IO -\/ 25\% of C\+PU M\+E\+D\+\_\+\+P\+R\+IO -\/ 50\% of C\+PU H\+I\+G\+H\+\_\+\+P\+R\+IO -\/ 75\% of C\+PU N\+O\+\_\+\+P\+R\+IO -\/ No limit
 
@@ -572,81 +628,82 @@ Python:
 N\+X\+S\+DK V1.\+5 
 \end{DoxySince}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a5f14e71747eac4fd5703d0cb490abe89}\label{classnxos_1_1_nx_sdk_a5f14e71747eac4fd5703d0cb490abe89}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!set\+Sdk\+Handler@{set\+Sdk\+Handler}}
-\index{set\+Sdk\+Handler@{set\+Sdk\+Handler}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{set\+Sdk\+Handler()}{setSdkHandler()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!setSdkHandler@{setSdkHandler}}
+\index{setSdkHandler@{setSdkHandler}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{setSdkHandler()}{setSdkHandler()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::set\+Sdk\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Users to overload \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} Handler class to handle regsiterd \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} events. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}}} & object with user overloaded functions to handle Nxsdk events.\\
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{Nx\+Sdk\+Handler}}} & object with user overloaded functions to handle Nxsdk events.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
 
-   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{void} postRemoteConnUpCb(NxSdk *sdk) \{
-              \textcolor{comment}{// Do your action}
-         \}
-   \};
-
-   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
-   \{
-        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-        \textcolor{keywordflow}{if} (sdk) \{
-            NxSdkHandler *mysdkcb = \textcolor{keyword}{new} mySdkHandler();
-            sdk->setSdkHandler(mysdkcb);
-        \}
-   \}
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get Sdk events}
-         def postRemoteConnUpCb(self, nxsdk):
-\textcolor{preprocessor}{             # Do your action here}
-
-\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
-   def sdkThread(name,val):
-       sdk = nx\_sdk\_py.NxSdk.\mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{getSdkInst}}(len(sys.argv), sys.argv)
-       if sdk:
-          mysdkcb = mySdkHandler()
-          sdk.\mbox{\hyperlink{classnxos_1_1_nx_sdk_a5f14e71747eac4fd5703d0cb490abe89}{setSdkHandler}}(mysdkcb)
-\end{DoxyCode}
- 
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}\label{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!start\+Event\+Loop@{start\+Event\+Loop}}
-\index{start\+Event\+Loop@{start\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{start\+Event\+Loop()}{startEventLoop()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{void} postRemoteConnUpCb(NxSdk *sdk) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (sdk) \{}
+\DoxyCodeLine{            NxSdkHandler *mysdkcb = \textcolor{keyword}{new} mySdkHandler();}
+\DoxyCodeLine{            sdk-\/>setSdkHandler(mysdkcb);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Sdk events}}
+\DoxyCodeLine{         def postRemoteConnUpCb(self, nxsdk):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{   \# Do SDK related inits in one thread.}}
+\DoxyCodeLine{   def sdkThread(name,val):}
+\DoxyCodeLine{       sdk = nx\_sdk\_py.NxSdk.\mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{getSdkInst}}(len(sys.argv), sys.argv)}
+\DoxyCodeLine{       if sdk:}
+\DoxyCodeLine{          mysdkcb = mySdkHandler()}
+\DoxyCodeLine{          sdk.\mbox{\hyperlink{classnxos_1_1_nx_sdk_a5f14e71747eac4fd5703d0cb490abe89}{setSdkHandler}}(mysdkcb)}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}\label{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}} 
+\index{nxos::NxSdk@{nxos::NxSdk}!startEventLoop@{startEventLoop}}
+\index{startEventLoop@{startEventLoop}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{startEventLoop()}{startEventLoop()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::start\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Required\mbox{]} Start Event loop. This keeps the Application running. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc8018315}\label{classnxos_1_1_nx_sdk_adc80e6f244a7cbc050f9dacbc8018315}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!stop\+Event\+Loop@{stop\+Event\+Loop}}
-\index{stop\+Event\+Loop@{stop\+Event\+Loop}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{stop\+Event\+Loop()}{stopEventLoop()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!stopEventLoop@{stopEventLoop}}
+\index{stopEventLoop@{stopEventLoop}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{stopEventLoop()}{stopEventLoop()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::stop\+Event\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Stop Event loop to quit the Application. \mbox{\Hypertarget{classnxos_1_1_nx_sdk_ad86348d2475862e149dcdbe04634db3b}\label{classnxos_1_1_nx_sdk_ad86348d2475862e149dcdbe04634db3b}} 
-\index{nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}!unset\+Sdk\+Handler@{unset\+Sdk\+Handler}}
-\index{unset\+Sdk\+Handler@{unset\+Sdk\+Handler}!nxos\+::\+Nx\+Sdk@{nxos\+::\+Nx\+Sdk}}
-\subsubsection{\texorpdfstring{unset\+Sdk\+Handler()}{unsetSdkHandler()}}
+\index{nxos::NxSdk@{nxos::NxSdk}!unsetSdkHandler@{unsetSdkHandler}}
+\index{unsetSdkHandler@{unsetSdkHandler}!nxos::NxSdk@{nxos::NxSdk}}
+\doxysubsubsection{\texorpdfstring{unsetSdkHandler()}{unsetSdkHandler()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+::unset\+Sdk\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Unset \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} Handler
 
 \begin{DoxySince}{Since}
-N\+X-\/\+S\+DK V2.\+0 
+N\+X-\/\+S\+DK V2.\+0 ~\newline
+ 
 \end{DoxySince}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__sdk_8h}{nx\+\_\+sdk.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__sdk_8h}{nx\+\_\+sdk.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{nx__cli_8h}{}\doxysection{nx\+\_\+cli.\+h File Reference}
+\label{nx__cli_8h}\index{nx\_cli.h@{nx\_cli.h}}
+
+
+Abstract C\+LI interface to generate custom C\+LI configs in Nexus Switches.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}types/nx\+\_\+cli.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nx\+\_\+exception.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd}{nxos\+::\+Nx\+Cli\+Cmd}}
+\begin{DoxyCompactList}\small\item\em Abstract custom C\+LI command Interface used to construct a custom C\+LI config. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_cmd_handler}{nxos\+::\+Nx\+Cmd\+Handler}}
+\begin{DoxyCompactList}\small\item\em Custom Cli Command Callback Handler Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_cli_parser}{nxos\+::\+Nx\+Cli\+Parser}}
+\begin{DoxyCompactList}\small\item\em Abstract Interface to access Nexus C\+LI Parser tools. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract C\+LI interface to generate custom C\+LI configs in Nexus Switches. 
+
+Provides necessary Abstraction/\+Plugin for N\+X\+OS C\+LI Parser functionalities. It provides the Ability to construct custom C\+L\+Is and callback handlers when a specific C\+LI is exectuted.
+
+Steps to construct a custom C\+LI\+: 1) Instantiate Nx\+S\+DK C\+LI Parser Object using get\+Cli\+Parser(). 2) Create a C\+MD object using new\+Cli\+Cmd(). 3) Fill in the appropriate fields for the command like cmd\+Name, type, syntax etc. 4) Update the Keywords, param if needed with custom values using update\+Keyword(), update\+Param() etc. 5) Repeat steps 2)-\/4) for new commands. 6) After creating all the cmds then set the callback handler to be called 7) Add them to NX C\+LI Parser List using add\+To\+Parse\+Tree(). If it succeeds then try your commands in NX V\+SH. N\+O\+TE\+: By default, some custom C\+L\+Is are auto-\/generated for the Nx\+S\+DK App. Try \char`\"{}show \$appname ?\char`\"{} in the box to access them.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:nxos-sdk@cisco.com}{\texttt{ nxos-\/sdk@cisco.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]No known bugs. \end{DoxyRefDesc}

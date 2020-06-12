@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_sdk_handler}{}\section{nxos\+:\+:Nx\+Sdk\+Handler Class Reference}
-\label{classnxos_1_1_nx_sdk_handler}\index{nxos\+::\+Nx\+Sdk\+Handler@{nxos\+::\+Nx\+Sdk\+Handler}}
+\hypertarget{classnxos_1_1_nx_sdk_handler}{}\doxysection{nxos\+::Nx\+Sdk\+Handler Class Reference}
+\label{classnxos_1_1_nx_sdk_handler}\index{nxos::NxSdkHandler@{nxos::NxSdkHandler}}
 
 
 Abstract N\+X-\/\+S\+DK callback Interface to receive S\+DK updates.  
@@ -7,10 +7,12 @@ Abstract N\+X-\/\+S\+DK callback Interface to receive S\+DK updates.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+sdk.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+sdk.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a52291bf411b642ff4475d879b8828de5}{$\sim$\+Nx\+Sdk\+Handler}} ()
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}{post\+Remote\+Conn\+Up\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$sdk)
 \item 
@@ -18,22 +20,33 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3e
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract N\+X-\/\+S\+DK callback Interface to receive S\+DK updates. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_sdk_handler_a52291bf411b642ff4475d879b8828de5}\label{classnxos_1_1_nx_sdk_handler_a52291bf411b642ff4475d879b8828de5}} 
+\index{nxos::NxSdkHandler@{nxos::NxSdkHandler}!````~NxSdkHandler@{$\sim$NxSdkHandler}}
+\index{````~NxSdkHandler@{$\sim$NxSdkHandler}!nxos::NxSdkHandler@{nxos::NxSdkHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxSdkHandler()}{~NxSdkHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Sdk\+Handler\+::$\sim$\+Nx\+Sdk\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}\label{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}} 
-\index{nxos\+::\+Nx\+Sdk\+Handler@{nxos\+::\+Nx\+Sdk\+Handler}!post\+Remote\+Conn\+Down\+Cb@{post\+Remote\+Conn\+Down\+Cb}}
-\index{post\+Remote\+Conn\+Down\+Cb@{post\+Remote\+Conn\+Down\+Cb}!nxos\+::\+Nx\+Sdk\+Handler@{nxos\+::\+Nx\+Sdk\+Handler}}
-\subsubsection{\texorpdfstring{post\+Remote\+Conn\+Down\+Cb()}{postRemoteConnDownCb()}}
+\index{nxos::NxSdkHandler@{nxos::NxSdkHandler}!postRemoteConnDownCb@{postRemoteConnDownCb}}
+\index{postRemoteConnDownCb@{postRemoteConnDownCb}!nxos::NxSdkHandler@{nxos::NxSdkHandler}}
+\doxysubsubsection{\texorpdfstring{postRemoteConnDownCb()}{postRemoteConnDownCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+Handler\+::post\+Remote\+Conn\+Down\+Cb (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$}]{sdk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Users to overload post\+Remote\+Conn\+Down\+Cb in \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} Handler ~\newline
-class to handle remote connection D\+O\+WN event. ~\newline
- 
+ class to handle remote connection D\+O\+WN event. ~\newline
+
+
+
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}} & object ~\newline
- \\
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}} & object ~\newline
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
@@ -42,39 +55,40 @@ To be used only for apps running remotely. For native ~\newline
 \end{DoxyNote}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                        
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}                                          
-                                                                
-   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{                   
-      \textcolor{keyword}{public}:                                                   
-         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}{postRemoteConnDownCb}}(NxSdk *sdk) \{                  
-              \textcolor{comment}{// Do your action                                  }
-         \}                                                      
-   \};                                                            
-                                                                 
-Python:                                                         
-   \textcolor{keyword}{import} nx\_sdk\_py                                             
-                                                                     
-   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):                       
-\textcolor{preprocessor}{   ### Overloaded Callback to get Sdk events                    }
-         def \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}{postRemoteConnDownCb}}(self, nxsdk):                       
-\textcolor{preprocessor}{             # Do your action here                                         }
-\end{DoxyCode}
- 
+
 \end{DoxySince}
-\mbox{\Hypertarget{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}\label{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}} 
-\index{nxos\+::\+Nx\+Sdk\+Handler@{nxos\+::\+Nx\+Sdk\+Handler}!post\+Remote\+Conn\+Up\+Cb@{post\+Remote\+Conn\+Up\+Cb}}
-\index{post\+Remote\+Conn\+Up\+Cb@{post\+Remote\+Conn\+Up\+Cb}!nxos\+::\+Nx\+Sdk\+Handler@{nxos\+::\+Nx\+Sdk\+Handler}}
-\subsubsection{\texorpdfstring{post\+Remote\+Conn\+Up\+Cb()}{postRemoteConnUpCb()}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                        }
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}                                          }
+\DoxyCodeLine{                                                                }
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{                   }
+\DoxyCodeLine{      \textcolor{keyword}{public}:                                                   }
+\DoxyCodeLine{         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}{postRemoteConnDownCb}}(NxSdk *sdk) \{                  }
+\DoxyCodeLine{              \textcolor{comment}{// Do your action                                  }}
+\DoxyCodeLine{         \}                                                      }
+\DoxyCodeLine{   \};                                                            }
+\DoxyCodeLine{                                                                 }
+\DoxyCodeLine{Python:                                                         }
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py                                             }
+\DoxyCodeLine{                                                                     }
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):                       }
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Sdk events                    }}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a433426269ae0b8374f3ead9f06edeb0b}{postRemoteConnDownCb}}(self, nxsdk):                       }
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here                                         }}
+\end{DoxyCode}
+ ~\newline
+ \mbox{\Hypertarget{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}\label{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}} 
+\index{nxos::NxSdkHandler@{nxos::NxSdkHandler}!postRemoteConnUpCb@{postRemoteConnUpCb}}
+\index{postRemoteConnUpCb@{postRemoteConnUpCb}!nxos::NxSdkHandler@{nxos::NxSdkHandler}}
+\doxysubsubsection{\texorpdfstring{postRemoteConnUpCb()}{postRemoteConnUpCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Sdk\+Handler\+::post\+Remote\+Conn\+Up\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} $\ast$}]{sdk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Users to overload post\+Remote\+Conn\+Up\+Cb in \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}} Handler class to handle remote connection UP event. This is to indicate that the connection went down and has come up again. Apps should re-\/init with all the mgrs as its a stateless connection(all the inits and objects obtained prior to connection going down are obsolete now and Apps need to re-\/init to get back to where they left before the connection went down.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}} & object\\
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_sdk}{Nx\+Sdk}}} & object\\
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
@@ -82,30 +96,31 @@ To be used only for apps running remotely. For native apps its a no-\/op.
 \end{DoxyNote}
 \begin{DoxySince}{Since}
 N\+X-\/\+S\+DK V2.\+0 ~\newline
- 
-\begin{DoxyCode}
-C++:                                                                                  
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}                                          
-                                                                            
-   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{               
-      \textcolor{keyword}{public}:                                           
-         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}{postRemoteConnUpCb}}(NxSdk *sdk) \{         
-              \textcolor{comment}{// Do your action                        }
-         \}                                               
-   \};                                                         
-                                                              
-Python:                                                     
-   \textcolor{keyword}{import} nx\_sdk\_py                                                 
-                                                                           
-   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):              
-\textcolor{preprocessor}{   ### Overloaded Callback to get Sdk events                        }
-         def \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}{postRemoteConnUpCb}}(self, nxsdk):                       
-\textcolor{preprocessor}{             # Do your action here                              }
-\end{DoxyCode}
- 
+
 \end{DoxySince}
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:                                                                                  }
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}                                          }
+\DoxyCodeLine{                                                                            }
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler : \textcolor{keyword}{public} NxSdkHandler \{               }
+\DoxyCodeLine{      \textcolor{keyword}{public}:                                           }
+\DoxyCodeLine{         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}{postRemoteConnUpCb}}(NxSdk *sdk) \{         }
+\DoxyCodeLine{              \textcolor{comment}{// Do your action                        }}
+\DoxyCodeLine{         \}                                               }
+\DoxyCodeLine{   \};                                                         }
+\DoxyCodeLine{                                                              }
+\DoxyCodeLine{Python:                                                     }
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py                                                 }
+\DoxyCodeLine{                                                                           }
+\DoxyCodeLine{   \textcolor{keyword}{class }mySdkHandler(nx\_sdk\_py.NxSdkHandler):              }
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Sdk events                        }}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler_a71b575abab99f8798635035986dbdc3f}{postRemoteConnUpCb}}(self, nxsdk):                       }
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here                              }}
+\end{DoxyCode}
+ ~\newline
+ 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__sdk_8h}{nx\+\_\+sdk.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__sdk_8h}{nx\+\_\+sdk.\+h}}\end{DoxyCompactItemize}

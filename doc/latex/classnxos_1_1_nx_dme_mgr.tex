@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_dme_mgr}{}\section{nxos\+:\+:Nx\+Dme\+Mgr Class Reference}
-\label{classnxos_1_1_nx_dme_mgr}\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
+\hypertarget{classnxos_1_1_nx_dme_mgr}{}\doxysection{nxos\+::Nx\+Dme\+Mgr Class Reference}
+\label{classnxos_1_1_nx_dme_mgr}\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}}
 
 
 Public D\+ME Manager interface to gain access to N\+X\+OS D\+ME functionality such as reading D\+ME objects, getting/setting object properties, and capturing D\+ME events.  
@@ -7,10 +7,12 @@ Public D\+ME Manager interface to gain access to N\+X\+OS D\+ME functionality su
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+dme.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+dme.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}{$\sim$\+Nx\+Dme\+Mgr}} ()
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}{get\+Dme\+Obj}} (const std\+::string \&Dn, bool get\+Children=false)=0
 \item 
@@ -34,43 +36,48 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Public D\+ME Manager interface to gain access to N\+X\+OS D\+ME functionality such as reading D\+ME objects, getting/setting object properties, and capturing D\+ME events. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}\label{classnxos_1_1_nx_dme_mgr_a8e64bc40ea7fc589711b5abf3fbd76d7}} 
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!````~NxDmeMgr@{$\sim$NxDmeMgr}}
+\index{````~NxDmeMgr@{$\sim$NxDmeMgr}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxDmeMgr()}{~NxDmeMgr()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Dme\+Mgr\+::$\sim$\+Nx\+Dme\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a9bbf25e6b6565bfef6f81e5d74ba4a9d}\label{classnxos_1_1_nx_dme_mgr_a9bbf25e6b6565bfef6f81e5d74ba4a9d}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!add\+Dme\+Obj@{add\+Dme\+Obj}}
-\index{add\+Dme\+Obj@{add\+Dme\+Obj}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{add\+Dme\+Obj()}{addDmeObj()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!addDmeObj@{addDmeObj}}
+\index{addDmeObj@{addDmeObj}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{addDmeObj()}{addDmeObj()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}}$\ast$ nxos\+::\+Nx\+Dme\+Mgr\+::add\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn,  }\item[{int $\ast$}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Create a new D\+ME object that will be added to the running configuration. Reference \+: \href{https://developer.cisco.com/site/nxapi-dme-model-reference-api/?version=9.2(1)}{\tt https\+://developer.\+cisco.\+com/site/nxapi-\/dme-\/model-\/reference-\/api/?version=9.\+2(1)} 
+Create a new D\+ME object that will be added to the running configuration. Reference \+: \href{https://developer.cisco.com/site/nxapi-dme-model-reference-api/?version=9.2(1)}{\texttt{ https\+://developer.\+cisco.\+com/site/nxapi-\/dme-\/model-\/reference-\/api/?version=9.\+2(1)}} 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path for the object to be added. \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path for the object to be added. \\
 \hline
-\mbox{\tt out}  & {\em error} & The error value.\\
+\mbox{\texttt{ out}}  & {\em error} & The error value.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 pointer to created \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} object
 \end{DoxyReturn}
-\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
-            enabled for that application. Using this API without the appropriate security profiles will
-            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
-\end{DoxyVerb}
+Write A\+PI -\/ N\+X-\/\+S\+DK Applications can use this A\+PI only if security profile with permit (or) throttle is enabled for that application. Using this A\+PI without the appropriate security profiles will throw an exception. Refer to readmes/security\+\_\+profiles.\+md for more info in N\+X-\/\+S\+DK Git repo.
 
 
-
-\begin{DoxyCode}
-C++:
-    \textcolor{keywordtype}{int}   err;
-    NxDme *obj;
-    NxDmeMgr       *dmeP =  sdk->getDmeMgr();
-    
-    obj = dmeP->addDmeObj(\textcolor{stringliteral}{"path/to/object"}, &err);
-Python:
-    obj = dmeP.addDmeObj(\textcolor{stringliteral}{"sys/intf/lb-[lo1]"}, err)
-    \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}   err;}
+\DoxyCodeLine{    NxDme *obj;}
+\DoxyCodeLine{    NxDmeMgr       *dmeP =  sdk-\/>getDmeMgr();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    obj = dmeP-\/>addDmeObj(\textcolor{stringliteral}{"{}path/to/object"{}}, \&err);}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    obj = dmeP.addDmeObj(\textcolor{stringliteral}{"{}sys/intf/lb-\/[lo1]"{}}, err)}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:}
 \end{DoxyCode}
 
 
@@ -80,35 +87,31 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_ae29687ce5a8ac402e1297bb3c8528936}\label{classnxos_1_1_nx_dme_mgr_ae29687ce5a8ac402e1297bb3c8528936}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!del\+Dme\+Obj@{del\+Dme\+Obj}}
-\index{del\+Dme\+Obj@{del\+Dme\+Obj}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{del\+Dme\+Obj()}{delDmeObj()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!delDmeObj@{delDmeObj}}
+\index{delDmeObj@{delDmeObj}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{delDmeObj()}{delDmeObj()}}
 {\footnotesize\ttfamily virtual int nxos\+::\+Nx\+Dme\+Mgr\+::del\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Remove an objet from the running D\+ME configuration. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the object to delete.\\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path of the object to delete.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 err\+\_\+type\+\_\+e value
 \end{DoxyReturn}
-\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
-            enabled for that application. Using this API without the appropriate security profiles will
-            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
-\end{DoxyVerb}
+Write A\+PI -\/ N\+X-\/\+S\+DK Applications can use this A\+PI only if security profile with permit (or) throttle is enabled for that application. Using this A\+PI without the appropriate security profiles will throw an exception. Refer to readmes/security\+\_\+profiles.\+md for more info in N\+X-\/\+S\+DK Git repo.
 
 
-
-\begin{DoxyCode}
-C++:
-    \textcolor{keywordtype}{int} err;
-    err = dmeP->delDmeObj(\textcolor{stringliteral}{"path/to/object"});
-    \textcolor{keywordflow}{if} (err == ERR\_ESUCCESS) ...
-Python:
-    err = dmeP.delDmeObj(\textcolor{stringliteral}{"path/to/object"})
-    \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:
-         ...
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} err;}
+\DoxyCodeLine{    err = dmeP-\/>delDmeObj(\textcolor{stringliteral}{"{}path/to/object"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (err == \mbox{\hyperlink{namespacenxos_ab37a154d6e66b6fabe61025ba9f523e1a02b0f4aa199a01d3e506e935467ba337}{ERR\_ESUCCESS}}) ...}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    err = dmeP.delDmeObj(\textcolor{stringliteral}{"{}path/to/object"{}})}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} err == nx\_sdk\_py.ERR\_ESUCCESS:}
+\DoxyCodeLine{         ...}
 \end{DoxyCode}
 
 
@@ -118,27 +121,27 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_aa21c3fd72667ddbafb2b288e15c89a92}\label{classnxos_1_1_nx_dme_mgr_aa21c3fd72667ddbafb2b288e15c89a92}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!exists\+Dme\+Obj@{exists\+Dme\+Obj}}
-\index{exists\+Dme\+Obj@{exists\+Dme\+Obj}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{exists\+Dme\+Obj()}{existsDmeObj()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!existsDmeObj@{existsDmeObj}}
+\index{existsDmeObj@{existsDmeObj}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{existsDmeObj()}{existsDmeObj()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+Mgr\+::exists\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Test if the specified dn path exists in the current config. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the object to test. \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path of the object to test. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if object exists, false otherwise 
-\begin{DoxyCode}
-C++:
-  \textcolor{keywordflow}{if} (dmeP->existsMO(\textcolor{stringliteral}{"sys/fm/nxapi"})) \{
-      dmeP->setProperty(\textcolor{stringliteral}{"sys/fm/nxapi"}, \textcolor{stringliteral}{"adminSt"}, \textcolor{stringliteral}{"enabled"});
-      dmeP->commit();
-  \}
-Python:
-  \textcolor{keywordflow}{if} not dmeP.existsMo(\textcolor{stringliteral}{"some/dn/path"}):
-      print \textcolor{stringliteral}{"Object does not exist"}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (dmeP-\/>existsMO(\textcolor{stringliteral}{"{}sys/fm/nxapi"{}})) \{}
+\DoxyCodeLine{      dmeP-\/>setProperty(\textcolor{stringliteral}{"{}sys/fm/nxapi"{}}, \textcolor{stringliteral}{"{}adminSt"{}}, \textcolor{stringliteral}{"{}enabled"{}});}
+\DoxyCodeLine{      dmeP-\/>commit();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} not dmeP.existsMo(\textcolor{stringliteral}{"{}some/dn/path"{}}):}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}Object does not exist"{}}}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -148,35 +151,35 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a950c598125c2cc0d739c4a882a65f447}\label{classnxos_1_1_nx_dme_mgr_a950c598125c2cc0d739c4a882a65f447}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!get\+Children\+Mo\+Json@{get\+Children\+Mo\+Json}}
-\index{get\+Children\+Mo\+Json@{get\+Children\+Mo\+Json}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{get\+Children\+Mo\+Json()}{getChildrenMoJson()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!getChildrenMoJson@{getChildrenMoJson}}
+\index{getChildrenMoJson@{getChildrenMoJson}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{getChildrenMoJson()}{getChildrenMoJson()}}
 {\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+Mgr\+::get\+Children\+Mo\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn,  }\item[{int $\ast$}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Retrieve the object data in J\+S\+ON format for the object at the specified dn path along with its immediate children 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the parent dme object. \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path of the parent dme object. \\
 \hline
-\mbox{\tt out}  & {\em error} & The resulting error value. \\
+\mbox{\texttt{ out}}  & {\em error} & The resulting error value. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Json string, error code set in argument 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{int} err;
-   \textcolor{keywordtype}{string} data\_string = NULL;
-
-   data\_string = dmeP->getMOJson(\textcolor{stringliteral}{"dn/path"}, &err);
-   cout << \textcolor{stringliteral}{"Object + Children: "} << data\_string;
-Python:
-   errp = nx\_sdk\_py.new\_intp();
-   data = dmeP.getChildrenMoJson(\textcolor{stringliteral}{"dn/path"}, errp)
-   status = nx\_sdk\_py.intp\_value(errp);
-   nx\_sdk\_py.delete\_intp(errp);
-
-   \textcolor{keywordflow}{if} status == nx\_sdk\_py.ERR\_ESUCCESS:
-\textcolor{preprocessor}{        # use 'data'}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{int} err;}
+\DoxyCodeLine{   \textcolor{keywordtype}{string} data\_string = NULL;}
+\DoxyCodeLine{}
+\DoxyCodeLine{   data\_string = dmeP-\/>getMOJson(\textcolor{stringliteral}{"{}dn/path"{}}, \&err);}
+\DoxyCodeLine{   cout << \textcolor{stringliteral}{"{}Object + Children: "{}} << data\_string;}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   errp = nx\_sdk\_py.new\_intp();}
+\DoxyCodeLine{   data = dmeP.getChildrenMoJson(\textcolor{stringliteral}{"{}dn/path"{}}, errp)}
+\DoxyCodeLine{   status = nx\_sdk\_py.intp\_value(errp);}
+\DoxyCodeLine{   nx\_sdk\_py.delete\_intp(errp);}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keywordflow}{if} status == nx\_sdk\_py.ERR\_ESUCCESS:}
+\DoxyCodeLine{\textcolor{preprocessor}{        \# use 'data'}}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -186,18 +189,18 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a4eb84500ef136c111650e385c8f29eb6}\label{classnxos_1_1_nx_dme_mgr_a4eb84500ef136c111650e385c8f29eb6}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!get\+Dme\+Handler@{get\+Dme\+Handler}}
-\index{get\+Dme\+Handler@{get\+Dme\+Handler}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{get\+Dme\+Handler()}{getDmeHandler()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!getDmeHandler@{getDmeHandler}}
+\index{getDmeHandler@{getDmeHandler}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{getDmeHandler()}{getDmeHandler()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler}}$\ast$ nxos\+::\+Nx\+Dme\+Mgr\+::get\+Dme\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Return the currently installed handler, if any. \begin{DoxyReturn}{Returns}
 pointer to currently installed event handler 
-\begin{DoxyCode}
-C++:
-   NxDmeHandler *dmeHandler = dmeP->getDmeHandler();
-Python:
-   handler = dmeP.getDmeHandler()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   NxDmeHandler *dmeHandler = dmeP-\/>getDmeHandler();}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   handler = dmeP.getDmeHandler()}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -207,45 +210,45 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}\label{classnxos_1_1_nx_dme_mgr_acf4e25cc54e1cb352c9c79bb7dfa4021}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!get\+Dme\+Obj@{get\+Dme\+Obj}}
-\index{get\+Dme\+Obj@{get\+Dme\+Obj}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{get\+Dme\+Obj()}{getDmeObj()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!getDmeObj@{getDmeObj}}
+\index{getDmeObj@{getDmeObj}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{getDmeObj()}{getDmeObj()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}}$\ast$ nxos\+::\+Nx\+Dme\+Mgr\+::get\+Dme\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Dn,  }\item[{bool}]{get\+Children = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Opens D\+ME object path and return an object for it, which the caller owns and must delete. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Dn} & The DN string which specifies the D\+ME object. \\
+\mbox{\texttt{ in}}  & {\em Dn} & The DN string which specifies the D\+ME object. \\
 \hline
-\mbox{\tt in}  & {\em get\+Children} & Read child information for this object. Required if using any children related apis.\\
+\mbox{\texttt{ in}}  & {\em get\+Children} & Read child information for this object. Required if using any children related apis.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Pointer to object or N\+U\+LL. 
-\begin{DoxyCode}
-C++:
-     NxDmeMgr       *dmeP =  sdk->getDmeMgr();
-     NxDme *dme = dmeP->getDmeObj(\textcolor{stringliteral}{"dn/path/mo"});
-Python:
-     dmeobj = dmeP.getDmeObj(\textcolor{stringliteral}{"dn/path/mo"})
-Go:
-     \textcolor{keyword}{package }main
-     import (
-        "nx\_sdk\_go"
-        "os"
-     )
-
-     var dmeMgr  nx\_sdk\_go.NxDmeMgr
-     var dmeObj  nx\_sdk\_go.NxDme
-
-     sdk\_obj := nx\_sdk\_go.NxSdkGetSdkInst(len(os.Args), os.Args, true)
-     if sdk\_obj.Swigcptr() == 0 \{
-        os.Exit(1)
-     \}
-     dmeMgr = sdk\_obj.GetDmeMgr()
-     if dmeMgr.Swigcptr() == 0 \{
-        os.Exit(1)
-     \}
-     dmeobj = dmeMgr.GetDmeObj("sys/ch")
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     NxDmeMgr       *dmeP =  sdk-\/>getDmeMgr();}
+\DoxyCodeLine{     NxDme *dme = dmeP-\/>getDmeObj(\textcolor{stringliteral}{"{}dn/path/mo"{}});}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     dmeobj = dmeP.getDmeObj(\textcolor{stringliteral}{"{}dn/path/mo"{}})}
+\DoxyCodeLine{Go:}
+\DoxyCodeLine{     \textcolor{keyword}{package }main}
+\DoxyCodeLine{     import (}
+\DoxyCodeLine{        "{}nx\_sdk\_go"{}}
+\DoxyCodeLine{        "{}os"{}}
+\DoxyCodeLine{     )}
+\DoxyCodeLine{}
+\DoxyCodeLine{     var dmeMgr  nx\_sdk\_go.NxDmeMgr}
+\DoxyCodeLine{     var dmeObj  nx\_sdk\_go.NxDme}
+\DoxyCodeLine{}
+\DoxyCodeLine{     sdk\_obj := nx\_sdk\_go.NxSdkGetSdkInst(len(os.Args), os.Args, true)}
+\DoxyCodeLine{     if sdk\_obj.Swigcptr() == 0 \{}
+\DoxyCodeLine{        os.Exit(1)}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{     dmeMgr = sdk\_obj.GetDmeMgr()}
+\DoxyCodeLine{     if dmeMgr.Swigcptr() == 0 \{}
+\DoxyCodeLine{        os.Exit(1)}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{     dmeobj = dmeMgr.GetDmeObj("{}sys/ch"{})}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -255,37 +258,37 @@ Go:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_af0c1e7578c6752294cade91b395ef19c}\label{classnxos_1_1_nx_dme_mgr_af0c1e7578c6752294cade91b395ef19c}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!get\+Mo\+Json@{get\+Mo\+Json}}
-\index{get\+Mo\+Json@{get\+Mo\+Json}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{get\+Mo\+Json()}{getMoJson()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!getMoJson@{getMoJson}}
+\index{getMoJson@{getMoJson}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{getMoJson()}{getMoJson()}}
 {\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Dme\+Mgr\+::get\+Mo\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn,  }\item[{int $\ast$}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Retrieve the object data as a json string for the object at the specified dn path. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the object. \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path of the object. \\
 \hline
-\mbox{\tt out}  & {\em error} & The resulting error value. \\
+\mbox{\texttt{ out}}  & {\em error} & The resulting error value. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Json string, error code set in argument
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-      \textcolor{keywordtype}{int} err;
-      \textcolor{keywordtype}{string} data\_string = NULL;
-
-      data\_string = dmeP->getMOJson(\textcolor{stringliteral}{"dn/path"}, &err);
-      cout << \textcolor{stringliteral}{"Object : "} << data\_string;
-Python:
-     errp = nx\_sdk\_py.new\_intp();
-     data = dmeP.getMoJson(\textcolor{stringliteral}{"dn/path"}, errp)
-     status = nx\_sdk\_py.intp\_value(errp);
-     nx\_sdk\_py.delete\_intp(errp);
-
-     \textcolor{keywordflow}{if} status == nx\_sdk\_py.ERR\_ESUCCESS:
-\textcolor{preprocessor}{          # use 'data'}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{      \textcolor{keywordtype}{int} err;}
+\DoxyCodeLine{      \textcolor{keywordtype}{string} data\_string = NULL;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      data\_string = dmeP-\/>getMOJson(\textcolor{stringliteral}{"{}dn/path"{}}, \&err);}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}Object : "{}} << data\_string;}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     errp = nx\_sdk\_py.new\_intp();}
+\DoxyCodeLine{     data = dmeP.getMoJson(\textcolor{stringliteral}{"{}dn/path"{}}, errp)}
+\DoxyCodeLine{     status = nx\_sdk\_py.intp\_value(errp);}
+\DoxyCodeLine{     nx\_sdk\_py.delete\_intp(errp);}
+\DoxyCodeLine{}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} status == nx\_sdk\_py.ERR\_ESUCCESS:}
+\DoxyCodeLine{\textcolor{preprocessor}{          \# use 'data'}}
 \end{DoxyCode}
 
 
@@ -295,52 +298,52 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a3d7e9ce8c28586d834f1504856e22988}\label{classnxos_1_1_nx_dme_mgr_a3d7e9ce8c28586d834f1504856e22988}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!set\+Dme\+Handler@{set\+Dme\+Handler}}
-\index{set\+Dme\+Handler@{set\+Dme\+Handler}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{set\+Dme\+Handler()}{setDmeHandler()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!setDmeHandler@{setDmeHandler}}
+\index{setDmeHandler@{setDmeHandler}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{setDmeHandler()}{setDmeHandler()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+Mgr\+::set\+Dme\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler}} $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Install a user defined event callback handler that will be invoked if a watched dn has activity. If a filter was also given for the dn, only events that match the filter patterns will result in calling the callback method. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em handler} & The D\+ME event handler to be used. \\
+\mbox{\texttt{ in}}  & {\em handler} & The D\+ME event handler to be used. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if operation successful 
-\begin{DoxyCode}
-  C++:
-
-    \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{
-    \textcolor{keyword}{public}:
-
-      \textcolor{keywordtype}{void} postDmeHandlerCb (NxDme *objp)
-      \{
-        \textcolor{keywordtype}{string} value;
-
-        cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"(): application callback called"}
-                     << endl;
-        cout << \textcolor{stringliteral}{"NxDme obj.dn <"} << objp->getDn() << \textcolor{stringliteral}{">"} << endl;
-        cout << \textcolor{stringliteral}{"NxDme event = "} << event\_str(objp->getEvent())
-                    << endl;
-      \}
-
-    \};
-
-    NxDmeHandler *dmeHandler = \textcolor{keyword}{new} myNxDmeHandler();
-    dmeP->setDmeHandler(dmeHandler);
-
-Python:
-
-   \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):
-
-       def postDmeHandlerCb(self, obj):
-          print "pyDmeHandler: application callback"
-          print "dn = %s" % obj.getDn()
-          print "event = %s" % getEventStr(obj.getEvent())
-          dme\_object\_mode(obj, False)
-
-    myDmeHandler = pyDmeHandler()
-    dmeP.\mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a3d7e9ce8c28586d834f1504856e22988}{setDmeHandler}}(myDmeHandler)
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  C++:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{}
+\DoxyCodeLine{    \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{      \textcolor{keywordtype}{void} postDmeHandlerCb (NxDme *objp)}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{string} value;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}(): application callback called"{}}}
+\DoxyCodeLine{                     << endl;}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}NxDme obj.dn <"{}} << objp-\/>getDn() << \textcolor{stringliteral}{"{}>"{}} << endl;}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}NxDme event = "{}} << event\_str(objp-\/>getEvent())}
+\DoxyCodeLine{                    << endl;}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    NxDmeHandler *dmeHandler = \textcolor{keyword}{new} myNxDmeHandler();}
+\DoxyCodeLine{    dmeP-\/>setDmeHandler(dmeHandler);}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):}
+\DoxyCodeLine{}
+\DoxyCodeLine{       def postDmeHandlerCb(self, obj):}
+\DoxyCodeLine{          print "{}pyDmeHandler: application callback"{}}
+\DoxyCodeLine{          print "{}dn = \%s"{} \% obj.getDn()}
+\DoxyCodeLine{          print "{}event = \%s"{} \% getEventStr(obj.getEvent())}
+\DoxyCodeLine{          dme\_object\_mode(obj, False)}
+\DoxyCodeLine{}
+\DoxyCodeLine{    myDmeHandler = pyDmeHandler()}
+\DoxyCodeLine{    dmeP.\mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_a3d7e9ce8c28586d834f1504856e22988}{setDmeHandler}}(myDmeHandler)}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -350,32 +353,32 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a96f2b81fd3c248cb1408c95330ae6962}\label{classnxos_1_1_nx_dme_mgr_a96f2b81fd3c248cb1408c95330ae6962}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!unwatch@{unwatch}}
-\index{unwatch@{unwatch}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{unwatch()}{unwatch()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!unwatch@{unwatch}}
+\index{unwatch@{unwatch}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{unwatch()}{unwatch()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+Mgr\+::unwatch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn,  }\item[{const std\+::string \&}]{pattern = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Stop watching a D\+ME object or remove an existing pattern. If called with non-\/empty pattern, remove the pattern. Otherwise, remove the watch for this dn completely. If unwatch is called for the only existing pattern, this results in the default pattern being installed and used. Otherwise, any existing patterns remain in effect. If pattern is specified as \char`\"{}\char`\"{} or default value is used, this clears all patterns and removes the watch completely. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN string of root object to unwatch. \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN string of root object to unwatch. \\
 \hline
-\mbox{\tt in}  & {\em pattern} & \mbox{[}Optional\mbox{]} Regular expression pattern to remove. \\
+\mbox{\texttt{ in}}  & {\em pattern} & \mbox{[}Optional\mbox{]} Regular expression pattern to remove. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if operation successful 
-\begin{DoxyCode}
-C++:
-     \textcolor{keywordtype}{string} ere\_pattern = \textcolor{stringliteral}{"^vni-*"};
-       \textcolor{comment}{// remove ere\_pattern from this watched dn}
-     dmeP->unwatch(\textcolor{stringliteral}{"sys/eps/epId-1/nws"}, ere\_pattern);
-       \textcolor{comment}{// remove watch on this dn completely}
-     dmeP->unwatch(\textcolor{stringliteral}{"sys/eps/epId-1/nws"});
-Python:
-\textcolor{preprocessor}{      #clear single pattern from watched object}
-     dmeP.unwatch(\textcolor{stringliteral}{"sys/eps/epId-1/nws"}, \textcolor{stringliteral}{"^vni-*"})
-\textcolor{preprocessor}{      #clear watch completely}
-\textcolor{preprocessor}{     dmeP.unwatch("sys/eps/epId-1/nws")}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{string} ere\_pattern = \textcolor{stringliteral}{"{}\string^vni-\/*"{}};}
+\DoxyCodeLine{       \textcolor{comment}{// remove ere\_pattern from this watched dn}}
+\DoxyCodeLine{     dmeP-\/>unwatch(\textcolor{stringliteral}{"{}sys/eps/epId-\/1/nws"{}}, ere\_pattern);}
+\DoxyCodeLine{       \textcolor{comment}{// remove watch on this dn completely}}
+\DoxyCodeLine{     dmeP-\/>unwatch(\textcolor{stringliteral}{"{}sys/eps/epId-\/1/nws"{}});}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{\textcolor{preprocessor}{      \#clear single pattern from watched object}}
+\DoxyCodeLine{     dmeP.unwatch(\textcolor{stringliteral}{"{}sys/eps/epId-\/1/nws"{}}, \textcolor{stringliteral}{"{}\string^vni-\/*"{}})}
+\DoxyCodeLine{\textcolor{preprocessor}{      \#clear watch completely}}
+\DoxyCodeLine{\textcolor{preprocessor}{     dmeP.unwatch("{}sys/eps/epId-\/1/nws"{})}}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -385,30 +388,30 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_a84b7abe8172478474ba83a403be390ae}\label{classnxos_1_1_nx_dme_mgr_a84b7abe8172478474ba83a403be390ae}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}!watch@{watch}}
-\index{watch@{watch}!nxos\+::\+Nx\+Dme\+Mgr@{nxos\+::\+Nx\+Dme\+Mgr}}
-\subsubsection{\texorpdfstring{watch()}{watch()}}
+\index{nxos::NxDmeMgr@{nxos::NxDmeMgr}!watch@{watch}}
+\index{watch@{watch}!nxos::NxDmeMgr@{nxos::NxDmeMgr}}
+\doxysubsubsection{\texorpdfstring{watch()}{watch()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Dme\+Mgr\+::watch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+In\+Dn,  }\item[{const std\+::string \&}]{pattern = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{download = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Watch the given D\+ME object dn for events, filtered by pattern. The pattern is a regular expression conforming to P\+O\+S\+IX E\+RE syntax. The default pattern is empty, which means to match everything generated for this dn. Calling with an empty pattern after previously installing non-\/empty patterns results in clear all other patterns (resetting to default). Setting a watch pattern if the current (only) pattern is empty results in effectively removing the default empty pattern and matching the installed pattern(s). Installing multiple non-\/empty patterns is possible, and each pattern is matched in the order installed. If any pattern matches, the event is delivered to callback. It is not required that all patterns match. The \textquotesingle{}download\textquotesingle{} flag controls if all objects in the subtree are returned via the application callback. These objects are also filtered by the patterns.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em s\+In\+Dn} & The DN path of the root object to watch \\
+\mbox{\texttt{ in}}  & {\em s\+In\+Dn} & The DN path of the root object to watch \\
 \hline
-\mbox{\tt in}  & {\em pattern} & \mbox{[}Optional\mbox{]} Regular expression string used for filtering. \\
+\mbox{\texttt{ in}}  & {\em pattern} & \mbox{[}Optional\mbox{]} Regular expression string used for filtering. \\
 \hline
-\mbox{\tt in}  & {\em download} & \mbox{[}Optional\mbox{]} Specify to do object download. \\
+\mbox{\texttt{ in}}  & {\em download} & \mbox{[}Optional\mbox{]} Specify to do object download. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if operation succeeded 
-\begin{DoxyCode}
-C++:
-     \textcolor{keywordtype}{string} ere\_pattern = \textcolor{stringliteral}{"^vni-*"};
-     dmeP->watch(\textcolor{stringliteral}{"sys/eps/epId-1/nws"}, ere\_pattern);
-Python:
-    dmeP.watch(\textcolor{stringliteral}{"sys/eps/spId-1/nws"}, \textcolor{stringliteral}{"^vni-*"})
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{string} ere\_pattern = \textcolor{stringliteral}{"{}\string^vni-\/*"{}};}
+\DoxyCodeLine{     dmeP-\/>watch(\textcolor{stringliteral}{"{}sys/eps/epId-\/1/nws"{}}, ere\_pattern);}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    dmeP.watch(\textcolor{stringliteral}{"{}sys/eps/spId-\/1/nws"{}}, \textcolor{stringliteral}{"{}\string^vni-\/*"{}})}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -421,4 +424,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}

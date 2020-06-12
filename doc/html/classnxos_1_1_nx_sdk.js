@@ -9,6 +9,8 @@ var classnxos_1_1_nx_sdk =
     [ "getDmeMgr", "classnxos_1_1_nx_sdk.html#a089933980bfe0466870510bb94158763", null ],
     [ "getIntfMgr", "classnxos_1_1_nx_sdk.html#ac860ca0ab2bd58d28f990685c63906a0", null ],
     [ "getMacMgr", "classnxos_1_1_nx_sdk.html#adfa969f547080efd92f90f55ebc930c5", null ],
+    [ "getNxSdkVersion", "classnxos_1_1_nx_sdk.html#a0f07a49831340ad282543d0572547226", null ],
+    [ "getRemoteClientNxSdkVersion", "classnxos_1_1_nx_sdk.html#a0d62dbdc429265f7782cd2142710a4a7", null ],
     [ "getRemoteConnStatus", "classnxos_1_1_nx_sdk.html#a17102543d36406daaed8370802eecca3", null ],
     [ "getRemoteIp", "classnxos_1_1_nx_sdk.html#ad5cec82b30925240ce24e052b4c800c4", null ],
     [ "getRemotePort", "classnxos_1_1_nx_sdk.html#af922404fa50aa22299189f759cfbc4ca", null ],

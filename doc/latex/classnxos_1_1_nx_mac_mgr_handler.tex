@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_mac_mgr_handler}{}\section{nxos\+:\+:Nx\+Mac\+Mgr\+Handler Class Reference}
-\label{classnxos_1_1_nx_mac_mgr_handler}\index{nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}}
+\hypertarget{classnxos_1_1_nx_mac_mgr_handler}{}\doxysection{nxos\+::Nx\+Mac\+Mgr\+Handler Class Reference}
+\label{classnxos_1_1_nx_mac_mgr_handler}\index{nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}}
 
 
 Abstract Mac\+Mgr callback Interface to receive M\+AC updates from N\+X-\/\+OS.  
@@ -7,9 +7,9 @@ Abstract Mac\+Mgr callback Interface to receive M\+AC updates from N\+X-\/\+OS.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+mac\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+mac\+\_\+mgr.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a4eef592d5890b37c3d26faf679aefbb2}{$\sim$\+Nx\+Mac\+Mgr\+Handler}} ()
@@ -20,109 +20,109 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da12110
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract Mac\+Mgr callback Interface to receive M\+AC updates from N\+X-\/\+OS. 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_handler_a4eef592d5890b37c3d26faf679aefbb2}\label{classnxos_1_1_nx_mac_mgr_handler_a4eef592d5890b37c3d26faf679aefbb2}} 
-\index{nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}!````~Nx\+Mac\+Mgr\+Handler@{$\sim$\+Nx\+Mac\+Mgr\+Handler}}
-\index{````~Nx\+Mac\+Mgr\+Handler@{$\sim$\+Nx\+Mac\+Mgr\+Handler}!nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Mac\+Mgr\+Handler()}{~NxMacMgrHandler()}}
+\index{nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}!````~NxMacMgrHandler@{$\sim$NxMacMgrHandler}}
+\index{````~NxMacMgrHandler@{$\sim$NxMacMgrHandler}!nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxMacMgrHandler()}{~NxMacMgrHandler()}}
 {\footnotesize\ttfamily virtual nxos\+::\+Nx\+Mac\+Mgr\+Handler\+::$\sim$\+Nx\+Mac\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Destructor. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_handler_a3a15935d8cd001a554d32a5d7ab216b5}\label{classnxos_1_1_nx_mac_mgr_handler_a3a15935d8cd001a554d32a5d7ab216b5}} 
-\index{nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}!post\+Mac\+Handler\+Cb@{post\+Mac\+Handler\+Cb}}
-\index{post\+Mac\+Handler\+Cb@{post\+Mac\+Handler\+Cb}!nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Mac\+Handler\+Cb()}{postMacHandlerCb()}}
+\index{nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}!postMacHandlerCb@{postMacHandlerCb}}
+\index{postMacHandlerCb@{postMacHandlerCb}!nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postMacHandlerCb()}{postMacHandlerCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+Mgr\+Handler\+::post\+Mac\+Handler\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} $\ast$}]{mac\+\_\+obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 User to overload the post\+Mac\+Cb callback method to receive any registered M\+AC updates based on the set watch filters. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}}} & object.\\
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}}} & object.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True \+: if the action was successful. False\+: if the action was not successful.
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
-
-   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{
-              \textcolor{comment}{// Do your action}
-         \}
-   \};
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
-         def postMacCb(self, nxmac):
-\textcolor{preprocessor}{             # Do your action here}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get MAC events}}
+\DoxyCodeLine{         def postMacCb(self, nxmac):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}\label{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}} 
-\index{nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}!post\+Mac\+Handler\+Download\+Cb@{post\+Mac\+Handler\+Download\+Cb}}
-\index{post\+Mac\+Handler\+Download\+Cb@{post\+Mac\+Handler\+Download\+Cb}!nxos\+::\+Nx\+Mac\+Mgr\+Handler@{nxos\+::\+Nx\+Mac\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Mac\+Handler\+Download\+Cb()}{postMacHandlerDownloadCb()}}
+\index{nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}!postMacHandlerDownloadCb@{postMacHandlerDownloadCb}}
+\index{postMacHandlerDownloadCb@{postMacHandlerDownloadCb}!nxos::NxMacMgrHandler@{nxos::NxMacMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postMacHandlerDownloadCb()}{postMacHandlerDownloadCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Mac\+Mgr\+Handler\+::post\+Mac\+Handler\+Download\+Cb (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{const std\+::string \&}]{macaddr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Callback used to mark the end of a requested object download operation. This will be called after the last event is sent to the application.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & value returned to app that matches the watch download. For watch \char`\"{}all\char`\"{}, the value is zero; for download of all values in a vlan, the id is the vlan id. For a specific mac watch, the macaddr will be set. The app can use this to correlate the download cb instance to the download transaction to tell when it is complete. \\
+\mbox{\texttt{ in}}  & {\em id} & value returned to app that matches the watch download. For watch \char`\"{}all\char`\"{}, the value is zero; for download of all values in a vlan, the id is the vlan id. For a specific mac watch, the macaddr will be set. The app can use this to correlate the download cb instance to the download transaction to tell when it is complete. \\
 \hline
-\mbox{\tt in}  & {\em macaddr} & Mac address returned in case a specific mac is downloaded\\
+\mbox{\texttt{ in}}  & {\em macaddr} & Mac address returned in case a specific mac is downloaded\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}
-
-   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}{postMacHandlerDownloadCb}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, 
-                                       \textcolor{keyword}{const} std::string &macaddr) \{
-              \textcolor{comment}{// Do your action}
-              \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == 0) \{
-                  cout << \textcolor{stringliteral}{"Download complete for all existing MACs"};
-              \} \textcolor{keywordflow}{else} \{
-                  \textcolor{keywordflow}{if} (macaddr.empty()) \{
-                      cout << \textcolor{stringliteral}{"Download complete for all existing MACs in Vlan "} << id;
-                  \} \textcolor{keywordflow}{else} \{
-                       cout << \textcolor{stringliteral}{"Download complete for MAC "} << macaddr << \textcolor{stringliteral}{"in Vlan "} << id;
-                  \}
-              \}
-         \}
-   \};
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
-         def \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}{postMacHandlerDownloadCb}}(self, id, macaddr):
-\textcolor{preprocessor}{             # Do your action here}
-             if id == 0:
-                print "Download complete for all existing MACs"
-             else:
-                if not macaddr:
-                   print ("Download complete for all existing MACs in Vlan %d" % id) 
-                else:
-                   print ("Download complete for MAC %s in Vlan %d" % (macaddr, id))
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__mac__mgr_8h}{nx\_mac\_mgr.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}{postMacHandlerDownloadCb}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, }
+\DoxyCodeLine{                                       \textcolor{keyword}{const} std::string \&macaddr) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{              \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == 0) \{}
+\DoxyCodeLine{                  cout << \textcolor{stringliteral}{"{}Download complete for all existing MACs"{}};}
+\DoxyCodeLine{              \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                  \textcolor{keywordflow}{if} (macaddr.empty()) \{}
+\DoxyCodeLine{                      cout << \textcolor{stringliteral}{"{}Download complete for all existing MACs in Vlan "{}} << id;}
+\DoxyCodeLine{                  \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                       cout << \textcolor{stringliteral}{"{}Download complete for MAC "{}} << macaddr << \textcolor{stringliteral}{"{}in Vlan "{}} << id;}
+\DoxyCodeLine{                  \}}
+\DoxyCodeLine{              \}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myMacMgrHandler(nx\_sdk\_py.NxMacMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get MAC events}}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_mac_mgr_handler_a42d84c9f4da1211024912efd4416827e}{postMacHandlerDownloadCb}}(self, id, macaddr):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\DoxyCodeLine{             if id == 0:}
+\DoxyCodeLine{                print "{}Download complete for all existing MACs"{}}
+\DoxyCodeLine{             else:}
+\DoxyCodeLine{                if not macaddr:}
+\DoxyCodeLine{                   print ("{}Download complete for all existing MACs in Vlan \%d"{} \% id) }
+\DoxyCodeLine{                else:}
+\DoxyCodeLine{                   print ("{}Download complete for MAC \%s in Vlan \%d"{} \% (macaddr, id))}
 \end{DoxyCode}
  
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

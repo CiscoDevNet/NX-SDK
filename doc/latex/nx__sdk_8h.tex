@@ -1,5 +1,5 @@
-\hypertarget{nx__sdk_8h}{}\section{include/nx\+\_\+sdk.h File Reference}
-\label{nx__sdk_8h}\index{include/nx\+\_\+sdk.\+h@{include/nx\+\_\+sdk.\+h}}
+\hypertarget{nx__sdk_8h}{}\doxysection{nx\+\_\+sdk.\+h File Reference}
+\label{nx__sdk_8h}\index{nx\_sdk.h@{nx\_sdk.h}}
 
 
 Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) tools.  
@@ -11,27 +11,33 @@ Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) tools.
 {\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include \char`\"{}types/nx\+\_\+common.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}nx\+\_\+exception.\+h\char`\"{}}\newline
-\subsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classnxos_1_1_nx_sdk}{nxos\+::\+Nx\+Sdk}}
 \begin{DoxyCompactList}\small\item\em Abstract S\+DK interface to N\+X\+OS infra. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classnxos_1_1_nx_sdk_handler}{nxos\+::\+Nx\+Sdk\+Handler}}
 \begin{DoxyCompactList}\small\item\em Abstract N\+X-\/\+S\+DK callback Interface to receive S\+DK updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract S\+DK interface to Nexus(\+N\+X\+O\+S) tools. 
 
 N\+X\+OS Infra S\+DK V1.\+0 provides a flexible and powerful way for third party custom Application development to access Nexus infra tools like ~\newline
- 1. generating Custom C\+L\+Is
+
 \begin{DoxyEnumerate}
+\item generating Custom C\+L\+Is
 \item Custom Syslogs, Events and Error history for the App.
 \item Ability to start/stop the Application from V\+SH thereby providing HA support. just like any other native Nexus applications. Refer to some example Applications.
 \end{DoxyEnumerate}
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
+\href{mailto:nxos-sdk@cisco.com}{\texttt{ nxos-\/sdk@cisco.\+com}} 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
 \item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs. \end{DoxyRefDesc}

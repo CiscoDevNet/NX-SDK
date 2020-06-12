@@ -13,5 +13,9 @@ var classnxos_1_1_nx_trace =
     [ "~NxTrace", "classnxos_1_1_nx_trace.html#a4b8ef9990a168effbca47f29d9b6ea9d", null ],
     [ "error", "classnxos_1_1_nx_trace.html#afc0240b6b9a291729836ffb2fbeef8a4", null ],
     [ "event", "classnxos_1_1_nx_trace.html#a22e5e2fff39fae68fba3051dc2720621", null ],
-    [ "syslog", "classnxos_1_1_nx_trace.html#a825db76787da234b99e81adb2def8d3d", null ]
+    [ "getTraceHandler", "classnxos_1_1_nx_trace.html#aa2d8a5de259b1ce87f45dec9663616de", null ],
+    [ "setTraceHandler", "classnxos_1_1_nx_trace.html#a367e5034b0a875752ca9c0cc0263209a", null ],
+    [ "syslog", "classnxos_1_1_nx_trace.html#a825db76787da234b99e81adb2def8d3d", null ],
+    [ "unwatchSyslog", "classnxos_1_1_nx_trace.html#a837c088581a160e5bee0da07c67f1386", null ],
+    [ "watchSyslog", "classnxos_1_1_nx_trace.html#acd022aec8382a59555d9f6b32880f754", null ]
 ];

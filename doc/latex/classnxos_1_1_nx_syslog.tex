@@ -1,0 +1,132 @@
+\hypertarget{classnxos_1_1_nx_syslog}{}\doxysection{nxos\+::Nx\+Syslog Class Reference}
+\label{classnxos_1_1_nx_syslog}\index{nxos::NxSyslog@{nxos::NxSyslog}}
+
+
+syslog interface that hold syslog data.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+trace.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_syslog_ac38a4361938f91ff26eb9e189e8e3a39}{$\sim$\+Nx\+Syslog}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_syslog_a227e0f6a87cb34a930eb26e24c7a6aa3}{get\+Id}} ()=0
+\begin{DoxyCompactList}\small\item\em Get Message Id of the Syslog. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a44fb8e16c3138e6eb7f02fcc17fc75b0}{get\+Node\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Get Node Name from Syslog Msg ex) n9232c-\/kg2. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a3bf01cafadcff3f4497c7f4b5547fe92}{get\+Time\+Stamp}} ()=0
+\begin{DoxyCompactList}\small\item\em Get Time\+Stamp at which the Syslog is generated ex) 2019 Apr 5 14\+:56\+:20. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_syslog_ac01b6794a63273085094c83cf24f3d1b}{get\+Severity}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the severity of the Syslog ex) 5. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a6bd1ff6e2f85cba6bc03ff9af7078563}{get\+Message\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Syslog Message Name ex) I\+F\+\_\+\+D\+O\+W\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+D\+O\+WN. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a7158f6aecfdb72b812def99c4a9f0b19}{get\+Category}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Syslog Category ex) E\+T\+H\+P\+O\+RT. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a7eb1fc93b556dab61ba653de65fddcd6}{get\+Text}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Syslog Text ex) Interface loopback1000 is down (Administratively down) \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_syslog_a594015db3286cadadbb7d9cd8ef113dd}{get\+Time\+Zone}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+syslog interface that hold syslog data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_ac38a4361938f91ff26eb9e189e8e3a39}\label{classnxos_1_1_nx_syslog_ac38a4361938f91ff26eb9e189e8e3a39}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!````~NxSyslog@{$\sim$NxSyslog}}
+\index{````~NxSyslog@{$\sim$NxSyslog}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxSyslog()}{~NxSyslog()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Syslog\+::$\sim$\+Nx\+Syslog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a7158f6aecfdb72b812def99c4a9f0b19}\label{classnxos_1_1_nx_syslog_a7158f6aecfdb72b812def99c4a9f0b19}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getCategory()}{getCategory()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Syslog Category ex) E\+T\+H\+P\+O\+RT. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a227e0f6a87cb34a930eb26e24c7a6aa3}\label{classnxos_1_1_nx_syslog_a227e0f6a87cb34a930eb26e24c7a6aa3}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getId@{getId}}
+\index{getId@{getId}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t nxos\+::\+Nx\+Syslog\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get Message Id of the Syslog. 
+
+Sample syslog\+: 2019 Apr 5 14\+:56\+:20 n9232c-\/kg2 E\+T\+H\+P\+O\+RT-\/5-\/I\+F\+\_\+\+D\+O\+W\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+D\+O\+WN\+: Interface loopback1000 is down (Administratively down) \mbox{\Hypertarget{classnxos_1_1_nx_syslog_a6bd1ff6e2f85cba6bc03ff9af7078563}\label{classnxos_1_1_nx_syslog_a6bd1ff6e2f85cba6bc03ff9af7078563}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getMessageName@{getMessageName}}
+\index{getMessageName@{getMessageName}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getMessageName()}{getMessageName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Message\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Syslog Message Name ex) I\+F\+\_\+\+D\+O\+W\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+D\+O\+WN. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a44fb8e16c3138e6eb7f02fcc17fc75b0}\label{classnxos_1_1_nx_syslog_a44fb8e16c3138e6eb7f02fcc17fc75b0}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getNodeName@{getNodeName}}
+\index{getNodeName@{getNodeName}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getNodeName()}{getNodeName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Node\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get Node Name from Syslog Msg ex) n9232c-\/kg2. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_ac01b6794a63273085094c83cf24f3d1b}\label{classnxos_1_1_nx_syslog_ac01b6794a63273085094c83cf24f3d1b}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getSeverity@{getSeverity}}
+\index{getSeverity@{getSeverity}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getSeverity()}{getSeverity()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t nxos\+::\+Nx\+Syslog\+::get\+Severity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the severity of the Syslog ex) 5. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a7eb1fc93b556dab61ba653de65fddcd6}\label{classnxos_1_1_nx_syslog_a7eb1fc93b556dab61ba653de65fddcd6}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getText@{getText}}
+\index{getText@{getText}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Syslog Text ex) Interface loopback1000 is down (Administratively down) 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a3bf01cafadcff3f4497c7f4b5547fe92}\label{classnxos_1_1_nx_syslog_a3bf01cafadcff3f4497c7f4b5547fe92}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getTimeStamp@{getTimeStamp}}
+\index{getTimeStamp@{getTimeStamp}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getTimeStamp()}{getTimeStamp()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Time\+Stamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get Time\+Stamp at which the Syslog is generated ex) 2019 Apr 5 14\+:56\+:20. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_syslog_a594015db3286cadadbb7d9cd8ef113dd}\label{classnxos_1_1_nx_syslog_a594015db3286cadadbb7d9cd8ef113dd}} 
+\index{nxos::NxSyslog@{nxos::NxSyslog}!getTimeZone@{getTimeZone}}
+\index{getTimeZone@{getTimeZone}!nxos::NxSyslog@{nxos::NxSyslog}}
+\doxysubsubsection{\texorpdfstring{getTimeZone()}{getTimeZone()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Syslog\+::get\+Time\+Zone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{[}Optional\mbox{]} Get the Time Zone abbreviations, e.\+g P\+ST, E\+ST, U\+TC etc. By default, timezone is not set in the syslog messages. To enable timezone in the syslog messages, use the config\+: switch(config)\# clock format show-\/timezone syslog 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}

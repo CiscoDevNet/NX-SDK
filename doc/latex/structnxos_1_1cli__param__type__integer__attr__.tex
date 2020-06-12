@@ -1,5 +1,5 @@
-\hypertarget{structnxos_1_1cli__param__type__integer__attr__}{}\section{nxos\+:\+:cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+ Struct Reference}
-\label{structnxos_1_1cli__param__type__integer__attr__}\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+}}
+\hypertarget{structnxos_1_1cli__param__type__integer__attr__}{}\doxysection{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+ Struct Reference}
+\label{structnxos_1_1cli__param__type__integer__attr__}\index{nxos::cli\_param\_type\_integer\_attr\_@{nxos::cli\_param\_type\_integer\_attr\_}}
 
 
 Specifies that the type of the C\+LI input parameter is an integer.  
@@ -7,63 +7,80 @@ Specifies that the type of the C\+LI input parameter is an integer.
 
 
 
-{\ttfamily \#include $<$include/types/nx\+\_\+cli.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
 
-\subsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}\label{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}} 
-int {\bfseries min\+\_\+val}
+int \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{min\+\_\+val}}
 \item 
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}\label{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}} 
 int \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\+\_\+val}}
 \begin{DoxyCompactList}\small\item\em Default is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Specifies that the type of the C\+LI input parameter is an integer. 
 
 Matching param type is P\+\_\+\+I\+N\+T\+E\+G\+ER. When used in update\+Param context\+: 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em min\+\_\+val} & minimum allowed value for the input interger parameter. \\
+\mbox{\texttt{ in}}  & {\em min\+\_\+val} & minimum allowed value for the input interger parameter. \\
 \hline
-\mbox{\tt in}  & {\em max\+\_\+val} & Maximum allowed value for the input interger parameter.\\
+\mbox{\texttt{ in}}  & {\em max\+\_\+val} & Maximum allowed value for the input interger parameter.\\
 \hline
 \end{DoxyParams}
-{\bfseries  Usage\+: } If you need to create a C\+LI which will take an integer between $<$1-\/100$>$ ~\newline
+{\bfseries{ Usage\+: }} If you need to create a C\+LI which will take an integer between $<$1-\/100$>$ ~\newline
 
 
 C\+LI\+: \$appname port-\/bw threshold ? $<$1-\/100$>$ Threshold Limit. Default 50\%
 
 
-\begin{DoxyCode}
-sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-cliP = sdk->getCliParser();
-\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr__}{nxos::cli\_param\_type\_integer\_attr}} int\_attr = \{0\};
-int\_attr.min\_val = 1;
-int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_val}} = 100;
-cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
-                         \textcolor{stringliteral}{"port-bw threshold <threshold>"});
-cmd->updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, nxos::P\_INTEGER,
-                 (\textcolor{keywordtype}{void} *)&int\_attr, \textcolor{keyword}{sizeof}(int\_attr));
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{cliP = sdk-\/>getCliParser();}
+\DoxyCodeLine{\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr__}{nxos::cli\_param\_type\_integer\_attr}} int\_attr = \{0\};}
+\DoxyCodeLine{int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{min\_val}} = 1;}
+\DoxyCodeLine{int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_val}} = 100;}
+\DoxyCodeLine{cmd = cliP-\/>newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}},}
+\DoxyCodeLine{                         \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}});}
+\DoxyCodeLine{cmd-\/>updateParam(\textcolor{stringliteral}{"{}<threshold>"{}}, \textcolor{stringliteral}{"{}Threshold Limit. Default 50\%"{}}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687}{nxos::P\_INTEGER}},}
+\DoxyCodeLine{                 (\textcolor{keywordtype}{void} *)\&int\_attr, \textcolor{keyword}{sizeof}(int\_attr));}
 \end{DoxyCode}
 
 
 
-\begin{DoxyCode}
-\textcolor{keyword}{import} nx\_sdk\_py
-sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-cliP = sdk.getCliParser()
-int\_attr = nx\_sdk\_py.cli\_param\_type\_integer\_attr()
-int\_attr.min\_val = 1;
-int\_attr.max\_val = 100;
-cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"}, 
-                        \textcolor{stringliteral}{"port-bw threshold <threshold>"})
-cmd.updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, nxos::P\_INTEGER,
-                int\_attr, len(int\_attr))
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{cliP = sdk.getCliParser()}
+\DoxyCodeLine{int\_attr = nx\_sdk\_py.cli\_param\_type\_integer\_attr()}
+\DoxyCodeLine{int\_attr.min\_val = 1;}
+\DoxyCodeLine{int\_attr.max\_val = 100;}
+\DoxyCodeLine{cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}}, }
+\DoxyCodeLine{                        \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}})}
+\DoxyCodeLine{cmd.updateParam(\textcolor{stringliteral}{"{}<threshold>"{}}, \textcolor{stringliteral}{"{}Threshold Limit. Default 50\%"{}}, nxos::P\_INTEGER,}
+\DoxyCodeLine{                int\_attr, len(int\_attr))}
 \end{DoxyCode}
  
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}\label{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}} 
+\index{nxos::cli\_param\_type\_integer\_attr\_@{nxos::cli\_param\_type\_integer\_attr\_}!max\_val@{max\_val}}
+\index{max\_val@{max\_val}!nxos::cli\_param\_type\_integer\_attr\_@{nxos::cli\_param\_type\_integer\_attr\_}}
+\doxysubsubsection{\texorpdfstring{max\_val}{max\_val}}
+{\footnotesize\ttfamily int nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+\+::max\+\_\+val}
+
+
+
+Default is 0. 
+
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}\label{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}} 
+\index{nxos::cli\_param\_type\_integer\_attr\_@{nxos::cli\_param\_type\_integer\_attr\_}!min\_val@{min\_val}}
+\index{min\_val@{min\_val}!nxos::cli\_param\_type\_integer\_attr\_@{nxos::cli\_param\_type\_integer\_attr\_}}
+\doxysubsubsection{\texorpdfstring{min\_val}{min\_val}}
+{\footnotesize\ttfamily int nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+\+::min\+\_\+val}
+
+
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/types/nx\+\_\+cli.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{types_2nx__cli_8h}{types/nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

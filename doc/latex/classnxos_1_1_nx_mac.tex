@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_mac}{}\section{nxos\+:\+:Nx\+Mac Class Reference}
-\label{classnxos_1_1_nx_mac}\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
+\hypertarget{classnxos_1_1_nx_mac}{}\doxysection{nxos\+::Nx\+Mac Class Reference}
+\label{classnxos_1_1_nx_mac}\index{nxos::NxMac@{nxos::NxMac}}
 
 
 Abstract M\+AC Interface used to get details about M\+AC entry.  
@@ -7,22 +7,22 @@ Abstract M\+AC Interface used to get details about M\+AC entry.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+mac\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+mac\+\_\+mgr.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_a54a2228786abb8df6429123aa39795cb}{$\sim$\+Nx\+Mac}} ()
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_mac_ae1510492e7d8fe257f918c74bbe6b0ea}{get\+Mac\+Address}} ()=0
 \item 
-virtual \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}{get\+Type}} ()=0
+virtual \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}{get\+Type}} ()=0
 \item 
 virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_mac_ab785cecf1661f3c30c96fe952ba410f3}{get\+Vlan}} ()=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}{get\+Intf\+Name}} ()=0
 \item 
-virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{get\+Event}} ()=0
+virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{get\+Event}} ()=0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_ae6ebe78a6679fb460e2ed1f18c08acd0}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} const \&mac\+\_\+obj) const =0
 \item 
@@ -32,23 +32,23 @@ virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_a9a4529b39d875b2dd54b0208d1a6
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract M\+AC Interface used to get details about M\+AC entry. 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_mac_a54a2228786abb8df6429123aa39795cb}\label{classnxos_1_1_nx_mac_a54a2228786abb8df6429123aa39795cb}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!````~Nx\+Mac@{$\sim$\+Nx\+Mac}}
-\index{````~Nx\+Mac@{$\sim$\+Nx\+Mac}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Mac()}{~NxMac()}}
+\index{nxos::NxMac@{nxos::NxMac}!````~NxMac@{$\sim$NxMac}}
+\index{````~NxMac@{$\sim$NxMac}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxMac()}{~NxMac()}}
 {\footnotesize\ttfamily virtual nxos\+::\+Nx\+Mac\+::$\sim$\+Nx\+Mac (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Destructor, called when application releases object reference. Removes the object from the S\+DK map. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_mac_a9a4529b39d875b2dd54b0208d1a61c1a}\label{classnxos_1_1_nx_mac_a9a4529b39d875b2dd54b0208d1a61c1a}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!equal@{equal}}
-\index{equal@{equal}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{equal()}{equal()}}
+\index{nxos::NxMac@{nxos::NxMac}!equal@{equal}}
+\index{equal@{equal}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{equal()}{equal()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+::equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} const \&}]{mac\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Test equality of M\+AC objects. N\+O\+TE\+: Generic A\+PI to check for equality of M\+AC objects across all languages (esp for langiages that dont support operator overloading)
@@ -57,28 +57,28 @@ Test equality of M\+AC objects. N\+O\+TE\+: Generic A\+PI to check for equality 
 true if equality property holds, false otherwise
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    NxMacMgr *macMgr = sdk->getMacMgr();
-    \textcolor{keywordflow}{if} (macMgr) \{
-        NxMac *mac1 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);
-        NxMac *mac2 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);;
-        \textcolor{keywordflow}{if} (*mac1 == *mac2)
-            cout << \textcolor{stringliteral}{"Equal"} << endl;
-    \}
-Python:
-    macMgr = sdk.getMacMgr()
-    \textcolor{keywordflow}{if} macMgr:
-       mac1 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-       mac2 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-       \textcolor{keywordflow}{if} mac1 == mac2:
-          print \textcolor{stringliteral}{"Equal"}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    NxMacMgr *macMgr = sdk-\/>getMacMgr();}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (macMgr) \{}
+\DoxyCodeLine{        NxMac *mac1 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);}
+\DoxyCodeLine{        NxMac *mac2 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (*mac1 == *mac2)}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"{}Equal"{}} << endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    macMgr = sdk.getMacMgr()}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} macMgr:}
+\DoxyCodeLine{       mac1 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{       mac2 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{       \textcolor{keywordflow}{if} mac1 == mac2:}
+\DoxyCodeLine{          print \textcolor{stringliteral}{"{}Equal"{}}}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}\label{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Event@{get\+Event}}
-\index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxMac@{nxos::NxMac}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the type of Event(\+Add, Update, Delete etc). Should be used only in M\+AC Handler Callbacks like post\+Mac\+Cb(). If used outside of M\+AC Handler Callbacks its set to N\+O\+\_\+\+E\+V\+E\+NT.
 
@@ -86,25 +86,25 @@ To get the type of Event(\+Add, Update, Delete etc). Should be used only in M\+A
 Type of M\+AC Event (event\+\_\+type\+\_\+e)
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{
-              cout << \textcolor{stringliteral}{"MAC Event: "} << mac->getEvent();
-         \}
-   \}
-
-Python:
-   \textcolor{keyword}{class }pyMacHandler(nx\_sdk\_py.NxMacMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get MAC events}
-         def postMacCb(self, nxmac):
-             print "MAC Event: %d" % nxmac.\mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{getEvent}}()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keyword}{class }myMacMgrHandler : \textcolor{keyword}{public} NxMacMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} postMacCb(NxMac *mac) \{}
+\DoxyCodeLine{              cout << \textcolor{stringliteral}{"{}MAC Event: "{}} << mac-\/>getEvent();}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{class }pyMacHandler(nx\_sdk\_py.NxMacMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get MAC events}}
+\DoxyCodeLine{         def postMacCb(self, nxmac):}
+\DoxyCodeLine{             print "{}MAC Event: \%d"{} \% nxmac.\mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{getEvent}}()}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}\label{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Intf\+Name@{get\+Intf\+Name}}
-\index{get\+Intf\+Name@{get\+Intf\+Name}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{get\+Intf\+Name()}{getIntfName()}}
+\index{nxos::NxMac@{nxos::NxMac}!getIntfName@{getIntfName}}
+\index{getIntfName@{getIntfName}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{getIntfName()}{getIntfName()}}
 {\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Mac\+::get\+Intf\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get outgoing Interface from the given M\+AC object.
@@ -113,17 +113,17 @@ To get outgoing Interface from the given M\+AC object.
 interface name (string)
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-     std::string \textcolor{keyword}{interface }= mac->\mbox{\hyperlink{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}{getIntfName}}();
-
-Python:
-     print \textcolor{stringliteral}{"Interface: %s"} % mac.getIntfName()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     std::string \textcolor{keyword}{interface }= mac-\/>\mbox{\hyperlink{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}{getIntfName}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     print \textcolor{stringliteral}{"{}Interface: \%s"{}} \% mac.getIntfName()}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_ae1510492e7d8fe257f918c74bbe6b0ea}\label{classnxos_1_1_nx_mac_ae1510492e7d8fe257f918c74bbe6b0ea}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Mac\+Address@{get\+Mac\+Address}}
-\index{get\+Mac\+Address@{get\+Mac\+Address}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{get\+Mac\+Address()}{getMacAddress()}}
+\index{nxos::NxMac@{nxos::NxMac}!getMacAddress@{getMacAddress}}
+\index{getMacAddress@{getMacAddress}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{getMacAddress()}{getMacAddress()}}
 {\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Mac\+::get\+Mac\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the M\+AC address from the given M\+AC object.
@@ -132,27 +132,27 @@ To get the M\+AC address from the given M\+AC object.
 M\+AC address (string)
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    NxMacMgr *macMgr = sdk->getMacMgr();
-    \textcolor{keywordflow}{if} (macMgr) \{
-        NxMac *mac = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);
-        \textcolor{keywordflow}{if} (mac) \{
-            std::string macAddress = mac->getMacAddress();
-        \}
-
-Python:
-    macMgr = sdk.getMacMgr()
-    \textcolor{keywordflow}{if} macMgr:
-        mac = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-        \textcolor{keywordflow}{if} mac:
-           print \textcolor{stringliteral}{"Mac Address: %s"} % mac.getMacAddress()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    NxMacMgr *macMgr = sdk-\/>getMacMgr();}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (macMgr) \{}
+\DoxyCodeLine{        NxMac *mac = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (mac) \{}
+\DoxyCodeLine{            std::string macAddress = mac-\/>getMacAddress();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    macMgr = sdk.getMacMgr()}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} macMgr:}
+\DoxyCodeLine{        mac = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} mac:}
+\DoxyCodeLine{           print \textcolor{stringliteral}{"{}Mac Address: \%s"{}} \% mac.getMacAddress()}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}\label{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Type@{get\+Type}}
-\index{get\+Type@{get\+Type}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxMac@{nxos::NxMac}!getType@{getType}}
+\index{getType@{getType}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get M\+AC Type (Static or Dynamic) from the given M\+AC object.
 
@@ -160,17 +160,17 @@ To get M\+AC Type (Static or Dynamic) from the given M\+AC object.
 M\+AC type (mac\+\_\+type\+\_\+e)
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-     nxos::mac\_type\_e type = mac->getType();
-
-Python:
-     print \textcolor{stringliteral}{"Mac type: %s"} % getTypeStr(mac.getType())
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     nxos::mac\_type\_e type = mac-\/>getType();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     print \textcolor{stringliteral}{"{}Mac type: \%s"{}} \% getTypeStr(mac.getType())}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_ab785cecf1661f3c30c96fe952ba410f3}\label{classnxos_1_1_nx_mac_ab785cecf1661f3c30c96fe952ba410f3}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Vlan@{get\+Vlan}}
-\index{get\+Vlan@{get\+Vlan}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{get\+Vlan()}{getVlan()}}
+\index{nxos::NxMac@{nxos::NxMac}!getVlan@{getVlan}}
+\index{getVlan@{getVlan}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{getVlan()}{getVlan()}}
 {\footnotesize\ttfamily virtual unsigned int nxos\+::\+Nx\+Mac\+::get\+Vlan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get Vlan from the given M\+AC object.
@@ -179,17 +179,17 @@ To get Vlan from the given M\+AC object.
 vlan (unsigned int)
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} vlan = mac->getVlan();
-
-Python:
-     print \textcolor{stringliteral}{"Vlan: %d"} % int(mac.getVlan())
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} vlan = mac-\/>getVlan();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     print \textcolor{stringliteral}{"{}Vlan: \%d"{}} \% int(mac.getVlan())}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_a11e241f495e5f2a00b6782b3f5416237}\label{classnxos_1_1_nx_mac_a11e241f495e5f2a00b6782b3f5416237}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+\index{nxos::NxMac@{nxos::NxMac}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} const \&}]{mac\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Test inequality of M\+AC objects. N\+O\+TE\+: To be used only in C++ \& Python. For GO apps, use equal A\+PI.
@@ -198,27 +198,27 @@ Test inequality of M\+AC objects. N\+O\+TE\+: To be used only in C++ \& Python. 
 true if inequality property holds, false otherwise
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    NxMacMgr *macMgr = sdk->getMacMgr();
-    \textcolor{keywordflow}{if} (macMgr) \{
-        NxMac *mac1 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);
-        NxMac *mac2 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 5);
-        \textcolor{keywordflow}{if} (*mac1 != *mac2)
-            cout << \textcolor{stringliteral}{"Not Equal"} << endl;
-    \}
-Python:
-    macMgr = sdk.getMacMgr()
-    \textcolor{keywordflow}{if} macMgr:
-       mac1 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-       mac2 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 5)
-       \textcolor{keywordflow}{if} mac1 != mac2:
-          print \textcolor{stringliteral}{"Not Equal"}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    NxMacMgr *macMgr = sdk-\/>getMacMgr();}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (macMgr) \{}
+\DoxyCodeLine{        NxMac *mac1 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);}
+\DoxyCodeLine{        NxMac *mac2 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 5);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (*mac1 != *mac2)}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"{}Not Equal"{}} << endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    macMgr = sdk.getMacMgr()}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} macMgr:}
+\DoxyCodeLine{       mac1 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{       mac2 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 5)}
+\DoxyCodeLine{       \textcolor{keywordflow}{if} mac1 != mac2:}
+\DoxyCodeLine{          print \textcolor{stringliteral}{"{}Not Equal"{}}}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_mac_ae6ebe78a6679fb460e2ed1f18c08acd0}\label{classnxos_1_1_nx_mac_ae6ebe78a6679fb460e2ed1f18c08acd0}} 
-\index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!operator==@{operator==}}
-\index{operator==@{operator==}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
-\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+\index{nxos::NxMac@{nxos::NxMac}!operator==@{operator==}}
+\index{operator==@{operator==}!nxos::NxMac@{nxos::NxMac}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Mac\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} const \&}]{mac\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Test equality of M\+AC objects. N\+O\+TE\+: To be used only in C++ \& Python. For GO apps, use equal A\+PI.
@@ -227,25 +227,25 @@ Test equality of M\+AC objects. N\+O\+TE\+: To be used only in C++ \& Python. Fo
 true if equality property holds, false otherwise
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    NxMacMgr *macMgr = sdk->getMacMgr();
-    \textcolor{keywordflow}{if} (macMgr) \{
-        NxMac *mac1 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);
-        NxMac *mac2 = macMgr->getMac(\textcolor{stringliteral}{"1.1.1"}, 2);;
-        \textcolor{keywordflow}{if} (*mac1 == *mac2)
-            cout << \textcolor{stringliteral}{"Equal"} << endl;
-    \}
-Python:
-    macMgr = sdk.getMacMgr()
-    \textcolor{keywordflow}{if} macMgr:
-       mac1 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-       mac2 = macMgr.getMac(\textcolor{stringliteral}{"1.1.1"}, 2)
-       \textcolor{keywordflow}{if} mac1 == mac2:
-          print \textcolor{stringliteral}{"Equal"}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    NxMacMgr *macMgr = sdk-\/>getMacMgr();}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (macMgr) \{}
+\DoxyCodeLine{        NxMac *mac1 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);}
+\DoxyCodeLine{        NxMac *mac2 = macMgr-\/>getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2);;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (*mac1 == *mac2)}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"{}Equal"{}} << endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{    macMgr = sdk.getMacMgr()}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} macMgr:}
+\DoxyCodeLine{       mac1 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{       mac2 = macMgr.getMac(\textcolor{stringliteral}{"{}1.1.1"{}}, 2)}
+\DoxyCodeLine{       \textcolor{keywordflow}{if} mac1 == mac2:}
+\DoxyCodeLine{          print \textcolor{stringliteral}{"{}Equal"{}}}
 \end{DoxyCode}
  
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

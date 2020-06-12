@@ -1,260 +1,93 @@
-\hypertarget{nx__common_8h}{}\section{include/types/nx\+\_\+common.h File Reference}
-\label{nx__common_8h}\index{include/types/nx\+\_\+common.\+h@{include/types/nx\+\_\+common.\+h}}
+\hypertarget{nx__common_8h}{}\doxysection{nx\+\_\+common.\+h File Reference}
+\label{nx__common_8h}\index{nx\_common.h@{nx\_common.h}}
 
 
 Provides necessary common types for using N\+X\+S\+DK.  
 
 
-\subsection*{Enumerations}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos\+::\+R\+\_\+\+T\+E\+XT}} = 0, 
-\mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos\+::\+R\+\_\+\+J\+S\+ON}}, 
-\mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}{nxos\+::\+R\+\_\+\+X\+ML}}, 
-\mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}{nxos\+::\+R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}{nxos\+::\+R\+\_\+\+T\+E\+XT}} = 0, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos\+::\+R\+\_\+\+J\+S\+ON}}, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}{nxos\+::\+R\+\_\+\+X\+ML}}, 
+\mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}{nxos\+::\+R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \{ \newline
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}{nxos\+::\+N\+O\+\_\+\+E\+V\+E\+NT}} = 0, 
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{nxos\+::\+A\+DD}} = 1, 
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{nxos\+::\+D\+E\+L\+E\+TE}}, 
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{nxos\+::\+U\+P\+D\+A\+TE}}, 
+enum \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}{nxos\+::\+N\+O\+\_\+\+E\+V\+E\+NT}} = 0, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{nxos\+::\+A\+DD}} = 1, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{nxos\+::\+D\+E\+L\+E\+TE}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{nxos\+::\+U\+P\+D\+A\+TE}}, 
 \newline
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba07275d9326efab346529becbd8a88632}{nxos\+::\+D\+O\+W\+N\+L\+O\+AD}}, 
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cbaecf471107f74d8cbdd4e5272c017a10d}{nxos\+::\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE}}, 
-\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}{nxos\+::\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba07275d9326efab346529becbd8a88632}{nxos\+::\+D\+O\+W\+N\+L\+O\+AD}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cbaecf471107f74d8cbdd4e5272c017a10d}{nxos\+::\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE}}, 
+\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}{nxos\+::\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \{ {\bfseries U\+N\+K\+N\+O\+WN} = -\/1, 
-\mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{nxos\+::\+D\+O\+WN}} = 0, 
-\mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos\+::\+UP}}, 
-\mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}{nxos\+::\+S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+enum \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a3647f6a8f0522ccfd26934ae54b36220}{nxos\+::\+U\+N\+K\+N\+O\+WN}} = -\/1, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{nxos\+::\+D\+O\+WN}} = 0, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos\+::\+UP}}, 
+\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}{nxos\+::\+S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0}{nxos\+::encap\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}{nxos\+::\+N\+O\+NE}} = 0, 
-\mbox{\hyperlink{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}{nxos\+::\+V\+X\+L\+AN}}, 
-\mbox{\hyperlink{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}{nxos\+::\+E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+enum \mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0}{nxos\+::encap\+\_\+type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}{nxos\+::\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}{nxos\+::\+V\+X\+L\+AN}}, 
+\mbox{\hyperlink{namespacenxos_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}{nxos\+::\+E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} \{ {\bfseries A\+F\+\_\+\+S\+T\+A\+RT} = 0, 
-\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} = 0, 
-\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} = 1, 
-\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}
+enum \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7af359e1254b552737480a3eccb9866ac6}{nxos\+::\+A\+F\+\_\+\+S\+T\+A\+RT}} = 0, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos\+::\+A\+F\+\_\+\+I\+P\+V4}} = 0, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{nxos\+::\+A\+F\+\_\+\+I\+P\+V6}} = 1, 
+\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} \{ \mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}{nxos\+::\+L\+O\+W\+\_\+\+P\+R\+IO}} = 1, 
-\mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}{nxos\+::\+M\+E\+D\+\_\+\+P\+R\+IO}}, 
-\mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}{nxos\+::\+H\+I\+G\+H\+\_\+\+P\+R\+IO}}, 
-\mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}{nxos\+::\+N\+O\+\_\+\+P\+R\+IO}}
+enum \mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}{nxos\+::\+L\+O\+W\+\_\+\+P\+R\+IO}} = 1, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}{nxos\+::\+M\+E\+D\+\_\+\+P\+R\+IO}}, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}{nxos\+::\+H\+I\+G\+H\+\_\+\+P\+R\+IO}}, 
+\mbox{\hyperlink{namespacenxos_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}{nxos\+::\+N\+O\+\_\+\+P\+R\+IO}}
  \}
 \item 
-\mbox{\Hypertarget{nx__common_8h_ab2989ad42c12bf1e273c8acd10ffb984}\label{nx__common_8h_ab2989ad42c12bf1e273c8acd10ffb984}} 
-enum {\bfseries intf\+\_\+type\+\_\+e} \{ \newline
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+TH}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+VI}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+T\+H\+\_\+\+PC}, 
+enum \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ae00dd654d02e160d47999104f465fc0a}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a5b8651e09026bfcfb6862f71f876893d}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+TH}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a3283203647c370588ec5581c00d05507}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+VI}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ad5dc1913e2eb1332886d886295b67ed3}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+T\+H\+\_\+\+PC}}, 
 \newline
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+O\+O\+P\+B\+A\+CK}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+U\+B\+I\+N\+TF}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N\+N\+EL}, 
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+G\+MT}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984ac4583770d7814477a60bf01155f70079}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+O\+O\+P\+B\+A\+CK}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a1224540f810e8c583ae52938a7ca04be}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+U\+B\+I\+N\+TF}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a548b7915160aaf2c90347c50d3895dc9}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N\+N\+EL}}, 
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a04cb5e6c9f58eb2e195c4a2a9d1ae22d}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+G\+MT}}, 
 \newline
-{\bfseries N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}
+\mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984a7fd0f8e8625af76c9dac5873b1b1b4b5}{nxos\+::\+N\+X\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}}
  \}
 \item 
-enum \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \{ \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10}{nxos\+::\+T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE}} = 0, 
-\mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be}{nxos\+::\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}}, 
-\mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769}{nxos\+::\+T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC}}, 
-\mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce}{nxos\+::\+T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
+enum \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10}{nxos\+::\+T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE}} = 0, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be}{nxos\+::\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}}, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769}{nxos\+::\+T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC}}, 
+\mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce}{nxos\+::\+T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}
  \}
 \item 
-\mbox{\Hypertarget{nx__common_8h_a5d2faf90d8673c5bf207f3883d3ca506}\label{nx__common_8h_a5d2faf90d8673c5bf207f3883d3ca506}} 
-enum {\bfseries running\+\_\+env\+\_\+e} \{ {\bfseries B\+A\+SH}, 
-{\bfseries V\+SH}, 
-{\bfseries R\+E\+M\+O\+TE}
+enum \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506}{nxos\+::running\+\_\+env\+\_\+e}} \{ \mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506ae86b3d043df28e4e196bc8769abda717}{nxos\+::\+B\+A\+SH}}, 
+\mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506a1965e355322840cdd1e35dad00d1469e}{nxos\+::\+V\+SH}}, 
+\mbox{\hyperlink{namespacenxos_a5d2faf90d8673c5bf207f3883d3ca506a9dc08795c881aa4ec6c5e82fede28671}{nxos\+::\+R\+E\+M\+O\+TE}}
  \}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Provides necessary common types for using N\+X\+S\+DK. 
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
+\href{mailto:nxos-sdk@cisco.com}{\texttt{ nxos-\/sdk@cisco.\+com}} 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
 \item[\mbox{\hyperlink{bug__bug000009}{Bug}}]No known bugs.\end{DoxyRefDesc}
 
 
 Copyright (c) 2018 by cisco Systems, Inc. All rights reserved. 
-
-\subsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{nx__common_8h_file_a3a667f48b94db10aa398940dc5bf72d7}\label{nx__common_8h_file_a3a667f48b94db10aa398940dc5bf72d7}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!af\+\_\+e@{af\+\_\+e}}
-\index{af\+\_\+e@{af\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{af\+\_\+e}{af\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+F\+\_\+\+I\+P\+V4@{A\+F\+\_\+\+I\+P\+V4}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!A\+F\+\_\+\+I\+P\+V4@{A\+F\+\_\+\+I\+P\+V4}}}\mbox{\Hypertarget{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}\label{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}} 
-A\+F\+\_\+\+I\+P\+V4&Address Family type -\/ I\+P\+V4. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+F\+\_\+\+I\+P\+V6@{A\+F\+\_\+\+I\+P\+V6}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!A\+F\+\_\+\+I\+P\+V6@{A\+F\+\_\+\+I\+P\+V6}}}\mbox{\Hypertarget{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}\label{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}} 
-A\+F\+\_\+\+I\+P\+V6&Address Family type -\/ I\+P\+V6. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+X\+\_\+\+AF@{M\+A\+X\+\_\+\+AF}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!M\+A\+X\+\_\+\+AF@{M\+A\+X\+\_\+\+AF}}}\mbox{\Hypertarget{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}\label{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}} 
-M\+A\+X\+\_\+\+AF&Max types supported/. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_a2a822a577ca51dbe26b8637c22eb4ca0}\label{nx__common_8h_file_a2a822a577ca51dbe26b8637c22eb4ca0}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!encap\+\_\+type\+\_\+e@{encap\+\_\+type\+\_\+e}}
-\index{encap\+\_\+type\+\_\+e@{encap\+\_\+type\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{encap\+\_\+type\+\_\+e}{encap\_type\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0}{nxos\+::encap\+\_\+type\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+NE@{N\+O\+NE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!N\+O\+NE@{N\+O\+NE}}}\mbox{\Hypertarget{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}\label{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1bc30c44f278ab672d3b517b87ade6d9}} 
-N\+O\+NE&State is D\+O\+WN. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+X\+L\+AN@{V\+X\+L\+AN}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!V\+X\+L\+AN@{V\+X\+L\+AN}}}\mbox{\Hypertarget{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}\label{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0acb8b792c8f01e80554f42289499b7d4a}} 
-V\+X\+L\+AN&State is UP. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}\label{nx__common_8h_a2a822a577ca51dbe26b8637c22eb4ca0a1e811aa80af70b7d59a855e08513bb9f}} 
-E\+N\+C\+A\+P\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE&Record Type is M\+A\+X\+\_\+\+T\+Y\+PE. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_af9a9040b7681199d386e94eb888018cb}\label{nx__common_8h_file_af9a9040b7681199d386e94eb888018cb}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!event\+\_\+type\+\_\+e@{event\+\_\+type\+\_\+e}}
-\index{event\+\_\+type\+\_\+e@{event\+\_\+type\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{event\+\_\+type\+\_\+e}{event\_type\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+E\+V\+E\+NT@{N\+O\+\_\+\+E\+V\+E\+NT}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!N\+O\+\_\+\+E\+V\+E\+NT@{N\+O\+\_\+\+E\+V\+E\+NT}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cba18c56425ac07b722c3401551c45c885b}} 
-N\+O\+\_\+\+E\+V\+E\+NT&Not an Event. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+DD@{A\+DD}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!A\+DD@{A\+DD}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}} 
-A\+DD&Event is A\+DD. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+L\+E\+TE@{D\+E\+L\+E\+TE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!D\+E\+L\+E\+TE@{D\+E\+L\+E\+TE}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}} 
-D\+E\+L\+E\+TE&Event is D\+E\+L\+E\+TE. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+P\+D\+A\+TE@{U\+P\+D\+A\+TE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!U\+P\+D\+A\+TE@{U\+P\+D\+A\+TE}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}} 
-U\+P\+D\+A\+TE&Event is U\+P\+D\+A\+TE. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+W\+N\+L\+O\+AD@{D\+O\+W\+N\+L\+O\+AD}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!D\+O\+W\+N\+L\+O\+AD@{D\+O\+W\+N\+L\+O\+AD}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cba07275d9326efab346529becbd8a88632}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cba07275d9326efab346529becbd8a88632}} 
-D\+O\+W\+N\+L\+O\+AD&Event is D\+O\+W\+N\+L\+O\+AD. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE@{D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE@{D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cbaecf471107f74d8cbdd4e5272c017a10d}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cbaecf471107f74d8cbdd4e5272c017a10d}} 
-D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE&Event is D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+D\+O\+NE. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}\label{nx__common_8h_af9a9040b7681199d386e94eb888018cbac889b3e7b32aa70d6a939ff27e9605b9}} 
-E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE&M\+AX Action Types. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_af446a76676837368bde9b15343ae21d5}\label{nx__common_8h_file_af446a76676837368bde9b15343ae21d5}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!prio\+\_\+e@{prio\+\_\+e}}
-\index{prio\+\_\+e@{prio\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{prio\+\_\+e}{prio\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_af446a76676837368bde9b15343ae21d5}{nxos\+::prio\+\_\+e}}}
-
-Supported Priority Types. Usage\+: set\+App\+Priority() -\/ To limit the use of C\+PU per application. So that the Apps dont run away with the C\+PU. \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+W\+\_\+\+P\+R\+IO@{L\+O\+W\+\_\+\+P\+R\+IO}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!L\+O\+W\+\_\+\+P\+R\+IO@{L\+O\+W\+\_\+\+P\+R\+IO}}}\mbox{\Hypertarget{nx__common_8h_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}\label{nx__common_8h_af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f}} 
-L\+O\+W\+\_\+\+P\+R\+IO&Low Priority. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+D\+\_\+\+P\+R\+IO@{M\+E\+D\+\_\+\+P\+R\+IO}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!M\+E\+D\+\_\+\+P\+R\+IO@{M\+E\+D\+\_\+\+P\+R\+IO}}}\mbox{\Hypertarget{nx__common_8h_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}\label{nx__common_8h_af446a76676837368bde9b15343ae21d5a08f59f65e75d5a8a87a41ec64816604f}} 
-M\+E\+D\+\_\+\+P\+R\+IO&Medium Priority Application. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+I\+G\+H\+\_\+\+P\+R\+IO@{H\+I\+G\+H\+\_\+\+P\+R\+IO}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!H\+I\+G\+H\+\_\+\+P\+R\+IO@{H\+I\+G\+H\+\_\+\+P\+R\+IO}}}\mbox{\Hypertarget{nx__common_8h_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}\label{nx__common_8h_af446a76676837368bde9b15343ae21d5aa4c78619e2400043ea423b52a0fceadb}} 
-H\+I\+G\+H\+\_\+\+P\+R\+IO&High Priority Application. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+P\+R\+IO@{N\+O\+\_\+\+P\+R\+IO}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!N\+O\+\_\+\+P\+R\+IO@{N\+O\+\_\+\+P\+R\+IO}}}\mbox{\Hypertarget{nx__common_8h_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}\label{nx__common_8h_af446a76676837368bde9b15343ae21d5a693bcb8c26cddb5b52afbe7240b2f2ba}} 
-N\+O\+\_\+\+P\+R\+IO&No Priority. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_a8952d5a318ed66cef9c7a83c7fd3ae91}\label{nx__common_8h_file_a8952d5a318ed66cef9c7a83c7fd3ae91}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!record\+\_\+type\+\_\+e@{record\+\_\+type\+\_\+e}}
-\index{record\+\_\+type\+\_\+e@{record\+\_\+type\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{record\+\_\+type\+\_\+e}{record\_type\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+\_\+\+T\+E\+XT@{R\+\_\+\+T\+E\+XT}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!R\+\_\+\+T\+E\+XT@{R\+\_\+\+T\+E\+XT}}}\mbox{\Hypertarget{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}\label{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a87ab8ea648d5e036e8748f8b2e48e76e}} 
-R\+\_\+\+T\+E\+XT&Record Type is T\+E\+XT. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+\_\+\+J\+S\+ON@{R\+\_\+\+J\+S\+ON}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!R\+\_\+\+J\+S\+ON@{R\+\_\+\+J\+S\+ON}}}\mbox{\Hypertarget{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}\label{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}} 
-R\+\_\+\+J\+S\+ON&Record Type is J\+S\+ON. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+\_\+\+X\+ML@{R\+\_\+\+X\+ML}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!R\+\_\+\+X\+ML@{R\+\_\+\+X\+ML}}}\mbox{\Hypertarget{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}\label{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a4239be29000f4eaadf8e76a997f25e8c}} 
-R\+\_\+\+X\+ML&Record Type is X\+ML. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}\label{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a62906d212977da07ef93be6e4ed01fcf}} 
-R\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE&Record Type is M\+A\+X\+\_\+\+T\+Y\+PE. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_a7c257059d03188765435b36e95dbb764}\label{nx__common_8h_file_a7c257059d03188765435b36e95dbb764}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!state\+\_\+type\+\_\+e@{state\+\_\+type\+\_\+e}}
-\index{state\+\_\+type\+\_\+e@{state\+\_\+type\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{state\+\_\+type\+\_\+e}{state\_type\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+WN@{D\+O\+WN}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!D\+O\+WN@{D\+O\+WN}}}\mbox{\Hypertarget{nx__common_8h_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}\label{nx__common_8h_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}} 
-D\+O\+WN&State is D\+O\+WN. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!UP@{UP}}}\mbox{\Hypertarget{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}\label{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}} 
-UP&State is UP. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}\label{nx__common_8h_a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad}} 
-S\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE&Record Type is M\+A\+X\+\_\+\+T\+Y\+PE. \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{nx__common_8h_file_acfd59f63fea0b34d70c39b7e808cb5d2}\label{nx__common_8h_file_acfd59f63fea0b34d70c39b7e808cb5d2}} 
-\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!type\+\_\+e@{type\+\_\+e}}
-\index{type\+\_\+e@{type\+\_\+e}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}
-\subsubsection{\texorpdfstring{type\+\_\+e}{type\_e}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE@{T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE@{T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10}\label{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10}} 
-T\+Y\+P\+E\+\_\+\+N\+O\+\_\+\+T\+Y\+PE&Type is not set. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC@{T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC@{T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}}}\mbox{\Hypertarget{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be}\label{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be}} 
-T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC&Type is static. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC@{T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC@{T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC}}}\mbox{\Hypertarget{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769}\label{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769}} 
-T\+Y\+P\+E\+\_\+\+D\+Y\+N\+A\+M\+IC&Type is dynamic. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}!nx\+\_\+common.\+h@{nx\+\_\+common.\+h}}\index{nx\+\_\+common.\+h@{nx\+\_\+common.\+h}!T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE@{T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce}\label{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce}} 
-T\+Y\+P\+E\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE&M\+AX Action Types. \\
-\hline
-
-\end{DoxyEnumFields}

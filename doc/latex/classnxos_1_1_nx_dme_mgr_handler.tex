@@ -1,16 +1,19 @@
-\hypertarget{classnxos_1_1_nx_dme_mgr_handler}{}\section{nxos\+:\+:Nx\+Dme\+Mgr\+Handler Class Reference}
-\label{classnxos_1_1_nx_dme_mgr_handler}\index{nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}}
+\hypertarget{classnxos_1_1_nx_dme_mgr_handler}{}\doxysection{nxos\+::Nx\+Dme\+Mgr\+Handler Class Reference}
+\label{classnxos_1_1_nx_dme_mgr_handler}\index{nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}}
 
 
-Public interface for N\+X\+S\+DK D\+ME event notification.  
+Public interface for N\+X\+S\+DK D\+ME event notification. ~\newline
+  
 
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+dme.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+dme.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}{$\sim$\+Nx\+Dme\+Mgr\+Handler}} ()
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{post\+Dme\+Handler\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$objp)
 \item 
@@ -18,52 +21,62 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb821
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Public interface for N\+X\+S\+DK D\+ME event notification. 
+\doxysubsection{Detailed Description}
+Public interface for N\+X\+S\+DK D\+ME event notification. ~\newline
+ 
 
 Applications will override this class and provide a specific implementation of the callback methods defined here. ~\newline
  An object will be passed to it which is the object that generated the event. This object is owned by the S\+DK and should not be stored nor deleted by the application. D\+ME events generated from N\+X\+OS are delivered to application callbacks through N\+X\+S\+DK dme objects Steps to register for dme events\+: 1) Open N\+X\+S\+DK dme mgr object using get\+Dme\+Mgr() 2) Define application callbacks by re-\/defining \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler}{Nx\+Dme\+Mgr\+Handler}} class 3) Install application handlers using set\+Dme\+Handler() 4) call \mbox{\hyperlink{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{Nx\+Sdk\+::start\+Event\+Loop()}} 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}\label{classnxos_1_1_nx_dme_mgr_handler_a13573474862c7d25f3594fe2e9ab03cd}} 
+\index{nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}!````~NxDmeMgrHandler@{$\sim$NxDmeMgrHandler}}
+\index{````~NxDmeMgrHandler@{$\sim$NxDmeMgrHandler}!nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxDmeMgrHandler()}{~NxDmeMgrHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Dme\+Mgr\+Handler\+::$\sim$\+Nx\+Dme\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}\label{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}!post\+Dme\+Handler\+Cb@{post\+Dme\+Handler\+Cb}}
-\index{post\+Dme\+Handler\+Cb@{post\+Dme\+Handler\+Cb}!nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Dme\+Handler\+Cb()}{postDmeHandlerCb()}}
+\index{nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}!postDmeHandlerCb@{postDmeHandlerCb}}
+\index{postDmeHandlerCb@{postDmeHandlerCb}!nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postDmeHandlerCb()}{postDmeHandlerCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Dme\+Mgr\+Handler\+::post\+Dme\+Handler\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_dme}{Nx\+Dme}} $\ast$}]{objp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Application callback for receiving D\+ME events. The object passed contains the object data which the event occurred.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em objp} & The object which generated the event. \\
+\mbox{\texttt{ in}}  & {\em objp} & The object which generated the event. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
-\begin{DoxyCode}
-C++:
-  \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{
-  \textcolor{keyword}{public}:
-
-    \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}} (NxDme *objp)
-    \{
-      std::string value;
-
-      cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"(): application callback called"} << endl;
-      cout << \textcolor{stringliteral}{"NxDme obj.dn <"} << objp->getDn() << \textcolor{stringliteral}{">"} << endl;
-      cout << \textcolor{stringliteral}{"NxDme event = "} << objp->getEvent() << endl;
-
-    \}
-  \};
-
-
-Python:
-  \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):
-
-     def \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}}(self, obj):
-         print "pyDmeHandler: application callback"
-         print "dn = %s" % obj.getDn()
-         print "event = %d" % obj.getEvent()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{  \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{}
+\DoxyCodeLine{  \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}} (NxDme *objp)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{      std::string value;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}(): application callback called"{}} << endl;}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}NxDme obj.dn <"{}} << objp-\/>getDn() << \textcolor{stringliteral}{"{}>"{}} << endl;}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}NxDme event = "{}} << objp-\/>getEvent() << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{  \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):}
+\DoxyCodeLine{}
+\DoxyCodeLine{     def \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}}(self, obj):}
+\DoxyCodeLine{         print "{}pyDmeHandler: application callback"{}}
+\DoxyCodeLine{         print "{}dn = \%s"{} \% obj.getDn()}
+\DoxyCodeLine{         print "{}event = \%d"{} \% obj.getEvent()}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -73,38 +86,38 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb8212c22e506ff568236}\label{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb8212c22e506ff568236}} 
-\index{nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}!post\+Dme\+Handler\+Download\+Done\+Cb@{post\+Dme\+Handler\+Download\+Done\+Cb}}
-\index{post\+Dme\+Handler\+Download\+Done\+Cb@{post\+Dme\+Handler\+Download\+Done\+Cb}!nxos\+::\+Nx\+Dme\+Mgr\+Handler@{nxos\+::\+Nx\+Dme\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Dme\+Handler\+Download\+Done\+Cb()}{postDmeHandlerDownloadDoneCb()}}
+\index{nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}!postDmeHandlerDownloadDoneCb@{postDmeHandlerDownloadDoneCb}}
+\index{postDmeHandlerDownloadDoneCb@{postDmeHandlerDownloadDoneCb}!nxos::NxDmeMgrHandler@{nxos::NxDmeMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postDmeHandlerDownloadDoneCb()}{postDmeHandlerDownloadDoneCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Dme\+Mgr\+Handler\+::post\+Dme\+Handler\+Download\+Done\+Cb (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Callback for notifying that the end of a bulk object download has completed. This is only called if the application called a watch api with download enabled. The dn of the top-\/level object being downloaded is passed as an argument. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em dn} & The dn for which the download has completed. \\
+\mbox{\texttt{ in}}  & {\em dn} & The dn for which the download has completed. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
-\begin{DoxyCode}
-C++
-  \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{
-  \textcolor{keyword}{public}:
-
-    \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb8212c22e506ff568236}{postDmeHandlerDownloadDoneCb}} (std::string dn)
-    \{
-
-      cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"(): application callback called"}
-         \textcolor{stringliteral}{"  for object: "} << dn  << endl;
-
-    \}
-  \};
-
-Python:
-  \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):
-
-     def \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}}(self, dn):
-         print "pyDmeHandler: application callback"
-         print "dn = %s" % dn
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++}
+\DoxyCodeLine{  \textcolor{keyword}{class }myNxDmeHandler : \textcolor{keyword}{public} NxDmeHandler \{}
+\DoxyCodeLine{  \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a785b584b966bb8212c22e506ff568236}{postDmeHandlerDownloadDoneCb}} (std::string dn)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{      cout << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}(): application callback called"{}}}
+\DoxyCodeLine{         \textcolor{stringliteral}{"{}  for object: "{}} << dn  << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{  \textcolor{keyword}{class }pyDmeHandler(nx\_sdk\_py.NxDmeHandler):}
+\DoxyCodeLine{}
+\DoxyCodeLine{     def \mbox{\hyperlink{classnxos_1_1_nx_dme_mgr_handler_a26838519d4f1d17c2036feb036a0e892}{postDmeHandlerCb}}(self, dn):}
+\DoxyCodeLine{         print "{}pyDmeHandler: application callback"{}}
+\DoxyCodeLine{         print "{}dn = \%s"{} \% dn}
 \end{DoxyCode}
 
 \end{DoxyReturn}
@@ -117,4 +130,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__dme_8h}{nx\+\_\+dme.\+h}}\end{DoxyCompactItemize}

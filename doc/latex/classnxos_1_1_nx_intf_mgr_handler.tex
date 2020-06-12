@@ -1,16 +1,19 @@
-\hypertarget{classnxos_1_1_nx_intf_mgr_handler}{}\section{nxos\+:\+:Nx\+Intf\+Mgr\+Handler Class Reference}
-\label{classnxos_1_1_nx_intf_mgr_handler}\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
+\hypertarget{classnxos_1_1_nx_intf_mgr_handler}{}\doxysection{nxos\+::Nx\+Intf\+Mgr\+Handler Class Reference}
+\label{classnxos_1_1_nx_intf_mgr_handler}\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
 
 
-Public interface to N\+X-\/\+S\+DK interface events.  
+Public interface to N\+X-\/\+S\+DK interface events. ~\newline
+  
 
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+intf\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+intf\+\_\+mgr.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}{$\sim$\+Nx\+Intf\+Mgr\+Handler}} ()
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}{post\+Intf\+Add\+Del\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$obj)
 \item 
@@ -30,52 +33,62 @@ virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_aad14cab2e803cea
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Public interface to N\+X-\/\+S\+DK interface events. 
+\doxysubsection{Detailed Description}
+Public interface to N\+X-\/\+S\+DK interface events. ~\newline
+ 
 
 The application should derive its own handler class from this and override the methods. If a watch is set for an interface, these events will be delivered to the application if the method is provided in the application handler class. The interface object passed to the handler is owned by the library and should not be stored or freed by the application. Interface Mgr events generated from N\+X\+OS are delivered to application callbacks through N\+X\+S\+DK interface objects Steps to register for interface events\+: 1) Open N\+X\+S\+DK interface mgr object using get\+Intf\+Mgr() 2) Define application callbacks by re-\/defining \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}} class 3) Install application handlers using set\+Intf\+Handler() 4) call \mbox{\hyperlink{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{Nx\+Sdk\+::start\+Event\+Loop()}} 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}\label{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}} 
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!````~NxIntfMgrHandler@{$\sim$NxIntfMgrHandler}}
+\index{````~NxIntfMgrHandler@{$\sim$NxIntfMgrHandler}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxIntfMgrHandler()}{~NxIntfMgrHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::$\sim$\+Nx\+Intf\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}\label{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Add\+Del\+Cb@{post\+Intf\+Add\+Del\+Cb}}
-\index{post\+Intf\+Add\+Del\+Cb@{post\+Intf\+Add\+Del\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Add\+Del\+Cb()}{postIntfAddDelCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfAddDelCb@{postIntfAddDelCb}}
+\index{postIntfAddDelCb@{postIntfAddDelCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfAddDelCb()}{postIntfAddDelCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Add\+Del\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface Add/\+Delete callback notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event is A\+DD if interface was added, or set to D\+E\+L\+E\+TE if interface was removed. \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event is A\+DD if interface was added, or set to D\+E\+L\+E\+TE if interface was removed. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{bool}
-   myIntfHandler::postIntfAddDelCb (NxIntf *intf)
-   \{
-    
-   \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
-      cout << \textcolor{stringliteral}{"App got ADD notification for interface  "} << 
-      intf->getName() << endl;
-   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
-      cout << \textcolor{stringliteral}{"App got DELETE notification for interface "} << 
-      intf->getName() << endl;
-   \}
-   \}  
-
-Python:
-   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}{postIntfAddDelCb}}(\textcolor{keyword}{self}, intf):
-      event = intf.getEvent()
-      print \textcolor{stringliteral}{"Application Add/Del cb "}
-      print \textcolor{stringliteral}{"intf "} + intf.getName()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
-         print \textcolor{stringliteral}{"ADDED"}
-      elif event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
-         print \textcolor{stringliteral}{"DELETED"}
-      return True;   
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{   myIntfHandler::postIntfAddDelCb (NxIntf *intf)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{   \textcolor{keywordflow}{if} (intf-\/>getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}App got ADD notification for interface  "{}} << }
+\DoxyCodeLine{      intf-\/>getName() << endl;}
+\DoxyCodeLine{   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf-\/>getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}App got DELETE notification for interface "{}} << }
+\DoxyCodeLine{      intf-\/>getName() << endl;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{   \}  }
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}{postIntfAddDelCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{      event = intf.getEvent()}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}Application Add/Del cb "{}}}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}intf "{}} + intf.getName()}
+\DoxyCodeLine{      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:}
+\DoxyCodeLine{         print \textcolor{stringliteral}{"{}ADDED"{}}}
+\DoxyCodeLine{      elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:}
+\DoxyCodeLine{         print \textcolor{stringliteral}{"{}DELETED"{}}}
+\DoxyCodeLine{      return True;   }
 \end{DoxyCode}
 
 
@@ -85,40 +98,40 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_a8f96e0a3a70f5f566b8f0f5928bf5e64}\label{classnxos_1_1_nx_intf_mgr_handler_a8f96e0a3a70f5f566b8f0f5928bf5e64}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Ipv4\+Addr\+Cb@{post\+Intf\+Ipv4\+Addr\+Cb}}
-\index{post\+Intf\+Ipv4\+Addr\+Cb@{post\+Intf\+Ipv4\+Addr\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Ipv4\+Addr\+Cb()}{postIntfIpv4AddrCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfIpv4AddrCb@{postIntfIpv4AddrCb}}
+\index{postIntfIpv4AddrCb@{postIntfIpv4AddrCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfIpv4AddrCb()}{postIntfIpv4AddrCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Ipv4\+Addr\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface I\+Pv4 address change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD \+: Primary address was added U\+P\+D\+A\+TE\+: Primary address was changed D\+E\+L\+E\+TE\+: Primary address was removed \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD \+: Primary address was added U\+P\+D\+A\+TE\+: Primary address was changed D\+E\+L\+E\+TE\+: Primary address was removed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{bool}  myIntfHandler::postIntfIpv4AddrCb (NxIntf *intf)
-   \{
-     cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
-     \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
-        cout << \textcolor{stringliteral}{"App got ADD notification, new primary address for }
-\textcolor{stringliteral}{                  interface  "} <<      intf->getName() << endl;
-     \}
-     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-   \}
-
-Python:
-   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a8f96e0a3a70f5f566b8f0f5928bf5e64}{postIntfIpv4AddrCb}}(\textcolor{keyword}{self}, intf):
-      event = intf.getEvent()
-      print \textcolor{stringliteral}{"Application ipv4 addr cb "}
-      print \textcolor{stringliteral}{"intf "} + intf.getName()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
-         print \textcolor{stringliteral}{"App got ADD notification, new primary address"}
-      return True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{bool}  myIntfHandler::postIntfIpv4AddrCb (NxIntf *intf)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{     cout << \textcolor{stringliteral}{"{}Application: "{}} << \_\_FUNCTION\_\_ << endl;}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (intf-\/>getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}App got ADD notification, new primary address for }}
+\DoxyCodeLine{\textcolor{stringliteral}{                  interface  "{}} <<      intf-\/>getName() << endl;}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a8f96e0a3a70f5f566b8f0f5928bf5e64}{postIntfIpv4AddrCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{      event = intf.getEvent()}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}Application ipv4 addr cb "{}}}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}intf "{}} + intf.getName()}
+\DoxyCodeLine{      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:}
+\DoxyCodeLine{         print \textcolor{stringliteral}{"{}App got ADD notification, new primary address"{}}}
+\DoxyCodeLine{      return True}
 \end{DoxyCode}
 
 
@@ -128,40 +141,40 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_ad845ed26b457bc0bdc7a9c79a94acdaf}\label{classnxos_1_1_nx_intf_mgr_handler_ad845ed26b457bc0bdc7a9c79a94acdaf}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Ipv6\+Addr\+Cb@{post\+Intf\+Ipv6\+Addr\+Cb}}
-\index{post\+Intf\+Ipv6\+Addr\+Cb@{post\+Intf\+Ipv6\+Addr\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Ipv6\+Addr\+Cb()}{postIntfIpv6AddrCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfIpv6AddrCb@{postIntfIpv6AddrCb}}
+\index{postIntfIpv6AddrCb@{postIntfIpv6AddrCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfIpv6AddrCb()}{postIntfIpv6AddrCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Ipv6\+Addr\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface I\+Pv6 address change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD\+: Address was added U\+P\+D\+A\+TE\+: Address was changed D\+E\+L\+E\+TE\+: Address was removed \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD\+: Address was added U\+P\+D\+A\+TE\+: Address was changed D\+E\+L\+E\+TE\+: Address was removed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-     \textcolor{keywordtype}{bool}
-     myIntfHandler::postIntfIpv6AddrCb (NxIntf *intf)
-     \{
-        cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
-
-        \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{
-          cout << \textcolor{stringliteral}{"App got UPDATE notification, primary address change}
-\textcolor{stringliteral}{                   for interface "} <<  intf->getName() << endl;
-        \}
-     \}
-
-Python:   
-     def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ad845ed26b457bc0bdc7a9c79a94acdaf}{postIntfIpv6AddrCb}}(\textcolor{keyword}{self}, intf):
-         event = intf.getEvent()
-         print \textcolor{stringliteral}{"intf "} + intf.getName()
-         if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
-            print \textcolor{stringliteral}{"App got ADD notification, new IPv6 address"}
-         return True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{     myIntfHandler::postIntfIpv6AddrCb (NxIntf *intf)}
+\DoxyCodeLine{     \{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}Application: "{}} << \_\_FUNCTION\_\_ << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (intf-\/>getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{}
+\DoxyCodeLine{          cout << \textcolor{stringliteral}{"{}App got UPDATE notification, primary address change}}
+\DoxyCodeLine{\textcolor{stringliteral}{                   for interface "{}} <<  intf-\/>getName() << endl;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:   }
+\DoxyCodeLine{     def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ad845ed26b457bc0bdc7a9c79a94acdaf}{postIntfIpv6AddrCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{         event = intf.getEvent()}
+\DoxyCodeLine{         print \textcolor{stringliteral}{"{}intf "{}} + intf.getName()}
+\DoxyCodeLine{         if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:}
+\DoxyCodeLine{            print \textcolor{stringliteral}{"{}App got ADD notification, new IPv6 address"{}}}
+\DoxyCodeLine{         return True}
 \end{DoxyCode}
 
 
@@ -171,34 +184,34 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_aca73f02d8ce050cb1bb44fddc6338f76}\label{classnxos_1_1_nx_intf_mgr_handler_aca73f02d8ce050cb1bb44fddc6338f76}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Layer\+Cb@{post\+Intf\+Layer\+Cb}}
-\index{post\+Intf\+Layer\+Cb@{post\+Intf\+Layer\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Layer\+Cb()}{postIntfLayerCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfLayerCb@{postIntfLayerCb}}
+\index{postIntfLayerCb@{postIntfLayerCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfLayerCb()}{postIntfLayerCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Layer\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface layer change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Interface layer config changed. \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Interface layer config changed. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{bool} 
-   myIntfHandler::postIntfLayerCb  (NxIntf *intf)
-   \{
-
-       cout << \textcolor{stringliteral}{"Application layer change: "} << 
-                  intf->getName() << endl;
-   \}
-
-Python:    
-   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}{postIntfStateCb}}(\textcolor{keyword}{self}, intf):
-       print \textcolor{stringliteral}{"Application State cb: "} + intf.getName()
-       return True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{bool} }
+\DoxyCodeLine{   myIntfHandler::postIntfLayerCb  (NxIntf *intf)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{       cout << \textcolor{stringliteral}{"{}Application layer change: "{}} << }
+\DoxyCodeLine{                  intf-\/>getName() << endl;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:    }
+\DoxyCodeLine{   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}{postIntfStateCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{       print \textcolor{stringliteral}{"{}Application State cb: "{}} + intf.getName()}
+\DoxyCodeLine{       return True}
 \end{DoxyCode}
 
 
@@ -208,41 +221,41 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_ae3a76ba4fb97b941d9f11e9210d89a94}\label{classnxos_1_1_nx_intf_mgr_handler_ae3a76ba4fb97b941d9f11e9210d89a94}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Port\+Member\+Cb@{post\+Intf\+Port\+Member\+Cb}}
-\index{post\+Intf\+Port\+Member\+Cb@{post\+Intf\+Port\+Member\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Port\+Member\+Cb()}{postIntfPortMemberCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfPortMemberCb@{postIntfPortMemberCb}}
+\index{postIntfPortMemberCb@{postIntfPortMemberCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfPortMemberCb()}{postIntfPortMemberCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Port\+Member\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Port-\/channel interface member change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD\+: Address was added D\+E\+L\+E\+TE\+: Address was removed \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: A\+DD\+: Address was added D\+E\+L\+E\+TE\+: Address was removed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{bool} myIntfHandler::postIntfPortMemberCb (NxIntf *intf)
-   \{
-      \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{event\_type\_e}}  event;
-      std::string mbr;
-      \textcolor{keyword}{event} = intf->getEvent();
-      cout << \textcolor{stringliteral}{"App got port member "} << (\textcolor{keyword}{event} == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ? 
-     \textcolor{stringliteral}{"ADD"}:\textcolor{stringliteral}{"DELETE"}) << \textcolor{stringliteral}{" event for "} << intf->getName() << endl;
-   \}
-
-Python:   
-   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ae3a76ba4fb97b941d9f11e9210d89a94}{postIntfPortMemberCb}}(\textcolor{keyword}{self}, intf):
-      event = intf.getEvent()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
-         state = \textcolor{stringliteral}{"ADD"}
-      elif event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
-         state = \textcolor{stringliteral}{"DELETE"}
-      print \textcolor{stringliteral}{"Got port member "} + state + 
-          \textcolor{stringliteral}{" event for interface "} + intf.getName()
-      return True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{bool} myIntfHandler::postIntfPortMemberCb (NxIntf *intf)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{      \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{event\_type\_e}}  event;}
+\DoxyCodeLine{      std::string mbr;}
+\DoxyCodeLine{      \textcolor{keyword}{event} = intf-\/>getEvent();}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}App got port member "{}} << (\textcolor{keyword}{event} == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ? }
+\DoxyCodeLine{     \textcolor{stringliteral}{"{}ADD"{}}:\textcolor{stringliteral}{"{}DELETE"{}}) << \textcolor{stringliteral}{"{} event for "{}} << intf-\/>getName() << endl;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:   }
+\DoxyCodeLine{   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ae3a76ba4fb97b941d9f11e9210d89a94}{postIntfPortMemberCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{      event = intf.getEvent()}
+\DoxyCodeLine{      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:}
+\DoxyCodeLine{         state = \textcolor{stringliteral}{"{}ADD"{}}}
+\DoxyCodeLine{      elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:}
+\DoxyCodeLine{         state = \textcolor{stringliteral}{"{}DELETE"{}}}
+\DoxyCodeLine{      print \textcolor{stringliteral}{"{}Got port member "{}} + state + }
+\DoxyCodeLine{          \textcolor{stringliteral}{"{} event for interface "{}} + intf.getName()}
+\DoxyCodeLine{      return True}
 \end{DoxyCode}
 
 
@@ -252,40 +265,40 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}\label{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+State\+Cb@{post\+Intf\+State\+Cb}}
-\index{post\+Intf\+State\+Cb@{post\+Intf\+State\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+State\+Cb()}{postIntfStateCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfStateCb@{postIntfStateCb}}
+\index{postIntfStateCb@{postIntfStateCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfStateCb()}{postIntfStateCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+State\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface L2/\+L3 state change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: State has been changed\\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: State has been changed\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    \textcolor{keywordtype}{bool}
-    myIntfHandler::postIntfStateCb (NxIntf *intf)
-    \{
-       \textcolor{keywordflow}{if} (intf) \{
-          cout << \textcolor{stringliteral}{"State change for interface: "} << 
-                   intf->getName() << endl;
-          cout << \textcolor{stringliteral}{"\(\backslash\)t new state is: "} << (intf->getOperState() == 
-                      \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}}) ? \textcolor{stringliteral}{"up"} : \textcolor{stringliteral}{"down"} << endl;
-       \}
-    \}
-
-Python:   
-    def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}{postIntfStateCb}}(\textcolor{keyword}{self}, intf):
-        event = intf.getEvent()
-        if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:
-            print \textcolor{stringliteral}{"Application State cb "}
-            print \textcolor{stringliteral}{"state changed"}
-        return True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{    myIntfHandler::postIntfStateCb (NxIntf *intf)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{       \textcolor{keywordflow}{if} (intf) \{}
+\DoxyCodeLine{          cout << \textcolor{stringliteral}{"{}State change for interface: "{}} << }
+\DoxyCodeLine{                   intf-\/>getName() << endl;}
+\DoxyCodeLine{          cout << \textcolor{stringliteral}{"{}\(\backslash\)t new state is: "{}} << (intf-\/>getOperState() == }
+\DoxyCodeLine{                      \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}}) ? \textcolor{stringliteral}{"{}up"{}} : \textcolor{stringliteral}{"{}down"{}} << endl;}
+\DoxyCodeLine{       \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:   }
+\DoxyCodeLine{    def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}{postIntfStateCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{        event = intf.getEvent()}
+\DoxyCodeLine{        if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:}
+\DoxyCodeLine{            print \textcolor{stringliteral}{"{}Application State cb "{}}}
+\DoxyCodeLine{            print \textcolor{stringliteral}{"{}state changed"{}}}
+\DoxyCodeLine{        return True}
 \end{DoxyCode}
 
 
@@ -295,36 +308,36 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_aad14cab2e803ceadef82870303db526c}\label{classnxos_1_1_nx_intf_mgr_handler_aad14cab2e803ceadef82870303db526c}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Vlan\+Cb@{post\+Intf\+Vlan\+Cb}}
-\index{post\+Intf\+Vlan\+Cb@{post\+Intf\+Vlan\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Vlan\+Cb()}{postIntfVlanCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfVlanCb@{postIntfVlanCb}}
+\index{postIntfVlanCb@{postIntfVlanCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfVlanCb()}{postIntfVlanCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Vlan\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface Vlan membership change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Address was changed \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Address was changed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-   \textcolor{keywordtype}{bool}  myIntfHandler::postIntfVlanCb (NxIntf *intf)
-   \{
-      cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
-      cout << \textcolor{stringliteral}{"interface: "} << intf->getName() << 
-           \textcolor{stringliteral}{" new vlan is "} << intf->getVlan() << endl;
-   \}
-
-Python:   
-   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_aad14cab2e803ceadef82870303db526c}{postIntfVlanCb}}(\textcolor{keyword}{self}, intf):
-       event = intf.getEvent()
-       print \textcolor{stringliteral}{"Application Vlan cb "}
-       print \textcolor{stringliteral}{"intf "} + intf.getName() + \textcolor{stringliteral}{" new vlan is "} + 
-         intf.getVlan();
-       \textcolor{keywordflow}{return} True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{   \textcolor{keywordtype}{bool}  myIntfHandler::postIntfVlanCb (NxIntf *intf)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}Application: "{}} << \_\_FUNCTION\_\_ << endl;}
+\DoxyCodeLine{      cout << \textcolor{stringliteral}{"{}interface: "{}} << intf-\/>getName() << }
+\DoxyCodeLine{           \textcolor{stringliteral}{"{} new vlan is "{}} << intf-\/>getVlan() << endl;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:   }
+\DoxyCodeLine{   def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_aad14cab2e803ceadef82870303db526c}{postIntfVlanCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{       event = intf.getEvent()}
+\DoxyCodeLine{       print \textcolor{stringliteral}{"{}Application Vlan cb "{}}}
+\DoxyCodeLine{       print \textcolor{stringliteral}{"{}intf "{}} + intf.getName() + \textcolor{stringliteral}{"{} new vlan is "{}} + }
+\DoxyCodeLine{         intf.getVlan();}
+\DoxyCodeLine{       \textcolor{keywordflow}{return} True}
 \end{DoxyCode}
 
 
@@ -334,36 +347,36 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_aa6f8bc5b1cfa6d99e863c8ede3cafa5f}\label{classnxos_1_1_nx_intf_mgr_handler_aa6f8bc5b1cfa6d99e863c8ede3cafa5f}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Vrf\+Cb@{post\+Intf\+Vrf\+Cb}}
-\index{post\+Intf\+Vrf\+Cb@{post\+Intf\+Vrf\+Cb}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Intf\+Vrf\+Cb()}{postIntfVrfCb()}}
+\index{nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}!postIntfVrfCb@{postIntfVrfCb}}
+\index{postIntfVrfCb@{postIntfVrfCb}!nxos::NxIntfMgrHandler@{nxos::NxIntfMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postIntfVrfCb()}{postIntfVrfCb()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::post\+Intf\+Vrf\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Interface V\+RF membership change notification handler. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Address was changed \\
+\mbox{\texttt{ in}}  & {\em obj} & Interface object that received the event. Object event values\+: U\+P\+D\+A\+TE\+: Address was changed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful, false if failure
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-C++:
-    \textcolor{keywordtype}{bool}  myIntfHandler::postIntfVrfCb (NxIntf *intf)
-    \{
-        cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
-        cout << \textcolor{stringliteral}{"interface: "} << intf->getName() << 
-             \textcolor{stringliteral}{" moved to vrf "} <<  intf->getVrf() << endl;
-    \}
-
-Python:   
-    def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_aa6f8bc5b1cfa6d99e863c8ede3cafa5f}{postIntfVrfCb}}(\textcolor{keyword}{self}, intf):
-        event = intf.getEvent()
-        print \textcolor{stringliteral}{"Application Vrf cb "} 
-        print \textcolor{stringliteral}{"intf "} + intf.getName() + \textcolor{stringliteral}{" moved to vrf "} 
-                + intf.getVrf();
-        \textcolor{keywordflow}{return} True
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool}  myIntfHandler::postIntfVrfCb (NxIntf *intf)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}Application: "{}} << \_\_FUNCTION\_\_ << endl;}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"{}interface: "{}} << intf-\/>getName() << }
+\DoxyCodeLine{             \textcolor{stringliteral}{"{} moved to vrf "{}} <<  intf-\/>getVrf() << endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:   }
+\DoxyCodeLine{    def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_aa6f8bc5b1cfa6d99e863c8ede3cafa5f}{postIntfVrfCb}}(\textcolor{keyword}{self}, intf):}
+\DoxyCodeLine{        event = intf.getEvent()}
+\DoxyCodeLine{        print \textcolor{stringliteral}{"{}Application Vrf cb "{}} }
+\DoxyCodeLine{        print \textcolor{stringliteral}{"{}intf "{}} + intf.getName() + \textcolor{stringliteral}{"{} moved to vrf "{}} }
+\DoxyCodeLine{                + intf.getVrf();}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} True}
 \end{DoxyCode}
 
 
@@ -376,4 +389,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

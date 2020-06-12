@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_adj_mgr_handler}{}\section{nxos\+:\+:Nx\+Adj\+Mgr\+Handler Class Reference}
-\label{classnxos_1_1_nx_adj_mgr_handler}\index{nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}}
+\hypertarget{classnxos_1_1_nx_adj_mgr_handler}{}\doxysection{nxos\+::Nx\+Adj\+Mgr\+Handler Class Reference}
+\label{classnxos_1_1_nx_adj_mgr_handler}\index{nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}}
 
 
 Abstract Adj\+Mgr callback Interface to receive adjacency updates from N\+X-\/\+OS.  
@@ -7,10 +7,12 @@ Abstract Adj\+Mgr callback Interface to receive adjacency updates from N\+X-\/\+
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+adj\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+adj\+\_\+mgr.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a59d38c9a0449f5e0f0de25c26f9b7c99}{$\sim$\+Nx\+Adj\+Mgr\+Handler}} ()
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}{post\+Adj\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} $\ast$adj\+\_\+obj)
 \item 
@@ -20,142 +22,151 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b585
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract Adj\+Mgr callback Interface to receive adjacency updates from N\+X-\/\+OS. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_handler_a59d38c9a0449f5e0f0de25c26f9b7c99}\label{classnxos_1_1_nx_adj_mgr_handler_a59d38c9a0449f5e0f0de25c26f9b7c99}} 
+\index{nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}!````~NxAdjMgrHandler@{$\sim$NxAdjMgrHandler}}
+\index{````~NxAdjMgrHandler@{$\sim$NxAdjMgrHandler}!nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxAdjMgrHandler()}{~NxAdjMgrHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Adj\+Mgr\+Handler\+::$\sim$\+Nx\+Adj\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}\label{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}} 
-\index{nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}!post\+Adj\+Cb@{post\+Adj\+Cb}}
-\index{post\+Adj\+Cb@{post\+Adj\+Cb}!nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Adj\+Cb()}{postAdjCb()}}
+\index{nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}!postAdjCb@{postAdjCb}}
+\index{postAdjCb@{postAdjCb}!nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postAdjCb()}{postAdjCb()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+Handler\+::post\+Adj\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}} $\ast$}]{adj\+\_\+obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 User to overload the post\+Adj\+Cb callback method to receive any registered Adjacency updates based on the set watch adjacency filters.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}}} & object. Not valid outside of post\+Adj\+Cb.\\
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_adj}{Nx\+Adj}}} & object. Not valid outside of post\+Adj\+Cb.\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
-
-   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}{postAdjCb}}(NxAdj *adj) \{
-              \textcolor{comment}{// Do your action}
-         \}
-   \};
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
-         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}{postAdjCb}}(self, nxadj):
-\textcolor{preprocessor}{             # Do your action here}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}{postAdjCb}}(NxAdj *adj) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Adjacency events}}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a9a1f85f218eab71d9c280088f69a14dc}{postAdjCb}}(self, nxadj):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}\label{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}} 
-\index{nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}!post\+Adj\+I\+Pv4\+Download\+Done@{post\+Adj\+I\+Pv4\+Download\+Done}}
-\index{post\+Adj\+I\+Pv4\+Download\+Done@{post\+Adj\+I\+Pv4\+Download\+Done}!nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Adj\+I\+Pv4\+Download\+Done()}{postAdjIPv4DownloadDone()}}
+\index{nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}!postAdjIPv4DownloadDone@{postAdjIPv4DownloadDone}}
+\index{postAdjIPv4DownloadDone@{postAdjIPv4DownloadDone}!nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postAdjIPv4DownloadDone()}{postAdjIPv4DownloadDone()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+Handler\+::post\+Adj\+I\+Pv4\+Download\+Done (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{const std\+::string \&}]{ipv4\+\_\+addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 User to overload the post\+Adj\+I\+Pv4\+Download\+Done callback method to be notified when watch\+All\+Adjs (or) watch\+Adj with download = true filter is set to signal the completion of download of existing I\+P\+V4 adjacencies. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em intf\+Name} & interface name. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces. \\
+\mbox{\texttt{ in}}  & {\em intf\+Name} & interface name. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces. \\
 \hline
-\mbox{\tt in}  & {\em ipv4\+\_\+addr} & I\+P\+V4 Address. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces or all adjacencies for a single interface. 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
-
-   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}{postAdjIPv4DownloadDone}}(\textcolor{keyword}{const} std::string &intfName,
-                                      \textcolor{keyword}{const} std::string &ipv4\_addr) \{
-              \textcolor{comment}{// Do your action}
-              \textcolor{keywordflow}{if} (intfName.empty()) \{
-                  cout << \textcolor{stringliteral}{"Download complete for all existing ipv4 adjs\(\backslash\)n"};
-              \} \textcolor{keywordflow}{else} \{
-                  \textcolor{keywordflow}{if} (ipv4\_addr.empty()) \{
-                      cout << \textcolor{stringliteral}{"Download complete for all exising ipv4 adjs in "} << intfName;
-                  \} \textcolor{keywordflow}{else} \{
-                      cout << \textcolor{stringliteral}{"Download complete for ipv4 adj "} << ipv4\_addr << \textcolor{stringliteral}{"in "} << intfName;    
-                  \}
-              \}
-         \}
-   \};
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
-         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}{postAdjIPv4DownloadDone}}(self, intf\_name, ipv4\_addr):
-\textcolor{preprocessor}{             # Do your action here}
-             if not intfName:
-                  print "Download complete for all existing ipv4 adjs\(\backslash\)n"
-             else:
-                if not ipv4\_addr:
-                   print "Download complete for all exising ipv4 adjs in %s" % (intfName)
-                else:
-                   print "Download complete for ipv4 adj %s in %s" % (ipv4\_addr, intfName) 
+\mbox{\texttt{ in}}  & {\em ipv4\+\_\+addr} & I\+P\+V4 Address. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces or all adjacencies for a single interface. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}{postAdjIPv4DownloadDone}}(\textcolor{keyword}{const} std::string \&intfName,}
+\DoxyCodeLine{                                      \textcolor{keyword}{const} std::string \&ipv4\_addr) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{              \textcolor{keywordflow}{if} (intfName.empty()) \{}
+\DoxyCodeLine{                  cout << \textcolor{stringliteral}{"{}Download complete for all existing ipv4 adjs\(\backslash\)n"{}};}
+\DoxyCodeLine{              \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                  \textcolor{keywordflow}{if} (ipv4\_addr.empty()) \{}
+\DoxyCodeLine{                      cout << \textcolor{stringliteral}{"{}Download complete for all exising ipv4 adjs in "{}} << intfName;}
+\DoxyCodeLine{                  \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                      cout << \textcolor{stringliteral}{"{}Download complete for ipv4 adj "{}} << ipv4\_addr << \textcolor{stringliteral}{"{}in "{}} << intfName;    }
+\DoxyCodeLine{                  \}}
+\DoxyCodeLine{              \}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Adjacency events}}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_a84d9b92c976ae528c72e93ab3a75ecd1}{postAdjIPv4DownloadDone}}(self, intf\_name, ipv4\_addr):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\DoxyCodeLine{             if not intfName:}
+\DoxyCodeLine{                  print "{}Download complete for all existing ipv4 adjs\(\backslash\)n"{}}
+\DoxyCodeLine{             else:}
+\DoxyCodeLine{                if not ipv4\_addr:}
+\DoxyCodeLine{                   print "{}Download complete for all exising ipv4 adjs in \%s"{} \% (intfName)}
+\DoxyCodeLine{                else:}
+\DoxyCodeLine{                   print "{}Download complete for ipv4 adj \%s in \%s"{} \% (ipv4\_addr, intfName) }
 \end{DoxyCode}
  \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}\label{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}} 
-\index{nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}!post\+Adj\+I\+Pv6\+Download\+Done@{post\+Adj\+I\+Pv6\+Download\+Done}}
-\index{post\+Adj\+I\+Pv6\+Download\+Done@{post\+Adj\+I\+Pv6\+Download\+Done}!nxos\+::\+Nx\+Adj\+Mgr\+Handler@{nxos\+::\+Nx\+Adj\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{post\+Adj\+I\+Pv6\+Download\+Done()}{postAdjIPv6DownloadDone()}}
+\index{nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}!postAdjIPv6DownloadDone@{postAdjIPv6DownloadDone}}
+\index{postAdjIPv6DownloadDone@{postAdjIPv6DownloadDone}!nxos::NxAdjMgrHandler@{nxos::NxAdjMgrHandler}}
+\doxysubsubsection{\texorpdfstring{postAdjIPv6DownloadDone()}{postAdjIPv6DownloadDone()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Adj\+Mgr\+Handler\+::post\+Adj\+I\+Pv6\+Download\+Done (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intf\+Name,  }\item[{const std\+::string \&}]{ipv6\+\_\+addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 User to overload the post\+Adj\+I\+Pv6\+Download\+Done callback method to be notified when watch\+All\+Adjs (or) watch\+Adj with download = true filter is set to signal the completion of download of existing I\+P\+V6 adjacencies. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em intf\+Name} & interface name. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces. \\
+\mbox{\texttt{ in}}  & {\em intf\+Name} & interface name. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces. \\
 \hline
-\mbox{\tt in}  & {\em ipv6\+\_\+addr} & I\+P\+V6 Address. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces or all adjacencies for a single interface. 
-\begin{DoxyCode}
-C++:
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
-\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}
-
-   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{
-      \textcolor{keyword}{public}:
-         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}{postAdjIPv6DownloadDone}}(\textcolor{keyword}{const} std::string &intfName,
-                                      \textcolor{keyword}{const} std::string &ipv6\_addr) \{
-              \textcolor{comment}{// Do your action}
-              \textcolor{keywordflow}{if} (intfName.empty()) \{
-                  cout << \textcolor{stringliteral}{"Download complete for all existing ipv6 adjs\(\backslash\)n"};
-              \} \textcolor{keywordflow}{else} \{
-                  \textcolor{keywordflow}{if} (ipv6\_add.empty()) \{
-                      cout << \textcolor{stringliteral}{"Download complete for all exising ipv6 adjs in "} << intfName;
-                  \} \textcolor{keywordflow}{else} \{
-                      cout << \textcolor{stringliteral}{"Download complete for ipv6 adj "} << ipv6\_addr << \textcolor{stringliteral}{"in "} << intfName;    
-                  \}
-              \}
-         \}
-   \};
-
-Python:
-   \textcolor{keyword}{import} nx\_sdk\_py
-
-   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):
-\textcolor{preprocessor}{   ### Overloaded Callback to get Adjacency events}
-         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}{postAdjIPv6DownloadDone}}(self, intf\_name, ipv6\_addr):
-\textcolor{preprocessor}{             # Do your action here}
-             if not intfName:
-                  print "Download complete for all existing ipv6 adjs\(\backslash\)n"
-             else:
-                if not ipv6\_addr:
-                   print "Download complete for all exising ipv6 adjs in %s" % (intfName)
-                else:
-                   print "Download complete for ipv6 adj %s in %s" % (ipv6\_addr, intfName)
+\mbox{\texttt{ in}}  & {\em ipv6\+\_\+addr} & I\+P\+V6 Address. set to \char`\"{}\char`\"{} for download all adjacencies across all interfaces or all adjacencies for a single interface. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__adj__mgr_8h}{nx\_adj\_mgr.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler : \textcolor{keyword}{public} NxAdjMgrHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}{postAdjIPv6DownloadDone}}(\textcolor{keyword}{const} std::string \&intfName,}
+\DoxyCodeLine{                                      \textcolor{keyword}{const} std::string \&ipv6\_addr) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{              \textcolor{keywordflow}{if} (intfName.empty()) \{}
+\DoxyCodeLine{                  cout << \textcolor{stringliteral}{"{}Download complete for all existing ipv6 adjs\(\backslash\)n"{}};}
+\DoxyCodeLine{              \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                  \textcolor{keywordflow}{if} (ipv6\_add.empty()) \{}
+\DoxyCodeLine{                      cout << \textcolor{stringliteral}{"{}Download complete for all exising ipv6 adjs in "{}} << intfName;}
+\DoxyCodeLine{                  \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                      cout << \textcolor{stringliteral}{"{}Download complete for ipv6 adj "{}} << ipv6\_addr << \textcolor{stringliteral}{"{}in "{}} << intfName;    }
+\DoxyCodeLine{                  \}}
+\DoxyCodeLine{              \}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myAdjMgrHandler(nx\_sdk\_py.NxAdjMgrHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get Adjacency events}}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_adj_mgr_handler_af187f3d933d1b58547447004e4aebef6}{postAdjIPv6DownloadDone}}(self, intf\_name, ipv6\_addr):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\DoxyCodeLine{             if not intfName:}
+\DoxyCodeLine{                  print "{}Download complete for all existing ipv6 adjs\(\backslash\)n"{}}
+\DoxyCodeLine{             else:}
+\DoxyCodeLine{                if not ipv6\_addr:}
+\DoxyCodeLine{                   print "{}Download complete for all exising ipv6 adjs in \%s"{} \% (intfName)}
+\DoxyCodeLine{                else:}
+\DoxyCodeLine{                   print "{}Download complete for ipv6 adj \%s in \%s"{} \% (ipv6\_addr, intfName)}
 \end{DoxyCode}
  \\
 \hline
@@ -164,4 +175,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{nx__adj__mgr_8h}{nx\+\_\+adj\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__adj__mgr_8h}{nx\+\_\+adj\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

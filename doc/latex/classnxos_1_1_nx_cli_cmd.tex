@@ -1,5 +1,5 @@
-\hypertarget{classnxos_1_1_nx_cli_cmd}{}\section{nxos\+:\+:Nx\+Cli\+Cmd Class Reference}
-\label{classnxos_1_1_nx_cli_cmd}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
+\hypertarget{classnxos_1_1_nx_cli_cmd}{}\doxysection{nxos\+::Nx\+Cli\+Cmd Class Reference}
+\label{classnxos_1_1_nx_cli_cmd}\index{nxos::NxCliCmd@{nxos::NxCliCmd}}
 
 
 Abstract custom C\+LI command Interface used to construct a custom C\+LI config.  
@@ -7,9 +7,9 @@ Abstract custom C\+LI command Interface used to construct a custom C\+LI config.
 
 
 
-{\ttfamily \#include $<$include/nx\+\_\+cli.\+h$>$}
+{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
 
-\subsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{modes\+\_\+t}} \{ \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea5f01458d92031d6ca875f201bd8d0bb1}{C\+O\+N\+F\+\_\+\+M\+O\+DE}} = 0, 
@@ -22,40 +22,34 @@ enum \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1
 \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d}{M\+A\+X\+\_\+\+C\+MD}}
  \}
 \begin{DoxyCompactList}\small\item\em Custom C\+LI command type. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a3678e859df1bd42824f5b9f9f1de3b08}{$\sim$\+Nx\+Cli\+Cmd}} ()
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_aa698fdd1026739307e0710e2948f19f5}{update\+Keyword}} (const char $\ast$keyword\+\_\+name, const char $\ast$help\+\_\+str)=0
 \item 
-virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}{update\+Param}} (const char $\ast$param\+\_\+name, const char $\ast$help\+\_\+str, nxos\+::param\+\_\+type\+\_\+e param\+\_\+type=nxos\+::\+P\+\_\+\+S\+T\+R\+I\+NG, void $\ast$param\+\_\+type\+\_\+attributes=N\+U\+LL, int param\+\_\+type\+\_\+attr\+\_\+len=0, bool is\+\_\+key=false, bool additive=false, uint8\+\_\+t repeat\+\_\+count=0)=0
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}{update\+Param}} (const char $\ast$param\+\_\+name, const char $\ast$help\+\_\+str, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309ea}{nxos\+::param\+\_\+type\+\_\+e}} param\+\_\+type=\mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea}{nxos\+::\+P\+\_\+\+S\+T\+R\+I\+NG}}, void $\ast$param\+\_\+type\+\_\+attributes=N\+U\+LL, int param\+\_\+type\+\_\+attr\+\_\+len=0, bool is\+\_\+key=false, bool additive=false, uint8\+\_\+t repeat\+\_\+count=0)=0
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_ad4ebfd3ce0e68266bbc22bb4bc7dad0b}{add\+Timeout}} (uint32\+\_\+t timeout)=0
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a38260da2d6b7a227c4dd027521205c0b}{add\+Mode}} (\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{modes\+\_\+t}} mode)=0
 \item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_ab9dce490e4854f1160ba08fdc646bd37}\label{classnxos_1_1_nx_cli_cmd_ab9dce490e4854f1160ba08fdc646bd37}} 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}{Nx\+Cli\+Cmd\+::cmdtype\+\_\+t}} \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_ab9dce490e4854f1160ba08fdc646bd37}{get\+Cmd\+Type}} ()=0
 \begin{DoxyCompactList}\small\item\em Get the type of the C\+LI command. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a8ac3fe47522ba60987babb8c830153ff}\label{classnxos_1_1_nx_cli_cmd_a8ac3fe47522ba60987babb8c830153ff}} 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{Nx\+Cli\+Cmd\+::modes\+\_\+t}} \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a8ac3fe47522ba60987babb8c830153ff}{get\+Cmd\+Mode}} ()=0
 \begin{DoxyCompactList}\small\item\em Get the mode of the C\+LI command. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_acf95739336bb525d749a8e73949cb887}\label{classnxos_1_1_nx_cli_cmd_acf95739336bb525d749a8e73949cb887}} 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_acf95739336bb525d749a8e73949cb887}{get\+Cmd\+Name}} ()=0
 \begin{DoxyCompactList}\small\item\em Get the Name of the C\+LI command. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a0568d5404d91ddb89135e632e05d7abe}\label{classnxos_1_1_nx_cli_cmd_a0568d5404d91ddb89135e632e05d7abe}} 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a0568d5404d91ddb89135e632e05d7abe}{get\+Cmd\+Syntax}} ()=0
 \begin{DoxyCompactList}\small\item\em Get the Syntax of the C\+LI command. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}\label{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}} 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}{get\+Cmd\+Line\+Str}} ()=0
 \begin{DoxyCompactList}\small\item\em Get the C\+LI command entered. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_aa4321d9b60ecb1366157d0ef9356ffbf}\label{classnxos_1_1_nx_cli_cmd_aa4321d9b60ecb1366157d0ef9356ffbf}} 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_aa4321d9b60ecb1366157d0ef9356ffbf}{get\+Cmd\+Err}} ()=0
 \begin{DoxyCompactList}\small\item\em Get C\+LI Cmd Err if there is any. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_af100c6495c0e383c8e3d11d5cdb68cd2}{is\+Keyword\+Set}} (const char $\ast$keyword\+\_\+name)=0
 \item 
-virtual nxos\+::param\+\_\+type\+\_\+e \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_ab3722b567439f8ebd6422a5727bb7af6}{get\+Param\+Type}} (const char $\ast$param\+\_\+name)=0
+virtual \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309ea}{nxos\+::param\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_ab3722b567439f8ebd6422a5727bb7af6}{get\+Param\+Type}} (const char $\ast$param\+\_\+name)=0
 \item 
 virtual void $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a827bd696ec228767cb1f6dbfdbbd271c}{get\+Param\+Value}} (const char $\ast$param\+\_\+name, bool from\+First=false)=0
 \item 
@@ -65,20 +59,20 @@ virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a10c723c79d75ac2c85821b5c
 \item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_ae1669d9fbeaa164494a503379ca52b86}{update\+Keyword}} (const char $\ast$keyword\+\_\+name, const char $\ast$help\+\_\+str, bool make\+\_\+key)=0
 \item 
-virtual \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}{show\+Cli\+Out\+Format}} ()=0
+virtual \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}{show\+Cli\+Out\+Format}} ()=0
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract custom C\+LI command Interface used to construct a custom C\+LI config. 
 
 Takes Parameters for custom C\+LI like cmd\+Name, Syntax, Keywords, Params, etc. 
 
-\subsection{Member Enumeration Documentation}
+\doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!cmdtype\+\_\+t@{cmdtype\+\_\+t}}
-\index{cmdtype\+\_\+t@{cmdtype\+\_\+t}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{cmdtype\+\_\+t}{cmdtype\_t}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!cmdtype\_t@{cmdtype\_t}}
+\index{cmdtype\_t@{cmdtype\_t}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{cmdtype\_t}{cmdtype\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}{nxos\+::\+Nx\+Cli\+Cmd\+::cmdtype\+\_\+t}}}
 
 
@@ -86,23 +80,23 @@ Takes Parameters for custom C\+LI like cmd\+Name, Syntax, Keywords, Params, etc.
 Custom C\+LI command type. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+\_\+\+C\+MD@{C\+O\+N\+F\+\_\+\+C\+MD}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!C\+O\+N\+F\+\_\+\+C\+MD@{C\+O\+N\+F\+\_\+\+C\+MD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONF\_CMD@{CONF\_CMD}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!CONF\_CMD@{CONF\_CMD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a95032ccdb393e24e4a57a330b3ba3142}} 
 C\+O\+N\+F\+\_\+\+C\+MD&Custom command is a Configuration command. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+O\+W\+\_\+\+C\+MD@{S\+H\+O\+W\+\_\+\+C\+MD}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!S\+H\+O\+W\+\_\+\+C\+MD@{S\+H\+O\+W\+\_\+\+C\+MD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOW\_CMD@{SHOW\_CMD}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!SHOW\_CMD@{SHOW\_CMD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe}} 
 S\+H\+O\+W\+\_\+\+C\+MD&Custom command is a show command. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+X\+\_\+\+C\+MD@{M\+A\+X\+\_\+\+C\+MD}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!M\+A\+X\+\_\+\+C\+MD@{M\+A\+X\+\_\+\+C\+MD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_CMD@{MAX\_CMD}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!MAX\_CMD@{MAX\_CMD}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d}\label{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1a09e26af6ee427940926af9bd7ef2e73d}} 
 M\+A\+X\+\_\+\+C\+MD&Maximum command type supported. \\
 \hline
 
 \end{DoxyEnumFields}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!modes\+\_\+t@{modes\+\_\+t}}
-\index{modes\+\_\+t@{modes\+\_\+t}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{modes\+\_\+t}{modes\_t}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!modes\_t@{modes\_t}}
+\index{modes\_t@{modes\_t}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{modes\_t}{modes\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{nxos\+::\+Nx\+Cli\+Cmd\+::modes\+\_\+t}}}
 
 
@@ -110,35 +104,35 @@ M\+A\+X\+\_\+\+C\+MD&Maximum command type supported. \\
 Custom Mode for a Custom C\+LI command. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+\_\+\+M\+O\+DE@{C\+O\+N\+F\+\_\+\+M\+O\+DE}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!C\+O\+N\+F\+\_\+\+M\+O\+DE@{C\+O\+N\+F\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea5f01458d92031d6ca875f201bd8d0bb1}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea5f01458d92031d6ca875f201bd8d0bb1}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONF\_MODE@{CONF\_MODE}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!CONF\_MODE@{CONF\_MODE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea5f01458d92031d6ca875f201bd8d0bb1}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea5f01458d92031d6ca875f201bd8d0bb1}} 
 C\+O\+N\+F\+\_\+\+M\+O\+DE&Command can be executed in \char`\"{}conf t\char`\"{}. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+E\+C\+\_\+\+M\+O\+DE@{E\+X\+E\+C\+\_\+\+M\+O\+DE}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!E\+X\+E\+C\+\_\+\+M\+O\+DE@{E\+X\+E\+C\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea9213e9b4feb7ead0d2333bc83bfc5cdb}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea9213e9b4feb7ead0d2333bc83bfc5cdb}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXEC\_MODE@{EXEC\_MODE}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!EXEC\_MODE@{EXEC\_MODE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea9213e9b4feb7ead0d2333bc83bfc5cdb}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3cea9213e9b4feb7ead0d2333bc83bfc5cdb}} 
 E\+X\+E\+C\+\_\+\+M\+O\+DE&Command can be executed in any mode. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+X\+\_\+\+M\+O\+DE@{M\+A\+X\+\_\+\+M\+O\+DE}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!M\+A\+X\+\_\+\+M\+O\+DE@{M\+A\+X\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ceaedb25d06f68762ba3a8c8bc831a14c6f}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ceaedb25d06f68762ba3a8c8bc831a14c6f}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_MODE@{MAX\_MODE}!nxos::NxCliCmd@{nxos::NxCliCmd}}\index{nxos::NxCliCmd@{nxos::NxCliCmd}!MAX\_MODE@{MAX\_MODE}}}\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ceaedb25d06f68762ba3a8c8bc831a14c6f}\label{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ceaedb25d06f68762ba3a8c8bc831a14c6f}} 
 M\+A\+X\+\_\+\+M\+O\+DE&Maximum modes supported. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a3678e859df1bd42824f5b9f9f1de3b08}\label{classnxos_1_1_nx_cli_cmd_a3678e859df1bd42824f5b9f9f1de3b08}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!````~Nx\+Cli\+Cmd@{$\sim$\+Nx\+Cli\+Cmd}}
-\index{````~Nx\+Cli\+Cmd@{$\sim$\+Nx\+Cli\+Cmd}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Cli\+Cmd()}{~NxCliCmd()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!````~NxCliCmd@{$\sim$NxCliCmd}}
+\index{````~NxCliCmd@{$\sim$NxCliCmd}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxCliCmd()}{~NxCliCmd()}}
 {\footnotesize\ttfamily virtual nxos\+::\+Nx\+Cli\+Cmd\+::$\sim$\+Nx\+Cli\+Cmd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Destructor 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a38260da2d6b7a227c4dd027521205c0b}\label{classnxos_1_1_nx_cli_cmd_a38260da2d6b7a227c4dd027521205c0b}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!add\+Mode@{add\+Mode}}
-\index{add\+Mode@{add\+Mode}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{add\+Mode()}{addMode()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!addMode@{addMode}}
+\index{addMode@{addMode}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{addMode()}{addMode()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::add\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{modes\+\_\+t}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} Specify the mode in which the cmd belongs. Defaults\+: For S\+H\+O\+W\+\_\+\+C\+MD, mode is E\+X\+E\+C\+\_\+\+M\+O\+DE. For C\+O\+N\+F\+\_\+\+C\+MD, mode is C\+O\+N\+F\+\_\+\+M\+O\+DE 
@@ -149,14 +143,14 @@ Destructor
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_ad4ebfd3ce0e68266bbc22bb4bc7dad0b}\label{classnxos_1_1_nx_cli_cmd_ad4ebfd3ce0e68266bbc22bb4bc7dad0b}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!add\+Timeout@{add\+Timeout}}
-\index{add\+Timeout@{add\+Timeout}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{add\+Timeout()}{addTimeout()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!addTimeout@{addTimeout}}
+\index{addTimeout@{addTimeout}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{addTimeout()}{addTimeout()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::add\+Timeout (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} Timeout to be set for the C\+LI if its going to take more time to execute the action. Default is 30secs 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em timeout} & in seconds\\
+\mbox{\texttt{ in}}  & {\em timeout} & in seconds\\
 \hline
 \end{DoxyParams}
 
@@ -164,41 +158,101 @@ Destructor
 {\em Cannot} & edit timeout if the cmd is already added to NX Parser. \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_aa4321d9b60ecb1366157d0ef9356ffbf}\label{classnxos_1_1_nx_cli_cmd_aa4321d9b60ecb1366157d0ef9356ffbf}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdErr@{getCmdErr}}
+\index{getCmdErr@{getCmdErr}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdErr()}{getCmdErr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get C\+LI Cmd Err if there is any. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}\label{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdLineStr@{getCmdLineStr}}
+\index{getCmdLineStr@{getCmdLineStr}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdLineStr()}{getCmdLineStr()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Line\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the C\+LI command entered. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a8ac3fe47522ba60987babb8c830153ff}\label{classnxos_1_1_nx_cli_cmd_a8ac3fe47522ba60987babb8c830153ff}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdMode@{getCmdMode}}
+\index{getCmdMode@{getCmdMode}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdMode()}{getCmdMode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a72999b2e8f2995bbb19be346d875e3ce}{Nx\+Cli\+Cmd\+::modes\+\_\+t}} nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the mode of the C\+LI command. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_acf95739336bb525d749a8e73949cb887}\label{classnxos_1_1_nx_cli_cmd_acf95739336bb525d749a8e73949cb887}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdName@{getCmdName}}
+\index{getCmdName@{getCmdName}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdName()}{getCmdName()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Name of the C\+LI command. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a0568d5404d91ddb89135e632e05d7abe}\label{classnxos_1_1_nx_cli_cmd_a0568d5404d91ddb89135e632e05d7abe}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdSyntax@{getCmdSyntax}}
+\index{getCmdSyntax@{getCmdSyntax}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdSyntax()}{getCmdSyntax()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Syntax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Syntax of the C\+LI command. 
+
+\mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_ab9dce490e4854f1160ba08fdc646bd37}\label{classnxos_1_1_nx_cli_cmd_ab9dce490e4854f1160ba08fdc646bd37}} 
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getCmdType@{getCmdType}}
+\index{getCmdType@{getCmdType}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getCmdType()}{getCmdType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a82ed104f13c7859b24d3c0527f706be1}{Nx\+Cli\+Cmd\+::cmdtype\+\_\+t}} nxos\+::\+Nx\+Cli\+Cmd\+::get\+Cmd\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the type of the C\+LI command. 
+
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}\label{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!get\+Param\+Count@{get\+Param\+Count}}
-\index{get\+Param\+Count@{get\+Param\+Count}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{get\+Param\+Count()}{getParamCount()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getParamCount@{getParamCount}}
+\index{getParamCount@{getParamCount}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getParamCount()}{getParamCount()}}
 {\footnotesize\ttfamily virtual int nxos\+::\+Nx\+Cli\+Cmd\+::get\+Param\+Count (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Given the input parameter, get\+Param\+Count returns the number(count) of values associated with the input parameter. Should be called only in command handler post\+Cli\+Cb.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em param\+\_\+name} & Name of the input parameter\\
+\mbox{\texttt{ in}}  & {\em param\+\_\+name} & Name of the input parameter\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the count of array of values associated with the parameter. A  can contain a single value or array of values if its set as additive. Should be called only in command handler post\+Cli\+Cb.
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-Usage:
-   To \textcolor{keyword}{get} a count of the number of input param.
-
-     CLI      : $appname port-bw threshold <threshold>
-     Parameter: <threshold> [in \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}{updateParam}} \textcolor{keyword}{set}, additive = \textcolor{keyword}{true},
-                             repeat\_count = 5]
-                <threshold> can take one value (or) an array of
-                utpo 5 values
-
-     \textcolor{keywordflow}{switch}(config)# $appname port-bw threshold 10 20 30
-     In postCliCb func, Get Parameter array count \textcolor{keywordflow}{for} Threshold (=3)
-
-C++:
-     \textcolor{keywordtype}{int} val = cmd->\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}{getParamCount}}("<threshold>");
-
-Python:
-     val = cmd.\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}{getParamCount}}("<threshold>");
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{   To get a count of the number of input param.}
+\DoxyCodeLine{}
+\DoxyCodeLine{     CLI      : \$appname port-\/bw threshold <threshold>}
+\DoxyCodeLine{     Parameter: <threshold> [in \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}{updateParam}} set, additive = \textcolor{keyword}{true},}
+\DoxyCodeLine{                             repeat\_count = 5]}
+\DoxyCodeLine{                <threshold> can take one value (or) an array of}
+\DoxyCodeLine{                utpo 5 values}
+\DoxyCodeLine{}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# \$appname port-\/bw threshold 10 20 30}
+\DoxyCodeLine{     In postCliCb func, Get Parameter array count \textcolor{keywordflow}{for} Threshold (=3)}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{int} val = cmd-\/>\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}{getParamCount}}("{}<threshold>"{});}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     val = cmd.\mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a12e56ced4646ba1a27417030c0d20e7b}{getParamCount}}("{}<threshold>"{});}
 \end{DoxyCode}
 
 
@@ -217,34 +271,34 @@ Python:
 Refer to example Apps. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_ab3722b567439f8ebd6422a5727bb7af6}\label{classnxos_1_1_nx_cli_cmd_ab3722b567439f8ebd6422a5727bb7af6}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!get\+Param\+Type@{get\+Param\+Type}}
-\index{get\+Param\+Type@{get\+Param\+Type}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{get\+Param\+Type()}{getParamType()}}
-{\footnotesize\ttfamily virtual nxos\+::param\+\_\+type\+\_\+e nxos\+::\+Nx\+Cli\+Cmd\+::get\+Param\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getParamType@{getParamType}}
+\index{getParamType@{getParamType}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getParamType()}{getParamType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309ea}{nxos\+::param\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Cli\+Cmd\+::get\+Param\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Gets the type of parameter in the C\+LI. Should be called only in command handler post\+Cli\+Cb. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em param\+\_\+name} & Name of the input parameter \\
+\mbox{\texttt{ in}}  & {\em param\+\_\+name} & Name of the input parameter \\
 \hline
-\mbox{\tt out}  & {\em returns} & the type of parameter.\\
+\mbox{\texttt{ out}}  & {\em returns} & the type of parameter.\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-Usage:
-   If you need to \textcolor{keyword}{get} the type of input parameter.
-
-     CLI      : $appname port-bw threshold <threshold>
-     Parameter: <threshold>
-
-     \textcolor{keywordflow}{switch}(config)# $appname port-bw threshold 10
-     In postCliCb func, Get Parameter type \textcolor{keywordflow}{for} Threshold(=P\_INTEGER)
-
-C++:
-     nxos::param\_type\_e val = cmd->getParamType(\textcolor{stringliteral}{"<threshold>"});
-
-Python:
-     val = cmd.getParamType(\textcolor{stringliteral}{"<threshold>"});
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{   If you need to get the type of input parameter.}
+\DoxyCodeLine{}
+\DoxyCodeLine{     CLI      : \$appname port-\/bw threshold <threshold>}
+\DoxyCodeLine{     Parameter: <threshold>}
+\DoxyCodeLine{}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# \$appname port-\/bw threshold 10}
+\DoxyCodeLine{     In postCliCb func, Get Parameter type \textcolor{keywordflow}{for} Threshold(=\mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687}{P\_INTEGER}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309ea}{nxos::param\_type\_e}} val = cmd-\/>getParamType(\textcolor{stringliteral}{"{}<threshold>"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     val = cmd.getParamType(\textcolor{stringliteral}{"{}<threshold>"{}});}
 \end{DoxyCode}
 
 
@@ -261,16 +315,16 @@ Python:
 Refer to example Apps. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a827bd696ec228767cb1f6dbfdbbd271c}\label{classnxos_1_1_nx_cli_cmd_a827bd696ec228767cb1f6dbfdbbd271c}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!get\+Param\+Value@{get\+Param\+Value}}
-\index{get\+Param\+Value@{get\+Param\+Value}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{get\+Param\+Value()}{getParamValue()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!getParamValue@{getParamValue}}
+\index{getParamValue@{getParamValue}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{getParamValue()}{getParamValue()}}
 {\footnotesize\ttfamily virtual void$\ast$ nxos\+::\+Nx\+Cli\+Cmd\+::get\+Param\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name,  }\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Gets the values of the given input parameter in $<$$>$. Should be called only in command handler post\+Cli\+Cb. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em param\+\_\+name} & Name of the input parameter \\
+\mbox{\texttt{ in}}  & {\em param\+\_\+name} & Name of the input parameter \\
 \hline
-\mbox{\tt in}  & {\em from\+First} & At anytime, to get or start from first input parameter value, set from\+First to True and then call it in a while loop with from\+First to False to loop through the list if the input parameter is an array. Refer to usage.\\
+\mbox{\texttt{ in}}  & {\em from\+First} & At anytime, to get or start from first input parameter value, set from\+First to True and then call it in a while loop with from\+First to False to loop through the list if the input parameter is an array. Refer to usage.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -287,46 +341,46 @@ single value of the input parameter if called once. To get an array of values as
 
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-Usage \textcolor{keywordflow}{for} \textcolor{keywordflow}{return} type \textcolor{keywordtype}{int} *:
- Ex) Syntax: port-bw threshold <threshold>
-     CLI: $appname port-bw threshold 10 20
- In postCliCb, to get <threshold> parameter value (=10, 20)
-
-C++:
-     \textcolor{comment}{// To get Multiple values}
-     \textcolor{keywordtype}{int} val = *((\textcolor{keywordtype}{int} *)cmd->getParamValue(\textcolor{stringliteral}{"<threshold>"}), \textcolor{keyword}{true});
-     \textcolor{keywordflow}{while} (val) \{
-         \textcolor{comment}{//print val}
-         val = *((\textcolor{keywordtype}{int} *)cmd->getParamValue(\textcolor{stringliteral}{"<threshold>"}));
-     \}
-
-Python:
-\textcolor{preprocessor}{     ### Use nx\_sdk\_py.void\_to\_int to convert from C void *}
-\textcolor{preprocessor}{     ### of type int to python int Object.}
-     int\_p = nx\_sdk\_py.void\_to\_int(cmd.getParamValue(\textcolor{stringliteral}{"<threshold>"}), True)
-     \textcolor{keywordflow}{while} int\_p:
-        threshold = \textcolor{keywordtype}{int}(nx\_sdk\_py.intp\_value(int\_p))
-        #print threshold
-        int\_p = nx\_sdk\_py.void\_to\_int(cmd.getParamValue(\textcolor{stringliteral}{"<threshold>"}), True)
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage \textcolor{keywordflow}{for} \textcolor{keywordflow}{return} type \textcolor{keywordtype}{int} *:}
+\DoxyCodeLine{ Ex) Syntax: port-\/bw threshold <threshold>}
+\DoxyCodeLine{     CLI: \$appname port-\/bw threshold 10 20}
+\DoxyCodeLine{ In postCliCb, to get <threshold> parameter value (=10, 20)}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{comment}{// To get Multiple values}}
+\DoxyCodeLine{     \textcolor{keywordtype}{int} val = *((\textcolor{keywordtype}{int} *)cmd-\/>getParamValue(\textcolor{stringliteral}{"{}<threshold>"{}}), \textcolor{keyword}{true});}
+\DoxyCodeLine{     \textcolor{keywordflow}{while} (val) \{}
+\DoxyCodeLine{         \textcolor{comment}{//print val}}
+\DoxyCodeLine{         val = *((\textcolor{keywordtype}{int} *)cmd-\/>getParamValue(\textcolor{stringliteral}{"{}<threshold>"{}}));}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#\#\# Use nx\_sdk\_py.void\_to\_int to convert from C void *}}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#\#\# of type int to python int Object.}}
+\DoxyCodeLine{     int\_p = nx\_sdk\_py.void\_to\_int(cmd.getParamValue(\textcolor{stringliteral}{"{}<threshold>"{}}), True)}
+\DoxyCodeLine{     \textcolor{keywordflow}{while} int\_p:}
+\DoxyCodeLine{        threshold = \textcolor{keywordtype}{int}(nx\_sdk\_py.intp\_value(int\_p))}
+\DoxyCodeLine{        \#print threshold}
+\DoxyCodeLine{        int\_p = nx\_sdk\_py.void\_to\_int(cmd.getParamValue(\textcolor{stringliteral}{"{}<threshold>"{}}), True)}
 \end{DoxyCode}
 
 
 
-\begin{DoxyCode}
-Usage \textcolor{keywordflow}{for} \textcolor{keywordflow}{return} type \textcolor{keywordtype}{char} *:
-  Ex) Syntax: show $appname port-bw <port>
-      CLI: show $appname port-bw ethernet1/1
-  In postCliCb, to get <port> parameter value (=ethernet1/1)
-
-C++:
-     \textcolor{keywordtype}{char} *port = (\textcolor{keywordtype}{char} *)cmd->getParamValue(\textcolor{stringliteral}{"<port>"});
-
-Python:
-\textcolor{preprocessor}{     ### Use nx\_sdk\_py.void\_to\_string to convert from C void *}
-\textcolor{preprocessor}{     ### of type char * to python String Object.}
-     port = nx\_sdk\_py.void\_to\_string(cmd.getParamValue(\textcolor{stringliteral}{"<port>"}))
-     print port
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage \textcolor{keywordflow}{for} \textcolor{keywordflow}{return} type \textcolor{keywordtype}{char} *:}
+\DoxyCodeLine{  Ex) Syntax: show \$appname port-\/bw <port>}
+\DoxyCodeLine{      CLI: show \$appname port-\/bw ethernet1/1}
+\DoxyCodeLine{  In postCliCb, to get <port> parameter value (=ethernet1/1)}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordtype}{char} *port = (\textcolor{keywordtype}{char} *)cmd-\/>getParamValue(\textcolor{stringliteral}{"{}<port>"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#\#\# Use nx\_sdk\_py.void\_to\_string to convert from C void *}}
+\DoxyCodeLine{\textcolor{preprocessor}{     \#\#\# of type char * to python String Object.}}
+\DoxyCodeLine{     port = nx\_sdk\_py.void\_to\_string(cmd.getParamValue(\textcolor{stringliteral}{"{}<port>"{}}))}
+\DoxyCodeLine{     print port}
 \end{DoxyCode}
 
 
@@ -345,33 +399,33 @@ Python:
 Refer to example Apps. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_af100c6495c0e383c8e3d11d5cdb68cd2}\label{classnxos_1_1_nx_cli_cmd_af100c6495c0e383c8e3d11d5cdb68cd2}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!is\+Keyword\+Set@{is\+Keyword\+Set}}
-\index{is\+Keyword\+Set@{is\+Keyword\+Set}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{is\+Keyword\+Set()}{isKeywordSet()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!isKeywordSet@{isKeywordSet}}
+\index{isKeywordSet@{isKeywordSet}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{isKeywordSet()}{isKeywordSet()}}
 {\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Cli\+Cmd\+::is\+Keyword\+Set (\begin{DoxyParamCaption}\item[{const char $\ast$}]{keyword\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Helper function to Check if the given keyword is set/present in the entered C\+LI. Should be called only in command handler post\+Cli\+Cb. Or other way is you can use \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a3d856a7d4350f027df53960053901c96}{get\+Cmd\+Line\+Str()}} to get the entered C\+LI and do a string find yourself to find the keywords set.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em keyword\+\_\+name} & Name of the keyword.\\
+\mbox{\texttt{ in}}  & {\em keyword\+\_\+name} & Name of the keyword.\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-Usage:
-     \textcolor{keywordflow}{switch}(config)# $appname port-bw (threshold <val1> | port <val2>)
-     This CLI can either take threshold (or) port.
-     In postCliCb func, to check which keyword was entereted
-
-C++:
-     \textcolor{keywordflow}{if} (cmd->isKeywordSet(\textcolor{stringliteral}{"threshold"})) \{
-     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cmd->isKeywordSet(\textcolor{stringliteral}{"port"})) \{
-     \}
-
-Python:
-     \textcolor{keywordflow}{if} (cmd.isKeywordSet(\textcolor{stringliteral}{"threshold"})) :
-     elif (cmd.isKeywordSet(\textcolor{stringliteral}{"port"})) :
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# \$appname port-\/bw (threshold <val1> | port <val2>)}
+\DoxyCodeLine{     This CLI can either take threshold (or) port.}
+\DoxyCodeLine{     In postCliCb func, to check which keyword was entereted}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd-\/>isKeywordSet(\textcolor{stringliteral}{"{}threshold"{}})) \{}
+\DoxyCodeLine{     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cmd-\/>isKeywordSet(\textcolor{stringliteral}{"{}port"{}})) \{}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd.isKeywordSet(\textcolor{stringliteral}{"{}threshold"{}})) :}
+\DoxyCodeLine{     elif (cmd.isKeywordSet(\textcolor{stringliteral}{"{}port"{}})) :}
 \end{DoxyCode}
 
 
@@ -387,9 +441,9 @@ true -\/ if keyword is set in the entered C\+LI false -\/ if keyword is not set 
 Refer to example Apps. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a10c723c79d75ac2c85821b5ca6540c62}\label{classnxos_1_1_nx_cli_cmd_a10c723c79d75ac2c85821b5ca6540c62}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!print\+Console@{print\+Console}}
-\index{print\+Console@{print\+Console}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{print\+Console()}{printConsole()}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!printConsole@{printConsole}}
+\index{printConsole@{printConsole}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{printConsole()}{printConsole()}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::print\+Console (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Print custom output on the switch console only when called inside command handler post\+Cli\+Cb. Does nothing if called in anyother place.
@@ -398,31 +452,31 @@ Print custom output on the switch console only when called inside command handle
 Refer to example Apps. Since V2.\+0, based on the show\+Cli\+Out\+Format for the given show command, if R\+\_\+\+T\+E\+XT\+: Same as older version. R\+\_\+\+J\+S\+ON\+: Expects the data to be in J\+S\+ON format. N\+O\+TE\+: 1) Using invalid J\+S\+ON will result in \char`\"{}\+Invalid Json string passed\char`\"{} message in the console on executing the show command. 2) Splitting J\+S\+ON string into multiple print\+Console statements will be treated as invalid json.
 \end{DoxyNote}
 
-\begin{DoxyCode}
-C++:
-     \textcolor{keywordflow}{if} (cmd->showCliOutFormat() == \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos::R\_JSON}}) \{
-         \textcolor{comment}{// print to console in JSON format using printConsole Api.}
-         \textcolor{keywordtype}{string} json\_str = \textcolor{stringliteral}{"<some json string>"};
-         cmd->printConsole(json\_str)
-     \} \textcolor{keywordflow}{else} \{
-         \textcolor{comment}{// print to console in TEXT using printConsole Api.}
-         cmd->printConsole(\textcolor{stringliteral}{"Text1"})
-         cmd->printConsole(\textcolor{stringliteral}{"Text2"})
-     \} 
-
-Python:
-     \textcolor{keywordflow}{if} (cmd.showCliOutFormat() == nx\_sdk\_py.R\_JSON):
-         \textcolor{comment}{// print to console in JSON format using printConsole Api.}
-         json\_str = \textcolor{stringliteral}{"<some json string>"}
-         cmd.printConsole(json\_str)
-     \textcolor{keywordflow}{else}:
-         \textcolor{comment}{// print to console in TEXT using printConsole Api.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd-\/>showCliOutFormat() == \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos::R\_JSON}}) \{}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in JSON format using printConsole Api.}}
+\DoxyCodeLine{         \textcolor{keywordtype}{string} json\_str = \textcolor{stringliteral}{"{}<some json string>"{}};}
+\DoxyCodeLine{         cmd-\/>printConsole(json\_str)}
+\DoxyCodeLine{     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in TEXT using printConsole Api.}}
+\DoxyCodeLine{         cmd-\/>printConsole(\textcolor{stringliteral}{"{}Text1"{}})}
+\DoxyCodeLine{         cmd-\/>printConsole(\textcolor{stringliteral}{"{}Text2"{}})}
+\DoxyCodeLine{     \} }
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd.showCliOutFormat() == nx\_sdk\_py.R\_JSON):}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in JSON format using printConsole Api.}}
+\DoxyCodeLine{         json\_str = \textcolor{stringliteral}{"{}<some json string>"{}}}
+\DoxyCodeLine{         cmd.printConsole(json\_str)}
+\DoxyCodeLine{     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in TEXT using printConsole Api.}}
 \end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}\label{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!show\+Cli\+Out\+Format@{show\+Cli\+Out\+Format}}
-\index{show\+Cli\+Out\+Format@{show\+Cli\+Out\+Format}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{show\+Cli\+Out\+Format()}{showCliOutFormat()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Cli\+Cmd\+::show\+Cli\+Out\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!showCliOutFormat@{showCliOutFormat}}
+\index{showCliOutFormat@{showCliOutFormat}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{showCliOutFormat()}{showCliOutFormat()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91}{nxos\+::record\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Cli\+Cmd\+::show\+Cli\+Out\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Expected output format for your custom show command thereby enabling N\+X-\/\+A\+PI Support for custom show cli commands generated using N\+X-\/\+S\+DK.
 
@@ -436,29 +490,29 @@ N\+X-\/\+S\+DK V2.\+0
 record\+\_\+type\+\_\+e Expected output format for your show command (R\+\_\+\+T\+E\+XT or R\+\_\+\+J\+S\+ON).
 \end{DoxyReturn}
 
-\begin{DoxyCode}
-Usage:
-     \textcolor{keywordflow}{switch}(config)# show $appname <command\_syntax>
-     ! The expected output format \textcolor{keywordflow}{for} \textcolor{keyword}{this} show command is TEXT
-     \textcolor{keywordflow}{switch}(config)# show $appname <command\_syntax> | json
-     ! The expected output format \textcolor{keywordflow}{for} \textcolor{keyword}{this} show command is JSON
-     \textcolor{keywordflow}{switch}(config)# show $appname <command\_syntax> | xml
-     ! \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}{showCliOutFormat}} returns the format as \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{R\_JSON}}. But
-       on \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a10c723c79d75ac2c85821b5ca6540c62}{printConsole}}, NX-SDK automatically converts the
-       JSON data into XML.
-
-C++:
-     \textcolor{keywordflow}{if} (cmd->showCliOutFormat() == \mbox{\hyperlink{nx__common_8h_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos::R\_JSON}}) \{
-         \textcolor{comment}{// print to console in JSON format using printConsole Api.}
-     \} \textcolor{keywordflow}{else} \{
-         \textcolor{comment}{// print to console in TEXT using printConsole Api.}
-     \} 
-
-Python:
-     \textcolor{keywordflow}{if} (cmd.showCliOutFormat() == nx\_sdk\_py.R\_JSON):
-         \textcolor{comment}{// print to console in JSON format using printConsole Api.}
-     \textcolor{keywordflow}{else}:
-         \textcolor{comment}{// print to console in TEXT using printConsole Api.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# show \$appname <command\_syntax>}
+\DoxyCodeLine{     ! The expected output format \textcolor{keywordflow}{for} \textcolor{keyword}{this} show command is TEXT}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# show \$appname <command\_syntax> | json}
+\DoxyCodeLine{     ! The expected output format \textcolor{keywordflow}{for} \textcolor{keyword}{this} show command is JSON}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# show \$appname <command\_syntax> | xml}
+\DoxyCodeLine{     ! \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a71600fafefdd017050e3a357f03ddd24}{showCliOutFormat}} returns the format as \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{R\_JSON}}. But}
+\DoxyCodeLine{       on \mbox{\hyperlink{classnxos_1_1_nx_cli_cmd_a10c723c79d75ac2c85821b5ca6540c62}{printConsole}}, NX-\/SDK automatically converts the}
+\DoxyCodeLine{       JSON data into XML.}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd-\/>showCliOutFormat() == \mbox{\hyperlink{namespacenxos_a8952d5a318ed66cef9c7a83c7fd3ae91a7c816fd58e178eb1f281c37cd5a51d34}{nxos::R\_JSON}}) \{}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in JSON format using printConsole Api.}}
+\DoxyCodeLine{     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in TEXT using printConsole Api.}}
+\DoxyCodeLine{     \} }
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keywordflow}{if} (cmd.showCliOutFormat() == nx\_sdk\_py.R\_JSON):}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in JSON format using printConsole Api.}}
+\DoxyCodeLine{     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{         \textcolor{comment}{// print to console in TEXT using printConsole Api.}}
 \end{DoxyCode}
 
 
@@ -471,50 +525,50 @@ Python:
 Refer to example Apps. 
 \end{DoxyNote}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_aa698fdd1026739307e0710e2948f19f5}\label{classnxos_1_1_nx_cli_cmd_aa698fdd1026739307e0710e2948f19f5}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!update\+Keyword@{update\+Keyword}}
-\index{update\+Keyword@{update\+Keyword}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{update\+Keyword()}{updateKeyword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!updateKeyword@{updateKeyword}}
+\index{updateKeyword@{updateKeyword}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{updateKeyword()}{updateKeyword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::update\+Keyword (\begin{DoxyParamCaption}\item[{const char $\ast$}]{keyword\+\_\+name,  }\item[{const char $\ast$}]{help\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} Update more semantics to keywords in the C\+LI. Like Help\+String, Alias etc. By default Keywords are constructed from the syntax with Help\+String same as the keyword name and without any Aliases. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em keyword\+\_\+name} & Keyword used in the syntax \\
+\mbox{\texttt{ in}}  & {\em keyword\+\_\+name} & Keyword used in the syntax \\
 \hline
-\mbox{\tt in}  & {\em help\+\_\+str} & Help\+String associated with the keyword.\\
+\mbox{\texttt{ in}}  & {\em help\+\_\+str} & Help\+String associated with the keyword.\\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-Usage:
-   If you need to create a CLI with custom keyword (HelpString etc)
-
-      CLI     : $appname port-bw threshold <threshold>
-      Keywords: port-bw, threshold
-      Default HelpString \textcolor{keywordflow}{for}: port-bw is \textcolor{stringliteral}{"port-bw"}, threshold is \textcolor{stringliteral}{"threshold"}
-
-C++:
-     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-     cliP = sdk->getCliParser();
-     cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
-                              \textcolor{stringliteral}{"port-bw threshold <threshold>"});
-     cmd->updateKeyword(\textcolor{stringliteral}{"port-bw"}, \textcolor{stringliteral}{"Port Bandwidth Information"});
-     cmd->updateKeyword(\textcolor{stringliteral}{"threshold"}, \textcolor{stringliteral}{"Port BandWidth Threshold Alert"});
-
-Python:
-     \textcolor{keyword}{import} nx\_sdk\_py
-     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-     cliP = sdk.getCliParser()
-     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
-                             \textcolor{stringliteral}{"port-bw threshold <threshold>"})
-     cmd.updateKeyword(\textcolor{stringliteral}{"port-bw"}, \textcolor{stringliteral}{"Port Bandwidth Information"});
-     cmd.updateKeyword(\textcolor{stringliteral}{"threshold"}, \textcolor{stringliteral}{"Port BandWidth Threshold Alert"});
-
- Switch:
-     After setting Custom HelpString \textcolor{keywordflow}{for} keywords.
-     \textcolor{keywordflow}{switch}(config)# $appname ?
-                     port-bw    Port Bandwidth Information
-     \textcolor{keywordflow}{switch}(config)# $appname port-bw ?
-                     threshold  Port Bandwidth Threshold
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{   If you need to create a CLI with custom keyword (HelpString etc)}
+\DoxyCodeLine{}
+\DoxyCodeLine{      CLI     : \$appname port-\/bw threshold <threshold>}
+\DoxyCodeLine{      Keywords: port-\/bw, threshold}
+\DoxyCodeLine{      Default HelpString \textcolor{keywordflow}{for}: port-\/bw is \textcolor{stringliteral}{"{}port-\/bw"{}}, threshold is \textcolor{stringliteral}{"{}threshold"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{     cliP = sdk-\/>getCliParser();}
+\DoxyCodeLine{     cmd = cliP-\/>newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}},}
+\DoxyCodeLine{                              \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}});}
+\DoxyCodeLine{     cmd-\/>updateKeyword(\textcolor{stringliteral}{"{}port-\/bw"{}}, \textcolor{stringliteral}{"{}Port Bandwidth Information"{}});}
+\DoxyCodeLine{     cmd-\/>updateKeyword(\textcolor{stringliteral}{"{}threshold"{}}, \textcolor{stringliteral}{"{}Port BandWidth Threshold Alert"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{     cliP = sdk.getCliParser()}
+\DoxyCodeLine{     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}},}
+\DoxyCodeLine{                             \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}})}
+\DoxyCodeLine{     cmd.updateKeyword(\textcolor{stringliteral}{"{}port-\/bw"{}}, \textcolor{stringliteral}{"{}Port Bandwidth Information"{}});}
+\DoxyCodeLine{     cmd.updateKeyword(\textcolor{stringliteral}{"{}threshold"{}}, \textcolor{stringliteral}{"{}Port BandWidth Threshold Alert"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{ Switch:}
+\DoxyCodeLine{     After setting Custom HelpString \textcolor{keywordflow}{for} keywords.}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# \$appname ?}
+\DoxyCodeLine{                     port-\/bw    Port Bandwidth Information}
+\DoxyCodeLine{     \textcolor{keywordflow}{switch}(config)\# \$appname port-\/bw ?}
+\DoxyCodeLine{                     threshold  Port Bandwidth Threshold}
 \end{DoxyCode}
 
 
@@ -528,9 +582,9 @@ Python:
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_ae1669d9fbeaa164494a503379ca52b86}\label{classnxos_1_1_nx_cli_cmd_ae1669d9fbeaa164494a503379ca52b86}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!update\+Keyword@{update\+Keyword}}
-\index{update\+Keyword@{update\+Keyword}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{update\+Keyword()}{updateKeyword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!updateKeyword@{updateKeyword}}
+\index{updateKeyword@{updateKeyword}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{updateKeyword()}{updateKeyword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::update\+Keyword (\begin{DoxyParamCaption}\item[{const char $\ast$}]{keyword\+\_\+name,  }\item[{const char $\ast$}]{help\+\_\+str,  }\item[{bool}]{make\+\_\+key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \begin{DoxyNote}{Note}
@@ -538,12 +592,12 @@ Following A\+P\+Is are supported from N\+X\+S\+DK V1.\+5 Same as V1.\+0 except t
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em make\+\_\+key} & If set to T\+R\+UE then this keyword will be added to the unique key for this config. Used only for config commands. For Ex) Lets say C\+LI syntax is \char`\"{}action \mbox{[}\+A$\vert$ B\mbox{]}\char`\"{},
+\mbox{\texttt{ in}}  & {\em make\+\_\+key} & If set to T\+R\+UE then this keyword will be added to the unique key for this config. Used only for config commands. For Ex) Lets say C\+LI syntax is \char`\"{}action \mbox{[}\+A$\vert$ B\mbox{]}\char`\"{},
 \begin{DoxyItemize}
 \item If A keyword is not set as key (make\+\_\+key=false) then Lets say we configure \char`\"{}action A\char`\"{} then we config \char`\"{}action B\char`\"{} then config \char`\"{}action B\char`\"{} would replace/update \char`\"{}action A\char`\"{}. Hence \char`\"{}show run\char`\"{} will have \char`\"{}action B\char`\"{}.
 \item If A \& B keywords are set as key (make\+\_\+key=true) then Lets say we configure action A\char`\"{} then we config \char`\"{}action B\char`\"{}, we will
                     have two entries \char`\"{}action A\char`\"{} and \char`\"{}action B\char`\"{}. Hence \char`\"{}show run\char`\"{}
-                    will have both \char`\"{}action A\char`\"{} and \char`\"{}action B".
+                    will have both \char`\"{}action A\char`\"{} and \char`\"{}action B"{}.
 \end{DoxyItemize}\\
 \hline
 \end{DoxyParams}
@@ -554,20 +608,20 @@ Refer to V1.\+0 A\+PI section to get more details about other parameters.
 V1.\+5 
 \end{DoxySince}
 \mbox{\Hypertarget{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}\label{classnxos_1_1_nx_cli_cmd_abc9244b0bcf22142b5d784c06a6aa91b}} 
-\index{nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}!update\+Param@{update\+Param}}
-\index{update\+Param@{update\+Param}!nxos\+::\+Nx\+Cli\+Cmd@{nxos\+::\+Nx\+Cli\+Cmd}}
-\subsubsection{\texorpdfstring{update\+Param()}{updateParam()}}
-{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::update\+Param (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name,  }\item[{const char $\ast$}]{help\+\_\+str,  }\item[{nxos\+::param\+\_\+type\+\_\+e}]{param\+\_\+type = {\ttfamily nxos\+:\+:P\+\_\+STRING},  }\item[{void $\ast$}]{param\+\_\+type\+\_\+attributes = {\ttfamily NULL},  }\item[{int}]{param\+\_\+type\+\_\+attr\+\_\+len = {\ttfamily 0},  }\item[{bool}]{is\+\_\+key = {\ttfamily false},  }\item[{bool}]{additive = {\ttfamily false},  }\item[{uint8\+\_\+t}]{repeat\+\_\+count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\index{nxos::NxCliCmd@{nxos::NxCliCmd}!updateParam@{updateParam}}
+\index{updateParam@{updateParam}!nxos::NxCliCmd@{nxos::NxCliCmd}}
+\doxysubsubsection{\texorpdfstring{updateParam()}{updateParam()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Cli\+Cmd\+::update\+Param (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+\_\+name,  }\item[{const char $\ast$}]{help\+\_\+str,  }\item[{\mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309ea}{nxos\+::param\+\_\+type\+\_\+e}}}]{param\+\_\+type = {\ttfamily \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea}{nxos\+::\+P\+\_\+\+S\+T\+R\+I\+NG}}},  }\item[{void $\ast$}]{param\+\_\+type\+\_\+attributes = {\ttfamily NULL},  }\item[{int}]{param\+\_\+type\+\_\+attr\+\_\+len = {\ttfamily 0},  }\item[{bool}]{is\+\_\+key = {\ttfamily false},  }\item[{bool}]{additive = {\ttfamily false},  }\item[{uint8\+\_\+t}]{repeat\+\_\+count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 \mbox{[}Optional\mbox{]} Update more semantics to the input parameter in the C\+LI. Input parameters should be enclosed in $<$$>$. By default, Input parameters type is a string. By default param semantics are generated from the syntax with defaults. By default, Help\+String is same as the parameter name. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em param\+\_\+name} & Name of the input parameter \\
+\mbox{\texttt{ in}}  & {\em param\+\_\+name} & Name of the input parameter \\
 \hline
-\mbox{\tt in}  & {\em help\+\_\+str} & Help\+String for the input parameter \\
+\mbox{\texttt{ in}}  & {\em help\+\_\+str} & Help\+String for the input parameter \\
 \hline
-\mbox{\tt in}  & {\em param\+\_\+type} & Type of the input Parameter. Default is String. \\
+\mbox{\texttt{ in}}  & {\em param\+\_\+type} & Type of the input Parameter. Default is String. \\
 \hline
-\mbox{\tt in}  & {\em param\+\_\+type\+\_\+attributes} & Optional Additional attributes needed for the input parameter type. Refer to example applications. ~\newline
+\mbox{\texttt{ in}}  & {\em param\+\_\+type\+\_\+attributes} & Optional Additional attributes needed for the input parameter type. Refer to example applications. ~\newline
  param\+\_\+type $\vert$ param\+\_\+type\+\_\+attributes ~\newline
  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- ~\newline
  P\+\_\+\+I\+N\+T\+E\+G\+ER $\vert$ cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr ~\newline
@@ -581,21 +635,21 @@ V1.\+5
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
-For usage and code refer to respective types in \mbox{\hyperlink{types_2nx__cli_8h_source}{types/nx\+\_\+cli.\+h}} 
+For usage and code refer to respective types in \mbox{\hyperlink{types_2nx__cli_8h}{types/nx\+\_\+cli.\+h}} 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em param\+\_\+type\+\_\+attr\+\_\+len} & Length of the void $\ast$param\+\_\+type\+\_\+attributes if passed. With this we can validate if right attribute has been passed for the type. \\
+\mbox{\texttt{ in}}  & {\em param\+\_\+type\+\_\+attr\+\_\+len} & Length of the void $\ast$param\+\_\+type\+\_\+attributes if passed. With this we can validate if right attribute has been passed for the type. \\
 \hline
-\mbox{\tt in}  & {\em is\+\_\+key} & If set to T\+R\+UE then this param value will be added to the unique key for this config. Used only for config commands. For Ex) Lets say C\+LI syntax is A $<$id$>$,
+\mbox{\texttt{ in}}  & {\em is\+\_\+key} & If set to T\+R\+UE then this param value will be added to the unique key for this config. Used only for config commands. For Ex) Lets say C\+LI syntax is A $<$id$>$,
 \begin{DoxyItemize}
 \item If $<$id$>$ is not set as key (is\+\_\+key=false) then Lets say we configure \char`\"{}\+A 10\char`\"{} then we config \char`\"{}\+A 20\char`\"{} then config \char`\"{}\+A 20\char`\"{} would replace/update \char`\"{}\+A 10\char`\"{}. Hence \char`\"{}show run\char`\"{} will have \char`\"{}\+A 20\char`\"{}.
 \item If $<$id$>$ is set as key (is\+\_\+key=true) then Lets say we configure \char`\"{}\+A 10\char`\"{} then we config \char`\"{}\+A 20\char`\"{}, we will have two entries \char`\"{}\+A 10\char`\"{} and \char`\"{}\+A 20\char`\"{}. Hence \char`\"{}show run\char`\"{} will have both \char`\"{}\+A 10\char`\"{} and \char`\"{}\+A 20\char`\"{}. 
 \end{DoxyItemize}\\
 \hline
-\mbox{\tt in}  & {\em additive} & Array of inputs for this input parameter \\
+\mbox{\texttt{ in}}  & {\em additive} & Array of inputs for this input parameter \\
 \hline
-\mbox{\tt in}  & {\em repeat\+\_\+count} & Number of inputs. ~\newline
+\mbox{\texttt{ in}}  & {\em repeat\+\_\+count} & Number of inputs. ~\newline
  Ex) Syntax \+: (A $\vert$ B $<$id$>$) \mbox{[}C\mbox{]} ~\newline
  Default Help\+String for\+: $<$id$>$ is id. ~\newline
  Param \+: $<$id$>$ \mbox{[}if additive = true, repeat\+\_\+count = 5\mbox{]} ~\newline
@@ -604,35 +658,35 @@ For usage and code refer to respective types in \mbox{\hyperlink{types_2nx__cli_
 \hline
 \end{DoxyParams}
 
-\begin{DoxyCode}
-Usage:
-   If you need to create a CLI with custom HelpString
-
-      CLI      : $appname port-bw threshold <threshold>
-      Parameter: <threshold>
-
-C++:
-     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
-     cliP = sdk->getCliParser();
-     \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr__}{nxos::cli\_param\_type\_integer\_attr}} int\_attr = \{0\};
-     int\_attr.min\_val = 1;
-     int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_val}} = 100;
-     cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
-                                  \textcolor{stringliteral}{"port-bw threshold <threshold>"});
-     cmd->updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, nxos::P\_INTEGER,
-                      (\textcolor{keywordtype}{void} *)&int\_attr, \textcolor{keyword}{sizeof}(int\_attr));
-
-Python:
-     \textcolor{keyword}{import} nx\_sdk\_py
-     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
-     cliP = sdk.getCliParser()
-     int\_attr = nx\_sdk\_py.cli\_param\_type\_integer\_attr()
-     int\_attr.min\_val = 1;
-     int\_attr.max\_val = 100;
-     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
-                             \textcolor{stringliteral}{"port-bw threshold <threshold>"})
-     cmd.updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, nx\_sdk\_py.P\_INTEGER,
-                     int\_attr, len(int\_attr))
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Usage:}
+\DoxyCodeLine{   If you need to create a CLI with custom HelpString}
+\DoxyCodeLine{}
+\DoxyCodeLine{      CLI      : \$appname port-\/bw threshold <threshold>}
+\DoxyCodeLine{      Parameter: <threshold>}
+\DoxyCodeLine{}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);}
+\DoxyCodeLine{     cliP = sdk-\/>getCliParser();}
+\DoxyCodeLine{     \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr__}{nxos::cli\_param\_type\_integer\_attr}} int\_attr = \{0\};}
+\DoxyCodeLine{     int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{min\_val}} = 1;}
+\DoxyCodeLine{     int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_val}} = 100;}
+\DoxyCodeLine{     cmd = cliP-\/>newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}},}
+\DoxyCodeLine{                                  \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}});}
+\DoxyCodeLine{     cmd-\/>updateParam(\textcolor{stringliteral}{"{}<threshold>"{}}, \textcolor{stringliteral}{"{}Threshold Limit. Default 50\%"{}}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687}{nxos::P\_INTEGER}},}
+\DoxyCodeLine{                      (\textcolor{keywordtype}{void} *)\&int\_attr, \textcolor{keyword}{sizeof}(int\_attr));}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{     \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)}
+\DoxyCodeLine{     cliP = sdk.getCliParser()}
+\DoxyCodeLine{     int\_attr = nx\_sdk\_py.cli\_param\_type\_integer\_attr()}
+\DoxyCodeLine{     int\_attr.min\_val = 1;}
+\DoxyCodeLine{     int\_attr.max\_val = 100;}
+\DoxyCodeLine{     cmd = cliP.newConfigCmd(\textcolor{stringliteral}{"{}set\_port\_bw\_threshold\_cmd"{}},}
+\DoxyCodeLine{                             \textcolor{stringliteral}{"{}port-\/bw threshold <threshold>"{}})}
+\DoxyCodeLine{     cmd.updateParam(\textcolor{stringliteral}{"{}<threshold>"{}}, \textcolor{stringliteral}{"{}Threshold Limit. Default 50\%"{}}, nx\_sdk\_py.P\_INTEGER,}
+\DoxyCodeLine{                     int\_attr, len(int\_attr))}
 \end{DoxyCode}
 
 
@@ -655,4 +709,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/nx\+\_\+cli.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{nx__cli_8h}{nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}

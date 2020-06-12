@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['record_5ftype_5fe',['record_type_e',['../nx__common_8h.html#a8952d5a318ed66cef9c7a83c7fd3ae91',1,'nxos']]]
+  ['param_5ftype_5fe_713',['param_type_e',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea',1,'nxos']]],
+  ['prio_5fe_714',['prio_e',['../namespacenxos.html#af446a76676837368bde9b15343ae21d5',1,'nxos']]],
+  ['priority_715',['Priority',['../classnxos_1_1_nx_trace.html#a582f6e5a22e788c61807657f8bca088f',1,'nxos::NxTrace']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['type_5fdynamic',['TYPE_DYNAMIC',['../nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2af6fd07314b062748e94425b28a54f769',1,'nxos']]],
-  ['type_5fmax_5ftype',['TYPE_MAX_TYPE',['../nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2aa36f06374207d2b550eb6521a30837ce',1,'nxos']]],
-  ['type_5fno_5ftype',['TYPE_NO_TYPE',['../nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2ad1fbc499408cfaa710e8a5a0bfe05f10',1,'nxos']]],
-  ['type_5fstatic',['TYPE_STATIC',['../nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2a1c43ec58505991ec42793fd10804a0be',1,'nxos']]]
+  ['s_5fmax_5ftype_795',['S_MAX_TYPE',['../namespacenxos.html#a7c257059d03188765435b36e95dbb764a8d80ff7ec931e597b4d75c82dce8bbad',1,'nxos']]],
+  ['show_5fcmd_796',['SHOW_CMD',['../classnxos_1_1_nx_cli_cmd.html#a82ed104f13c7859b24d3c0527f706be1a07e42d83caddae06870cbf324da56bbe',1,'nxos::NxCliCmd']]]
 ];

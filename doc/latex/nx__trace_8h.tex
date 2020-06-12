@@ -1,5 +1,5 @@
-\hypertarget{nx__trace_8h}{}\section{include/nx\+\_\+trace.h File Reference}
-\label{nx__trace_8h}\index{include/nx\+\_\+trace.\+h@{include/nx\+\_\+trace.\+h}}
+\hypertarget{nx__trace_8h}{}\doxysection{nx\+\_\+trace.\+h File Reference}
+\label{nx__trace_8h}\index{nx\_trace.h@{nx\_trace.h}}
 
 
 Abstract Tracer interface to generate custom Syslogs, Events \& Errors history in Nexus Switches.  
@@ -11,20 +11,29 @@ Abstract Tracer interface to generate custom Syslogs, Events \& Errors history i
 {\ttfamily \#include $<$cstddef$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-\subsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classnxos_1_1_nx_syslog}{nxos\+::\+Nx\+Syslog}}
+\begin{DoxyCompactList}\small\item\em syslog interface that hold syslog data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnxos_1_1_nx_trace_handler}{nxos\+::\+Nx\+Trace\+Handler}}
+\begin{DoxyCompactList}\small\item\em Abstract Trace callback Interface to receive syslog updates from N\+X-\/\+OS. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classnxos_1_1_nx_trace}{nxos\+::\+Nx\+Trace}}
 \begin{DoxyCompactList}\small\item\em Tracer interface to generate custom Syslogs, Events \& Errors history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenxos}{nxos}}
+\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Abstract Tracer interface to generate custom Syslogs, Events \& Errors history in Nexus Switches. 
 
 Steps to construct a custom syslog, Events \& Erros history\+: 1) Instantiate Nx\+S\+DK Tracer Object using get\+Tracer(). 2) To generate custom syslogs, use Tracer\+Obj-\/$>$syslog(..). 3) To generate custom events, use Tracer\+Obj-\/$>$event(...). To check the events, use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history events\char`\"{} 4) To generate custom errors, use Tracer\+Obj-\/$>$error(...). To check the events, use \char`\"{}show $<$\+App\+Name$>$ internal event-\/history events\char`\"{}( 5) Refer to examples for usage.
 
 \begin{DoxyAuthor}{Author}
-\href{mailto:nxos-sdk@cisco.com}{\tt nxos-\/sdk@cisco.\+com} 
+\href{mailto:nxos-sdk@cisco.com}{\texttt{ nxos-\/sdk@cisco.\+com}} 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
 \item[\mbox{\hyperlink{bug__bug000007}{Bug}}]No known bugs. \end{DoxyRefDesc}

@@ -1,0 +1,106 @@
+\hypertarget{classnxos_1_1_nx_trace_handler}{}\doxysection{nxos\+::Nx\+Trace\+Handler Class Reference}
+\label{classnxos_1_1_nx_trace_handler}\index{nxos::NxTraceHandler@{nxos::NxTraceHandler}}
+
+
+Abstract Trace callback Interface to receive syslog updates from N\+X-\/\+OS.  
+
+
+
+
+{\ttfamily \#include $<$nx\+\_\+trace.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_afa35f1a5c7bb2f003ff837e55b9f340b}{$\sim$\+Nx\+Trace\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a4e35061bc23cb830f68d7977c623c779}{post\+Syslog\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_syslog}{Nx\+Syslog}} $\ast$syslog)
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a1e68328b75b1928a21d4ac6f70b4c642}{post\+Syslog\+Download\+Done\+Cb}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Trace callback Interface to receive syslog updates from N\+X-\/\+OS. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_handler_afa35f1a5c7bb2f003ff837e55b9f340b}\label{classnxos_1_1_nx_trace_handler_afa35f1a5c7bb2f003ff837e55b9f340b}} 
+\index{nxos::NxTraceHandler@{nxos::NxTraceHandler}!````~NxTraceHandler@{$\sim$NxTraceHandler}}
+\index{````~NxTraceHandler@{$\sim$NxTraceHandler}!nxos::NxTraceHandler@{nxos::NxTraceHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$NxTraceHandler()}{~NxTraceHandler()}}
+{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Trace\+Handler\+::$\sim$\+Nx\+Trace\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_handler_a4e35061bc23cb830f68d7977c623c779}\label{classnxos_1_1_nx_trace_handler_a4e35061bc23cb830f68d7977c623c779}} 
+\index{nxos::NxTraceHandler@{nxos::NxTraceHandler}!postSyslogCb@{postSyslogCb}}
+\index{postSyslogCb@{postSyslogCb}!nxos::NxTraceHandler@{nxos::NxTraceHandler}}
+\doxysubsubsection{\texorpdfstring{postSyslogCb()}{postSyslogCb()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+Handler\+::post\+Syslog\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_syslog}{Nx\+Syslog}} $\ast$}]{syslog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+User to overload the postsyslog\+Cb callback method to receive any registered Syslog updates based on the set watch syslog.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_syslog}{Nx\+Syslog}}} & object. Not valid outside of post\+Syslog\+Cb.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__trace_8h}{nx\_trace.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myTraceHandler : \textcolor{keyword}{public} NxTraceHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a4e35061bc23cb830f68d7977c623c779}{postSyslogCb}}(NxSyslog *syslog) \{}
+\DoxyCodeLine{              \textcolor{comment}{// Do your action}}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }mySyslogHandler(nx\_sdk\_py.NxSyslogHandler):}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#\#\# Overloaded Callback to get syslog events}}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a4e35061bc23cb830f68d7977c623c779}{postSyslogCb}}(self, nxsyslog):}
+\DoxyCodeLine{\textcolor{preprocessor}{             \# Do your action here}}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_trace_handler_a1e68328b75b1928a21d4ac6f70b4c642}\label{classnxos_1_1_nx_trace_handler_a1e68328b75b1928a21d4ac6f70b4c642}} 
+\index{nxos::NxTraceHandler@{nxos::NxTraceHandler}!postSyslogDownloadDoneCb@{postSyslogDownloadDoneCb}}
+\index{postSyslogDownloadDoneCb@{postSyslogDownloadDoneCb}!nxos::NxTraceHandler@{nxos::NxTraceHandler}}
+\doxysubsubsection{\texorpdfstring{postSyslogDownloadDoneCb()}{postSyslogDownloadDoneCb()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+Handler\+::post\+Syslog\+Download\+Done\+Cb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Callback used to mark the end of a requested object download operation. This will be called after the last event is sent to the application.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C++:}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{   \#include <\mbox{\hyperlink{nx__trace_8h}{nx\_trace.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myTraceHandler : \textcolor{keyword}{public} NxTraceHandler \{}
+\DoxyCodeLine{      \textcolor{keyword}{public}:}
+\DoxyCodeLine{         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a1e68328b75b1928a21d4ac6f70b4c642}{postSyslogDownloadDoneCb}}() \{ }
+\DoxyCodeLine{              cout << \textcolor{stringliteral}{"{}Download complete for all existing syslogs"{}} << endl;}
+\DoxyCodeLine{         \}}
+\DoxyCodeLine{   \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Python:}
+\DoxyCodeLine{   \textcolor{keyword}{import} nx\_sdk\_py}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keyword}{class }myTraceHandler(nx\_sdk\_py.NxTraceHandler):}
+\DoxyCodeLine{         def \mbox{\hyperlink{classnxos_1_1_nx_trace_handler_a1e68328b75b1928a21d4ac6f70b4c642}{postSyslogDownloadDoneCb}}():}
+\DoxyCodeLine{             print "{}Download complete for all existing Syslogs\(\backslash\)n"{}}
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}
