@@ -30,6 +30,7 @@
 #include <sstream>
 #include <fstream>
 #include "types/nx_cli.h"
+#include "nx_exception.h"
 
 using namespace std;
 
@@ -197,7 +198,7 @@ public:
      *       int_attr.max_val = 100;
      *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
      *                               "port-bw threshold <threshold>")
-     *       cmd.updateParam("<threshold>", "Threshold Limit. Default 50%", nxos::P_INTEGER,
+     *       cmd.updateParam("<threshold>", "Threshold Limit. Default 50%", nx_sdk_py.P_INTEGER,
      *                       int_attr, len(int_attr))
      *  @endcode
      *
@@ -439,7 +440,36 @@ public:
      * when called inside command handler postCliCb.
      * Does nothing if called in anyother place.
      *
-     * @note Refer to example Apps.
+     * @note Refer to example Apps. Since V2.0, based on the 
+     * showCliOutFormat for the given show command, if
+     *     R_TEXT:  Same as older version. 
+     *     R_JSON:  Expects the data to be in JSON format.
+     *              NOTE: 1) Using invalid JSON will result in 
+     *                       "Invalid Json string passed" message in the
+     *                       console on executing the show command.
+     *                    2) Splitting JSON string into multiple printConsole
+     *                       statements will be treated as invalid json. 
+     *
+     * @code
+     *  C++:
+     *       if (cmd->showCliOutFormat() == nxos::R_JSON) {
+     *           // print to console in JSON format using printConsole Api.
+     *           string json_str = "<some json string>";
+     *           cmd->printConsole(json_str)
+     *       } else {
+     *           // print to console in TEXT using printConsole Api.
+     *           cmd->printConsole("Text1")
+     *           cmd->printConsole("Text2")
+     *       } 
+     *
+     *  Python:
+     *       if (cmd.showCliOutFormat() == nx_sdk_py.R_JSON):
+     *           // print to console in JSON format using printConsole Api.
+     *           json_str = "<some json string>"
+     *           cmd.printConsole(json_str)
+     *       else:
+     *           // print to console in TEXT using printConsole Api.
+     *  @endcode
      **/
     virtual void printConsole(const char *fmt, ...) = 0;
 
@@ -472,6 +502,56 @@ public:
     virtual void updateKeyword(const char *keyword_name,
                                const char *help_str,
                                bool       make_key) = 0;
+
+    /**
+     * Expected output format for your custom show command
+     * thereby enabling NX-API Support for custom show cli
+     * commands generated using NX-SDK.
+     *
+     * @note As an optimization, showCliOutFormat returns
+     *       only two output formats JSON or TEXT. For XML, 
+     *       showCliOutFormat still returns the format as JSON
+     *       but then on printConsole of JSON output it then
+     *       auto-converts JSON output into XML output 
+     *       automatically in the console thereby reducing onus 
+     *       on the application developers to only support JSON format
+     *       instead of other formats. Refer to printConsole Api
+    *        for more details. 
+     *
+     * @since NX-SDK V2.0
+     *
+     * @returns record_type_e Expected output format for your show 
+     *                        command (R_TEXT or R_JSON).
+     *
+     * @code
+     *  Usage:
+     *       switch(config)# show $appname <command_syntax>
+     *       ! The expected output format for this show command is TEXT
+     *       switch(config)# show $appname <command_syntax> | json
+     *       ! The expected output format for this show command is JSON
+     *       switch(config)# show $appname <command_syntax> | xml
+     *       ! showCliOutFormat returns the format as R_JSON. But
+     *         on printConsole, NX-SDK automatically converts the
+     *         JSON data into XML.
+     *
+     *  C++:
+     *       if (cmd->showCliOutFormat() == nxos::R_JSON) {
+     *           // print to console in JSON format using printConsole Api.
+     *       } else {
+     *           // print to console in TEXT using printConsole Api.
+     *       } 
+     *
+     *  Python:
+     *       if (cmd.showCliOutFormat() == nx_sdk_py.R_JSON):
+     *           // print to console in JSON format using printConsole Api.
+     *       else:
+     *           // print to console in TEXT using printConsole Api.
+     *  @endcode
+     *
+     * @throws if the API is called outside of command handler postCliCb.
+     * @note Refer to example Apps.
+     **/
+    virtual nxos::record_type_e showCliOutFormat() = 0;
 };
 
 /**
@@ -525,23 +605,28 @@ public:
      *                           So that the custom configs dont overwrite the existing
      *                           Nexus Configs.
      *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     *
      * @code
      *  Usage:
      *       Ex1) For Config: $appName port-bw threshold <threshold>
-     *             API:  newCliCmd(nxos::NxCliCmd::CONF_CMD, "vlan_cmd", "vlan <vlanid>");
+     *             API:  newCliCmd(nxos::NxCliCmd::CONF_CMD, "set_port_bw_threshold_cmd", "port-bw threshold <threshold>");
      *             $AppName: (Automatically appended by SDK)
      *  C++:
      *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
      *       cliP = sdk->getCliParser();
-     *       cmd = cliP->newConfigCmd("set_port_bw_threshold_cmd",
-     *                                    "port-bw threshold <threshold>");
+     *       cmd = cliP->newCliCmd(nxos::NxCliCmd::CONF_CMD, 
+     *       		           "set_port_bw_threshold_cmd",
+     *                             "port-bw threshold <threshold>");
      *
      *  Python:
      *       import nx_sdk_py
      *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *       cliP = sdk.getCliParser()
-     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
-     *                               "port-bw threshold <threshold>")
+     *       cmd = cliP.newCliCmd(nx_sdk_py.NxCliCmd.CONF_CMD,
+     *                            "set_port_bw_threshold_cmd",
+     *                            "port-bw threshold <threshold>")
      * @endcode
      *
      * @code
@@ -557,14 +642,14 @@ public:
      *  C++:
      *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
      *       cliP = sdk->getCliParser();
-     *       cmd = cliP->newConfigCmd("set_complex_cmd",
+     *       cmd = cliP->newCliCmd(nxos::NxCliCmd::SHOW_CMD, "complex_cmd",
      *                                "(A | B <id>) [C]");
      *
      *  Python:
      *       import nx_sdk_py
      *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *       cliP = sdk.getCliParser()
-     *       cmd = cliP.newConfigCmd("set_complex_cmd", "(A | B <id>) [C]")
+     *       cmd = cliP.newCliCmd(nx_sdk_py.NxCliCmd.SHOW_CMD, "complex_cmd", "(A | B <id>) [C]")
      * @endcode
      *
      * NOTE:
@@ -588,6 +673,53 @@ public:
     /**
      * Create a new custom Show CLI command object.
      * Calls newCliCmd(nxos::NxCliCmd::SHOW_CMD, cmd_name, syntax)
+     *
+     * @param[in] cmd_name Cmd Name (NOTE: SDK appends App Name to the
+     *                                     passed Cmd Name (AppName_CmdName))
+     * @param[in] syntax   Custom Cmd syntax. Syntax comprises of Keywords
+     *                     and input parameters. Input parameters are identified
+     *                     by enclosing in <> and by default they are of the type "string".
+     *                     Refer to updateKeyword & updateParam usage.
+     *                     NOTE: All CONF commands are prefixed with AppName. For SHOW
+     *                           commands, SDK appends AppName after the show keyword.
+     *                           So that the custom configs dont overwrite the existing
+     *                           Nexus Configs.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     *
+     * @code
+     *  Usage:
+     *       Ex1) To create a custom show command: show $appName port-bw threshold <threshold>
+     *             API:  newShowCmd("show_port_bw_threshold_cmd", "port-bw threshold <threshold>");
+     *             $AppName: (Automatically appended by SDK)
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       cmd = cliP->newShowCmd("show_port_bw_threshold_cmd",
+     *                              "port-bw threshold <threshold>");
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       cmd = cliP.newShowCmd("show_port_bw_threshold_cmd",
+     *                             "port-bw threshold <threshold>")
+     * @endcode
+     *
+     * NOTE:
+     *   @throws ctype is a invalid command type
+     *   @throws cmd_name and syntax cannot be empty or NULL.
+     *   @throws syntax is not balanced.
+     *   @throws Cannot edit the syntax if the cmd is already added to NX Parser.
+     *           Can add new custom cmd to Nx Parser but not edit existing cmd
+     *           already added to the parser.
+     *   @throws syntax contains anything other than the regex "A-Za-z0-9[]{}()<>|_- "
+     *   @throws syntax contains free standing _ or - or |.
+     *   @throws syntax contains empty open close paranthesis without a word.
+     *   @throws syntax <param> dose not contain only one word and doesnt match
+     *           regex A-Za-z0-9_-
+     *   @throws syntax contains predefined keywords (no, show)
      **/
     virtual NxCliCmd *newShowCmd(const char *cmd_name,
                                  const char *syntax) = 0;
@@ -595,49 +727,155 @@ public:
     /**
      * Create a new custom Show CLI command object.
      * Calls newCliCmd(nxos::NxCliCmd::CONF_CMD, cmd_name, syntax)
+     *
+     * @param[in] cmd_name Cmd Name (NOTE: SDK appends App Name to the
+     *                                     passed Cmd Name (AppName_CmdName))
+     * @param[in] syntax   Custom Cmd syntax. Syntax comprises of Keywords
+     *                     and input parameters. Input parameters are identified
+     *                     by enclosing in <> and by default they are of the type "string".
+     *                     Refer to updateKeyword & updateParam usage.
+     *                     NOTE: All CONF commands are prefixed with AppName. For SHOW
+     *                           commands, SDK appends AppName after the show keyword.
+     *                           So that the custom configs dont overwrite the existing
+     *                           Nexus Configs.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     *
+     * @code
+     *  Usage:
+     *       Ex1) To create a custom config command: $appName port-bw threshold <threshold>
+     *             API:  newConfigCmd("set_port_bw_threshold_cmd", "port-bw threshold <threshold>");
+     *             $AppName: (Automatically appended by SDK)
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       cmd = cliP->newConfigCmd("set_port_bw_threshold_cmd",
+     *                                "port-bw threshold <threshold>");
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       cmd = cliP.newConfigCmd("set_port_bw_threshold_cmd",
+     *                               "port-bw threshold <threshold>")
+     * @endcode
+     *
+     * NOTE:
+     *   @throws ctype is a invalid command type
+     *   @throws cmd_name and syntax cannot be empty or NULL.
+     *   @throws syntax is not balanced.
+     *   @throws Cannot edit the syntax if the cmd is already added to NX Parser.
+     *           Can add new custom cmd to Nx Parser but not edit existing cmd
+     *           already added to the parser.
+     *   @throws syntax contains anything other than the regex "A-Za-z0-9[]{}()<>|_- "
+     *   @throws syntax contains free standing _ or - or |.
+     *   @throws syntax contains empty open close paranthesis without a word.
+     *   @throws syntax <param> dose not contain only one word and doesnt match
+     *           regex A-Za-z0-9_-
+     *   @throws syntax contains predefined keywords (no, show)
      **/
     virtual NxCliCmd *newConfigCmd(const char *cmd_name,
                                    const char *syntax) = 0;
 
     /**
      * Register all created custom commands to NX CLI Parser Tree.
+     *
      *  @note Check "show $appname internal state" if the custom
      *        commands are successfully added or not.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     *
+     * @code
+     *  C++:
+     *       NxSdk       *sdk  = NULL;
+     *       NxCliParser *cliP = NULL;
+     *       NxCliCmd    *cmd  = NULL;
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       cmd = cliP->newShowCmd("show_port_bw_threshold_cmd",
+     *                              "port-bw threshold <threshold>");
+     *       cliP->addToParseTree();                       
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       cmd = cliP.newShowCmd("show_port_bw_threshold_cmd",
+     *                             "port-bw threshold <threshold>");
+     *       cliP.addToParseTree()
+     * @endcode
+     *
      *  @throws if called without creating any custom commands.
      *  @throws if NX CLI Parser rejects the custom commands.
+     *  @throws if NX CLI Parser is busy and not ready. In that case, the onus is on the applications to do retry.
      **/
     virtual void addToParseTree() = 0;
 
     /**
      * Delete all your custom commands from NX CLI Parser Tree.
+     *
      * @note Check "show AppName internal state" if the custom
      *       commands are successfully deleted or not.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
      **/
     virtual void delFromParseTree() = 0;
 
     /**
      * Set the CLI callback handler object when the
      * respective config is executed.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
      **/
     virtual void setCmdHandler(NxCmdHandler *handler) = 0;
 
-    /// Get Parser Status/Errors
+    /**
+     * Get Parser Status/Errors
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     **/
     virtual std::string getParserStatus() = 0;
 
-    /// Get Cli callback handler object
+    /**
+     *  Get Cli callback handler object
+     **/  
     virtual NxCmdHandler *getCmdHandler() = 0;
 
     /**
      * Execute other show commands.
+     *
      * @param[in] show_syntax syntax of show command to be executed.
      * @param[in] type Type(TEXT, XML, JSON) of the record to be returned.
-     * @param[in] oper_result if show output was successful. Returns true
+     *
+     * @param[out] oper_result if show output was successful. Returns true
      *            if show was successful (or) false if its a invalid show command.
-     * @param[out] Char* containing show output in the type format specified.
+     *
+     * @returns Char* containing show output in the type format specified.
      *             It is not thread safe and any subsequent call to execShowCmd
      *             will overwrite the previous output. Hence make a copy
      *             of the output than the pointer if you need to store the
      *             output.
+     *
+     * @code
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       // To execute other show commands
+     *       char *result = cliP->execShowCmd("show version", nxos::R_JSON);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       // To execute other show commands.
+     *       result = cliP.execShowCmd("show version", nx_sdk_py.R_JSON)
+     * @endcode
+     *
      **/
     virtual char *execShowCmd(std::string         show_syntax,
                               nxos::record_type_e type = nxos::R_TEXT,
@@ -645,9 +883,14 @@ public:
 
     /**
      * Execute other config commands in a file.
+     *
      * @param[in] filename File that contains all the config commands to be  executed.
-     * @param[out] char* SUCCESS if config commands were executed successfully
-     *                   if not contains the reason for failure.
+     *
+     * @returns  "SUCCESS" if config commands were executed successfully
+     *            if not contains the reason for failure.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
      *
      * @code
      *  C++:
@@ -673,6 +916,96 @@ public:
      *
      **/
     virtual char *execConfigCmd(const char *filename) = 0;
+
+    /**
+     * Execute other config commands in a file.
+     *
+     * @param[in] filename_cmd  Filename or config command  that contains all
+     *            the config commands to be  executed.
+     *
+     * @param[in] isfilename 'true' if filename_cmd is the name of a file containing
+     *                       commands, or 'false' if filename_cmd is a command
+     *                       string
+     * @returns  "SUCCESS" if config commands were executed successfully, or an
+     *            error string otherwise.
+     *
+     * @details
+     *     Remote - Not Supported (Throws exception if used remotely)
+     *
+     * @code
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       // To apply config commands from a file
+     *       char *result = cliP->execConfigCmd("/tmp/config.cfg");
+     *       // To apply config commands directly from a file
+     *       char *result = clip->execConfigCmd("conf t ; int eth1/1 ; no shut", false);
+     *       if (strcmp(result, "SUCCESS")== 0) {
+     *           // Configs applied successfully.
+     *       } else {
+     *           // Configs failed. Check the Error.
+     *       }
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       // To apply config commands from a file
+     *       result = cliP.execConfigCmd("/tmp/config.cfg")
+     *       // To apply config commands from a file
+     *       result = cliP.execConfigCmd("conf t ; int eth1/1 ; no shut", False) 
+     *       if "SUCCESS" in result:
+     *           #Configs applied successfully.
+     *       else:
+     *           #Configs failed. Check the Error.
+     * @endcode
+     *
+     **/
+    virtual char *execConfigCmd(const char *filename_cmd, bool isfilename) = 0;
+
+    /**
+     * To Create show tech-support for your application.
+     *    For ex) For NX-SDK app: healthMonitor, it creates "show tech-support healthMonitor" command. 
+     *
+     * @param[in] show_cmd_group Optional. List of show commands separated by ; whose 
+     *                           output to be collected on executing show tech-support 
+     *                           for your app.
+     * @param[in] add_internals Optional. To add all the output of auto-generated commands created by NX-SDK
+     *                          to the show tech-support of your app. 
+     *                          For ex) It auto-adds commands like
+     *                                    show version
+     *                                    show running-config <app-name>
+     *                                    show startup-config <app-name>
+     *                                  And also Auto-generated commands like
+     *                                    show <app-name> nxsdk state
+     *                                    show <app-name> nxsdk mem-stats etc
+     * @param[out] err_type_e  SUCCESS if used correctly.
+     *
+     * @since V2.0
+     *
+     * @note
+     *    Internal Use Only. To be used only by internal apps.
+     *    For any other apps it returns ERR_INVALID_USAGE
+     *
+     * @code
+     *  C++:
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       cliP = sdk->getCliParser();
+     *       cliP->addTechSupport("show healthMonitor report ; show healthMonitor report alerts");
+     *       cliP->addToParseTree();
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       cliP = sdk.getCliParser()
+     *       cliP.addTechSupport("show healthMonitor report ; \
+     *                            show healthMonitor report alerts")
+     *       cliP.addToParseTree()
+     * @endcode
+     *
+     * @throws Cannot use this API post addToParseTree i.e after the commands have been added to NX Parser.
+     **/
+    virtual nxos::err_type_e addTechSupport(string show_cmd_group = "", bool add_internals = true) = 0;    
 };
 
 } // namespace nxos

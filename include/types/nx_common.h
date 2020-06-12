@@ -122,7 +122,8 @@ typedef enum {
     NX_TYPE_LOOPBACK,
     NX_TYPE_SUBINTF,
     NX_TYPE_TUNNEL,
-    NX_TYPE_MGMT
+    NX_TYPE_MGMT,
+    NX_TYPE_MAX
 } intf_type_e;
 
 
@@ -144,7 +145,8 @@ typedef enum {
 // Running Environment
 typedef enum {
     BASH, 
-    VSH
+    VSH,
+    REMOTE
 } running_env_e;
 
 }

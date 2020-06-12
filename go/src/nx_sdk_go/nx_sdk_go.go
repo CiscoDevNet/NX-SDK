@@ -35,10 +35,10 @@ typedef _gostring_ swig_type_4;
 typedef _gostring_ swig_type_5;
 typedef _gostring_ swig_type_6;
 typedef _goslice_ swig_type_7;
-typedef _gostring_ swig_type_8;
+typedef _goslice_ swig_type_8;
 typedef _gostring_ swig_type_9;
 typedef _gostring_ swig_type_10;
-typedef _gostring_ swig_type_11;
+typedef _goslice_ swig_type_11;
 typedef _gostring_ swig_type_12;
 typedef _gostring_ swig_type_13;
 typedef _gostring_ swig_type_14;
@@ -83,8 +83,8 @@ typedef _gostring_ swig_type_52;
 typedef _gostring_ swig_type_53;
 typedef _gostring_ swig_type_54;
 typedef _gostring_ swig_type_55;
-typedef long long swig_type_56;
-typedef long long swig_type_57;
+typedef _gostring_ swig_type_56;
+typedef _gostring_ swig_type_57;
 typedef _gostring_ swig_type_58;
 typedef _gostring_ swig_type_59;
 typedef _gostring_ swig_type_60;
@@ -101,8 +101,8 @@ typedef _gostring_ swig_type_70;
 typedef _gostring_ swig_type_71;
 typedef _gostring_ swig_type_72;
 typedef _gostring_ swig_type_73;
-typedef _gostring_ swig_type_74;
-typedef _gostring_ swig_type_75;
+typedef long long swig_type_74;
+typedef long long swig_type_75;
 typedef _gostring_ swig_type_76;
 typedef _gostring_ swig_type_77;
 typedef _gostring_ swig_type_78;
@@ -121,7 +121,7 @@ typedef _gostring_ swig_type_90;
 typedef _gostring_ swig_type_91;
 typedef _gostring_ swig_type_92;
 typedef _gostring_ swig_type_93;
-typedef long long swig_type_94;
+typedef _gostring_ swig_type_94;
 typedef _gostring_ swig_type_95;
 typedef _gostring_ swig_type_96;
 typedef _gostring_ swig_type_97;
@@ -165,7 +165,7 @@ typedef _gostring_ swig_type_134;
 typedef _gostring_ swig_type_135;
 typedef _gostring_ swig_type_136;
 typedef _gostring_ swig_type_137;
-typedef _gostring_ swig_type_138;
+typedef long long swig_type_138;
 typedef _gostring_ swig_type_139;
 typedef _gostring_ swig_type_140;
 typedef _gostring_ swig_type_141;
@@ -213,414 +213,547 @@ typedef _gostring_ swig_type_182;
 typedef _gostring_ swig_type_183;
 typedef _gostring_ swig_type_184;
 typedef _gostring_ swig_type_185;
-extern void _wrap_Swig_free_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_nx_sdk_go_92557035fa796fff(swig_intgo arg1);
-extern swig_intgo _wrap_R_TEXT_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_R_JSON_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_R_XML_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_R_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NO_EVENT_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ADD_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DELETE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_UPDATE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DOWNLOAD_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DOWNLOAD_DONE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_E_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_UNKNOWN_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DOWN_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_UP_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_S_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NONE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_VXLAN_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ENCAP_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_AF_START_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_AF_IPV4_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_AF_IPV6_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_MAX_AF_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_LOW_PRIO_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_MED_PRIO_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_HIGH_PRIO_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NO_PRIO_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_UNKNOWN_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_ETH_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_SVI_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_ETH_PC_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_LOOPBACK_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_SUBINTF_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_TUNNEL_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NX_TYPE_MGMT_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_TYPE_NO_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_TYPE_STATIC_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_TYPE_DYNAMIC_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_TYPE_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_BASH_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_VSH_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_START_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_STRING_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_INTEGER_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_INTERFACE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_IP_ADDR_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_MAC_ADDR_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_VRF_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_P_MAX_TYPE_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_1 arg2);
-extern swig_type_2 _wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern _Bool _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern _Bool _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_delete_NxSdk_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_92557035fa796fff(swig_intgo arg1, swig_type_3 arg2);
-extern void _wrap_NxSdk_setAppDesc_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_4 arg2);
-extern swig_type_5 _wrap_NxSdk_getAppName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_6 _wrap_NxSdk_getAppDesc_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxSdk_getAppId_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getCliParser_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getTracer_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxSdk_startEventLoop_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxSdk_stopEventLoop_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_92557035fa796fff(swig_intgo arg1, swig_type_7 arg2, _Bool arg3);
-extern uintptr_t _wrap_NxSdk_getRibMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxSdk_setAppPriority_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern uintptr_t _wrap_NxSdk_getIntfMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getAdjMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getMacMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxSdk_getDmeMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxSdk_isInEventLoop_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxSdk_getRunningEnv_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_EMERG_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ALERT_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_CTRI_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_WARNING_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_NOTICE_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_INFO_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DEBUG_NxTrace_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxTrace_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxTrace_syslog_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_8 arg3);
-extern void _wrap_NxTrace_event_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_9 arg2);
-extern void _wrap_NxTrace_error_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_10 arg2);
-extern swig_type_11 _wrap_NxTrace_getPrioStr_nx_sdk_go_92557035fa796fff(swig_intgo arg1);
-extern swig_intgo _wrap_CONF_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_MAX_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_CONF_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_MAX_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxCliCmd_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_12 arg2, swig_type_13 arg3);
-extern void _wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_14 arg2, swig_type_15 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7, _Bool arg8, char arg9);
-extern void _wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_16 arg2, swig_type_17 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7, _Bool arg8);
-extern void _wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_18 arg2, swig_type_19 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7);
-extern void _wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_20 arg2, swig_type_21 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6);
-extern void _wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_22 arg2, swig_type_23 arg3, swig_intgo arg4, uintptr_t arg5);
-extern void _wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_24 arg2, swig_type_25 arg3, swig_intgo arg4);
-extern void _wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_26 arg2, swig_type_27 arg3);
-extern void _wrap_NxCliCmd_addTimeout_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_NxCliCmd_addMode_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_NxCliCmd_getCmdType_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxCliCmd_getCmdMode_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_28 _wrap_NxCliCmd_getCmdName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_29 _wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_30 _wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_31 _wrap_NxCliCmd_getCmdErr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxCliCmd_isKeywordSet_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_32 arg2);
-extern swig_intgo _wrap_NxCliCmd_getParamType_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_33 arg2);
-extern uintptr_t _wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_34 arg2, _Bool arg3);
-extern uintptr_t _wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_35 arg2);
-extern swig_intgo _wrap_NxCliCmd_getParamCount_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_36 arg2);
-extern void _wrap_NxCliCmd_printConsole_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_37 arg2);
-extern void _wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_38 arg2, swig_type_39 arg3, _Bool arg4);
-extern uintptr_t _wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t cmd);
-extern void _wrap_delete_NxCmdHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxCmdHandler_postCliCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_new_NxCmdHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxCliParser_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxCliParser_newCliCmd_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_40 arg3, swig_type_41 arg4);
-extern uintptr_t _wrap_NxCliParser_newShowCmd_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_42 arg2, swig_type_43 arg3);
-extern uintptr_t _wrap_NxCliParser_newConfigCmd_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_44 arg2, swig_type_45 arg3);
-extern void _wrap_NxCliParser_addToParseTree_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxCliParser_delFromParseTree_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxCliParser_setCmdHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern swig_type_46 _wrap_NxCliParser_getParserStatus_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxCliParser_getCmdHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_47 _wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_48 arg2, swig_intgo arg3, swig_voidp arg4);
-extern swig_type_49 _wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_50 arg2, swig_intgo arg3);
-extern swig_type_51 _wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_52 arg2);
-extern swig_type_53 _wrap_NxCliParser_execConfigCmd_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_54 arg2);
-extern void _wrap_delete_NxVrf_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_55 _wrap_NxVrf_getName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_56 _wrap_NxVrf_getId_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_57 _wrap_NxVrf_getTableId_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_NxVrf_getState_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxVrf_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxVrf_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern swig_intgo _wrap_ATTACHED_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_LOCAL_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DIRECT_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_BACKUP_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DROP_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_DISCARD_NxL3NextHop_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxL3NextHop_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_58 _wrap_NxL3NextHop_getAddress_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_59 _wrap_NxL3NextHop_getOutInterface_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_60 _wrap_NxL3NextHop_getVrfName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_61 _wrap_NxL3NextHop_getOwner_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getPreference_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getMetric_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getTag_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getSegmentId_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getTunnelId_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3NextHop_getEncapType_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxL3NextHop_checkType_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_delete_NxL3Route_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_62 _wrap_NxL3Route_getVrfName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_63 _wrap_NxL3Route_getAddress_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3Route_getMaskLen_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_64 arg2);
-extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxL3Route_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxL3Route_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t route);
-extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t vrf);
-extern void _wrap_delete_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_new_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxRibMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_65 arg2, _Bool arg3);
-extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_66 arg2);
-extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_67 arg2);
-extern _Bool _wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_68 arg2);
-extern void _wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_69 arg2, char arg3, swig_type_70 arg4, _Bool arg5);
-extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_71 arg2, char arg3, swig_type_72 arg4);
-extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_73 arg2, char arg3);
-extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_74 arg2);
-extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_75 arg2, swig_type_76 arg3, swig_type_77 arg4, swig_intgo arg5);
-extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_78 arg2, swig_type_79 arg3, swig_type_80 arg4);
-extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_81 arg2, swig_type_82 arg3);
-extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_83 arg2);
-extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_84 arg2, swig_type_85 arg3, swig_type_86 arg4, swig_intgo arg5);
-extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_87 arg2, swig_type_88 arg3, swig_type_89 arg4);
-extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_90 arg2, swig_type_91 arg3);
-extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_92 arg2);
-extern void _wrap_delete_NxException_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_93 _wrap_NxException_what_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_94 _wrap_NxException_getErrCode_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_95 _wrap_NxException_getErrModule_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern short _wrap_NxException_getErrSeverity_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_96 _wrap_NxException_getErrApi_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_ERR_ESUCCESS_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_INVALID_USAGE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_INVALID_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_NULL_PTR_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_NOT_FOUND_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_EXISTS_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_EMPTY_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_MAX_LIMIT_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_FAILURE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_ESUCCESS_MORE_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_SIGINT_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_ENOMEM_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_BADFD_nx_sdk_go_92557035fa796fff(void);
-extern swig_intgo _wrap_ERR_UNKNOWN_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxIntf_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_97 _wrap_NxIntf_getName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_98 _wrap_NxIntf_getLayer_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getType_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_99 _wrap_NxIntf_getVrf_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_100 _wrap_NxIntf_getVlan_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_101 _wrap_NxIntf_getDescription_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_102 _wrap_NxIntf_getL3PrAddr_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_type_103 _wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, _Bool arg3);
-extern swig_type_104 _wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern swig_type_105 _wrap_NxIntf_getL2Address_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_106 _wrap_NxIntf_getL2AddressHW_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getAdminState_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getOperState_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getMtu_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getSpeed_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getMemberCount_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_107 _wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern swig_type_108 _wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxIntf_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_109 _wrap_NxIntf_getLastMod_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxIntf_setLayer_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_110 arg2);
-extern _Bool _wrap_NxIntf_setVrf_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_111 arg2);
-extern _Bool _wrap_NxIntf_setVlan_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern _Bool _wrap_NxIntf_setDescription_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_112 arg2);
-extern _Bool _wrap_NxIntf_setL3Address_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_113 arg2, swig_intgo arg3, _Bool arg4);
-extern _Bool _wrap_NxIntf_setL2Address_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_114 arg2);
-extern _Bool _wrap_NxIntf_setAdminState_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern _Bool _wrap_NxIntf_setMtu_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern _Bool _wrap_NxIntf_setSpeed_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern _Bool _wrap_NxIntf_addMember_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_115 arg2);
-extern _Bool _wrap_NxIntf_delMember_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_116 arg2);
-extern _Bool _wrap_NxIntf_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t obj);
-extern void _wrap_delete_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern _Bool _wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_new_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxIntfMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern uintptr_t _wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxIntfMgr_getIntf_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_117 arg2);
-extern _Bool _wrap_NxIntfMgr_getIntfAll_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxIntfMgr_addIntf_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_118 arg2);
-extern _Bool _wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_119 arg2, _Bool arg3);
-extern _Bool _wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_120 arg2);
-extern _Bool _wrap_NxIntfMgr_watchIntf_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_121 arg2);
-extern _Bool _wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_122 arg2);
-extern void _wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_delete_NxDme_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_123 _wrap_NxDme_getDn_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxDme_setProperty_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_124 arg2, swig_type_125 arg3, swig_voidp arg4);
-extern swig_type_126 _wrap_NxDme_getProperty_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_127 arg2, swig_voidp arg3);
-extern swig_type_128 _wrap_NxDme_commit_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_voidp arg2);
-extern swig_type_129 _wrap_NxDme_getDataJson_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_130 _wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern swig_type_131 _wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxDme_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_132 arg2);
-extern swig_type_133 _wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern swig_type_134 _wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxDme_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t objp);
-extern void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(uintptr_t, swig_type_135 dn);
-extern void _wrap_delete_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern void _wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_135 arg2);
-extern uintptr_t _wrap_new_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxDmeMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxDmeMgr_getDmeObj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_136 arg2);
-extern uintptr_t _wrap_NxDmeMgr_addDmeObj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_137 arg2, swig_voidp arg3);
-extern swig_intgo _wrap_NxDmeMgr_delDmeObj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_138 arg2);
-extern swig_type_139 _wrap_NxDmeMgr_getMoJson_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_140 arg2, swig_voidp arg3);
-extern swig_type_141 _wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_142 arg2, swig_voidp arg3);
-extern _Bool _wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_143 arg2);
-extern _Bool _wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_144 arg2, swig_type_145 arg3, _Bool arg4);
-extern _Bool _wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_146 arg2, swig_type_147 arg3);
-extern _Bool _wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_148 arg2);
-extern _Bool _wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_149 arg2, swig_type_150 arg3);
-extern _Bool _wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_151 arg2);
-extern _Bool _wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_delete_NxAdj_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_152 _wrap_NxAdj_getIpAddr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_153 _wrap_NxAdj_getMacAddr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_154 _wrap_NxAdj_getVrf_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_155 _wrap_NxAdj_getIntfName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_156 _wrap_NxAdj_getPhyIntfName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxAdj_getPreference_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_157 _wrap_NxAdj_getSource_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxAdj_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxAdj_getAF_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxAdj_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t adj_obj);
-extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(uintptr_t, swig_type_158 intfName, swig_type_159 ipv4_addr);
-extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(uintptr_t, swig_type_160 intfName, swig_type_161 ipv6_addr);
-extern void _wrap_delete_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern void _wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_158 arg2, swig_type_159 arg3);
-extern void _wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_160 arg2, swig_type_161 arg3);
-extern uintptr_t _wrap_new_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxAdjMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxAdjMgr_getAdj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_162 arg2, swig_type_163 arg3);
-extern _Bool _wrap_NxAdjMgr_discoverAdj_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_164 arg2, swig_type_165 arg3);
-extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, _Bool arg3);
-extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_166 arg2, swig_intgo arg3, _Bool arg4, swig_type_167 arg5);
-extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_168 arg2, swig_intgo arg3, _Bool arg4);
-extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_169 arg2, swig_intgo arg3);
-extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_170 arg2);
-extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_171 arg2, swig_intgo arg3, swig_type_172 arg4);
-extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_173 arg2, swig_intgo arg3);
-extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_174 arg2);
-extern void _wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern void _wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern uintptr_t _wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern void _wrap_delete_NxMac_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_175 _wrap_NxMac_getMacAddress_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxMac_getType_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxMac_getVlan_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_type_176 _wrap_NxMac_getIntfName_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern swig_intgo _wrap_NxMac_getEvent_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxMac_equal_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_92557035fa796fff(int);
-extern void _wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_92557035fa796fff(uintptr_t, uintptr_t mac_obj);
-extern void _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(uintptr_t, swig_intgo id, swig_type_177 macaddr);
-extern void _wrap_delete_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern void _wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_177 arg3);
-extern uintptr_t _wrap_new_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(void);
-extern void _wrap_delete_NxMacMgr_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxMacMgr_addStaticMac_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_178 arg2, swig_intgo arg3, swig_type_179 arg4);
-extern _Bool _wrap_NxMacMgr_delStaticMac_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_180 arg2, swig_intgo arg3);
-extern uintptr_t _wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_181 arg2, swig_intgo arg3, _Bool arg4);
-extern uintptr_t _wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_type_182 arg2, swig_intgo arg3);
-extern _Bool _wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, _Bool arg2);
-extern _Bool _wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
-extern _Bool _wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_183 arg3, _Bool arg4);
-extern _Bool _wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_184 arg3);
-extern _Bool _wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern _Bool _wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2, swig_type_185 arg3);
-extern _Bool _wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_92557035fa796fff(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_92557035fa796fff(uintptr_t arg1);
+typedef _gostring_ swig_type_186;
+typedef _gostring_ swig_type_187;
+typedef _gostring_ swig_type_188;
+typedef _gostring_ swig_type_189;
+typedef _gostring_ swig_type_190;
+typedef _gostring_ swig_type_191;
+typedef _gostring_ swig_type_192;
+typedef _gostring_ swig_type_193;
+typedef _gostring_ swig_type_194;
+typedef _gostring_ swig_type_195;
+typedef _gostring_ swig_type_196;
+typedef _gostring_ swig_type_197;
+typedef _gostring_ swig_type_198;
+typedef _gostring_ swig_type_199;
+typedef _gostring_ swig_type_200;
+typedef _gostring_ swig_type_201;
+typedef _gostring_ swig_type_202;
+typedef _gostring_ swig_type_203;
+typedef _gostring_ swig_type_204;
+typedef _gostring_ swig_type_205;
+typedef _gostring_ swig_type_206;
+typedef _gostring_ swig_type_207;
+typedef _gostring_ swig_type_208;
+typedef _gostring_ swig_type_209;
+typedef _gostring_ swig_type_210;
+typedef _gostring_ swig_type_211;
+typedef _gostring_ swig_type_212;
+typedef _gostring_ swig_type_213;
+typedef _gostring_ swig_type_214;
+typedef _gostring_ swig_type_215;
+typedef _gostring_ swig_type_216;
+typedef _gostring_ swig_type_217;
+typedef _gostring_ swig_type_218;
+typedef _gostring_ swig_type_219;
+typedef _gostring_ swig_type_220;
+typedef _gostring_ swig_type_221;
+typedef _gostring_ swig_type_222;
+typedef _gostring_ swig_type_223;
+typedef _gostring_ swig_type_224;
+typedef _gostring_ swig_type_225;
+typedef _gostring_ swig_type_226;
+typedef _gostring_ swig_type_227;
+typedef _gostring_ swig_type_228;
+typedef _gostring_ swig_type_229;
+typedef _gostring_ swig_type_230;
+typedef _gostring_ swig_type_231;
+typedef _gostring_ swig_type_232;
+typedef _gostring_ swig_type_233;
+typedef _gostring_ swig_type_234;
+extern void _wrap_Swig_free_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1);
+extern swig_intgo _wrap_R_TEXT_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_R_JSON_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_R_XML_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_R_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NO_EVENT_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ADD_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DELETE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_UPDATE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DOWNLOAD_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DOWNLOAD_DONE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_E_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_UNKNOWN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DOWN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_UP_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_S_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NONE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_VXLAN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ENCAP_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_AF_START_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_AF_IPV4_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_AF_IPV6_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_MAX_AF_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_LOW_PRIO_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_MED_PRIO_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_HIGH_PRIO_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NO_PRIO_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_UNKNOWN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_ETH_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_SVI_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_ETH_PC_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_LOOPBACK_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_SUBINTF_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_TUNNEL_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_MGMT_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NX_TYPE_MAX_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_TYPE_NO_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_TYPE_STATIC_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_TYPE_DYNAMIC_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_TYPE_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_BASH_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_VSH_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_REMOTE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_START_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_STRING_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_INTEGER_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_INTERFACE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_IP_ADDR_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_MAC_ADDR_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_VRF_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_P_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_1 arg2);
+extern swig_type_2 _wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern _Bool _wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern _Bool _wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxSdk_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1, swig_type_3 arg2);
+extern void _wrap_NxSdk_setAppDesc_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_4 arg2);
+extern swig_type_5 _wrap_NxSdk_getAppName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_6 _wrap_NxSdk_getAppDesc_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSdk_getAppId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getCliParser_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getTracer_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdk_startEventLoop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdk_stopEventLoop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1, swig_type_7 arg2, _Bool arg3);
+extern uintptr_t _wrap_NxSdk_getRibMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdk_setAppPriority_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern uintptr_t _wrap_NxSdk_getIntfMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getAdjMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getMacMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getDmeMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxSdk_isInEventLoop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSdk_getRunningEnv_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_2_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1, swig_type_8 arg2, _Bool arg3, swig_type_9 arg4, swig_intgo arg5);
+extern swig_type_10 _wrap_NxSdk_getRemoteIp_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSdk_getRemotePort_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSdk_getRemoteConnStatus_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdk_purgeAllSdkObjs_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdk_setSdkHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxSdk_unsetSdkHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getSdkHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxSdk_getSdkInst__SWIG_3_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1, swig_type_11 arg2, _Bool arg3, swig_type_12 arg4, swig_intgo arg5, swig_type_13 arg6);
+extern swig_type_14 _wrap_NxSdk_getNxSdkVersion_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_15 _wrap_NxSdk_getRemoteClientNxSdkVersion_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap__swig_NewDirectorNxSdkHandlerNxSdkHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxSdkHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t sdk);
+extern void _wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t sdk);
+extern void _wrap_delete_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxSdkHandler_postRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxSdkHandler_postRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_new_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxSyslog_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSyslog_getId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_16 _wrap_NxSyslog_getNodeName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_17 _wrap_NxSyslog_getTimeStamp_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxSyslog_getSeverity_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_18 _wrap_NxSyslog_getMessageName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_19 _wrap_NxSyslog_getCategory_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_20 _wrap_NxSyslog_getText_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_21 _wrap_NxSyslog_getTimeZone_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap__swig_NewDirectorNxTraceHandlerNxTraceHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxTraceHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t syslog);
+extern void _wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t);
+extern void _wrap_delete_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxTraceHandler_postSyslogCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxTraceHandler_postSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_new_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_EMERG_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ALERT_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_CTRI_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_WARNING_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_NOTICE_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_INFO_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DEBUG_NxTrace_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxTrace_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxTrace_syslog_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_22 arg3);
+extern void _wrap_NxTrace_event_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_23 arg2);
+extern void _wrap_NxTrace_error_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_24 arg2);
+extern swig_type_25 _wrap_NxTrace_getPrioStr_nx_sdk_go_c22a77a7a4f02419(swig_intgo arg1);
+extern _Bool _wrap_NxTrace_watchSyslog__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern _Bool _wrap_NxTrace_watchSyslog__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxTrace_unwatchSyslog_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxTrace_setTraceHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxTrace_getTraceHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_CONF_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_MAX_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_CONF_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_MAX_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_26 arg2, swig_type_27 arg3);
+extern void _wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_28 arg2, swig_type_29 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7, _Bool arg8, char arg9);
+extern void _wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_30 arg2, swig_type_31 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7, _Bool arg8);
+extern void _wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_32 arg2, swig_type_33 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6, _Bool arg7);
+extern void _wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_34 arg2, swig_type_35 arg3, swig_intgo arg4, uintptr_t arg5, swig_intgo arg6);
+extern void _wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_36 arg2, swig_type_37 arg3, swig_intgo arg4, uintptr_t arg5);
+extern void _wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_38 arg2, swig_type_39 arg3, swig_intgo arg4);
+extern void _wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_40 arg2, swig_type_41 arg3);
+extern void _wrap_NxCliCmd_addTimeout_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_NxCliCmd_addMode_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_NxCliCmd_getCmdType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxCliCmd_getCmdMode_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_42 _wrap_NxCliCmd_getCmdName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_43 _wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_44 _wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_45 _wrap_NxCliCmd_getCmdErr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxCliCmd_isKeywordSet_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_46 arg2);
+extern swig_intgo _wrap_NxCliCmd_getParamType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_47 arg2);
+extern uintptr_t _wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_48 arg2, _Bool arg3);
+extern uintptr_t _wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_49 arg2);
+extern swig_intgo _wrap_NxCliCmd_getParamCount_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_50 arg2);
+extern void _wrap_NxCliCmd_printConsole_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_51 arg2);
+extern void _wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_52 arg2, swig_type_53 arg3, _Bool arg4);
+extern swig_intgo _wrap_NxCliCmd_showCliOutFormat_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t cmd);
+extern void _wrap_delete_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxCmdHandler_postCliCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_new_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxCliParser_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxCliParser_newCliCmd_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_54 arg3, swig_type_55 arg4);
+extern uintptr_t _wrap_NxCliParser_newShowCmd_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_56 arg2, swig_type_57 arg3);
+extern uintptr_t _wrap_NxCliParser_newConfigCmd_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_58 arg2, swig_type_59 arg3);
+extern void _wrap_NxCliParser_addToParseTree_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxCliParser_delFromParseTree_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxCliParser_setCmdHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern swig_type_60 _wrap_NxCliParser_getParserStatus_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxCliParser_getCmdHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_61 _wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_62 arg2, swig_intgo arg3, swig_voidp arg4);
+extern swig_type_63 _wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_64 arg2, swig_intgo arg3);
+extern swig_type_65 _wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_66 arg2);
+extern swig_type_67 _wrap_NxCliParser_execConfigCmd__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_68 arg2);
+extern swig_type_69 _wrap_NxCliParser_execConfigCmd__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_70 arg2, _Bool arg3);
+extern swig_intgo _wrap_NxCliParser_addTechSupport__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_71 arg2, _Bool arg3);
+extern swig_intgo _wrap_NxCliParser_addTechSupport__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_72 arg2);
+extern swig_intgo _wrap_NxCliParser_addTechSupport__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxVrf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_73 _wrap_NxVrf_getName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_74 _wrap_NxVrf_getId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_75 _wrap_NxVrf_getTableId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_NxVrf_getState_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxVrf_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxVrf_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern swig_intgo _wrap_ATTACHED_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_LOCAL_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DIRECT_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_BACKUP_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DROP_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_DISCARD_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_76 _wrap_NxL3NextHop_getAddress_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_77 _wrap_NxL3NextHop_getOutInterface_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_78 _wrap_NxL3NextHop_getVrfName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_79 _wrap_NxL3NextHop_getOwner_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getPreference_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getMetric_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getTag_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getSegmentId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getTunnelId_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3NextHop_getEncapType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxL3NextHop_checkType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_delete_NxL3Route_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_80 _wrap_NxL3Route_getVrfName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_81 _wrap_NxL3Route_getAddress_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3Route_getMaskLen_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_82 arg2, swig_type_83 arg3);
+extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_84 arg2);
+extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern uintptr_t _wrap_NxL3Route_getL3NextHop__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxL3Route_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxL3Route_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxL3Route_addL3DirectNextHop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_85 arg2, swig_type_86 arg3, char arg4);
+extern uintptr_t _wrap_NxL3Route_addL3RecursiveNextHop_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_87 arg2, char arg3);
+extern _Bool _wrap_NxL3Route_delL3NextHop__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_88 arg2, swig_type_89 arg3);
+extern _Bool _wrap_NxL3Route_delL3NextHop__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_90 arg2);
+extern swig_type_91 _wrap_NxL3Route_getL3Prefix_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t route);
+extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t vrf);
+extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t rnhRoute, _Bool isResolved);
+extern _Bool _wrap__swig_DirectorNxRibMgrHandler_upcall_PostMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t route);
+extern void _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_type_92 vrfName, swig_type_93 routeAddress, char maskLen);
+extern void _wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_type_94 vrfName, swig_type_95 routeAddress);
+extern void _wrap_delete_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxRibMgrHandler_postL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2, _Bool arg3);
+extern _Bool _wrap_NxRibMgrHandler_postMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_92 arg2, swig_type_93 arg3, char arg4);
+extern void _wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_94 arg2, swig_type_95 arg3);
+extern uintptr_t _wrap_new_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxRibMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_96 arg2, _Bool arg3);
+extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_97 arg2);
+extern uintptr_t _wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_98 arg2);
+extern _Bool _wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_99 arg2);
+extern void _wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_100 arg2, char arg3, swig_type_101 arg4, _Bool arg5);
+extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_102 arg2, char arg3, swig_type_103 arg4);
+extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_104 arg2, char arg3);
+extern uintptr_t _wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_105 arg2);
+extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_106 arg2, swig_type_107 arg3, swig_type_108 arg4, swig_intgo arg5);
+extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_109 arg2, swig_type_110 arg3, swig_type_111 arg4);
+extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_112 arg2, swig_type_113 arg3);
+extern _Bool _wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_114 arg2);
+extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_115 arg2, swig_type_116 arg3, swig_type_117 arg4, swig_intgo arg5);
+extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_118 arg2, swig_type_119 arg3, swig_type_120 arg4);
+extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_121 arg2, swig_type_122 arg3);
+extern void _wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_123 arg2);
+extern uintptr_t _wrap_NxRibMgr_getL3RouteDetail__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_124 arg2, swig_intgo arg3, swig_type_125 arg4);
+extern uintptr_t _wrap_NxRibMgr_getL3RouteDetail__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_126 arg2, swig_intgo arg3);
+extern uintptr_t _wrap_NxRibMgr_getL3RouteDetail__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_127 arg2);
+extern uintptr_t _wrap_NxRibMgr_addL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_128 arg2, char arg3, swig_type_129 arg4);
+extern uintptr_t _wrap_NxRibMgr_addL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_130 arg2, char arg3);
+extern uintptr_t _wrap_NxRibMgr_addL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_131 arg2);
+extern _Bool _wrap_NxRibMgr_delL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_132 arg2, char arg3, swig_type_133 arg4);
+extern _Bool _wrap_NxRibMgr_delL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_134 arg2, char arg3);
+extern _Bool _wrap_NxRibMgr_delL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_135 arg2);
+extern _Bool _wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxRibMgr_converged__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_136 arg3);
+extern _Bool _wrap_NxRibMgr_converged__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxRibMgr_converged__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxException_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_137 _wrap_NxException_what_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_138 _wrap_NxException_getErrCode_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_139 _wrap_NxException_getErrModule_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern short _wrap_NxException_getErrSeverity_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_140 _wrap_NxException_getErrApi_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_ERR_ESUCCESS_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_INVALID_USAGE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_INVALID_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_NULL_PTR_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_NOT_FOUND_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_EXISTS_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_EMPTY_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_MAX_LIMIT_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_FAILURE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_ESUCCESS_MORE_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_SIGINT_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_ENOMEM_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_BADFD_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_UNKNOWN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_REMOTE_DOWN_nx_sdk_go_c22a77a7a4f02419(void);
+extern swig_intgo _wrap_ERR_REMOTE_SDK_OBJS_OBSOLETE_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxIntf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_141 _wrap_NxIntf_getName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_142 _wrap_NxIntf_getLayer_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_143 _wrap_NxIntf_getVrf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_144 _wrap_NxIntf_getVlan_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_145 _wrap_NxIntf_getDescription_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_146 _wrap_NxIntf_getL3PrAddr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_type_147 _wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, _Bool arg3);
+extern swig_type_148 _wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern swig_type_149 _wrap_NxIntf_getL2Address_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_150 _wrap_NxIntf_getL2AddressHW_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getAdminState_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getOperState_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getMtu_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getSpeed_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getMemberCount_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_151 _wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern swig_type_152 _wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxIntf_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_153 _wrap_NxIntf_getLastMod_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxIntf_setLayer_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_154 arg2);
+extern _Bool _wrap_NxIntf_setVrf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_155 arg2);
+extern _Bool _wrap_NxIntf_setVlan_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxIntf_setDescription_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_156 arg2);
+extern _Bool _wrap_NxIntf_setL3Address_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_157 arg2, swig_intgo arg3, _Bool arg4);
+extern _Bool _wrap_NxIntf_setL2Address_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_158 arg2);
+extern _Bool _wrap_NxIntf_setAdminState_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxIntf_setMtu_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxIntf_setSpeed_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxIntf_addMember_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_159 arg2);
+extern _Bool _wrap_NxIntf_delMember_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_160 arg2);
+extern _Bool _wrap_NxIntf_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern _Bool _wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t obj);
+extern void _wrap_delete_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_new_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxIntfMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern uintptr_t _wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxIntfMgr_getIntf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_161 arg2);
+extern _Bool _wrap_NxIntfMgr_getIntfAll_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxIntfMgr_addIntf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_162 arg2);
+extern _Bool _wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_163 arg2, _Bool arg3);
+extern _Bool _wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_164 arg2);
+extern _Bool _wrap_NxIntfMgr_watchIntf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_165 arg2);
+extern _Bool _wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_166 arg2);
+extern void _wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxDme_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_167 _wrap_NxDme_getDn_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxDme_setProperty_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_168 arg2, swig_type_169 arg3, swig_voidp arg4);
+extern swig_type_170 _wrap_NxDme_getProperty_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_171 arg2, swig_voidp arg3);
+extern swig_type_172 _wrap_NxDme_commit_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_voidp arg2);
+extern swig_type_173 _wrap_NxDme_getDataJson_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_174 _wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern swig_type_175 _wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxDme_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_176 arg2);
+extern swig_type_177 _wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern swig_type_178 _wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxDme_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern swig_intgo _wrap_NxDme_getChildrenDmeObjCount_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_179 _wrap_NxDme_iterateChildrenDmeDn__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern swig_type_180 _wrap_NxDme_iterateChildrenDmeDn__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxDme_isModified_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_181 _wrap_NxDme_getEventPropertyValue_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_182 arg2, swig_voidp arg3);
+extern uintptr_t _wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t objp);
+extern void _wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_type_183 dn);
+extern void _wrap_delete_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_183 arg2);
+extern uintptr_t _wrap_new_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxDmeMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxDmeMgr_getDmeObj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_184 arg2, _Bool arg3);
+extern uintptr_t _wrap_NxDmeMgr_getDmeObj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_185 arg2);
+extern uintptr_t _wrap_NxDmeMgr_addDmeObj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_186 arg2, swig_voidp arg3);
+extern swig_intgo _wrap_NxDmeMgr_delDmeObj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_187 arg2);
+extern swig_type_188 _wrap_NxDmeMgr_getMoJson_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_189 arg2, swig_voidp arg3);
+extern swig_type_190 _wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_191 arg2, swig_voidp arg3);
+extern _Bool _wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_192 arg2);
+extern _Bool _wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_193 arg2, swig_type_194 arg3, _Bool arg4);
+extern _Bool _wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_195 arg2, swig_type_196 arg3);
+extern _Bool _wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_197 arg2);
+extern _Bool _wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_198 arg2, swig_type_199 arg3);
+extern _Bool _wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_200 arg2);
+extern _Bool _wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxAdj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_201 _wrap_NxAdj_getIpAddr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_202 _wrap_NxAdj_getMacAddr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_203 _wrap_NxAdj_getVrf_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_204 _wrap_NxAdj_getIntfName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_205 _wrap_NxAdj_getPhyIntfName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxAdj_getPreference_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_206 _wrap_NxAdj_getSource_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxAdj_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxAdj_getAF_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxAdj_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t adj_obj);
+extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_type_207 intfName, swig_type_208 ipv4_addr);
+extern void _wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_type_209 intfName, swig_type_210 ipv6_addr);
+extern void _wrap_delete_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_207 arg2, swig_type_208 arg3);
+extern void _wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_209 arg2, swig_type_210 arg3);
+extern uintptr_t _wrap_new_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxAdjMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxAdjMgr_getAdj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_211 arg2, swig_type_212 arg3);
+extern _Bool _wrap_NxAdjMgr_discoverAdj_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_213 arg2, swig_type_214 arg3);
+extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, _Bool arg3);
+extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_215 arg2, swig_intgo arg3, _Bool arg4, swig_type_216 arg5);
+extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_217 arg2, swig_intgo arg3, _Bool arg4);
+extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_218 arg2, swig_intgo arg3);
+extern _Bool _wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_219 arg2);
+extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_220 arg2, swig_intgo arg3, swig_type_221 arg4);
+extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_222 arg2, swig_intgo arg3);
+extern _Bool _wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_223 arg2);
+extern void _wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern uintptr_t _wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern void _wrap_delete_NxMac_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_224 _wrap_NxMac_getMacAddress_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxMac_getType_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxMac_getVlan_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_type_225 _wrap_NxMac_getIntfName_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern swig_intgo _wrap_NxMac_getEvent_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxMac_equal_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(int);
+extern void _wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, uintptr_t mac_obj);
+extern void _wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t, swig_intgo id, swig_type_226 macaddr);
+extern void _wrap_delete_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_226 arg3);
+extern uintptr_t _wrap_new_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(void);
+extern void _wrap_delete_NxMacMgr_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxMacMgr_addStaticMac_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_227 arg2, swig_intgo arg3, swig_type_228 arg4);
+extern _Bool _wrap_NxMacMgr_delStaticMac_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_229 arg2, swig_intgo arg3);
+extern uintptr_t _wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_230 arg2, swig_intgo arg3, _Bool arg4);
+extern uintptr_t _wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_type_231 arg2, swig_intgo arg3);
+extern _Bool _wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, _Bool arg2);
+extern _Bool _wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
+extern _Bool _wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_232 arg3, _Bool arg4);
+extern _Bool _wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_233 arg3);
+extern _Bool _wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern _Bool _wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2, swig_type_234 arg3);
+extern _Bool _wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(uintptr_t arg1);
 #undef intgo
 */
 import "C"
@@ -656,41 +789,41 @@ func swigCopyString(s string) string {
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_nx_sdk_go_92557035fa796fff(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0)))
 	return swig_r
 }
 
 type NxosRecord_type_e int
 func _swig_getR_TEXT() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_R_TEXT_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_R_TEXT_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var R_TEXT int = _swig_getR_TEXT()
 func _swig_getR_JSON() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_R_JSON_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_R_JSON_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var R_JSON int = _swig_getR_JSON()
 func _swig_getR_XML() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_R_XML_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_R_XML_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var R_XML int = _swig_getR_XML()
 func _swig_getR_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_R_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_R_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -698,49 +831,49 @@ var R_MAX_TYPE int = _swig_getR_MAX_TYPE()
 type NxosEvent_type_e int
 func _swig_getNO_EVENT() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NO_EVENT_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NO_EVENT_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NO_EVENT int = _swig_getNO_EVENT()
 func _swig_getADD() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ADD_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ADD_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ADD int = _swig_getADD()
 func _swig_getDELETE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DELETE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DELETE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var DELETE int = _swig_getDELETE()
 func _swig_getUPDATE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_UPDATE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_UPDATE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var UPDATE int = _swig_getUPDATE()
 func _swig_getDOWNLOAD() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DOWNLOAD_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DOWNLOAD_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var DOWNLOAD int = _swig_getDOWNLOAD()
 func _swig_getDOWNLOAD_DONE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DOWNLOAD_DONE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DOWNLOAD_DONE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var DOWNLOAD_DONE int = _swig_getDOWNLOAD_DONE()
 func _swig_getE_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_E_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_E_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -748,28 +881,28 @@ var E_MAX_TYPE int = _swig_getE_MAX_TYPE()
 type NxosState_type_e int
 func _swig_getUNKNOWN() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_UNKNOWN_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_UNKNOWN_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var UNKNOWN int = _swig_getUNKNOWN()
 func _swig_getDOWN() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DOWN_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DOWN_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var DOWN int = _swig_getDOWN()
 func _swig_getUP() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_UP_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_UP_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var UP int = _swig_getUP()
 func _swig_getS_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_S_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_S_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -777,21 +910,21 @@ var S_MAX_TYPE int = _swig_getS_MAX_TYPE()
 type NxosEncap_type_e int
 func _swig_getNONE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NONE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NONE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NONE int = _swig_getNONE()
 func _swig_getVXLAN() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_VXLAN_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_VXLAN_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var VXLAN int = _swig_getVXLAN()
 func _swig_getENCAP_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ENCAP_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ENCAP_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -799,28 +932,28 @@ var ENCAP_MAX_TYPE int = _swig_getENCAP_MAX_TYPE()
 type NxosAf_e int
 func _swig_getAF_START() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_AF_START_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_AF_START_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var AF_START int = _swig_getAF_START()
 func _swig_getAF_IPV4() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_AF_IPV4_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_AF_IPV4_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var AF_IPV4 int = _swig_getAF_IPV4()
 func _swig_getAF_IPV6() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_AF_IPV6_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_AF_IPV6_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var AF_IPV6 int = _swig_getAF_IPV6()
 func _swig_getMAX_AF() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_MAX_AF_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_MAX_AF_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -828,28 +961,28 @@ var MAX_AF int = _swig_getMAX_AF()
 type NxosPrio_e int
 func _swig_getLOW_PRIO() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_LOW_PRIO_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_LOW_PRIO_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var LOW_PRIO int = _swig_getLOW_PRIO()
 func _swig_getMED_PRIO() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_MED_PRIO_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_MED_PRIO_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var MED_PRIO int = _swig_getMED_PRIO()
 func _swig_getHIGH_PRIO() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_HIGH_PRIO_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_HIGH_PRIO_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var HIGH_PRIO int = _swig_getHIGH_PRIO()
 func _swig_getNO_PRIO() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NO_PRIO_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NO_PRIO_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -857,85 +990,92 @@ var NO_PRIO int = _swig_getNO_PRIO()
 type NxosIntf_type_e int
 func _swig_getNX_TYPE_UNKNOWN() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_UNKNOWN_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_UNKNOWN_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_UNKNOWN int = _swig_getNX_TYPE_UNKNOWN()
 func _swig_getNX_TYPE_ETH() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_ETH_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_ETH_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_ETH int = _swig_getNX_TYPE_ETH()
 func _swig_getNX_TYPE_SVI() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_SVI_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_SVI_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_SVI int = _swig_getNX_TYPE_SVI()
 func _swig_getNX_TYPE_ETH_PC() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_ETH_PC_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_ETH_PC_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_ETH_PC int = _swig_getNX_TYPE_ETH_PC()
 func _swig_getNX_TYPE_LOOPBACK() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_LOOPBACK_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_LOOPBACK_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_LOOPBACK int = _swig_getNX_TYPE_LOOPBACK()
 func _swig_getNX_TYPE_SUBINTF() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_SUBINTF_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_SUBINTF_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_SUBINTF int = _swig_getNX_TYPE_SUBINTF()
 func _swig_getNX_TYPE_TUNNEL() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_TUNNEL_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_TUNNEL_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_TUNNEL int = _swig_getNX_TYPE_TUNNEL()
 func _swig_getNX_TYPE_MGMT() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NX_TYPE_MGMT_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NX_TYPE_MGMT_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NX_TYPE_MGMT int = _swig_getNX_TYPE_MGMT()
+func _swig_getNX_TYPE_MAX() (_swig_ret int) {
+	var swig_r int
+	swig_r = (int)(C._wrap_NX_TYPE_MAX_nx_sdk_go_c22a77a7a4f02419())
+	return swig_r
+}
+
+var NX_TYPE_MAX int = _swig_getNX_TYPE_MAX()
 type NxosType_e int
 func _swig_getTYPE_NO_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_TYPE_NO_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_TYPE_NO_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var TYPE_NO_TYPE int = _swig_getTYPE_NO_TYPE()
 func _swig_getTYPE_STATIC() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_TYPE_STATIC_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_TYPE_STATIC_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var TYPE_STATIC int = _swig_getTYPE_STATIC()
 func _swig_getTYPE_DYNAMIC() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_TYPE_DYNAMIC_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_TYPE_DYNAMIC_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var TYPE_DYNAMIC int = _swig_getTYPE_DYNAMIC()
 func _swig_getTYPE_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_TYPE_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_TYPE_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -943,71 +1083,78 @@ var TYPE_MAX_TYPE int = _swig_getTYPE_MAX_TYPE()
 type NxosRunning_env_e int
 func _swig_getBASH() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_BASH_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_BASH_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var BASH int = _swig_getBASH()
 func _swig_getVSH() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_VSH_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_VSH_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var VSH int = _swig_getVSH()
+func _swig_getREMOTE() (_swig_ret int) {
+	var swig_r int
+	swig_r = (int)(C._wrap_REMOTE_nx_sdk_go_c22a77a7a4f02419())
+	return swig_r
+}
+
+var REMOTE int = _swig_getREMOTE()
 type NxosParam_type_e int
 func _swig_getP_START_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_START_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_START_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_START_TYPE int = _swig_getP_START_TYPE()
 func _swig_getP_STRING() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_STRING_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_STRING_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_STRING int = _swig_getP_STRING()
 func _swig_getP_INTEGER() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_INTEGER_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_INTEGER_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_INTEGER int = _swig_getP_INTEGER()
 func _swig_getP_INTERFACE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_INTERFACE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_INTERFACE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_INTERFACE int = _swig_getP_INTERFACE()
 func _swig_getP_IP_ADDR() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_IP_ADDR_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_IP_ADDR_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_IP_ADDR int = _swig_getP_IP_ADDR()
 func _swig_getP_MAC_ADDR() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_MAC_ADDR_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_MAC_ADDR_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_MAC_ADDR int = _swig_getP_MAC_ADDR()
 func _swig_getP_VRF() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_VRF_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_VRF_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var P_VRF int = _swig_getP_VRF()
 func _swig_getP_MAX_TYPE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_P_MAX_TYPE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_P_MAX_TYPE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -1024,45 +1171,45 @@ func (p SwigcptrCli_param_type_integer_attr_go) SwigIsCli_param_type_integer_att
 func (arg1 SwigcptrCli_param_type_integer_attr_go) SetMin_val(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_Cli_param_type_integer_attr_go_min_val_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrCli_param_type_integer_attr_go) GetMin_val() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_min_val_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrCli_param_type_integer_attr_go) SetMax_val(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_Cli_param_type_integer_attr_go_max_val_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrCli_param_type_integer_attr_go) GetMax_val() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_max_val_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrCli_param_type_integer_attr_go) Len() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_integer_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func NewCli_param_type_integer_attr_go() (_swig_ret Cli_param_type_integer_attr_go) {
 	var swig_r Cli_param_type_integer_attr_go
-	swig_r = (Cli_param_type_integer_attr_go)(SwigcptrCli_param_type_integer_attr_go(C._wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff()))
+	swig_r = (Cli_param_type_integer_attr_go)(SwigcptrCli_param_type_integer_attr_go(C._wrap_new_Cli_param_type_integer_attr_go_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
 func DeleteCli_param_type_integer_attr_go(arg1 Cli_param_type_integer_attr_go) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_Cli_param_type_integer_attr_go_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 type Cli_param_type_integer_attr_go interface {
@@ -1087,20 +1234,20 @@ func (p SwigcptrCli_param_type_string_attr_go) SwigIsCli_param_type_string_attr_
 func (arg1 SwigcptrCli_param_type_string_attr_go) SetLength(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_Cli_param_type_string_attr_go_length_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrCli_param_type_string_attr_go) GetLength() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_string_attr_go_length_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrCli_param_type_string_attr_go) SetRegex_pattern(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_Cli_param_type_string_attr_go_regex_pattern_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1109,7 +1256,7 @@ func (arg1 SwigcptrCli_param_type_string_attr_go) SetRegex_pattern(arg2 string) 
 func (arg1 SwigcptrCli_param_type_string_attr_go) GetRegex_pattern() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_Cli_param_type_string_attr_go_regex_pattern_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1119,19 +1266,19 @@ func (arg1 SwigcptrCli_param_type_string_attr_go) GetRegex_pattern() (_swig_ret 
 func (arg1 SwigcptrCli_param_type_string_attr_go) Len() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_string_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func NewCli_param_type_string_attr_go() (_swig_ret Cli_param_type_string_attr_go) {
 	var swig_r Cli_param_type_string_attr_go
-	swig_r = (Cli_param_type_string_attr_go)(SwigcptrCli_param_type_string_attr_go(C._wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff()))
+	swig_r = (Cli_param_type_string_attr_go)(SwigcptrCli_param_type_string_attr_go(C._wrap_new_Cli_param_type_string_attr_go_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
 func DeleteCli_param_type_string_attr_go(arg1 Cli_param_type_string_attr_go) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_Cli_param_type_string_attr_go_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 type Cli_param_type_string_attr_go interface {
@@ -1156,45 +1303,45 @@ func (p SwigcptrCli_param_type_ip_addr_attr_go) SwigIsCli_param_type_ip_addr_att
 func (arg1 SwigcptrCli_param_type_ip_addr_attr_go) SetIs_ipv6(arg2 bool) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	C._wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
 }
 
 func (arg1 SwigcptrCli_param_type_ip_addr_attr_go) GetIs_ipv6() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_Cli_param_type_ip_addr_attr_go_is_ipv6_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrCli_param_type_ip_addr_attr_go) SetIs_prefix(arg2 bool) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	C._wrap_Cli_param_type_ip_addr_attr_go_is_prefix_set_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
 }
 
 func (arg1 SwigcptrCli_param_type_ip_addr_attr_go) GetIs_prefix() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_Cli_param_type_ip_addr_attr_go_is_prefix_get_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrCli_param_type_ip_addr_attr_go) Len() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_Cli_param_type_ip_addr_attr_go_Len_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func NewCli_param_type_ip_addr_attr_go() (_swig_ret Cli_param_type_ip_addr_attr_go) {
 	var swig_r Cli_param_type_ip_addr_attr_go
-	swig_r = (Cli_param_type_ip_addr_attr_go)(SwigcptrCli_param_type_ip_addr_attr_go(C._wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff()))
+	swig_r = (Cli_param_type_ip_addr_attr_go)(SwigcptrCli_param_type_ip_addr_attr_go(C._wrap_new_Cli_param_type_ip_addr_attr_go_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
 func DeleteCli_param_type_ip_addr_attr_go(arg1 Cli_param_type_ip_addr_attr_go) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_Cli_param_type_ip_addr_attr_go_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 type Cli_param_type_ip_addr_attr_go interface {
@@ -1218,14 +1365,14 @@ func (p SwigcptrNxSdk) SwigIsNxSdk() {
 
 func DeleteNxSdk(arg1 NxSdk) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxSdk_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxSdk_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func NxSdkGetSdkInst__SWIG_0(arg1 int, arg2 []string) (_swig_ret NxSdk) {
 	var swig_r NxSdk
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_92557035fa796fff(C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1235,7 +1382,7 @@ func NxSdkGetSdkInst__SWIG_0(arg1 int, arg2 []string) (_swig_ret NxSdk) {
 func (arg1 SwigcptrNxSdk) SetAppDesc(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxSdk_setAppDesc_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxSdk_setAppDesc_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1244,7 +1391,7 @@ func (arg1 SwigcptrNxSdk) SetAppDesc(arg2 string) {
 func (arg1 SwigcptrNxSdk) GetAppName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxSdk_getAppName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxSdk_getAppName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1254,7 +1401,7 @@ func (arg1 SwigcptrNxSdk) GetAppName() (_swig_ret string) {
 func (arg1 SwigcptrNxSdk) GetAppDesc() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxSdk_getAppDesc_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxSdk_getAppDesc_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1264,32 +1411,32 @@ func (arg1 SwigcptrNxSdk) GetAppDesc() (_swig_ret string) {
 func (arg1 SwigcptrNxSdk) GetAppId() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxSdk_getAppId_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxSdk_getAppId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxSdk) GetCliParser() (_swig_ret NxCliParser) {
 	var swig_r NxCliParser
 	_swig_i_0 := arg1
-	swig_r = (NxCliParser)(SwigcptrNxCliParser(C._wrap_NxSdk_getCliParser_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxCliParser)(SwigcptrNxCliParser(C._wrap_NxSdk_getCliParser_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxSdk) GetTracer() (_swig_ret NxTrace) {
 	var swig_r NxTrace
 	_swig_i_0 := arg1
-	swig_r = (NxTrace)(SwigcptrNxTrace(C._wrap_NxSdk_getTracer_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxTrace)(SwigcptrNxTrace(C._wrap_NxSdk_getTracer_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxSdk) StartEventLoop() {
 	_swig_i_0 := arg1
-	C._wrap_NxSdk_startEventLoop_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxSdk_startEventLoop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxSdk) StopEventLoop() {
 	_swig_i_0 := arg1
-	C._wrap_NxSdk_stopEventLoop_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxSdk_stopEventLoop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func NxSdkGetSdkInst__SWIG_1(arg1 int, arg2 []string, arg3 bool) (_swig_ret NxSdk) {
@@ -1297,9 +1444,149 @@ func NxSdkGetSdkInst__SWIG_1(arg1 int, arg2 []string, arg3 bool) (_swig_ret NxSd
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_92557035fa796fff(C.swig_intgo(_swig_i_0), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))))
+	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetRibMgr() (_swig_ret NxRibMgr) {
+	var swig_r NxRibMgr
+	_swig_i_0 := arg1
+	swig_r = (NxRibMgr)(SwigcptrNxRibMgr(C._wrap_NxSdk_getRibMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) SetAppPriority(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_NxSdk_setAppPriority_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrNxSdk) GetIntfMgr() (_swig_ret NxIntfMgr) {
+	var swig_r NxIntfMgr
+	_swig_i_0 := arg1
+	swig_r = (NxIntfMgr)(SwigcptrNxIntfMgr(C._wrap_NxSdk_getIntfMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetAdjMgr() (_swig_ret NxAdjMgr) {
+	var swig_r NxAdjMgr
+	_swig_i_0 := arg1
+	swig_r = (NxAdjMgr)(SwigcptrNxAdjMgr(C._wrap_NxSdk_getAdjMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetMacMgr() (_swig_ret NxMacMgr) {
+	var swig_r NxMacMgr
+	_swig_i_0 := arg1
+	swig_r = (NxMacMgr)(SwigcptrNxMacMgr(C._wrap_NxSdk_getMacMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetDmeMgr() (_swig_ret NxDmeMgr) {
+	var swig_r NxDmeMgr
+	_swig_i_0 := arg1
+	swig_r = (NxDmeMgr)(SwigcptrNxDmeMgr(C._wrap_NxSdk_getDmeMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) IsInEventLoop() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_NxSdk_isInEventLoop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetRunningEnv() (_swig_ret NxosRunning_env_e) {
+	var swig_r NxosRunning_env_e
+	_swig_i_0 := arg1
+	swig_r = (NxosRunning_env_e)(C._wrap_NxSdk_getRunningEnv_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NxSdkGetSdkInst__SWIG_2(arg1 int, arg2 []string, arg3 bool, arg4 string, arg5 uint) (_swig_ret NxSdk) {
+	var swig_r NxSdk
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	_swig_i_4 := arg5
+	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0), *(*C.swig_type_8)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2), *(*C.swig_type_9)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetRemoteIp() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSdk_getRemoteIp_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSdk) GetRemotePort() (_swig_ret uint) {
+	var swig_r uint
+	_swig_i_0 := arg1
+	swig_r = (uint)(C._wrap_NxSdk_getRemotePort_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) GetRemoteConnStatus() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_NxSdk_getRemoteConnStatus_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSdk) PurgeAllSdkObjs() {
+	_swig_i_0 := arg1
+	C._wrap_NxSdk_purgeAllSdkObjs_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxSdk) SetSdkHandler(arg2 NxSdkHandler) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_NxSdk_setSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNxSdk) UnsetSdkHandler() {
+	_swig_i_0 := arg1
+	C._wrap_NxSdk_unsetSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxSdk) GetSdkHandler() (_swig_ret NxSdkHandler) {
+	var swig_r NxSdkHandler
+	_swig_i_0 := arg1
+	swig_r = (NxSdkHandler)(SwigcptrNxSdkHandler(C._wrap_NxSdk_getSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func NxSdkGetSdkInst__SWIG_3(arg1 int, arg2 []string, arg3 bool, arg4 string, arg5 uint, arg6 string) (_swig_ret NxSdk) {
+	var swig_r NxSdk
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	_swig_i_4 := arg5
+	_swig_i_5 := arg6
+	swig_r = (NxSdk)(SwigcptrNxSdk(C._wrap_NxSdk_getSdkInst__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0), *(*C.swig_type_11)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2), *(*C.swig_type_12)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4), *(*C.swig_type_13)(unsafe.Pointer(&_swig_i_5)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg6
 	}
 	return swig_r
 }
@@ -1312,62 +1599,33 @@ func NxSdkGetSdkInst(a ...interface{}) NxSdk {
 	if argc == 3 {
 		return NxSdkGetSdkInst__SWIG_1(a[0].(int), a[1].([]string), a[2].(bool))
 	}
+	if argc == 5 {
+		return NxSdkGetSdkInst__SWIG_2(a[0].(int), a[1].([]string), a[2].(bool), a[3].(string), a[4].(uint))
+	}
+	if argc == 6 {
+		return NxSdkGetSdkInst__SWIG_3(a[0].(int), a[1].([]string), a[2].(bool), a[3].(string), a[4].(uint), a[5].(string))
+	}
 	panic("No match for overloaded function call")
 }
 
-func (arg1 SwigcptrNxSdk) GetRibMgr() (_swig_ret NxRibMgr) {
-	var swig_r NxRibMgr
+func (arg1 SwigcptrNxSdk) GetNxSdkVersion() (_swig_ret string) {
+	var swig_r string
 	_swig_i_0 := arg1
-	swig_r = (NxRibMgr)(SwigcptrNxRibMgr(C._wrap_NxSdk_getRibMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
-	return swig_r
+	swig_r_p := C._wrap_NxSdk_getNxSdkVersion_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
 }
 
-func (arg1 SwigcptrNxSdk) SetAppPriority(arg2 int) {
+func (arg1 SwigcptrNxSdk) GetRemoteClientNxSdkVersion() (_swig_ret string) {
+	var swig_r string
 	_swig_i_0 := arg1
-	_swig_i_1 := arg2
-	C._wrap_NxSdk_setAppPriority_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
-}
-
-func (arg1 SwigcptrNxSdk) GetIntfMgr() (_swig_ret NxIntfMgr) {
-	var swig_r NxIntfMgr
-	_swig_i_0 := arg1
-	swig_r = (NxIntfMgr)(SwigcptrNxIntfMgr(C._wrap_NxSdk_getIntfMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
-	return swig_r
-}
-
-func (arg1 SwigcptrNxSdk) GetAdjMgr() (_swig_ret NxAdjMgr) {
-	var swig_r NxAdjMgr
-	_swig_i_0 := arg1
-	swig_r = (NxAdjMgr)(SwigcptrNxAdjMgr(C._wrap_NxSdk_getAdjMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
-	return swig_r
-}
-
-func (arg1 SwigcptrNxSdk) GetMacMgr() (_swig_ret NxMacMgr) {
-	var swig_r NxMacMgr
-	_swig_i_0 := arg1
-	swig_r = (NxMacMgr)(SwigcptrNxMacMgr(C._wrap_NxSdk_getMacMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
-	return swig_r
-}
-
-func (arg1 SwigcptrNxSdk) GetDmeMgr() (_swig_ret NxDmeMgr) {
-	var swig_r NxDmeMgr
-	_swig_i_0 := arg1
-	swig_r = (NxDmeMgr)(SwigcptrNxDmeMgr(C._wrap_NxSdk_getDmeMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
-	return swig_r
-}
-
-func (arg1 SwigcptrNxSdk) IsInEventLoop() (_swig_ret bool) {
-	var swig_r bool
-	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxSdk_isInEventLoop_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
-	return swig_r
-}
-
-func (arg1 SwigcptrNxSdk) GetRunningEnv() (_swig_ret NxosRunning_env_e) {
-	var swig_r NxosRunning_env_e
-	_swig_i_0 := arg1
-	swig_r = (NxosRunning_env_e)(C._wrap_NxSdk_getRunningEnv_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
-	return swig_r
+	swig_r_p := C._wrap_NxSdk_getRemoteClientNxSdkVersion_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
 }
 
 type NxSdk interface {
@@ -1389,6 +1647,363 @@ type NxSdk interface {
 	GetDmeMgr() (_swig_ret NxDmeMgr)
 	IsInEventLoop() (_swig_ret bool)
 	GetRunningEnv() (_swig_ret NxosRunning_env_e)
+	GetRemoteIp() (_swig_ret string)
+	GetRemotePort() (_swig_ret uint)
+	GetRemoteConnStatus() (_swig_ret int)
+	PurgeAllSdkObjs()
+	SetSdkHandler(arg2 NxSdkHandler)
+	UnsetSdkHandler()
+	GetSdkHandler() (_swig_ret NxSdkHandler)
+	GetNxSdkVersion() (_swig_ret string)
+	GetRemoteClientNxSdkVersion() (_swig_ret string)
+}
+
+type _swig_DirectorNxSdkHandler struct {
+	SwigcptrNxSdkHandler
+	v interface{}
+}
+
+func (p *_swig_DirectorNxSdkHandler) Swigcptr() uintptr {
+	return p.SwigcptrNxSdkHandler.Swigcptr()
+}
+
+func (p *_swig_DirectorNxSdkHandler) SwigIsNxSdkHandler() {
+}
+
+func (p *_swig_DirectorNxSdkHandler) DirectorInterface() interface{} {
+	return p.v
+}
+
+func NewDirectorNxSdkHandler(v interface{}) NxSdkHandler {
+	p := &_swig_DirectorNxSdkHandler{0, v}
+	p.SwigcptrNxSdkHandler = SwigcptrNxSdkHandler(C._wrap__swig_NewDirectorNxSdkHandlerNxSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
+	return p
+}
+
+func DeleteDirectorNxSdkHandler(arg1 NxSdkHandler) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_DeleteDirectorNxSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+//export Swiggo_DeleteDirector_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
+	swigDirectorLookup(c).(*_swig_DirectorNxSdkHandler).SwigcptrNxSdkHandler = 0
+	swigDirectorDelete(c)
+}
+
+type _swig_DirectorInterfaceNxSdkHandlerPostRemoteConnUpCb interface {
+	PostRemoteConnUpCb(NxSdk)
+}
+
+func (swig_p *_swig_DirectorNxSdkHandler) PostRemoteConnUpCb(sdk NxSdk) {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxSdkHandlerPostRemoteConnUpCb); swig_ok {
+		swig_g.PostRemoteConnUpCb(sdk)
+		return
+	}
+	_swig_i_0 := sdk.Swigcptr()
+	C._wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxSdkHandler), C.uintptr_t(_swig_i_0))
+}
+
+func DirectorNxSdkHandlerPostRemoteConnUpCb(p NxSdkHandler, arg2 NxSdk) {
+	_swig_i_0 := arg2.Swigcptr()
+	C._wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxSdkHandler).SwigcptrNxSdkHandler), C.uintptr_t(_swig_i_0))
+}
+
+//export Swig_DirectorNxSdkHandler_callback_postRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxSdkHandler_callback_postRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) {
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxSdkHandler)
+	swig_p.PostRemoteConnUpCb(SwigcptrNxSdk(arg2))
+}
+
+type _swig_DirectorInterfaceNxSdkHandlerPostRemoteConnDownCb interface {
+	PostRemoteConnDownCb(NxSdk)
+}
+
+func (swig_p *_swig_DirectorNxSdkHandler) PostRemoteConnDownCb(sdk NxSdk) {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxSdkHandlerPostRemoteConnDownCb); swig_ok {
+		swig_g.PostRemoteConnDownCb(sdk)
+		return
+	}
+	_swig_i_0 := sdk.Swigcptr()
+	C._wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxSdkHandler), C.uintptr_t(_swig_i_0))
+}
+
+func DirectorNxSdkHandlerPostRemoteConnDownCb(p NxSdkHandler, arg2 NxSdk) {
+	_swig_i_0 := arg2.Swigcptr()
+	C._wrap__swig_DirectorNxSdkHandler_upcall_PostRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxSdkHandler).SwigcptrNxSdkHandler), C.uintptr_t(_swig_i_0))
+}
+
+//export Swig_DirectorNxSdkHandler_callback_postRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxSdkHandler_callback_postRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) {
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxSdkHandler)
+	swig_p.PostRemoteConnDownCb(SwigcptrNxSdk(arg2))
+}
+
+type SwigcptrNxSdkHandler uintptr
+
+func (p SwigcptrNxSdkHandler) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrNxSdkHandler) SwigIsNxSdkHandler() {
+}
+
+func (p SwigcptrNxSdkHandler) DirectorInterface() interface{} {
+	return nil
+}
+
+func DeleteNxSdkHandler(arg1 NxSdkHandler) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxSdkHandler) PostRemoteConnUpCb(arg2 NxSdk) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_NxSdkHandler_postRemoteConnUpCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNxSdkHandler) PostRemoteConnDownCb(arg2 NxSdk) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_NxSdkHandler_postRemoteConnDownCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func NewNxSdkHandler() (_swig_ret NxSdkHandler) {
+	var swig_r NxSdkHandler
+	swig_r = (NxSdkHandler)(SwigcptrNxSdkHandler(C._wrap_new_NxSdkHandler_nx_sdk_go_c22a77a7a4f02419()))
+	return swig_r
+}
+
+type NxSdkHandler interface {
+	Swigcptr() uintptr
+	SwigIsNxSdkHandler()
+	DirectorInterface() interface{}
+	PostRemoteConnUpCb(arg2 NxSdk)
+	PostRemoteConnDownCb(arg2 NxSdk)
+}
+
+type SwigcptrNxSyslog uintptr
+
+func (p SwigcptrNxSyslog) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrNxSyslog) SwigIsNxSyslog() {
+}
+
+func DeleteNxSyslog(arg1 NxSyslog) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_NxSyslog_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxSyslog) GetId() (_swig_ret uint) {
+	var swig_r uint
+	_swig_i_0 := arg1
+	swig_r = (uint)(C._wrap_NxSyslog_getId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSyslog) GetNodeName() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getNodeName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSyslog) GetTimeStamp() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getTimeStamp_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSyslog) GetSeverity() (_swig_ret uint) {
+	var swig_r uint
+	_swig_i_0 := arg1
+	swig_r = (uint)(C._wrap_NxSyslog_getSeverity_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxSyslog) GetMessageName() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getMessageName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSyslog) GetCategory() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getCategory_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSyslog) GetText() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getText_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxSyslog) GetTimeZone() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxSyslog_getTimeZone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+type NxSyslog interface {
+	Swigcptr() uintptr
+	SwigIsNxSyslog()
+	GetId() (_swig_ret uint)
+	GetNodeName() (_swig_ret string)
+	GetTimeStamp() (_swig_ret string)
+	GetSeverity() (_swig_ret uint)
+	GetMessageName() (_swig_ret string)
+	GetCategory() (_swig_ret string)
+	GetText() (_swig_ret string)
+	GetTimeZone() (_swig_ret string)
+}
+
+type _swig_DirectorNxTraceHandler struct {
+	SwigcptrNxTraceHandler
+	v interface{}
+}
+
+func (p *_swig_DirectorNxTraceHandler) Swigcptr() uintptr {
+	return p.SwigcptrNxTraceHandler.Swigcptr()
+}
+
+func (p *_swig_DirectorNxTraceHandler) SwigIsNxTraceHandler() {
+}
+
+func (p *_swig_DirectorNxTraceHandler) DirectorInterface() interface{} {
+	return p.v
+}
+
+func NewDirectorNxTraceHandler(v interface{}) NxTraceHandler {
+	p := &_swig_DirectorNxTraceHandler{0, v}
+	p.SwigcptrNxTraceHandler = SwigcptrNxTraceHandler(C._wrap__swig_NewDirectorNxTraceHandlerNxTraceHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
+	return p
+}
+
+func DeleteDirectorNxTraceHandler(arg1 NxTraceHandler) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_DeleteDirectorNxTraceHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+//export Swiggo_DeleteDirector_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
+	swigDirectorLookup(c).(*_swig_DirectorNxTraceHandler).SwigcptrNxTraceHandler = 0
+	swigDirectorDelete(c)
+}
+
+type _swig_DirectorInterfaceNxTraceHandlerPostSyslogCb interface {
+	PostSyslogCb(NxSyslog)
+}
+
+func (swig_p *_swig_DirectorNxTraceHandler) PostSyslogCb(syslog NxSyslog) {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxTraceHandlerPostSyslogCb); swig_ok {
+		swig_g.PostSyslogCb(syslog)
+		return
+	}
+	_swig_i_0 := syslog.Swigcptr()
+	C._wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxTraceHandler), C.uintptr_t(_swig_i_0))
+}
+
+func DirectorNxTraceHandlerPostSyslogCb(p NxTraceHandler, arg2 NxSyslog) {
+	_swig_i_0 := arg2.Swigcptr()
+	C._wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxTraceHandler).SwigcptrNxTraceHandler), C.uintptr_t(_swig_i_0))
+}
+
+//export Swig_DirectorNxTraceHandler_callback_postSyslogCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxTraceHandler_callback_postSyslogCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) {
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxTraceHandler)
+	swig_p.PostSyslogCb(SwigcptrNxSyslog(arg2))
+}
+
+type _swig_DirectorInterfaceNxTraceHandlerPostSyslogDownloadDoneCb interface {
+	PostSyslogDownloadDoneCb()
+}
+
+func (swig_p *_swig_DirectorNxTraceHandler) PostSyslogDownloadDoneCb() {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxTraceHandlerPostSyslogDownloadDoneCb); swig_ok {
+		swig_g.PostSyslogDownloadDoneCb()
+		return
+	}
+	C._wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxTraceHandler))
+}
+
+func DirectorNxTraceHandlerPostSyslogDownloadDoneCb(p NxTraceHandler) {
+	C._wrap__swig_DirectorNxTraceHandler_upcall_PostSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxTraceHandler).SwigcptrNxTraceHandler))
+}
+
+//export Swig_DirectorNxTraceHandler_callback_postSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxTraceHandler_callback_postSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(swig_c int) {
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxTraceHandler)
+	swig_p.PostSyslogDownloadDoneCb()
+}
+
+type SwigcptrNxTraceHandler uintptr
+
+func (p SwigcptrNxTraceHandler) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrNxTraceHandler) SwigIsNxTraceHandler() {
+}
+
+func (p SwigcptrNxTraceHandler) DirectorInterface() interface{} {
+	return nil
+}
+
+func DeleteNxTraceHandler(arg1 NxTraceHandler) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxTraceHandler) PostSyslogCb(arg2 NxSyslog) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_NxTraceHandler_postSyslogCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNxTraceHandler) PostSyslogDownloadDoneCb() {
+	_swig_i_0 := arg1
+	C._wrap_NxTraceHandler_postSyslogDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func NewNxTraceHandler() (_swig_ret NxTraceHandler) {
+	var swig_r NxTraceHandler
+	swig_r = (NxTraceHandler)(SwigcptrNxTraceHandler(C._wrap_new_NxTraceHandler_nx_sdk_go_c22a77a7a4f02419()))
+	return swig_r
+}
+
+type NxTraceHandler interface {
+	Swigcptr() uintptr
+	SwigIsNxTraceHandler()
+	DirectorInterface() interface{}
+	PostSyslogCb(arg2 NxSyslog)
+	PostSyslogDownloadDoneCb()
 }
 
 type SwigcptrNxTrace uintptr
@@ -1403,70 +2018,70 @@ func (p SwigcptrNxTrace) SwigIsNxTrace() {
 type NxosNxTracePriority int
 func _swig_getNxTrace_EMERG_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_EMERG_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_EMERG_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceEMERG int = _swig_getNxTrace_EMERG_NxTrace()
 func _swig_getNxTrace_ALERT_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ALERT_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ALERT_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceALERT int = _swig_getNxTrace_ALERT_NxTrace()
 func _swig_getNxTrace_CTRI_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_CTRI_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_CTRI_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceCTRI int = _swig_getNxTrace_CTRI_NxTrace()
 func _swig_getNxTrace_ERR_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceERR int = _swig_getNxTrace_ERR_NxTrace()
 func _swig_getNxTrace_WARNING_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_WARNING_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_WARNING_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceWARNING int = _swig_getNxTrace_WARNING_NxTrace()
 func _swig_getNxTrace_NOTICE_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_NOTICE_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_NOTICE_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceNOTICE int = _swig_getNxTrace_NOTICE_NxTrace()
 func _swig_getNxTrace_INFO_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_INFO_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_INFO_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceINFO int = _swig_getNxTrace_INFO_NxTrace()
 func _swig_getNxTrace_DEBUG_NxTrace() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DEBUG_NxTrace_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DEBUG_NxTrace_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxTraceDEBUG int = _swig_getNxTrace_DEBUG_NxTrace()
 func DeleteNxTrace(arg1 NxTrace) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxTrace_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxTrace_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxTrace) Syslog(arg2 int, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxTrace_syslog_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_8)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxTrace_syslog_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_22)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -1475,7 +2090,7 @@ func (arg1 SwigcptrNxTrace) Syslog(arg2 int, arg3 string) {
 func (arg1 SwigcptrNxTrace) Event(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxTrace_event_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_9)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxTrace_event_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_23)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1484,7 +2099,7 @@ func (arg1 SwigcptrNxTrace) Event(arg2 string) {
 func (arg1 SwigcptrNxTrace) Error(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxTrace_error_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_10)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxTrace_error_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_24)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1493,11 +2108,55 @@ func (arg1 SwigcptrNxTrace) Error(arg2 string) {
 func NxTraceGetPrioStr(arg1 int) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxTrace_getPrioStr_nx_sdk_go_92557035fa796fff(C.swig_intgo(_swig_i_0))
+	swig_r_p := C._wrap_NxTrace_getPrioStr_nx_sdk_go_c22a77a7a4f02419(C.swig_intgo(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
 	return swig_r_1
+}
+
+func (arg1 SwigcptrNxTrace) WatchSyslog__SWIG_0(arg2 bool) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_NxTrace_watchSyslog__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxTrace) WatchSyslog__SWIG_1() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_NxTrace_watchSyslog__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (p SwigcptrNxTrace) WatchSyslog(a ...interface{}) bool {
+	argc := len(a)
+	if argc == 0 {
+		return p.WatchSyslog__SWIG_1()
+	}
+	if argc == 1 {
+		return p.WatchSyslog__SWIG_0(a[0].(bool))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxTrace) UnwatchSyslog() {
+	_swig_i_0 := arg1
+	C._wrap_NxTrace_unwatchSyslog_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrNxTrace) SetTraceHandler(arg2 NxTraceHandler) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_NxTrace_setTraceHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNxTrace) GetTraceHandler() (_swig_ret NxTraceHandler) {
+	var swig_r NxTraceHandler
+	_swig_i_0 := arg1
+	swig_r = (NxTraceHandler)(SwigcptrNxTraceHandler(C._wrap_NxTrace_getTraceHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
+	return swig_r
 }
 
 type NxTrace interface {
@@ -1506,6 +2165,10 @@ type NxTrace interface {
 	Syslog(arg2 int, arg3 string)
 	Event(arg2 string)
 	Error(arg2 string)
+	WatchSyslog(a ...interface{}) bool
+	UnwatchSyslog()
+	SetTraceHandler(arg2 NxTraceHandler)
+	GetTraceHandler() (_swig_ret NxTraceHandler)
 }
 
 type SwigcptrNxCliCmd uintptr
@@ -1520,21 +2183,21 @@ func (p SwigcptrNxCliCmd) SwigIsNxCliCmd() {
 type NxosNxCliCmdModes_t int
 func _swig_getNxCliCmd_CONF_MODE_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_CONF_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_CONF_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxCliCmdCONF_MODE int = _swig_getNxCliCmd_CONF_MODE_NxCliCmd()
 func _swig_getNxCliCmd_EXEC_MODE_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_EXEC_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxCliCmdEXEC_MODE int = _swig_getNxCliCmd_EXEC_MODE_NxCliCmd()
 func _swig_getNxCliCmd_MAX_MODE_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_MAX_MODE_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_MAX_MODE_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
@@ -1542,35 +2205,35 @@ var NxCliCmdMAX_MODE int = _swig_getNxCliCmd_MAX_MODE_NxCliCmd()
 type NxosNxCliCmdCmdtype_t int
 func _swig_getNxCliCmd_CONF_CMD_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_CONF_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_CONF_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxCliCmdCONF_CMD int = _swig_getNxCliCmd_CONF_CMD_NxCliCmd()
 func _swig_getNxCliCmd_SHOW_CMD_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_SHOW_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxCliCmdSHOW_CMD int = _swig_getNxCliCmd_SHOW_CMD_NxCliCmd()
 func _swig_getNxCliCmd_MAX_CMD_NxCliCmd() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_MAX_CMD_NxCliCmd_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_MAX_CMD_NxCliCmd_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxCliCmdMAX_CMD int = _swig_getNxCliCmd_MAX_CMD_NxCliCmd()
 func DeleteNxCliCmd(arg1 NxCliCmd) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxCliCmd_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxCliCmd_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxCliCmd) UpdateKeyword__SWIG_0(arg2 string, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_12)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_13)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxCliCmd_updateKeyword__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_26)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_27)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1615,7 +2278,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_0(arg2 string, arg3 string, arg4 
 	_swig_i_6 := arg7
 	_swig_i_7 := arg8
 	_swig_i_8 := arg9
-	C._wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_14)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_15)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6), C._Bool(_swig_i_7), C.char(_swig_i_8))
+	C._wrap_NxCliCmd_updateParam__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_28)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_29)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6), C._Bool(_swig_i_7), C.char(_swig_i_8))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1659,7 +2322,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_1(arg2 string, arg3 string, arg4 
 	_swig_i_5 := arg6
 	_swig_i_6 := arg7
 	_swig_i_7 := arg8
-	C._wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_16)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_17)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6), C._Bool(_swig_i_7))
+	C._wrap_NxCliCmd_updateParam__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_30)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_31)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6), C._Bool(_swig_i_7))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1702,7 +2365,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_2(arg2 string, arg3 string, arg4 
 
 	_swig_i_5 := arg6
 	_swig_i_6 := arg7
-	C._wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_18)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_19)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6))
+	C._wrap_NxCliCmd_updateParam__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_32)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_33)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5), C._Bool(_swig_i_6))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1744,7 +2407,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_3(arg2 string, arg3 string, arg4 
     }
 
 	_swig_i_5 := arg6
-	C._wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_20)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_21)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5))
+	C._wrap_NxCliCmd_updateParam__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_34)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_35)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4), C.swig_intgo(_swig_i_5))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1785,7 +2448,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_4(arg2 string, arg3 string, arg4 
          _swig_i_4 = ip_attr.Swigcptr()          
     }
 
-	C._wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_22)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_23)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4))
+	C._wrap_NxCliCmd_updateParam__SWIG_4_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_36)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_37)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3), C.uintptr_t(_swig_i_4))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1799,7 +2462,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_5(arg2 string, arg3 string, arg4 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_24)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_25)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3))
+	C._wrap_NxCliCmd_updateParam__SWIG_5_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_38)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_39)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1812,7 +2475,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateParam__SWIG_6(arg2 string, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_26)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_27)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxCliCmd_updateParam__SWIG_6_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_40)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_41)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1857,33 +2520,33 @@ func (p SwigcptrNxCliCmd) UpdateParam(a ...interface{}) {
 func (arg1 SwigcptrNxCliCmd) AddTimeout(arg2 uint) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxCliCmd_addTimeout_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_NxCliCmd_addTimeout_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxCliCmd) AddMode(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxCliCmd_addMode_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_NxCliCmd_addMode_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxCliCmd) GetCmdType() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxCliCmd_getCmdType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxCliCmd_getCmdType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxCliCmd) GetCmdMode() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxCliCmd_getCmdMode_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxCliCmd_getCmdMode_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxCliCmd) GetCmdName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxCliCmd_getCmdName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxCliCmd_getCmdName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1893,7 +2556,7 @@ func (arg1 SwigcptrNxCliCmd) GetCmdName() (_swig_ret string) {
 func (arg1 SwigcptrNxCliCmd) GetCmdSyntax() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxCliCmd_getCmdSyntax_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1903,7 +2566,7 @@ func (arg1 SwigcptrNxCliCmd) GetCmdSyntax() (_swig_ret string) {
 func (arg1 SwigcptrNxCliCmd) GetCmdLineStr() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxCliCmd_getCmdLineStr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1913,7 +2576,7 @@ func (arg1 SwigcptrNxCliCmd) GetCmdLineStr() (_swig_ret string) {
 func (arg1 SwigcptrNxCliCmd) GetCmdErr() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxCliCmd_getCmdErr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxCliCmd_getCmdErr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -1924,7 +2587,7 @@ func (arg1 SwigcptrNxCliCmd) IsKeywordSet(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxCliCmd_isKeywordSet_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_32)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxCliCmd_isKeywordSet_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_46)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1935,7 +2598,7 @@ func (arg1 SwigcptrNxCliCmd) GetParamType(arg2 string) (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (int)(C._wrap_NxCliCmd_getParamType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_33)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (int)(C._wrap_NxCliCmd_getParamType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_47)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1947,7 +2610,7 @@ func (arg1 SwigcptrNxCliCmd) GetParamValue__SWIG_0(arg2 string, arg3 bool) (_swi
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (uintptr)(C._wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_34)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2)))
+	swig_r = (uintptr)(C._wrap_NxCliCmd_getParamValue__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_48)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1958,7 +2621,7 @@ func (arg1 SwigcptrNxCliCmd) GetParamValue__SWIG_1(arg2 string) (_swig_ret uintp
 	var swig_r uintptr
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (uintptr)(C._wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_35)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (uintptr)(C._wrap_NxCliCmd_getParamValue__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_49)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1980,7 +2643,7 @@ func (arg1 SwigcptrNxCliCmd) GetParamCount(arg2 string) (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (int)(C._wrap_NxCliCmd_getParamCount_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_36)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (int)(C._wrap_NxCliCmd_getParamCount_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_50)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -1990,7 +2653,7 @@ func (arg1 SwigcptrNxCliCmd) GetParamCount(arg2 string) (_swig_ret int) {
 func (arg1 SwigcptrNxCliCmd) PrintConsole(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxCliCmd_printConsole_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_37)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxCliCmd_printConsole_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_51)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2001,7 +2664,7 @@ func (arg1 SwigcptrNxCliCmd) UpdateKeyword__SWIG_1(arg2 string, arg3 string, arg
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_38)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_39)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3))
+	C._wrap_NxCliCmd_updateKeyword__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_52)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_53)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2023,6 +2686,13 @@ func (p SwigcptrNxCliCmd) UpdateKeyword(a ...interface{}) {
 	panic("No match for overloaded function call")
 }
 
+func (arg1 SwigcptrNxCliCmd) ShowCliOutFormat() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_NxCliCmd_showCliOutFormat_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
 type NxCliCmd interface {
 	Swigcptr() uintptr
 	SwigIsNxCliCmd()
@@ -2041,6 +2711,7 @@ type NxCliCmd interface {
 	GetParamCount(arg2 string) (_swig_ret int)
 	PrintConsole(arg2 string)
 	UpdateKeyword(a ...interface{})
+	ShowCliOutFormat() (_swig_ret int)
 }
 
 type _swig_DirectorNxCmdHandler struct {
@@ -2061,17 +2732,17 @@ func (p *_swig_DirectorNxCmdHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxCmdHandler(v interface{}) NxCmdHandler {
 	p := &_swig_DirectorNxCmdHandler{0, v}
-	p.SwigcptrNxCmdHandler = SwigcptrNxCmdHandler(C._wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxCmdHandler = SwigcptrNxCmdHandler(C._wrap__swig_NewDirectorNxCmdHandlerNxCmdHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxCmdHandler(arg1 NxCmdHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxCmdHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxCmdHandler).SwigcptrNxCmdHandler = 0
 	swigDirectorDelete(c)
 }
@@ -2086,19 +2757,19 @@ func (swig_p *_swig_DirectorNxCmdHandler) PostCliCb(cmd NxCliCmd) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := cmd.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxCmdHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxCmdHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxCmdHandlerPostCliCb(p NxCmdHandler, arg2 NxCliCmd) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxCmdHandler).SwigcptrNxCmdHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxCmdHandler_upcall_PostCliCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxCmdHandler).SwigcptrNxCmdHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxCmdHandler_callback_postCliCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxCmdHandler)
 	swig_r = swig_p.PostCliCb(SwigcptrNxCliCmd(arg2))
@@ -2120,20 +2791,20 @@ func (p SwigcptrNxCmdHandler) DirectorInterface() interface{} {
 
 func DeleteNxCmdHandler(arg1 NxCmdHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxCmdHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxCmdHandler) PostCliCb(arg2 NxCliCmd) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxCmdHandler_postCliCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxCmdHandler_postCliCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
 func NewNxCmdHandler() (_swig_ret NxCmdHandler) {
 	var swig_r NxCmdHandler
-	swig_r = (NxCmdHandler)(SwigcptrNxCmdHandler(C._wrap_new_NxCmdHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxCmdHandler)(SwigcptrNxCmdHandler(C._wrap_new_NxCmdHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -2155,7 +2826,7 @@ func (p SwigcptrNxCliParser) SwigIsNxCliParser() {
 
 func DeleteNxCliParser(arg1 NxCliParser) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxCliParser_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxCliParser_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxCliParser) NewCliCmd(arg2 int, arg3 string, arg4 string) (_swig_ret NxCliCmd) {
@@ -2164,7 +2835,7 @@ func (arg1 SwigcptrNxCliParser) NewCliCmd(arg2 int, arg3 string, arg4 string) (_
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newCliCmd_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_40)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_41)(unsafe.Pointer(&_swig_i_3)))))
+	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newCliCmd_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_54)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_55)(unsafe.Pointer(&_swig_i_3)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -2179,7 +2850,7 @@ func (arg1 SwigcptrNxCliParser) NewShowCmd(arg2 string, arg3 string) (_swig_ret 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newShowCmd_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_42)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_43)(unsafe.Pointer(&_swig_i_2)))))
+	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newShowCmd_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_56)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_57)(unsafe.Pointer(&_swig_i_2)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2194,7 +2865,7 @@ func (arg1 SwigcptrNxCliParser) NewConfigCmd(arg2 string, arg3 string) (_swig_re
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newConfigCmd_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_44)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_45)(unsafe.Pointer(&_swig_i_2)))))
+	swig_r = (NxCliCmd)(SwigcptrNxCliCmd(C._wrap_NxCliParser_newConfigCmd_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_58)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_59)(unsafe.Pointer(&_swig_i_2)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2206,24 +2877,24 @@ func (arg1 SwigcptrNxCliParser) NewConfigCmd(arg2 string, arg3 string) (_swig_re
 
 func (arg1 SwigcptrNxCliParser) AddToParseTree() {
 	_swig_i_0 := arg1
-	C._wrap_NxCliParser_addToParseTree_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxCliParser_addToParseTree_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxCliParser) DelFromParseTree() {
 	_swig_i_0 := arg1
-	C._wrap_NxCliParser_delFromParseTree_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxCliParser_delFromParseTree_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxCliParser) SetCmdHandler(arg2 NxCmdHandler) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxCliParser_setCmdHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxCliParser_setCmdHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxCliParser) GetParserStatus() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxCliParser_getParserStatus_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxCliParser_getParserStatus_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2233,7 +2904,7 @@ func (arg1 SwigcptrNxCliParser) GetParserStatus() (_swig_ret string) {
 func (arg1 SwigcptrNxCliParser) GetCmdHandler() (_swig_ret NxCmdHandler) {
 	var swig_r NxCmdHandler
 	_swig_i_0 := arg1
-	swig_r = (NxCmdHandler)(SwigcptrNxCmdHandler(C._wrap_NxCliParser_getCmdHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxCmdHandler)(SwigcptrNxCmdHandler(C._wrap_NxCliParser_getCmdHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -2243,7 +2914,7 @@ func (arg1 SwigcptrNxCliParser) ExecShowCmd__SWIG_0(arg2 string, arg3 int, arg4 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_48)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C.swig_voidp(_swig_i_3))
+	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_62)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C.swig_voidp(_swig_i_3))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -2258,7 +2929,7 @@ func (arg1 SwigcptrNxCliParser) ExecShowCmd__SWIG_1(arg2 string, arg3 int) (_swi
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_50)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))
+	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_64)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -2272,7 +2943,7 @@ func (arg1 SwigcptrNxCliParser) ExecShowCmd__SWIG_2(arg2 string) (_swig_ret stri
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_52)(unsafe.Pointer(&_swig_i_1)))
+	swig_r_p := C._wrap_NxCliParser_execShowCmd__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_66)(unsafe.Pointer(&_swig_i_1)))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -2296,11 +2967,11 @@ func (p SwigcptrNxCliParser) ExecShowCmd(a ...interface{}) string {
 	panic("No match for overloaded function call")
 }
 
-func (arg1 SwigcptrNxCliParser) ExecConfigCmd(arg2 string) (_swig_ret string) {
+func (arg1 SwigcptrNxCliParser) ExecConfigCmd__SWIG_0(arg2 string) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxCliParser_execConfigCmd_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_54)(unsafe.Pointer(&_swig_i_1)))
+	swig_r_p := C._wrap_NxCliParser_execConfigCmd__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_68)(unsafe.Pointer(&_swig_i_1)))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -2308,6 +2979,76 @@ func (arg1 SwigcptrNxCliParser) ExecConfigCmd(arg2 string) (_swig_ret string) {
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
 	return swig_r_1
+}
+
+func (arg1 SwigcptrNxCliParser) ExecConfigCmd__SWIG_1(arg2 string, arg3 bool) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r_p := C._wrap_NxCliParser_execConfigCmd__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_70)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (p SwigcptrNxCliParser) ExecConfigCmd(a ...interface{}) string {
+	argc := len(a)
+	if argc == 1 {
+		return p.ExecConfigCmd__SWIG_0(a[0].(string))
+	}
+	if argc == 2 {
+		return p.ExecConfigCmd__SWIG_1(a[0].(string), a[1].(bool))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxCliParser) AddTechSupport__SWIG_0(arg2 string, arg3 bool) (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (int)(C._wrap_NxCliParser_addTechSupport__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_71)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxCliParser) AddTechSupport__SWIG_1(arg2 string) (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (int)(C._wrap_NxCliParser_addTechSupport__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_72)(unsafe.Pointer(&_swig_i_1))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxCliParser) AddTechSupport__SWIG_2() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_NxCliParser_addTechSupport__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (p SwigcptrNxCliParser) AddTechSupport(a ...interface{}) int {
+	argc := len(a)
+	if argc == 0 {
+		return p.AddTechSupport__SWIG_2()
+	}
+	if argc == 1 {
+		return p.AddTechSupport__SWIG_1(a[0].(string))
+	}
+	if argc == 2 {
+		return p.AddTechSupport__SWIG_0(a[0].(string), a[1].(bool))
+	}
+	panic("No match for overloaded function call")
 }
 
 type NxCliParser interface {
@@ -2322,7 +3063,8 @@ type NxCliParser interface {
 	GetParserStatus() (_swig_ret string)
 	GetCmdHandler() (_swig_ret NxCmdHandler)
 	ExecShowCmd(a ...interface{}) string
-	ExecConfigCmd(arg2 string) (_swig_ret string)
+	ExecConfigCmd(a ...interface{}) string
+	AddTechSupport(a ...interface{}) int
 }
 
 type SwigcptrNxVrf uintptr
@@ -2336,13 +3078,13 @@ func (p SwigcptrNxVrf) SwigIsNxVrf() {
 
 func DeleteNxVrf(arg1 NxVrf) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxVrf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxVrf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxVrf) GetName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxVrf_getName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxVrf_getName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2352,7 +3094,7 @@ func (arg1 SwigcptrNxVrf) GetName() (_swig_ret string) {
 func (arg1 SwigcptrNxVrf) GetId() (_swig_ret uint64) {
 	var swig_r uint64
 	_swig_i_0 := arg1
-	swig_r = (uint64)(C._wrap_NxVrf_getId_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint64)(C._wrap_NxVrf_getId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -2360,21 +3102,21 @@ func (arg1 SwigcptrNxVrf) GetTableId(arg2 int) (_swig_ret uint64) {
 	var swig_r uint64
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (uint64)(C._wrap_NxVrf_getTableId_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (uint64)(C._wrap_NxVrf_getTableId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxVrf) GetState() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxVrf_getState_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxVrf_getState_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxVrf) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxVrf_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxVrf_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -2382,7 +3124,7 @@ func (arg1 SwigcptrNxVrf) Equal(arg2 NxVrf) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxVrf_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxVrf_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -2409,62 +3151,62 @@ func (p SwigcptrNxL3NextHop) SwigIsNxL3NextHop() {
 type NxosNxL3NextHopNh_types_e int
 func _swig_getNxL3NextHop_ATTACHED_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ATTACHED_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ATTACHED_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopATTACHED int = _swig_getNxL3NextHop_ATTACHED_NxL3NextHop()
 func _swig_getNxL3NextHop_LOCAL_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_LOCAL_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_LOCAL_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopLOCAL int = _swig_getNxL3NextHop_LOCAL_NxL3NextHop()
 func _swig_getNxL3NextHop_DIRECT_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DIRECT_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DIRECT_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopDIRECT int = _swig_getNxL3NextHop_DIRECT_NxL3NextHop()
 func _swig_getNxL3NextHop_RECURSIVE_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_RECURSIVE_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopRECURSIVE int = _swig_getNxL3NextHop_RECURSIVE_NxL3NextHop()
 func _swig_getNxL3NextHop_BACKUP_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_BACKUP_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_BACKUP_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopBACKUP int = _swig_getNxL3NextHop_BACKUP_NxL3NextHop()
 func _swig_getNxL3NextHop_DROP_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DROP_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DROP_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopDROP int = _swig_getNxL3NextHop_DROP_NxL3NextHop()
 func _swig_getNxL3NextHop_DISCARD_NxL3NextHop() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_DISCARD_NxL3NextHop_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_DISCARD_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var NxL3NextHopDISCARD int = _swig_getNxL3NextHop_DISCARD_NxL3NextHop()
 func DeleteNxL3NextHop(arg1 NxL3NextHop) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxL3NextHop_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxL3NextHop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetAddress() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3NextHop_getAddress_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3NextHop_getAddress_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2474,7 +3216,7 @@ func (arg1 SwigcptrNxL3NextHop) GetAddress() (_swig_ret string) {
 func (arg1 SwigcptrNxL3NextHop) GetOutInterface() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3NextHop_getOutInterface_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3NextHop_getOutInterface_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2484,7 +3226,7 @@ func (arg1 SwigcptrNxL3NextHop) GetOutInterface() (_swig_ret string) {
 func (arg1 SwigcptrNxL3NextHop) GetVrfName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3NextHop_getVrfName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3NextHop_getVrfName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2494,7 +3236,7 @@ func (arg1 SwigcptrNxL3NextHop) GetVrfName() (_swig_ret string) {
 func (arg1 SwigcptrNxL3NextHop) GetOwner() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3NextHop_getOwner_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3NextHop_getOwner_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2504,42 +3246,42 @@ func (arg1 SwigcptrNxL3NextHop) GetOwner() (_swig_ret string) {
 func (arg1 SwigcptrNxL3NextHop) GetPreference() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3NextHop_getPreference_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3NextHop_getPreference_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetMetric() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3NextHop_getMetric_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3NextHop_getMetric_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetTag() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3NextHop_getTag_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3NextHop_getTag_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetSegmentId() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3NextHop_getSegmentId_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3NextHop_getSegmentId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetTunnelId() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3NextHop_getTunnelId_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3NextHop_getTunnelId_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3NextHop) GetEncapType() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxL3NextHop_getEncapType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxL3NextHop_getEncapType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -2547,7 +3289,7 @@ func (arg1 SwigcptrNxL3NextHop) CheckType(arg2 NxosNxL3NextHopNh_types_e) (_swig
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxL3NextHop_checkType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxL3NextHop_checkType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -2578,13 +3320,13 @@ func (p SwigcptrNxL3Route) SwigIsNxL3Route() {
 
 func DeleteNxL3Route(arg1 NxL3Route) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxL3Route_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxL3Route_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxL3Route) GetVrfName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3Route_getVrfName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3Route_getVrfName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2594,7 +3336,7 @@ func (arg1 SwigcptrNxL3Route) GetVrfName() (_swig_ret string) {
 func (arg1 SwigcptrNxL3Route) GetAddress() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxL3Route_getAddress_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxL3Route_getAddress_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -2604,57 +3346,75 @@ func (arg1 SwigcptrNxL3Route) GetAddress() (_swig_ret string) {
 func (arg1 SwigcptrNxL3Route) GetMaskLen() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3Route_getMaskLen_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3Route_getMaskLen_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxL3Route) GetL3NextHopCount() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxL3Route_getL3NextHopCount_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_0(arg2 string) (_swig_ret NxL3NextHop) {
+func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_0(arg2 string, arg3 string) (_swig_ret NxL3NextHop) {
 	var swig_r NxL3NextHop
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_64)(unsafe.Pointer(&_swig_i_1)))))
+	_swig_i_2 := arg3
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_82)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_83)(unsafe.Pointer(&_swig_i_2)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_1(arg2 string) (_swig_ret NxL3NextHop) {
+	var swig_r NxL3NextHop
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_84)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
 	return swig_r
 }
 
-func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_1(arg2 bool) (_swig_ret NxL3NextHop) {
+func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_2(arg2 bool) (_swig_ret NxL3NextHop) {
 	var swig_r NxL3NextHop
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))))
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))))
 	return swig_r
 }
 
-func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_2() (_swig_ret NxL3NextHop) {
+func (arg1 SwigcptrNxL3Route) GetL3NextHop__SWIG_3() (_swig_ret NxL3NextHop) {
 	var swig_r NxL3NextHop
 	_swig_i_0 := arg1
-	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_getL3NextHop__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
 func (p SwigcptrNxL3Route) GetL3NextHop(a ...interface{}) NxL3NextHop {
 	argc := len(a)
 	if argc == 0 {
-		return p.GetL3NextHop__SWIG_2()
+		return p.GetL3NextHop__SWIG_3()
 	}
 	if argc == 1 {
 		if _, ok := a[0].(string); !ok {
 			goto check_2
 		}
-		return p.GetL3NextHop__SWIG_0(a[0].(string))
+		return p.GetL3NextHop__SWIG_1(a[0].(string))
 	}
 check_2:
 	if argc == 1 {
-		return p.GetL3NextHop__SWIG_1(a[0].(bool))
+		return p.GetL3NextHop__SWIG_2(a[0].(bool))
+	}
+	if argc == 2 {
+		return p.GetL3NextHop__SWIG_0(a[0].(string), a[1].(string))
 	}
 	panic("No match for overloaded function call")
 }
@@ -2662,7 +3422,7 @@ check_2:
 func (arg1 SwigcptrNxL3Route) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxL3Route_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxL3Route_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -2670,8 +3430,83 @@ func (arg1 SwigcptrNxL3Route) Equal(arg2 NxL3Route) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxL3Route_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxL3Route_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
+}
+
+func (arg1 SwigcptrNxL3Route) AddL3DirectNextHop(arg2 string, arg3 string, arg4 byte) (_swig_ret NxL3NextHop) {
+	var swig_r NxL3NextHop
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_addL3DirectNextHop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_85)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_86)(unsafe.Pointer(&_swig_i_2)), C.char(_swig_i_3))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxL3Route) AddL3RecursiveNextHop(arg2 string, arg3 byte) (_swig_ret NxL3NextHop) {
+	var swig_r NxL3NextHop
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (NxL3NextHop)(SwigcptrNxL3NextHop(C._wrap_NxL3Route_addL3RecursiveNextHop_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_87)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxL3Route) DelL3NextHop__SWIG_0(arg2 string, arg3 string) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (bool)(C._wrap_NxL3Route_delL3NextHop__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_88)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_89)(unsafe.Pointer(&_swig_i_2))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxL3Route) DelL3NextHop__SWIG_1(arg2 string) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_NxL3Route_delL3NextHop__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_90)(unsafe.Pointer(&_swig_i_1))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (p SwigcptrNxL3Route) DelL3NextHop(a ...interface{}) bool {
+	argc := len(a)
+	if argc == 1 {
+		return p.DelL3NextHop__SWIG_1(a[0].(string))
+	}
+	if argc == 2 {
+		return p.DelL3NextHop__SWIG_0(a[0].(string), a[1].(string))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxL3Route) GetL3Prefix() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxL3Route_getL3Prefix_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
 }
 
 type NxL3Route interface {
@@ -2684,6 +3519,10 @@ type NxL3Route interface {
 	GetL3NextHop(a ...interface{}) NxL3NextHop
 	GetEvent() (_swig_ret int)
 	Equal(arg2 NxL3Route) (_swig_ret bool)
+	AddL3DirectNextHop(arg2 string, arg3 string, arg4 byte) (_swig_ret NxL3NextHop)
+	AddL3RecursiveNextHop(arg2 string, arg3 byte) (_swig_ret NxL3NextHop)
+	DelL3NextHop(a ...interface{}) bool
+	GetL3Prefix() (_swig_ret string)
 }
 
 type _swig_DirectorNxRibMgrHandler struct {
@@ -2704,17 +3543,17 @@ func (p *_swig_DirectorNxRibMgrHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxRibMgrHandler(v interface{}) NxRibMgrHandler {
 	p := &_swig_DirectorNxRibMgrHandler{0, v}
-	p.SwigcptrNxRibMgrHandler = SwigcptrNxRibMgrHandler(C._wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxRibMgrHandler = SwigcptrNxRibMgrHandler(C._wrap__swig_NewDirectorNxRibMgrHandlerNxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxRibMgrHandler(arg1 NxRibMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler = 0
 	swigDirectorDelete(c)
 }
@@ -2729,19 +3568,19 @@ func (swig_p *_swig_DirectorNxRibMgrHandler) PostL3RouteCb(route NxL3Route) bool
 	}
 	var swig_r bool
 	_swig_i_0 := route.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxRibMgrHandlerPostL3RouteCb(p NxRibMgrHandler, arg2 NxL3Route) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postL3RouteCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
 	swig_r = swig_p.PostL3RouteCb(SwigcptrNxL3Route(arg2))
@@ -2758,23 +3597,195 @@ func (swig_p *_swig_DirectorNxRibMgrHandler) PostVrfCb(vrf NxVrf) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := vrf.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxRibMgrHandlerPostVrfCb(p NxRibMgrHandler, arg2 NxVrf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postVrfCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
 	swig_r = swig_p.PostVrfCb(SwigcptrNxVrf(arg2))
 	return swig_r
+}
+
+type _swig_DirectorInterfaceNxRibMgrHandlerPostL3RecursiveNextHopCb interface {
+	PostL3RecursiveNextHopCb(NxL3Route, bool) bool
+}
+
+func (swig_p *_swig_DirectorNxRibMgrHandler) PostL3RecursiveNextHopCb(rnhRoute NxL3Route, isResolved bool) bool {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxRibMgrHandlerPostL3RecursiveNextHopCb); swig_ok {
+		return swig_g.PostL3RecursiveNextHopCb(rnhRoute, isResolved)
+	}
+	var swig_r bool
+	_swig_i_0 := rnhRoute.Swigcptr()
+	_swig_i_1 := isResolved
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1)))
+	return swig_r
+}
+
+func DirectorNxRibMgrHandlerPostL3RecursiveNextHopCb(p NxRibMgrHandler, arg2 NxL3Route, arg3 bool) bool {
+	var swig_r bool
+	_swig_i_0 := arg2.Swigcptr()
+	_swig_i_1 := arg3
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1)))
+	return swig_r
+}
+
+//export Swig_DirectorNxRibMgrHandler_callback_postL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr, arg3 bool) (swig_result bool) {
+	var swig_r bool
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
+	swig_r = swig_p.PostL3RecursiveNextHopCb(SwigcptrNxL3Route(arg2), arg3)
+	return swig_r
+}
+
+type _swig_DirectorInterfaceNxRibMgrHandlerPostMyL3RouteCb interface {
+	PostMyL3RouteCb(NxL3Route) bool
+}
+
+func (swig_p *_swig_DirectorNxRibMgrHandler) PostMyL3RouteCb(route NxL3Route) bool {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxRibMgrHandlerPostMyL3RouteCb); swig_ok {
+		return swig_g.PostMyL3RouteCb(route)
+	}
+	var swig_r bool
+	_swig_i_0 := route.Swigcptr()
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func DirectorNxRibMgrHandlerPostMyL3RouteCb(p NxRibMgrHandler, arg2 NxL3Route) bool {
+	var swig_r bool
+	_swig_i_0 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+//export Swig_DirectorNxRibMgrHandler_callback_postMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
+	var swig_r bool
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
+	swig_r = swig_p.PostMyL3RouteCb(SwigcptrNxL3Route(arg2))
+	return swig_r
+}
+
+type _swig_DirectorInterfaceNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_0 interface {
+	PostL3RouteRepopulateCb__SWIG_0(string, string, byte)
+}
+
+func (swig_p *_swig_DirectorNxRibMgrHandler) PostL3RouteRepopulateCb__SWIG_0(vrfName string, routeAddress string, maskLen byte) {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_0); swig_ok {
+		swig_g.PostL3RouteRepopulateCb__SWIG_0(vrfName, routeAddress, maskLen)
+		return
+	}
+	_swig_i_0 := vrfName
+	_swig_i_1 := routeAddress
+	_swig_i_2 := maskLen
+	C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), *(*C.swig_type_92)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_93)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_0
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_1
+	}
+}
+
+func DirectorNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_0(p NxRibMgrHandler, arg2 string, arg3 string, arg4 byte) {
+	_swig_i_0 := arg2
+	_swig_i_1 := arg3
+	_swig_i_2 := arg4
+	C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), *(*C.swig_type_92)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_93)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_0
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_1
+	}
+}
+
+//export Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 string, arg3 string, arg4 byte) {
+	var _swig_i_0 string
+	var _swig_i_1 string
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
+ _swig_i_0 = swigCopyString(arg2) 
+ _swig_i_1 = swigCopyString(arg3) 
+	swig_p.PostL3RouteRepopulateCb__SWIG_0(_swig_i_0, _swig_i_1, arg4)
+}
+
+type _swig_DirectorInterfaceNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_1 interface {
+	PostL3RouteRepopulateCb__SWIG_1(string, string)
+}
+
+func (swig_p *_swig_DirectorNxRibMgrHandler) PostL3RouteRepopulateCb__SWIG_1(vrfName string, routeAddress string) {
+	if swig_g, swig_ok := swig_p.v.(_swig_DirectorInterfaceNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_1); swig_ok {
+		swig_g.PostL3RouteRepopulateCb__SWIG_1(vrfName, routeAddress)
+		return
+	}
+	_swig_i_0 := vrfName
+	_swig_i_1 := routeAddress
+	C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxRibMgrHandler), *(*C.swig_type_94)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_95)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_0
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_1
+	}
+}
+
+func DirectorNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_1(p NxRibMgrHandler, arg2 string, arg3 string) {
+	_swig_i_0 := arg2
+	_swig_i_1 := arg3
+	C._wrap__swig_DirectorNxRibMgrHandler_upcall_PostL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxRibMgrHandler).SwigcptrNxRibMgrHandler), *(*C.swig_type_94)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_95)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_0
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = _swig_i_1
+	}
+}
+
+//export Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxRibMgrHandler_callback_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 string, arg3 string) {
+	var _swig_i_0 string
+	var _swig_i_1 string
+	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxRibMgrHandler)
+ _swig_i_0 = swigCopyString(arg2) 
+ _swig_i_1 = swigCopyString(arg3) 
+	swig_p.PostL3RouteRepopulateCb__SWIG_1(_swig_i_0, _swig_i_1)
+}
+
+func (p _swig_DirectorNxRibMgrHandler) PostL3RouteRepopulateCb(a ...interface{}) {
+	argc := len(a)
+	if argc == 2 {
+		p.PostL3RouteRepopulateCb__SWIG_1(a[0].(string), a[1].(string))
+		return
+	}
+	if argc == 3 {
+		p.PostL3RouteRepopulateCb__SWIG_0(a[0].(string), a[1].(string), a[2].(byte))
+		return
+	}
+	panic("No match for overloaded function call")
+}
+
+func DirectorNxRibMgrHandlerPostL3RouteRepopulateCb(p *_swig_DirectorNxRibMgrHandler, a ...interface{}) {
+	argc := len(a)
+	if argc == 2 {
+		DirectorNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_1(p, a[0].(string), a[1].(string))
+		return
+	}
+	if argc == 3 {
+		DirectorNxRibMgrHandlerPostL3RouteRepopulateCb__SWIG_0(p, a[0].(string), a[1].(string), a[2].(byte))
+		return
+	}
+	panic("No match for overloaded function call")
 }
 
 type SwigcptrNxRibMgrHandler uintptr
@@ -2792,14 +3803,14 @@ func (p SwigcptrNxRibMgrHandler) DirectorInterface() interface{} {
 
 func DeleteNxRibMgrHandler(arg1 NxRibMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxRibMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxRibMgrHandler) PostL3RouteCb(arg2 NxL3Route) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxRibMgrHandler_postL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -2807,13 +3818,70 @@ func (arg1 SwigcptrNxRibMgrHandler) PostVrfCb(arg2 NxVrf) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxRibMgrHandler_postVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgrHandler) PostL3RecursiveNextHopCb(arg2 NxL3Route, arg3 bool) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3
+	swig_r = (bool)(C._wrap_NxRibMgrHandler_postL3RecursiveNextHopCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C._Bool(_swig_i_2)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgrHandler) PostMyL3RouteCb(arg2 NxL3Route) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap_NxRibMgrHandler_postMyL3RouteCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgrHandler) PostL3RouteRepopulateCb__SWIG_0(arg2 string, arg3 string, arg4 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	C._wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_92)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_93)(unsafe.Pointer(&_swig_i_2)), C.char(_swig_i_3))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+}
+
+func (arg1 SwigcptrNxRibMgrHandler) PostL3RouteRepopulateCb__SWIG_1(arg2 string, arg3 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	C._wrap_NxRibMgrHandler_postL3RouteRepopulateCb__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_94)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_95)(unsafe.Pointer(&_swig_i_2)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+}
+
+func (p SwigcptrNxRibMgrHandler) PostL3RouteRepopulateCb(a ...interface{}) {
+	argc := len(a)
+	if argc == 2 {
+		p.PostL3RouteRepopulateCb__SWIG_1(a[0].(string), a[1].(string))
+		return
+	}
+	if argc == 3 {
+		p.PostL3RouteRepopulateCb__SWIG_0(a[0].(string), a[1].(string), a[2].(byte))
+		return
+	}
+	panic("No match for overloaded function call")
 }
 
 func NewNxRibMgrHandler() (_swig_ret NxRibMgrHandler) {
 	var swig_r NxRibMgrHandler
-	swig_r = (NxRibMgrHandler)(SwigcptrNxRibMgrHandler(C._wrap_new_NxRibMgrHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxRibMgrHandler)(SwigcptrNxRibMgrHandler(C._wrap_new_NxRibMgrHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -2823,6 +3891,9 @@ type NxRibMgrHandler interface {
 	DirectorInterface() interface{}
 	PostL3RouteCb(arg2 NxL3Route) (_swig_ret bool)
 	PostVrfCb(arg2 NxVrf) (_swig_ret bool)
+	PostL3RecursiveNextHopCb(arg2 NxL3Route, arg3 bool) (_swig_ret bool)
+	PostMyL3RouteCb(arg2 NxL3Route) (_swig_ret bool)
+	PostL3RouteRepopulateCb(a ...interface{})
 }
 
 type SwigcptrNxRibMgr uintptr
@@ -2836,7 +3907,7 @@ func (p SwigcptrNxRibMgr) SwigIsNxRibMgr() {
 
 func DeleteNxRibMgr(arg1 NxRibMgr) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxRibMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxRibMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxRibMgr) GetVrf__SWIG_0(arg2 string, arg3 bool) (_swig_ret NxVrf) {
@@ -2844,7 +3915,7 @@ func (arg1 SwigcptrNxRibMgr) GetVrf__SWIG_0(arg2 string, arg3 bool) (_swig_ret N
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_65)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))))
+	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_96)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2855,7 +3926,7 @@ func (arg1 SwigcptrNxRibMgr) GetVrf__SWIG_1(arg2 string) (_swig_ret NxVrf) {
 	var swig_r NxVrf
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_66)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_97)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2865,7 +3936,7 @@ func (arg1 SwigcptrNxRibMgr) GetVrf__SWIG_1(arg2 string) (_swig_ret NxVrf) {
 func (arg1 SwigcptrNxRibMgr) GetVrf__SWIG_2() (_swig_ret NxVrf) {
 	var swig_r NxVrf
 	_swig_i_0 := arg1
-	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxVrf)(SwigcptrNxVrf(C._wrap_NxRibMgr_getVrf__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -2887,7 +3958,7 @@ func (arg1 SwigcptrNxRibMgr) WatchVrf__SWIG_0(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_67)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_98)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2897,7 +3968,7 @@ func (arg1 SwigcptrNxRibMgr) WatchVrf__SWIG_0(arg2 string) (_swig_ret bool) {
 func (arg1 SwigcptrNxRibMgr) WatchVrf__SWIG_1() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -2915,7 +3986,7 @@ func (p SwigcptrNxRibMgr) WatchVrf(a ...interface{}) bool {
 func (arg1 SwigcptrNxRibMgr) UnwatchVrf__SWIG_0(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_68)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxRibMgr_unwatchVrf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_99)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2923,7 +3994,7 @@ func (arg1 SwigcptrNxRibMgr) UnwatchVrf__SWIG_0(arg2 string) {
 
 func (arg1 SwigcptrNxRibMgr) UnwatchVrf__SWIG_1() {
 	_swig_i_0 := arg1
-	C._wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxRibMgr_unwatchVrf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (p SwigcptrNxRibMgr) UnwatchVrf(a ...interface{}) {
@@ -2942,13 +4013,13 @@ func (p SwigcptrNxRibMgr) UnwatchVrf(a ...interface{}) {
 func (arg1 SwigcptrNxRibMgr) SetRibMgrHandler(arg2 NxRibMgrHandler) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxRibMgr_setRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxRibMgr) GetRibMgrHandler() (_swig_ret NxRibMgrHandler) {
 	var swig_r NxRibMgrHandler
 	_swig_i_0 := arg1
-	swig_r = (NxRibMgrHandler)(SwigcptrNxRibMgrHandler(C._wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxRibMgrHandler)(SwigcptrNxRibMgrHandler(C._wrap_NxRibMgr_getRibMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -2959,7 +4030,7 @@ func (arg1 SwigcptrNxRibMgr) GetL3Route__SWIG_0(arg2 string, arg3 byte, arg4 str
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
 	_swig_i_4 := arg5
-	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_69)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_70)(unsafe.Pointer(&_swig_i_3)), C._Bool(_swig_i_4))))
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_100)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_101)(unsafe.Pointer(&_swig_i_3)), C._Bool(_swig_i_4))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2975,7 +4046,7 @@ func (arg1 SwigcptrNxRibMgr) GetL3Route__SWIG_1(arg2 string, arg3 byte, arg4 str
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_71)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_72)(unsafe.Pointer(&_swig_i_3)))))
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_102)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_103)(unsafe.Pointer(&_swig_i_3)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -2990,7 +4061,7 @@ func (arg1 SwigcptrNxRibMgr) GetL3Route__SWIG_2(arg2 string, arg3 byte) (_swig_r
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_73)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))))
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_104)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3001,7 +4072,7 @@ func (arg1 SwigcptrNxRibMgr) GetL3Route__SWIG_3(arg2 string) (_swig_ret NxL3Rout
 	var swig_r NxL3Route
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_74)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_105)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3032,7 +4103,7 @@ func (arg1 SwigcptrNxRibMgr) WatchL3Route__SWIG_0(arg2 string, arg3 string, arg4
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
 	_swig_i_4 := arg5
-	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_75)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_76)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_77)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4)))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_106)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_107)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_108)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3051,7 +4122,7 @@ func (arg1 SwigcptrNxRibMgr) WatchL3Route__SWIG_1(arg2 string, arg3 string, arg4
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_78)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_79)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_80)(unsafe.Pointer(&_swig_i_3))))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_109)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_110)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_111)(unsafe.Pointer(&_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3069,7 +4140,7 @@ func (arg1 SwigcptrNxRibMgr) WatchL3Route__SWIG_2(arg2 string, arg3 string) (_sw
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_81)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_82)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_112)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_113)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3083,7 +4154,7 @@ func (arg1 SwigcptrNxRibMgr) WatchL3Route__SWIG_3(arg2 string) (_swig_ret bool) 
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_83)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxRibMgr_watchL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_114)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3113,7 +4184,7 @@ func (arg1 SwigcptrNxRibMgr) UnwatchL3Route__SWIG_0(arg2 string, arg3 string, ar
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
 	_swig_i_4 := arg5
-	C._wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_84)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_85)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_86)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4))
+	C._wrap_NxRibMgr_unwatchL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_115)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_116)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_117)(unsafe.Pointer(&_swig_i_3)), C.swig_intgo(_swig_i_4))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3130,7 +4201,7 @@ func (arg1 SwigcptrNxRibMgr) UnwatchL3Route__SWIG_1(arg2 string, arg3 string, ar
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_87)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_88)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_89)(unsafe.Pointer(&_swig_i_3)))
+	C._wrap_NxRibMgr_unwatchL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_118)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_119)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_120)(unsafe.Pointer(&_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3146,7 +4217,7 @@ func (arg1 SwigcptrNxRibMgr) UnwatchL3Route__SWIG_2(arg2 string, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_90)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_91)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxRibMgr_unwatchL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_121)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_122)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3158,7 +4229,7 @@ func (arg1 SwigcptrNxRibMgr) UnwatchL3Route__SWIG_2(arg2 string, arg3 string) {
 func (arg1 SwigcptrNxRibMgr) UnwatchL3Route__SWIG_3(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_92)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxRibMgr_unwatchL3Route__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_123)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3185,6 +4256,232 @@ func (p SwigcptrNxRibMgr) UnwatchL3Route(a ...interface{}) {
 	panic("No match for overloaded function call")
 }
 
+func (arg1 SwigcptrNxRibMgr) GetL3RouteDetail__SWIG_0(arg2 string, arg3 uint, arg4 string) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3RouteDetail__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_124)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), *(*C.swig_type_125)(unsafe.Pointer(&_swig_i_3)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) GetL3RouteDetail__SWIG_1(arg2 string, arg3 uint) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3RouteDetail__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_126)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) GetL3RouteDetail__SWIG_2(arg2 string) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_getL3RouteDetail__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_127)(unsafe.Pointer(&_swig_i_1)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (p SwigcptrNxRibMgr) GetL3RouteDetail(a ...interface{}) NxL3Route {
+	argc := len(a)
+	if argc == 1 {
+		return p.GetL3RouteDetail__SWIG_2(a[0].(string))
+	}
+	if argc == 2 {
+		return p.GetL3RouteDetail__SWIG_1(a[0].(string), a[1].(uint))
+	}
+	if argc == 3 {
+		return p.GetL3RouteDetail__SWIG_0(a[0].(string), a[1].(uint), a[2].(string))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxRibMgr) AddL3Route__SWIG_0(arg2 string, arg3 byte, arg4 string) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_addL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_128)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_129)(unsafe.Pointer(&_swig_i_3)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) AddL3Route__SWIG_1(arg2 string, arg3 byte) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_addL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_130)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) AddL3Route__SWIG_2(arg2 string) (_swig_ret NxL3Route) {
+	var swig_r NxL3Route
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (NxL3Route)(SwigcptrNxL3Route(C._wrap_NxRibMgr_addL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_131)(unsafe.Pointer(&_swig_i_1)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (p SwigcptrNxRibMgr) AddL3Route(a ...interface{}) NxL3Route {
+	argc := len(a)
+	if argc == 1 {
+		return p.AddL3Route__SWIG_2(a[0].(string))
+	}
+	if argc == 2 {
+		return p.AddL3Route__SWIG_1(a[0].(string), a[1].(byte))
+	}
+	if argc == 3 {
+		return p.AddL3Route__SWIG_0(a[0].(string), a[1].(byte), a[2].(string))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxRibMgr) DelL3Route__SWIG_0(arg2 string, arg3 byte, arg4 string) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (bool)(C._wrap_NxRibMgr_delL3Route__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_132)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2), *(*C.swig_type_133)(unsafe.Pointer(&_swig_i_3))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) DelL3Route__SWIG_1(arg2 string, arg3 byte) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (bool)(C._wrap_NxRibMgr_delL3Route__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_134)(unsafe.Pointer(&_swig_i_1)), C.char(_swig_i_2)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) DelL3Route__SWIG_2(arg2 string) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_NxRibMgr_delL3Route__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_135)(unsafe.Pointer(&_swig_i_1))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (p SwigcptrNxRibMgr) DelL3Route(a ...interface{}) bool {
+	argc := len(a)
+	if argc == 1 {
+		return p.DelL3Route__SWIG_2(a[0].(string))
+	}
+	if argc == 2 {
+		return p.DelL3Route__SWIG_1(a[0].(string), a[1].(byte))
+	}
+	if argc == 3 {
+		return p.DelL3Route__SWIG_0(a[0].(string), a[1].(byte), a[2].(string))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxRibMgr) SendMyL3RoutesToRib__SWIG_0(arg2 int) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) SendMyL3RoutesToRib__SWIG_1() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_NxRibMgr_sendMyL3RoutesToRib__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (p SwigcptrNxRibMgr) SendMyL3RoutesToRib(a ...interface{}) bool {
+	argc := len(a)
+	if argc == 0 {
+		return p.SendMyL3RoutesToRib__SWIG_1()
+	}
+	if argc == 1 {
+		return p.SendMyL3RoutesToRib__SWIG_0(a[0].(int))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxRibMgr) Converged__SWIG_0(arg2 int, arg3 string) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r = (bool)(C._wrap_NxRibMgr_converged__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_136)(unsafe.Pointer(&_swig_i_2))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) Converged__SWIG_1(arg2 int) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_NxRibMgr_converged__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxRibMgr) Converged__SWIG_2() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_NxRibMgr_converged__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (p SwigcptrNxRibMgr) Converged(a ...interface{}) bool {
+	argc := len(a)
+	if argc == 0 {
+		return p.Converged__SWIG_2()
+	}
+	if argc == 1 {
+		return p.Converged__SWIG_1(a[0].(int))
+	}
+	if argc == 2 {
+		return p.Converged__SWIG_0(a[0].(int), a[1].(string))
+	}
+	panic("No match for overloaded function call")
+}
+
 type NxRibMgr interface {
 	Swigcptr() uintptr
 	SwigIsNxRibMgr()
@@ -3196,6 +4493,11 @@ type NxRibMgr interface {
 	GetL3Route(a ...interface{}) NxL3Route
 	WatchL3Route(a ...interface{}) bool
 	UnwatchL3Route(a ...interface{})
+	GetL3RouteDetail(a ...interface{}) NxL3Route
+	AddL3Route(a ...interface{}) NxL3Route
+	DelL3Route(a ...interface{}) bool
+	SendMyL3RoutesToRib(a ...interface{}) bool
+	Converged(a ...interface{}) bool
 }
 
 type SwigcptrNxException uintptr
@@ -3209,13 +4511,13 @@ func (p SwigcptrNxException) SwigIsNxException() {
 
 func DeleteNxException(arg1 NxException) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxException_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxException_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxException) What() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxException_what_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxException_what_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3225,14 +4527,14 @@ func (arg1 SwigcptrNxException) What() (_swig_ret string) {
 func (arg1 SwigcptrNxException) GetErrCode() (_swig_ret uint64) {
 	var swig_r uint64
 	_swig_i_0 := arg1
-	swig_r = (uint64)(C._wrap_NxException_getErrCode_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint64)(C._wrap_NxException_getErrCode_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxException) GetErrModule() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxException_getErrModule_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxException_getErrModule_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3242,14 +4544,14 @@ func (arg1 SwigcptrNxException) GetErrModule() (_swig_ret string) {
 func (arg1 SwigcptrNxException) GetErrSeverity() (_swig_ret uint16) {
 	var swig_r uint16
 	_swig_i_0 := arg1
-	swig_r = (uint16)(C._wrap_NxException_getErrSeverity_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint16)(C._wrap_NxException_getErrSeverity_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxException) GetErrApi() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxException_getErrApi_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxException_getErrApi_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3269,102 +4571,116 @@ type NxException interface {
 type NxosErr_type_e int
 func _swig_getERR_ESUCCESS() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_ESUCCESS_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_ESUCCESS_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_ESUCCESS int = _swig_getERR_ESUCCESS()
 func _swig_getERR_INVALID_USAGE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_INVALID_USAGE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_INVALID_USAGE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_INVALID_USAGE int = _swig_getERR_INVALID_USAGE()
 func _swig_getERR_INVALID() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_INVALID_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_INVALID_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_INVALID int = _swig_getERR_INVALID()
 func _swig_getERR_NULL_PTR() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_NULL_PTR_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_NULL_PTR_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_NULL_PTR int = _swig_getERR_NULL_PTR()
 func _swig_getERR_NOT_FOUND() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_NOT_FOUND_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_NOT_FOUND_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_NOT_FOUND int = _swig_getERR_NOT_FOUND()
 func _swig_getERR_EXISTS() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_EXISTS_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_EXISTS_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_EXISTS int = _swig_getERR_EXISTS()
 func _swig_getERR_EMPTY() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_EMPTY_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_EMPTY_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_EMPTY int = _swig_getERR_EMPTY()
 func _swig_getERR_MAX_LIMIT() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_MAX_LIMIT_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_MAX_LIMIT_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_MAX_LIMIT int = _swig_getERR_MAX_LIMIT()
 func _swig_getERR_FAILURE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_FAILURE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_FAILURE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_FAILURE int = _swig_getERR_FAILURE()
 func _swig_getERR_ESUCCESS_MORE() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_ESUCCESS_MORE_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_ESUCCESS_MORE_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_ESUCCESS_MORE int = _swig_getERR_ESUCCESS_MORE()
 func _swig_getERR_SIGINT() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_SIGINT_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_SIGINT_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_SIGINT int = _swig_getERR_SIGINT()
 func _swig_getERR_ENOMEM() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_ENOMEM_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_ENOMEM_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_ENOMEM int = _swig_getERR_ENOMEM()
 func _swig_getERR_BADFD() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_BADFD_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_BADFD_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_BADFD int = _swig_getERR_BADFD()
 func _swig_getERR_UNKNOWN() (_swig_ret int) {
 	var swig_r int
-	swig_r = (int)(C._wrap_ERR_UNKNOWN_nx_sdk_go_92557035fa796fff())
+	swig_r = (int)(C._wrap_ERR_UNKNOWN_nx_sdk_go_c22a77a7a4f02419())
 	return swig_r
 }
 
 var ERR_UNKNOWN int = _swig_getERR_UNKNOWN()
+func _swig_getERR_REMOTE_DOWN() (_swig_ret int) {
+	var swig_r int
+	swig_r = (int)(C._wrap_ERR_REMOTE_DOWN_nx_sdk_go_c22a77a7a4f02419())
+	return swig_r
+}
+
+var ERR_REMOTE_DOWN int = _swig_getERR_REMOTE_DOWN()
+func _swig_getERR_REMOTE_SDK_OBJS_OBSOLETE() (_swig_ret int) {
+	var swig_r int
+	swig_r = (int)(C._wrap_ERR_REMOTE_SDK_OBJS_OBSOLETE_nx_sdk_go_c22a77a7a4f02419())
+	return swig_r
+}
+
+var ERR_REMOTE_SDK_OBJS_OBSOLETE int = _swig_getERR_REMOTE_SDK_OBJS_OBSOLETE()
 type SwigcptrNxIntf uintptr
 
 func (p SwigcptrNxIntf) Swigcptr() uintptr {
@@ -3385,13 +4701,13 @@ const INTF_SPEED_AUTO_100 int = 110
 const INTF_SPEED_AUTO_100_1000 int = 120
 func DeleteNxIntf(arg1 NxIntf) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxIntf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxIntf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxIntf) GetName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3401,7 +4717,7 @@ func (arg1 SwigcptrNxIntf) GetName() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetLayer() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getLayer_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getLayer_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3411,14 +4727,14 @@ func (arg1 SwigcptrNxIntf) GetLayer() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetType() (_swig_ret NxosIntf_type_e) {
 	var swig_r NxosIntf_type_e
 	_swig_i_0 := arg1
-	swig_r = (NxosIntf_type_e)(C._wrap_NxIntf_getType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (NxosIntf_type_e)(C._wrap_NxIntf_getType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetVrf() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getVrf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getVrf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3428,7 +4744,7 @@ func (arg1 SwigcptrNxIntf) GetVrf() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetVlan() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getVlan_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getVlan_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3438,7 +4754,7 @@ func (arg1 SwigcptrNxIntf) GetVlan() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetDescription() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getDescription_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getDescription_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3449,7 +4765,7 @@ func (arg1 SwigcptrNxIntf) GetL3PrAddr(arg2 int) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxIntf_getL3PrAddr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	swig_r_p := C._wrap_NxIntf_getL3PrAddr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3461,7 +4777,7 @@ func (arg1 SwigcptrNxIntf) GetL3ScAddr__SWIG_0(arg2 int, arg3 bool) (_swig_ret s
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r_p := C._wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C._Bool(_swig_i_2))
+	swig_r_p := C._wrap_NxIntf_getL3ScAddr__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C._Bool(_swig_i_2))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3472,7 +4788,7 @@ func (arg1 SwigcptrNxIntf) GetL3ScAddr__SWIG_1(arg2 int) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	swig_r_p := C._wrap_NxIntf_getL3ScAddr__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3493,7 +4809,7 @@ func (p SwigcptrNxIntf) GetL3ScAddr(a ...interface{}) string {
 func (arg1 SwigcptrNxIntf) GetL2Address() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getL2Address_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getL2Address_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3503,7 +4819,7 @@ func (arg1 SwigcptrNxIntf) GetL2Address() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetL2AddressHW() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getL2AddressHW_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getL2AddressHW_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3513,35 +4829,35 @@ func (arg1 SwigcptrNxIntf) GetL2AddressHW() (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetAdminState() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxIntf_getAdminState_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxIntf_getAdminState_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetOperState() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxIntf_getOperState_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxIntf_getOperState_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetMtu() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxIntf_getMtu_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxIntf_getMtu_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetSpeed() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxIntf_getSpeed_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxIntf_getSpeed_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetMemberCount() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxIntf_getMemberCount_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxIntf_getMemberCount_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -3549,7 +4865,7 @@ func (arg1 SwigcptrNxIntf) GetMembers__SWIG_0(arg2 bool) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	swig_r_p := C._wrap_NxIntf_getMembers__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3559,7 +4875,7 @@ func (arg1 SwigcptrNxIntf) GetMembers__SWIG_0(arg2 bool) (_swig_ret string) {
 func (arg1 SwigcptrNxIntf) GetMembers__SWIG_1() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getMembers__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3580,14 +4896,14 @@ func (p SwigcptrNxIntf) GetMembers(a ...interface{}) string {
 func (arg1 SwigcptrNxIntf) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxIntf_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxIntf_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntf) GetLastMod() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxIntf_getLastMod_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxIntf_getLastMod_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -3598,7 +4914,7 @@ func (arg1 SwigcptrNxIntf) SetLayer(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setLayer_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_110)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_setLayer_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_154)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3609,7 +4925,7 @@ func (arg1 SwigcptrNxIntf) SetVrf(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setVrf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_111)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_setVrf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_155)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3620,7 +4936,7 @@ func (arg1 SwigcptrNxIntf) SetVlan(arg2 uint) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setVlan_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntf_setVlan_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -3628,7 +4944,7 @@ func (arg1 SwigcptrNxIntf) SetDescription(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setDescription_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_112)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_setDescription_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_156)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3641,7 +4957,7 @@ func (arg1 SwigcptrNxIntf) SetL3Address(arg2 string, arg3 int, arg4 bool) (_swig
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxIntf_setL3Address_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_113)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3)))
+	swig_r = (bool)(C._wrap_NxIntf_setL3Address_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_157)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3652,7 +4968,7 @@ func (arg1 SwigcptrNxIntf) SetL2Address(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setL2Address_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_114)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_setL2Address_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_158)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3663,7 +4979,7 @@ func (arg1 SwigcptrNxIntf) SetAdminState(arg2 int) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setAdminState_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntf_setAdminState_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -3671,7 +4987,7 @@ func (arg1 SwigcptrNxIntf) SetMtu(arg2 uint) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setMtu_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntf_setMtu_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -3679,7 +4995,7 @@ func (arg1 SwigcptrNxIntf) SetSpeed(arg2 uint) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_setSpeed_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntf_setSpeed_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -3687,7 +5003,7 @@ func (arg1 SwigcptrNxIntf) AddMember(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_addMember_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_115)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_addMember_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_159)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3698,7 +5014,7 @@ func (arg1 SwigcptrNxIntf) DelMember(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntf_delMember_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_116)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntf_delMember_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_160)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -3709,7 +5025,7 @@ func (arg1 SwigcptrNxIntf) Equal(arg2 NxIntf) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntf_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntf_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -3766,17 +5082,17 @@ func (p *_swig_DirectorNxIntfMgrHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxIntfMgrHandler(v interface{}) NxIntfMgrHandler {
 	p := &_swig_DirectorNxIntfMgrHandler{0, v}
-	p.SwigcptrNxIntfMgrHandler = SwigcptrNxIntfMgrHandler(C._wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxIntfMgrHandler = SwigcptrNxIntfMgrHandler(C._wrap__swig_NewDirectorNxIntfMgrHandlerNxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxIntfMgrHandler(arg1 NxIntfMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler = 0
 	swigDirectorDelete(c)
 }
@@ -3791,19 +5107,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfAddDelCb(obj NxIntf) bool 
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfAddDelCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfAddDelCb(SwigcptrNxIntf(arg2))
@@ -3820,19 +5136,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfIpv4AddrCb(obj NxIntf) boo
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfIpv4AddrCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfIpv4AddrCb(SwigcptrNxIntf(arg2))
@@ -3849,19 +5165,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfIpv6AddrCb(obj NxIntf) boo
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfIpv6AddrCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfIpv6AddrCb(SwigcptrNxIntf(arg2))
@@ -3878,19 +5194,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfStateCb(obj NxIntf) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfStateCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfStateCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfStateCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfStateCb(SwigcptrNxIntf(arg2))
@@ -3907,19 +5223,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfLayerCb(obj NxIntf) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfLayerCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfLayerCb(SwigcptrNxIntf(arg2))
@@ -3936,19 +5252,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfPortMemberCb(obj NxIntf) b
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfPortMemberCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfPortMemberCb(SwigcptrNxIntf(arg2))
@@ -3965,19 +5281,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfVrfCb(obj NxIntf) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfVrfCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfVrfCb(SwigcptrNxIntf(arg2))
@@ -3994,19 +5310,19 @@ func (swig_p *_swig_DirectorNxIntfMgrHandler) PostIntfVlanCb(obj NxIntf) bool {
 	}
 	var swig_r bool
 	_swig_i_0 := obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxIntfMgrHandlerPostIntfVlanCb(p NxIntfMgrHandler, arg2 NxIntf) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxIntfMgrHandler_upcall_PostIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxIntfMgrHandler).SwigcptrNxIntfMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxIntfMgrHandler_callback_postIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxIntfMgrHandler)
 	swig_r = swig_p.PostIntfVlanCb(SwigcptrNxIntf(arg2))
@@ -4028,14 +5344,14 @@ func (p SwigcptrNxIntfMgrHandler) DirectorInterface() interface{} {
 
 func DeleteNxIntfMgrHandler(arg1 NxIntfMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxIntfMgrHandler) PostIntfAddDelCb(arg2 NxIntf) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfAddDelCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4043,7 +5359,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfIpv4AddrCb(arg2 NxIntf) (_swig_ret 
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfIpv4AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4051,7 +5367,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfIpv6AddrCb(arg2 NxIntf) (_swig_ret 
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfIpv6AddrCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4059,7 +5375,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfStateCb(arg2 NxIntf) (_swig_ret boo
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfStateCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4067,7 +5383,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfLayerCb(arg2 NxIntf) (_swig_ret boo
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfLayerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4075,7 +5391,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfPortMemberCb(arg2 NxIntf) (_swig_re
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfPortMemberCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4083,7 +5399,7 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfVrfCb(arg2 NxIntf) (_swig_ret bool)
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfVrfCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4091,13 +5407,13 @@ func (arg1 SwigcptrNxIntfMgrHandler) PostIntfVlanCb(arg2 NxIntf) (_swig_ret bool
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxIntfMgrHandler_postIntfVlanCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
 func NewNxIntfMgrHandler() (_swig_ret NxIntfMgrHandler) {
 	var swig_r NxIntfMgrHandler
-	swig_r = (NxIntfMgrHandler)(SwigcptrNxIntfMgrHandler(C._wrap_new_NxIntfMgrHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxIntfMgrHandler)(SwigcptrNxIntfMgrHandler(C._wrap_new_NxIntfMgrHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -4126,21 +5442,21 @@ func (p SwigcptrNxIntfMgr) SwigIsNxIntfMgr() {
 
 func DeleteNxIntfMgr(arg1 NxIntfMgr) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxIntfMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxIntfMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxIntfMgr) IterateIntf__SWIG_0(arg2 bool) (_swig_ret NxIntf) {
 	var swig_r NxIntf
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))))
+	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_iterateIntf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntfMgr) IterateIntf__SWIG_1() (_swig_ret NxIntf) {
 	var swig_r NxIntf
 	_swig_i_0 := arg1
-	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_iterateIntf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -4159,7 +5475,7 @@ func (arg1 SwigcptrNxIntfMgr) GetIntf(arg2 string) (_swig_ret NxIntf) {
 	var swig_r NxIntf
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_getIntf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_117)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_getIntf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_161)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4169,14 +5485,14 @@ func (arg1 SwigcptrNxIntfMgr) GetIntf(arg2 string) (_swig_ret NxIntf) {
 func (arg1 SwigcptrNxIntfMgr) GetIntfAll() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxIntfMgr_getIntfAll_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_NxIntfMgr_getIntfAll_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxIntfMgr) CloseIntfAll() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_NxIntfMgr_closeIntfAll_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -4184,7 +5500,7 @@ func (arg1 SwigcptrNxIntfMgr) AddIntf(arg2 string) (_swig_ret NxIntf) {
 	var swig_r NxIntf
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_addIntf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_118)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (NxIntf)(SwigcptrNxIntf(C._wrap_NxIntfMgr_addIntf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_162)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4196,7 +5512,7 @@ func (arg1 SwigcptrNxIntfMgr) RemoveIntf__SWIG_0(arg2 string, arg3 bool) (_swig_
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_119)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2)))
+	swig_r = (bool)(C._wrap_NxIntfMgr_removeIntf__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_163)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4207,7 +5523,7 @@ func (arg1 SwigcptrNxIntfMgr) RemoveIntf__SWIG_1(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_120)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntfMgr_removeIntf__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_164)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4229,7 +5545,7 @@ func (arg1 SwigcptrNxIntfMgr) WatchIntf(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntfMgr_watchIntf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_121)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntfMgr_watchIntf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_165)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4240,7 +5556,7 @@ func (arg1 SwigcptrNxIntfMgr) UnWatchIntf(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_122)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxIntfMgr_unWatchIntf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_166)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4250,13 +5566,13 @@ func (arg1 SwigcptrNxIntfMgr) UnWatchIntf(arg2 string) (_swig_ret bool) {
 func (arg1 SwigcptrNxIntfMgr) SetIntfHandler(arg2 NxIntfMgrHandler) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxIntfMgr_setIntfHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxIntfMgr) GetIntfHandler() (_swig_ret NxIntfMgrHandler) {
 	var swig_r NxIntfMgrHandler
 	_swig_i_0 := arg1
-	swig_r = (NxIntfMgrHandler)(SwigcptrNxIntfMgrHandler(C._wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxIntfMgrHandler)(SwigcptrNxIntfMgrHandler(C._wrap_NxIntfMgr_getIntfHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -4286,13 +5602,13 @@ func (p SwigcptrNxDme) SwigIsNxDme() {
 
 func DeleteNxDme(arg1 NxDme) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxDme_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxDme_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxDme) GetDn() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxDme_getDn_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxDme_getDn_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4304,7 +5620,7 @@ func (arg1 SwigcptrNxDme) SetProperty(arg2 string, arg3 string, arg4 *int) {
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_NxDme_setProperty_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_124)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_125)(unsafe.Pointer(&_swig_i_2)), C.swig_voidp(_swig_i_3))
+	C._wrap_NxDme_setProperty_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_168)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_169)(unsafe.Pointer(&_swig_i_2)), C.swig_voidp(_swig_i_3))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4318,7 +5634,7 @@ func (arg1 SwigcptrNxDme) GetProperty(arg2 string, arg3 *int) (_swig_ret string)
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r_p := C._wrap_NxDme_getProperty_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_127)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
+	swig_r_p := C._wrap_NxDme_getProperty_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_171)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -4332,7 +5648,7 @@ func (arg1 SwigcptrNxDme) Commit(arg2 *int) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxDme_commit_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
+	swig_r_p := C._wrap_NxDme_commit_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4342,7 +5658,7 @@ func (arg1 SwigcptrNxDme) Commit(arg2 *int) (_swig_ret string) {
 func (arg1 SwigcptrNxDme) GetDataJson() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxDme_getDataJson_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxDme_getDataJson_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4353,7 +5669,7 @@ func (arg1 SwigcptrNxDme) IterateProperties__SWIG_0(arg2 bool) (_swig_ret string
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	swig_r_p := C._wrap_NxDme_iterateProperties__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4363,7 +5679,7 @@ func (arg1 SwigcptrNxDme) IterateProperties__SWIG_0(arg2 bool) (_swig_ret string
 func (arg1 SwigcptrNxDme) IterateProperties__SWIG_1() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxDme_iterateProperties__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4384,7 +5700,7 @@ func (p SwigcptrNxDme) IterateProperties(a ...interface{}) string {
 func (arg1 SwigcptrNxDme) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxDme_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxDme_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -4392,7 +5708,7 @@ func (arg1 SwigcptrNxDme) GetEventIsPropertyChanged(arg2 string) (_swig_ret bool
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_132)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxDme_getEventIsPropertyChanged_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_176)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4403,7 +5719,7 @@ func (arg1 SwigcptrNxDme) IterateEventUpdatedProperties__SWIG_0(arg2 bool) (_swi
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r_p := C._wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	swig_r_p := C._wrap_NxDme_iterateEventUpdatedProperties__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4413,7 +5729,7 @@ func (arg1 SwigcptrNxDme) IterateEventUpdatedProperties__SWIG_0(arg2 bool) (_swi
 func (arg1 SwigcptrNxDme) IterateEventUpdatedProperties__SWIG_1() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxDme_iterateEventUpdatedProperties__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4435,8 +5751,69 @@ func (arg1 SwigcptrNxDme) Equal(arg2 NxDme) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxDme_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxDme_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
+}
+
+func (arg1 SwigcptrNxDme) GetChildrenDmeObjCount() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_NxDme_getChildrenDmeObjCount_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxDme) IterateChildrenDmeDn__SWIG_0(arg2 bool) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r_p := C._wrap_NxDme_iterateChildrenDmeDn__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNxDme) IterateChildrenDmeDn__SWIG_1() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_NxDme_iterateChildrenDmeDn__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (p SwigcptrNxDme) IterateChildrenDmeDn(a ...interface{}) string {
+	argc := len(a)
+	if argc == 0 {
+		return p.IterateChildrenDmeDn__SWIG_1()
+	}
+	if argc == 1 {
+		return p.IterateChildrenDmeDn__SWIG_0(a[0].(bool))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrNxDme) IsModified() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_NxDme_isModified_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNxDme) GetEventPropertyValue(arg2 string, arg3 *int) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	swig_r_p := C._wrap_NxDme_getEventPropertyValue_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_182)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
 }
 
 type NxDme interface {
@@ -4452,6 +5829,10 @@ type NxDme interface {
 	GetEventIsPropertyChanged(arg2 string) (_swig_ret bool)
 	IterateEventUpdatedProperties(a ...interface{}) string
 	Equal(arg2 NxDme) (_swig_ret bool)
+	GetChildrenDmeObjCount() (_swig_ret int)
+	IterateChildrenDmeDn(a ...interface{}) string
+	IsModified() (_swig_ret bool)
+	GetEventPropertyValue(arg2 string, arg3 *int) (_swig_ret string)
 }
 
 type _swig_DirectorNxDmeMgrHandler struct {
@@ -4472,17 +5853,17 @@ func (p *_swig_DirectorNxDmeMgrHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxDmeMgrHandler(v interface{}) NxDmeMgrHandler {
 	p := &_swig_DirectorNxDmeMgrHandler{0, v}
-	p.SwigcptrNxDmeMgrHandler = SwigcptrNxDmeMgrHandler(C._wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxDmeMgrHandler = SwigcptrNxDmeMgrHandler(C._wrap__swig_NewDirectorNxDmeMgrHandlerNxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxDmeMgrHandler(arg1 NxDmeMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxDmeMgrHandler).SwigcptrNxDmeMgrHandler = 0
 	swigDirectorDelete(c)
 }
@@ -4497,16 +5878,16 @@ func (swig_p *_swig_DirectorNxDmeMgrHandler) PostDmeHandlerCb(objp NxDme) {
 		return
 	}
 	_swig_i_0 := objp.Swigcptr()
-	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxDmeMgrHandler), C.uintptr_t(_swig_i_0))
+	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxDmeMgrHandler), C.uintptr_t(_swig_i_0))
 }
 
 func DirectorNxDmeMgrHandlerPostDmeHandlerCb(p NxDmeMgrHandler, arg2 NxDme) {
 	_swig_i_0 := arg2.Swigcptr()
-	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxDmeMgrHandler).SwigcptrNxDmeMgrHandler), C.uintptr_t(_swig_i_0))
+	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxDmeMgrHandler).SwigcptrNxDmeMgrHandler), C.uintptr_t(_swig_i_0))
 }
 
-//export Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) {
+//export Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) {
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxDmeMgrHandler)
 	swig_p.PostDmeHandlerCb(SwigcptrNxDme(arg2))
 }
@@ -4521,7 +5902,7 @@ func (swig_p *_swig_DirectorNxDmeMgrHandler) PostDmeHandlerDownloadDoneCb(dn str
 		return
 	}
 	_swig_i_0 := dn
-	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxDmeMgrHandler), *(*C.swig_type_135)(unsafe.Pointer(&_swig_i_0)))
+	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxDmeMgrHandler), *(*C.swig_type_183)(unsafe.Pointer(&_swig_i_0)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
@@ -4529,14 +5910,14 @@ func (swig_p *_swig_DirectorNxDmeMgrHandler) PostDmeHandlerDownloadDoneCb(dn str
 
 func DirectorNxDmeMgrHandlerPostDmeHandlerDownloadDoneCb(p NxDmeMgrHandler, arg2 string) {
 	_swig_i_0 := arg2
-	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxDmeMgrHandler).SwigcptrNxDmeMgrHandler), *(*C.swig_type_135)(unsafe.Pointer(&_swig_i_0)))
+	C._wrap__swig_DirectorNxDmeMgrHandler_upcall_PostDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxDmeMgrHandler).SwigcptrNxDmeMgrHandler), *(*C.swig_type_183)(unsafe.Pointer(&_swig_i_0)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
 }
 
-//export Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 string) {
+//export Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxDmeMgrHandler_callback_postDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 string) {
 	var _swig_i_0 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxDmeMgrHandler)
  _swig_i_0 = swigCopyString(arg2) 
@@ -4558,19 +5939,19 @@ func (p SwigcptrNxDmeMgrHandler) DirectorInterface() interface{} {
 
 func DeleteNxDmeMgrHandler(arg1 NxDmeMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxDmeMgrHandler) PostDmeHandlerCb(arg2 NxDme) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxDmeMgrHandler_postDmeHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxDmeMgrHandler) PostDmeHandlerDownloadDoneCb(arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_135)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_NxDmeMgrHandler_postDmeHandlerDownloadDoneCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_183)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4578,7 +5959,7 @@ func (arg1 SwigcptrNxDmeMgrHandler) PostDmeHandlerDownloadDoneCb(arg2 string) {
 
 func NewNxDmeMgrHandler() (_swig_ret NxDmeMgrHandler) {
 	var swig_r NxDmeMgrHandler
-	swig_r = (NxDmeMgrHandler)(SwigcptrNxDmeMgrHandler(C._wrap_new_NxDmeMgrHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxDmeMgrHandler)(SwigcptrNxDmeMgrHandler(C._wrap_new_NxDmeMgrHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -4601,18 +5982,41 @@ func (p SwigcptrNxDmeMgr) SwigIsNxDmeMgr() {
 
 func DeleteNxDmeMgr(arg1 NxDmeMgr) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxDmeMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxDmeMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-func (arg1 SwigcptrNxDmeMgr) GetDmeObj(arg2 string) (_swig_ret NxDme) {
+func (arg1 SwigcptrNxDmeMgr) GetDmeObj__SWIG_0(arg2 string, arg3 bool) (_swig_ret NxDme) {
 	var swig_r NxDme
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (NxDme)(SwigcptrNxDme(C._wrap_NxDmeMgr_getDmeObj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_136)(unsafe.Pointer(&_swig_i_1)))))
+	_swig_i_2 := arg3
+	swig_r = (NxDme)(SwigcptrNxDme(C._wrap_NxDmeMgr_getDmeObj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_184)(unsafe.Pointer(&_swig_i_1)), C._Bool(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
 	return swig_r
+}
+
+func (arg1 SwigcptrNxDmeMgr) GetDmeObj__SWIG_1(arg2 string) (_swig_ret NxDme) {
+	var swig_r NxDme
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (NxDme)(SwigcptrNxDme(C._wrap_NxDmeMgr_getDmeObj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_185)(unsafe.Pointer(&_swig_i_1)))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (p SwigcptrNxDmeMgr) GetDmeObj(a ...interface{}) NxDme {
+	argc := len(a)
+	if argc == 1 {
+		return p.GetDmeObj__SWIG_1(a[0].(string))
+	}
+	if argc == 2 {
+		return p.GetDmeObj__SWIG_0(a[0].(string), a[1].(bool))
+	}
+	panic("No match for overloaded function call")
 }
 
 func (arg1 SwigcptrNxDmeMgr) AddDmeObj(arg2 string, arg3 *int) (_swig_ret NxDme) {
@@ -4620,7 +6024,7 @@ func (arg1 SwigcptrNxDmeMgr) AddDmeObj(arg2 string, arg3 *int) (_swig_ret NxDme)
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxDme)(SwigcptrNxDme(C._wrap_NxDmeMgr_addDmeObj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_137)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))))
+	swig_r = (NxDme)(SwigcptrNxDme(C._wrap_NxDmeMgr_addDmeObj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_186)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4631,7 +6035,7 @@ func (arg1 SwigcptrNxDmeMgr) DelDmeObj(arg2 string) (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (int)(C._wrap_NxDmeMgr_delDmeObj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_138)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (int)(C._wrap_NxDmeMgr_delDmeObj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_187)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4643,7 +6047,7 @@ func (arg1 SwigcptrNxDmeMgr) GetMoJson(arg2 string, arg3 *int) (_swig_ret string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r_p := C._wrap_NxDmeMgr_getMoJson_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_140)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
+	swig_r_p := C._wrap_NxDmeMgr_getMoJson_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_189)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -4658,7 +6062,7 @@ func (arg1 SwigcptrNxDmeMgr) GetChildrenMoJson(arg2 string, arg3 *int) (_swig_re
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r_p := C._wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_142)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
+	swig_r_p := C._wrap_NxDmeMgr_getChildrenMoJson_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_191)(unsafe.Pointer(&_swig_i_1)), C.swig_voidp(_swig_i_2))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
@@ -4672,7 +6076,7 @@ func (arg1 SwigcptrNxDmeMgr) ExistsDmeObj(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_143)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxDmeMgr_existsDmeObj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_192)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4685,7 +6089,7 @@ func (arg1 SwigcptrNxDmeMgr) Watch__SWIG_0(arg2 string, arg3 string, arg4 bool) 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_144)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_145)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3)))
+	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_193)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_194)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4700,7 +6104,7 @@ func (arg1 SwigcptrNxDmeMgr) Watch__SWIG_1(arg2 string, arg3 string) (_swig_ret 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_146)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_147)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_195)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_196)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4714,7 +6118,7 @@ func (arg1 SwigcptrNxDmeMgr) Watch__SWIG_2(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_148)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxDmeMgr_watch__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_197)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4740,7 +6144,7 @@ func (arg1 SwigcptrNxDmeMgr) Unwatch__SWIG_0(arg2 string, arg3 string) (_swig_re
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_149)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_150)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxDmeMgr_unwatch__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_198)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_199)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4754,7 +6158,7 @@ func (arg1 SwigcptrNxDmeMgr) Unwatch__SWIG_1(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_151)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxDmeMgr_unwatch__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_200)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -4776,21 +6180,21 @@ func (arg1 SwigcptrNxDmeMgr) SetDmeHandler(arg2 NxDmeMgrHandler) (_swig_ret bool
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxDmeMgr_setDmeHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxDmeMgr) GetDmeHandler() (_swig_ret NxDmeMgrHandler) {
 	var swig_r NxDmeMgrHandler
 	_swig_i_0 := arg1
-	swig_r = (NxDmeMgrHandler)(SwigcptrNxDmeMgrHandler(C._wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxDmeMgrHandler)(SwigcptrNxDmeMgrHandler(C._wrap_NxDmeMgr_getDmeHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
 type NxDmeMgr interface {
 	Swigcptr() uintptr
 	SwigIsNxDmeMgr()
-	GetDmeObj(arg2 string) (_swig_ret NxDme)
+	GetDmeObj(a ...interface{}) NxDme
 	AddDmeObj(arg2 string, arg3 *int) (_swig_ret NxDme)
 	DelDmeObj(arg2 string) (_swig_ret int)
 	GetMoJson(arg2 string, arg3 *int) (_swig_ret string)
@@ -4813,13 +6217,13 @@ func (p SwigcptrNxAdj) SwigIsNxAdj() {
 
 func DeleteNxAdj(arg1 NxAdj) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxAdj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxAdj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxAdj) GetIpAddr() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getIpAddr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getIpAddr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4829,7 +6233,7 @@ func (arg1 SwigcptrNxAdj) GetIpAddr() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetMacAddr() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getMacAddr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getMacAddr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4839,7 +6243,7 @@ func (arg1 SwigcptrNxAdj) GetMacAddr() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetVrf() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getVrf_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getVrf_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4849,7 +6253,7 @@ func (arg1 SwigcptrNxAdj) GetVrf() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetIntfName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getIntfName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getIntfName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4859,7 +6263,7 @@ func (arg1 SwigcptrNxAdj) GetIntfName() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetPhyIntfName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getPhyIntfName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getPhyIntfName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4869,14 +6273,14 @@ func (arg1 SwigcptrNxAdj) GetPhyIntfName() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetPreference() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxAdj_getPreference_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxAdj_getPreference_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxAdj) GetSource() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxAdj_getSource_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxAdj_getSource_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -4886,14 +6290,14 @@ func (arg1 SwigcptrNxAdj) GetSource() (_swig_ret string) {
 func (arg1 SwigcptrNxAdj) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxAdj_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxAdj_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxAdj) GetAF() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxAdj_getAF_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxAdj_getAF_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -4901,7 +6305,7 @@ func (arg1 SwigcptrNxAdj) Equal(arg2 NxAdj) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxAdj_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxAdj_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -4938,17 +6342,17 @@ func (p *_swig_DirectorNxAdjMgrHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxAdjMgrHandler(v interface{}) NxAdjMgrHandler {
 	p := &_swig_DirectorNxAdjMgrHandler{0, v}
-	p.SwigcptrNxAdjMgrHandler = SwigcptrNxAdjMgrHandler(C._wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxAdjMgrHandler = SwigcptrNxAdjMgrHandler(C._wrap__swig_NewDirectorNxAdjMgrHandlerNxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxAdjMgrHandler(arg1 NxAdjMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler = 0
 	swigDirectorDelete(c)
 }
@@ -4963,16 +6367,16 @@ func (swig_p *_swig_DirectorNxAdjMgrHandler) PostAdjCb(adj_obj NxAdj) {
 		return
 	}
 	_swig_i_0 := adj_obj.Swigcptr()
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), C.uintptr_t(_swig_i_0))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), C.uintptr_t(_swig_i_0))
 }
 
 func DirectorNxAdjMgrHandlerPostAdjCb(p NxAdjMgrHandler, arg2 NxAdj) {
 	_swig_i_0 := arg2.Swigcptr()
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), C.uintptr_t(_swig_i_0))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), C.uintptr_t(_swig_i_0))
 }
 
-//export Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) {
+//export Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxAdjMgrHandler_callback_postAdjCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) {
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxAdjMgrHandler)
 	swig_p.PostAdjCb(SwigcptrNxAdj(arg2))
 }
@@ -4988,7 +6392,7 @@ func (swig_p *_swig_DirectorNxAdjMgrHandler) PostAdjIPv4DownloadDone(intfName st
 	}
 	_swig_i_0 := intfName
 	_swig_i_1 := ipv4_addr
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), *(*C.swig_type_158)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_159)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), *(*C.swig_type_207)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_208)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
@@ -5000,7 +6404,7 @@ func (swig_p *_swig_DirectorNxAdjMgrHandler) PostAdjIPv4DownloadDone(intfName st
 func DirectorNxAdjMgrHandlerPostAdjIPv4DownloadDone(p NxAdjMgrHandler, arg2 string, arg3 string) {
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), *(*C.swig_type_158)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_159)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), *(*C.swig_type_207)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_208)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
@@ -5009,8 +6413,8 @@ func DirectorNxAdjMgrHandlerPostAdjIPv4DownloadDone(p NxAdjMgrHandler, arg2 stri
 	}
 }
 
-//export Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(swig_c int, arg2 string, arg3 string) {
+//export Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 string, arg3 string) {
 	var _swig_i_0 string
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxAdjMgrHandler)
@@ -5030,7 +6434,7 @@ func (swig_p *_swig_DirectorNxAdjMgrHandler) PostAdjIPv6DownloadDone(intfName st
 	}
 	_swig_i_0 := intfName
 	_swig_i_1 := ipv6_addr
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), *(*C.swig_type_160)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_161)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxAdjMgrHandler), *(*C.swig_type_209)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_210)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
@@ -5042,7 +6446,7 @@ func (swig_p *_swig_DirectorNxAdjMgrHandler) PostAdjIPv6DownloadDone(intfName st
 func DirectorNxAdjMgrHandlerPostAdjIPv6DownloadDone(p NxAdjMgrHandler, arg2 string, arg3 string) {
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), *(*C.swig_type_160)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_161)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxAdjMgrHandler_upcall_PostAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxAdjMgrHandler).SwigcptrNxAdjMgrHandler), *(*C.swig_type_209)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_210)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_0
 	}
@@ -5051,8 +6455,8 @@ func DirectorNxAdjMgrHandlerPostAdjIPv6DownloadDone(p NxAdjMgrHandler, arg2 stri
 	}
 }
 
-//export Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(swig_c int, arg2 string, arg3 string) {
+//export Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxAdjMgrHandler_callback_postAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 string, arg3 string) {
 	var _swig_i_0 string
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxAdjMgrHandler)
@@ -5076,20 +6480,20 @@ func (p SwigcptrNxAdjMgrHandler) DirectorInterface() interface{} {
 
 func DeleteNxAdjMgrHandler(arg1 NxAdjMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxAdjMgrHandler) PostAdjCb(arg2 NxAdj) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxAdjMgrHandler_postAdjCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxAdjMgrHandler) PostAdjIPv4DownloadDone(arg2 string, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_158)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_159)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxAdjMgrHandler_postAdjIPv4DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_207)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_208)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5102,7 +6506,7 @@ func (arg1 SwigcptrNxAdjMgrHandler) PostAdjIPv6DownloadDone(arg2 string, arg3 st
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_160)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_161)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxAdjMgrHandler_postAdjIPv6DownloadDone_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_209)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_210)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5113,7 +6517,7 @@ func (arg1 SwigcptrNxAdjMgrHandler) PostAdjIPv6DownloadDone(arg2 string, arg3 st
 
 func NewNxAdjMgrHandler() (_swig_ret NxAdjMgrHandler) {
 	var swig_r NxAdjMgrHandler
-	swig_r = (NxAdjMgrHandler)(SwigcptrNxAdjMgrHandler(C._wrap_new_NxAdjMgrHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxAdjMgrHandler)(SwigcptrNxAdjMgrHandler(C._wrap_new_NxAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -5137,7 +6541,7 @@ func (p SwigcptrNxAdjMgr) SwigIsNxAdjMgr() {
 
 func DeleteNxAdjMgr(arg1 NxAdjMgr) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxAdjMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxAdjMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxAdjMgr) GetAdj(arg2 string, arg3 string) (_swig_ret NxAdj) {
@@ -5145,7 +6549,7 @@ func (arg1 SwigcptrNxAdjMgr) GetAdj(arg2 string, arg3 string) (_swig_ret NxAdj) 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxAdj)(SwigcptrNxAdj(C._wrap_NxAdjMgr_getAdj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_162)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_163)(unsafe.Pointer(&_swig_i_2)))))
+	swig_r = (NxAdj)(SwigcptrNxAdj(C._wrap_NxAdjMgr_getAdj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_211)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_212)(unsafe.Pointer(&_swig_i_2)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5160,7 +6564,7 @@ func (arg1 SwigcptrNxAdjMgr) DiscoverAdj(arg2 string, arg3 string) (_swig_ret bo
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxAdjMgr_discoverAdj_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_164)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_165)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxAdjMgr_discoverAdj_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_213)(unsafe.Pointer(&_swig_i_1)), *(*C.swig_type_214)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5174,18 +6578,18 @@ func (arg1 SwigcptrNxAdjMgr) WatchAllAdjs__SWIG_0(arg2 int, arg3 bool) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C._Bool(_swig_i_2))
+	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C._Bool(_swig_i_2))
 }
 
 func (arg1 SwigcptrNxAdjMgr) WatchAllAdjs__SWIG_1(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxAdjMgr) WatchAllAdjs__SWIG_2() {
 	_swig_i_0 := arg1
-	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxAdjMgr_watchAllAdjs__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (p SwigcptrNxAdjMgr) WatchAllAdjs(a ...interface{}) {
@@ -5208,12 +6612,12 @@ func (p SwigcptrNxAdjMgr) WatchAllAdjs(a ...interface{}) {
 func (arg1 SwigcptrNxAdjMgr) UnwatchAllAdjs__SWIG_0(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_NxAdjMgr_unwatchAllAdjs__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxAdjMgr) UnwatchAllAdjs__SWIG_1() {
 	_swig_i_0 := arg1
-	C._wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxAdjMgr_unwatchAllAdjs__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (p SwigcptrNxAdjMgr) UnwatchAllAdjs(a ...interface{}) {
@@ -5236,7 +6640,7 @@ func (arg1 SwigcptrNxAdjMgr) WatchAdj__SWIG_0(arg2 string, arg3 int, arg4 bool, 
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
 	_swig_i_4 := arg5
-	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_166)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3), *(*C.swig_type_167)(unsafe.Pointer(&_swig_i_4))))
+	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_215)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3), *(*C.swig_type_216)(unsafe.Pointer(&_swig_i_4))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5252,7 +6656,7 @@ func (arg1 SwigcptrNxAdjMgr) WatchAdj__SWIG_1(arg2 string, arg3 int, arg4 bool) 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_168)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3)))
+	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_217)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5264,7 +6668,7 @@ func (arg1 SwigcptrNxAdjMgr) WatchAdj__SWIG_2(arg2 string, arg3 int) (_swig_ret 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_169)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
+	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_218)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5275,7 +6679,7 @@ func (arg1 SwigcptrNxAdjMgr) WatchAdj__SWIG_3(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_170)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxAdjMgr_watchAdj__SWIG_3_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_219)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5305,7 +6709,7 @@ func (arg1 SwigcptrNxAdjMgr) UnwatchAdj__SWIG_0(arg2 string, arg3 int, arg4 stri
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_171)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), *(*C.swig_type_172)(unsafe.Pointer(&_swig_i_3))))
+	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_220)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), *(*C.swig_type_221)(unsafe.Pointer(&_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5320,7 +6724,7 @@ func (arg1 SwigcptrNxAdjMgr) UnwatchAdj__SWIG_1(arg2 string, arg3 int) (_swig_re
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_173)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
+	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_222)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5331,7 +6735,7 @@ func (arg1 SwigcptrNxAdjMgr) UnwatchAdj__SWIG_2(arg2 string) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_174)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap_NxAdjMgr_unwatchAdj__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_223)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5355,18 +6759,18 @@ func (p SwigcptrNxAdjMgr) UnwatchAdj(a ...interface{}) bool {
 func (arg1 SwigcptrNxAdjMgr) SetAdjMgrHandler(arg2 NxAdjMgrHandler) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxAdjMgr_setAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxAdjMgr) UnsetAdjMgrHandler() {
 	_swig_i_0 := arg1
-	C._wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_NxAdjMgr_unsetAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxAdjMgr) GetAdjMgrHandler() (_swig_ret NxAdjMgrHandler) {
 	var swig_r NxAdjMgrHandler
 	_swig_i_0 := arg1
-	swig_r = (NxAdjMgrHandler)(SwigcptrNxAdjMgrHandler(C._wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxAdjMgrHandler)(SwigcptrNxAdjMgrHandler(C._wrap_NxAdjMgr_getAdjMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -5395,13 +6799,13 @@ func (p SwigcptrNxMac) SwigIsNxMac() {
 
 func DeleteNxMac(arg1 NxMac) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxMac_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxMac_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxMac) GetMacAddress() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxMac_getMacAddress_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxMac_getMacAddress_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -5411,21 +6815,21 @@ func (arg1 SwigcptrNxMac) GetMacAddress() (_swig_ret string) {
 func (arg1 SwigcptrNxMac) GetType() (_swig_ret NxosType_e) {
 	var swig_r NxosType_e
 	_swig_i_0 := arg1
-	swig_r = (NxosType_e)(C._wrap_NxMac_getType_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (NxosType_e)(C._wrap_NxMac_getType_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxMac) GetVlan() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_NxMac_getVlan_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_NxMac_getVlan_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxMac) GetIntfName() (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
-	swig_r_p := C._wrap_NxMac_getIntfName_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	swig_r_p := C._wrap_NxMac_getIntfName_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
  swig_r_1 = swigCopyString(swig_r) 
@@ -5435,7 +6839,7 @@ func (arg1 SwigcptrNxMac) GetIntfName() (_swig_ret string) {
 func (arg1 SwigcptrNxMac) GetEvent() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_NxMac_getEvent_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_NxMac_getEvent_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -5443,7 +6847,7 @@ func (arg1 SwigcptrNxMac) Equal(arg2 NxMac) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxMac_equal_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxMac_equal_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -5476,17 +6880,17 @@ func (p *_swig_DirectorNxMacMgrHandler) DirectorInterface() interface{} {
 
 func NewDirectorNxMacMgrHandler(v interface{}) NxMacMgrHandler {
 	p := &_swig_DirectorNxMacMgrHandler{0, v}
-	p.SwigcptrNxMacMgrHandler = SwigcptrNxMacMgrHandler(C._wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_92557035fa796fff(C.int(swigDirectorAdd(p))))
+	p.SwigcptrNxMacMgrHandler = SwigcptrNxMacMgrHandler(C._wrap__swig_NewDirectorNxMacMgrHandlerNxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorNxMacMgrHandler(arg1 NxMacMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorNxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_92557035fa796fff
-func Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(c int) {
+//export Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419
+func Swiggo_DeleteDirector_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorNxMacMgrHandler).SwigcptrNxMacMgrHandler = 0
 	swigDirectorDelete(c)
 }
@@ -5501,19 +6905,19 @@ func (swig_p *_swig_DirectorNxMacMgrHandler) PostMacHandlerCb(mac_obj NxMac) boo
 	}
 	var swig_r bool
 	_swig_i_0 := mac_obj.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxMacMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxMacMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DirectorNxMacMgrHandlerPostMacHandlerCb(p NxMacMgrHandler, arg2 NxMac) bool {
 	var swig_r bool
 	_swig_i_0 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxMacMgrHandler).SwigcptrNxMacMgrHandler), C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxMacMgrHandler).SwigcptrNxMacMgrHandler), C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-//export Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uintptr) (swig_result bool) {
+//export Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxMacMgrHandler_callback_postMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uintptr) (swig_result bool) {
 	var swig_r bool
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxMacMgrHandler)
 	swig_r = swig_p.PostMacHandlerCb(SwigcptrNxMac(arg2))
@@ -5531,7 +6935,7 @@ func (swig_p *_swig_DirectorNxMacMgrHandler) PostMacHandlerDownloadCb(id uint, m
 	}
 	_swig_i_0 := id
 	_swig_i_1 := macaddr
-	C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(swig_p.SwigcptrNxMacMgrHandler), C.swig_intgo(_swig_i_0), *(*C.swig_type_177)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(swig_p.SwigcptrNxMacMgrHandler), C.swig_intgo(_swig_i_0), *(*C.swig_type_226)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
@@ -5540,14 +6944,14 @@ func (swig_p *_swig_DirectorNxMacMgrHandler) PostMacHandlerDownloadCb(id uint, m
 func DirectorNxMacMgrHandlerPostMacHandlerDownloadCb(p NxMacMgrHandler, arg2 uint, arg3 string) {
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(p.(*_swig_DirectorNxMacMgrHandler).SwigcptrNxMacMgrHandler), C.swig_intgo(_swig_i_0), *(*C.swig_type_177)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorNxMacMgrHandler_upcall_PostMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(p.(*_swig_DirectorNxMacMgrHandler).SwigcptrNxMacMgrHandler), C.swig_intgo(_swig_i_0), *(*C.swig_type_226)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
 }
 
-//export Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff
-func Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(swig_c int, arg2 uint, arg3 string) {
+//export Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419
+func Swig_DirectorNxMacMgrHandler_callback_postMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(swig_c int, arg2 uint, arg3 string) {
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorNxMacMgrHandler)
  _swig_i_1 = swigCopyString(arg3) 
@@ -5569,14 +6973,14 @@ func (p SwigcptrNxMacMgrHandler) DirectorInterface() interface{} {
 
 func DeleteNxMacMgrHandler(arg1 NxMacMgrHandler) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxMacMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxMacMgrHandler) PostMacHandlerCb(arg2 NxMac) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (bool)(C._wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxMacMgrHandler_postMacHandlerCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
 	return swig_r
 }
 
@@ -5584,7 +6988,7 @@ func (arg1 SwigcptrNxMacMgrHandler) PostMacHandlerDownloadCb(arg2 uint, arg3 str
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_177)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_NxMacMgrHandler_postMacHandlerDownloadCb_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_226)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -5592,7 +6996,7 @@ func (arg1 SwigcptrNxMacMgrHandler) PostMacHandlerDownloadCb(arg2 uint, arg3 str
 
 func NewNxMacMgrHandler() (_swig_ret NxMacMgrHandler) {
 	var swig_r NxMacMgrHandler
-	swig_r = (NxMacMgrHandler)(SwigcptrNxMacMgrHandler(C._wrap_new_NxMacMgrHandler_nx_sdk_go_92557035fa796fff()))
+	swig_r = (NxMacMgrHandler)(SwigcptrNxMacMgrHandler(C._wrap_new_NxMacMgrHandler_nx_sdk_go_c22a77a7a4f02419()))
 	return swig_r
 }
 
@@ -5615,7 +7019,7 @@ func (p SwigcptrNxMacMgr) SwigIsNxMacMgr() {
 
 func DeleteNxMacMgr(arg1 NxMacMgr) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_NxMacMgr_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_NxMacMgr_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrNxMacMgr) AddStaticMac(arg2 string, arg3 uint, arg4 string) (_swig_ret bool) {
@@ -5624,7 +7028,7 @@ func (arg1 SwigcptrNxMacMgr) AddStaticMac(arg2 string, arg3 uint, arg4 string) (
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxMacMgr_addStaticMac_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_178)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), *(*C.swig_type_179)(unsafe.Pointer(&_swig_i_3))))
+	swig_r = (bool)(C._wrap_NxMacMgr_addStaticMac_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_227)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), *(*C.swig_type_228)(unsafe.Pointer(&_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5639,7 +7043,7 @@ func (arg1 SwigcptrNxMacMgr) DelStaticMac(arg2 string, arg3 uint) (_swig_ret boo
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxMacMgr_delStaticMac_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_180)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
+	swig_r = (bool)(C._wrap_NxMacMgr_delStaticMac_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_229)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5652,7 +7056,7 @@ func (arg1 SwigcptrNxMacMgr) GetMac__SWIG_0(arg2 string, arg3 uint, arg4 bool) (
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (NxMac)(SwigcptrNxMac(C._wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_181)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3))))
+	swig_r = (NxMac)(SwigcptrNxMac(C._wrap_NxMacMgr_getMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_230)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2), C._Bool(_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5664,7 +7068,7 @@ func (arg1 SwigcptrNxMacMgr) GetMac__SWIG_1(arg2 string, arg3 uint) (_swig_ret N
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (NxMac)(SwigcptrNxMac(C._wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), *(*C.swig_type_182)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))))
+	swig_r = (NxMac)(SwigcptrNxMac(C._wrap_NxMacMgr_getMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), *(*C.swig_type_231)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -5686,14 +7090,14 @@ func (arg1 SwigcptrNxMacMgr) WatchAllMac__SWIG_0(arg2 bool) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxMacMgr_watchAllMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C._Bool(_swig_i_1)))
 	return swig_r
 }
 
 func (arg1 SwigcptrNxMacMgr) WatchAllMac__SWIG_1() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_NxMacMgr_watchAllMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -5711,7 +7115,7 @@ func (p SwigcptrNxMacMgr) WatchAllMac(a ...interface{}) bool {
 func (arg1 SwigcptrNxMacMgr) UnwatchAllMac() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_NxMacMgr_unwatchAllMac_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -5721,7 +7125,7 @@ func (arg1 SwigcptrNxMacMgr) WatchMac__SWIG_0(arg2 uint, arg3 string, arg4 bool)
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_183)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3)))
+	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_232)(unsafe.Pointer(&_swig_i_2)), C._Bool(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -5733,7 +7137,7 @@ func (arg1 SwigcptrNxMacMgr) WatchMac__SWIG_1(arg2 uint, arg3 string) (_swig_ret
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_184)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_233)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -5744,7 +7148,7 @@ func (arg1 SwigcptrNxMacMgr) WatchMac__SWIG_2(arg2 uint) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxMacMgr_watchMac__SWIG_2_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -5767,7 +7171,7 @@ func (arg1 SwigcptrNxMacMgr) UnwatchMac__SWIG_0(arg2 uint, arg3 string) (_swig_r
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_185)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_NxMacMgr_unwatchMac__SWIG_0_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_234)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -5778,7 +7182,7 @@ func (arg1 SwigcptrNxMacMgr) UnwatchMac__SWIG_1(arg2 uint) (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (bool)(C._wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
+	swig_r = (bool)(C._wrap_NxMacMgr_unwatchMac__SWIG_1_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1)))
 	return swig_r
 }
 
@@ -5796,13 +7200,13 @@ func (p SwigcptrNxMacMgr) UnwatchMac(a ...interface{}) bool {
 func (arg1 SwigcptrNxMacMgr) SetMacMgrHandler(arg2 NxMacMgrHandler) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_NxMacMgr_setMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrNxMacMgr) GetMacMgrHandler() (_swig_ret NxMacMgrHandler) {
 	var swig_r NxMacMgrHandler
 	_swig_i_0 := arg1
-	swig_r = (NxMacMgrHandler)(SwigcptrNxMacMgrHandler(C._wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_92557035fa796fff(C.uintptr_t(_swig_i_0))))
+	swig_r = (NxMacMgrHandler)(SwigcptrNxMacMgrHandler(C._wrap_NxMacMgr_getMacMgrHandler_nx_sdk_go_c22a77a7a4f02419(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -5887,27 +7291,11 @@ func Void_to_string(u uintptr) string {
 }
 
 
-type SwigcptrSwigDirector_NxCmdHandler uintptr
-type SwigDirector_NxCmdHandler interface {
+type SwigcptrSwigDirector_NxAdjMgrHandler uintptr
+type SwigDirector_NxAdjMgrHandler interface {
 	Swigcptr() uintptr;
 }
-func (p SwigcptrSwigDirector_NxCmdHandler) Swigcptr() uintptr {
-	return uintptr(p)
-}
-
-type SwigcptrSwigDirector_NxRibMgrHandler uintptr
-type SwigDirector_NxRibMgrHandler interface {
-	Swigcptr() uintptr;
-}
-func (p SwigcptrSwigDirector_NxRibMgrHandler) Swigcptr() uintptr {
-	return uintptr(p)
-}
-
-type SwigcptrSwigDirector_NxIntfMgrHandler uintptr
-type SwigDirector_NxIntfMgrHandler interface {
-	Swigcptr() uintptr;
-}
-func (p SwigcptrSwigDirector_NxIntfMgrHandler) Swigcptr() uintptr {
+func (p SwigcptrSwigDirector_NxAdjMgrHandler) Swigcptr() uintptr {
 	return uintptr(p)
 }
 
@@ -5919,11 +7307,43 @@ func (p SwigcptrSwigDirector_NxDmeMgrHandler) Swigcptr() uintptr {
 	return uintptr(p)
 }
 
-type SwigcptrSwigDirector_NxAdjMgrHandler uintptr
-type SwigDirector_NxAdjMgrHandler interface {
+type SwigcptrSwigDirector_NxIntfMgrHandler uintptr
+type SwigDirector_NxIntfMgrHandler interface {
 	Swigcptr() uintptr;
 }
-func (p SwigcptrSwigDirector_NxAdjMgrHandler) Swigcptr() uintptr {
+func (p SwigcptrSwigDirector_NxIntfMgrHandler) Swigcptr() uintptr {
+	return uintptr(p)
+}
+
+type SwigcptrSwigDirector_NxRibMgrHandler uintptr
+type SwigDirector_NxRibMgrHandler interface {
+	Swigcptr() uintptr;
+}
+func (p SwigcptrSwigDirector_NxRibMgrHandler) Swigcptr() uintptr {
+	return uintptr(p)
+}
+
+type SwigcptrSwigDirector_NxCmdHandler uintptr
+type SwigDirector_NxCmdHandler interface {
+	Swigcptr() uintptr;
+}
+func (p SwigcptrSwigDirector_NxCmdHandler) Swigcptr() uintptr {
+	return uintptr(p)
+}
+
+type SwigcptrSwigDirector_NxTraceHandler uintptr
+type SwigDirector_NxTraceHandler interface {
+	Swigcptr() uintptr;
+}
+func (p SwigcptrSwigDirector_NxTraceHandler) Swigcptr() uintptr {
+	return uintptr(p)
+}
+
+type SwigcptrSwigDirector_NxSdkHandler uintptr
+type SwigDirector_NxSdkHandler interface {
+	Swigcptr() uintptr;
+}
+func (p SwigcptrSwigDirector_NxSdkHandler) Swigcptr() uintptr {
 	return uintptr(p)
 }
 

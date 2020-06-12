@@ -7,7 +7,7 @@ Tracer interface to generate custom Syslogs, Events \& Errors history.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+trace.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+trace.\+h$>$}
 
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
@@ -27,8 +27,10 @@ enum \mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}\label{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}} 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}{$\sim$\+Nx\+Trace}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}\label{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}} 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}{syslog}} (\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}} prio, const char $\ast$fmt,...)=0
 \begin{DoxyCompactList}\small\item\em Generate Custom Syslog with the specified Priority. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classnxos_1_1_nx_trace_a22e5e2fff39fae68fba3051dc2720621}{event}} (const char $\ast$fmt,...)=0
@@ -88,19 +90,6 @@ D\+E\+B\+UG&For internal Debugging purposes. \\
 \end{DoxyEnumFields}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}\label{classnxos_1_1_nx_trace_a4b8ef9990a168effbca47f29d9b6ea9d}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!````~Nx\+Trace@{$\sim$\+Nx\+Trace}}
-\index{````~Nx\+Trace@{$\sim$\+Nx\+Trace}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Trace()}{~NxTrace()}}
-{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Trace\+::$\sim$\+Nx\+Trace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
-Destructor. 
-
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_trace_afc0240b6b9a291729836ffb2fbeef8a4}\label{classnxos_1_1_nx_trace_afc0240b6b9a291729836ffb2fbeef8a4}} 
 \index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!error@{error}}
@@ -129,18 +118,8 @@ N\+X\+S\+DK V1.\+5
 \begin{DoxyReturn}{Returns}
 Priotiry as a string 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}\label{classnxos_1_1_nx_trace_a825db76787da234b99e81adb2def8d3d}} 
-\index{nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}!syslog@{syslog}}
-\index{syslog@{syslog}!nxos\+::\+Nx\+Trace@{nxos\+::\+Nx\+Trace}}
-\subsubsection{\texorpdfstring{syslog()}{syslog()}}
-{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Trace\+::syslog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_trace_a582f6e5a22e788c61807657f8bca088f}{Priority}}}]{prio,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Generate Custom Syslog with the specified Priority. 
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__trace_8h}{nx\+\_\+trace.\+h}}\end{DoxyCompactItemize}

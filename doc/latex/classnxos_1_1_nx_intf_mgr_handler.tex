@@ -7,12 +7,10 @@ Public interface to N\+X-\/\+S\+DK interface events.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+intf\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+intf\+\_\+mgr.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}{$\sim$\+Nx\+Intf\+Mgr\+Handler}} ()
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}{post\+Intf\+Add\+Del\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} $\ast$obj)
 \item 
@@ -37,15 +35,6 @@ Public interface to N\+X-\/\+S\+DK interface events.
 
 The application should derive its own handler class from this and override the methods. If a watch is set for an interface, these events will be delivered to the application if the method is provided in the application handler class. The interface object passed to the handler is owned by the library and should not be stored or freed by the application. Interface Mgr events generated from N\+X\+OS are delivered to application callbacks through N\+X\+S\+DK interface objects Steps to register for interface events\+: 1) Open N\+X\+S\+DK interface mgr object using get\+Intf\+Mgr() 2) Define application callbacks by re-\/defining \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler}{Nx\+Intf\+Mgr\+Handler}} class 3) Install application handlers using set\+Intf\+Handler() 4) call \mbox{\hyperlink{classnxos_1_1_nx_sdk_a75ca70643fe325ddf0eea62c1f8c4cc8}{Nx\+Sdk\+::start\+Event\+Loop()}} 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}\label{classnxos_1_1_nx_intf_mgr_handler_a565ee1dba09df646d82cccad25d914c4}} 
-\index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!````~Nx\+Intf\+Mgr\+Handler@{$\sim$\+Nx\+Intf\+Mgr\+Handler}}
-\index{````~Nx\+Intf\+Mgr\+Handler@{$\sim$\+Nx\+Intf\+Mgr\+Handler}!nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}}
-\subsubsection{\texorpdfstring{$\sim$\+Nx\+Intf\+Mgr\+Handler()}{~NxIntfMgrHandler()}}
-{\footnotesize\ttfamily virtual nxos\+::\+Nx\+Intf\+Mgr\+Handler\+::$\sim$\+Nx\+Intf\+Mgr\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}\label{classnxos_1_1_nx_intf_mgr_handler_afe79bff5ee5b314111e2ce7c7226e73f}} 
 \index{nxos\+::\+Nx\+Intf\+Mgr\+Handler@{nxos\+::\+Nx\+Intf\+Mgr\+Handler}!post\+Intf\+Add\+Del\+Cb@{post\+Intf\+Add\+Del\+Cb}}
@@ -68,10 +57,10 @@ C++:
    myIntfHandler::postIntfAddDelCb (NxIntf *intf)
    \{
     
-   \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
+   \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
       cout << \textcolor{stringliteral}{"App got ADD notification for interface  "} << 
       intf->getName() << endl;
-   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
+   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
       cout << \textcolor{stringliteral}{"App got DELETE notification for interface "} << 
       intf->getName() << endl;
    \}
@@ -82,9 +71,9 @@ Python:
       event = intf.getEvent()
       print \textcolor{stringliteral}{"Application Add/Del cb "}
       print \textcolor{stringliteral}{"intf "} + intf.getName()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
          print \textcolor{stringliteral}{"ADDED"}
-      elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
+      elif event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
          print \textcolor{stringliteral}{"DELETED"}
       return True;   
 \end{DoxyCode}
@@ -115,7 +104,7 @@ C++:
    \textcolor{keywordtype}{bool}  myIntfHandler::postIntfIpv4AddrCb (NxIntf *intf)
    \{
      cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
-     \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
+     \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
         cout << \textcolor{stringliteral}{"App got ADD notification, new primary address for }
 \textcolor{stringliteral}{                  interface  "} <<      intf->getName() << endl;
      \}
@@ -127,7 +116,7 @@ Python:
       event = intf.getEvent()
       print \textcolor{stringliteral}{"Application ipv4 addr cb "}
       print \textcolor{stringliteral}{"intf "} + intf.getName()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
          print \textcolor{stringliteral}{"App got ADD notification, new primary address"}
       return True
 \end{DoxyCode}
@@ -160,7 +149,7 @@ C++:
      \{
         cout << \textcolor{stringliteral}{"Application: "} << \_\_FUNCTION\_\_ << endl;
 
-        \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{
+        \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}) \{
           cout << \textcolor{stringliteral}{"App got UPDATE notification, primary address change}
 \textcolor{stringliteral}{                   for interface "} <<  intf->getName() << endl;
         \}
@@ -170,7 +159,7 @@ Python:
      def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ad845ed26b457bc0bdc7a9c79a94acdaf}{postIntfIpv6AddrCb}}(\textcolor{keyword}{self}, intf):
          event = intf.getEvent()
          print \textcolor{stringliteral}{"intf "} + intf.getName()
-         if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+         if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
             print \textcolor{stringliteral}{"App got ADD notification, new IPv6 address"}
          return True
 \end{DoxyCode}
@@ -237,19 +226,19 @@ true if successful, false if failure
 C++:
    \textcolor{keywordtype}{bool} myIntfHandler::postIntfPortMemberCb (NxIntf *intf)
    \{
-      \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{event\_type\_e}}  event;
+      \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{event\_type\_e}}  event;
       std::string mbr;
       \textcolor{keyword}{event} = intf->getEvent();
-      cout << \textcolor{stringliteral}{"App got port member "} << (\textcolor{keyword}{event} == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ? 
+      cout << \textcolor{stringliteral}{"App got port member "} << (\textcolor{keyword}{event} == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ? 
      \textcolor{stringliteral}{"ADD"}:\textcolor{stringliteral}{"DELETE"}) << \textcolor{stringliteral}{" event for "} << intf->getName() << endl;
    \}
 
 Python:   
    def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_ae3a76ba4fb97b941d9f11e9210d89a94}{postIntfPortMemberCb}}(\textcolor{keyword}{self}, intf):
       event = intf.getEvent()
-      if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+      if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
          state = \textcolor{stringliteral}{"ADD"}
-      elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
+      elif event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
          state = \textcolor{stringliteral}{"DELETE"}
       print \textcolor{stringliteral}{"Got port member "} + state + 
           \textcolor{stringliteral}{" event for interface "} + intf.getName()
@@ -286,14 +275,14 @@ C++:
           cout << \textcolor{stringliteral}{"State change for interface: "} << 
                    intf->getName() << endl;
           cout << \textcolor{stringliteral}{"\(\backslash\)t new state is: "} << (intf->getOperState() == 
-                      \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}}) ? \textcolor{stringliteral}{"up"} : \textcolor{stringliteral}{"down"} << endl;
+                      \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}}) ? \textcolor{stringliteral}{"up"} : \textcolor{stringliteral}{"down"} << endl;
        \}
     \}
 
 Python:   
     def \mbox{\hyperlink{classnxos_1_1_nx_intf_mgr_handler_a9c3d4d357b1f0ab07558b4611c693755}{postIntfStateCb}}(\textcolor{keyword}{self}, intf):
         event = intf.getEvent()
-        if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:
+        if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371}{UPDATE}}:
             print \textcolor{stringliteral}{"Application State cb "}
             print \textcolor{stringliteral}{"state changed"}
         return True
@@ -387,4 +376,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

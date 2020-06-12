@@ -15,7 +15,7 @@
  *      (postVrfCb()     - To get watched VRF updates,
  *       postL3RouteCb() - To get watched L3 route update,
  *       etc) with your own implementation to handle various events.
- *   6) NOTE: Adding/Deleting Routes in Rib will be supported soon.
+ *   6) Adding/Deleting Routes in Rib is also supported.
  *
  *   @note By default, ribMgr CLI is auto-generated for the NxSDK Apps.
  *         Try "show $appname nxsdk ribmgr" in the box to access them.
@@ -643,8 +643,8 @@ public:
      *                   (nh.getAddress(), route.getAddress())
      *  @endcode
      **/
-    virtual NxL3NextHop *getL3NextHop(std::string address) = 0;
-
+    virtual NxL3NextHop *getL3NextHop(const std::string &address,
+                                      const std::string &intfName="") = 0;
     /**
      * To get the first NextHop for this L3 Route. To get all the
      * NextHops call this API in a while loop.
@@ -762,9 +762,183 @@ public:
      *
      **/
     virtual bool equal(NxL3Route const &route_obj) const = 0;
+
+    /**
+     * To add a direct next-hop to a route. Changes will take effect when 
+     * sendMyL3RoutesToRib is called. 
+     * postMyL3RouteCb is called after sendMyL3RoutesToRib called to signal 
+     * that route changes are done.
+     *
+     * @param[in] nextHopAddr Address of the next-hop as a string.
+     * @param[in] intfName  Egress interface name as a string.
+     * @param[in] preference Preference value score is inverted where lower is
+     *                       more preferred.
+     * @returns
+     *     an object of type NxL3NextHop to use to further configure the next-hop
+     *     if needed.
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->addL3Route("10.1.1.1", 24, "default");
+     *       NxL3NextHop *nh = route->addL3DirectNextHop("10.1.1.3", 
+     *                                                   "Eth1/3" 12);
+     *       bool result = route->sendMyL3RoutesToRib(AF_IPV4);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.addL3Route("10.1.1.1", 24, "default")
+     *       next_hop = route.addL3DirectNextHop("10.1.1.3", "Eth1/3", 12)
+     *       result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)
+     *  @endcode
+     *
+     *  @throws
+     */
+    virtual NxL3NextHop *addL3DirectNextHop(const std::string &nextHopAddr,
+                                            const std::string &intfName,
+                                            uint8_t           preference)=0;
+    /**
+     * To add a recursive next-hop to a route. Changes will take effect after 
+     * sendMyL3RoutesToRib is called. 
+     * postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal 
+     * that route changes are done. 
+     * postL3RecursiveNextHopCb is called after sendMyL3RoutesToRib to signal
+     * changes to the next hop. 
+     * 
+     * @param[in] nextHopAddr Address of the next-hop as a string.
+     * @param[in] preference Preference value score is inverted where lower is
+     *                       more preferred.
+     * @returns
+     *     an object of type NxL3NextHop to use to further configure the next-hop
+     *     if needed.
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->addL3Route("10.1.1.1", 24, "default");
+     *       NxL3NextHop *nh = route->addL3RecursiveNextHop("10.1.1.3", 12);
+     *       bool result = route->sendMyL3RoutesToRib(AF_IPV4);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.addL3Route("10.1.1.1", 24, "default")
+     *       next_hop = route.addL3RecursiveNextHop("10.1.1.3", 12)
+     *       result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)
+     *  @endcode
+     *
+     *  @throws
+     */
+    virtual NxL3NextHop *addL3RecursiveNextHop(const std::string &nextHopAddr,
+                                               uint8_t           preference)=0;
+    /**
+     * To delete a Layer3 route next-hop. Changes will take effect after 
+     * sendMyL3RoutesToRib is called. 
+     * postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal 
+     * that route changes are complete. 
+     *
+     * @param[in] nextHopAddress Address of the next-hop as a string.
+     *
+     * @returns
+     *     an object of type NxL3NextHop to use to further configure the next-hop
+     *     if needed.
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->getL3RouteDetail("10.1.1.1", 24, "default");
+     *       NxL3NextHop *nh = route->delL3NextHop("10.1.1.3");
+     *       bool result = route->sendMyL3RoutesToRib(AF_IPV4);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.addL3Route("10.1.1.1", 24, "default")
+     *       next_hop = route.delL3NextHop("10.1.1.3")
+     *       result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)
+     *  @endcode
+     *
+     *  @throws
+     */
+    virtual bool delL3NextHop(const std::string &nexHopAddress, 
+                              const std::string &intfName="")=0;
+
+    /**
+     * To get the IP prefix string of the L3 Route. 
+     *
+     * @returns IP prefix string of the L3 Route
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+     *       if (route) {
+     *           cout << "Route Prefix: " << route->getL3Prefix();
+     *       }
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+     *       if route:
+     *          print "Route Prefix: %d" % route.getL3Prefix()
+     *  @endcode
+     **/
+    virtual std::string getL3Prefix() const=0;
 };
 
-/**
+/*
  * @brief Abstract RibMgr callback Interface to receive VRF,
  *        Route updates etc from NXOS RIB.
  **/
@@ -854,6 +1028,159 @@ public:
      *  @endcode
      **/
     virtual bool postVrfCb(NxVrf *vrf) { return (true); }
+
+    /**
+     * User to overload the postL3RecursiveNextHopCb callback method
+     * to receive updates after a recursive next hop is added by the application.
+     * 
+     * @param[in]  NxL3Route object representing the route for the added 
+     *             recursive next-hop
+     * @param[in]  isResolved A boolean value representing whether the RNH is
+     *             resolved.
+     *
+     * @returns True : if the action was successful.
+     *          False: if the action was not successful.
+     *
+     *  @code
+     *  C++:
+     *     #include <nx_sdk.h>
+     *     #include <nx_rib_mgr.h>
+     *
+     *     class myRibMgrMgrHandler : public NxRibMgrHandler {
+     *        public:
+     *           bool postL3RecursiveNextHopCb(NxL3Route *route) {
+     *                // Do your action
+     *           }
+     *     };
+     *
+     *     int  main (int argc, char **argv)
+     *     {
+     *          NxSdk    *sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *          NxRibMgr *ribMgr = sdk->getRibMgr();
+     *          NxRibMgrHandler *myribcb = new myRibMgrHandler();
+     *          ribMgr->setRibMgrHandler(myribcb);
+     *     }
+     *
+     *  Python:
+     *     import nx_sdk_py
+     *
+     *     class myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):
+     *     ### Overloaded Callback to get Route events
+     *           def postL3RecursiveNextHopCb(self, nxroute):
+     *               # Do your action here
+     *
+     *     # Do SDK related inits in one thread.
+     *     def sdkThread(name,val):
+     *         sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *         ribMgr = sdk.getRibMgr()
+     *         myribcb = myRibMgrHandler()
+     *         ribMgr.setRibMgrHandler(myribcb)
+     *  @endcode
+     **/
+    virtual bool postL3RecursiveNextHopCb(NxL3Route *rnhRoute, 
+                                          bool      isResolved) { return (true);}
+
+    /**
+     * User to overload the postMyL3RouteCb callback method
+     * to receive any registered route updates for routes added or modified by 
+     * the application.
+     * @param[in]  NxL3Route object.
+     *
+     * @returns True : if the action was successful.
+     *          False: if the action was not successful.
+     *
+     *  @code
+     *  C++:
+     *     #include <nx_sdk.h>
+     *     #include <nx_rib_mgr.h>
+     *
+     *     class myRibMgrMgrHandler : public NxRibMgrHandler {
+     *        public:
+     *           bool postMyL3RouteCb(NxL3Route *route) {
+     *                // Do your action
+     *           }
+     *     };
+     *
+     *     int  main (int argc, char **argv)
+     *     {
+     *          NxSdk    *sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *          NxRibMgr *ribMgr = sdk->getRibMgr();
+     *          NxRibMgrHandler *myribcb = new myRibMgrHandler();
+     *          ribMgr->setRibMgrHandler(myribcb);
+     *     }
+     *
+     *  Python:
+     *     import nx_sdk_py
+     *
+     *     class myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):
+     *     ### Overloaded Callback to get Route events
+     *           def postMyL3RouteCb(self, nxroute):
+     *               # Do your action here
+     *
+     *     # Do SDK related inits in one thread.
+     *     def sdkThread(name,val):
+     *         sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *         ribMgr = sdk.getRibMgr()
+     *         myribcb = myRibMgrHandler()
+     *         ribMgr.setRibMgrHandler(myribcb)
+     *  @endcode
+     **/
+
+    virtual bool postMyL3RouteCb(NxL3Route *route) { return (true); }
+    /**
+     * User to overload the postL3RouteRepopulateCb callback method
+     * to receive a notification when the application needs to re-add
+     * all it's routes.
+     * @param[in]  vrfName A string representing the VRF name
+     * @param[in]  routeAddress: string representation of the address
+     *             if address is all zeros, that means repopulate all routes
+     * @param[in]  maskLen: route mask. If value is zero along with 
+     *             zero routeAddress, this means repopulate all routes for this 
+     *             vrf
+     *
+     *
+     *  @code
+     *  C++:
+     *     #include <nx_sdk.h>
+     *     #include <nx_rib_mgr.h>
+     *
+     *     class myRibMgrMgrHandler : public NxRibMgrHandler {
+     *        public:
+     *           bool postL3RouteRepopulateCb(const std::string vrfName,
+     *                                        const std::string routePrefix,
+     *                                        unsigned char     maskLen) {
+     *                // Do your action
+     *           }
+     *     };
+     *
+     *     int  main (int argc, char **argv)
+     *     {
+     *          NxSdk    *sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *          NxRibMgr *ribMgr = sdk->getRibMgr();
+     *          NxRibMgrHandler *myribcb = new myRibMgrHandler();
+     *          ribMgr->setRibMgrHandler(myribcb);
+     *     }
+     *
+     *  Python:
+     *     import nx_sdk_py
+     *
+     *     class myRibMgrHandler(nx_sdk_py.NxRibMgrHandler):
+     *     ### Overloaded Callback to get Route events
+     *           def postL3RouteRepopulateCb(self, vrfName, routeAddr, maskLen):
+     *               # Do your action here
+     *
+     *     # Do SDK related inits in one thread.
+     *     def sdkThread(name,val):
+     *         sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *         ribMgr = sdk.getRibMgr()
+     *         myribcb = myRibMgrHandler()
+     *         ribMgr.setRibMgrHandler(myribcb)
+     *  @endcode
+     **/
+
+    virtual void postL3RouteRepopulateCb(const std::string vrfName,
+                                         const std::string routeAddress,
+                                         unsigned char     maskLen=0) {}
 };
 
 /**
@@ -902,7 +1229,7 @@ public:
      *  @throws vrfName is more than 32 characters.
      **/
     virtual NxVrf *getVrf(std::string vrfName = "default",
-                          bool        watch = false) = 0;
+                          bool        watch   = false) = 0;
 
     /**
      * To receive/subscribe for any updates to this VRF.
@@ -919,7 +1246,7 @@ public:
      * @returns bool True -  if successful.
      *               False - if not successful(Empty VRfName).
      *
-     *  @code
+     * @code
      *  C++:
      *       #include <nx_sdk.h>
      *       #include <nx_rib_mgr.h>
@@ -963,9 +1290,9 @@ public:
      *         ribMgr.watchVrf("vpn1")
      * NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
      *       to verify if the API has succeeded.
-     *  @endcode
+     * @endcode
      *
-     *  @throws vrfName is more than 32 characters.
+     * @throws vrfName is more than 32 characters.
      **/
     virtual bool watchVrf(std::string vrfName = "all") = 0;
 
@@ -977,7 +1304,7 @@ public:
      *                    unwatch all VRFs. VrfName cannot be
      *                    empty string.
      *
-     *  @code
+     * @code
      *  C++:
      *       #include <nx_sdk.h>
      *       #include <nx_rib_mgr.h>
@@ -994,9 +1321,9 @@ public:
      *       ribMgr = sdk.getRibMgr()
      *
      *       ribMgr.unwatchVrf("vpn1")
-     *  @endcode
+     * @endcode
      *
-     *  @throws vrfName is more than 32 characters.
+     * @throws vrfName is more than 32 characters.
      *
      * NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
      *       to verify if the API has succeeded.
@@ -1011,7 +1338,7 @@ public:
      * @param[in] NxRibMgrHandler object with user overloaded
      *             functions to handle rib events.
      *
-     *  @code
+     * @code
      *  C++:
      *     #include <nx_sdk.h>
      *     #include <nx_rib_mgr.h>
@@ -1045,7 +1372,7 @@ public:
      *         ribMgr = sdk.getRibMgr()
      *         myribcb = myRibMgrHandler()
      *         ribMgr.setRibMgrHandler(myribcb)
-     *  @endcode
+     * @endcode
      **/
     virtual void setRibMgrHandler(NxRibMgrHandler *handler) = 0;
 
@@ -1055,7 +1382,9 @@ public:
     virtual NxRibMgrHandler *getRibMgrHandler() = 0;
 
     /**
-     * To get the L3 Route based on the passed input parameters.
+     * To get the L3 Route with it's bext next-hop based on the passed
+     * input parameters. Routes returned by this function cannot be used 
+     * to addL3DirectNextHop() or addL3RecursiveNextHop()
      * @param[in] routeAddr Address of the route as a string.
      * @param[in] maskLen [Optional] MaskLength if its a prefix.
      *                     If not set it will pick /32 for IP
@@ -1081,7 +1410,7 @@ public:
      *          NULL if not (VrfName empty (or) "all", Vrf does
      *          not exist, down or invalid, no route etc).
      *
-     *  @code
+     * @code
      *  C++:
      *       #include <nx_sdk.h>
      *       #include <nx_rib_mgr.h>
@@ -1099,17 +1428,15 @@ public:
      *       ribMgr = sdk.getRibMgr()
      *
      *       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
-     *  @endcode
+     * @endcode
      *
-     *  @throws invalid routeAddr
-     *  @throws invalid maskLen
-     *  @throws vrfName is more than 32 characters.
-     *  @throws getRoute buffer is full, cleanup previous pointers (or)
-     *          call getL3Route with clearBuffer set to true.
+     * @throws invalid routeAddr
+     * @throws invalid maskLen
+     * @throws vrfName is more than 32 characters.
      **/
     virtual NxL3Route *getL3Route(std::string   routeAddr,
-                                  unsigned char maskLen = 0,
-                                  std::string   vrfName = "default",
+                                  unsigned char maskLen     = 0,
+                                  std::string   vrfName     = "default", 
                                   bool          clearBuffer = false) = 0;
 
     /**
@@ -1133,7 +1460,7 @@ public:
      * @returns bool True -  if successful.
      *               False - if not successful(Empty VRfName).
      *
-     *  @code
+     * @code
      *  C++:
      *     #include <nx_sdk.h>
      *     #include <nx_rib_mgr.h>
@@ -1175,19 +1502,19 @@ public:
      *            if ribMgr:
      *               ribMgr.setRibMgrHandler(myribcb)
      *               ribMgr.watchL3Route("bgp", "100", "vpn1", nxos::AF_IPV4)
-     *  @endcode
+     * @endcode
      *
-     *  @throws vrfName is more than 32 characters.
-     *  @throws reached maximum watch filter count: 15 for this Address-Family(AF)
-     *          in this VRF.
+     * @throws vrfName is more than 32 characters.
+     * @throws reached maximum watch filter count: 15 for this Address-Family(AF)
+     *         in this VRF.
      *
      * NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
      *       to verify if the API has succeeded.
      **/
     virtual bool watchL3Route(std::string protocol,
-                              std::string tag = "",
+                              std::string tag     = "",
                               std::string vrfName = "all",
-                              nxos::af_e  af = nxos::MAX_AF) = 0;
+                              nxos::af_e  af      = nxos::MAX_AF) = 0;
 
     /**
      * To unsubscribe for Route updates based on
@@ -1207,7 +1534,7 @@ public:
      *               use AF_IPV4 etc. IF not speficied, it
      *               means from all AFs.
      *
-     *  @code
+     * @code
      *  C++:
      *     #include <nx_sdk.h>
      *     #include <nx_rib_mgr.h>
@@ -1227,17 +1554,234 @@ public:
      *         sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
      *         ribMgr = sdk.getRibMgr()
      *         ribMgr.unwatchL3Route("bgp", "100", "vpn1")
-     *  @endcode
+     * @endcode
      *
-     *  @throws vrfName is more than 32 characters.
+     * @throws vrfName is more than 32 characters.
      *
      * NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
      *       to verify if the API has succeeded.
      **/
     virtual void unwatchL3Route(std::string protocol,
-                                std::string tag = "",
+                                std::string tag     = "",
                                 std::string vrfName = "all",
-                                nxos::af_e  af = nxos::MAX_AF) = 0;
+                                nxos::af_e  af      = nxos::MAX_AF) = 0;
+    /**
+     * To get the L3 Route with all its next-hops based on the passed
+     *                     input parameters.
+     * @param[in] routeAddr Address of the route as a string.
+     * @param[in] maskLen [Optional] MaskLength if its a prefix.
+     *                     If not set it will pick /32 for IP
+     *                     address (or) /128 for IPv6 address.
+     * @param[in] vrfName [Optional] VrfName in which the route is
+     *                    present. If not set "default" will be used.
+     *                    vrfName cannot be "all" or empty string "".
+     * @returns NxL3Route object if it exists.
+     *          NULL if not (VrfName empty (or) "all", Vrf does
+     *          not exist, down or invalid, no route etc).
+     *
+     * @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+     * @endcode
+     *
+     * @throws invalid routeAddr
+     * @throws invalid maskLen
+     * @throws vrfName is more than 32 characters.
+     **/
+    virtual NxL3Route *getL3RouteDetail(const std::string &routeAddr,
+                                        unsigned int      maskLen     = 0,
+                                        const std::string &vrfName    ="default")=0;
+    /**
+     * To add a L3 Route object. This API will return a route object 
+     * to add/update/remove next-hops. All operations take place when 
+     * sendMyL3RoutesToRib is called. 
+     * postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal 
+     * that route changes are done. 
+     * postL3RecursiveNextHopCb is called after sendMyL3RoutesToRib to signal changes to 
+     * the next hop. 
+     * @param[in] routeAddr Address of the route as a string.
+     * @param[in] maskLen [Optional] MaskLength if its a prefix.
+     *                     If not set it will pick /32 for IP
+     *                     address (or) /128 for IPv6 address.
+     * @param[in] vrfName [Optional] VrfName in which the route is
+     *                    present. If not set "default" will be used.
+     *                    vrfName cannot be "all" or empty string "".
+     *                    
+     * @returns NxL3Route object to be used to further configure the route.
+     *          NULL if not (VrfName empty (or) "all", Vrf does
+     *          not exist, down or invalid, no route etc).
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->addL3Route("10.1.1.1", 24, "default");
+     *       NxL3NextHop *nh = route->addL3DirectNextHop("10.1.1.3", 
+     *                                                   "Eth1/3" 12);
+     *       bool result = route->sendMyL3RoutesToRib(AF_IPV4);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.addL3Route("10.1.1.1", 24, "default")
+     *       next_hop = route.addL3DirectNextHop("10.1.1.3", "Eth1/3", 12)
+     *       result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)
+     *  @endcode
+     *
+     * @throws invalid routeAddr
+     * @throws invalid maskLen
+     * @throws vrfName is more than 32 characters.
+     **/
+    virtual NxL3Route *addL3Route(const std::string &routeAddr,
+                                  unsigned char     maskLen =0,
+                                  const std::string &vrfName="default")=0;
+    /**
+     * To delete a L3 Route and all it's next-hops owned by the application. 
+     * 
+     * postMyL3RouteCb is called after sendMyL3RoutesToRib is called to signal 
+     * that route changes are done. 
+     * 
+     * @param[in] routeAddr Address of the route as a string.
+     * @param[in] maskLen [Optional] MaskLength if its a prefix.
+     *                     If not set it will pick /32 for IP
+     *                     address (or) /128 for IPv6 address.
+     * @param[in] vrfName [Optional] VrfName in which the route is
+     *                    present. If not set "default" will be used.
+     *                    vrfName cannot be "all" or empty string "".
+     * @returns true or false
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     * @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->getL3Route("10.1.1.1", 24, "default");
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.getL3Route("10.1.1.1", 24, "default")
+     *  @endcode
+     *
+     *  @throws invalid routeAddr
+     *  @throws invalid maskLen
+     *  @throws vrfName is more than 32 characters.
+     **/
+    virtual bool delL3Route(const std::string &routePrefix,
+                            unsigned char     maskLen  =0,
+                            const std::string &vrfName ="default")=0;
+    /**
+     * Send all pending route operations to RIB. This call is asynchronous. 
+     * To check if route was added properly, override postMyL3RouteCb to be 
+     * notified when your route is added or deleted. 
+     * 
+     * @param[in] af [Optional] Register for route events only
+     *               from the specified address-family (af).
+     *               For ex) To get only IPv4 route events,
+     *               use AF_IPV4 etc. IF not speficied, it
+     *               means from all AFs.
+     *                    
+     * @returns true if sendMyL3RoutesToRib operation succeeded. 
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *       NxL3Route    *route;
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       route = ribMgr->addL3Route("10.1.1.1", 24, "default");
+     *       NxL3NextHop *nh = route->addL3DirectNextHop("10.1.1.3", 
+     *                                                   "Eth1/3", 12);
+     *       bool result = route->sendMyL3RoutesToRib(AF_IPV4);
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       route = ribMgr.addL3Route("10.1.1.1", 24, "default")
+     *       next_hop = route.addL3DirectNextHop("10.1.1.3", "Eth1/3", 12)
+     *       result = ribMgr.sendMyL3RoutesToRib(nx_sdk_py.AF_IPV4)
+     *  @endcode
+     *
+     *  @throws invalid Address family
+     **/
+    virtual bool sendMyL3RoutesToRib(nxos::af_e af=nxos::AF_IPV4) = 0;
+
+    /**
+     * Tell Route information base that all routes belonging to the application
+     * were programmed. This is needed after system switch over and the 
+     * application has added all its routes.
+     * @param[in] af Address Family
+     * @param[in] vrfName Name of the VRF
+     *                    
+     * @returns true if sendMyL3RoutesToRib operation succeeded. 
+     *
+     *  @code
+     *  C++:
+     *       #include <nx_sdk.h>
+     *       #include <nx_rib_mgr.h>
+     *
+     *
+     *       sdk = nxos::NxSdk::getSdkInst(argc, argv);
+     *       ribMgr = sdk->getRibMgr();
+     *
+     *       bool result = ribMgr->converged();
+     *
+     *  Python:
+     *       import nx_sdk_py
+     *       sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     *       ribMgr = sdk.getRibMgr()
+     *
+     *       result = ribMgr.converged()
+     *  @endcode
+     *
+     **/
+    virtual bool converged(nxos::af_e  af=nxos::AF_IPV4, 
+                           const std::string &vrfName="all") = 0;
 };
 
 } // namespace nxos

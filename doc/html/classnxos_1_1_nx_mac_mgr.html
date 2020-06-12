@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_mac_mgr.html','');});
 <p>Abstract NX-SDK MAC Manager interface to gain access to NXOS MAC address table.  
  <a href="classnxos_1_1_nx_mac_mgr.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="nx__mac__mgr_8h_source.html">include/nx_mac_mgr.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -196,11 +196,14 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">macAddr</td><td>Mac address to add </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">vlan</td><td>: vlan value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">intf_name</td><td>Interface name that connects to this mac. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intf_name</td><td>Interface name that connects to this mac.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True - if successful. False - if it not successful. <div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__mac__mgr_8h.html">nx_mac_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxMac *mac;</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     macMgr = sdk-&gt;getMacMgr();</div><div class="line">     <span class="keywordflow">if</span> (macMgr) {</div><div class="line">         <span class="keywordtype">bool</span> ret = macMgr-&gt;addStaticMac(<span class="stringliteral">&quot;1.1.1&quot;</span>, 2, <span class="stringliteral">&quot;eth1/1&quot;</span>);</div><div class="line">         <span class="keywordflow">if</span> (ret) {  </div><div class="line">             cout &lt;&lt; <span class="stringliteral">&quot;Static MAC added\n&quot;</span>;</div><div class="line">         } <span class="keywordflow">else</span> {</div><div class="line">             cout &lt;&lt; <span class="stringliteral">&quot;Failed to add static mac\n&quot;</span>;</div><div class="line">         }</div><div class="line">     }</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     macMgr = sdk.getMacMgr()</div><div class="line">     <span class="keywordflow">if</span> macMgr:</div><div class="line">         ret = macMgr.addStaticMac(<span class="stringliteral">&quot;1.1.1&quot;</span>, 2, <span class="stringliteral">&quot;eth1/1&quot;</span>)</div><div class="line">         <span class="keywordflow">if</span> ret:</div><div class="line">            print <span class="stringliteral">&quot;static mac added\n&quot;</span></div><div class="line">         <span class="keywordflow">else</span>:</div><div class="line">            print <span class="stringliteral">&quot;Failed to add static mac\n&quot;</span></div></div><!-- fragment --></dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><dl class="section return"><dt>Returns</dt><dd>True - if successful. False - if it not successful. <div class="fragment"><div class="line">C++:</div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__sdk_8h.html">nx_sdk.h</a>&gt;</span></div><div class="line"><span class="preprocessor">     #include &lt;<a class="code" href="nx__mac__mgr_8h.html">nx_mac_mgr.h</a>&gt;</span></div><div class="line"></div><div class="line">     NxMac *mac;</div><div class="line">     sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">     macMgr = sdk-&gt;getMacMgr();</div><div class="line">     <span class="keywordflow">if</span> (macMgr) {</div><div class="line">         <span class="keywordtype">bool</span> ret = macMgr-&gt;addStaticMac(<span class="stringliteral">&quot;1.1.1&quot;</span>, 2, <span class="stringliteral">&quot;eth1/1&quot;</span>);</div><div class="line">         <span class="keywordflow">if</span> (ret) {  </div><div class="line">             cout &lt;&lt; <span class="stringliteral">&quot;Static MAC added\n&quot;</span>;</div><div class="line">         } <span class="keywordflow">else</span> {</div><div class="line">             cout &lt;&lt; <span class="stringliteral">&quot;Failed to add static mac\n&quot;</span>;</div><div class="line">         }</div><div class="line">     }</div><div class="line"></div><div class="line">Python:</div><div class="line">     <span class="keyword">import</span> nx_sdk_py</div><div class="line">     sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">     macMgr = sdk.getMacMgr()</div><div class="line">     <span class="keywordflow">if</span> macMgr:</div><div class="line">         ret = macMgr.addStaticMac(<span class="stringliteral">&quot;1.1.1&quot;</span>, 2, <span class="stringliteral">&quot;eth1/1&quot;</span>)</div><div class="line">         <span class="keywordflow">if</span> ret:</div><div class="line">            print <span class="stringliteral">&quot;static mac added\n&quot;</span></div><div class="line">         <span class="keywordflow">else</span>:</div><div class="line">            print <span class="stringliteral">&quot;Failed to add static mac\n&quot;</span></div></div><!-- fragment --></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID</td><td>macAddr or vlan or intf_name is invalid. </td></tr>
@@ -545,14 +548,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a></li>
+<li>include/<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_mac_mgr.html">NxMacMgr</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_mac_mgr.html">NxMacMgr</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

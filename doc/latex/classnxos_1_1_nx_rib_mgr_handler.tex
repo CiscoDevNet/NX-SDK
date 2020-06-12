@@ -1,14 +1,5 @@
 \hypertarget{classnxos_1_1_nx_rib_mgr_handler}{}\section{nxos\+:\+:Nx\+Rib\+Mgr\+Handler Class Reference}
 \label{classnxos_1_1_nx_rib_mgr_handler}\index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
-
-
-Abstract Rib\+Mgr callback Interface to receive V\+RF, Route updates etc from N\+X\+OS R\+IB.  
-
-
-
-
-{\ttfamily \#include $<$nx\+\_\+rib\+\_\+mgr.\+h$>$}
-
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,11 +8,14 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_a0b2d07d8f5547b196f6ed
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_a1b742d50365fdece0ea47eb38300f7de}{post\+L3\+Route\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$route)
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_a2ed5a3ad9c0e55d21e18d88a19419a5e}{post\+Vrf\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_vrf}{Nx\+Vrf}} $\ast$vrf)
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ae11a0ef873528002f86cd41a5871ad65}{post\+L3\+Recursive\+Next\+Hop\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$rnh\+Route, bool is\+Resolved)
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_af4214a821d17a84b4746b0dd94b5d58b}{post\+My\+L3\+Route\+Cb}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$route)
+\item 
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ac3b189923604f553505b0741b8acd39d}{post\+L3\+Route\+Repopulate\+Cb}} (const std\+::string vrf\+Name, const std\+::string route\+Address, unsigned char mask\+Len=0)
 \end{DoxyCompactItemize}
 
-
-\subsection{Detailed Description}
-Abstract Rib\+Mgr callback Interface to receive V\+RF, Route updates etc from N\+X\+OS R\+IB. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_a0b2d07d8f5547b196f6eda3d77f9ca97}\label{classnxos_1_1_nx_rib_mgr_handler_a0b2d07d8f5547b196f6eda3d77f9ca97}} 
@@ -33,7 +27,61 @@ Abstract Rib\+Mgr callback Interface to receive V\+RF, Route updates etc from N\
 Destructor. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_a1b742d50365fdece0ea47eb38300f7de}\label{classnxos_1_1_nx_rib_mgr_handler_a1b742d50365fdece0ea47eb38300f7de}} 
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_ae11a0ef873528002f86cd41a5871ad65}\label{classnxos_1_1_nx_rib_mgr_handler_ae11a0ef873528002f86cd41a5871ad65}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}!post\+L3\+Recursive\+Next\+Hop\+Cb@{post\+L3\+Recursive\+Next\+Hop\+Cb}}
+\index{post\+L3\+Recursive\+Next\+Hop\+Cb@{post\+L3\+Recursive\+Next\+Hop\+Cb}!nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
+\subsubsection{\texorpdfstring{post\+L3\+Recursive\+Next\+Hop\+Cb()}{postL3RecursiveNextHopCb()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+Handler\+::post\+L3\+Recursive\+Next\+Hop\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$}]{rnh\+Route,  }\item[{bool}]{is\+Resolved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+User to overload the post\+L3\+Recursive\+Next\+Hop\+Cb callback method to receive updates after a recursive next hop is added by the application.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}} & object representing the route for the added recursive next-\/hop \\
+\hline
+\mbox{\tt in}  & {\em is\+Resolved} & A boolean value representing whether the R\+NH is resolved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True \+: if the action was successful. False\+: if the action was not successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ae11a0ef873528002f86cd41a5871ad65}{postL3RecursiveNextHopCb}}(NxL3Route *route) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr = sdk->getRibMgr();
+        NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrHandler();
+        ribMgr->setRibMgrHandler(myribcb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Route events}
+         def \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ae11a0ef873528002f86cd41a5871ad65}{postL3RecursiveNextHopCb}}(self, nxroute):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+       myribcb = myRibMgrHandler()
+       ribMgr.setRibMgrHandler(myribcb)
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_a1b742d50365fdece0ea47eb38300f7de}\label{classnxos_1_1_nx_rib_mgr_handler_a1b742d50365fdece0ea47eb38300f7de}} 
 \index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}!post\+L3\+Route\+Cb@{post\+L3\+Route\+Cb}}
 \index{post\+L3\+Route\+Cb@{post\+L3\+Route\+Cb}!nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
 \subsubsection{\texorpdfstring{post\+L3\+Route\+Cb()}{postL3RouteCb()}}
@@ -83,6 +131,109 @@ Python:
        myribcb = myRibMgrHandler()
        ribMgr.setRibMgrHandler(myribcb)
 \end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_ac3b189923604f553505b0741b8acd39d}\label{classnxos_1_1_nx_rib_mgr_handler_ac3b189923604f553505b0741b8acd39d}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}!post\+L3\+Route\+Repopulate\+Cb@{post\+L3\+Route\+Repopulate\+Cb}}
+\index{post\+L3\+Route\+Repopulate\+Cb@{post\+L3\+Route\+Repopulate\+Cb}!nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
+\subsubsection{\texorpdfstring{post\+L3\+Route\+Repopulate\+Cb()}{postL3RouteRepopulateCb()}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+Handler\+::post\+L3\+Route\+Repopulate\+Cb (\begin{DoxyParamCaption}\item[{const std\+::string}]{vrf\+Name,  }\item[{const std\+::string}]{route\+Address,  }\item[{unsigned char}]{mask\+Len = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+User to overload the post\+L3\+Route\+Repopulate\+Cb callback method to receive a notification when the application needs to re-\/add all it\textquotesingle{}s routes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vrf\+Name} & A string representing the V\+RF name \\
+\hline
+\mbox{\tt in}  & {\em route\+Address} & string representation of the address if address is all zeros, that means repopulate all routes \\
+\hline
+\mbox{\tt in}  & {\em mask\+Len} & route mask. If value is zero along with zero route\+Address, this means repopulate all routes for this vrf\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ac3b189923604f553505b0741b8acd39d}{postL3RouteRepopulateCb}}(\textcolor{keyword}{const} std::string vrfName,
+                                      \textcolor{keyword}{const} std::string routePrefix,
+                                      \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}     maskLen) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr = sdk->getRibMgr();
+        NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrHandler();
+        ribMgr->setRibMgrHandler(myribcb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Route events}
+         def \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_ac3b189923604f553505b0741b8acd39d}{postL3RouteRepopulateCb}}(self, vrfName, routeAddr, maskLen):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+       myribcb = myRibMgrHandler()
+       ribMgr.setRibMgrHandler(myribcb)
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_af4214a821d17a84b4746b0dd94b5d58b}\label{classnxos_1_1_nx_rib_mgr_handler_af4214a821d17a84b4746b0dd94b5d58b}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}!post\+My\+L3\+Route\+Cb@{post\+My\+L3\+Route\+Cb}}
+\index{post\+My\+L3\+Route\+Cb@{post\+My\+L3\+Route\+Cb}!nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
+\subsubsection{\texorpdfstring{post\+My\+L3\+Route\+Cb()}{postMyL3RouteCb()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+Handler\+::post\+My\+L3\+Route\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$}]{route }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+User to overload the post\+My\+L3\+Route\+Cb callback method to receive any registered route updates for routes added or modified by the application. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}} & object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True \+: if the action was successful. False\+: if the action was not successful.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{   #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+   \textcolor{keyword}{class }myRibMgrMgrHandler : \textcolor{keyword}{public} NxRibMgrHandler \{
+      \textcolor{keyword}{public}:
+         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_af4214a821d17a84b4746b0dd94b5d58b}{postMyL3RouteCb}}(NxL3Route *route) \{
+              \textcolor{comment}{// Do your action}
+         \}
+   \};
+
+   \textcolor{keywordtype}{int}  main (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+   \{
+        NxSdk    *sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+        NxRibMgr *ribMgr = sdk->getRibMgr();
+        NxRibMgrHandler *myribcb = \textcolor{keyword}{new} myRibMgrHandler();
+        ribMgr->setRibMgrHandler(myribcb);
+   \}
+
+Python:
+   \textcolor{keyword}{import} nx\_sdk\_py
+
+   \textcolor{keyword}{class }myRibMgrHandler(nx\_sdk\_py.NxRibMgrHandler):
+\textcolor{preprocessor}{   ### Overloaded Callback to get Route events}
+         def \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler_af4214a821d17a84b4746b0dd94b5d58b}{postMyL3RouteCb}}(self, nxroute):
+\textcolor{preprocessor}{             # Do your action here}
+
+\textcolor{preprocessor}{   # Do SDK related inits in one thread.}
+   def sdkThread(name,val):
+       sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+       ribMgr = sdk.getRibMgr()
+       myribcb = myRibMgrHandler()
+       ribMgr.setRibMgrHandler(myribcb)
+\end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_handler_a2ed5a3ad9c0e55d21e18d88a19419a5e}\label{classnxos_1_1_nx_rib_mgr_handler_a2ed5a3ad9c0e55d21e18d88a19419a5e}} 
 \index{nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}!post\+Vrf\+Cb@{post\+Vrf\+Cb}}
 \index{post\+Vrf\+Cb@{post\+Vrf\+Cb}!nxos\+::\+Nx\+Rib\+Mgr\+Handler@{nxos\+::\+Nx\+Rib\+Mgr\+Handler}}
@@ -122,4 +273,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

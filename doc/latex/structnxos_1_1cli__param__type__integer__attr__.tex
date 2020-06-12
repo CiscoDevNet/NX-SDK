@@ -7,13 +7,15 @@ Specifies that the type of the C\+LI input parameter is an integer.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+cli.\+h$>$}
+{\ttfamily \#include $<$include/types/nx\+\_\+cli.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{min\+\_\+val}}
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}\label{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}} 
+int {\bfseries min\+\_\+val}
 \item 
+\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}\label{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}} 
 int \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\+\_\+val}}
 \begin{DoxyCompactList}\small\item\em Default is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -38,11 +40,11 @@ C\+LI\+: \$appname port-\/bw threshold ? $<$1-\/100$>$ Threshold Limit. Default 
 sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
 cliP = sdk->getCliParser();
 \mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr__}{nxos::cli\_param\_type\_integer\_attr}} int\_attr = \{0\};
-int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}{min\_val}} = 1;
+int\_attr.min\_val = 1;
 int\_attr.\mbox{\hyperlink{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}{max\_val}} = 100;
 cmd = cliP->newConfigCmd(\textcolor{stringliteral}{"set\_port\_bw\_threshold\_cmd"},
                          \textcolor{stringliteral}{"port-bw threshold <threshold>"});
-cmd->updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, \mbox{\hyperlink{namespacenxos_ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687}{nxos::P\_INTEGER}},
+cmd->updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliteral}{"Threshold Limit. Default 50%"}, nxos::P\_INTEGER,
                  (\textcolor{keywordtype}{void} *)&int\_attr, \textcolor{keyword}{sizeof}(int\_attr));
 \end{DoxyCode}
 
@@ -62,25 +64,6 @@ cmd.updateParam(\textcolor{stringliteral}{"<threshold>"}, \textcolor{stringliter
 \end{DoxyCode}
  
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}\label{structnxos_1_1cli__param__type__integer__attr___a87f179239023d52fa94192e0816a03ff}} 
-\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+}!max\+\_\+val@{max\+\_\+val}}
-\index{max\+\_\+val@{max\+\_\+val}!nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+}}
-\subsubsection{\texorpdfstring{max\+\_\+val}{max\_val}}
-{\footnotesize\ttfamily int nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+\+::max\+\_\+val}
-
-
-
-Default is 0. 
-
-\mbox{\Hypertarget{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}\label{structnxos_1_1cli__param__type__integer__attr___af6129171a34b028c5faeb503e8a1985b}} 
-\index{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+}!min\+\_\+val@{min\+\_\+val}}
-\index{min\+\_\+val@{min\+\_\+val}!nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+@{nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+}}
-\subsubsection{\texorpdfstring{min\+\_\+val}{min\_val}}
-{\footnotesize\ttfamily int nxos\+::cli\+\_\+param\+\_\+type\+\_\+integer\+\_\+attr\+\_\+\+::min\+\_\+val}
-
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/types/\mbox{\hyperlink{types_2nx__cli_8h}{nx\+\_\+cli.\+h}}\end{DoxyCompactItemize}
+include/types/nx\+\_\+cli.\+h\end{DoxyCompactItemize}

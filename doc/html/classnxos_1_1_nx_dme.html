@@ -96,12 +96,10 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_dme.html','');});
 <p>Public interface for NXSDK DME objects. These objects are used by applications to read or update the DME object store in NXOS, and also for DME event processing.  
  <a href="classnxos_1_1_nx_dme.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="nx__dme_8h_source.html">nx_dme.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="nx__dme_8h_source.html">include/nx_dme.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8dc547fb29c4db31558f05566cde616d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a8dc547fb29c4db31558f05566cde616d">~NxDme</a> ()</td></tr>
-<tr class="separator:a8dc547fb29c4db31558f05566cde616d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad97ecb092308dcacdd5de64327742210"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#ad97ecb092308dcacdd5de64327742210">getDn</a> ()=0</td></tr>
 <tr class="separator:ad97ecb092308dcacdd5de64327742210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a353542ba7f8354730b78dd50659c0c30"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a353542ba7f8354730b78dd50659c0c30">setProperty</a> (const std::string &amp;sInPropName, const std::string &amp;sInValue, int *err)=0</td></tr>
@@ -114,10 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a846519c8ee7521dac1c7e6c961903b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb7ee373c1fe3a50b52a243be2f9a863"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#abb7ee373c1fe3a50b52a243be2f9a863">iterateProperties</a> (bool fromFirst=false)=0</td></tr>
 <tr class="separator:abb7ee373c1fe3a50b52a243be2f9a863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff302a3891e0b6f69e9e0fd26e6e16a7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a> ()=0</td></tr>
+<tr class="memitem:aff302a3891e0b6f69e9e0fd26e6e16a7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a> ()=0</td></tr>
 <tr class="separator:aff302a3891e0b6f69e9e0fd26e6e16a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7052ff8ef29df2f692dbfdb3a8c987"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a6f7052ff8ef29df2f692dbfdb3a8c987">getEventIsPropertyChanged</a> (const std::string &amp;property)=0</td></tr>
-<tr class="separator:a6f7052ff8ef29df2f692dbfdb3a8c987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537141d11543c8e5c9e82b53255981cb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a537141d11543c8e5c9e82b53255981cb">getEventIsPropertyChanged</a> (const std::string &amp;sInPropName)=0</td></tr>
+<tr class="separator:a537141d11543c8e5c9e82b53255981cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe8b05c2c14f16ad7a2f4002a63baf2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a> (bool fromFirst=false)=0</td></tr>
 <tr class="separator:a2fe8b05c2c14f16ad7a2f4002a63baf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a847650a963a30b0cad5969cac7ecb9bc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a847650a963a30b0cad5969cac7ecb9bc">operator==</a> (<a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> const &amp;dme_obj) const =0</td></tr>
@@ -126,36 +124,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8d1ffa9c69d24635fb28b52549ab666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bbd85bc12faba3ee4737abaa907e4e5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a3bbd85bc12faba3ee4737abaa907e4e5">equal</a> (<a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a> const &amp;dme_obj) const =0</td></tr>
 <tr class="separator:a3bbd85bc12faba3ee4737abaa907e4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32353c577096e8f5b920759f4a78007"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#aa32353c577096e8f5b920759f4a78007">getChildrenDmeObjCount</a> ()=0</td></tr>
+<tr class="separator:aa32353c577096e8f5b920759f4a78007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c6e95b39263694058082abeb377ac2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a61c6e95b39263694058082abeb377ac2">iterateChildrenDmeDn</a> (bool fromFirst=false)=0</td></tr>
+<tr class="separator:a61c6e95b39263694058082abeb377ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42da310beaee09535feda6dc618888b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#af42da310beaee09535feda6dc618888b">isModified</a> ()=0</td></tr>
+<tr class="separator:af42da310beaee09535feda6dc618888b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a883efffe8438738ac723e4a8e913e0ca"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_dme.html#a883efffe8438738ac723e4a8e913e0ca">getEventPropertyValue</a> (const std::string &amp;sInPropName, int *err)=0</td></tr>
+<tr class="separator:a883efffe8438738ac723e4a8e913e0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Public interface for NXSDK DME objects. These objects are used by applications to read or update the DME object store in NXOS, and also for DME event processing. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8dc547fb29c4db31558f05566cde616d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dc547fb29c4db31558f05566cde616d">&#9670;&nbsp;</a></span>~NxDme()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual nxos::NxDme::~NxDme </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a61e01267ff642ace49a8fe75296a0cbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61e01267ff642ace49a8fe75296a0cbd">&#9670;&nbsp;</a></span>commit()</h2>
 
@@ -181,12 +161,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Commit the pending changes that were made to this object. Only the changes to this object are committed. The completion of the commit does not imply that any child objects that may be created as a result of config change are also created. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>value</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>error string, err_type_e set in argument <div class="fragment"><div class="line">C++:</div><div class="line">   <span class="keywordtype">int</span>  err;</div><div class="line">   std::string  err_str;</div><div class="line"></div><div class="line">   objp-&gt;setProperty(<span class="stringliteral">&quot;property1&quot;</span>, <span class="stringliteral">&quot;value1&quot;</span>, &amp;err);</div><div class="line">   objp-&gt;setProperty(<span class="stringliteral">&quot;property2&quot;</span>, <span class="stringliteral">&quot;value2&quot;</span>, &amp;err);</div><div class="line">   err_str =  objp-&gt;commit(&amp;err);</div><div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;commit status: &quot;</span> &lt;&lt; err &lt;&lt; <span class="stringliteral">&quot; status: &quot;</span> &lt;&lt; err_str;</div><div class="line">Python:</div><div class="line">   errp = nx_sdk_py.new_intp();</div><div class="line">   err_str = obj.commit(errp)</div><div class="line">   err = nx_sdk_py.intp_value(errp);</div><div class="line">   nx_sdk_py.delete_intp(errp);</div><div class="line"></div><div class="line">   <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div></div><!-- fragment --></dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<dl class="section return"><dt>Returns</dt><dd>error string, err_type_e set in argument</dd></dl>
+<pre class="fragment">Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+</pre><div class="fragment"><div class="line">C++:</div><div class="line">   <span class="keywordtype">int</span>  err;</div><div class="line">   std::string  err_str;</div><div class="line"></div><div class="line">   objp-&gt;setProperty(<span class="stringliteral">&quot;property1&quot;</span>, <span class="stringliteral">&quot;value1&quot;</span>, &amp;err);</div><div class="line">   objp-&gt;setProperty(<span class="stringliteral">&quot;property2&quot;</span>, <span class="stringliteral">&quot;value2&quot;</span>, &amp;err);</div><div class="line">   err_str =  objp-&gt;commit(&amp;err);</div><div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;commit status: &quot;</span> &lt;&lt; err &lt;&lt; <span class="stringliteral">&quot; status: &quot;</span> &lt;&lt; err_str;</div><div class="line">Python:</div><div class="line">   errp = nx_sdk_py.new_intp();</div><div class="line">   err_str = obj.commit(errp)</div><div class="line">   err = nx_sdk_py.intp_value(errp);</div><div class="line">   nx_sdk_py.delete_intp(errp);</div><div class="line"></div><div class="line">   <span class="keywordflow">if</span> err == nx_sdk_py.ERR_ESUCCESS:</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID_USAGE</td><td></td></tr>
   </table>
@@ -228,6 +211,39 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">C++:</div><div class="line">     NxDme *dme1 = dme_v.at(idx1);</div><div class="line">     NxDme *dme2 = dme_v.at(idx2);</div><div class="line">     <span class="keywordflow">if</span> (dme1-&gt;equal(*dme2))</div><div class="line">         cout &lt;&lt; <span class="stringliteral">&quot;Equal&quot;</span> &lt;&lt; endl;</div><div class="line"> Python:</div><div class="line">     <span class="keywordflow">if</span> obj1.equal(obj2):</div><div class="line">         print <span class="stringliteral">&quot;Equal&quot;</span></div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa32353c577096e8f5b920759f4a78007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32353c577096e8f5b920759f4a78007">&#9670;&nbsp;</a></span>getChildrenDmeObjCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int nxos::NxDme::getChildrenDmeObjCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the number of direct children of this object. This api will return valid count only if this dme object was opened with 'getChildren = true' in call to getDmeObj().</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of children immediately under this object.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;Number of children: &quot;</span> &lt;&lt; dme-&gt;getChildrenDmeObjCount() &lt;&lt; endl;</div><div class="line">Python:</div><div class="line">   print  <span class="stringliteral">&quot;Number of children: %d&quot;</span> % dme.getChildrenDmeObjCount()</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ERR_ENOMEM</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -309,7 +325,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a> nxos::NxDme::getEvent </td>
+          <td class="memname">virtual <a class="el" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a> nxos::NxDme::getEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -322,7 +338,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Get the event code for this object, which was set if this object is coming from an event handler.</p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a> value indicating the source of the event <div class="fragment"><div class="line">C++:</div><div class="line">   <span class="keywordtype">void</span> postdmeHandlerCb (NxDme *objp)</div><div class="line">   {</div><div class="line">       <span class="keywordtype">string</span> value;</div><div class="line"></div><div class="line">       cout &lt;&lt; <span class="stringliteral">&quot;application callback called&quot;</span> &lt;&lt; endl;</div><div class="line">       cout &lt;&lt; <span class="stringliteral">&quot;NxDme event = &quot;</span> &lt;&lt; event_str(objp-&gt;getEvent()) &lt;&lt; endl;</div><div class="line">   }</div><div class="line">Python:</div><div class="line">   <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeHandler):</div><div class="line"></div><div class="line">       def postDmeHandlerCb(self, obj):</div><div class="line">           print &quot;pyDmeHandler: application callback&quot;</div><div class="line">           print &quot;dn = %s&quot; % obj.<a class="code" href="classnxos_1_1_nx_dme.html#ad97ecb092308dcacdd5de64327742210">getDn</a>()</div><div class="line">           print &quot;event = %d&quot; % obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>()</div></div><!-- fragment --></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>nxos::event_type_e value indicating the source of the event <div class="fragment"><div class="line">C++:</div><div class="line">   <span class="keywordtype">void</span> postdmeHandlerCb (NxDme *objp)</div><div class="line">   {</div><div class="line">       <span class="keywordtype">string</span> value;</div><div class="line"></div><div class="line">       cout &lt;&lt; <span class="stringliteral">&quot;application callback called&quot;</span> &lt;&lt; endl;</div><div class="line">       cout &lt;&lt; <span class="stringliteral">&quot;NxDme event = &quot;</span> &lt;&lt; event_str(objp-&gt;getEvent()) &lt;&lt; endl;</div><div class="line">   }</div><div class="line">Python:</div><div class="line">   <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeHandler):</div><div class="line"></div><div class="line">       def postDmeHandlerCb(self, obj):</div><div class="line">           print &quot;pyDmeHandler: application callback&quot;</div><div class="line">           print &quot;dn = %s&quot; % obj.<a class="code" href="classnxos_1_1_nx_dme.html#ad97ecb092308dcacdd5de64327742210">getDn</a>()</div><div class="line">           print &quot;event = %d&quot; % obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>()</div></div><!-- fragment --></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">None.</td><td></td></tr>
@@ -332,8 +348,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f7052ff8ef29df2f692dbfdb3a8c987"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f7052ff8ef29df2f692dbfdb3a8c987">&#9670;&nbsp;</a></span>getEventIsPropertyChanged()</h2>
+<a id="a537141d11543c8e5c9e82b53255981cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537141d11543c8e5c9e82b53255981cb">&#9670;&nbsp;</a></span>getEventIsPropertyChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +361,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual bool nxos::NxDme::getEventIsPropertyChanged </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>property</em></td><td>)</td>
+          <td class="paramname"><em>sInPropName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -362,10 +378,60 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if property was modified in the event <div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">void</span> postDmeHandlerCb (NxDme *objp)</div><div class="line">    {</div><div class="line">       <span class="keywordflow">if</span> (objp-&gt;getEvent() == <a class="code" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>) {</div><div class="line">         <span class="keywordflow">if</span> (objp-&gt;getEventIsPropertyChanged(<span class="stringliteral">&quot;adminSt&quot;</span>)) {</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; Property changed: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;adminSt&quot;</span> &lt;&lt; endl;</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; new value is: &quot;</span> &lt;&lt;</div><div class="line">              objp-&gt;getProperty(<span class="stringliteral">&quot;adminSt&quot;</span>, &amp;err) &lt;&lt; endl;;</div><div class="line">        }</div><div class="line"></div><div class="line">     }</div><div class="line">Python:</div><div class="line">    <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):</div><div class="line"></div><div class="line">        def postDmeHandlerCb(self, obj):</div><div class="line">           if obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>() == nx_sdy_py.<a class="code" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>:</div><div class="line">               if obj.<a class="code" href="classnxos_1_1_nx_dme.html#a6f7052ff8ef29df2f692dbfdb3a8c987">getEventIsPropertyChanged</a>(&quot;adminSt&quot;):</div><div class="line">                   print &quot;adminSt changed&quot;</div></div><!-- fragment --></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if property was modified in the event <div class="fragment"><div class="line">C++:</div><div class="line">    <span class="keywordtype">void</span> postDmeHandlerCb (NxDme *objp)</div><div class="line">    {</div><div class="line">       <span class="keywordflow">if</span> (objp-&gt;getEvent() == <a class="code" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>) {</div><div class="line">         <span class="keywordflow">if</span> (objp-&gt;getEventIsPropertyChanged(<span class="stringliteral">&quot;adminSt&quot;</span>)) {</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; Property changed: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;adminSt&quot;</span> &lt;&lt; endl;</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; new value is: &quot;</span> &lt;&lt;</div><div class="line">              objp-&gt;getProperty(<span class="stringliteral">&quot;adminSt&quot;</span>, &amp;err) &lt;&lt; endl;;</div><div class="line">        }</div><div class="line"></div><div class="line">     }</div><div class="line">Python:</div><div class="line">    <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):</div><div class="line"></div><div class="line">        def postDmeHandlerCb(self, obj):</div><div class="line">           if obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>() == nx_sdy_py.<a class="code" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>:</div><div class="line">               if obj.<a class="code" href="classnxos_1_1_nx_dme.html#a537141d11543c8e5c9e82b53255981cb">getEventIsPropertyChanged</a>(&quot;adminSt&quot;):</div><div class="line">                   print &quot;adminSt changed&quot;</div></div><!-- fragment --></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID_USAGE,ERR_INVALID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a883efffe8438738ac723e4a8e913e0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a883efffe8438738ac723e4a8e913e0ca">&#9670;&nbsp;</a></span>getEventPropertyValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string nxos::NxDme::getEventPropertyValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sInPropName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the value of a changed property of an object passed to event callback. This is only valid for an event object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">The</td><td>property name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>value, ERR_ESUCCESS or ERR_NOT_FOUND </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the property, if present.</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">   prop_name = objp-&gt;iterateEventUpdatedProperties(<span class="keyword">true</span>);</div><div class="line">   <span class="keywordflow">while</span> (prop_name.length()) {</div><div class="line">      prop_value = objp-&gt;getEventPropertyValue(prop_name, &amp;error);</div><div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;iterateEvent prop: &quot;</span> &lt;&lt; prop_name &lt;&lt; endl;</div><div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;             value: &quot;</span> &lt;&lt; prop_value &lt;&lt; endl;</div><div class="line">      prop_name = objp-&gt;iterateEventUpdatedProperties();</div><div class="line">   }</div><div class="line">Python:</div><div class="line">   <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):</div><div class="line"></div><div class="line">      def postDmeHandlerCb(self, obj):</div><div class="line">         if obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>() == nx_sdy_py.<a class="code" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>:</div><div class="line">             prop = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>(True)</div><div class="line">             while len(prop) :</div><div class="line">                errp = nx_sdk_py.new_intp()</div><div class="line">                value = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a883efffe8438738ac723e4a8e913e0ca">getEventPropertyValue</a>(prop, errp);</div><div class="line">                print &quot;Property changed: %s:%s&quot; % (prop,value)</div><div class="line">                prop = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>()</div><div class="line">                nx_sdk_py.delete_intp(errp)</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ERR_INVALID_USAGE</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -423,6 +489,79 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af42da310beaee09535feda6dc618888b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42da310beaee09535feda6dc618888b">&#9670;&nbsp;</a></span>isModified()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nxos::NxDme::isModified </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Test if this object has been modified</p>
+<dl class="section return"><dt>Returns</dt><dd>true if this object has been modified, false if not</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">   <span class="keywordflow">if</span> (dme_obj-&gt;isModified()) </div><div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;Local object has been modified&quot;</span> &lt;&lt; endl;</div><div class="line"></div><div class="line">Python:</div><div class="line">      <span class="keywordflow">if</span> dme_obj.isModified():</div><div class="line">         print <span class="stringliteral">&quot;Local object has been modified&quot;</span></div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a61c6e95b39263694058082abeb377ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c6e95b39263694058082abeb377ac2">&#9670;&nbsp;</a></span>iterateChildrenDmeDn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string nxos::NxDme::iterateChildrenDmeDn </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fromFirst</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Iterate through the children of this dme object. The initial call should set fromFirst=true, then subsequent calls use the default value of false. To reset the iteration to the beginning, call again with fromFirst=true. When there are no more DNs to retrieve, the function returns empty string "". This api will return valid data only if this dme object was opened with 'getChildren = true' in call to getDmeObj().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Start</td><td>at the beginning or not. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DN string of next child or ""</dd></dl>
+<div class="fragment"><div class="line">C++:</div><div class="line">  std::string   child_dn;</div><div class="line">  <span class="keywordtype">int</span>  err;</div><div class="line">            </div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Number of children: &quot;</span> &lt;&lt; </div><div class="line">           obj-&gt;getChildrenDmeObjCount() &lt;&lt; endl;</div><div class="line"></div><div class="line">  child_dn = obj-&gt;iterateChildrenDmeDn(<span class="keyword">true</span>);</div><div class="line">  <span class="keywordflow">while</span> (child_dn.length()) {</div><div class="line">     cout &lt;&lt; <span class="stringliteral">&quot;child DN: &quot;</span> &lt;&lt; child_dn &lt;&lt; endl;</div><div class="line">     child_dn = obj-&gt;iterateChildrenDmeDn(<span class="keyword">false</span>);</div><div class="line">  }</div><div class="line">Python:</div><div class="line">  child_dn = obj.iterateChildrenDmeDn(True)</div><div class="line">  <span class="keywordflow">while</span> child_dn:</div><div class="line">      print <span class="stringliteral">&quot;child DN: %s&quot;</span>  % child_dn</div><div class="line">      child_dn = obj.iterateChildrenDmeDn()</div></div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ERR_INVALID_USAGE,ERR_FAILURE</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2fe8b05c2c14f16ad7a2f4002a63baf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fe8b05c2c14f16ad7a2f4002a63baf2">&#9670;&nbsp;</a></span>iterateEventUpdatedProperties()</h2>
 
@@ -453,7 +592,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The property names which were modified in the event. <div class="fragment"><div class="line">C++:</div><div class="line">     <span class="keywordtype">void</span> postDmeHandlerCb (NxDme *objp)</div><div class="line">     {</div><div class="line">        std::string value;</div><div class="line"></div><div class="line">        <span class="keywordflow">if</span> (objp-&gt;getEvent() == <a class="code" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>) {</div><div class="line">          value = objp-&gt;iterateEventUpdatedProperties(<span class="keyword">true</span>);</div><div class="line">          <span class="keywordflow">while</span> (value.length()) {</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;iterateEvent prop: &quot;</span> &lt;&lt; value &lt;&lt; endl;</div><div class="line">            value = objp-&gt;iterateEventUpdatedProperties();</div><div class="line">          }</div><div class="line">        }</div><div class="line">Python:</div><div class="line">      <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):</div><div class="line"></div><div class="line">        def postDmeHandlerCb(self, obj):</div><div class="line">           if obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>() == nx_sdy_py.<a class="code" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>:</div><div class="line">               value = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>(True)</div><div class="line">               while len(value) :</div><div class="line">                  print &quot;Property changed: %s&quot; % value</div><div class="line">                  value = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>()</div></div><!-- fragment --></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The property names which were modified in the event. <div class="fragment"><div class="line">C++:</div><div class="line">     <span class="keywordtype">void</span> postDmeHandlerCb (NxDme *objp)</div><div class="line">     {</div><div class="line">        std::string value;</div><div class="line"></div><div class="line">        <span class="keywordflow">if</span> (objp-&gt;getEvent() == <a class="code" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>) {</div><div class="line">          value = objp-&gt;iterateEventUpdatedProperties(<span class="keyword">true</span>);</div><div class="line">          <span class="keywordflow">while</span> (value.length()) {</div><div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;iterateEvent prop: &quot;</span> &lt;&lt; value &lt;&lt; endl;</div><div class="line">            value = objp-&gt;iterateEventUpdatedProperties();</div><div class="line">          }</div><div class="line">        }</div><div class="line">Python:</div><div class="line">      <span class="keyword">class </span>pyDmeHandler(nx_sdk_py.NxDmeMgrHandler):</div><div class="line"></div><div class="line">        def postDmeHandlerCb(self, obj):</div><div class="line">           if obj.<a class="code" href="classnxos_1_1_nx_dme.html#aff302a3891e0b6f69e9e0fd26e6e16a7">getEvent</a>() == nx_sdy_py.<a class="code" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cba4f3a5ababd9a5356d642a492f5ccc371">UPDATE</a>:</div><div class="line">               value = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>(True)</div><div class="line">               while len(value) :</div><div class="line">                  print &quot;Property changed: %s&quot; % value</div><div class="line">                  value = obj.<a class="code" href="classnxos_1_1_nx_dme.html#a2fe8b05c2c14f16ad7a2f4002a63baf2">iterateEventUpdatedProperties</a>()</div></div><!-- fragment --></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ERR_INVALID_USAGE,ERR_INVALID</td><td></td></tr>
@@ -638,14 +777,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
+<li>include/<a class="el" href="nx__dme_8h_source.html">nx_dme.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_dme.html">NxDme</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

@@ -7,7 +7,7 @@ Abstract Rib Manager interface to gain access to N\+X\+OS R\+IB.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+rib\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+rib\+\_\+mgr.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -26,9 +26,19 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_handler}{Nx\+Rib\+Mgr\+Handler
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}{get\+L3\+Route}} (std\+::string route\+Addr, unsigned char mask\+Len=0, std\+::string vrf\+Name=\char`\"{}default\char`\"{}, bool clear\+Buffer=false)=0
 \item 
-virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}{watch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}})=0
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_ab6749ea02f53fc8b2f6cdba21bbc335d}{watch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=nxos\+::\+M\+A\+X\+\_\+\+AF)=0
 \item 
-virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}{unwatch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}})=0
+virtual void \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a1dc61ed1d830f50ea947707576d75b99}{unwatch\+L3\+Route}} (std\+::string protocol, std\+::string tag=\char`\"{}\char`\"{}, std\+::string vrf\+Name=\char`\"{}all\char`\"{}, nxos\+::af\+\_\+e af=nxos\+::\+M\+A\+X\+\_\+\+AF)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a7bf169a5f8d7b30090c4b3c67468ac18}{get\+L3\+Route\+Detail}} (const std\+::string \&route\+Addr, unsigned int mask\+Len=0, const std\+::string \&vrf\+Name=\char`\"{}default\char`\"{})=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a59da8782bb5d41a130c8c238abc92bc3}{add\+L3\+Route}} (const std\+::string \&route\+Addr, unsigned char mask\+Len=0, const std\+::string \&vrf\+Name=\char`\"{}default\char`\"{})=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a6d838df92cbcc60bf81dabc31b2dd5b1}{del\+L3\+Route}} (const std\+::string \&route\+Prefix, unsigned char mask\+Len=0, const std\+::string \&vrf\+Name=\char`\"{}default\char`\"{})=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a0eb60de76f9a6b028350b8144a590e19}{send\+My\+L3\+Routes\+To\+Rib}} (\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} af=nxos\+::\+A\+F\+\_\+\+I\+P\+V4)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_rib_mgr_a7edd313ab7852713469d84ac588cd08d}{converged}} (\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}} af=nxos\+::\+A\+F\+\_\+\+I\+P\+V4, const std\+::string \&vrf\+Name=\char`\"{}all\char`\"{})=0
 \end{DoxyCompactItemize}
 
 
@@ -47,13 +57,165 @@ Destructor
 To Delete the R\+IB manager instance and its associated objects gracefully. Its cleaned on delete sdk too. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a59da8782bb5d41a130c8c238abc92bc3}\label{classnxos_1_1_nx_rib_mgr_a59da8782bb5d41a130c8c238abc92bc3}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!add\+L3\+Route@{add\+L3\+Route}}
+\index{add\+L3\+Route@{add\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{add\+L3\+Route()}{addL3Route()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::add\+L3\+Route (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{route\+Addr,  }\item[{unsigned char}]{mask\+Len = {\ttfamily 0},  }\item[{const std\+::string \&}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To add a L3 Route object. This A\+PI will return a route object to add/update/remove next-\/hops. All operations take place when send\+My\+L3\+Routes\+To\+Rib is called. post\+My\+L3\+Route\+Cb is called after send\+My\+L3\+Routes\+To\+Rib is called to signal that route changes are done. post\+L3\+Recursive\+Next\+Hop\+Cb is called after send\+My\+L3\+Routes\+To\+Rib to signal changes to the next hop. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em route\+Addr} & Address of the route as a string. \\
+\hline
+\mbox{\tt in}  & {\em mask\+Len} & \mbox{[}Optional\mbox{]} Mask\+Length if its a prefix. If not set it will pick /32 for IP address (or) /128 for I\+Pv6 address. \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Vrf\+Name in which the route is present. If not set \char`\"{}default\char`\"{} will be used. vrf\+Name cannot be \char`\"{}all\char`\"{} or empty string \char`\"{}\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} object to be used to further configure the route. N\+U\+LL if not (Vrf\+Name empty (or) \char`\"{}all\char`\"{}, Vrf does not exist, down or invalid, no route etc).
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     NxL3NextHop *nh = route->addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, 
+                                                 \textcolor{stringliteral}{"Eth1/3"} 12);
+     \textcolor{keywordtype}{bool} result = route->sendMyL3RoutesToRib(AF\_IPV4);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     next\_hop = route.addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, \textcolor{stringliteral}{"Eth1/3"}, 12)
+     result = ribMgr.sendMyL3RoutesToRib(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid} & route\+Addr \\
+\hline
+{\em invalid} & mask\+Len \\
+\hline
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a7edd313ab7852713469d84ac588cd08d}\label{classnxos_1_1_nx_rib_mgr_a7edd313ab7852713469d84ac588cd08d}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!converged@{converged}}
+\index{converged@{converged}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{converged()}{converged()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::converged (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily nxos\+:\+:AF\+\_\+IPV4},  }\item[{const std\+::string \&}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Tell Route information base that all routes belonging to the application were programmed. This is needed after system switch over and the application has added all its routes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em af} & Address Family \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & Name of the V\+RF\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if send\+My\+L3\+Routes\+To\+Rib operation succeeded.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     \textcolor{keywordtype}{bool} result = ribMgr->converged();
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     result = ribMgr.converged()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a6d838df92cbcc60bf81dabc31b2dd5b1}\label{classnxos_1_1_nx_rib_mgr_a6d838df92cbcc60bf81dabc31b2dd5b1}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!del\+L3\+Route@{del\+L3\+Route}}
+\index{del\+L3\+Route@{del\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{del\+L3\+Route()}{delL3Route()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::del\+L3\+Route (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{route\+Prefix,  }\item[{unsigned char}]{mask\+Len = {\ttfamily 0},  }\item[{const std\+::string \&}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To delete a L3 Route and all it\textquotesingle{}s next-\/hops owned by the application.
+
+post\+My\+L3\+Route\+Cb is called after send\+My\+L3\+Routes\+To\+Rib is called to signal that route changes are done.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em route\+Addr} & Address of the route as a string. \\
+\hline
+\mbox{\tt in}  & {\em mask\+Len} & \mbox{[}Optional\mbox{]} Mask\+Length if its a prefix. If not set it will pick /32 for IP address (or) /128 for I\+Pv6 address. \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Vrf\+Name in which the route is present. If not set \char`\"{}default\char`\"{} will be used. vrf\+Name cannot be \char`\"{}all\char`\"{} or empty string \char`\"{}\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid} & route\+Addr \\
+\hline
+{\em invalid} & mask\+Len \\
+\hline
+{\em vrf\+Name} & is more than 32 characters. \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}\label{classnxos_1_1_nx_rib_mgr_ae84cf1b9546fc3bf70e12bc7209ca190}} 
 \index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!get\+L3\+Route@{get\+L3\+Route}}
 \index{get\+L3\+Route@{get\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
 \subsubsection{\texorpdfstring{get\+L3\+Route()}{getL3Route()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::get\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{route\+Addr,  }\item[{unsigned char}]{mask\+Len = {\ttfamily 0},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}},  }\item[{bool}]{clear\+Buffer = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-To get the L3 Route based on the passed input parameters. 
+To get the L3 Route with it\textquotesingle{}s bext next-\/hop based on the passed input parameters. Routes returned by this function cannot be used to add\+L3\+Direct\+Next\+Hop() or add\+L3\+Recursive\+Next\+Hop() 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em route\+Addr} & Address of the route as a string. \\
 \hline
@@ -97,7 +259,54 @@ Python:
 \hline
 {\em vrf\+Name} & is more than 32 characters. \\
 \hline
-{\em get\+Route} & buffer is full, cleanup previous pointers (or) call get\+L3\+Route with clear\+Buffer set to true. \\
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a7bf169a5f8d7b30090c4b3c67468ac18}\label{classnxos_1_1_nx_rib_mgr_a7bf169a5f8d7b30090c4b3c67468ac18}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!get\+L3\+Route\+Detail@{get\+L3\+Route\+Detail}}
+\index{get\+L3\+Route\+Detail@{get\+L3\+Route\+Detail}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{get\+L3\+Route\+Detail()}{getL3RouteDetail()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}}$\ast$ nxos\+::\+Nx\+Rib\+Mgr\+::get\+L3\+Route\+Detail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{route\+Addr,  }\item[{unsigned int}]{mask\+Len = {\ttfamily 0},  }\item[{const std\+::string \&}]{vrf\+Name = {\ttfamily \char`\"{}default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the L3 Route with all its next-\/hops based on the passed input parameters. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em route\+Addr} & Address of the route as a string. \\
+\hline
+\mbox{\tt in}  & {\em mask\+Len} & \mbox{[}Optional\mbox{]} Mask\+Length if its a prefix. If not set it will pick /32 for IP address (or) /128 for I\+Pv6 address. \\
+\hline
+\mbox{\tt in}  & {\em vrf\+Name} & \mbox{[}Optional\mbox{]} Vrf\+Name in which the route is present. If not set \char`\"{}default\char`\"{} will be used. vrf\+Name cannot be \char`\"{}all\char`\"{} or empty string \char`\"{}\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} object if it exists. N\+U\+LL if not (Vrf\+Name empty (or) \char`\"{}all\char`\"{}, Vrf does not exist, down or invalid, no route etc).
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid} & route\+Addr \\
+\hline
+{\em invalid} & mask\+Len \\
+\hline
+{\em vrf\+Name} & is more than 32 characters. \\
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_aeed917ba912782303662c4009f3fcfcd}\label{classnxos_1_1_nx_rib_mgr_aeed917ba912782303662c4009f3fcfcd}} 
@@ -144,6 +353,54 @@ Python:
  
 \begin{DoxyExceptions}{Exceptions}
 {\em vrf\+Name} & is more than 32 characters. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_a0eb60de76f9a6b028350b8144a590e19}\label{classnxos_1_1_nx_rib_mgr_a0eb60de76f9a6b028350b8144a590e19}} 
+\index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!send\+My\+L3\+Routes\+To\+Rib@{send\+My\+L3\+Routes\+To\+Rib}}
+\index{send\+My\+L3\+Routes\+To\+Rib@{send\+My\+L3\+Routes\+To\+Rib}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
+\subsubsection{\texorpdfstring{send\+My\+L3\+Routes\+To\+Rib()}{sendMyL3RoutesToRib()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::send\+My\+L3\+Routes\+To\+Rib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily nxos\+:\+:AF\+\_\+IPV4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Send all pending route operations to R\+IB. This call is asynchronous. To check if route was added properly, override post\+My\+L3\+Route\+Cb to be notified when your route is added or deleted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em af} & \mbox{[}Optional\mbox{]} Register for route events only from the specified address-\/family (af). For ex) To get only I\+Pv4 route events, use A\+F\+\_\+\+I\+P\+V4 etc. IF not speficied, it means from all A\+Fs.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if send\+My\+L3\+Routes\+To\+Rib operation succeeded.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     NxL3NextHop *nh = route->addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, 
+                                                 \textcolor{stringliteral}{"Eth1/3"}, 12);
+     \textcolor{keywordtype}{bool} result = route->sendMyL3RoutesToRib(AF\_IPV4);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     next\_hop = route.addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, \textcolor{stringliteral}{"Eth1/3"}, 12)
+     result = ribMgr.sendMyL3RoutesToRib(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid} & Address family \\
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}\label{classnxos_1_1_nx_rib_mgr_ac42dd29e34f9c508614733dbec518b99}} 
@@ -197,7 +454,7 @@ Python:
 \index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!unwatch\+L3\+Route@{unwatch\+L3\+Route}}
 \index{unwatch\+L3\+Route@{unwatch\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
 \subsubsection{\texorpdfstring{unwatch\+L3\+Route()}{unwatchL3Route()}}
-{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+::unwatch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void nxos\+::\+Nx\+Rib\+Mgr\+::unwatch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily nxos\+:\+:MAX\+\_\+AF} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To unsubscribe for Route updates based on protocol owner of the route, vrf, Address Family etc. To get the route updates, user overloaded 
 \begin{DoxyParams}[1]{Parameters}
@@ -280,7 +537,7 @@ N\+O\+TE\+: Use the pregenerated \char`\"{}show $<$appname$>$ nxsdk rib\+Mgr\cha
 \index{nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}!watch\+L3\+Route@{watch\+L3\+Route}}
 \index{watch\+L3\+Route@{watch\+L3\+Route}!nxos\+::\+Nx\+Rib\+Mgr@{nxos\+::\+Nx\+Rib\+Mgr}}
 \subsubsection{\texorpdfstring{watch\+L3\+Route()}{watchL3Route()}}
-{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::watch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a18d0f422c857ebdfed79deb2b58ab119}{nxos\+::\+M\+A\+X\+\_\+\+AF}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Rib\+Mgr\+::watch\+L3\+Route (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{std\+::string}]{tag = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{vrf\+Name = {\ttfamily \char`\"{}all\char`\"{}},  }\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{nxos\+::af\+\_\+e}}}]{af = {\ttfamily nxos\+:\+:MAX\+\_\+AF} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To receive/subscribe for Route updates based on protocol owner of the route, vrf, Address Family etc. To get the route updates, user overloaded post\+L3\+Route\+Cb handler will be called. 
 \begin{DoxyParams}[1]{Parameters}
@@ -318,7 +575,7 @@ C++:
         ribMgr = sdk->getRibMgr();
         \textcolor{keywordflow}{if} (ribMgr) \{
             ribMgr->setRibMgrHandler(myribcb);
-            ribMgr->watchL3Route(\textcolor{stringliteral}{"bgp"}, \textcolor{stringliteral}{"100"}, \textcolor{stringliteral}{"vpn1"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{nxos::AF\_IPV4}});
+            ribMgr->watchL3Route(\textcolor{stringliteral}{"bgp"}, \textcolor{stringliteral}{"100"}, \textcolor{stringliteral}{"vpn1"}, nxos::AF\_IPV4);
         \}
    \}
 
@@ -420,4 +677,4 @@ NOTE: Use the pregenerated "show <appname> nxsdk ribMgr" command
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

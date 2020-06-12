@@ -4,13 +4,13 @@
 
 %define APP_DESC RPM package for custom application
 
-%define APP_TARGET /NX-SDK/python/examples/tmCfgBot
+%define APP_TARGET /NX-SDK/examples/python/tmCfgBot
 
 %define NXSDK_ROOT /NX-SDK
 
 %define RELEASE_VERSION 1.0.0
 
-%define APP_SOURCE /NX-SDK/python/examples
+%define APP_SOURCE /NX-SDK/examples/python
 
 %define APP_VERSION 1.0
 

@@ -170,7 +170,7 @@ class pyCmdHandler(nx_sdk_py.NxCmdHandler):
 
              ### Handle no command. Reset to default 
              if "no" in clicmd.getCmdLineStr():
-                port_threhosld = 50;
+                port_threshold = 50;
              else:
                 ### Get the threshold value.
                 int_p = nx_sdk_py.void_to_int(clicmd.getParamValue("<threshold>"))

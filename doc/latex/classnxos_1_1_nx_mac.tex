@@ -7,7 +7,7 @@ Abstract M\+AC Interface used to get details about M\+AC entry.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+mac\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+mac\+\_\+mgr.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -16,13 +16,13 @@ virtual \mbox{\hyperlink{classnxos_1_1_nx_mac_a54a2228786abb8df6429123aa39795cb}
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_mac_ae1510492e7d8fe257f918c74bbe6b0ea}{get\+Mac\+Address}} ()=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}{get\+Type}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a4cf7307522c86006f61a7c106843762a}{get\+Type}} ()=0
 \item 
 virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_mac_ab785cecf1661f3c30c96fe952ba410f3}{get\+Vlan}} ()=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_mac_a4d29913106ccffd03fbd93fed04129eb}{get\+Intf\+Name}} ()=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{get\+Event}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_mac_a78876af7dfe79a990ea9eacc6f6dd078}{get\+Event}} ()=0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_mac_ae6ebe78a6679fb460e2ed1f18c08acd0}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_mac}{Nx\+Mac}} const \&mac\+\_\+obj) const =0
 \item 
@@ -78,7 +78,7 @@ Python:
 \index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Event@{get\+Event}}
 \index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
 \subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the type of Event(\+Add, Update, Delete etc). Should be used only in M\+AC Handler Callbacks like post\+Mac\+Cb(). If used outside of M\+AC Handler Callbacks its set to N\+O\+\_\+\+E\+V\+E\+NT.
 
@@ -152,7 +152,7 @@ Python:
 \index{nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}!get\+Type@{get\+Type}}
 \index{get\+Type@{get\+Type}!nxos\+::\+Nx\+Mac@{nxos\+::\+Nx\+Mac}}
 \subsubsection{\texorpdfstring{get\+Type()}{getType()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_acfd59f63fea0b34d70c39b7e808cb5d2}{nxos\+::type\+\_\+e}} nxos\+::\+Nx\+Mac\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get M\+AC Type (Static or Dynamic) from the given M\+AC object.
 
@@ -248,4 +248,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__mac__mgr_8h}{nx\+\_\+mac\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

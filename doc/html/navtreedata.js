@@ -25,15 +25,6 @@ var NAVTREE =
 [
   [ "NX-SDK API", "index.html", [
     [ "Bug List", "bug.html", null ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
-      ] ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -57,8 +48,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classnxos_1_1_nx_sdk.html#ac860ca0ab2bd58d28f990685c63906a0"
+".html",
+"classnxos_1_1_nx_rib_mgr.html#ae84cf1b9546fc3bf70e12bc7209ca190"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

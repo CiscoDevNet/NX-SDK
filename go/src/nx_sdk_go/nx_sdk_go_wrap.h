@@ -15,6 +15,42 @@
 
 class Swig_memory;
 
+class SwigDirector_NxSdkHandler : public nxos::NxSdkHandler
+{
+ public:
+  SwigDirector_NxSdkHandler(int swig_p);
+  virtual ~SwigDirector_NxSdkHandler();
+  void _swig_upcall_postRemoteConnUpCb(nxos::NxSdk *sdk) {
+    nxos::NxSdkHandler::postRemoteConnUpCb(sdk);
+  }
+  virtual void postRemoteConnUpCb(nxos::NxSdk *sdk);
+  void _swig_upcall_postRemoteConnDownCb(nxos::NxSdk const *sdk) {
+    nxos::NxSdkHandler::postRemoteConnDownCb(sdk);
+  }
+  virtual void postRemoteConnDownCb(nxos::NxSdk const *sdk);
+ private:
+  intgo go_val;
+  Swig_memory *swig_mem;
+};
+
+class SwigDirector_NxTraceHandler : public nxos::NxTraceHandler
+{
+ public:
+  SwigDirector_NxTraceHandler(int swig_p);
+  virtual ~SwigDirector_NxTraceHandler();
+  void _swig_upcall_postSyslogCb(nxos::NxSyslog *syslog) {
+    nxos::NxTraceHandler::postSyslogCb(syslog);
+  }
+  virtual void postSyslogCb(nxos::NxSyslog *syslog);
+  void _swig_upcall_postSyslogDownloadDoneCb() {
+    nxos::NxTraceHandler::postSyslogDownloadDoneCb();
+  }
+  virtual void postSyslogDownloadDoneCb();
+ private:
+  intgo go_val;
+  Swig_memory *swig_mem;
+};
+
 class SwigDirector_NxCmdHandler : public nxos::NxCmdHandler
 {
  public:
@@ -42,6 +78,22 @@ class SwigDirector_NxRibMgrHandler : public nxos::NxRibMgrHandler
     return nxos::NxRibMgrHandler::postVrfCb(vrf);
   }
   virtual bool postVrfCb(nxos::NxVrf *vrf);
+  bool _swig_upcall_postL3RecursiveNextHopCb(nxos::NxL3Route *rnhRoute, bool isResolved) {
+    return nxos::NxRibMgrHandler::postL3RecursiveNextHopCb(rnhRoute,isResolved);
+  }
+  virtual bool postL3RecursiveNextHopCb(nxos::NxL3Route *rnhRoute, bool isResolved);
+  bool _swig_upcall_postMyL3RouteCb(nxos::NxL3Route *route) {
+    return nxos::NxRibMgrHandler::postMyL3RouteCb(route);
+  }
+  virtual bool postMyL3RouteCb(nxos::NxL3Route *route);
+  void _swig_upcall_postL3RouteRepopulateCb__SWIG_0(std::string const vrfName, std::string const routeAddress, unsigned char maskLen) {
+    nxos::NxRibMgrHandler::postL3RouteRepopulateCb(vrfName,routeAddress,maskLen);
+  }
+  virtual void postL3RouteRepopulateCb(std::string const vrfName, std::string const routeAddress, unsigned char maskLen);
+  void _swig_upcall_postL3RouteRepopulateCb__SWIG_1(std::string const vrfName, std::string const routeAddress) {
+    nxos::NxRibMgrHandler::postL3RouteRepopulateCb(vrfName,routeAddress);
+  }
+  virtual void postL3RouteRepopulateCb(std::string const vrfName, std::string const routeAddress);
  private:
   intgo go_val;
   Swig_memory *swig_mem;

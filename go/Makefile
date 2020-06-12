@@ -19,50 +19,62 @@ GO_BIN       :=
 ####################### Dont update beyond this point###########################################
 ################################################################################################
 
-### Set ENXOS-SDK path
-ENXOS_SDK_PATH := ${ENXOS_SDK_ROOT}
-ifeq "$(ENXOS_SDK_PATH)" ""
-ENXOS_SDK_PATH :=/enxos-sdk
-endif
-
-### Set NX-SDK path
+### Set NX-SDK path                                                     
 NXSDK_PATH     := ${NXSDK_ROOT}
-ifeq "$(NXSDK_PATH)" ""
+ifeq "$(NXSDK_PATH)" ""                                                          
 NXSDK_PATH     :=/NX-SDK
-endif
+endif                                                                                   
+                                                                                        
+### Directory Structure                                                                                    
+CXX_HEADERDIR  := ${NXSDK_PATH}/include
+CXX_TYPESDIR   := include/types
+CXX_BUILDDIR   := ${NXSDK_PATH}/build
+CXX_TARGETDIR  := ${NXSDK_PATH}/bin
+CXX_LIBNAME    := libnxsdk.so
+                                                                                                           
+### Check if its running in NXOS WRL toolkit                                                               
+### if it is set the ENXOS_SDK_ROOT env                                                                    
+ENXOS_SDK_PATH := ${ENXOS_SDK_ROOT}
+ifeq "$(ENXOS_SDK_PATH)" ""                                                                                
+SYSROOT        := 
+M_ARCH         := -m64
+C_STD          := c++0x
+CXX_LIBDIR     := ${NXSDK_PATH}/remote/libs
+NXLIBDIR       := ${NXSDK_PATH}/remote/libs
+INCLUDES       := -I$(CXX_HEADERDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR)
+else                                                                                                       
+SYSROOT        := ${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux
+M_ARCH         := -m32
+C_STD          := c++0x
+CXX_LIBDIR     := ${NXSDK_PATH}/libs
+CXX_LIBSRCDIR  := ${NXSDK_PATH}/stubs
+NXLIBDIR       := /isan/lib
+INCLUDES       := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR)
+endif                                                                                        
+                                                                                             
+### NXSDK library target path                                                                   
+CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
 
 ### Example Go Apps
 GO_PATH     := ${NXSDK_PATH}/go
 EX_GO_PATH  := ${NXSDK_PATH}/examples/go
 EX_GO_BIN   := customCliGoApp ribMgrGo featureMonitorGo
 
-### Directory Structure
-CXX_HEADERDIR  := ${NXSDK_PATH}/include
-CXX_BUILDDIR   := ${NXSDK_PATH}/build
-CXX_TARGETDIR  := ${NXSDK_PATH}/bin
-CXX_LIBDIR     := ${NXSDK_PATH}/libs
-CXX_LIBSRCDIR  := ${NXSDK_PATH}/stubs
-CXX_LIBNAME    := libnxsdk.so
-CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
-NXLIBDIR       := /isan/lib
-
-## Includes for the project
-SYSROOT        := ${ENXOS_SDK_ROOT}/sysroots/n9000-wrs-linux
-INCLUDES       := -I$(CXX_HEADERDIR) -I$(CXX_HEADERDIR)/types -I$(CXX_LIBSRCDIR) -I$(CXX_LIBDIR)
-
 ### Compiler
-CXX              := x86-wrswrap-linux-gnu-g++  -m32  --sysroot=${SYSROOT}
-CXXFLAGS         := ${INCLUDES} -std=c++0x -pthread -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings
-LDXXFLAGS        := -m32 --sysroot=${SYSROOT} -L${SYSROOT}/usr/lib -L${CXX_LIBDIR} -Wl,-rpath -Wl,${NXLIBDIR}
+CXX              := ${CXX} ${M_ARCH} --sysroot=${SYSROOT}
+CXXFLAGS         := ${INCLUDES} ${C_STD} -pthread -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings
+LDXXFLAGS        := ${M_ARCH} --sysroot=${SYSROOT} -L${SYSROOT}/usr/lib -L${CXX_LIBDIR} -Wl,-rpath -Wl,${NXLIBDIR}
 LD_LIBRARY_PATH  := ${SYSROOT}/usr/lib:$(NXSDK_LIBDIR)
 
 ### GO Env
-export CGO_CFLAGS   =-I${CXX_HEADERDIR} -I$(CXX_HEADERDIR)/types -I${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux/usr/include -std=c++0x
-export CGO_CPPFLAGS =-I${CXX_HEADERDIR} -I$(CXX_HEADERDIR)/types -I${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux/usr/include -std=c++0x
-export CGO_LDFLAGS  =-m32 --sysroot=${SYSROOT} -L${SYSROOT}/usr/lib -L${CXX_LIBDIR} -Wl,-rpath -Wl,${NXLIBDIR} -lnxsdk
-#--sysroot=${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux -L${CXX_LIBDIR} -L${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux/usr/lib -Wl,-rpath -Wl,${NXLIBDIR} -lnxsdk
+export CGO_CFLAGS   =-I${CXX_HEADERDIR} -I$(CXX_HEADERDIR)/types -I${SYSROOT}/usr/include 
+export CGO_CPPFLAGS =-I${CXX_HEADERDIR} -I$(CXX_HEADERDIR)/types -I${SYSROOT}/usr/include 
+export CGO_LDFLAGS  =${M_ARCH} --sysroot=${SYSROOT} -L${SYSROOT}/usr/lib -L${CXX_LIBDIR} -Wl,-rpath -Wl,${NXLIBDIR} -lnxsdk
 
 ### All Binaries needed for this module
+ifeq "$(ENXOS_SDK_PATH)" ""    
+all: setup ${EX_GO_BIN} ${GO_BIN}                                              
+else
 all: setup ${CXX_LIBTARGET} ${EX_GO_BIN} ${GO_BIN}
 
 ### Build NXSDK Library
@@ -79,6 +91,7 @@ ${LIBNXSDK_OBJS}: setup
 ${CXX_LIBTARGET}: ${LIBNXSDK_OBJS} 
 	@echo -e "\n### Building Shared NX-SDK Library - (${LIBTARGET})!!!"
 	$(CXX) -shared -Wl,-soname,${CXX_LIBNAME} -o $@ $^ -lc -ldl    
+endif
 
 ### Build Example Go binaries
 # Create Objs needed for Example programs
@@ -101,7 +114,7 @@ setup:
 	@mkdir -p ${CXX_TARGETDIR}
  
 clean:
-	rm -rf *.o ${CXX_LIBDIR}/*.so ${CXX_TARGETDIR}/* ${CXX_BUILDDIR}/*.o
+	rm -rf *.o ${CXX_TARGETDIR}/* ${CXX_BUILDDIR}/*.o
 
 cleaner:
-	rm -rf  ${CXX_LIBDIR} ${CXX_TARGETDIR} ${CXX_BUILDDIR} ${GO_PATH}/bin ${GO_PATH}/pkg ${EX_GO_PATH}/bin ${EX_GO_PATH}/pkg
+	rm -rf  ${CXX_TARGETDIR} ${CXX_BUILDDIR} ${GO_PATH}/bin ${GO_PATH}/pkg ${EX_GO_PATH}/bin ${EX_GO_PATH}/pkg

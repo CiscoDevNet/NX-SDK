@@ -28,7 +28,8 @@ var nx__common_8h =
       [ "NX_TYPE_LOOPBACK", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984ac4583770d7814477a60bf01155f70079", null ],
       [ "NX_TYPE_SUBINTF", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984a1224540f810e8c583ae52938a7ca04be", null ],
       [ "NX_TYPE_TUNNEL", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984a548b7915160aaf2c90347c50d3895dc9", null ],
-      [ "NX_TYPE_MGMT", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984a04cb5e6c9f58eb2e195c4a2a9d1ae22d", null ]
+      [ "NX_TYPE_MGMT", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984a04cb5e6c9f58eb2e195c4a2a9d1ae22d", null ],
+      [ "NX_TYPE_MAX", "nx__common_8h.html#ab2989ad42c12bf1e273c8acd10ffb984a7fd0f8e8625af76c9dac5873b1b1b4b5", null ]
     ] ],
     [ "prio_e", "nx__common_8h.html#af446a76676837368bde9b15343ae21d5", [
       [ "LOW_PRIO", "nx__common_8h.html#af446a76676837368bde9b15343ae21d5aae8168d6ea32eb41d3855222b7ca456f", null ],
@@ -44,7 +45,8 @@ var nx__common_8h =
     ] ],
     [ "running_env_e", "nx__common_8h.html#a5d2faf90d8673c5bf207f3883d3ca506", [
       [ "BASH", "nx__common_8h.html#a5d2faf90d8673c5bf207f3883d3ca506ae86b3d043df28e4e196bc8769abda717", null ],
-      [ "VSH", "nx__common_8h.html#a5d2faf90d8673c5bf207f3883d3ca506a1965e355322840cdd1e35dad00d1469e", null ]
+      [ "VSH", "nx__common_8h.html#a5d2faf90d8673c5bf207f3883d3ca506a1965e355322840cdd1e35dad00d1469e", null ],
+      [ "REMOTE", "nx__common_8h.html#a5d2faf90d8673c5bf207f3883d3ca506a9dc08795c881aa4ec6c5e82fede28671", null ]
     ] ],
     [ "state_type_e", "nx__common_8h.html#a7c257059d03188765435b36e95dbb764", [
       [ "UNKNOWN", "nx__common_8h.html#a7c257059d03188765435b36e95dbb764a3647f6a8f0522ccfd26934ae54b36220", null ],

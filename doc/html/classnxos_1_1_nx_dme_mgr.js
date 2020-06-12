@@ -6,7 +6,7 @@ var classnxos_1_1_nx_dme_mgr =
     [ "existsDmeObj", "classnxos_1_1_nx_dme_mgr.html#aa21c3fd72667ddbafb2b288e15c89a92", null ],
     [ "getChildrenMoJson", "classnxos_1_1_nx_dme_mgr.html#a950c598125c2cc0d739c4a882a65f447", null ],
     [ "getDmeHandler", "classnxos_1_1_nx_dme_mgr.html#a4eb84500ef136c111650e385c8f29eb6", null ],
-    [ "getDmeObj", "classnxos_1_1_nx_dme_mgr.html#a15e7bdf416b3e17005327e556ad954e8", null ],
+    [ "getDmeObj", "classnxos_1_1_nx_dme_mgr.html#acf4e25cc54e1cb352c9c79bb7dfa4021", null ],
     [ "getMoJson", "classnxos_1_1_nx_dme_mgr.html#af0c1e7578c6752294cade91b395ef19c", null ],
     [ "setDmeHandler", "classnxos_1_1_nx_dme_mgr.html#a3d7e9ce8c28586d834f1504856e22988", null ],
     [ "unwatch", "classnxos_1_1_nx_dme_mgr.html#a96f2b81fd3c248cb1408c95330ae6962", null ],

@@ -96,14 +96,16 @@ $(document).ready(function(){initNavTree('structnxos_1_1cli__param__type__intege
 <p>Specifies that the type of the CLI input parameter is an integer.  
  <a href="structnxos_1_1cli__param__type__integer__attr__.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="types_2nx__cli_8h_source.html">include/types/nx_cli.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af6129171a34b028c5faeb503e8a1985b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnxos_1_1cli__param__type__integer__attr__.html#af6129171a34b028c5faeb503e8a1985b">min_val</a></td></tr>
+<tr class="memitem:af6129171a34b028c5faeb503e8a1985b"><td class="memItemLeft" align="right" valign="top"><a id="af6129171a34b028c5faeb503e8a1985b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>min_val</b></td></tr>
 <tr class="separator:af6129171a34b028c5faeb503e8a1985b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87f179239023d52fa94192e0816a03ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a></td></tr>
-<tr class="memdesc:a87f179239023d52fa94192e0816a03ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 0.  <a href="#a87f179239023d52fa94192e0816a03ff">More...</a><br /></td></tr>
+<tr class="memitem:a87f179239023d52fa94192e0816a03ff"><td class="memItemLeft" align="right" valign="top"><a id="a87f179239023d52fa94192e0816a03ff"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a></td></tr>
+<tr class="memdesc:a87f179239023d52fa94192e0816a03ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 0. <br /></td></tr>
 <tr class="separator:a87f179239023d52fa94192e0816a03ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -118,46 +120,15 @@ Public Attributes</h2></td></tr>
 <p><b> Usage: </b> If you need to create a CLI which will take an integer between &lt;1-100&gt; <br />
 </p>
 <p>CLI: $appname port-bw threshold ? &lt;1-100&gt; Threshold Limit. Default 50%</p>
-<div class="fragment"><div class="line">sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">cliP = sdk-&gt;getCliParser();</div><div class="line"><a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html">nxos::cli_param_type_integer_attr</a> int_attr = {0};</div><div class="line">int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#af6129171a34b028c5faeb503e8a1985b">min_val</a> = 1;</div><div class="line">int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a> = 100;</div><div class="line">cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                         <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, <a class="code" href="namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687">nxos::P_INTEGER</a>,</div><div class="line">                 (<span class="keywordtype">void</span> *)&amp;int_attr, <span class="keyword">sizeof</span>(int_attr));</div></div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">import</span> nx_sdk_py</div><div class="line">sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">cliP = sdk.getCliParser()</div><div class="line">int_attr = nx_sdk_py.cli_param_type_integer_attr()</div><div class="line">int_attr.min_val = 1;</div><div class="line">int_attr.max_val = 100;</div><div class="line">cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>, </div><div class="line">                        <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div><div class="line">cmd.updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, nxos::P_INTEGER,</div><div class="line">                int_attr, len(int_attr))</div></div><!-- fragment --> </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a87f179239023d52fa94192e0816a03ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87f179239023d52fa94192e0816a03ff">&#9670;&nbsp;</a></span>max_val</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int nxos::cli_param_type_integer_attr_::max_val</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default is 0. </p>
-
-</div>
-</div>
-<a id="af6129171a34b028c5faeb503e8a1985b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6129171a34b028c5faeb503e8a1985b">&#9670;&nbsp;</a></span>min_val</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int nxos::cli_param_type_integer_attr_::min_val</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/types/<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a></li>
+<div class="fragment"><div class="line">sdk = <a class="code" href="classnxos_1_1_nx_sdk.html#a5050e2d26c40744b4fc7862068a83f39">nxos::NxSdk::getSdkInst</a>(argc, argv);</div><div class="line">cliP = sdk-&gt;getCliParser();</div><div class="line"><a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html">nxos::cli_param_type_integer_attr</a> int_attr = {0};</div><div class="line">int_attr.min_val = 1;</div><div class="line">int_attr.<a class="code" href="structnxos_1_1cli__param__type__integer__attr__.html#a87f179239023d52fa94192e0816a03ff">max_val</a> = 100;</div><div class="line">cmd = cliP-&gt;newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>,</div><div class="line">                         <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>);</div><div class="line">cmd-&gt;updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, nxos::P_INTEGER,</div><div class="line">                 (<span class="keywordtype">void</span> *)&amp;int_attr, <span class="keyword">sizeof</span>(int_attr));</div></div><!-- fragment --><div class="fragment"><div class="line">import nx_sdk_py</div><div class="line">sdk = nx_sdk_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)</div><div class="line">cliP = sdk.getCliParser()</div><div class="line">int_attr = nx_sdk_py.cli_param_type_integer_attr()</div><div class="line">int_attr.min_val = 1;</div><div class="line">int_attr.max_val = 100;</div><div class="line">cmd = cliP.newConfigCmd(<span class="stringliteral">&quot;set_port_bw_threshold_cmd&quot;</span>, </div><div class="line">                        <span class="stringliteral">&quot;port-bw threshold &lt;threshold&gt;&quot;</span>)</div><div class="line">cmd.updateParam(<span class="stringliteral">&quot;&lt;threshold&gt;&quot;</span>, <span class="stringliteral">&quot;Threshold Limit. Default 50%&quot;</span>, nxos::P_INTEGER,</div><div class="line">                int_attr, len(int_attr))</div></div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>include/types/<a class="el" href="types_2nx__cli_8h_source.html">nx_cli.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="structnxos_1_1cli__param__type__integer__attr__.html">cli_param_type_integer_attr_</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="structnxos_1_1cli__param__type__integer__attr__.html">cli_param_type_integer_attr_</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

@@ -7,7 +7,7 @@ Abstract Route Interface to Add/\+Delete and receive Route updates from N\+X\+OS
 
 
 
-{\ttfamily \#include $<$nx\+\_\+rib\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+rib\+\_\+mgr.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -22,17 +22,25 @@ virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_l3_route_aaafa1d34e62297b
 \item 
 virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a5e402096d7ff280b6f4d334b3bd954d4}{get\+L3\+Next\+Hop\+Count}} ()=0
 \item 
-virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a960a2e429fd7514f0d40e64743e04872}{get\+L3\+Next\+Hop}} (std\+::string address)=0
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a79bd39e19c238b12f0af22d2781059cd}{get\+L3\+Next\+Hop}} (const std\+::string \&address, const std\+::string \&intf\+Name=\char`\"{}\char`\"{})=0
 \item 
 virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a7877c5328b1706acbbe5d8dbc6c94f4e}{get\+L3\+Next\+Hop}} (bool from\+First=false)=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a9ca0b236a35cc616753e09e620b6b02f}{get\+Event}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a9ca0b236a35cc616753e09e620b6b02f}{get\+Event}} ()=0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a1680de6899caf8fa1be3ecfad131cd25}{operator==}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} const \&route\+\_\+obj) const =0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a945f75e6656623cbf8cf23b6ab7e01d3}{operator!=}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} const \&route\+\_\+obj) const =0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a6dc5e111e8e8ad48aa028fc65cc483b9}{equal}} (\mbox{\hyperlink{classnxos_1_1_nx_l3_route}{Nx\+L3\+Route}} const \&route\+\_\+obj) const =0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a7ae92c958f54c6e85579eb6ef81f30b3}{add\+L3\+Direct\+Next\+Hop}} (const std\+::string \&next\+Hop\+Addr, const std\+::string \&intf\+Name, uint8\+\_\+t preference)=0
+\item 
+virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} $\ast$ \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a8733985ca139f4d33215f032c4932be7}{add\+L3\+Recursive\+Next\+Hop}} (const std\+::string \&next\+Hop\+Addr, uint8\+\_\+t preference)=0
+\item 
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_l3_route_a8c0708c54d5bb8ce94f80e0edd43880c}{del\+L3\+Next\+Hop}} (const std\+::string \&nex\+Hop\+Address, const std\+::string \&intf\+Name=\char`\"{}\char`\"{})=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_l3_route_acff8f87abd7dcdc002c97a0ca04bf815}{get\+L3\+Prefix}} () const =0
 \end{DoxyCompactItemize}
 
 
@@ -49,6 +57,170 @@ Abstract Route Interface to Add/\+Delete and receive Route updates from N\+X\+OS
 Destructor 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a7ae92c958f54c6e85579eb6ef81f30b3}\label{classnxos_1_1_nx_l3_route_a7ae92c958f54c6e85579eb6ef81f30b3}} 
+\index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!add\+L3\+Direct\+Next\+Hop@{add\+L3\+Direct\+Next\+Hop}}
+\index{add\+L3\+Direct\+Next\+Hop@{add\+L3\+Direct\+Next\+Hop}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
+\subsubsection{\texorpdfstring{add\+L3\+Direct\+Next\+Hop()}{addL3DirectNextHop()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}}$\ast$ nxos\+::\+Nx\+L3\+Route\+::add\+L3\+Direct\+Next\+Hop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{next\+Hop\+Addr,  }\item[{const std\+::string \&}]{intf\+Name,  }\item[{uint8\+\_\+t}]{preference }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To add a direct next-\/hop to a route. Changes will take effect when send\+My\+L3\+Routes\+To\+Rib is called. post\+My\+L3\+Route\+Cb is called after send\+My\+L3\+Routes\+To\+Rib called to signal that route changes are done.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em next\+Hop\+Addr} & Address of the next-\/hop as a string. \\
+\hline
+\mbox{\tt in}  & {\em intf\+Name} & Egress interface name as a string. \\
+\hline
+\mbox{\tt in}  & {\em preference} & Preference value score is inverted where lower is more preferred. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of type \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} to use to further configure the next-\/hop if needed.
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     NxL3NextHop *nh = route->addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, 
+                                                 \textcolor{stringliteral}{"Eth1/3"} 12);
+     \textcolor{keywordtype}{bool} result = route->sendMyL3RoutesToRib(AF\_IPV4);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     next\_hop = route.addL3DirectNextHop(\textcolor{stringliteral}{"10.1.1.3"}, \textcolor{stringliteral}{"Eth1/3"}, 12)
+     result = ribMgr.sendMyL3RoutesToRib(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a8733985ca139f4d33215f032c4932be7}\label{classnxos_1_1_nx_l3_route_a8733985ca139f4d33215f032c4932be7}} 
+\index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!add\+L3\+Recursive\+Next\+Hop@{add\+L3\+Recursive\+Next\+Hop}}
+\index{add\+L3\+Recursive\+Next\+Hop@{add\+L3\+Recursive\+Next\+Hop}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
+\subsubsection{\texorpdfstring{add\+L3\+Recursive\+Next\+Hop()}{addL3RecursiveNextHop()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}}$\ast$ nxos\+::\+Nx\+L3\+Route\+::add\+L3\+Recursive\+Next\+Hop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{next\+Hop\+Addr,  }\item[{uint8\+\_\+t}]{preference }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To add a recursive next-\/hop to a route. Changes will take effect after send\+My\+L3\+Routes\+To\+Rib is called. post\+My\+L3\+Route\+Cb is called after send\+My\+L3\+Routes\+To\+Rib is called to signal that route changes are done. post\+L3\+Recursive\+Next\+Hop\+Cb is called after send\+My\+L3\+Routes\+To\+Rib to signal changes to the next hop.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em next\+Hop\+Addr} & Address of the next-\/hop as a string. \\
+\hline
+\mbox{\tt in}  & {\em preference} & Preference value score is inverted where lower is more preferred. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of type \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} to use to further configure the next-\/hop if needed.
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     NxL3NextHop *nh = route->addL3RecursiveNextHop(\textcolor{stringliteral}{"10.1.1.3"}, 12);
+     \textcolor{keywordtype}{bool} result = route->sendMyL3RoutesToRib(AF\_IPV4);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     next\_hop = route.addL3RecursiveNextHop(\textcolor{stringliteral}{"10.1.1.3"}, 12)
+     result = ribMgr.sendMyL3RoutesToRib(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a8c0708c54d5bb8ce94f80e0edd43880c}\label{classnxos_1_1_nx_l3_route_a8c0708c54d5bb8ce94f80e0edd43880c}} 
+\index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!del\+L3\+Next\+Hop@{del\+L3\+Next\+Hop}}
+\index{del\+L3\+Next\+Hop@{del\+L3\+Next\+Hop}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
+\subsubsection{\texorpdfstring{del\+L3\+Next\+Hop()}{delL3NextHop()}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+L3\+Route\+::del\+L3\+Next\+Hop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nex\+Hop\+Address,  }\item[{const std\+::string \&}]{intf\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To delete a Layer3 route next-\/hop. Changes will take effect after send\+My\+L3\+Routes\+To\+Rib is called. post\+My\+L3\+Route\+Cb is called after send\+My\+L3\+Routes\+To\+Rib is called to signal that route changes are complete.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em next\+Hop\+Address} & Address of the next-\/hop as a string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of type \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}} to use to further configure the next-\/hop if needed.
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->getL3RouteDetail(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     NxL3NextHop *nh = route->delL3NextHop(\textcolor{stringliteral}{"10.1.1.3"});
+     \textcolor{keywordtype}{bool} result = route->sendMyL3RoutesToRib(AF\_IPV4);
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.addL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     next\_hop = route.delL3NextHop(\textcolor{stringliteral}{"10.1.1.3"})
+     result = ribMgr.sendMyL3RoutesToRib(nx\_sdk\_py.AF\_IPV4)
+\end{DoxyCode}
+
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a6dc5e111e8e8ad48aa028fc65cc483b9}\label{classnxos_1_1_nx_l3_route_a6dc5e111e8e8ad48aa028fc65cc483b9}} 
 \index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!equal@{equal}}
 \index{equal@{equal}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
@@ -110,7 +282,7 @@ Python:
 \index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!get\+Event@{get\+Event}}
 \index{get\+Event@{get\+Event}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
 \subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+L3\+Route\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+L3\+Route\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the type of Event(\+Add, Update, Delete etc) when there is a change to a tracked L3 Route. Should be used only in Rib Handler Callbacks like post\+L3\+Route\+Cb(). If used outside of R\+IB Handler Callbacks its set to N\+O\+\_\+\+E\+V\+E\+NT.
 
@@ -132,11 +304,11 @@ Python:
          def postL3RouteCb(self, nxroute):
              print "Route Event: %d" % nxroute.\mbox{\hyperlink{classnxos_1_1_nx_l3_route_a9ca0b236a35cc616753e09e620b6b02f}{getEvent}}()
 \end{DoxyCode}
- \mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a960a2e429fd7514f0d40e64743e04872}\label{classnxos_1_1_nx_l3_route_a960a2e429fd7514f0d40e64743e04872}} 
+ \mbox{\Hypertarget{classnxos_1_1_nx_l3_route_a79bd39e19c238b12f0af22d2781059cd}\label{classnxos_1_1_nx_l3_route_a79bd39e19c238b12f0af22d2781059cd}} 
 \index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!get\+L3\+Next\+Hop@{get\+L3\+Next\+Hop}}
 \index{get\+L3\+Next\+Hop@{get\+L3\+Next\+Hop}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
 \subsubsection{\texorpdfstring{get\+L3\+Next\+Hop()}{getL3NextHop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}}$\ast$ nxos\+::\+Nx\+L3\+Route\+::get\+L3\+Next\+Hop (\begin{DoxyParamCaption}\item[{std\+::string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classnxos_1_1_nx_l3_next_hop}{Nx\+L3\+Next\+Hop}}$\ast$ nxos\+::\+Nx\+L3\+Route\+::get\+L3\+Next\+Hop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address,  }\item[{const std\+::string \&}]{intf\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 To get the Next\+Hop for this L3 Route if it exists by the specified address.
 
@@ -265,6 +437,42 @@ Python:
      \textcolor{keywordflow}{if} route:
         print \textcolor{stringliteral}{"Route NextHop Count: %d"} % route.getL3NextHopCount()
 \end{DoxyCode}
+ \mbox{\Hypertarget{classnxos_1_1_nx_l3_route_acff8f87abd7dcdc002c97a0ca04bf815}\label{classnxos_1_1_nx_l3_route_acff8f87abd7dcdc002c97a0ca04bf815}} 
+\index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!get\+L3\+Prefix@{get\+L3\+Prefix}}
+\index{get\+L3\+Prefix@{get\+L3\+Prefix}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
+\subsubsection{\texorpdfstring{get\+L3\+Prefix()}{getL3Prefix()}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+L3\+Route\+::get\+L3\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+To get the IP prefix string of the L3 Route.
+
+\begin{DoxyReturn}{Returns}
+IP prefix string of the L3 Route
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+C++:
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__sdk_8h}{nx\_sdk.h}}>}
+\textcolor{preprocessor}{     #include <\mbox{\hyperlink{nx__rib__mgr_8h}{nx\_rib\_mgr.h}}>}
+
+     NxL3Route    *route;
+
+     sdk = \mbox{\hyperlink{classnxos_1_1_nx_sdk_a5050e2d26c40744b4fc7862068a83f39}{nxos::NxSdk::getSdkInst}}(argc, argv);
+     ribMgr = sdk->getRibMgr();
+
+     route = ribMgr->getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"});
+     \textcolor{keywordflow}{if} (route) \{
+         cout << \textcolor{stringliteral}{"Route Prefix: "} << route->getL3Prefix();
+     \}
+
+Python:
+     \textcolor{keyword}{import} nx\_sdk\_py
+     sdk = nx\_sdk\_py.NxSdk.getSdkInst(len(sys.argv), sys.argv)
+     ribMgr = sdk.getRibMgr()
+
+     route = ribMgr.getL3Route(\textcolor{stringliteral}{"10.1.1.1"}, 24, \textcolor{stringliteral}{"default"})
+     \textcolor{keywordflow}{if} route:
+        print \textcolor{stringliteral}{"Route Prefix: %d"} % route.getL3Prefix()
+\end{DoxyCode}
  \mbox{\Hypertarget{classnxos_1_1_nx_l3_route_aaafa1d34e62297bbed574995ff48dba9}\label{classnxos_1_1_nx_l3_route_aaafa1d34e62297bbed574995ff48dba9}} 
 \index{nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}!get\+Mask\+Len@{get\+Mask\+Len}}
 \index{get\+Mask\+Len@{get\+Mask\+Len}!nxos\+::\+Nx\+L3\+Route@{nxos\+::\+Nx\+L3\+Route}}
@@ -379,4 +587,4 @@ true if equality property holds, false otherwise
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__rib__mgr_8h}{nx\+\_\+rib\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

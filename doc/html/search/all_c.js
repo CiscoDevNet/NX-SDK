@@ -1,14 +1,5 @@
 var searchData=
 [
-  ['p_5finteger',['P_INTEGER',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa0c4d2d63a31f7e9b9976289b8be9f687',1,'nxos']]],
-  ['p_5finterface',['P_INTERFACE',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaab5b75b3e0ada36c4394f940ea6b10ce6',1,'nxos']]],
-  ['p_5fip_5faddr',['P_IP_ADDR',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa082fd4c4bdfc40e03adc023b3d4e5edc',1,'nxos']]],
-  ['p_5fmac_5faddr',['P_MAC_ADDR',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa6f6aea7c47fb6acef0acf2da2725f709',1,'nxos']]],
-  ['p_5fmax_5ftype',['P_MAX_TYPE',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa5f8cf755fab277cc7535ed827c13d1a0',1,'nxos']]],
-  ['p_5fstart_5ftype',['P_START_TYPE',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa08faea8be53ddc585a6984aff44d5f98',1,'nxos']]],
-  ['p_5fstring',['P_STRING',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa351d79231fdcee1f39ac930bf6cc56ea',1,'nxos']]],
-  ['p_5fvrf',['P_VRF',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309eaa612b6c3e32d3de4fd6be5c9c517eaa0b',1,'nxos']]],
-  ['param_5ftype_5fe',['param_type_e',['../namespacenxos.html#ad220d5ba6a2a5d7edeab55cb89d309ea',1,'nxos']]],
   ['postadjcb',['postAdjCb',['../classnxos_1_1_nx_adj_mgr_handler.html#a9a1f85f218eab71d9c280088f69a14dc',1,'nxos::NxAdjMgrHandler']]],
   ['postadjipv4downloaddone',['postAdjIPv4DownloadDone',['../classnxos_1_1_nx_adj_mgr_handler.html#a84d9b92c976ae528c72e93ab3a75ecd1',1,'nxos::NxAdjMgrHandler']]],
   ['postadjipv6downloaddone',['postAdjIPv6DownloadDone',['../classnxos_1_1_nx_adj_mgr_handler.html#af187f3d933d1b58547447004e4aebef6',1,'nxos::NxAdjMgrHandler']]],
@@ -23,11 +14,17 @@ var searchData=
   ['postintfstatecb',['postIntfStateCb',['../classnxos_1_1_nx_intf_mgr_handler.html#a9c3d4d357b1f0ab07558b4611c693755',1,'nxos::NxIntfMgrHandler']]],
   ['postintfvlancb',['postIntfVlanCb',['../classnxos_1_1_nx_intf_mgr_handler.html#aad14cab2e803ceadef82870303db526c',1,'nxos::NxIntfMgrHandler']]],
   ['postintfvrfcb',['postIntfVrfCb',['../classnxos_1_1_nx_intf_mgr_handler.html#aa6f8bc5b1cfa6d99e863c8ede3cafa5f',1,'nxos::NxIntfMgrHandler']]],
+  ['postl3recursivenexthopcb',['postL3RecursiveNextHopCb',['../classnxos_1_1_nx_rib_mgr_handler.html#ae11a0ef873528002f86cd41a5871ad65',1,'nxos::NxRibMgrHandler']]],
   ['postl3routecb',['postL3RouteCb',['../classnxos_1_1_nx_rib_mgr_handler.html#a1b742d50365fdece0ea47eb38300f7de',1,'nxos::NxRibMgrHandler']]],
+  ['postl3routerepopulatecb',['postL3RouteRepopulateCb',['../classnxos_1_1_nx_rib_mgr_handler.html#ac3b189923604f553505b0741b8acd39d',1,'nxos::NxRibMgrHandler']]],
   ['postmachandlercb',['postMacHandlerCb',['../classnxos_1_1_nx_mac_mgr_handler.html#a3a15935d8cd001a554d32a5d7ab216b5',1,'nxos::NxMacMgrHandler']]],
   ['postmachandlerdownloadcb',['postMacHandlerDownloadCb',['../classnxos_1_1_nx_mac_mgr_handler.html#a42d84c9f4da1211024912efd4416827e',1,'nxos::NxMacMgrHandler']]],
+  ['postmyl3routecb',['postMyL3RouteCb',['../classnxos_1_1_nx_rib_mgr_handler.html#af4214a821d17a84b4746b0dd94b5d58b',1,'nxos::NxRibMgrHandler']]],
+  ['postremoteconndowncb',['postRemoteConnDownCb',['../classnxos_1_1_nx_sdk_handler.html#a433426269ae0b8374f3ead9f06edeb0b',1,'nxos::NxSdkHandler']]],
+  ['postremoteconnupcb',['postRemoteConnUpCb',['../classnxos_1_1_nx_sdk_handler.html#a71b575abab99f8798635035986dbdc3f',1,'nxos::NxSdkHandler']]],
   ['postvrfcb',['postVrfCb',['../classnxos_1_1_nx_rib_mgr_handler.html#a2ed5a3ad9c0e55d21e18d88a19419a5e',1,'nxos::NxRibMgrHandler']]],
   ['printconsole',['printConsole',['../classnxos_1_1_nx_cli_cmd.html#a10c723c79d75ac2c85821b5ca6540c62',1,'nxos::NxCliCmd']]],
-  ['prio_5fe',['prio_e',['../namespacenxos.html#af446a76676837368bde9b15343ae21d5',1,'nxos']]],
-  ['priority',['Priority',['../classnxos_1_1_nx_trace.html#a582f6e5a22e788c61807657f8bca088f',1,'nxos::NxTrace']]]
+  ['prio_5fe',['prio_e',['../nx__common_8h.html#af446a76676837368bde9b15343ae21d5',1,'nxos']]],
+  ['priority',['Priority',['../classnxos_1_1_nx_trace.html#a582f6e5a22e788c61807657f8bca088f',1,'nxos::NxTrace']]],
+  ['purgeallsdkobjs',['purgeAllSdkObjs',['../classnxos_1_1_nx_sdk.html#abfd0b2d92b51fc18bb30c059fa5b4a9b',1,'nxos::NxSdk']]]
 ];

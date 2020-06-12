@@ -21,6 +21,7 @@ var searchData=
   ['nxribmgr',['NxRibMgr',['../classnxos_1_1_nx_rib_mgr.html',1,'nxos']]],
   ['nxribmgrhandler',['NxRibMgrHandler',['../classnxos_1_1_nx_rib_mgr_handler.html',1,'nxos']]],
   ['nxsdk',['NxSdk',['../classnxos_1_1_nx_sdk.html',1,'nxos']]],
+  ['nxsdkhandler',['NxSdkHandler',['../classnxos_1_1_nx_sdk_handler.html',1,'nxos']]],
   ['nxtrace',['NxTrace',['../classnxos_1_1_nx_trace.html',1,'nxos']]],
   ['nxvrf',['NxVrf',['../classnxos_1_1_nx_vrf.html',1,'nxos']]]
 ];

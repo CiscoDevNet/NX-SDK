@@ -436,6 +436,11 @@ class NxIntf
      *  @returns   true if successful
      *          
      *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+
      *  @code
      *     C++:
      *        ret = intf->setLayer("Layer3");
@@ -454,12 +459,16 @@ class NxIntf
      *  @param[in]  vrf   The vrf name to set.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
-     *      C++ :
-     *           intf->setVrf("vlan-test2");
-     *      Python:
-     *           intf.setVrf("vlan-test2")
+     *     C++:
+     *        intf->setVrf("vlan-test2");
+     *     Python:
+     *        intf.setVrf("vlan-test2")
      *  @endcode
      *
      *
@@ -475,6 +484,10 @@ class NxIntf
      *  @param[in] vlan_id  The vlan id value to set.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -494,6 +507,10 @@ class NxIntf
      *  @param[in]  desc  The description to set.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -517,6 +534,10 @@ class NxIntf
      *  @param[in] primary  This is the primary address or not.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -540,6 +561,10 @@ class NxIntf
      *  @param[in] mac   The mac address in string format.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -560,6 +585,10 @@ class NxIntf
      *  @param[in] state   The state to set interface to.
      *  @returns  true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *    C++:
@@ -579,6 +608,10 @@ class NxIntf
      *  @param[in] mtu  The mtu value to set.
      *  @returns true if successful
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *      C++:
@@ -599,7 +632,11 @@ class NxIntf
      *  @param[in] speed  The speed value to set.
      *  @returns  true if successful
      *          
-     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     * 
      *  @code
      *     C++:
      *         intf->setSpeed(INTF_SPEED_10G);
@@ -619,6 +656,10 @@ class NxIntf
      *  @param[in] intf_name  Interface to add to port-channel.
      *  @returns  true if successful.  
      *          
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -638,6 +679,11 @@ class NxIntf
      *  Remove interface from port-channel.
      *  @param[in] intf_name  Interface name to remove from port-channel.
      *  @returns true if successful.  
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *     C++:
@@ -1103,7 +1149,6 @@ class NxIntfMgr
      *  @throws     
      *       ERR_INVALID_USAGE -- 'create' not implemented
      *       ERR_INVALID -- interface type unknown
-     *       ERR_NOT_FOUND -- interface not found
      **/
     virtual NxIntf *getIntf(std::string name) = 0;
 
@@ -1185,7 +1230,12 @@ class NxIntfMgr
      *  @param[in]  name  Interface name to add.
      *  @returns interface object (NxIntf*) or NULL
      *
-     *  @code
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+     *
+     * @code
      *
      *  C++:
      *     intfMgr = sdk->getIntfMgr();
@@ -1213,6 +1263,11 @@ class NxIntfMgr
      *                     logical interfaces can be removed.
      *  @param[in] del_sdk [Optional] Remove the object reference also if open.
      *  @returns  true if successful
+     *
+     * @details
+     *     Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+     *                 enabled for that application. Using this API without the appropriate security profiles will
+     *                 throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
      *
      *  @code
      *

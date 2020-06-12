@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nh_5ftypes_5fe',['nh_types_e',['../classnxos_1_1_nx_l3_next_hop.html#ab58475e35a53b76cb9bdbfde04d537f3',1,'nxos::NxL3NextHop']]]
+  ['prio_5fe',['prio_e',['../nx__common_8h.html#af446a76676837368bde9b15343ae21d5',1,'nxos']]],
+  ['priority',['Priority',['../classnxos_1_1_nx_trace.html#a582f6e5a22e788c61807657f8bca088f',1,'nxos::NxTrace']]]
 ];

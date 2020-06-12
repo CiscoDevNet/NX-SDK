@@ -7,7 +7,7 @@ Public interface to N\+X-\/\+S\+DK interface objects.
 
 
 
-{\ttfamily \#include $<$nx\+\_\+intf\+\_\+mgr.\+h$>$}
+{\ttfamily \#include $<$include/nx\+\_\+intf\+\_\+mgr.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -18,7 +18,7 @@ virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a8a0bff66b97d72172f
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_af3a8f5ce6dd05fa582d1f7056a4438ca}{get\+Layer}} ()=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_aa0885ab26e4abfaa8c7e8e8adb9d32ab}{get\+Type}} ()=0
+virtual nxos\+::intf\+\_\+type\+\_\+e \mbox{\hyperlink{classnxos_1_1_nx_intf_aa0885ab26e4abfaa8c7e8e8adb9d32ab}{get\+Type}} ()=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ae8d21d7a42388aedcda5c7bc3f5c4b04}{get\+Vrf}} ()=0
 \item 
@@ -26,17 +26,17 @@ virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a3f7942d5ae1a998904
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ae18aa83b5f9984c6b133a8d447aa5430}{get\+Description}} ()=0
 \item 
-virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ace33155a23a777c0f6e5f978d44af0e6}{get\+L3\+Pr\+Addr}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af)=0
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_ace33155a23a777c0f6e5f978d44af0e6}{get\+L3\+Pr\+Addr}} (\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af)=0
 \item 
-virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_af0aebadac66f6b4fbe8ddbd567a577b6}{get\+L3\+Sc\+Addr}} (\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af, bool from\+First=false)=0
+virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_af0aebadac66f6b4fbe8ddbd567a577b6}{get\+L3\+Sc\+Addr}} (\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} af, bool from\+First=false)=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a8a7f92f0c28178165fd0448c33ff681b}{get\+L2\+Address}} ()=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a2c057f3f9691205712f70aea8c46f639}{get\+L2\+Address\+HW}} ()=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a161d3222b8e6f5dff510eef2406996fb}{get\+Admin\+State}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a161d3222b8e6f5dff510eef2406996fb}{get\+Admin\+State}} ()=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_abd5291d975d3193c3603efd7ec17deda}{get\+Oper\+State}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_abd5291d975d3193c3603efd7ec17deda}{get\+Oper\+State}} ()=0
 \item 
 virtual uint32\+\_\+t \mbox{\hyperlink{classnxos_1_1_nx_intf_ae0b1d1c5fed67948cb0bbb9040a8f4de}{get\+Mtu}} ()=0
 \item 
@@ -46,7 +46,7 @@ virtual unsigned int \mbox{\hyperlink{classnxos_1_1_nx_intf_a21f7c1b00f609f61ac2
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_a7c197b62e8135c8b78aa8fbf8958f9a2}{get\+Members}} (bool from\+First=false)=0
 \item 
-virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}{get\+Event}} ()=0
+virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} \mbox{\hyperlink{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}{get\+Event}} ()=0
 \item 
 virtual std\+::string \mbox{\hyperlink{classnxos_1_1_nx_intf_aa431b02d46df5e7822fdd0c7a19d93ab}{get\+Last\+Mod}} ()=0
 \item 
@@ -58,11 +58,11 @@ virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_af5d5c584845fe42bea0d1d40f99
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_aaaa5e4a9b9161b2908eb9c7979e96f8e}{set\+Description}} (const std\+::string \&desc)=0
 \item 
-virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a9ff78e595e9d16ab1eca675daa98c34e}{set\+L3\+Address}} (const std\+::string \&addr, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} type, bool primary)=0
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a9ff78e595e9d16ab1eca675daa98c34e}{set\+L3\+Address}} (const std\+::string \&addr, \mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}} type, bool primary)=0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a90a3cca36e76717085fecf575e815139}{set\+L2\+Address}} (const std\+::string \&mac)=0
 \item 
-virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a2244d9def0a3538d1f66f8816ad8b545}{set\+Admin\+State}} (\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} state)=0
+virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_a2244d9def0a3538d1f66f8816ad8b545}{set\+Admin\+State}} (\mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} state)=0
 \item 
 virtual bool \mbox{\hyperlink{classnxos_1_1_nx_intf_ae2790907b869c62c01567452d66d03f9}{set\+Mtu}} (uint32\+\_\+t mtu)=0
 \item 
@@ -109,6 +109,12 @@ Add interface to this port-\/channel interface.
 true if successful. ~\newline
 
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -136,7 +142,15 @@ Remove interface from port-\/channel.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successful. ~\newline
- 
+
+\end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
+
 \begin{DoxyCode}
 C++:
     pc\_intf->delMember(\textcolor{stringliteral}{"eth1/1"});
@@ -144,7 +158,7 @@ Python:
     pc\_intf.delMember(\textcolor{stringliteral}{"eth1/2"})
 \end{DoxyCode}
 
-\end{DoxyReturn}
+
 
 \begin{DoxyExceptions}{Exceptions}
 {\em E\+R\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+S\+A\+GE} & E\+R\+R\+\_\+\+F\+A\+I\+L\+U\+RE \\
@@ -193,21 +207,21 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Admin\+State@{get\+Admin\+State}}
 \index{get\+Admin\+State@{get\+Admin\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+Admin\+State()}{getAdminState()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Admin\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Admin\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the administrative state of the interface.
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
+nxos\+::state\+\_\+type\+\_\+e UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
 \end{DoxyReturn}
 
 \begin{DoxyCode}
 C++:
-    \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
+    \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
     std::string adminSt;
     state   = objp->getAdminState();
-    adminSt = state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
-                  (state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
+    adminSt = state == \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
+                  (state == \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
 Python:
      print \textcolor{stringliteral}{"\(\backslash\)tAdminSt: "} + getStateStr(intf.getAdminState())
 \end{DoxyCode}
@@ -247,7 +261,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Event@{get\+Event}}
 \index{get\+Event@{get\+Event}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+Event()}{getEvent()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cb}{nxos\+::event\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the event code from the interface. If an event occurs for an interface, this code is set in the \mbox{\hyperlink{classnxos_1_1_nx_intf}{Nx\+Intf}} object before being delivered to the application handler.
 
@@ -260,10 +274,10 @@ C++:
     \textcolor{keywordtype}{bool} myIntfHandler::postIntfAddDelCb (NxIntf *intf)
     \{
      
-    \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
+    \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}} ) \{
        cout << \textcolor{stringliteral}{"App got ADD notification for interface  "} << 
        intf->getName() << endl;
-    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
+    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (intf->getEvent() == \mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}} ) \{
        cout << \textcolor{stringliteral}{"App got DELETE notification for interface "} << 
        intf->getName() << endl;
     \}
@@ -274,9 +288,9 @@ C++:
        event = intf.\mbox{\hyperlink{classnxos_1_1_nx_intf_a148d8b41d613478294179277a03f3aeb}{getEvent}}()
        print \textcolor{stringliteral}{"Application Add/Del cb "}
        print \textcolor{stringliteral}{"intf "} + intf.\mbox{\hyperlink{classnxos_1_1_nx_intf_a8a0bff66b97d72172f8ed5ce22d8efbd}{getName}}()
-       if event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
+       if event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba93d8c810253e44a0fd5f3d8d26032ad5}{ADD}}:
           print \textcolor{stringliteral}{"ADDED"}
-       elif event == nx\_sdk\_py.\mbox{\hyperlink{namespacenxos_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
+       elif event == nx\_sdk\_py.\mbox{\hyperlink{nx__common_8h_af9a9040b7681199d386e94eb888018cba7ec7c9f77651a43ea2562bb5bcb6a3a9}{DELETE}}:
           print \textcolor{stringliteral}{"DELETED"}
        return True;   
 \end{DoxyCode}
@@ -340,7 +354,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L3\+Pr\+Addr@{get\+L3\+Pr\+Addr}}
 \index{get\+L3\+Pr\+Addr@{get\+L3\+Pr\+Addr}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+L3\+Pr\+Addr()}{getL3PrAddr()}}
-{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Pr\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Pr\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the interface primary IP address for address family 
 \begin{DoxyParams}[1]{Parameters}
@@ -353,8 +367,8 @@ I\+Pv4 or I\+Pv6 address (string)
 
 \begin{DoxyCode}
 C++:
-        std::string ip4 = intf->getL3PrAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}});
-        std::string ip6 = intf->getL3PrAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a9460164d2a9edfe9a1b3f8dc616e8c00}{AF\_IPV6}});
+        std::string ip4 = intf->getL3PrAddr(AF\_IPV4);
+        std::string ip6 = intf->getL3PrAddr(AF\_IPV6);
 Python:
         print \textcolor{stringliteral}{"\(\backslash\)tIPv4: "} + intf.getL3PrAddr(nx\_sdk\_py.AF\_IPV4)
         print \textcolor{stringliteral}{"\(\backslash\)tIPv6: "} + intf.getL3PrAddr(nx\_sdk\_py.AF\_IPV6)
@@ -370,7 +384,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+L3\+Sc\+Addr@{get\+L3\+Sc\+Addr}}
 \index{get\+L3\+Sc\+Addr@{get\+L3\+Sc\+Addr}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+L3\+Sc\+Addr()}{getL3ScAddr()}}
-{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Sc\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af,  }\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual std\+::string nxos\+::\+Nx\+Intf\+::get\+L3\+Sc\+Addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{af,  }\item[{bool}]{from\+First = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Return interface secondary IP addresses in address family. Call iteratively to retrieve all addresses. Returns empty string \char`\"{}\char`\"{} when no more addresses are available. 
 \begin{DoxyParams}[1]{Parameters}
@@ -385,10 +399,10 @@ IP address (string)
 
 \begin{DoxyCode}
 C++:
-     std::string l3\_sec\_addr = objp->getL3ScAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{true});
+     std::string l3\_sec\_addr = objp->getL3ScAddr(AF\_IPV4, \textcolor{keyword}{true});
      \textcolor{keywordflow}{while} (!l3\_sec\_addr.empty()) \{
          cout << l3\_sec\_addr << \textcolor{stringliteral}{" "};
-         l3\_sec\_addr = objp->getL3ScAddr(\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}});
+         l3\_sec\_addr = objp->getL3ScAddr(AF\_IPV4);
      \}
 Python:
      l3\_sec\_addr = intf.getL3ScAddr(nx\_sdk\_py.AF\_IPV4, True)
@@ -571,21 +585,21 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Oper\+State@{get\+Oper\+State}}
 \index{get\+Oper\+State@{get\+Oper\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+Oper\+State()}{getOperState()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Oper\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Oper\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the operational status of the interface
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}} UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
+nxos\+::state\+\_\+type\+\_\+e UP, D\+O\+WN, U\+N\+K\+N\+O\+WN
 \end{DoxyReturn}
 
 \begin{DoxyCode}
 C++:
-    \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
+    \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos::state\_type\_e}}  state;
     std::string operSt;
     state   = objp->getOperState();
-    operSt = state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
-       (state == \mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
+    operSt = state == \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{UP}} ? \textcolor{stringliteral}{"up"} : 
+       (state == \mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764aa0756be42dc77ad57cf532f5c02e4c0a}{DOWN}} ? \textcolor{stringliteral}{"down"}:\textcolor{stringliteral}{"unknown"});
 Python:
     print \textcolor{stringliteral}{"\(\backslash\)tOperSt: "} + getStateStr(intf.getOperState())      
 \end{DoxyCode}
@@ -625,7 +639,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!get\+Type@{get\+Type}}
 \index{get\+Type@{get\+Type}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{get\+Type()}{getType()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos\+::intf\+\_\+type\+\_\+e}} nxos\+::\+Nx\+Intf\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual nxos\+::intf\+\_\+type\+\_\+e nxos\+::\+Nx\+Intf\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Get the interface type
 
@@ -635,7 +649,7 @@ numberic value of type intf\+\_\+type\+\_\+e
 
 \begin{DoxyCode}
 C++:
-       \mbox{\hyperlink{namespacenxos_ab2989ad42c12bf1e273c8acd10ffb984}{nxos::intf\_type\_e}}   type = intf->getType();
+       nxos::intf\_type\_e   type = intf->getType();
 Python:
        print \textcolor{stringliteral}{"\(\backslash\)tType: "} + getTypeStr(intf.getType())
 \end{DoxyCode}
@@ -768,7 +782,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+Admin\+State@{set\+Admin\+State}}
 \index{set\+Admin\+State@{set\+Admin\+State}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{set\+Admin\+State()}{setAdminState()}}
-{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Admin\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+Admin\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{nx__common_8h_a7c257059d03188765435b36e95dbb764}{nxos\+::state\+\_\+type\+\_\+e}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Set administrative state for interface 
 \begin{DoxyParams}[1]{Parameters}
@@ -778,10 +792,16 @@ Set administrative state for interface
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
-   intf->setAdminState(\mbox{\hyperlink{namespacenxos_a7c257059d03188765435b36e95dbb764a7f57fa197f0e274e5c5d10c64d0f9436}{nxos::UP}});
+   intf->setAdminState(nxos::UP);
 Python:
    intf.setAdminState(nx\_sdk\_py.UP)
 \end{DoxyCode}
@@ -806,6 +826,12 @@ Set the interface description.
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -834,6 +860,12 @@ Configure L2 mac address for routed interface. L2 address string must be in form
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -852,7 +884,7 @@ Python:
 \index{nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}!set\+L3\+Address@{set\+L3\+Address}}
 \index{set\+L3\+Address@{set\+L3\+Address}!nxos\+::\+Nx\+Intf@{nxos\+::\+Nx\+Intf}}
 \subsubsection{\texorpdfstring{set\+L3\+Address()}{setL3Address()}}
-{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+L3\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{addr,  }\item[{\mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{type,  }\item[{bool}]{primary }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual bool nxos\+::\+Nx\+Intf\+::set\+L3\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{addr,  }\item[{\mbox{\hyperlink{nx__common_8h_a3a667f48b94db10aa398940dc5bf72d7}{af\+\_\+e}}}]{type,  }\item[{bool}]{primary }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Set the I\+Pv4/\+I\+Pv6 address for an L3 interface, primary or secondary. IP address string must be a string in form\+: A.\+B.\+C.\+D/mm 
 \begin{DoxyParams}[1]{Parameters}
@@ -866,11 +898,17 @@ Set the I\+Pv4/\+I\+Pv6 address for an L3 interface, primary or secondary. IP ad
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
-    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.1/24"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{true}); \textcolor{comment}{//primary}
-    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.100/24"}, \mbox{\hyperlink{namespacenxos_a3a667f48b94db10aa398940dc5bf72d7a038f37de02a2c9ee1acbc4e184583628}{AF\_IPV4}}, \textcolor{keyword}{false}); \textcolor{comment}{//sec}
+    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.1/24"}, AF\_IPV4, \textcolor{keyword}{true}); \textcolor{comment}{//primary}
+    intf->setL3Address(\textcolor{stringliteral}{"192.168.4.100/24"}, AF\_IPV4, \textcolor{keyword}{false}); \textcolor{comment}{//sec}
 Python:
     intf.setL3Address(\textcolor{stringliteral}{"192.168.4.100/24"}, nx\_sdk\_py.AF\_IPV4, False)
 \end{DoxyCode}
@@ -895,6 +933,12 @@ Set the interface switching mode, Layer2 or Layer3
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -923,6 +967,12 @@ Set interface mtu.
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -951,12 +1001,18 @@ Set interface speed. Input values are one of I\+N\+T\+F\+\_\+\+S\+P\+E\+E\+D\+\_
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
-    intf->setSpeed(\mbox{\hyperlink{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}{INTF\_SPEED\_10G}});
+    intf->setSpeed(INTF\_SPEED\_10G);
 Python:
-    intf.setSpeed(\mbox{\hyperlink{nx__intf__mgr_8h_abf3b93884b7b103f9c3d98e9a3c109de}{INTF\_SPEED\_10G}})
+    intf.setSpeed(INTF\_SPEED\_10G)
 \end{DoxyCode}
 
 
@@ -979,6 +1035,12 @@ Set interface vlan membership. Input is the vlan id number.
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
 C++:
@@ -1007,12 +1069,18 @@ Set the interface vrf membership.
 \begin{DoxyReturn}{Returns}
 true if successful
 \end{DoxyReturn}
+\begin{DoxyVerb}Write API - NX-SDK Applications can use this API only if security profile with permit (or) throttle is 
+            enabled for that application. Using this API without the appropriate security profiles will
+            throw an exception. Refer to readmes/security_profiles.md for more info in NX-SDK Git repo.
+\end{DoxyVerb}
+
+
 
 \begin{DoxyCode}
-C++ :
-     intf->setVrf(\textcolor{stringliteral}{"vlan-test2"});
+C++:
+   intf->setVrf(\textcolor{stringliteral}{"vlan-test2"});
 Python:
-     intf.setVrf(\textcolor{stringliteral}{"vlan-test2"})
+   intf.setVrf(\textcolor{stringliteral}{"vlan-test2"})
 \end{DoxyCode}
 
 
@@ -1025,4 +1093,4 @@ Python:
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gchande/\+Documents/\+Git\+Hub/nxsdk/include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{nx__intf__mgr_8h}{nx\+\_\+intf\+\_\+mgr.\+h}}\end{DoxyCompactItemize}

@@ -24,6 +24,7 @@ var classnxos_1_1_nx_cli_cmd =
     [ "getParamValue", "classnxos_1_1_nx_cli_cmd.html#a827bd696ec228767cb1f6dbfdbbd271c", null ],
     [ "isKeywordSet", "classnxos_1_1_nx_cli_cmd.html#af100c6495c0e383c8e3d11d5cdb68cd2", null ],
     [ "printConsole", "classnxos_1_1_nx_cli_cmd.html#a10c723c79d75ac2c85821b5ca6540c62", null ],
+    [ "showCliOutFormat", "classnxos_1_1_nx_cli_cmd.html#a71600fafefdd017050e3a357f03ddd24", null ],
     [ "updateKeyword", "classnxos_1_1_nx_cli_cmd.html#aa698fdd1026739307e0710e2948f19f5", null ],
     [ "updateKeyword", "classnxos_1_1_nx_cli_cmd.html#ae1669d9fbeaa164494a503379ca52b86", null ],
     [ "updateParam", "classnxos_1_1_nx_cli_cmd.html#abc9244b0bcf22142b5d784c06a6aa91b", null ]

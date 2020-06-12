@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('classnxos_1_1_nx_mac.html','');});
 <p>Abstract MAC Interface used to get details about MAC entry.  
  <a href="classnxos_1_1_nx_mac.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="nx__mac__mgr_8h_source.html">include/nx_mac_mgr.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -104,13 +104,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a54a2228786abb8df6429123aa39795cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1510492e7d8fe257f918c74bbe6b0ea"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#ae1510492e7d8fe257f918c74bbe6b0ea">getMacAddress</a> ()=0</td></tr>
 <tr class="separator:ae1510492e7d8fe257f918c74bbe6b0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cf7307522c86006f61a7c106843762a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacenxos.html#acfd59f63fea0b34d70c39b7e808cb5d2">nxos::type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#a4cf7307522c86006f61a7c106843762a">getType</a> ()=0</td></tr>
+<tr class="memitem:a4cf7307522c86006f61a7c106843762a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2">nxos::type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#a4cf7307522c86006f61a7c106843762a">getType</a> ()=0</td></tr>
 <tr class="separator:a4cf7307522c86006f61a7c106843762a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab785cecf1661f3c30c96fe952ba410f3"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#ab785cecf1661f3c30c96fe952ba410f3">getVlan</a> ()=0</td></tr>
 <tr class="separator:ab785cecf1661f3c30c96fe952ba410f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d29913106ccffd03fbd93fed04129eb"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#a4d29913106ccffd03fbd93fed04129eb">getIntfName</a> ()=0</td></tr>
 <tr class="separator:a4d29913106ccffd03fbd93fed04129eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78876af7dfe79a990ea9eacc6f6dd078"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#a78876af7dfe79a990ea9eacc6f6dd078">getEvent</a> ()=0</td></tr>
+<tr class="memitem:a78876af7dfe79a990ea9eacc6f6dd078"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#a78876af7dfe79a990ea9eacc6f6dd078">getEvent</a> ()=0</td></tr>
 <tr class="separator:a78876af7dfe79a990ea9eacc6f6dd078"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ebe78a6679fb460e2ed1f18c08acd0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnxos_1_1_nx_mac.html#ae6ebe78a6679fb460e2ed1f18c08acd0">operator==</a> (<a class="el" href="classnxos_1_1_nx_mac.html">NxMac</a> const &amp;mac_obj) const =0</td></tr>
 <tr class="separator:ae6ebe78a6679fb460e2ed1f18c08acd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,7 +187,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacenxos.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a> nxos::NxMac::getEvent </td>
+          <td class="memname">virtual <a class="el" href="nx__common_8h.html#af9a9040b7681199d386e94eb888018cb">nxos::event_type_e</a> nxos::NxMac::getEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -268,7 +268,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacenxos.html#acfd59f63fea0b34d70c39b7e808cb5d2">nxos::type_e</a> nxos::NxMac::getType </td>
+          <td class="memname">virtual <a class="el" href="nx__common_8h.html#acfd59f63fea0b34d70c39b7e808cb5d2">nxos::type_e</a> nxos::NxMac::getType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -369,14 +369,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/nxos-sdk@cisco.com/Documents/GitHub/nxsdk/include/<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a></li>
+<li>include/<a class="el" href="nx__mac__mgr_8h_source.html">nx_mac_mgr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacenxos.html">nxos</a></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_mac.html">NxMac</a></li>
+    <li class="navelem"><b>nxos</b></li><li class="navelem"><a class="el" href="classnxos_1_1_nx_mac.html">NxMac</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
