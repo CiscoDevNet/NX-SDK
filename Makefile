@@ -21,7 +21,7 @@
 ##          if not available) to be added into SRCNXSDK_BIN (or)
 ##          change the SRCDIR accordingly.
 SRCDIR       := src
-SRCNXSDK_BIN :=  
+SRCNXSDK_BIN := 
 
 ## 2. Complex C++ Application build:
 ##    If your Application is a complex C++ application with multiple files
@@ -39,23 +39,45 @@ SRCNXSDK_BIN :=
 ####################### Dont update beyond this point###########################################
 ################################################################################################
 
-### Directory Structure
+### Set NX-SDK path                                                                                   
+NXSDK_PATH     := ${NXSDK_ROOT}
+ifeq "$(NXSDK_PATH)" ""
+NXSDK_PATH     :=/NX-SDK
+endif 
+
+### Directory Structure                                                                      
 CXX_HEADERDIR  := include
 CXX_TYPESDIR   := include/types
 CXX_BUILDDIR   := build
 CXX_EXSRCDIR   := examples/c++
 CXX_TARGETDIR  := bin
+CXX_LIBNAME    := libnxsdk.so
+
+### Check if its running in NXOS WRL toolkit
+### if it is set the ENXOS_SDK_ROOT env
+ENXOS_SDK_PATH := ${ENXOS_SDK_ROOT}
+ifeq "$(ENXOS_SDK_PATH)" ""
+SYSROOT        :=
+M_ARCH         := -m64
+C_STD          := c++0x
+CXX_LIBDIR     := ${NXSDK_PATH}/remote/libs
+NXLIBDIR       := ${NXSDK_PATH}/remote/libs
+INCLUDES       := -I$(CXX_HEADERDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR)
+else
+SYSROOT        := ${ENXOS_SDK_PATH}/sysroots/n9000-wrs-linux
+M_ARCH         := -m32
+C_STD          := c++0x
 CXX_LIBDIR     := libs
 CXX_LIBSRCDIR  := stubs
-CXX_LIBNAME    := libnxsdk.so
-CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
 NXLIBDIR       := /isan/lib
+INCLUDES       := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR)
+endif
+
+### NXSDK library target path
+CXX_LIBTARGET  := ${CXX_LIBDIR}/${CXX_LIBNAME}
 
 ### Binaries to be build for Example C++ apps.
 EXNXSDK_BIN    := customCliApp  featureMonitor intfMonitor 
-
-## Includes for the project
-INCLUDES  := -I$(CXX_HEADERDIR) -I$(CXX_LIBSRCDIR) -I$(CXX_EXSRCDIR) -I$(CXX_LIBDIR) -I$(CXX_TYPESDIR) 
 
 ## Compiler
 SDK_CXXFLAGS = -g -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -Wno-write-strings 
@@ -77,13 +99,16 @@ SDK_CXXFLAGS = -std=c++0x
 endif
 endif
 
-SDK_CXX       := $(CXX) -m32 $(INCLUDES) 
+SDK_CXX       := $(CXX) $(M_ARCH) $(INCLUDES) 
 
 ## Linking
-LDFLAGS   := -ldl -L./$(CXX_LIBDIR)
+LDFLAGS   := -ldl -L$(CXX_LIBDIR)
 RPATH     := -Wl,-rpath=${NXLIBDIR}
 
 ### All Binaries needed for this module
+ifeq "$(ENXOS_SDK_PATH)" ""                                                                                  
+all: setup ${EXNXSDK_BIN} ${SRCNXSDK_BIN}                                                                    
+else
 all: setup ${CXX_LIBTARGET} ${EXNXSDK_BIN} ${SRCNXSDK_BIN}
 
 ### Build NXSDK Library
@@ -100,18 +125,19 @@ ${LIBNXSDK_OBJS}: setup
 ${CXX_LIBTARGET}: ${LIBNXSDK_OBJS} 
 	@echo -e "\n### Building Shared NXSDK Library - (${CXX_LIBTARGET})!!!"
 	$(SDK_CXX) -shared -Wl,-soname,${CXX_LIBNAME} -o $@ $^ -lc -ldl    
+endif
 
 ### Build your simple App Binaries
 # Create Objs needed for src programs
 ${SRCNXSDK_BIN}: ${CXX_LIBTARGET}
 	@echo -e "\n### Building Source Apps  - ($@)!!!"
-	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(SRCDIR)/$@.cpp -lnxsdk
+	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(SRCDIR)/$@.cpp -lnxsdk -lpthread
 
 ### Build Example binaries
 # Create Objs needed for Example programs
-${EXNXSDK_BIN}: ${CXX_LIBTARGET}
+${EXNXSDK_BIN}: ${CXX_LIBTARGET} 
 	@echo -e "\n### Building Example C++ App  - ($@)!!!"
-	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(CXX_EXSRCDIR)/$@.cpp -lnxsdk
+	$(SDK_CXX) $(SDK_CXXFLAGS) $(LDFLAGS) $(RPATH) -o $(CXX_TARGETDIR)/$@  $(CXX_EXSRCDIR)/$@.cpp -lnxsdk -lpthread
 
 setup:
 	@mkdir -p ${CXX_BUILDDIR}
@@ -119,7 +145,7 @@ setup:
 	@mkdir -p ${CXX_TARGETDIR}
  
 clean:
-	rm -rf *.o ${CXX_LIBDIR}/*.so ${CXX_TARGETDIR}/* ${CXX_BUILDDIR}/*.o 
+	rm -rf *.o ${CXX_TARGETDIR}/* ${CXX_BUILDDIR}/*.o 
 
 cleaner:
-	rm -rf  ${CXX_LIBDIR} ${CXX_TARGETDIR} ${CXX_BUILDDIR}
+	rm -rf  ${CXX_TARGETDIR} ${CXX_BUILDDIR}
