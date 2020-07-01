@@ -4,13 +4,13 @@
 
 %define APP_DESC RPM package for custom application
 
-%define APP_TARGET /nxsdk/examples/python/routeTracker
+%define APP_TARGET /NX-SDK/examples/python/routeTracker
 
-%define NXSDK_ROOT /nxsdk
+%define NXSDK_ROOT /NX-SDK
 
 %define RELEASE_VERSION 1.5.0
 
-%define APP_SOURCE /nxsdk/examples/python
+%define APP_SOURCE /NX-SDK/examples/python
 
 %define APP_VERSION 1.0
 
