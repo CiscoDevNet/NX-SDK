@@ -98,12 +98,10 @@
   - The following environment variables need to be set
  
     ```
-      export ENXOS_SDK_ROOT=/enxos-sdk
+      ./setup.sh
+        
+      ! Use ./setup.sh -h for usage.
     ```   
-  - The enxos-sdk toolchain needs to be sourced
-    ```
-      source /enxos-sdk/environment-setup-x86-wrsmllib32-linux 
-    ```
 
 ### b) Get NX-SDK toolkit
   - NX-SDK provided docker images already has NX-SDK toolkit installed in /NX-SDK (default location) with NXSDK_ROOT 
@@ -145,11 +143,11 @@
         $PWD/NX-SDK# make all
       ```
     - If run into make errors then check to Source 32-bit environment for your application 
-      ```    
-         export ENXOS_SDK_ROOT=/enxos-sdk
-         cd $ENXOS_SDK_ROOT
-         source environment-setup-x86-wrsmllib32-linux 
-      ```
+      ```  
+         ./setup.sh
+        
+         ! Use ./setup.sh -h for usage.
+      ```   
     -  NOTE: <p>If building applications in the native Linux environment (outside the NXOS build environment), 
              use the proper options for the build tools to generate 32-bit binaries, e.g. "-m32".  This is 
              taken care of for you if using NX-OS build environment. </p>
