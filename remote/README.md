@@ -99,8 +99,9 @@
      
    - Set the necessary environment, by running setup.sh script
      ```
-     
-     sh setup.sh
+      ./setup.sh
+      
+      ! ./setup.sh -h for usage.
      ```
    - Now you have the environment ready to develop NX-SDK remote applications.
 
