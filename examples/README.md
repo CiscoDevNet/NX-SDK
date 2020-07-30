@@ -18,6 +18,7 @@ NOTE: Click on the App for source code & detailed description. Application RPMs 
 |<b>[tmCfgBot](python/tmCfgBot)</b> | v1.0.0 | NX-OS | Python | <ul><li>Telemetry Config helper Bot application.</li><li>To automatically configure & manage multiple telemetry path configs per given instance.</li><li> For Ex) "tmCfgBot apply-inst evpn default-template". tmCfgBot automatically configures & manages telemetry path configs to be streamed out for EVPN instance. Use, "show tmCfgBot default-instance" to show all the paths and instances managed by the app. </li></ul> |
 |<b><a href="https://github.com/ndelecro/Nexus-9K-Programmability/tree/master/NX-SDK/PTP_Monitoring">ptpMonitoring</a></b>| v1.0.0 | NX-OS | Python| PTP Monitor Application |
 |<b>[dupHostMonitor](python/dupHostMonitor)</b>| v2.0.0 | Remote | Python | <ul><li>Anaylyzes the adjacency events from all the registered switches to identify the duplicate hosts in the network.</li><li>Refer to [dupHostMonitor readme](../readmes/dupHostMonitor_remote_NXSDK.md) for more details.</li></ul> |
+|<b>[syslogMonitor](python/syslogMonitor)</b>| v2.5.0 | Remote | Python | <ul><li>Showcases the ability to get syslog events from all the registered switches remotely.</li><li>Refer to [dupHostMonitor readme](../readmes/dupHostMonitor_remote_NXSDK.md) on how to deploy a remote NX-SDK app.</li></ul> |
 
 # NX-SDK Interface Template and Usage Applications
 
