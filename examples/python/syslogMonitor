@@ -1,8 +1,8 @@
 #!/usr/bin/python 
 
 ###############################################################
-# NX-SDK Remote Python Application to detect duplicate hosts
-# in the network using NxAdjMgr. 
+# NX-SDK Remote Python Application to get syslog events from 
+# registered switches using NxTrace
 #
 # Refer to switch_details.json which has the details of the switch nodes
 # this remote application is connecting to. switch_details.json can be
