@@ -48,18 +48,9 @@ This github provides NX-SDK toolkit for custom application development in your f
 For detailed description and directory structure of Cisco NX-SDK toolkit, refer to [description](description.md).
 
 # NX-SDK Deployment Modes
-  - Starting from [NX-SDK V2.0.0](versions.md), NX-SDK applications can be deployed anywhere (inside (or) outside 
-    of NX-OS)
-  - Depending on the use case & where you want your NX-SK application to be deployed:
   
 ## Inside NX-OS (on box)
-   Refer to [steps to deploy NX-SDK applications in NX-OS](readmes/NXSDK_in_NXOS.md).
-     
-## Outside of NX-OS (Remotely)
-   Refer to [steps to deploy NX-SDK applications remotely](remote/README.md).
-     
-  - <b>NOTE:</b> NX-SDK APIs & application development flow is the same between the two modes and the only difference is 
-       the [build environment](readmes/NXSDK_docker.md). 
+   Refer to [steps to deploy NX-SDK applications in NX-OS](readmes/NXSDK_in_NXOS.md). 
 
 # Sample Custom Applications created using NX-SDK
 
