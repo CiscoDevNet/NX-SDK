@@ -1,71 +1,73 @@
-<snippet>
-  <content>
-  
-# NX-SDK 
+# Cisco NX-SDK (Deprecated)
 
-# Table of Contents
+> [!WARNING]
+> **NX-SDK is deprecated. Do not use NX-SDK for new applications or new development.**
+>
+> NX-SDK remains supported in Cisco NX-OS Release 10.7(1), but its use is
+> strongly discouraged. Existing NX-SDK applications should begin migrating
+> now and complete their migration away from NX-SDK by Cisco NX-OS Release
+> 10.7(2).
+>
+> In Cisco NX-OS Release 10.7(2), NX-SDK will continue to function on the
+> switch in a limited capacity. However, the public NX-SDK toolkit and source
+> code hosted in this Cisco DevNet repository will be removed.
 
-  - [Cisco NX-SDK](#cisco-nx-sdk)
-  - [Release](#release)
-  - [Documentation and Usage](#documentation-and-usage)
-  - [Description](#description)
-  - [NX-SDK Deployment Modes](#nx-sdk-deployment-modes)
-  - [Sample Custom Applications created using NX-SDK](#sample-custom-applications-created-using-nx-sdk)
-  - [Notes](notes)
+## Deprecation timeline
 
-# Cisco NX-SDK
+| Cisco NX-OS release | NX-SDK status |
+| --- | --- |
+| 10.7(1) | NX-SDK remains supported, but its use is strongly discouraged. Do not begin new NX-SDK development. |
+| 10.7(2) | NX-SDK continues to function on the switch in a limited capacity. Existing applications should have migrated away from NX-SDK. The public toolkit and source code in this repository will be removed from Cisco DevNet. |
 
-<p align="justify">
-Cisco NX-SDK provides a simple, flexible, modernized and powerful tool for off the box third party custom Application development to gain access to Nexus infrastructure 
-functionalities which when run inside (or) outside the Nexus switches allow the custom applications to run natively just like any other Cisco native Nexus applications.
-It is appropriate for Do-it-Yourself Automation to develop custom applications to fit your needs thereby decoupling application development from Nexus releases. NX-SDK offers various functionalities like ability to 
-generate custom CLIs, Syslogs, Event manager, HA, Route Manager, Streaming Telemetry and much more. 
+## What users should do
 
-NX-SDK provides Abstraction/plugin Library Layer thereby decoupling the Application from underlying infrastructure being used.
-Hence, its easy and simple to change infra without affecting the applications. Hence, NX-SDK is being used for
-developing native Cisco Applications as well. 
+### Existing NX-SDK users
 
-It is built using C++ language. Other language (python, go, ruby etc) bindings will also be provided for NX-SDK hence custom applications 
-can be developed and built in any language of users choice. Starting from NX-SDK v2.0.0, NX-SDK applications can run anywhere (inside or outside of NX-OS).
+- Stop new NX-SDK application development.
+- Identify existing applications and their dependencies on NX-SDK.
+- Develop and execute a plan to migrate those applications away from NX-SDK
+  by Cisco NX-OS Release 10.7(2).
+- Work with your Cisco account team or support channels to identify alternative
+  solutions for your requirements.
 
-This github provides NX-SDK toolkit for custom application development in your favorite Linux environment to gain access to NX-OS infrastructure.
-</p>
+### New users
 
-# Release 
+- Do not adopt NX-SDK or begin NX-SDK application development.
+- Work with your Cisco account team or support channels to devise a supported
+  solution for your use case.
 
-- Refer to [NX-SDK versions](versions.md) for more details on different versions and its supported features.
-- Refer to <a href="https://github.com/CiscoDevNet/NX-SDK/releases">NX-SDK releases</a> to get older NX-SDK toolkit versions. 
+## Remote NX-SDK
 
-# Documentation and Usage
+Remote or off-box NX-SDK capability is no longer provided by this repository.
+References in historical repository documentation to applications running
+outside NX-OS, remote NX-SDK libraries, or remote deployment are obsolete.
 
-  - For C++ custom Application development, public APIs are available in [include/](include/). Its description and usage are available 
-    in <a href="https://nx-sdk.readthedocs.io/en/latest/ ">API documentation</a> (doxygen generated). 
-  - Python and other language bindings will be auto-generated from the above C++ APIs using <a href="http://www.swig.org/">SWIG</a>. Refer to [version](versions.md) for more details on supported language bindings in each NX-SDK version.
-  - Refer to [example NX-SDK applications](examples/README.md) for more details.
+## About NX-SDK
 
-# Description
+NX-SDK is a legacy toolkit for developing applications that integrate with
+Cisco Nexus NX-OS. It provides APIs for capabilities such as custom CLI
+commands, syslogs, event handling, high availability, route management, and
+streaming telemetry.
 
-For detailed description and directory structure of Cisco NX-SDK toolkit, refer to [description](description.md).
+This repository contains historical public API headers, C++ development
+stubs and build tools, and sample applications written in C++, Python, and Go.
+These materials are retained temporarily to assist existing users during
+migration and should not be treated as a recommendation to begin new NX-SDK
+development.
 
-# NX-SDK Deployment Modes
-  
-## Inside NX-OS (on box)
-   Refer to [steps to deploy NX-SDK applications in NX-OS](readmes/NXSDK_in_NXOS.md). 
+## Legacy documentation
 
-# Sample Custom Applications created using NX-SDK
+The following documentation is provided for existing users during migration:
 
-Refer to [example NX-SDK applications](examples/README.md) for more details.
- 
-# Notes
-   - Ensure that the name of the custom application does not collide with any existing Native Nexus applications.
-   - For NX-SDK applications to be started in VSH, please name the application as one word containing alphabets. 
-   - NX-SDK docker images already has NX-SDK toolkit installed in (/NX-SDK). To get latest versions do a git pull.  
-   - Perform all NX-SDK related initializations in one thread. Refer to sample example custom applications for sample 
-     template and usage.
-   - Each API defined returns an error (or) throws an exception in case of any failures. Refer to the generated doxygen and 
-     usage for each API and the different exceptions they throw.
-   
-</content>
+- [Historical NX-SDK versions and features](versions.md)
+- [NX-SDK API reference](https://nx-sdk.readthedocs.io/en/latest/)
+- [Sample applications](examples/README.md)
+- [Legacy on-box deployment instructions](readmes/NXSDK_in_NXOS.md)
 
-  <tabTrigger>readme</tabTrigger>
-</snippet>
+Some linked documentation describes older releases or capabilities that are
+no longer available. Consult the applicable Cisco NX-OS release notes for
+current support information.
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
